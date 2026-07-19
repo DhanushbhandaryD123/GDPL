@@ -5,6 +5,7 @@ import { FloatingSocials } from '../components/layout/FloatingSocials';
 import { AboutHero } from '../components/about/AboutHero';
 import { OurStory } from '../components/about/OurStory';
 import { OurValues } from '../components/about/OurValues';
+import { MeetOurTeam } from '../components/about/MeetOurTeam';
 
 export function About() {
   return (
@@ -20,6 +21,7 @@ export function About() {
       <main>
         <AboutHero />
         <OurStory />
+        <MeetOurTeam />
         <OurValues />
       </main>
 
