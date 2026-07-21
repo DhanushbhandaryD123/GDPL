@@ -38,15 +38,6 @@ export function AboutHero() {
             Delivering Impact.
           </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="text-sm md:text-base text-gray-300 mb-6 max-w-lg leading-relaxed"
-          >
-            Since 2007, Global Delight has been at the forefront of building innovative digital products that empower businesses and enrich millions of lives worldwide.
-          </motion.p>
-
           {/* Stats Row */}
           <motion.div
             initial={{ opacity: 0 }}

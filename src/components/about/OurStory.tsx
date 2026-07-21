@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 export function OurStory() {
   return (
     <section className="w-full bg-[#ffffff] py-0 px-6 lg:px-12">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row-reverse items-center gap-16 lg:gap-24">
         
         {/* Text Content */}
         <div className="w-full lg:w-1/2 flex flex-col items-start">
@@ -41,7 +41,7 @@ export function OurStory() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="text-gray-600 text-lg leading-relaxed space-y-6 mb-10 pr-0 lg:pr-8"
+            className="text-gray-600 text-lg leading-relaxed space-y-6 mb-10 pl-0 lg:pl-8"
           >
             <p>
               Founded on the southwest coast of India, Udupi, Global Delight was started in 2007. With our perfect blend of professionals, we have created leading edge, award-winning cross platform audio, video and photography applications.
@@ -54,7 +54,7 @@ export function OurStory() {
 
         {/* Image Content */}
         <motion.div
-          initial={{ opacity: 0, x: 40 }}
+          initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}

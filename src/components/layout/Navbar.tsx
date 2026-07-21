@@ -1,17 +1,23 @@
 import { Link } from 'react-router-dom';
 import { ShoppingCart, Smile, Search } from 'lucide-react';
 
-export function Navbar() {
+interface NavbarProps {
+  logoUrl?: string;
+}
+
+export function Navbar({ logoUrl }: NavbarProps) {
   const rightLinks = [
     { name: 'About', href: '/about' },
-    { name: 'Business', href: '#' },
-    { name: 'FAQ', href: '#' },
-    { name: 'Contact', href: '#' },
+    { name: 'Business', href: '/business' },
+    { name: 'FAQ', href: '/faq' },
+    { name: 'Contact', href: '/contact' },
     { name: 'Blog', href: '#' },
   ];
 
+  const defaultLogo = "https://d3jbf8nvvpx3fh.cloudfront.net/home/_resource/_img/website/2015/GDTPL_logo_.png";
+
   return (
-    <nav className="sticky top-0 z-50 w-full bg-white backdrop-blur-md border-b border-gray-100">
+    <nav className="sticky top-0 z-50 w-full bg-white/85 backdrop-blur-md border-b border-gray-100">
       <div className="w-full max-w-[1920px] mx-auto px-4 md:px-6 lg:px-8 h-12 flex items-center justify-between">
         
         {/* Left Section: Logo + Products + Store */}
@@ -19,9 +25,9 @@ export function Navbar() {
           {/* Logo */}
           <a href="/" className="flex items-center">
             <img 
-              src="https://d3jbf8nvvpx3fh.cloudfront.net/home/_resource/_img/website/2015/GDTPL_logo_.png" 
+              src={logoUrl || defaultLogo} 
               alt="Global Delight Logo" 
-              className="h-6 md:h-7 w-auto object-contain drop-shadow-sm invert opacity-80" 
+              className={`h-6 md:h-7 w-auto object-contain drop-shadow-sm ${logoUrl ? '' : 'invert opacity-80'}`}
             />
           </a>
 

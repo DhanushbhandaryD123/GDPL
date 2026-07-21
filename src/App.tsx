@@ -89,13 +89,29 @@ function Home() {
 }
 
 import { About } from './pages/About';
+import { Business } from './pages/Business';
+import { AudioTechnology } from './pages/AudioTechnology';
+import { VideoTechnology } from './pages/VideoTechnology';
+import { CameraTechnology } from './pages/CameraTechnology';
+import { ScreenCaptureTechnology } from './pages/ScreenCaptureTechnology';
+import { Faq } from './pages/Faq';
+import { Contact } from './pages/Contact';
+import { ScrollToTop } from './components/layout/ScrollToTop';
 
 function App() {
   return (
     <>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/business" element={<Business />} />
+        <Route path="/technology/audio" element={<AudioTechnology />} />
+        <Route path="/technology/video" element={<VideoTechnology />} />
+        <Route path="/technology/camera" element={<CameraTechnology />} />
+        <Route path="/technology/screen-capture" element={<ScreenCaptureTechnology />} />
+        <Route path="/faq" element={<Faq />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Toaster position="bottom-right" />
     </>

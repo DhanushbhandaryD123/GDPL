@@ -1,7 +1,13 @@
 import { Link } from 'react-router-dom';
 // No lucide-react imports needed
 
-export function Footer() {
+interface FooterProps {
+  logoUrl?: string;
+}
+
+export function Footer({ logoUrl }: FooterProps = {}) {
+  const defaultLogo = "https://d3jbf8nvvpx3fh.cloudfront.net/home/_resource/_img/website/2015/GDTPL_logo_.png";
+
   return (
     <footer className="bg-[#111111] text-gray-300 font-sans">
       {/* Top Section */}
@@ -54,7 +60,7 @@ export function Footer() {
             <div className="w-full sm:w-1/2 mb-8 sm:mb-0">
               <div className="mb-4">
                 <img 
-                  src="https://d3jbf8nvvpx3fh.cloudfront.net/home/_resource/_img/website/2015/GDTPL_logo_.png" 
+                  src={logoUrl || defaultLogo} 
                   alt="Global Delight Logo" 
                   className="h-6 w-auto brightness-0 invert opacity-100"
                 />
@@ -70,7 +76,7 @@ export function Footer() {
               <h4 className="font-bold text-white text-[15px] mb-6">Resources</h4>
               <ul className="space-y-3 text-[13px] text-gray-400">
                 <li><Link to="#" className="hover:text-white transition">FAQs</Link></li>
-                <li><a href="https://www.globaldelight.com/contact" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Contact</a></li>
+                <li><Link to="/contact" className="hover:text-white transition">Contact</Link></li>
                 <li><Link to="#" className="hover:text-white transition">What's New</Link></li>
               </ul>
             </div>
@@ -102,7 +108,7 @@ export function Footer() {
           <div className="flex items-center gap-4 text-[13px] text-gray-400 mb-6">
             <a href="https://www.globaldelight.com/privacypolicy" target="_blank" rel="noopener noreferrer" className="hover:text-white transition underline underline-offset-4">Privacy Policy</a>
             <span className="text-gray-600">|</span>
-            <a href="https://www.globaldelight.com/contact" target="_blank" rel="noopener noreferrer" className="hover:text-white transition underline underline-offset-4">Contact</a>
+            <Link to="/contact" className="hover:text-white transition underline underline-offset-4">Contact</Link>
           </div>
 
           {/* Copyright */}
