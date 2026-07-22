@@ -15,6 +15,7 @@ interface AppCategoryProps {
   deviceImageAlt: string;
   deviceImagePath: string;
   imageClassName?: string;
+  titleClassName?: string;
   apps: AppItem[];
   reverse?: boolean;
 }
@@ -100,7 +101,7 @@ function AppCard({ app, index }: { app: AppItem, index: number }) {
   );
 }
 
-export function AppCategory({ title, deviceImageAlt, deviceImagePath, imageClassName, apps, reverse = false }: AppCategoryProps) {
+export function AppCategory({ title, deviceImageAlt, deviceImagePath, imageClassName, titleClassName, apps, reverse = false }: AppCategoryProps) {
   return (
     <section className="py-4 md:py-8 w-full max-w-[1920px] mx-auto px-2 md:px-4">
       {/* Title */}
@@ -115,19 +116,23 @@ export function AppCategory({ title, deviceImageAlt, deviceImagePath, imageClass
           transition={{ duration: 0.6 }}
           className="w-full md:w-1/3 flex justify-center"
         >
-          <img 
-            src={deviceImagePath} 
-            alt={deviceImageAlt} 
-            className={`w-full object-contain drop-shadow-xl mx-auto ${imageClassName || 'max-w-[220px] max-h-[350px]'}`}
-            onError={(e) => {
-              (e.target as HTMLImageElement).style.display = 'none';
-              (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden');
-            }}
-          />
-          {/* Fallback Placeholder */}
-          <div className="hidden w-64 h-48 bg-gray-100 rounded-xl border flex items-center justify-center text-gray-400 text-sm shadow-sm relative overflow-hidden">
-            <span className="z-10">{deviceImageAlt} Placeholder</span>
-            <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-gray-200 to-transparent"></div>
+          <div className="flex flex-col items-center justify-center relative">
+            <img 
+              src={deviceImagePath} 
+              alt={deviceImageAlt} 
+              className={`w-full object-contain drop-shadow-xl mx-auto ${imageClassName || 'max-w-[220px] max-h-[350px]'}`}
+              onError={(e) => {
+                (e.target as HTMLImageElement).style.display = 'none';
+                (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden');
+              }}
+            />
+            {/* Fallback Placeholder */}
+            <div className="hidden w-64 h-48 bg-gray-100 rounded-xl border flex items-center justify-center text-gray-400 text-sm shadow-sm relative overflow-hidden">
+              <span className="z-10">{deviceImageAlt} Placeholder</span>
+              <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-gray-200 to-transparent"></div>
+            </div>
+            
+            <h2 className={`text-2xl md:text-3xl font-bold -mt-3 text-gray-800 text-center relative z-10 ${titleClassName || ''}`}>{title}</h2>
           </div>
         </motion.div>
 

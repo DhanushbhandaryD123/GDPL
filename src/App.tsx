@@ -49,14 +49,14 @@ function Home() {
         
         <div className="py-4">
           <AppCategory 
-            title="Mac Apps" 
+            title="Mac App" 
             deviceImageAlt="MacBook" 
             deviceImagePath="/devices/macbook.png" 
             imageClassName="max-w-[350px] md:max-w-[450px]"
             apps={macApps} 
           />
           <AppCategory 
-            title="Windows Apps" 
+            title="Windows App" 
             deviceImageAlt="Windows Laptop" 
             deviceImagePath="/devices/windows.png" 
             imageClassName="max-w-[350px] md:max-w-[450px]"
@@ -64,14 +64,15 @@ function Home() {
             reverse={false} 
           />
           <AppCategory 
-            title="iOS Apps" 
+            title="iOS App" 
+            titleClassName="-ml-4 md:-ml-6"
             deviceImageAlt="iPhone" 
             deviceImagePath="/devices/iphone.png" 
             imageClassName="max-w-[250px] md:max-w-[300px]"
             apps={iosApps} 
           />
           <AppCategory 
-            title="Android Apps" 
+            title="Android App" 
             deviceImageAlt="Android Phone" 
             deviceImagePath="/devices/Android.png" 
             imageClassName="max-w-[150px] md:max-w-[180px]"
@@ -95,7 +96,18 @@ import { VideoTechnology } from './pages/VideoTechnology';
 import { CameraTechnology } from './pages/CameraTechnology';
 import { ScreenCaptureTechnology } from './pages/ScreenCaptureTechnology';
 import { Faq } from './pages/Faq';
+import { Boom3DMacFaq } from './pages/faq/Boom3DMacFaq';
+import { Boom3DMasFaq } from './pages/faq/Boom3DMasFaq';
+import { Boom3DWinFaq } from './pages/faq/Boom3DWinFaq';
+import { AuDimixWinFaq } from './pages/faq/AuDimixWinFaq';
+import { Boom2Faq } from './pages/faq/Boom2Faq';
+import { BoomIosFaq } from './pages/faq/BoomIosFaq';
+import { VizmatoFaq } from './pages/faq/VizmatoFaq';
+import { CaptoMacFaq } from './pages/faq/CaptoMacFaq';
+import { CaptoWinFaq } from './pages/faq/CaptoWinFaq';
+import { AudionFaq } from './pages/faq/AudionFaq';
 import { Contact } from './pages/Contact';
+import { Careers } from './pages/Careers';
 import { ScrollToTop } from './components/layout/ScrollToTop';
 
 function App() {
@@ -111,7 +123,18 @@ function App() {
         <Route path="/technology/camera" element={<CameraTechnology />} />
         <Route path="/technology/screen-capture" element={<ScreenCaptureTechnology />} />
         <Route path="/faq" element={<Faq />} />
+        <Route path="/faq/boom3dmac" element={<Boom3DMacFaq />} />
+        <Route path="/faq/boom3dmas" element={<Boom3DMasFaq />} />
+        <Route path="/faq/boom3dwin" element={<Boom3DWinFaq />} />
+        <Route path="/faq/audimixwin" element={<AuDimixWinFaq />} />
+        <Route path="/faq/boom2" element={<Boom2Faq />} />
+        <Route path="/faq/boomios" element={<BoomIosFaq />} />
+        <Route path="/faq/vizmato" element={<VizmatoFaq />} />
+        <Route path="/faq/captomac" element={<CaptoMacFaq />} />
+        <Route path="/faq/captowin" element={<CaptoWinFaq />} />
+        <Route path="/faq/audion" element={<AudionFaq />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/careers" element={<Careers />} />
       </Routes>
       <Toaster position="bottom-right" />
     </>

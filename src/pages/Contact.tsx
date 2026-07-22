@@ -1,17 +1,18 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { MapPin, Mail, Phone, MessageSquare, Briefcase, Globe, Send } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Linkedin, Youtube, ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
 import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
-import { FloatingSocials } from '../components/layout/FloatingSocials';
-import toast from 'react-hot-toast';
 
 export function Contact() {
   const [formData, setFormData] = useState({
+    subject: '',
     name: '',
     email: '',
-    subject: '',
-    message: ''
+    mobile: '',
+    comment: ''
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -20,247 +21,196 @@ export function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate sending
-    toast.success('Message sent successfully! We will get back to you soon.');
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    toast.success('Message sent successfully!');
+    setFormData({ subject: '', name: '', email: '', mobile: '', comment: '' });
   };
 
   return (
-    <div className="min-h-screen bg-[#f8fafc] text-gray-900 font-sans selection:bg-blue-500/30">
+    <div className="min-h-screen bg-[#383838] font-sans flex flex-col">
       <Helmet>
         <title>Contact Us | Global Delight</title>
-        <meta name="description" content="Get in touch with Global Delight. We are here to help with support, sales, press, and partnerships." />
+        <meta name="description" content="Get in touch with us." />
       </Helmet>
       
       <Navbar />
-      <FloatingSocials />
 
-      {/* Hero Section */}
-      <section className="relative w-full py-24 md:py-32 bg-[#0b1221] overflow-hidden">
-        {/* Abstract background blobs */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[60%] rounded-full bg-blue-600/10 blur-[100px]"></div>
-          <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[70%] rounded-full bg-purple-600/10 blur-[120px]"></div>
-        </div>
+      {/* Map Section */}
+      <div className="w-full h-[45vh] relative">
+        <iframe
+          src="https://maps.google.com/maps?q=Global%20Delight%20Technologies%20Pvt.%20Ltd.&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen={false}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          className="absolute inset-0"
+        ></iframe>
+      </div>
 
-        <div className="container mx-auto px-4 max-w-6xl relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8">
-            <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
-            <span className="text-sm font-medium text-gray-300">We're here to help</span>
-          </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
-            Get in <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Touch</span>
-          </h1>
-          <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Whether you have a question about our products, need support, or want to partner with us, we'd love to hear from you.
-          </p>
-        </div>
-      </section>
+      {/* Orange Separator */}
+      <div className="w-full h-1.5 bg-[#E85D22]"></div>
 
-      {/* Quick Contact Options */}
-      <section className="w-full relative z-20 -mt-10 mb-20 px-4">
-        <div className="container mx-auto max-w-5xl">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Customer Support */}
-            <div className="bg-white rounded-[24px] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col items-center text-center transition-transform hover:-translate-y-1 relative overflow-hidden group">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-cyan-400"></div>
-              <div className="w-14 h-14 rounded-2xl bg-blue-50 text-blue-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <MessageSquare className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Customer Support</h3>
-              <p className="text-sm text-gray-500 mb-6 flex-grow">Need help with an app? Our support team is available to assist you.</p>
-              <a href="mailto:support@globaldelight.com" className="text-blue-600 font-semibold hover:text-blue-800">support@globaldelight.com</a>
-            </div>
+      {/* Dark Content Section */}
+      <div className="flex-1 relative w-full overflow-hidden flex items-center">
+        {/* Decorative background representing the faint wind turbines */}
+        <div className="absolute right-0 bottom-0 w-1/2 h-full opacity-10 pointer-events-none bg-[url('https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center mix-blend-overlay"></div>
 
-            {/* Sales & Partnerships */}
-            <div className="bg-white rounded-[24px] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col items-center text-center transition-transform hover:-translate-y-1 relative overflow-hidden group">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-pink-500"></div>
-              <div className="w-14 h-14 rounded-2xl bg-purple-50 text-purple-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Briefcase className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Business & Sales</h3>
-              <p className="text-sm text-gray-500 mb-6 flex-grow">Interested in volume licensing or a partnership opportunity?</p>
-              <a href="mailto:sales@globaldelight.com" className="text-purple-600 font-semibold hover:text-purple-800">sales@globaldelight.com</a>
-            </div>
-
-            {/* Media & Press */}
-            <div className="bg-white rounded-[24px] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col items-center text-center transition-transform hover:-translate-y-1 relative overflow-hidden group">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-400 to-red-500"></div>
-              <div className="w-14 h-14 rounded-2xl bg-orange-50 text-orange-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Globe className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Media & Press</h3>
-              <p className="text-sm text-gray-500 mb-6 flex-grow">For media inquiries, press kits, and promotional events.</p>
-              <a href="mailto:pr@globaldelight.com" className="text-orange-600 font-semibold hover:text-orange-800">pr@globaldelight.com</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Main Content Area */}
-      <section className="w-full py-16 mb-16">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
+        <div className="container mx-auto px-6 md:px-16 py-12 relative z-10">
+          <div className="flex flex-col lg:flex-row gap-12 justify-between items-center">
             
-            {/* Form Section */}
-            <div className="w-full lg:w-3/5">
+            {/* Left Column: Contact Info */}
+            <div className="w-full lg:w-5/12 text-white">
               <div className="mb-10">
-                <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6">Send us a Message</h2>
-                <div className="space-y-4 text-gray-600 text-[15px] leading-relaxed">
-                  <p>Use the form below for Customer Service and Media Inquiries.</p>
-                  <p>Those needing assistance with registration codes can fill the <a href="#" className="text-blue-600 hover:underline font-medium">Lost License Form</a>.</p>
-                  <p>For bulk purchases, affiliation queries, licensing and business development please use our <a href="#" className="text-blue-600 hover:underline font-medium">Business Development Form</a>.</p>
-                </div>
+                <h2 className="text-3xl font-bold mb-2">Contact us</h2>
+                <div className="h-[2px] w-24 bg-white"></div>
               </div>
 
-              <form onSubmit={handleSubmit} className="bg-white rounded-[32px] p-8 md:p-10 shadow-[0_20px_40px_rgba(0,0,0,0.03)] border border-gray-100">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div className="space-y-6 text-[14px] text-gray-200 leading-relaxed font-light mb-12">
+                <p>
+                  Grosvenor Business Tower Suite<br />
+                  1207 Barsha Heights<br />
+                  P.O. Box 5004400<br />
+                  Dubai United Arab Emirates
+                </p>
+
+                <p>
+                  +971-4-427-2420<br />
+                  support.uae@codweb.com
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-base font-bold text-white mb-4">Follow Me On Social Media</h3>
+                <div className="flex items-center gap-4 mb-10">
+                  <a href="https://www.facebook.com/GlobalDelight" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors"><Facebook className="w-5 h-5 fill-current" /></a>
+                  <a href="https://x.com/GlobalDelight" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors"><Twitter className="w-5 h-5 fill-current" /></a>
+                  <a href="https://www.instagram.com/globaldelight/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors"><Instagram className="w-5 h-5" /></a>
+                  <a href="https://www.linkedin.com/company/global-delight/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors"><Linkedin className="w-5 h-5 fill-current" /></a>
+                  <a href="https://www.youtube.com/channel/UCLjiPwteYQLEmIzDs4xmyTw" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors"><Youtube className="w-5 h-5 fill-current" /></a>
+                  <a href="#" className="text-gray-300 hover:text-white transition-colors font-bold text-lg leading-none font-serif">G+</a>
+                </div>
+
+                <Link to="/" className="inline-flex items-center gap-3 bg-transparent border border-[#E85D22] rounded-full pl-1 pr-5 py-1 hover:bg-[#E85D22]/10 transition-colors w-fit">
+                  <span className="w-8 h-8 rounded-full bg-[#E85D22] flex items-center justify-center">
+                    <ArrowLeft className="w-4 h-4 text-white" />
+                  </span>
+                  <span className="text-sm text-gray-300">Back to Home</span>
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Column: Form */}
+            <div className="w-full lg:w-6/12 xl:w-5/12">
+              <div className="bg-[#2b2b2b] p-8 md:p-10">
+                <div className="text-center mb-10">
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-2">GET IN TOUCH</h3>
+                  <p className="text-[10px] text-gray-400 uppercase tracking-wider">Please fill the form for any query or suggestion</p>
+                </div>
+
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="relative">
+                    <select 
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      className="w-full bg-white border border-gray-200 text-gray-800 px-4 py-3 pr-10 focus:outline-none focus:ring-1 focus:ring-[#E85D22] appearance-none cursor-pointer"
+                    >
+                      <option value="">Select Subject</option>
+                      <option value="Media Enquiry">Media Enquiry</option>
+                      <option value="Product Support / Customer Service">Product Support / Customer Service</option>
+                    </select>
+                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400">
+                      <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                    </div>
+                  </div>
                   <div>
-                    <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">Your Name</label>
+                    <label className="block text-[11px] text-gray-300 uppercase mb-2">Full Name*</label>
                     <input 
                       type="text" 
-                      id="name"
                       name="name"
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block px-4 py-3.5 transition-all outline-none" 
-                      placeholder="John Doe" 
+                      className="w-full bg-white border border-gray-200 text-gray-800 px-4 py-3 focus:ring-1 focus:ring-[#E85D22] outline-none"
                     />
                   </div>
+                  
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-[11px] text-gray-300 uppercase mb-2">Email*</label>
+                      <input 
+                        type="email" 
+                        name="email"
+                        required
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="w-full bg-white border border-gray-200 text-gray-800 px-4 py-3 focus:ring-1 focus:ring-[#E85D22] outline-none"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[11px] text-gray-300 uppercase mb-2">Mobile No*</label>
+                      <input 
+                        type="tel" 
+                        name="mobile"
+                        required
+                        value={formData.mobile}
+                        onChange={handleChange}
+                        className="w-full bg-white border border-gray-200 text-gray-800 px-4 py-3 focus:ring-1 focus:ring-[#E85D22] outline-none"
+                      />
+                    </div>
+                  </div>
+
                   <div>
-                    <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
-                    <input 
-                      type="email" 
-                      id="email"
-                      name="email"
-                      required
-                      value={formData.email}
+                    <label className="block text-[11px] text-gray-300 uppercase mb-2">Your Comment</label>
+                    <textarea 
+                      name="comment"
+                      value={formData.comment}
                       onChange={handleChange}
-                      className="w-full bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block px-4 py-3.5 transition-all outline-none" 
-                      placeholder="john@company.com" 
-                    />
+                      rows={4}
+                      className="w-full bg-white border border-gray-200 text-gray-800 px-4 py-3 focus:ring-1 focus:ring-[#E85D22] outline-none resize-none"
+                    ></textarea>
                   </div>
-                </div>
 
-                <div className="mb-6">
-                  <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-2">Subject</label>
-                  <select 
-                    id="subject"
-                    name="subject"
-                    required
-                    value={formData.subject}
-                    onChange={handleChange}
-                    className="w-full bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block px-4 py-3.5 transition-all outline-none appearance-none"
-                  >
-                    <option value="" disabled>Select Subject</option>
-                    <option value="media">Media Enquiry</option>
-                    <option value="support">Product Support / Customer Service</option>
-                  </select>
-                </div>
-
-                <div className="mb-8">
-                  <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">Message</label>
-                  <textarea 
-                    id="message" 
-                    name="message"
-                    required
-                    value={formData.message}
-                    onChange={handleChange}
-                    rows={5} 
-                    className="w-full bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block px-4 py-3.5 transition-all outline-none resize-none" 
-                    placeholder="How can we help you?"
-                  ></textarea>
-                </div>
-
-                <button 
-                  type="submit" 
-                  className="w-full sm:w-auto px-8 py-4 bg-[#0F172A] hover:bg-blue-600 text-white font-bold rounded-xl transition-colors flex items-center justify-center gap-2 group"
-                >
-                  <span>Send Message</span>
-                  <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </form>
-            </div>
-
-            {/* Global Office Info */}
-            <div className="w-full lg:w-2/5 flex flex-col justify-center">
-              <div className="mb-10">
-                <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">Our Headquarters</h2>
-                <p className="text-gray-500 text-lg">We are located in Udupi, the coastal town of India, crafting magical experiences for the world.</p>
-              </div>
-
-              <div className="bg-white rounded-[32px] p-8 md:p-10 shadow-[0_20px_40px_rgba(0,0,0,0.03)] border border-gray-100 relative overflow-hidden">
-                {/* Decorative Map Pattern */}
-                <div className="absolute top-0 right-0 opacity-[0.03] pointer-events-none -mt-10 -mr-10">
-                  <svg width="300" height="300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="2" y1="12" x2="22" y2="12"></line>
-                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                  </svg>
-                </div>
-
-                <div className="flex items-start gap-5 mb-8">
-                  <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center shrink-0">
-                    <MapPin className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-bold text-gray-900 mb-1">Global Delight Technologies</h4>
-                    <p className="text-gray-500 leading-relaxed text-sm">
-                      Robosoft Technologies Campus,<br/>
-                      217, NH 66, Santhekatte,<br/>
-                      Udupi, Karnataka 576105,<br/>
-                      India
-                    </p>
-                    <a 
-                      href="https://www.google.com/maps/dir//''/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x3bbcbcf392eb3e81:0x127cba682d0150ed!3e0?g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 mt-3 text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors"
+                  <div className="flex justify-end pt-2">
+                    <button 
+                      type="submit" 
+                      className="bg-white text-black text-[11px] font-bold px-8 py-3 hover:bg-gray-200 transition-colors uppercase tracking-wider"
                     >
-                      Get Directions <span className="text-lg leading-none">&rarr;</span>
-                    </a>
+                      Submit
+                    </button>
                   </div>
-                </div>
-
-                <div className="flex items-center gap-5 mb-8">
-                  <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center shrink-0">
-                    <Mail className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-gray-900 mb-1">Email Us</h4>
-                    <a href="mailto:info@globaldelight.com" className="text-blue-600 hover:text-blue-800 transition-colors text-sm font-medium">info@globaldelight.com</a>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-5">
-                  <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center shrink-0">
-                    <Phone className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-gray-900 mb-1">Call Us</h4>
-                    <p className="text-gray-500 text-sm font-medium">+91 820 259 3930</p>
-                  </div>
-                </div>
-
-                <div className="mt-8 rounded-2xl overflow-hidden shadow-inner border border-gray-200 h-48 w-full relative">
-                  <iframe 
-                    src="https://maps.google.com/maps?q=Global%20Delight%20Technologies,%20Udupi&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                    width="100%" 
-                    height="100%" 
-                    style={{ border: 0 }} 
-                    allowFullScreen={false} 
-                    loading="lazy"
-                    title="Global Delight Headquarters Map"
-                    className="absolute inset-0"
-                  ></iframe>
-                </div>
+                </form>
               </div>
             </div>
-            
+
           </div>
         </div>
-      </section>
+      </div>
+      {/* Newsletter Section */}
+      <div className="bg-[#1a1a1a] py-20 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Be in the know</h2>
+        <p className="text-gray-200 text-[15px] md:text-[16px] max-w-2xl mx-auto mb-10 px-4 leading-relaxed">
+          Join our mailing list to hear about new releases, product updates, feature additions, and special deals before anyone else!
+        </p>
+        <form 
+          onSubmit={(e) => { e.preventDefault(); toast.success('Successfully subscribed to the newsletter!'); }}
+          className="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-2xl mx-auto px-4"
+        >
+          <input 
+            type="email" 
+            placeholder="xyz1234@example.com" 
+            className="w-full sm:w-[400px] bg-[#0a0a0a] text-white px-6 py-3.5 rounded-xl border border-transparent focus:outline-none focus:border-gray-600 placeholder-gray-600"
+            required
+          />
+          <button 
+            type="submit" 
+            className="w-full sm:w-auto bg-[#2399c9] hover:bg-[#1d82ab] transition-colors text-white font-bold px-8 py-3.5 rounded-xl whitespace-nowrap"
+          >
+            Sign me up
+          </button>
+        </form>
+      </div>
 
       <Footer />
     </div>

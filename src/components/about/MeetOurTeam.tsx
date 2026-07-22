@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 import { Linkedin, Twitter, ArrowRight, Users } from 'lucide-react';
 
 const leaders = [
@@ -127,9 +128,9 @@ export function MeetOurTeam() {
               <Users className="w-8 h-8" />
             </div>
             <h4 className="text-[15px] font-bold text-gray-900 mb-2 leading-tight">This could be you!</h4>
-            <a href="#" className="text-blue-500 text-[13px] font-medium flex items-center gap-1 hover:text-blue-600 transition-colors">
+            <Link to="/careers" className="text-blue-500 text-[13px] font-medium flex items-center gap-1 hover:text-blue-600 transition-colors">
               Send us your resume <ArrowRight className="w-3 h-3" />
-            </a>
+            </Link>
           </motion.div>
         </div>
 
@@ -140,9 +141,9 @@ export function MeetOurTeam() {
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
         >
-          <a href="#" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-blue-100 text-blue-600 font-semibold hover:bg-blue-50 transition-colors duration-300">
+          <Link to="/careers" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-blue-100 text-blue-600 font-semibold hover:bg-blue-50 transition-colors duration-300">
             View All Careers <ArrowRight className="w-4 h-4" />
-          </a>
+          </Link>
         </motion.div>
 
       </div>

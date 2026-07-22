@@ -12,7 +12,7 @@ export function Footer({ logoUrl }: FooterProps = {}) {
     <footer className="bg-[#111111] text-gray-300 font-sans">
       {/* Top Section */}
       <div className="container mx-auto px-6 py-16 max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-[auto_auto_auto_1fr] gap-8 md:gap-16 lg:gap-24">
           
           {/* Column 1 - Products */}
           <div>
@@ -36,9 +36,9 @@ export function Footer({ logoUrl }: FooterProps = {}) {
           <div>
             <h4 className="font-bold text-white text-[15px] mb-6">About</h4>
             <ul className="space-y-3 text-[13px] text-gray-400">
-              <li><Link to="#" className="hover:text-white transition">About Us</Link></li>
-              <li><Link to="#" className="hover:text-white transition">Blog</Link></li>
-              <li><Link to="#" className="hover:text-white transition">Careers</Link></li>
+              <li><Link to="/about" className="hover:text-white transition">About Us</Link></li>
+              <li><a href="https://blog.globaldelight.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Blog</a></li>
+              <li><Link to="/careers" className="hover:text-white transition">Careers</Link></li>
               <li><Link to="#" className="hover:text-white transition">Media</Link></li>
               <li><Link to="#" className="hover:text-white transition">Become An Affiliate</Link></li>
             </ul>
@@ -56,17 +56,17 @@ export function Footer({ logoUrl }: FooterProps = {}) {
           </div>
 
           {/* Column 4 & 5 - Global Delight & Resources */}
-          <div className="md:col-span-2 flex flex-col sm:flex-row border-l-0 md:border-l border-gray-800 md:pl-8">
+          <div className="flex flex-col sm:flex-row border-l-0 md:border-l border-gray-800 md:pl-8 lg:pl-16">
             <div className="w-full sm:w-1/2 mb-8 sm:mb-0">
-              <div className="mb-4">
+              <div className="mb-4 -ml-2">
                 <img 
                   src={logoUrl || defaultLogo} 
                   alt="Global Delight Logo" 
-                  className="h-6 w-auto brightness-0 invert opacity-100"
+                  className="h-10 w-auto brightness-0 invert opacity-100"
                 />
               </div>
-              <p className="text-[12px] font-bold text-white mb-4">Delighting the world</p>
-              <button className="flex items-center justify-between w-32 border border-gray-600 rounded-md px-3 py-1.5 text-[13px] hover:bg-white/5 transition bg-transparent text-gray-300">
+              <p className="text-[13px] font-bold text-white mb-4">Delighting the world</p>
+              <button className="flex items-center justify-between w-32 border border-gray-600 rounded-lg px-4 py-2 text-[14px] hover:bg-white/5 transition bg-transparent text-gray-300">
                 <span>English</span>
                 <span className="text-[10px]">▼</span>
               </button>
@@ -75,7 +75,7 @@ export function Footer({ logoUrl }: FooterProps = {}) {
             <div className="w-full sm:w-1/2">
               <h4 className="font-bold text-white text-[15px] mb-6">Resources</h4>
               <ul className="space-y-3 text-[13px] text-gray-400">
-                <li><Link to="#" className="hover:text-white transition">FAQs</Link></li>
+                <li><Link to="/faq" className="hover:text-white transition">FAQs</Link></li>
                 <li><Link to="/contact" className="hover:text-white transition">Contact</Link></li>
                 <li><Link to="#" className="hover:text-white transition">What's New</Link></li>
               </ul>

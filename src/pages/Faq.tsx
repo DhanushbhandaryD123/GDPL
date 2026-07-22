@@ -109,15 +109,15 @@ export function Faq() {
 
                       {/* Dropdown Menu Overlay */}
                       <div className="absolute inset-0 mt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 bg-white/95 z-30 flex flex-col rounded-[24px] overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.1)]">
-                        <a href="/faq/boom3dmac" className="flex-1 flex items-center justify-center gap-4 hover:bg-gray-100/90 border-b border-gray-200 text-black transition-colors">
+                        <a href="https://www.globaldelight.com/faq/boom3dmac" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-4 hover:bg-gray-100/90 border-b border-gray-200 text-black transition-colors">
                           <svg viewBox="0 0 384 512" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
                           <span className="text-[22px] tracking-wide font-normal leading-none mt-1">Mac</span>
                         </a>
-                        <a href="/faq/boom3dmas" className="flex-1 flex items-center justify-center gap-4 hover:bg-gray-100/90 border-b border-gray-200 text-black transition-colors">
+                        <a href="https://www.globaldelight.com/faq/boom3dmas" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-4 hover:bg-gray-100/90 border-b border-gray-200 text-black transition-colors">
                           <svg viewBox="0 0 384 512" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
                           <span className="text-[22px] tracking-wide font-normal leading-none mt-1">Mas</span>
                         </a>
-                        <a href="/faq/boom3dwin" className="flex-1 flex items-center justify-center gap-4 hover:bg-gray-100/90 text-black transition-colors">
+                        <a href="https://www.globaldelight.com/faq/boom3dwin" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-4 hover:bg-gray-100/90 text-black transition-colors">
                           <svg viewBox="0 0 448 512" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M0 93.7l183.6-25.3v177.4H0V93.7zm0 324.6l183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"/></svg>
                           <span className="text-[22px] tracking-wide font-normal leading-none mt-1">Windows</span>
                         </a>
@@ -127,24 +127,24 @@ export function Faq() {
 
                   {/* Boom 2 */}
                   {showBoom2 && (
-                    <div className="bg-white rounded-[24px] p-6 lg:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col items-center text-center transition-all hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 relative overflow-hidden group">
+                    <a href="https://www.globaldelight.com/faq/boom2" target="_blank" rel="noopener noreferrer" className="bg-white rounded-[24px] p-6 lg:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col items-center text-center transition-all hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 relative overflow-hidden group block">
                       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-300 to-blue-500"></div>
                       <div className="h-20 mb-4 flex items-center justify-center">
                         <img src="/Faq/Boom2LogoFaq.png" alt="Boom 2" className="h-full object-contain" />
                       </div>
                       <p className="text-[13px] md:text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Powerful audio enhancer that delivers rich and balanced sound.</p>
-                    </div>
+                    </a>
                   )}
 
                   {/* Boom for iOS */}
                   {showBoomIOS && (
-                    <div className="bg-white rounded-[24px] p-6 lg:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col items-center text-center transition-all hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 relative overflow-hidden group">
+                    <a href="https://www.globaldelight.com/faq/boomios" target="_blank" rel="noopener noreferrer" className="bg-white rounded-[24px] p-6 lg:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col items-center text-center transition-all hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 relative overflow-hidden group block">
                       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-400 to-blue-500"></div>
                       <div className="h-20 mb-4 flex items-center justify-center">
                         <img src="/Faq/iBoom.png" alt="Boom for iOS" className="h-full object-contain" />
                       </div>
                       <p className="text-[13px] md:text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Experience Boom sound on your iPhone and iPad like never before.</p>
-                    </div>
+                    </a>
                   )}
 
                   {/* Audmike */}
@@ -159,7 +159,7 @@ export function Faq() {
 
                       {/* Dropdown Menu Overlay */}
                       <div className="absolute inset-0 mt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 bg-white/95 z-30 flex flex-col rounded-[24px] overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.1)]">
-                        <a href="/faq/audimixwin" className="flex-1 flex items-center justify-center gap-4 hover:bg-gray-100/90 text-black transition-colors">
+                        <a href="https://www.globaldelight.com/faq/audimixwin" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-4 hover:bg-gray-100/90 text-black transition-colors">
                           <svg viewBox="0 0 448 512" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M0 93.7l183.6-25.3v177.4H0V93.7zm0 324.6l183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"/></svg>
                           <span className="text-[22px] tracking-wide font-normal leading-none mt-1">Windows</span>
                         </a>
@@ -180,13 +180,13 @@ export function Faq() {
                 
                 <div className="flex justify-center mb-20 max-w-5xl mx-auto">
                   {/* Vizmato */}
-                  <div className="w-full max-w-[280px] bg-white rounded-[24px] p-6 lg:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col items-center text-center transition-all hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 relative overflow-hidden group">
+                  <a href="https://www.globaldelight.com/faq/vizmato" target="_blank" rel="noopener noreferrer" className="w-full max-w-[280px] bg-white rounded-[24px] p-6 lg:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col items-center text-center transition-all hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 relative overflow-hidden group block">
                     <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-400 to-red-600"></div>
                     <div className="h-20 mb-4 flex items-center justify-center">
                       <img src="/Faq/Vizmato.png" alt="Vizmato" className="h-full object-contain" />
                     </div>
                     <p className="text-[13px] md:text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Create stunning videos with powerful editing tools and effects in minutes.</p>
-                  </div>
+                  </a>
                 </div>
               </>
             )}
@@ -212,11 +212,11 @@ export function Faq() {
 
                       {/* Dropdown Menu Overlay */}
                       <div className="absolute inset-0 mt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 bg-white/95 z-30 flex flex-col rounded-[24px] overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.1)]">
-                        <a href="/faq/captomac" className="flex-1 flex items-center justify-center gap-3 hover:bg-gray-100/90 border-b border-gray-200 text-black transition-colors">
+                        <a href="https://www.globaldelight.com/faq/captomac" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-3 hover:bg-gray-100/90 border-b border-gray-200 text-black transition-colors">
                           <svg viewBox="0 0 384 512" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
                           <span className="text-[20px] tracking-wide font-normal leading-none mt-1">Mac</span>
                         </a>
-                        <a href="/faq/captowin" className="flex-1 flex items-center justify-center gap-3 hover:bg-gray-100/90 text-black transition-colors">
+                        <a href="https://www.globaldelight.com/faq/captowin" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-3 hover:bg-gray-100/90 text-black transition-colors">
                           <svg viewBox="0 0 448 512" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M0 93.7l183.6-25.3v177.4H0V93.7zm0 324.6l183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"/></svg>
                           <span className="text-[20px] tracking-wide font-normal leading-none mt-1">Windows</span>
                         </a>
@@ -226,13 +226,13 @@ export function Faq() {
 
                   {/* Audio Recorder */}
                   {showAudioRecorder && (
-                    <div className="w-full sm:w-[280px] bg-white rounded-[24px] p-6 lg:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col items-center text-center transition-all hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 relative overflow-hidden group">
+                    <a href="https://www.globaldelight.com/faq/audion" target="_blank" rel="noopener noreferrer" className="w-full sm:w-[280px] bg-white rounded-[24px] p-6 lg:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col items-center text-center transition-all hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 relative overflow-hidden group block">
                       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gray-700 to-black"></div>
                       <div className="h-20 mb-4 flex items-center justify-center">
                         <img src="/Faq/AudionFaqLogo.png" alt="Audio Recorder" className="h-full object-contain" />
                       </div>
                       <p className="text-[13px] md:text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Simple, reliable and high quality audio recording app.</p>
-                    </div>
+                    </a>
                   )}
                 </div>
               </>

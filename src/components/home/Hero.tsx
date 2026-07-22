@@ -61,7 +61,7 @@ export function Hero() {
           <div className="hidden lg:block lg:w-[55%] xl:w-[60%]"></div>
 
           {/* Right: Text Content Overlay */}
-          <AnimatePresence>
+          <AnimatePresence mode="wait">
             {heroImages[currentImageIndex] === '/hero/hero-banner.png' && (
               <motion.div 
                 key="hero-text"
@@ -83,6 +83,32 @@ export function Hero() {
                     Download from the Microsoft Store
                   </button>
                   <button className="bg-transparent border border-white/80 text-white font-semibold px-6 py-3 rounded text-sm hover:bg-white/10 transition shadow-lg w-full sm:w-auto whitespace-nowrap backdrop-blur-sm">
+                    Learn More
+                  </button>
+                </div>
+              </motion.div>
+            )}
+
+            {heroImages[currentImageIndex] === '/hero/hero-banner1.png' && (
+              <motion.div 
+                key="hero-text-1"
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 50 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="w-full lg:w-[45%] xl:w-[40%] flex flex-col items-center space-y-5 text-center z-10 lg:pl-8 py-12"
+              >
+                <img src="/button/Boom2-Logo.png" alt="Boom 2" className="w-48 md:w-56 object-contain drop-shadow-lg" />
+                
+                <h2 className="text-2xl md:text-[28px] font-bold tracking-tight leading-snug drop-shadow-md text-white max-w-[400px]">
+                  Sculpt your system audio for the best stereo sound experience.
+                </h2>
+                
+                <div className="flex flex-col items-center gap-4 pt-2">
+                  <a href="#" className="hover:scale-105 transition-transform block">
+                    <img src="/button/DownloadonMacAppStore.png" alt="Download on Mac App Store" className="h-10 md:h-12 object-contain drop-shadow-md" />
+                  </a>
+                  <button className="bg-[#00e5ff] text-black font-semibold px-8 py-2.5 rounded-full text-[15px] hover:bg-[#00ccdd] transition shadow-[0_0_20px_rgba(0,229,255,0.4)]">
                     Learn More
                   </button>
                 </div>
