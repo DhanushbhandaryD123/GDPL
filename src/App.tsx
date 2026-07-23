@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Toaster } from 'react-hot-toast';
+
+import { SplashScreen } from './components/layout/SplashScreen';
 
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
@@ -111,8 +114,11 @@ import { Careers } from './pages/Careers';
 import { ScrollToTop } from './components/layout/ScrollToTop';
 
 function App() {
+  const [isAppReady, setIsAppReady] = useState(false);
+
   return (
     <>
+      {!isAppReady && <SplashScreen onComplete={() => setIsAppReady(true)} />}
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />

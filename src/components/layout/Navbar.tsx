@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ShoppingCart, Smile, Search } from 'lucide-react';
+import { ShoppingCart, Smile, Search, Menu, X, ChevronDown } from 'lucide-react';
 
 interface NavbarProps {
   logoUrl?: string;
@@ -20,6 +20,9 @@ export function Navbar({ logoUrl }: NavbarProps) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const searchRef = useRef<HTMLDivElement>(null);
+  
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileProductsOpen, setIsMobileProductsOpen] = useState(false);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -204,7 +207,91 @@ export function Navbar({ logoUrl }: NavbarProps) {
             )}
           </div>
         </div>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden flex items-center">
+          <button 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="text-gray-700 hover:text-gray-900 transition-colors"
+          >
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Menu Dropdown */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-xl border-t border-gray-100 max-h-[calc(100vh-80px)] overflow-y-auto">
+          <div className="flex flex-col py-4 px-6 gap-4">
+            
+            {/* Products Accordion */}
+            <div>
+              <button 
+                onClick={() => setIsMobileProductsOpen(!isMobileProductsOpen)}
+                className="flex items-center justify-between w-full text-left text-lg font-bold text-gray-800 py-2 border-b border-gray-100"
+              >
+                Products
+                <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${isMobileProductsOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              {isMobileProductsOpen && (
+                <div className="flex flex-col gap-3 py-3 pl-4">
+                  <Link to="#" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-600 font-medium">Mac App</Link>
+                  <Link to="#" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-600 font-medium">Windows App</Link>
+                  <Link to="#" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-600 font-medium">iOS App</Link>
+                  <Link to="#" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-600 font-medium">Android App</Link>
+                </div>
+              )}
+            </div>
+
+            {/* Store Link */}
+            <a 
+              href="https://www.globaldelight.com/store/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="flex items-center gap-2 text-lg font-bold text-gray-800 py-2 border-b border-gray-100"
+            >
+              <ShoppingCart className="w-5 h-5" />
+              Store
+              <div className="relative flex items-center justify-center w-5 h-5 ml-1">
+                 <svg viewBox="0 0 24 24" className="w-full h-full text-[#00A3FF] fill-current">
+                   <path d="M12 2l2.4 3.6 4.3-1.1 1.1 4.3 3.6 2.4-2.4 3.6 1.1 4.3-4.3 1.1-1.1 4.3-3.6-2.4-3.6 2.4-1.1-4.3-4.3-1.1 1.1-4.3-2.4-3.6 3.6-2.4-1.1-4.3 4.3-1.1 2.4-3.6z" />
+                 </svg>
+                 <Smile className="w-3 h-3 text-white absolute" strokeWidth={3} />
+              </div>
+            </a>
+
+            {/* Other Links */}
+            <div className="flex flex-col gap-4 py-2">
+              {rightLinks.map((link) => (
+                link.href.startsWith('http') ? (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-lg font-bold text-gray-800"
+                  >
+                    {link.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-lg font-bold text-gray-800"
+                  >
+                    {link.name}
+                  </Link>
+                )
+              ))}
+            </div>
+
+          </div>
+        </div>
+      )}
     </nav>
   );
 }

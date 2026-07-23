@@ -13,8 +13,8 @@ import {
   MapPin,
   Briefcase,
   ChevronDown,
-  ChevronRight,
-  Send
+  Send,
+  Plus
 } from 'lucide-react';
 
 import { Navbar } from '../components/layout/Navbar';
@@ -24,31 +24,31 @@ const perks = [
   {
     icon: Rocket,
     title: 'Grow Your Career',
-    description: 'Continuous learning & growth',
+    description: 'Continuous learning & development',
     color: 'text-purple-600',
     bgColor: 'bg-purple-100',
   },
   {
     icon: Heart,
     title: 'Inclusive Culture',
-    description: 'Diverse, supportive & open',
+    description: 'Diverse, supportive & respectful team',
     color: 'text-red-500',
     bgColor: 'bg-red-100',
   },
   {
     icon: Star,
     title: 'Make an Impact',
-    description: 'Work that matters',
+    description: 'Work that creates real change',
     color: 'text-orange-500',
     bgColor: 'bg-orange-100',
   },
   {
     icon: Gift,
     title: 'Awesome Benefits',
-    description: 'Health, flexibility & more',
-    color: 'text-green-600',
+    description: 'Health, flexibility & more for your well-being',
+    color: 'text-green-500',
     bgColor: 'bg-green-100',
-  }
+  },
 ];
 
 const jobs = [
@@ -247,115 +247,82 @@ export function Careers() {
       
       <Navbar />
       
-      <main>
-        {/* Hero Section */}
-        <section className="relative w-full overflow-hidden bg-gradient-to-br from-[#f8fbff] to-[#f0ebff] pt-24 pb-20 md:pt-32 md:pb-28 border-b border-gray-100">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center relative z-10">
+      <main className="bg-[#fbfcff]">
+        {/* Full-width Hero Banner */}
+        <section className="relative w-full pt-16 pb-16 md:pt-28 md:pb-24">
+          <div className="max-w-[1200px] mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between relative z-10 gap-8 md:gap-4">
+            
             {/* Left Content */}
-            <div className="w-full md:w-1/2 mb-12 md:mb-0">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <div className="text-sm font-bold text-indigo-500 tracking-wider uppercase mb-4">
-                  Careers
-                </div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.1] mb-6">
-                  Let's Build Something <br className="hidden md:block" />
-                  Amazing <span className="text-indigo-500">Together</span>
-                </h1>
-                
-                {/* Decorative underline */}
-                <div className="flex items-center gap-2 mb-6">
-                  <div className="h-1 w-12 bg-indigo-500 rounded-full"></div>
-                  <div className="h-1 w-2 bg-indigo-500 rounded-full"></div>
-                </div>
+            <div className="w-full md:w-[50%] z-10 text-left">
+              <h1 className="text-[36px] md:text-5xl lg:text-[64px] font-extrabold text-[#1a202c] leading-[1.15] mb-4 md:mb-6 tracking-tight">
+                Where Talent <br />
+                Meets <span className="text-[#667eea]">Opportunity</span>
+              </h1>
+              
+              <p className="text-[14px] md:text-[16px] text-gray-500 max-w-xs md:max-w-sm leading-relaxed font-medium mb-8">
+                Join a team that inspires, innovates, and creates impact every day.
+              </p>
 
-                <p className="text-lg text-gray-600 mb-8 max-w-lg">
-                  We're always looking for talented, passionate and curious people to join our team.
-                </p>
-                <button className="bg-indigo-500 hover:bg-indigo-600 text-white font-medium px-8 py-3.5 rounded-lg flex items-center gap-2 transition-colors shadow-lg shadow-indigo-500/30">
-                  <Send className="w-5 h-5 -rotate-45" />
-                  Explore Opportunities
-                </button>
-              </motion.div>
+              <button className="bg-[#5a67d8] hover:bg-[#4c51bf] text-white font-medium px-6 py-3 rounded-lg flex items-center gap-2 transition-colors shadow-lg shadow-indigo-500/25 text-[12px] md:text-sm">
+                Explore Openings
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </button>
             </div>
 
-            {/* Right Content / Illustration Area */}
-            <div className="w-full md:w-1/2 relative flex justify-center">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.7, delay: 0.2 }}
-                className="relative w-full max-w-lg aspect-square bg-gradient-to-tr from-indigo-100/50 to-purple-50/50 rounded-full flex items-center justify-center"
-              >
-                {/* We'll use a placeholder structure for the chair/plant illustration since we don't have the exact image */}
-                <div className="absolute right-4 bottom-12 w-64 h-64 bg-white rounded-3xl shadow-xl border border-gray-100 flex items-center justify-center flex-col p-6 z-10">
-                  <div className="w-full h-full bg-gray-50 rounded-2xl border-2 border-dashed border-gray-200 flex items-center justify-center text-gray-400 text-sm text-center p-4">
-                    <span>(Illustration Placeholder) <br/> Chair & Plant image goes here</span>
-                  </div>
-                </div>
-                
-                {/* Floating Badge */}
-                <div className="absolute left-0 top-1/3 bg-white px-5 py-3 rounded-xl shadow-lg border border-gray-50 flex items-center gap-3 animate-[bounce_4s_infinite] z-20">
-                  <div className="bg-indigo-100 p-2 rounded-lg">
-                    <Heart className="w-5 h-5 text-indigo-600" />
-                  </div>
-                  <div>
-                    <div className="text-xs font-semibold text-gray-900">Great Place</div>
-                    <div className="text-[10px] text-gray-500">to Work</div>
-                  </div>
-                </div>
-              </motion.div>
+            {/* Right Content / Image */}
+            <div className="w-full md:w-[50%] relative flex justify-center md:justify-end mt-4 md:mt-0">
+              <img 
+                src="/hero/career_banner.png" 
+                alt="Where Talent Meets Opportunity" 
+                className="w-full max-w-[500px] h-auto object-contain"
+              />
             </div>
           </div>
         </section>
 
         {/* Perks Section */}
-        <section className="py-12 border-b border-gray-100 bg-white">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-12">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 divide-y sm:divide-y-0 sm:divide-x divide-gray-100">
-              {perks.map((perk, idx) => (
-                <div key={idx} className="flex items-center gap-4 pt-6 sm:pt-0 sm:px-6 first:px-0">
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center shrink-0 ${perk.bgColor} ${perk.color}`}>
-                    <perk.icon className="w-6 h-6" />
+        <section className="py-6 md:py-12">
+          <div className="max-w-[1100px] mx-auto px-4 md:px-12">
+            <div className="border border-gray-100 rounded-2xl shadow-[0_4px_30px_-5px_rgba(0,0,0,0.05)] p-6 md:p-10 bg-white">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 divide-none md:divide-x divide-gray-100">
+                {perks.map((perk, idx) => (
+                  <div key={idx} className="flex flex-col items-center text-center md:px-6 first:px-0 last:pr-0">
+                    <div className={`w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center mb-4 md:mb-5 ${perk.bgColor} ${perk.color} bg-opacity-30`}>
+                      <perk.icon className="w-5 h-5 md:w-6 md:h-6" />
+                    </div>
+                    <h3 className="font-bold text-gray-900 text-[13px] md:text-[15px] mb-2">{perk.title}</h3>
+                    <p className="text-[11px] md:text-[13px] text-gray-500 leading-relaxed max-w-[200px]">{perk.description}</p>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 text-[15px]">{perk.title}</h3>
-                    <p className="text-xs text-gray-500 mt-0.5">{perk.description}</p>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
         {/* Current Openings Section */}
-        <section className="py-20 bg-[#fafcff]">
-          <div className="max-w-[1000px] mx-auto px-6 md:px-12">
+        <section className="py-10 md:py-16">
+          <div className="max-w-[1100px] mx-auto px-4 md:px-12">
             
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-12 gap-4">
               <div>
-                <div className="flex items-center gap-4 mb-2">
-                  <div className="h-[2px] w-8 bg-indigo-500"></div>
-                  <span className="text-xs font-bold text-indigo-500 uppercase tracking-wider">Open Positions</span>
+                <div className="text-[10px] md:text-xs font-bold text-[#667eea] uppercase tracking-wider mb-2 md:mb-3">
+                  OPEN POSITIONS
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900">Current Openings</h2>
+                <h2 className="text-2xl md:text-[32px] font-extrabold text-gray-900">Current Openings</h2>
               </div>
               
-              <div className="relative">
-                <button className="flex items-center justify-between gap-3 w-48 px-4 py-2.5 bg-white border border-gray-200 rounded-lg text-sm text-gray-700 shadow-sm hover:border-gray-300 transition-colors">
+              <div className="relative w-full md:w-auto">
+                <button className="flex items-center justify-between gap-4 w-full md:w-56 px-4 py-2.5 bg-white border border-gray-200 rounded-lg text-[13px] md:text-sm text-gray-700 shadow-sm hover:border-gray-300 transition-colors">
                   <div className="flex items-center gap-2">
                     <MapPin className="w-4 h-4 text-gray-400" />
-                    <span>All Locations</span>
+                    <span className="font-medium">All Locations</span>
                   </div>
                   <ChevronDown className="w-4 h-4 text-gray-400" />
                 </button>
               </div>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-4 md:space-y-5">
               {jobs.map((job) => {
                 const isExpanded = expandedJobId === job.id;
                 
@@ -366,22 +333,22 @@ export function Careers() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4 }}
-                    className={`bg-white border rounded-xl overflow-hidden transition-all group ${
-                      isExpanded ? 'border-indigo-300 shadow-md' : 'border-gray-200 hover:shadow-md hover:border-indigo-100'
+                    className={`bg-white border rounded-2xl overflow-hidden transition-all group ${
+                      isExpanded ? 'border-indigo-300 shadow-md' : 'border-gray-100 shadow-[0_2px_15px_-5px_rgba(0,0,0,0.03)] hover:shadow-md hover:border-indigo-100'
                     }`}
                   >
                     {/* Header Row */}
                     <div 
-                      className="p-5 md:p-6 flex flex-col md:flex-row md:items-center justify-between gap-6 cursor-pointer"
+                      className="p-5 md:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6 cursor-pointer"
                       onClick={() => setExpandedJobId(isExpanded ? null : job.id)}
                     >
-                      <div className="flex items-center gap-5">
-                        <div className={`w-14 h-14 rounded-xl flex items-center justify-center shrink-0 ${job.iconBg} ${job.iconColor}`}>
-                          <job.icon className="w-6 h-6" />
+                      <div className="flex items-start md:items-center gap-4 md:gap-6">
+                        <div className={`w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl flex items-center justify-center shrink-0 ${job.iconBg} ${job.iconColor} bg-opacity-30`}>
+                          <job.icon className="w-5 h-5 md:w-7 md:h-7" />
                         </div>
                         <div>
-                          <h3 className="text-lg font-bold text-gray-900 group-hover:text-indigo-600 transition-colors mb-2">{job.title}</h3>
-                          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-gray-500">
+                          <h3 className="text-sm md:text-lg font-bold text-gray-900 group-hover:text-indigo-600 transition-colors mb-2">{job.title}</h3>
+                          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] md:text-[13px] text-gray-500 font-medium">
                             <div className="flex items-center gap-1.5">
                               <MapPin className="w-3.5 h-3.5" />
                               <span>{job.location}</span>
@@ -392,16 +359,16 @@ export function Careers() {
                               <span>{job.type}</span>
                             </div>
                             <div className="w-1 h-1 rounded-full bg-gray-300 hidden sm:block"></div>
-                            <div className="bg-indigo-50 text-indigo-600 px-2.5 py-1 rounded-md font-medium">
+                            <div className={`${job.iconBg} ${job.iconColor} bg-opacity-30 px-2 md:px-3 py-0.5 md:py-1 rounded-md`}>
                               Experience: {job.experience}
                             </div>
                           </div>
                         </div>
                       </div>
 
-                      <button className="w-full md:w-auto flex items-center justify-center md:justify-between gap-2 px-6 py-2.5 bg-white border border-gray-200 text-indigo-600 font-medium rounded-lg hover:border-indigo-600 hover:bg-indigo-50 transition-colors text-sm">
+                      <button className="w-full md:w-auto flex items-center justify-center md:justify-between gap-2 px-6 py-2.5 bg-white border border-[#e2e8f0] text-[#5a67d8] font-semibold rounded-lg hover:border-[#cbd5e1] hover:bg-indigo-50 transition-colors text-[12px] md:text-[13px]">
                         {isExpanded ? 'Hide Details' : 'View Details'}
-                        <ChevronRight className={`w-4 h-4 transition-transform duration-300 ${isExpanded ? 'rotate-90' : ''}`} />
+                        <Plus className={`w-3.5 h-3.5 md:w-4 md:h-4 transition-transform duration-300 ${isExpanded ? 'rotate-45' : ''}`} />
                       </button>
                     </div>
 
@@ -415,21 +382,21 @@ export function Careers() {
                           transition={{ duration: 0.3 }}
                           className="overflow-hidden"
                         >
-                          <div className="px-6 pb-8 pt-2 border-t border-gray-100">
+                          <div className="px-5 md:px-6 pb-6 md:pb-8 pt-2 border-t border-gray-100 mt-2">
                             {job.description && (
-                              <p className="text-gray-600 text-[15px] mb-6 leading-relaxed">
+                              <p className="text-gray-600 text-[12px] md:text-[15px] mb-4 md:mb-6 leading-relaxed">
                                 {job.description}
                               </p>
                             )}
 
-                            <div className="space-y-8">
+                            <div className="space-y-6 md:space-y-8">
                               {job.sections.map((section, idx) => (
                                 <div key={idx}>
-                                  <h4 className="text-base font-bold text-gray-900 mb-4">{section.title}</h4>
-                                  <ul className="space-y-2.5">
+                                  <h4 className="text-[13px] md:text-base font-bold text-gray-900 mb-2 md:mb-4">{section.title}</h4>
+                                  <ul className="space-y-2 md:space-y-2.5">
                                     {section.items.map((item, i) => (
-                                      <li key={i} className="flex items-start gap-3 text-[14px] text-gray-600">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 shrink-0 mt-2"></div>
+                                      <li key={i} className="flex items-start gap-2 md:gap-3 text-[11px] md:text-[14px] text-gray-600">
+                                        <div className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-[#667eea] shrink-0 mt-1.5 md:mt-2"></div>
                                         <span className="leading-relaxed">{item}</span>
                                       </li>
                                     ))}
@@ -438,9 +405,9 @@ export function Careers() {
                               ))}
                             </div>
 
-                            <div className="mt-10 pt-6 border-t border-gray-100">
-                              <a href="mailto:jobs@globaldelight.com" className="inline-flex items-center gap-2 px-8 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors shadow-md shadow-indigo-500/20">
-                                Apply Now <Send className="w-4 h-4 ml-1 -rotate-45" />
+                            <div className="mt-6 md:mt-10 pt-4 md:pt-6 border-t border-gray-100">
+                              <a href="mailto:jobs@globaldelight.com" className="inline-flex w-full md:w-auto justify-center items-center gap-2 px-8 py-3 bg-[#5a67d8] text-white font-medium rounded-lg hover:bg-[#4c51bf] transition-colors shadow-md shadow-indigo-500/20 text-[13px] md:text-sm">
+                                Apply Now <Send className="w-3 h-3 md:w-4 md:h-4 ml-1 -rotate-45" />
                               </a>
                             </div>
                           </div>
