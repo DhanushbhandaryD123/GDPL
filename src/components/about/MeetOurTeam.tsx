@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { Linkedin, Twitter, ArrowRight, Users } from 'lucide-react';
+import { ArrowRight, Users } from 'lucide-react';
 
 const leaders = [
   {
@@ -30,10 +30,10 @@ const leaders = [
 ];
 
 const teamMembers = [
-  { name: 'Bifin Manohara', role: 'Systems Engineer', image: '/team/bifin.png' },
-  { name: 'Deepa Pai', role: 'Principal Architect', image: '/team/deepa.png' },
-  { name: 'Kishan V Murthi', role: 'Junior Executive -\nAdministration', image: '/team/kishan.png' },
-  { name: 'Madhusudan N V', role: 'UI Designer', image: '/team/madhusudan.png' },
+  { name: 'Bifin Manohara', role: 'Systems Engineer', image: '/team/Bifin_Manohara.png', quote: 'Growing future\nleaders' },
+  { name: 'Deepa Pai', role: 'Principal Architect', image: '/team/deepa.png', quote: 'Reigniting\nthe passion' },
+  { name: 'Kishan V Murthi', role: 'Junior Executive -\nAdministration', image: '/team/kishan.png', quote: 'Improving\nthe culture' },
+  { name: 'Madhusudan N V', role: 'UI Designer', image: '/team/madhusudan.png', quote: 'Bridging the divide' },
   { name: 'Pradeep R', role: 'Senior Test Lead', image: '/team/pradeep_r.png' },
   { name: 'Prathap Poojary', role: 'Web Developer', image: '/team/prathap.png' },
 ];
@@ -61,7 +61,7 @@ export function MeetOurTeam() {
         </motion.div>
 
         {/* Leaders Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full mb-16">
           {leaders.map((leader, idx) => (
             <motion.div
               key={idx}
@@ -90,8 +90,8 @@ export function MeetOurTeam() {
           ))}
         </div>
 
-        {/* Team Members Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-4 w-full mb-12">
+        {/* Team Members Grid (New Style) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12 w-full mb-12">
           {teamMembers.map((member, idx) => (
             <motion.div
               key={idx}
@@ -99,20 +99,37 @@ export function MeetOurTeam() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 + (idx * 0.05) }}
-              className="bg-white rounded-2xl p-6 flex flex-col items-center text-center shadow-[0_0_15px_rgba(0,0,0,0.15)] hover:shadow-[0_0_25px_rgba(0,0,0,0.2)] border border-gray-200 transition-all duration-300"
+              className="flex flex-col items-center text-center group cursor-pointer"
             >
-              <div className="w-20 h-20 rounded-full overflow-hidden mb-4 bg-gray-100 flex items-center justify-center">
-                <img 
-                  src={member.image} 
-                  alt={member.name} 
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=f3f4f6&color=9ca3af&size=128`;
-                  }}
-                />
+              <div className="w-full relative h-[320px] mb-5 transition-transform duration-300 group-hover:-translate-y-2">
+                
+                {/* The speech bubble tail for the card itself */}
+                <div className="absolute -bottom-2 left-[20%] w-8 h-8 bg-[#0a122c] transform rotate-45 rounded-sm z-0"></div>
+
+                {/* Card Inner Container */}
+                <div className="absolute inset-0 rounded-[32px] bg-[#0a122c] overflow-hidden z-10 shadow-lg border border-blue-900/30">
+                  
+                  <img 
+                    src={member.image} 
+                    alt={member.name} 
+                    className="absolute bottom-0 left-1/2 -translate-x-1/2 h-full w-[115%] object-contain object-bottom grayscale group-hover:grayscale-0 transition-all duration-500 z-10"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=0a122c&color=ffffff&size=256`;
+                    }}
+                  />
+
+                  {member.quote && (
+                    <div className="absolute top-[40%] left-[-5px] z-20 bg-white/10 backdrop-blur-md border border-white/20 text-white text-[13px] font-medium py-2 px-4 rounded-xl shadow-lg transform -rotate-6 transition-all duration-300 group-hover:rotate-0 group-hover:scale-105 whitespace-pre-line text-left leading-tight">
+                      {member.quote}
+                      {/* Small tail on the right side of the floating bubble pointing to the person */}
+                      <div className="absolute top-1/2 -right-1.5 -translate-y-1/2 w-3 h-3 bg-white/10 backdrop-blur-md border-t border-r border-white/20 transform rotate-45"></div>
+                    </div>
+                  )}
+                </div>
               </div>
-              <h4 className="text-[15px] font-bold text-gray-900 mb-1 leading-tight">{member.name}</h4>
-              <p className="text-blue-500 text-[13px] leading-tight whitespace-pre-line">{member.role}</p>
+              
+              <h4 className="text-[17px] font-bold text-gray-900 mb-1 leading-tight transition-colors group-hover:text-blue-600">{member.name}</h4>
+              <p className="text-blue-500 text-[14px] leading-tight whitespace-pre-line">{member.role}</p>
             </motion.div>
           ))}
           
@@ -122,13 +139,13 @@ export function MeetOurTeam() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 + (teamMembers.length * 0.05) }}
-            className="bg-white rounded-2xl p-6 flex flex-col items-center text-center shadow-[0_0_15px_rgba(0,0,0,0.15)] hover:shadow-[0_0_25px_rgba(0,0,0,0.2)] border border-gray-200 transition-all duration-300 justify-center"
+            className="flex flex-col items-center justify-center text-center group cursor-pointer h-[320px] rounded-[32px] bg-white border-2 border-dashed border-gray-200 hover:border-blue-500 hover:bg-blue-50 transition-all duration-300"
           >
-            <div className="w-20 h-20 rounded-full mb-4 bg-blue-50 flex items-center justify-center text-blue-500">
+            <div className="w-16 h-16 rounded-full mb-4 bg-blue-100 flex items-center justify-center text-blue-500 group-hover:scale-110 transition-transform duration-300">
               <Users className="w-8 h-8" />
             </div>
-            <h4 className="text-[15px] font-bold text-gray-900 mb-2 leading-tight">This could be you!</h4>
-            <Link to="/careers" className="text-blue-500 text-[13px] font-medium flex items-center gap-1 hover:text-blue-600 transition-colors">
+            <h4 className="text-[17px] font-bold text-gray-900 mb-2 leading-tight">This could be you!</h4>
+            <Link to="/careers" className="text-blue-500 text-[14px] font-medium flex items-center gap-1 hover:text-blue-700 transition-colors">
               Send us your resume <ArrowRight className="w-3 h-3" />
             </Link>
           </motion.div>

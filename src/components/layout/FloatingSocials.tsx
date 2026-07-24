@@ -20,7 +20,7 @@ export function FloatingSocials() {
 
   return (
     <div 
-      className={`fixed left-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-3 py-3 px-1.5 bg-gradient-to-b from-[#4285F4] to-[#34A853] rounded-r-xl shadow-lg transition-all duration-500 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0 pointer-events-none'}`} 
+      className={`hidden md:flex fixed left-0 top-1/2 -translate-y-1/2 z-50 flex-col gap-3 py-3 px-1.5 bg-gradient-to-b from-[#4285F4] to-[#34A853] rounded-r-xl shadow-lg transition-all duration-500 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0 pointer-events-none'}`} 
       style={{ background: 'linear-gradient(180deg, #3b82f6 0%, #38bdf8 100%)' }}
     >
       <a href="#" className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/40 transition">

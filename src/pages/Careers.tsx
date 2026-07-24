@@ -262,11 +262,7 @@ export function Careers() {
               <p className="text-[14px] md:text-[16px] text-gray-500 max-w-xs md:max-w-sm leading-relaxed font-medium mb-8">
                 Join a team that inspires, innovates, and creates impact every day.
               </p>
-
-              <button className="bg-[#5a67d8] hover:bg-[#4c51bf] text-white font-medium px-6 py-3 rounded-lg flex items-center gap-2 transition-colors shadow-lg shadow-indigo-500/25 text-[12px] md:text-sm">
-                Explore Openings
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-              </button>
+    
             </div>
 
             {/* Right Content / Image */}
