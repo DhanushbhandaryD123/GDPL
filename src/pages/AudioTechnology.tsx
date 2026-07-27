@@ -122,7 +122,7 @@ export function AudioTechnology() {
       
       <main>
         {/* Audio Technology Hero Banner */}
-        <section className="relative w-full overflow-hidden bg-black font-sans h-[65vh] min-h-[850px] md:min-h-[550px] -mt-[79px] pt-[9px]">
+        <section className="relative w-full overflow-hidden bg-black font-sans h-[250px] md:h-[350px] lg:h-[500px]">
           <div className="absolute inset-0 z-0">
             <img 
               src="/business/AT/Audio-Hbanner.png" 
@@ -137,10 +137,10 @@ export function AudioTechnology() {
             {/* Text Container */}
             <div className="w-full max-w-2xl flex flex-col items-start text-white">
               <div className="flex flex-col items-start">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal leading-[1.2] mb-4 text-white drop-shadow-sm">
+                <h1 className="text-2xl md:text-4xl lg:text-5xl font-normal leading-[1.2] mb-2 md:mb-4 text-white drop-shadow-sm">
                   Advanced Audio Technology
                 </h1>
-                <p className="text-xl md:text-2xl text-gray-200 mb-6 max-w-lg leading-relaxed drop-shadow-sm">
+                <p className="text-sm md:text-xl lg:text-2xl text-gray-200 max-w-lg leading-relaxed drop-shadow-sm">
                   3D Virtual Surround and System-Wide Volume Boosting Sound Solutions
                 </p>
               </div>

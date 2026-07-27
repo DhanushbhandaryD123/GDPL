@@ -80,16 +80,16 @@ export function VideoTechnology() {
               </div>
 
               {/* Content Area (Description + Image) */}
-              <div className="w-full max-w-5xl flex flex-col md:flex-row items-start justify-center gap-8 md:gap-10 mt-6 md:mt-8">
+              <div className="w-full max-w-5xl flex flex-col items-center justify-center gap-0 mt-4">
                 {/* Description text */}
-                <div className="w-full md:w-1/2 flex flex-col items-center md:items-start justify-start">
-                  <p className="text-[#546e7a] text-base md:text-lg leading-relaxed font-medium animate-fadeIn text-center md:text-left whitespace-pre-line">
+                <div className="w-full max-w-3xl flex flex-col items-center text-center justify-start z-20">
+                  <p className="text-[#546e7a] text-base md:text-lg leading-relaxed font-medium animate-fadeIn text-center whitespace-pre-line">
                     {tabsData[activeTab].description}
                   </p>
                 </div>
 
                 {/* Right Image */}
-                <div className="w-full md:w-1/2 flex justify-center md:justify-center items-start">
+                <div className="w-full max-w-3xl flex justify-center items-center relative z-10 -mt-6 md:-mt-12">
                   <img
                     src={tabsData[activeTab].image}
                     alt={tabsData[activeTab].title}
