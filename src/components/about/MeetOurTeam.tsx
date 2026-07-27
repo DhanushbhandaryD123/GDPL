@@ -1,6 +1,8 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Users } from 'lucide-react';
+import useEmblaCarousel from 'embla-carousel-react';
+import { useState, useCallback, useEffect } from 'react';
 
 const leaders = [
   {
@@ -36,9 +38,28 @@ const teamMembers = [
   { name: 'Madhusudan N V', role: 'UI Designer', image: '/team/madhusudan.png', quote: 'Bridging the divide' },
   { name: 'Pradeep R', role: 'Senior Test Lead', image: '/team/pradeep_r.png' },
   { name: 'Prathap Poojary', role: 'Web Developer', image: '/team/prathap.png' },
+  { name: 'Prashantha Ballal', role: 'Accounts Executive', image: '/team/prashantha.png' },
+  { name: 'Shikshan Chandrashekar', role: 'Software Engineer', image: '/team/shikshan.png' },
+  { name: 'Vipin Kumar Mishra', role: 'Marketing Manager', image: '/team/vipin.png' },
+  { name: 'Vignesh Shenoy', role: 'Senior Accounts Executive', image: '/team/vignesh.png' },
 ];
 
 export function MeetOurTeam() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'center', containScroll: false });
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on('select', onSelect);
+    emblaApi.on('reInit', onSelect);
+  }, [emblaApi, onSelect]);
+
   return (
     <section className="w-full bg-[#f8fafc] py-20 px-6 lg:px-12" style={{ fontFamily: "'SF UI Text', 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" }}>
       <div className="max-w-7xl mx-auto flex flex-col items-center">
@@ -90,65 +111,72 @@ export function MeetOurTeam() {
           ))}
         </div>
 
-        {/* Team Members Grid (New Style) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12 w-full mb-12">
-          {teamMembers.map((member, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 + (idx * 0.05) }}
-              className="flex flex-col items-center text-center group cursor-pointer"
-            >
-              <div className="w-full relative h-[320px] mb-5 transition-transform duration-300 group-hover:-translate-y-2">
-                
-                {/* The speech bubble tail for the card itself */}
-                <div className="absolute -bottom-2 left-[20%] w-8 h-8 bg-[#0a122c] transform rotate-45 rounded-sm z-0"></div>
+        {/* Team Members Carousel */}
+        <div className="w-full max-w-full overflow-hidden mb-16 -mx-6 lg:-mx-12 px-6 lg:px-12" ref={emblaRef}>
+          <div className="flex -ml-4 touch-pan-y items-center">
+            {teamMembers.map((member, idx) => {
+              const isActive = idx === selectedIndex;
+              return (
+                <div 
+                  key={idx} 
+                  className="flex-[0_0_75%] sm:flex-[0_0_40%] md:flex-[0_0_35%] lg:flex-[0_0_22%] min-w-0 pl-4 relative"
+                  onClick={() => emblaApi?.scrollTo(idx)}
+                >
+                  <div className={`w-full relative h-[380px] md:h-[480px] rounded-[24px] overflow-hidden cursor-pointer transition-all duration-700 ease-out shadow-lg ${isActive ? 'opacity-100 scale-100 grayscale-0' : 'opacity-40 scale-[0.92] grayscale hover:opacity-70'}`}>
+                    
+                    {/* Background image */}
+                    <img 
+                      src={member.image} 
+                      alt={member.name} 
+                      className={`absolute inset-0 w-full h-full transition-transform duration-700 ease-out object-cover object-top ${isActive ? 'scale-100' : 'scale-105'}`}
+                      style={{ backgroundColor: '#0a122c' }}
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=0a122c&color=ffffff&size=256`;
+                      }}
+                    />
 
-                {/* Card Inner Container */}
-                <div className="absolute inset-0 rounded-[32px] bg-[#0a122c] overflow-hidden z-10 shadow-lg border border-blue-900/30">
-                  
-                  <img 
-                    src={member.image} 
-                    alt={member.name} 
-                    className="absolute bottom-0 left-1/2 -translate-x-1/2 h-full w-[115%] object-contain object-bottom grayscale group-hover:grayscale-0 transition-all duration-500 z-10"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=0a122c&color=ffffff&size=256`;
-                    }}
-                  />
+                    {/* Gradient Overlay for text readability */}
+                    <div 
+                      className="absolute inset-0 bg-gradient-to-t from-[#0a122c]/90 via-[#0a122c]/30 to-transparent transition-opacity duration-700" 
+                      style={{ opacity: isActive ? 1 : 0 }} 
+                    />
 
-                  {member.quote && (
-                    <div className="absolute top-[40%] left-[-5px] z-20 bg-white/10 backdrop-blur-md border border-white/20 text-white text-[13px] font-medium py-2 px-4 rounded-xl shadow-lg transform -rotate-6 transition-all duration-300 group-hover:rotate-0 group-hover:scale-105 whitespace-pre-line text-left leading-tight">
-                      {member.quote}
-                      {/* Small tail on the right side of the floating bubble pointing to the person */}
-                      <div className="absolute top-1/2 -right-1.5 -translate-y-1/2 w-3 h-3 bg-white/10 backdrop-blur-md border-t border-r border-white/20 transform rotate-45"></div>
+                    {/* Content */}
+                    <div className={`absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end text-left transition-all duration-700 ease-out transform ${isActive ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0 pointer-events-none'}`}>
+                      <h4 className="text-[11px] md:text-xs font-bold tracking-[0.2em] text-white/80 uppercase mb-2">
+                        {member.name}
+                      </h4>
+                      {member.quote ? (
+                        <p className="text-white text-xl md:text-2xl font-bold leading-tight">
+                          "{member.quote.replace('\n', ' ')}"
+                        </p>
+                      ) : (
+                        <p className="text-white text-base md:text-lg font-medium leading-tight">
+                          {member.role}
+                        </p>
+                      )}
                     </div>
-                  )}
+                  </div>
                 </div>
+              );
+            })}
+            
+            {/* Join Us Card in Carousel */}
+            <div 
+              className="flex-[0_0_75%] sm:flex-[0_0_40%] md:flex-[0_0_35%] lg:flex-[0_0_22%] min-w-0 pl-4 relative"
+              onClick={() => emblaApi?.scrollTo(teamMembers.length)}
+            >
+              <div className={`w-full flex flex-col items-center justify-center text-center cursor-pointer h-[380px] md:h-[480px] rounded-[24px] bg-white border-2 border-dashed border-gray-300 transition-all duration-700 ease-out shadow-sm ${teamMembers.length === selectedIndex ? 'opacity-100 scale-100 border-blue-500 bg-blue-50/50' : 'opacity-40 scale-[0.92] hover:opacity-70'}`}>
+                <div className="w-16 h-16 rounded-full mb-4 bg-blue-100 flex items-center justify-center text-blue-500">
+                  <Users className="w-8 h-8" />
+                </div>
+                <h4 className="text-xl font-bold text-gray-900 mb-2 leading-tight">This could be you!</h4>
+                <Link to="/careers" className="text-blue-500 text-sm font-medium flex items-center gap-1 hover:text-blue-700 transition-colors">
+                  Join us <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
-              
-              <h4 className="text-[17px] font-bold text-gray-900 mb-1 leading-tight transition-colors group-hover:text-blue-600">{member.name}</h4>
-              <p className="text-blue-500 text-[14px] leading-tight whitespace-pre-line">{member.role}</p>
-            </motion.div>
-          ))}
-          
-          {/* Join Us Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 + (teamMembers.length * 0.05) }}
-            className="flex flex-col items-center justify-center text-center group cursor-pointer h-[320px] rounded-[32px] bg-white border-2 border-dashed border-gray-200 hover:border-blue-500 hover:bg-blue-50 transition-all duration-300"
-          >
-            <div className="w-16 h-16 rounded-full mb-4 bg-blue-100 flex items-center justify-center text-blue-500 group-hover:scale-110 transition-transform duration-300">
-              <Users className="w-8 h-8" />
             </div>
-            <h4 className="text-[17px] font-bold text-gray-900 mb-2 leading-tight">This could be you!</h4>
-            <Link to="/careers" className="text-blue-500 text-[14px] font-medium flex items-center gap-1 hover:text-blue-700 transition-colors">
-              Send us your resume <ArrowRight className="w-3 h-3" />
-            </Link>
-          </motion.div>
+          </div>
         </div>
 
         {/* View All Careers Button */}

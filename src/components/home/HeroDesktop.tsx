@@ -84,7 +84,7 @@ export function HeroDesktop() {
                 transition={{ delay: 0.4, duration: 0.8 }}
                 className="absolute bottom-16 right-8 md:bottom-20 md:right-12 lg:right-20 flex flex-col items-end text-right space-y-4 pointer-events-auto max-w-[90%] md:max-w-[550px]"
               >
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-snug drop-shadow-lg text-white">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-normal tracking-tight leading-snug drop-shadow-lg text-white">
                   <span className="text-red-500">Record, edit, share:</span><br />
                   Tell your story with Audion
                 </h2>
@@ -139,7 +139,7 @@ export function HeroDesktop() {
                 transition={{ delay: 0.4, duration: 0.8 }}
                 className="absolute bottom-16 right-8 md:bottom-20 md:right-12 lg:right-20 flex flex-col items-end text-right space-y-4 pointer-events-auto max-w-[90%] md:max-w-[450px]"
               >
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-snug drop-shadow-lg text-white">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-normal tracking-tight leading-snug drop-shadow-lg text-white">
                   Creating dazzling videos with a few taps!
                 </h2>
                 <div className="flex flex-row items-center gap-3 md:gap-4 mt-2">
@@ -193,7 +193,7 @@ export function HeroDesktop() {
                 transition={{ delay: 0.4, duration: 0.8 }}
                 className="absolute bottom-12 left-1/2 -translate-x-1/2 md:bottom-16 flex flex-col items-center text-center space-y-4 pointer-events-auto max-w-[90%] md:max-w-[700px] w-full"
               >
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-snug drop-shadow-lg text-white">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-normal tracking-tight leading-snug drop-shadow-lg text-white">
                   Experience rich & true to life audio quality with Boom 3D
                 </h2>
                 
@@ -240,7 +240,7 @@ export function HeroDesktop() {
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="w-full lg:w-[45%] xl:w-[40%] space-y-6 text-center lg:text-left z-10 lg:pl-8 py-12"
               >
-                <h1 className="text-5xl md:text-6xl font-bold tracking-tight leading-tight drop-shadow-md">
+                <h1 className="text-5xl md:text-6xl font-normal tracking-tight leading-tight drop-shadow-md">
                   Turn Captures <br className="hidden md:block" /> into Creations
                 </h1>
                 <p className="text-lg md:text-xl text-white max-w-xl mx-auto lg:mx-0 drop-shadow-md font-medium">
@@ -274,7 +274,7 @@ export function HeroDesktop() {
               >
                 <img src="/button/Boom2-Logo.png" alt="Boom 2" className="w-48 md:w-56 object-contain drop-shadow-lg" />
                 
-                <h2 className="text-2xl md:text-[28px] font-bold tracking-tight leading-snug drop-shadow-md text-white max-w-[400px]">
+                <h2 className="text-2xl md:text-[28px] font-normal tracking-tight leading-snug drop-shadow-md text-white max-w-[400px]">
                   Sculpt your system audio for the best stereo sound experience.
                 </h2>
                 

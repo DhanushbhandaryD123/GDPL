@@ -24,7 +24,7 @@ export function SplashScreenDesktop({ onComplete }: SplashScreenDesktopProps) {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, scale: 1.05, filter: "blur(10px)" }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-background overflow-hidden"
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black overflow-hidden"
         >
           {/* Animated Background Gradients */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -68,29 +68,19 @@ export function SplashScreenDesktop({ onComplete }: SplashScreenDesktopProps) {
               className="relative z-20 flex items-center justify-center"
             >
               {/* Desktop sizes strictly */}
-              <div className="relative w-64 lg:w-80">
-                <img 
-                  src="/logos/globaldelight-logo.png" 
-                  alt="Global Delight" 
-                  className="w-full h-full object-contain relative z-10 invert dark:invert-0"
-                />
-                
-                <motion.div 
-                  initial={{ x: "-100%" }}
-                  animate={{ x: "200%" }}
-                  transition={{ delay: 0.5, duration: 1.5, ease: "easeInOut" }}
-                  className="absolute inset-0 z-20 bg-gradient-to-r from-transparent via-white/80 dark:via-white/20 to-transparent skew-x-12"
-                  style={{
-                    WebkitMaskImage: `url('/logos/globaldelight-logo.png')`,
-                    WebkitMaskSize: 'contain',
-                    WebkitMaskPosition: 'center',
-                    WebkitMaskRepeat: 'no-repeat',
-                    maskImage: `url('/logos/globaldelight-logo.png')`,
-                    maskSize: 'contain',
-                    maskPosition: 'center',
-                    maskRepeat: 'no-repeat',
-                  }}
-                />
+              <div className="relative w-64 lg:w-80 flex items-center justify-center">
+                <motion.div
+                  initial={{ clipPath: 'inset(0 100% 0 0)' }}
+                  animate={{ clipPath: 'inset(0 0% 0 0)' }}
+                  transition={{ delay: 0.3, duration: 1.5, ease: "easeInOut" }}
+                  className="w-full h-full"
+                >
+                  <img 
+                    src="/logos/globaldelight-logo.png" 
+                    alt="Global Delight" 
+                    className="w-full h-full object-contain relative z-10 brightness-0 invert"
+                  />
+                </motion.div>
               </div>
             </motion.div>
           </div>

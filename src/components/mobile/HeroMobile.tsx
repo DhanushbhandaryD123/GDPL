@@ -81,7 +81,7 @@ export function HeroMobile() {
                 transition={{ delay: 0.4, duration: 0.8 }}
                 className="absolute bottom-6 right-3 flex flex-col items-end text-right space-y-1.5 pointer-events-auto max-w-[80%]"
               >
-                <h2 className="text-[10px] font-bold tracking-tight leading-snug drop-shadow-lg text-white">
+                <h2 className="text-[10px] font-normal tracking-tight leading-snug drop-shadow-lg text-white">
                   <span className="text-red-500">Record, edit, share:</span><br />
                   Tell your story with Audion
                 </h2>
@@ -134,7 +134,7 @@ export function HeroMobile() {
                 transition={{ delay: 0.4, duration: 0.8 }}
                 className="absolute bottom-6 right-3 flex flex-col items-end text-right space-y-1.5 pointer-events-auto max-w-[80%]"
               >
-                <h2 className="text-[10px] font-bold tracking-tight leading-snug drop-shadow-lg text-white">
+                <h2 className="text-[10px] font-normal tracking-tight leading-snug drop-shadow-lg text-white">
                   Creating dazzling videos with a few taps!
                 </h2>
                 <div className="flex flex-row items-center gap-1.5 mt-1">
@@ -186,7 +186,7 @@ export function HeroMobile() {
                 transition={{ delay: 0.4, duration: 0.8 }}
                 className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center text-center space-y-1.5 pointer-events-auto max-w-[90%] w-full"
               >
-                <h2 className="text-[10px] font-bold tracking-tight leading-snug drop-shadow-lg text-white">
+                <h2 className="text-[10px] font-normal tracking-tight leading-snug drop-shadow-lg text-white">
                   Experience rich & true to life audio quality with Boom 3D
                 </h2>
                 
@@ -228,7 +228,7 @@ export function HeroMobile() {
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="absolute top-1/2 -translate-y-1/2 right-1 w-[40%] flex flex-col items-start text-left space-y-1.5 z-10 pointer-events-auto pr-0"
               >
-                <h1 className="text-[12px] font-bold tracking-tight leading-tight drop-shadow-md">
+                <h1 className="text-[12px] font-normal tracking-tight leading-tight drop-shadow-md">
                   Turn Captures into Creations
                 </h1>
                 <p className="text-[8px] text-white/90 drop-shadow-md font-medium leading-tight">
@@ -262,7 +262,7 @@ export function HeroMobile() {
             >
               <img src="/button/Boom2-Logo.png" alt="Boom 2" className="w-16 md:w-20 object-contain drop-shadow-lg" />
               
-              <h2 className="text-[8px] font-bold tracking-tight leading-snug drop-shadow-md text-white">
+              <h2 className="text-[8px] font-normal tracking-tight leading-snug drop-shadow-md text-white">
                 Sculpt your system audio for the best stereo sound experience.
               </h2>
               

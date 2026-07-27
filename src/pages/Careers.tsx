@@ -249,29 +249,24 @@ export function Careers() {
       
       <main className="bg-[#fbfcff]">
         {/* Full-width Hero Banner */}
-        <section className="relative w-full pt-16 pb-16 md:pt-28 md:pb-24">
-          <div className="max-w-[1200px] mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between relative z-10 gap-8 md:gap-4">
-            
-            {/* Left Content */}
-            <div className="w-full md:w-[50%] z-10 text-left">
-              <h1 className="text-[36px] md:text-5xl lg:text-[64px] font-extrabold text-[#1a202c] leading-[1.15] mb-4 md:mb-6 tracking-tight">
+        <section 
+          className="relative w-full min-h-[300px] md:min-h-[400px] py-16 md:py-20 flex items-center bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/hero/career_banner.png')" }}
+        >
+          {/* Optional dark overlay if text needs contrast, though user didn't explicitly ask for it */}
+          <div className="absolute inset-0 bg-white/30 md:bg-transparent pointer-events-none"></div>
+
+          <div className="w-full max-w-[1200px] mx-auto px-6 md:px-12 flex justify-start relative z-10">
+            {/* Left-aligned Content */}
+            <div className="w-full md:w-[50%] lg:w-[45%] text-left">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1a202c] leading-[1.2] mb-3 md:mb-4 tracking-tight">
                 Where Talent <br />
                 Meets <span className="text-[#667eea]">Opportunity</span>
               </h1>
               
-              <p className="text-[14px] md:text-[16px] text-gray-500 max-w-xs md:max-w-sm leading-relaxed font-medium mb-8">
+              <p className="text-[13px] md:text-[15px] text-gray-700 md:text-gray-500 max-w-xs md:max-w-sm leading-relaxed font-medium">
                 Join a team that inspires, innovates, and creates impact every day.
               </p>
-    
-            </div>
-
-            {/* Right Content / Image */}
-            <div className="w-full md:w-[50%] relative flex justify-center md:justify-end mt-4 md:mt-0">
-              <img 
-                src="/hero/career_banner.png" 
-                alt="Where Talent Meets Opportunity" 
-                className="w-full max-w-[500px] h-auto object-contain"
-              />
             </div>
           </div>
         </section>
@@ -286,8 +281,8 @@ export function Careers() {
                     <div className={`w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center mb-4 md:mb-5 ${perk.bgColor} ${perk.color} bg-opacity-30`}>
                       <perk.icon className="w-5 h-5 md:w-6 md:h-6" />
                     </div>
-                    <h3 className="font-bold text-gray-900 text-[13px] md:text-[15px] mb-2">{perk.title}</h3>
-                    <p className="text-[11px] md:text-[13px] text-gray-500 leading-relaxed max-w-[200px]">{perk.description}</p>
+                    <h3 className="font-bold text-gray-900 text-[12px] md:text-[14px] mb-2">{perk.title}</h3>
+                    <p className="text-[10px] md:text-[12px] text-gray-500 leading-relaxed max-w-[200px]">{perk.description}</p>
                   </div>
                 ))}
               </div>

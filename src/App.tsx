@@ -10,7 +10,10 @@ import { Footer } from './components/layout/Footer';
 import { Hero } from './components/home/Hero';
 import { AppCategory, AppItem } from './components/home/AppCategory';
 import { HonorsReviews } from './components/home/HonorsReviews';
+import { FeaturedWork } from './components/home/FeaturedWork';
+import { GetInspired } from './components/home/GetInspired';
 import { FloatingSocials } from './components/layout/FloatingSocials';
+import { ScrollToTopButton } from './components/layout/ScrollToTopButton';
 
 const macApps: AppItem[] = [
   { id: 'm1', name: 'Boom 3D', description: 'Boom 3D is a system-wide volume booster and equalizer.', iconPath: '/apps/Boom3D-mac.jpeg', priceOriginal: 'INR 3700', priceDiscounted: 'INR 925.37', learnMoreUrl: 'https://www.globaldelight.com/boom/' },
@@ -46,6 +49,7 @@ function Home() {
       
       <Navbar />
       <FloatingSocials />
+      <ScrollToTopButton />
       
       <main>
         <Hero />
@@ -84,6 +88,8 @@ function Home() {
           />
         </div>
 
+        <GetInspired />
+        <FeaturedWork />
         <HonorsReviews />
       </main>
 
