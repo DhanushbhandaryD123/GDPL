@@ -335,7 +335,7 @@ solutions for your audio, photo and video needs.
             {/* Main Content */}
             <div className="flex flex-col items-center justify-center gap-4 lg:gap-6 w-full relative">
               {/* Top Side (Features List) */}
-              <div className="w-full max-w-5xl flex flex-col md:flex-row border border-gray-200 rounded-md overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)] bg-white">
+              <div className="w-full max-w-5xl flex flex-row overflow-x-auto border border-gray-200 rounded-md shadow-[0_2px_10px_rgba(0,0,0,0.02)] bg-white snap-x snap-mandatory [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: 'none' }}>
                 {activeTab === 'mac' ? (
                   <>
                     {boomFeatures.map((feature) => {
@@ -345,7 +345,7 @@ solutions for your audio, photo and video needs.
                         <button 
                           key={feature.id}
                           onClick={() => setActiveMacId(feature.id)}
-                          className={`flex-1 flex flex-col items-center justify-center gap-1.5 py-3 px-2 md:px-3 text-center transition-all duration-300 border-b md:border-b-0 md:border-r border-gray-200 last:border-b-0 last:border-r-0 ${
+                          className={`flex-1 shrink-0 snap-center min-w-[130px] md:min-w-0 flex flex-col items-center justify-center gap-1.5 py-3 px-2 md:px-3 text-center transition-all duration-300 border-r border-gray-200 last:border-r-0 ${
                             isActive ? 'bg-[#ff355d] text-white' : 'bg-white text-gray-700 hover:bg-gray-50'
                           }`}
                         >
@@ -364,7 +364,7 @@ solutions for your audio, photo and video needs.
                         <button 
                           key={feature.id}
                           onClick={() => setActiveIosId(feature.id)}
-                          className={`flex-1 flex flex-col items-center justify-center gap-1.5 py-3 px-2 md:px-3 text-center transition-all duration-300 border-b md:border-b-0 md:border-r border-gray-200 last:border-b-0 last:border-r-0 ${
+                          className={`flex-1 shrink-0 snap-center min-w-[130px] md:min-w-0 flex flex-col items-center justify-center gap-1.5 py-3 px-2 md:px-3 text-center transition-all duration-300 border-r border-gray-200 last:border-r-0 ${
                             isActive ? 'bg-[#ff355d] text-white' : 'bg-white text-gray-700 hover:bg-gray-50'
                           }`}
                         >
@@ -379,10 +379,10 @@ solutions for your audio, photo and video needs.
 
               {/* Content Area (Description + Image) */}
               {/* Content Area (Description + Image) */}
-              <div className="w-full max-w-5xl flex flex-col md:flex-row items-start justify-between gap-10 md:gap-16 mt-2">
+              <div className="w-full max-w-5xl flex flex-col items-center justify-center gap-0 mt-4">
                 
                 {/* Text Area */}
-                <div className={`flex flex-col items-center md:items-start w-full md:w-1/2 min-h-[120px] z-20`}>
+                <div className={`flex flex-col items-center text-center w-full max-w-3xl z-20`}>
                   {activeTab === 'ios' && (
                     <div className="w-full flex flex-col items-center lg:items-start text-center lg:text-left mb-6">
                       <h3 className="text-xl sm:text-[22px] font-bold text-[#0f172a] mb-3">
@@ -392,7 +392,7 @@ solutions for your audio, photo and video needs.
                     </div>
                   )}
                   
-                  <div className={`text-gray-500 text-[14px] sm:text-[15px] text-center lg:text-left leading-relaxed font-medium ${activeTab === 'mac' ? 'min-h-[70px] max-w-[90%]' : 'mb-6 w-full'}`}>
+                  <div className={`text-gray-500 text-[14px] sm:text-[15px] text-center leading-relaxed font-medium ${activeTab === 'mac' ? 'max-w-[90%]' : 'mb-6 w-full'}`}>
                     {activeTab === 'ios' ? (
                       activeFeature.id === 1 ? (
                         <div className="space-y-4 text-gray-500">
@@ -547,7 +547,7 @@ solutions for your audio, photo and video needs.
                 </div>
                 
                 {/* Image Area */}
-                <div className="w-full md:w-1/2 flex justify-center items-center relative z-10">
+                <div className="w-full max-w-3xl flex justify-center items-center relative z-10 -mt-6 md:-mt-12">
                   {/* Subtle glow behind the computer */}
                   <div className="absolute inset-0 bg-gray-100/50 rounded-full blur-[80px]"></div>
                   
