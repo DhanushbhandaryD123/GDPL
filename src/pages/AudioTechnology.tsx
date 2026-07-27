@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
 import { FloatingSocials } from '../components/layout/FloatingSocials';
-import { BarChart3, Laptop, Volume2, SlidersHorizontal, Activity, Box, Headphones, Gauge, ChevronRight, Target, Wifi, Star } from "lucide-react";
+import { BarChart3, Laptop, Volume2, SlidersHorizontal, Activity, Box, Headphones, Gauge, Target, Wifi, Star } from "lucide-react";
 
 const SoundWave = () => (
   <div className="flex items-center justify-center gap-[3px] h-6">
@@ -338,7 +338,7 @@ solutions for your audio, photo and video needs.
               <div className="w-full max-w-5xl flex flex-col md:flex-row border border-gray-200 rounded-md overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.02)] bg-white">
                 {activeTab === 'mac' ? (
                   <>
-                    {boomFeatures.map((feature, index) => {
+                    {boomFeatures.map((feature) => {
                       const isActive = feature.id === activeMacId;
                       const Icon = feature.icon;
                       return (
@@ -357,7 +357,7 @@ solutions for your audio, photo and video needs.
                   </>
                 ) : (
                   <>
-                    {iosFeatures.map((feature, index) => {
+                    {iosFeatures.map((feature) => {
                       const isActive = feature.id === activeIosId;
                       const Icon = feature.icon;
                       return (

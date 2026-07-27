@@ -1,5 +1,5 @@
 import { FaqTemplate, FaqCategory } from '../../components/faq/FaqTemplate';
-import { MessageSquare, CircleDot, Settings, Star, ShoppingCart, Compass, Apple } from 'lucide-react';
+import { MessageSquare, CircleDot, Settings, Star, ShoppingCart, Compass } from 'lucide-react';
 
 const categories: FaqCategory[] = [
   {

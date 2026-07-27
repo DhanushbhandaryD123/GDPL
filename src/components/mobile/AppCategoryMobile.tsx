@@ -15,7 +15,6 @@ interface AppCategoryMobileProps {
   title: string;
   deviceImageAlt: string;
   deviceImagePath: string;
-  imageClassName?: string;
   titleClassName?: string;
   apps: AppItem[];
   reverse?: boolean;
@@ -106,7 +105,7 @@ function AppCardMobile({ app, index }: { app: AppItem, index: number }) {
   );
 }
 
-export function AppCategoryMobile({ title, deviceImageAlt, deviceImagePath, imageClassName, titleClassName, apps }: AppCategoryMobileProps) {
+export function AppCategoryMobile({ title, deviceImageAlt, deviceImagePath, titleClassName, apps }: AppCategoryMobileProps) {
   return (
     <section className="py-4 w-full px-1 overflow-hidden">
       <div className="flex flex-row items-center justify-start gap-1 w-full">
