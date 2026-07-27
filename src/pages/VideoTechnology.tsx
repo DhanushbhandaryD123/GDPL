@@ -114,14 +114,14 @@ export function VideoTechnology() {
               <h2 className="text-3xl md:text-2xl font-bold text-[#2d3748]">Seamless Integration Process</h2>
             </div>
 
-            <div className="flex flex-col md:flex-row items-center justify-between relative gap-8 md:gap-0">
+            <div className="flex flex-row overflow-x-auto snap-x snap-mandatory items-start justify-start md:justify-between relative gap-8 md:gap-0 pb-6 md:pb-0 [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: 'none' }}>
               {/* Animated Gradient Line (desktop only) */}
               <div className="hidden md:block absolute top-[35px] left-[10%] right-[10%] h-[2px] bg-gray-100 z-0 overflow-hidden rounded-full shadow-inner">
                 <div className="absolute top-0 left-0 h-full w-[25%] bg-gradient-to-r from-transparent via-blue-500 to-transparent shadow-[0_0_12px_#3b82f6] animate-[moving-line_3s_linear_infinite]"></div>
               </div>
 
               {/* Step 1 */}
-              <div className="flex flex-col items-center text-center relative z-10 flex-1 px-2">
+              <div className="flex flex-col items-center text-center relative z-10 flex-1 px-2 min-w-[220px] shrink-0 snap-center md:min-w-0 md:shrink">
                 <div className="w-16 h-16 md:w-[70px] md:h-[70px] rounded-full bg-indigo-50 flex items-center justify-center mb-5 shadow-[0_0_20px_rgba(99,102,241,0.2)]">
                   <Download className="w-6 h-6 md:w-8 md:h-8 text-indigo-500" />
                 </div>
@@ -131,7 +131,7 @@ export function VideoTechnology() {
               </div>
 
               {/* Step 2 */}
-              <div className="flex flex-col items-center text-center relative z-10 flex-1 px-2">
+              <div className="flex flex-col items-center text-center relative z-10 flex-1 px-2 min-w-[220px] shrink-0 snap-center md:min-w-0 md:shrink">
                 <div className="w-16 h-16 md:w-[70px] md:h-[70px] rounded-full bg-rose-50 flex items-center justify-center mb-5 shadow-[0_0_20px_rgba(244,63,94,0.2)]">
                   <PenTool className="w-6 h-6 md:w-8 md:h-8 text-rose-500" />
                 </div>
@@ -141,7 +141,7 @@ export function VideoTechnology() {
               </div>
 
               {/* Step 3 */}
-              <div className="flex flex-col items-center text-center relative z-10 flex-1 px-2">
+              <div className="flex flex-col items-center text-center relative z-10 flex-1 px-2 min-w-[220px] shrink-0 snap-center md:min-w-0 md:shrink">
                 <div className="w-16 h-16 md:w-[70px] md:h-[70px] rounded-full bg-blue-50 flex items-center justify-center mb-5 shadow-[0_0_20px_rgba(59,130,246,0.2)]">
                   <Code className="w-6 h-6 md:w-8 md:h-8 text-blue-500" />
                 </div>
@@ -151,7 +151,7 @@ export function VideoTechnology() {
               </div>
 
               {/* Step 4 */}
-              <div className="flex flex-col items-center text-center relative z-10 flex-1 px-2">
+              <div className="flex flex-col items-center text-center relative z-10 flex-1 px-2 min-w-[220px] shrink-0 snap-center md:min-w-0 md:shrink">
                 <div className="w-16 h-16 md:w-[70px] md:h-[70px] rounded-full bg-green-50 flex items-center justify-center mb-5 shadow-[0_0_20px_rgba(34,197,94,0.2)]">
                   <CloudDownload className="w-6 h-6 md:w-8 md:h-8 text-green-500" />
                 </div>
@@ -161,7 +161,7 @@ export function VideoTechnology() {
               </div>
 
               {/* Step 5 */}
-              <div className="flex flex-col items-center text-center relative z-10 flex-1 px-2">
+              <div className="flex flex-col items-center text-center relative z-10 flex-1 px-2 min-w-[220px] shrink-0 snap-center md:min-w-0 md:shrink">
                 <div className="w-16 h-16 md:w-[70px] md:h-[70px] rounded-full bg-purple-50 flex items-center justify-center mb-5 shadow-[0_0_20px_rgba(168,85,247,0.2)]">
                   <Rocket className="w-6 h-6 md:w-8 md:h-8 text-purple-500" />
                 </div>
