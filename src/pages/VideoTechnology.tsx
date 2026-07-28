@@ -109,8 +109,7 @@ export function VideoTechnology() {
         {/* How it Works Section */}
         <section className="pt-4 pb-8 bg-[#fbfbfe]">
           <div className="container mx-auto px-4 max-w-6xl">
-            <div className="text-center mb-10">
-
+            <div className="text-center mb-4 md:mb-6">
               <h2 className="text-3xl md:text-2xl font-bold text-[#2d3748]">Seamless Integration Process</h2>
             </div>
 
