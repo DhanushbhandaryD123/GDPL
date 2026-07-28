@@ -50,7 +50,7 @@ export function HeroMobile() {
               transition={{ duration: 0.8 }}
               src="/hero/Hlogo/Bom3D-logo.png"
               alt="Boom 3D"
-              className="absolute top-4 left-4 w-20 sm:w-24 object-contain z-20 pointer-events-none drop-shadow-xl"
+              className="absolute top-7 left-4 w-20 sm:w-24 object-contain z-40 pointer-events-none drop-shadow-xl"
             />
           )}
         </AnimatePresence>
