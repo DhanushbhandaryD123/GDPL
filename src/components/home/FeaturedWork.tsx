@@ -288,7 +288,7 @@ export function FeaturedWork() {
         {/* Reset Button */}
         <button
           onClick={resetLayout}
-          className="absolute bottom-4 right-4 md:bottom-6 md:right-6 flex items-center justify-center w-8 h-8 md:w-10 md:h-10 bg-gray-100 hover:bg-gray-200 border border-gray-300 text-gray-700 transition-colors z-20 shadow-md rounded-full"
+          className="absolute bottom-2 right-16 md:bottom-0 md:right-0 flex items-center justify-center w-8 h-8 md:w-10 md:h-10 bg-gray-100 hover:bg-gray-200 border border-gray-300 text-gray-700 transition-colors z-20 shadow-md rounded-full"
           title="Reset Layout"
         >
           <RotateCcw className="w-3.5 h-3.5 md:w-4 md:h-4" />
