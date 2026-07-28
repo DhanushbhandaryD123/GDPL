@@ -56,9 +56,9 @@ export function Faq() {
               </h2>
               
               {/* Search Bar */}
-              <div className="flex items-center bg-[#1d233c] rounded-xl overflow-hidden p-1.5 shadow-lg w-full max-w-lg border border-gray-700/50">
-                <div className="pl-4 pr-2 text-gray-400">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <div className="flex items-center bg-[#1d233c] rounded-xl overflow-hidden p-1 md:p-2 shadow-lg w-[90%] max-w-[280px] md:w-full md:max-w-lg border border-gray-700/50 mt-2">
+                <div className="pl-3 md:pl-4 pr-1 md:pr-2 shrink-0 text-gray-400">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 md:w-[18px] md:h-[18px]">
                     <circle cx="11" cy="11" r="8"></circle>
                     <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                   </svg>
@@ -68,9 +68,9 @@ export function Faq() {
                   placeholder="Search for answers..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="flex-grow bg-transparent border-none outline-none text-white px-2 py-3 text-sm md:text-base placeholder-gray-500"
+                  className="flex-grow min-w-0 bg-transparent border-none outline-none text-white px-2 py-1.5 md:py-3 text-[12px] md:text-base placeholder-gray-500"
                 />
-                <button className="bg-[#1e88e5] hover:bg-[#1565c0] text-white font-semibold py-3 px-8 rounded-lg transition-colors">
+                <button className="shrink-0 bg-[#1e88e5] hover:bg-[#1565c0] text-white font-semibold text-[12px] md:text-base py-2 px-4 md:py-3 md:px-8 rounded-lg transition-colors">
                   Search
                 </button>
               </div>
