@@ -209,7 +209,7 @@ export function HeroMobile() {
                   </a>
                 </div>
 
-                <button className="bg-[#00e5ff] text-black font-bold px-5 py-2 rounded-full text-xs sm:text-sm hover:bg-[#00ccdd] active:scale-95 transition shadow-[0_0_15px_rgba(0,229,255,0.4)] mt-2 w-full sm:w-auto">
+                <button className="bg-[#00e5ff] text-black font-bold px-4 py-1.5 rounded-full text-[10px] sm:text-xs hover:bg-[#00ccdd] active:scale-95 transition shadow-[0_0_10px_rgba(0,229,255,0.4)] mt-2">
                   Learn More
                 </button>
               </motion.div>
@@ -226,7 +226,7 @@ export function HeroMobile() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 30 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="absolute top-1/2 -translate-y-1/2 right-3 w-[55%] flex flex-col items-start text-left space-y-3 z-10 pointer-events-auto pr-2"
+                className="absolute top-1/2 -translate-y-1/2 right-3 w-[60%] flex flex-col items-end text-right space-y-3 z-10 pointer-events-auto pr-2"
               >
                 <h1 className="text-base sm:text-xl font-bold tracking-tight leading-tight drop-shadow-lg text-white">
                   Turn Captures into Creations
@@ -235,7 +235,7 @@ export function HeroMobile() {
                   Powerful screen recording and editing tools
                 </p>
                 
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 pt-2 w-full">
+                <div className="flex flex-col sm:flex-row items-end sm:items-center gap-3 pt-2">
                   <a 
                     href="https://apps.microsoft.com/detail/9pp81h1nczs1?cid=GD-Homepage-Banner&hl=en-US&gl=IN" 
                     target="_blank" 
@@ -244,7 +244,7 @@ export function HeroMobile() {
                   >
                     <img src="/button/en-us dark.svg" alt="Get it from Microsoft Store" className="h-8 sm:h-10 object-contain drop-shadow-md" />
                   </a>
-                  <button className="bg-white/10 border border-white/80 text-white font-bold px-4 py-2 rounded text-xs sm:text-sm hover:bg-white/20 active:scale-95 transition shadow-lg whitespace-nowrap backdrop-blur-sm flex items-center justify-center w-full sm:w-auto">
+                  <button className="bg-white/10 border border-white/80 text-white font-bold px-4 py-1.5 rounded text-[10px] sm:text-xs hover:bg-white/20 active:scale-95 transition shadow-lg whitespace-nowrap backdrop-blur-sm flex items-center justify-center">
                     Learn More
                   </button>
                 </div>
@@ -271,15 +271,15 @@ export function HeroMobile() {
                   href="https://apps.apple.com/us/app/boom2-volume-boost-equalizer/id948176063?mt=12" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="hover:scale-105 transition-transform block w-full flex justify-center"
+                  className="hover:scale-105 transition-transform block flex justify-center"
                 >
                   <img src="/button/DownloadonMacAppStore.png" alt="Download on Mac App Store" className="h-8 sm:h-10 object-contain drop-shadow-md" />
                 </a>
-                <a 
+                  <a 
                     href="https://www.globaldelight.com/boom2/?source_page=GD%20Home%20page" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="bg-[#00e5ff] text-black font-bold px-5 py-2 rounded-full text-xs sm:text-sm hover:bg-[#00ccdd] active:scale-95 transition shadow-[0_0_15px_rgba(0,229,255,0.4)] text-center w-full sm:w-auto block"
+                    className="bg-[#00e5ff] text-black font-bold px-4 py-1.5 rounded-full text-[10px] sm:text-xs hover:bg-[#00ccdd] active:scale-95 transition shadow-[0_0_10px_rgba(0,229,255,0.4)] text-center block"
                   >
                   Learn More
                 </a>

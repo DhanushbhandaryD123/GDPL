@@ -72,7 +72,6 @@ function Home() {
           />
           <AppCategory 
             title="iOS App" 
-            titleClassName="-ml-4 md:-ml-6"
             deviceImageAlt="iPhone" 
             deviceImagePath="/devices/iphone.png" 
             imageClassName="max-w-[250px] md:max-w-[300px]"
