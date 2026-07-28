@@ -217,7 +217,7 @@ export function HeroDesktop() {
                   </a>
                 </div>
 
-                <button className="bg-[#00e5ff] text-black font-semibold px-8 py-2.5 rounded-full text-[15px] hover:bg-[#00ccdd] transition shadow-[0_0_20px_rgba(0,229,255,0.4)] mt-4">
+                <button className="bg-[#00e5ff] text-black font-semibold px-8 py-2.5 rounded-full text-[15px] hover:bg-[#00ccdd] hover:scale-105 active:scale-95 transition shadow-[0_0_20px_rgba(0,229,255,0.4)] mt-4">
                   Learn More
                 </button>
               </motion.div>
@@ -256,7 +256,7 @@ export function HeroDesktop() {
                   >
                     <img src="/button/en-us dark.svg" alt="Get it from Microsoft Store" className="h-10 md:h-12 object-contain drop-shadow-md" />
                   </a>
-                  <button className="bg-transparent border border-white/80 text-white font-semibold px-6 py-3 rounded text-sm hover:bg-white/10 transition shadow-lg w-full sm:w-auto whitespace-nowrap backdrop-blur-sm">
+                  <button className="bg-transparent border border-white/80 text-white font-semibold px-6 py-3 rounded text-sm hover:bg-white/10 active:scale-95 transition shadow-lg w-full sm:w-auto whitespace-nowrap backdrop-blur-sm">
                     Learn More
                   </button>
                 </div>
@@ -291,7 +291,7 @@ export function HeroDesktop() {
                     href="https://www.globaldelight.com/boom2/?source_page=GD%20Home%20page" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="bg-[#00e5ff] text-black font-semibold px-8 py-2.5 rounded-full text-[15px] hover:bg-[#00ccdd] transition shadow-[0_0_20px_rgba(0,229,255,0.4)]"
+                    className="bg-[#00e5ff] text-black font-semibold px-8 py-2.5 rounded-full text-[15px] hover:bg-[#00ccdd] hover:scale-105 active:scale-95 transition shadow-[0_0_20px_rgba(0,229,255,0.4)] block text-center"
                   >
                     Learn More
                   </a>
