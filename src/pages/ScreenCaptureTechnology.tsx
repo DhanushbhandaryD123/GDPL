@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
@@ -21,6 +21,24 @@ const tabsData = [
 
 export function ScreenCaptureTechnology() {
   const [activeTab, setActiveTab] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (scrollRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+        // If we have scrolled to the very end, jump back to start
+        if (scrollLeft + clientWidth >= scrollWidth - 10) { // -10 for rounding errors
+          scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          // Otherwise scroll one full item width to the right
+          scrollRef.current.scrollBy({ left: clientWidth, behavior: 'smooth' });
+        }
+      }
+    }, 3000); // Auto-scroll every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="min-h-screen bg-[#fff] text-gray-900 font-sans flex flex-col">
@@ -115,14 +133,14 @@ export function ScreenCaptureTechnology() {
               Simple Steps to Stunning Results
             </h2>
 
-            <div className="flex flex-col md:flex-row items-start justify-between relative gap-8 md:gap-0 mt-8">
+            <div ref={scrollRef} className="flex flex-row overflow-x-auto snap-x snap-mandatory items-start justify-start md:justify-between relative gap-8 md:gap-0 pb-6 md:pb-0 mt-8 [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: 'none' }}>
               {/* Animated Gradient Line (desktop only) */}
               <div className="hidden md:block absolute top-[40px] left-[15%] right-[15%] h-[2px] bg-gray-100 z-0 overflow-hidden rounded-full shadow-inner">
                 <div className="absolute top-0 left-0 h-full w-[25%] bg-gradient-to-r from-transparent via-blue-500 to-transparent shadow-[0_0_12px_#3b82f6] animate-[moving-line_3s_linear_infinite]"></div>
               </div>
 
               {/* Step 1 */}
-              <div className="flex flex-col items-center text-center relative z-10 flex-1 px-4">
+              <div className="flex flex-col items-center text-center relative z-10 w-full flex-none px-4 snap-center md:flex-1 md:w-auto md:min-w-0 md:shrink">
                 <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center mb-6 shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-gray-700">
                     <path d="M6 2v2"></path><path d="M2 6h2"></path><path d="M6 22v-2"></path><path d="M2 18h2"></path><path d="M22 18h-2"></path><path d="M22 6h-2"></path><path d="M18 2v2"></path><path d="M18 22v-2"></path>
@@ -135,7 +153,7 @@ export function ScreenCaptureTechnology() {
               </div>
 
               {/* Step 2 */}
-              <div className="flex flex-col items-center text-center relative z-10 flex-1 px-4">
+              <div className="flex flex-col items-center text-center relative z-10 w-full flex-none px-4 snap-center md:flex-1 md:w-auto md:min-w-0 md:shrink">
                 <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center mb-6 shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
                   <div className="flex items-center gap-1.5 px-3 py-1 rounded bg-red-600 text-white font-bold text-[10px] tracking-wider">
                     <div className="w-2 h-2 bg-white rounded-full"></div> REC
@@ -147,7 +165,7 @@ export function ScreenCaptureTechnology() {
               </div>
 
               {/* Step 3 */}
-              <div className="flex flex-col items-center text-center relative z-10 flex-1 px-4">
+              <div className="flex flex-col items-center text-center relative z-10 w-full flex-none px-4 snap-center md:flex-1 md:w-auto md:min-w-0 md:shrink">
                 <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center mb-6 shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-gray-700">
                     <circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><line x1="20" y1="4" x2="8.12" y2="15.88"></line><line x1="14.47" y1="14.48" x2="20" y2="20"></line><line x1="8.12" y1="8.12" x2="12" y2="12"></line>
@@ -159,7 +177,7 @@ export function ScreenCaptureTechnology() {
               </div>
 
               {/* Step 4 */}
-              <div className="flex flex-col items-center text-center relative z-10 flex-1 px-4">
+              <div className="flex flex-col items-center text-center relative z-10 w-full flex-none px-4 snap-center md:flex-1 md:w-auto md:min-w-0 md:shrink">
                 <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center mb-6 shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-gray-700">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line>
