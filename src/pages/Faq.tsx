@@ -324,15 +324,15 @@ export function Faq() {
               
               {/* Right form */}
               <div className="w-full lg:w-[55%] flex flex-col items-center lg:items-end">
-                <form className="w-full max-w-lg flex flex-col sm:flex-row gap-0 rounded-xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.3)] focus-within:ring-2 focus-within:ring-blue-500 transition-all border border-gray-700">
+                <form className="w-full max-w-lg flex flex-row gap-0 rounded-xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.3)] focus-within:ring-2 focus-within:ring-blue-500 transition-all border border-gray-700">
                   <input 
                     type="email" 
-                    placeholder="Enter your email address" 
-                    className="flex-grow bg-[#1e293b] text-white px-5 md:px-6 py-4 outline-none placeholder-gray-400 text-[15px]"
+                    placeholder="Enter your email" 
+                    className="flex-grow min-w-0 bg-[#1e293b] text-white px-4 md:px-6 py-3.5 md:py-4 outline-none placeholder-gray-400 text-sm md:text-[15px]"
                     required
                   />
-                  <button type="submit" className="bg-[#3b82f6] hover:bg-[#2563eb] text-white font-bold px-6 md:px-8 py-4 transition-colors whitespace-nowrap text-[15px]">
-                    Sign me up
+                  <button type="submit" className="shrink-0 bg-[#3b82f6] hover:bg-[#2563eb] text-white font-bold px-5 md:px-8 py-3.5 md:py-4 transition-colors whitespace-nowrap text-sm md:text-[15px]">
+                    Sign up
                   </button>
                 </form>
                 <p className="text-[11px] md:text-xs text-gray-400 mt-4 text-center lg:text-left w-full max-w-lg pl-1 opacity-80">
