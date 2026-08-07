@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../components/layout/Navbar';
-import { ProHero } from '../components/camerapluspro/ProHero';
+import { CameraPlusHero } from '../components/camerapluspro/CameraPlusHero';
 import { ProFeatures } from '../components/camerapluspro/ProFeatures';
 import { ProEditingTools } from '../components/camerapluspro/ProEditingTools';
 import { ProShare } from '../components/camerapluspro/ProShare';
@@ -18,7 +18,7 @@ export function CameraPlusProPage() {
       <Navbar />
 
       <main>
-        <ProHero />
+        <CameraPlusHero logoUrl="/cameraplus/cpp-icon@2x.png" />
         <ProFeatures />
         <ProEditingTools />
         <ProShare />

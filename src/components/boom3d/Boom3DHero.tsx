@@ -1,13 +1,14 @@
 export function Boom3DHero() {
   return (
-    <section 
-      className="relative min-h-[600px] md:min-h-[800px] lg:min-h-[85vh] flex items-center pt-20 pb-16 overflow-hidden bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: 'url("/boom3D/boom3d-hero.png")' }}
-    >
+    <div className="w-full max-w-[1920px] mx-auto px-2 md:px-4 pb-12 pt-2 md:pt-4">
+      <section 
+        className="relative w-full rounded-3xl md:rounded-[2.5rem] shadow-2xl min-h-[600px] md:min-h-[800px] lg:min-h-[85vh] flex items-center pt-20 pb-16 overflow-hidden bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: 'url("/boom3D/boom3d-hero.png")' }}
+      >
       {/* Overlay to ensure text readability if needed (optional) */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent pointer-events-none" />
 
-      <div className="max-w-[1200px] mx-auto px-4 relative z-10 w-full">
+      <div className="max-w-[1200px] mx-auto px-8 md:px-16 lg:px-24 relative z-10 w-full">
         <div className="flex flex-col lg:flex-row items-start justify-start">
           
           {/* Text Content - Aligned Left */}
@@ -36,6 +37,7 @@ export function Boom3DHero() {
           
         </div>
       </div>
-    </section>
+      </section>
+    </div>
   );
 }
