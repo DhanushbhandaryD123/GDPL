@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
+import { Link } from 'react-router-dom';
 import { RotateCcw } from 'lucide-react';
 import { useIsMobile } from '../../hooks/useIsMobile';
 
@@ -10,7 +11,7 @@ const cardsData = [
     bgColor: '#9b66ff',
     logo: '/hero/Boom3d.png',
     description: 'System-wide volume booster and equalizer for immersive 3D surround sound.',
-    link: 'https://www.globaldelight.com/boom/'
+    link: '/boom3D'
   },
   {
     name: 'Capto',
@@ -18,7 +19,7 @@ const cardsData = [
     bgColor: '#1de9b6',
     logo: '/hero/capto2.png',
     description: 'Powerful screen recording and video editing tools in one seamless workspace.',
-    link: 'https://www.globaldelight.com/capto/'
+    link: '/capto'
   },
   {
     name: 'Vizmato',
@@ -26,7 +27,7 @@ const cardsData = [
     bgColor: '#ff7043',
     logo: '/hero/vizmat3.png',
     description: 'An award-winning moviemaker in your pocket. Edit videos with awesome effects.',
-    link: 'https://itunes.apple.com/US/app/id496232649?mt=8'
+    link: '/vizmato'
   },
   {
     name: 'Camera Plus',
@@ -34,7 +35,7 @@ const cardsData = [
     bgColor: '#ffd740',
     logo: '/hero/cameraplus.png',
     description: 'Capture professional photos with macro focus, remote control, and live filters.',
-    link: '#'
+    link: '/cameraplus'
   },
   {
     name: 'AuDimix',
@@ -42,7 +43,7 @@ const cardsData = [
     bgColor: '#ff4b8b',
     logo: '/hero/Audiomix.png',
     description: 'Advanced vocal isolation and extraction tool to remix tracks like a pro.',
-    link: 'https://www.globaldelight.com/AuDimix/'
+    link: '/audimix'
   },
   {
     name: 'AudiOn',
@@ -50,7 +51,7 @@ const cardsData = [
     bgColor: '#69f0ae',
     logo: '/hero/audioon.png',
     description: 'Feature-rich voice recorder and audio editor with noise reduction.',
-    link: 'https://apps.apple.com/us/app/audion-voice-recorder-memos/id1633228083'
+    link: '/audion'
   },
 ];
 
@@ -261,15 +262,13 @@ export function FeaturedWork() {
                     {card.description}
                   </p>
                   <div className="mt-auto self-stretch flex flex-col gap-2">
-                    <a
-                      href={card.link}
-                      target="_blank"
-                      rel="noreferrer"
+                    <Link
+                      to={card.link}
                       className="w-full text-center py-2 bg-white hover:bg-gray-100 text-gray-900 text-[11px] md:text-xs font-bold rounded-full transition-all cursor-pointer pointer-events-auto shadow-[0_4px_10px_rgba(0,0,0,0.15)] hover:scale-105 active:scale-95"
                       onClick={(e) => e.stopPropagation()}
                     >
                       Learn More
-                    </a>
+                    </Link>
                     <button
                       onClick={(e) => {
                         e.stopPropagation(); // prevent triggering a card drag/tap

@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 
 export interface AppItem {
   id: string;
@@ -29,7 +30,7 @@ function AppCardDesktop({ app, index }: { app: AppItem, index: number }) {
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="group [perspective:1000px] w-full"
     >
-      <a href={app.learnMoreUrl || '#'} target="_blank" rel="noopener noreferrer" className="relative block w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] cursor-pointer group/link">
+      <Link to={app.learnMoreUrl || '#'} className="relative block w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] cursor-pointer group/link">
         
         {/* Front */}
         <div className="w-full [backface-visibility:hidden] bg-white rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.08)] border border-gray-100 p-6 flex flex-col items-center transition-all h-full group-hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
@@ -96,7 +97,7 @@ function AppCardDesktop({ app, index }: { app: AppItem, index: number }) {
           </div>
         </div>
 
-      </a>
+      </Link>
     </motion.div>
   );
 }

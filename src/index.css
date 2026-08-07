@@ -2,7 +2,10 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-sans: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-heading: 'Sora', 'Hanken Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -61,20 +64,20 @@
 }
 
 .dark {
-  --background: #09090b;
+  --background: #0a0a0c;
   --foreground: #fafafa;
 
-  --card: #09090b;
+  --card: #0a0a0c;
   --card-foreground: #fafafa;
 
-  --popover: #09090b;
+  --popover: #0a0a0c;
   --popover-foreground: #fafafa;
 
-  --primary: #fafafa;
-  --primary-foreground: #18181b;
+  --primary: #6b38d4;
+  --primary-foreground: #ffffff;
 
-  --secondary: #27272a;
-  --secondary-foreground: #fafafa;
+  --secondary: #b4136d;
+  --secondary-foreground: #ffffff;
 
   --muted: #27272a;
   --muted-foreground: #a1a1aa;
@@ -87,7 +90,7 @@
 
   --border: #27272a;
   --input: #27272a;
-  --ring: #d4d4d8;
+  --ring: #6b38d4;
 }
 
 @layer base {
@@ -95,7 +98,6 @@
     border-color: var(--border);
     scrollbar-width: thin;
     scrollbar-color: var(--muted-foreground) transparent;
-    font-family: 'SF Pro Display', 'SF UI Text', 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
   }
   body {
     background-color: var(--background);
@@ -103,6 +105,16 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+  img {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    image-rendering: -webkit-optimize-contrast;
   }
 }
 
@@ -132,4 +144,15 @@
   100% {
     transform: translateX(1000%);
   }
+}
+
+@keyframes float {
+  0% { transform: translateY(10vh) scale(0.5); opacity: 0; }
+  20% { opacity: 0.8; }
+  100% { transform: translateY(-50vh) scale(1.2); opacity: 0; }
+}
+
+@keyframes breathe {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.1); }
 }

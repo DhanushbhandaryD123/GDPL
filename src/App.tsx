@@ -16,27 +16,27 @@ import { FloatingSocials } from './components/layout/FloatingSocials';
 import { ScrollToTopButton } from './components/layout/ScrollToTopButton';
 
 const macApps: AppItem[] = [
-  { id: 'm1', name: 'Boom 3D', description: 'Boom 3D is a system-wide volume booster and equalizer.', iconPath: '/apps/Boom3D-mac.jpeg', priceOriginal: 'INR 3700', priceDiscounted: 'INR 925.37', learnMoreUrl: 'https://www.globaldelight.com/boom/' },
-  { id: 'm2', name: 'Boom 2', description: 'Powerful audio enhancement tool for Mac.', iconPath: '/apps/Boom2-mac.jpeg', learnMoreUrl: 'https://www.globaldelight.com/boom2/' },
-  { id: 'm3', name: 'Capto', description: 'Powerful screen recording and editing tools in one place.', iconPath: '/apps/Capto-mac.jpeg', priceOriginal: 'INR 1499', priceDiscounted: 'INR 749.5', learnMoreUrl: 'https://www.globaldelight.com/capto/' },
+  { id: 'm1', name: 'Boom 3D', description: 'Boom 3D is a system-wide volume booster and equalizer.', iconPath: '/apps/Boom3D-mac.jpeg', priceOriginal: 'INR 3700', priceDiscounted: 'INR 925.37', learnMoreUrl: '/boom3D' },
+  { id: 'm2', name: 'Boom 2', description: 'Powerful audio enhancement tool for Mac.', iconPath: '/apps/Boom2-mac.jpeg', learnMoreUrl: '/boom2' },
+  { id: 'm3', name: 'Capto', description: 'Powerful screen recording and editing tools in one place.', iconPath: '/apps/Capto-mac.jpeg', priceOriginal: 'INR 1499', priceDiscounted: 'INR 749.5', learnMoreUrl: '/capto' },
 ];
 
 const windowsApps: AppItem[] = [
-  { id: 'w1', name: 'Boom 3D', description: 'Boom 3D is a system-wide volume booster and equalizer.', iconPath: '/apps/boom3d-window.png', priceOriginal: 'INR 3700', priceDiscounted: 'INR 925.37', learnMoreUrl: 'https://www.globaldelight.com/boom/' },
-  { id: 'w2', name: 'AuDimix', description: 'Vocal isolation and extraction tool.', iconPath: '/apps/AuDimix-Window.jpeg', learnMoreUrl: 'https://www.globaldelight.com/AuDimix/' },
-  { id: 'w3', name: 'Capto', description: 'Powerful screen recording and editing tools in one place.', iconPath: '/apps/Capto-window.jpeg', priceOriginal: 'INR 1499', priceDiscounted: 'INR 749.5', learnMoreUrl: 'https://www.globaldelight.com/capto/windows' },
+  { id: 'w1', name: 'Boom 3D', description: 'Boom 3D is a system-wide volume booster and equalizer.', iconPath: '/apps/boom3d-window.png', priceOriginal: 'INR 3700', priceDiscounted: 'INR 925.37', learnMoreUrl: '/boom3D' },
+  { id: 'w2', name: 'AuDimix', description: 'Vocal isolation and extraction tool.', iconPath: '/apps/AuDimix-Window.jpeg', learnMoreUrl: '/audimix' },
+  { id: 'w3', name: 'Capto', description: 'Powerful screen recording and editing tools in one place.', iconPath: '/apps/Capto-window.jpeg', priceOriginal: 'INR 1499', priceDiscounted: 'INR 749.5', learnMoreUrl: '/capto/windows' },
 ];
 
 const iosApps: AppItem[] = [
-  { id: 'i1', name: 'Boom for iOS', description: 'The Best Music Player with Magical 3D Surround Sound', iconPath: '/apps/Boom for iOS.jpeg', priceDiscounted: 'Free (with in-apps)', learnMoreUrl: 'https://www.globaldelight.com/boomformobile/' },
-  { id: 'i2', name: 'Vizmato', description: 'An award-winning moviemaker in your pocket.', iconPath: '/apps/Vizmato-ios.jpeg', priceDiscounted: 'Free (with in-apps)', learnMoreUrl: 'https://itunes.apple.com/US/app/id496232649?mt=8' },
-  { id: 'i3', name: 'AudiOn', description: 'An Voice recorder and editor for iOS.', iconPath: '/apps/AudiOn-ios.jpeg', priceDiscounted: 'Free (with in-apps)', learnMoreUrl: 'https://apps.apple.com/us/app/audion-voice-recorder-memos/id1633228083?ct=GD-Homepage&pt=98420' },
+  { id: 'i1', name: 'Boom for iOS', description: 'The Best Music Player with Magical 3D Surround Sound', iconPath: '/apps/Boom for iOS.jpeg', priceDiscounted: 'Free (with in-apps)', learnMoreUrl: '/boomformobile' },
+  { id: 'i2', name: 'Vizmato', description: 'An award-winning moviemaker in your pocket.', iconPath: '/apps/Vizmato-ios.jpeg', priceDiscounted: 'Free (with in-apps)', learnMoreUrl: '/vizmato' },
+  { id: 'i3', name: 'AudiOn', description: 'An Voice recorder and editor for iOS.', iconPath: '/apps/AudiOn-ios.jpeg', priceDiscounted: 'Free (with in-apps)', learnMoreUrl: '/audion' },
 ];
 
 const androidApps: AppItem[] = [
-  { id: 'a1', name: 'Boom for Android', description: 'The Best Music Player with Magical 3D Surround Sound', iconPath: '/apps/Boom for Android.jpeg', priceDiscounted: 'Free (with in-apps)', learnMoreUrl: 'https://www.globaldelight.com/boomformobile/' },
-  { id: 'a2', name: 'Vizmato', description: 'An award-winning moviemaker in your pocket.', iconPath: '/apps/Vizmato-android.png', priceDiscounted: 'Free (with in-apps)', learnMoreUrl: 'https://play.google.com/store/apps/details?id=com.globaldelight.vizmato&hl=en&utm_source=globaldelight&utm_medium=website&utm_campaign=productlisting' },
-  { id: 'a3', name: 'AudiOn', description: 'An Voice recorder and editor for Android.', iconPath: '/apps/AudiON-android.png', priceDiscounted: 'Free (with in-apps)', learnMoreUrl: 'https://play.google.com/store/apps/details?id=com.globaldelight.audiorecorder&referrer=utm_source%3DGDWebsite%26utm_medium%3DBanner%26utm_term%3DBannerCTA' },
+  { id: 'a1', name: 'Boom for Android', description: 'The Best Music Player with Magical 3D Surround Sound', iconPath: '/apps/Boom for Android.jpeg', priceDiscounted: 'Free (with in-apps)', learnMoreUrl: '/boomformobile' },
+  { id: 'a2', name: 'Vizmato', description: 'An award-winning moviemaker in your pocket.', iconPath: '/apps/Vizmato-android.png', priceDiscounted: 'Free (with in-apps)', learnMoreUrl: '/vizmato' },
+  { id: 'a3', name: 'AudiOn', description: 'An Voice recorder and editor for Android.', iconPath: '/apps/AudiON-android.png', priceDiscounted: 'Free (with in-apps)', learnMoreUrl: '/audion' },
 ];
 
 function Home() {
@@ -117,6 +117,16 @@ import { AudionFaq } from './pages/faq/AudionFaq';
 import { Contact } from './pages/Contact';
 import { Careers } from './pages/Careers';
 import { ScrollToTop } from './components/layout/ScrollToTop';
+import { Boom2 } from './pages/Boom2';
+import { Boom3D } from './pages/Boom3D';
+import { Capto } from './pages/Capto';
+import { AuDimixPage } from './pages/AuDimixPage';
+import { BoomForMobilePage } from './pages/BoomForMobilePage';
+import { CaptoWindowsPage } from './pages/CaptoWindowsPage';
+import { AudiOnPage } from './pages/AudiOnPage';
+import { VizmatoPage } from './pages/VizmatoPage';
+import { CameraPlusPage } from './pages/CameraPlusPage';
+import { CameraPlusProPage } from './pages/CameraPlusProPage';
 
 function App() {
   const [isAppReady, setIsAppReady] = useState(false);
@@ -146,6 +156,16 @@ function App() {
         <Route path="/faq/audion" element={<AudionFaq />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/careers" element={<Careers />} />
+        <Route path="/boom2" element={<Boom2 />} />
+        <Route path="/boom3D" element={<Boom3D />} />
+        <Route path="/capto" element={<Capto />} />
+        <Route path="/capto/windows" element={<CaptoWindowsPage />} />
+        <Route path="/audion" element={<AudiOnPage />} />
+        <Route path="/vizmato" element={<VizmatoPage />} />
+        <Route path="/cameraplus" element={<CameraPlusPage />} />
+        <Route path="/camerapluspro" element={<CameraPlusProPage />} />
+        <Route path="/audimix" element={<AuDimixPage />} />
+        <Route path="/boomformobile" element={<BoomForMobilePage />} />
       </Routes>
       <Toaster position="bottom-right" />
     </>

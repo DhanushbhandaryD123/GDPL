@@ -38,10 +38,8 @@ function AppCardMobile({ app, index }: { app: AppItem, index: number }) {
       }}
       onMouseLeave={() => setIsFlipped(false)}
     >
-      <a 
-        href={app.learnMoreUrl || '#'} 
-        target="_blank" 
-        rel="noopener noreferrer" 
+      <a
+        href={app.learnMoreUrl || '#'}
         className={`relative block w-full h-[220px] sm:h-[240px] transition-transform duration-700 [transform-style:preserve-3d] cursor-pointer group/link ${isFlipped ? '[transform:rotateY(180deg)]' : 'hover:[transform:rotateY(180deg)]'}`}
       >
         

@@ -60,17 +60,17 @@ export function Footer({ logoUrl }: FooterProps = {}) {
               </span>
             </h4>
             <ul className={`space-y-4 text-[13px] text-gray-400 pb-6 md:pb-0 ${openSection === 'products' ? 'block' : 'hidden md:block'}`}>
-              <li><a href="https://www.globaldelight.com/boom/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Boom 3D Mac</a></li>
-              <li><a href="https://www.globaldelight.com/boom/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Boom 3D Windows</a></li>
-              <li><a href="https://www.globaldelight.com/boom2/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Boom 2</a></li>
-              <li><a href="https://www.globaldelight.com/boomformobile/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Boom for Mobile</a></li>
-              <li><a href="https://www.globaldelight.com/capto/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Capto for Mac</a></li>
-              <li><a href="https://www.globaldelight.com/capto/windows" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Capto for Windows</a></li>
-              <li><a href="https://www.globaldelight.com/AuDimix/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">AuDimix</a></li>
-              <li><a href="https://apps.apple.com/us/app/audion-voice-recorder-memos/id1633228083" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">AudiOn</a></li>
-              <li><a href="https://itunes.apple.com/US/app/id496232649?mt=8" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Vizmato IOS and Android</a></li>
-              <li><a href="#" className="hover:text-white transition">Camera Plus</a></li>
-              <li><a href="#" className="hover:text-white transition">Camera Plus Pro</a></li>
+              <li><Link to="/boom3D" className="hover:text-white transition">Boom 3D Mac</Link></li>
+              <li><Link to="/boom3D" className="hover:text-white transition">Boom 3D Windows</Link></li>
+              <li><Link to="/boom2" className="hover:text-white transition">Boom 2</Link></li>
+              <li><Link to="/boomformobile" className="hover:text-white transition">Boom for Mobile</Link></li>
+              <li><Link to="/capto" className="hover:text-white transition">Capto for Mac</Link></li>
+              <li><Link to="/capto/windows" className="hover:text-white transition">Capto for Windows</Link></li>
+              <li><Link to="/audimix" className="hover:text-white transition">AuDimix</Link></li>
+              <li><Link to="/audion" className="hover:text-white transition">AudiOn</Link></li>
+              <li><Link to="/vizmato" className="hover:text-white transition">Vizmato IOS and Android</Link></li>
+              <li><Link to="/cameraplus" className="hover:text-white transition">Camera Plus</Link></li>
+              <li><Link to="/camerapluspro" className="hover:text-white transition">Camera Plus Pro</Link></li>
             </ul>
           </div>
 

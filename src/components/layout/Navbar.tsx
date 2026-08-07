@@ -34,17 +34,17 @@ export function Navbar({ logoUrl }: NavbarProps) {
   }, []);
 
   const searchProducts = [
-    { name: 'Boom 3D Mac', href: 'https://www.globaldelight.com/boom/' },
-    { name: 'Boom 3D Windows', href: 'https://www.globaldelight.com/boom/' },
-    { name: 'Boom 2', href: 'https://www.globaldelight.com/boom2/' },
-    { name: 'Boom for Mobile', href: 'https://www.globaldelight.com/boomformobile/' },
-    { name: 'Capto for Mac', href: 'https://www.globaldelight.com/capto/' },
-    { name: 'Capto for Windows', href: 'https://www.globaldelight.com/capto/windows' },
-    { name: 'AuDimix', href: 'https://www.globaldelight.com/AuDimix/' },
-    { name: 'AudiOn', href: 'https://apps.apple.com/us/app/audion-voice-recorder-memos/id1633228083' },
-    { name: 'Vizmato IOS and Android', href: 'https://itunes.apple.com/US/app/id496232649?mt=8' },
-    { name: 'Camera Plus', href: '#' },
-    { name: 'Camera Plus Pro', href: '#' }
+    { name: 'Boom 3D Mac', href: '/boom3D' },
+    { name: 'Boom 3D Windows', href: '/boom3D' },
+    { name: 'Boom 2', href: '/boom2' },
+    { name: 'Boom for Mobile', href: '/boomformobile' },
+    { name: 'Capto for Mac', href: '/capto' },
+    { name: 'Capto for Windows', href: '/capto/windows' },
+    { name: 'AuDimix', href: '/audimix' },
+    { name: 'AudiOn', href: '/audion' },
+    { name: 'Vizmato IOS and Android', href: '/vizmato' },
+    { name: 'Camera Plus', href: '/cameraplus' },
+    { name: 'Camera Plus Pro', href: '/camerapluspro' }
   ];
 
   const filteredProducts = searchProducts.filter(product => 
@@ -132,15 +132,14 @@ export function Navbar({ logoUrl }: NavbarProps) {
                   {searchQuery.trim().length > 0 ? (
                     filteredProducts.length > 0 ? (
                       filteredProducts.map((product, idx) => (
-                        <a 
-                          key={idx} 
-                          href={product.href} 
-                          target={product.href === '#' ? '_self' : '_blank'}
-                          rel="noopener noreferrer"
+                        <Link
+                          key={idx}
+                          to={product.href}
+                          onClick={() => setIsSearchOpen(false)}
                           className="block px-4 py-2.5 text-sm text-gray-300 hover:bg-[#252b4d] hover:text-white rounded-lg transition-colors"
                         >
                           {product.name}
-                        </a>
+                        </Link>
                       ))
                     ) : (
                       <div className="px-4 py-3 text-sm text-gray-500 text-center">
