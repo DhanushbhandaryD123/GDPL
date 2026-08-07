@@ -35,12 +35,13 @@ const VizmatoLogo = ({ className }: { className?: string }) => (
 
 export function HeroWithVideoBackground() {
   return (
-    <section className="relative w-full bg-[#09090b] overflow-hidden flex items-center">
-      {/* Background Image guarantees full visibility and sets container height */}
+    <div className="w-full max-w-[1920px] mx-auto px-2 md:px-4 pb-12 pt-2 md:pt-4 bg-white">
+      <section className="relative w-full rounded-3xl md:rounded-[2.5rem] shadow-2xl bg-[#09090b] overflow-hidden flex items-center min-h-[500px] md:min-h-[600px] h-[90vh] max-h-[750px]">
+      {/* Background Image set to cover the explicitly sized section */}
       <img 
         src="/vizmato/hero.png" 
         alt="Vizmato Hero Background" 
-        className="w-full h-auto object-contain"
+        className="absolute inset-0 w-full h-full object-cover object-center"
       />
       
       {/* Absolute Overlay for Content */}
@@ -99,6 +100,7 @@ export function HeroWithVideoBackground() {
           </div>
         </div>
       </div>
-    </section>
+      </section>
+    </div>
   );
 }

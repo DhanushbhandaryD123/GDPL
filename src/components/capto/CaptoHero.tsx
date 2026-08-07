@@ -21,9 +21,16 @@ export function CaptoHero() {
             transition={{ duration: 0.6 }}
             className="flex-1 w-full max-w-[600px] text-center lg:text-left lg:pt-10"
           >
-            <p className="text-[1.3rem] text-gray-600 font-bold mb-3 tracking-tight">
-              Your All-in-One Solution for
-            </p>
+            <div className="flex items-center gap-3 mb-6 mx-auto lg:mx-0 justify-center lg:justify-start">
+              <div className="relative w-16 h-16 md:w-20 md:h-20 overflow-hidden flex-shrink-0">
+                <img 
+                  src="/capto/Logo_Web2x_1.png" 
+                  alt="Capto Icon" 
+                  className="absolute top-0 left-0 h-16 md:h-20 w-auto max-w-none object-left object-cover drop-shadow-sm"
+                />
+              </div>
+              <span className="text-[2.25rem] md:text-[3rem] font-bold tracking-tight text-[#1c2331]">Capto</span>
+            </div>
             <h1 className="text-[2.75rem] lg:text-[3.25rem] font-bold tracking-tight leading-[1.1] mb-6 text-[#1c2331]">
               <span className="text-[#6554ff]">Screenshots, Screen</span><br />
               <span className="text-[#6554ff]">Recording,</span> and<br />

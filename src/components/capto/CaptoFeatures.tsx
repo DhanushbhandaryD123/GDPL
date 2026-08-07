@@ -60,8 +60,9 @@ const features = [
 
 export function CaptoFeatures() {
   return (
-    <section className="py-24 bg-white relative">
-      <div className="container mx-auto px-6 max-w-[1536px]">
+    <div className="w-full max-w-[1920px] mx-auto px-2 md:px-4 pb-12 pt-2 md:pt-4 bg-white">
+      <section className="py-24 bg-gradient-to-br from-[#6554ff] to-[#6953ff] relative w-full rounded-3xl md:rounded-[2.5rem] shadow-2xl">
+        <div className="container mx-auto px-6 max-w-[1536px]">
         
         {/* Header & Badges */}
         <div className="text-center max-w-3xl mx-auto mb-12">
@@ -69,9 +70,9 @@ export function CaptoFeatures() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-2xl md:text-[2rem] font-bold text-[#1c2331] leading-tight mb-8"
+            className="text-2xl md:text-[2rem] font-bold text-white leading-tight mb-8"
           >
-            Unlock <span className="text-[#6554ff]">powerful features</span> for <br className="hidden md:block" />
+            Unlock <span className="text-white drop-shadow-sm">powerful features</span> for <br className="hidden md:block" />
             seamless content creation across platforms.
           </motion.h2>
 
@@ -120,15 +121,16 @@ export function CaptoFeatures() {
                  </div>
               </div>
               
-              <h3 className="text-[20px] font-bold text-[#1c2331] mb-3 px-2">{feature.title}</h3>
-              <p className="text-[15px] text-gray-500 leading-relaxed px-2">
+              <h3 className="text-[20px] font-bold text-white mb-3 px-2 drop-shadow-sm">{feature.title}</h3>
+              <p className="text-[15px] text-white/80 leading-relaxed px-2">
                 {feature.description}
               </p>
             </motion.div>
           ))}
         </div>
 
-      </div>
-    </section>
+        </div>
+      </section>
+    </div>
   );
 }
