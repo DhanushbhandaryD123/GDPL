@@ -10,7 +10,7 @@ import { Footer } from '../components/layout/Footer';
 
 export function AuDimixPage() {
   return (
-    <div className="min-h-screen bg-[#050507] text-white font-sans overflow-x-hidden selection:bg-purple-500/30">
+    <div className="min-h-screen bg-white text-gray-900 font-sans overflow-x-hidden selection:bg-purple-200">
       <Helmet>
         <title>AuDimix | Music separation made easy.</title>
         <meta name="description" content="AuDimix - Vocal isolation and extraction tool. Isolate vocals, extract instruments, and create your own mix with ease." />

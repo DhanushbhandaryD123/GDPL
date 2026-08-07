@@ -9,7 +9,7 @@ import { Footer } from '../components/layout/Footer';
 
 export function AudiOnPage() {
   return (
-    <div className="min-h-screen bg-[#030014] text-white font-sans overflow-x-hidden selection:bg-purple-500/30">
+    <div className="min-h-screen bg-white text-gray-900 font-sans overflow-x-hidden selection:bg-purple-200">
       <Helmet>
         <title>AudiOn | Voice Recorder for Android & iOS</title>
         <meta name="description" content="Enhance your audio recordings with AudiOn. The cutting-edge voice recorder app featuring lossless recording, noise removal, and transcription." />
