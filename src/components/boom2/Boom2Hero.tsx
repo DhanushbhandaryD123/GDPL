@@ -13,7 +13,8 @@ const AppleLogo = ({ className = "" }: { className?: string }) => (
 
 export function Boom2Hero() {
   return (
-    <section className="relative pt-12 pb-24 md:pt-16 md:pb-32 flex items-center min-h-[60vh] overflow-hidden">
+    <div className="w-full max-w-[1920px] mx-auto px-2 md:px-4 pb-12 pt-2 md:pt-4 bg-white">
+      <section className="relative w-full rounded-3xl md:rounded-[2.5rem] shadow-2xl pt-12 pb-24 md:pt-16 md:pb-32 flex items-center min-h-[60vh] overflow-hidden">
 
       {/* Video Background */}
       <video
@@ -36,7 +37,7 @@ export function Boom2Hero() {
             <img
               src="/boom2/Boom2-icon.png"
               alt="Boom 2 Logo"
-              className="w-10 h-10 object-contain drop-shadow-lg"
+              className="w-20 h-30 object-contain drop-shadow-lg"
             />
             <span className="text-white font-semibold text-xl tracking-wide drop-shadow-md">
               Boom <span className="font-light text-gray-300 border border-gray-500 rounded px-1.5 text-sm ml-1 align-middle">2</span>
@@ -65,6 +66,7 @@ export function Boom2Hero() {
           </div>
         </div>
       </div>
-    </section>
+      </section>
+    </div>
   );
 }

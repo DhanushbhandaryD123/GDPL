@@ -18,7 +18,7 @@ export function Boom3DEqualizer() {
       <div className="flex flex-col lg:flex-row items-center w-full max-w-[1600px] mx-auto">
         
         {/* Left Side: Full-bleed Image */}
-        <div className="w-full lg:w-1/2 relative lg:pr-10">
+        <div className="w-full lg:w-1/2 relative lg:pr-16 xl:pr-24">
           <div className="relative w-full h-full">
             {/* Invisible reference image to strictly lock the layout size so it never jumps */}
             <img 
