@@ -45,6 +45,7 @@ function Home() {
       <Helmet>
         <title>Global Delight | Turn Captures into Creations</title>
         <meta name="description" content="Global Delight provides powerful screen recording, video editing, and audio enhancement tools for Mac, Windows, iOS, and Android." />
+        <meta name="keywords" content="Global Delight, screen recording, video editing, audio enhancement, Mac apps, Windows apps, iOS apps, Android apps" />
       </Helmet>
       
       <Navbar />
