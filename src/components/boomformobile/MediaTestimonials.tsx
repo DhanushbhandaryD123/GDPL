@@ -1,5 +1,6 @@
 import Marquee from 'react-fast-marquee';
 import { Quote } from 'lucide-react';
+import { motion } from 'motion/react';
 
 const mediaReviews = [
   {
@@ -22,29 +23,37 @@ const mediaReviews = [
 
 export function MediaTestimonials() {
   return (
-    <section className="py-16 md:py-24 bg-[#060814] relative border-t border-white/5 overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6 mb-12">
+    <section className="py-20 md:py-32 bg-white relative overflow-hidden">
+      <div className="container mx-auto px-4 md:px-6 mb-16">
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-white">Media <span className="text-pink-400">Buzz</span></h2>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-5xl font-extrabold text-gray-900 tracking-tight"
+          >
+            Media <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600">Buzz</span>
+          </motion.h2>
         </div>
       </div>
 
       <div className="relative">
-        <div className="absolute top-0 left-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[#060814] to-transparent z-10 pointer-events-none" />
-        <div className="absolute top-0 right-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[#060814] to-transparent z-10 pointer-events-none" />
+        {/* Gradients to fade edges */}
+        <div className="absolute top-0 left-0 bottom-0 w-16 md:w-40 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 right-0 bottom-0 w-16 md:w-40 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
         
         <Marquee speed={40} gradient={false} pauseOnHover>
           {mediaReviews.map((review, index) => (
             <div 
               key={index} 
-              className="mx-4 md:mx-8 w-[300px] md:w-[400px] bg-[#111118] border border-white/5 p-8 rounded-2xl flex flex-col h-full"
+              className="mx-4 md:mx-6 w-[320px] md:w-[450px] bg-[#F8FAFC] border border-gray-100 p-8 md:p-10 rounded-[2.5rem] flex flex-col h-full hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-300 group"
             >
-              <Quote className="text-pink-500/50 mb-4" size={32} />
-              <p className="text-gray-300 text-lg leading-relaxed flex-grow font-light italic">
+              <Quote className="text-pink-500/20 mb-6 group-hover:text-pink-500/40 transition-colors" size={40} />
+              <p className="text-gray-600 text-lg md:text-xl leading-relaxed flex-grow font-medium italic">
                 "{review.quote}"
               </p>
-              <div className="mt-6 pt-6 border-t border-white/10">
-                <p className="font-bold text-white tracking-wider">{review.source}</p>
+              <div className="mt-8 pt-6 border-t border-gray-200">
+                <p className="font-bold text-gray-900 tracking-wider uppercase text-sm">{review.source}</p>
               </div>
             </div>
           ))}

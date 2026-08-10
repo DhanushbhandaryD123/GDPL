@@ -61,7 +61,7 @@ const features = [
 export function CaptoFeatures() {
   return (
     <div className="w-full max-w-[1920px] mx-auto px-2 md:px-4 pb-12 pt-2 md:pt-4 bg-white">
-      <section className="py-24 bg-gradient-to-br from-[#6554ff] to-[#6953ff] relative w-full rounded-3xl md:rounded-[2.5rem] shadow-2xl">
+      <section className="py-24 bg-[#616AD8] relative w-full rounded-3xl md:rounded-[2.5rem] shadow-2xl">
         <div className="container mx-auto px-6 max-w-[1536px]">
         
         {/* Header & Badges */}

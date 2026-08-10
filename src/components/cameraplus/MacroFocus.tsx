@@ -24,39 +24,44 @@ export function MacroFocus() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-white relative">
-      <div className="container mx-auto px-4 md:px-6 max-w-7xl">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
+    <section className="py-20 md:py-32 bg-[#FAFAFA] relative overflow-hidden">
+      <div className="container mx-auto px-4 md:px-6 max-w-7xl relative z-10">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center lg:items-stretch">
           
           {/* Left Column: Macro Feature Card */}
           <motion.div 
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="w-full lg:w-[45%] relative rounded-3xl overflow-hidden bg-[#1B271D] flex flex-col group"
+            className="w-full lg:w-[45%] rounded-[2rem] md:rounded-[3rem] overflow-hidden bg-[#1B271D] flex flex-col group relative shadow-2xl h-[450px] md:h-[650px]"
           >
-            {/* Base Image (determines container aspect ratio) */}
-            <img 
-              src="/cameraplus/c1.png" 
-              alt="Macro Photography Before/After"
-              className="w-full h-auto block opacity-90 transition-transform duration-1000 group-hover:scale-105"
-            />
-            {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none" />
+            {/* Background Image (Cover to prevent mobile overflow/squishing) */}
+            <div className="absolute inset-0 w-full h-full">
+              <img 
+                src="/cameraplus/c1.png" 
+                alt="Macro Photography Before/After"
+                className="w-full h-full object-cover opacity-80 transition-transform duration-[2s] group-hover:scale-110"
+              />
+            </div>
+            
+            {/* Gradient Overlay (stronger at bottom for text readability) */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#1B271D]/40 to-transparent pointer-events-none" />
 
             {/* Text Content overlaying the image */}
-            <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-10 z-20 pointer-events-none">
-              <div className="pointer-events-auto">
-                <span className="text-[#A3D9A5] text-xs font-bold tracking-wider uppercase mb-3 block">
+            <div className="absolute inset-x-0 bottom-0 flex flex-col justify-end p-8 md:p-12 z-20 pointer-events-none">
+              <div className="pointer-events-auto translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#A3D9A5] text-xs font-bold tracking-widest uppercase mb-4">
+                  <Flower2 className="w-3.5 h-3.5" />
                   MACRO MODE
                 </span>
-                <h2 className="text-3xl md:text-[40px] font-bold text-white leading-tight mb-8">
+                <h2 className="text-4xl md:text-5xl font-bold text-white leading-[1.1] mb-8">
                   See the tiny world<br />in incredible detail.
                 </h2>
-                <button className="flex items-center gap-3 px-6 py-3 bg-[#111] hover:bg-black text-white rounded-full font-medium transition-colors border border-white/20 w-fit">
+                <button className="flex items-center gap-4 px-6 py-4 bg-white/10 hover:bg-white text-white hover:text-black rounded-full font-bold transition-all duration-300 border border-white/20 w-fit group/btn backdrop-blur-sm">
                   Explore Macro
-                  <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center">
-                    <ChevronRight className="w-4 h-4 text-black" strokeWidth={3} />
+                  <div className="w-8 h-8 rounded-full bg-white group-hover/btn:bg-black flex items-center justify-center transition-colors">
+                    <ChevronRight className="w-5 h-5 text-black group-hover/btn:text-white" strokeWidth={3} />
                   </div>
                 </button>
               </div>
@@ -65,37 +70,46 @@ export function MacroFocus() {
 
           {/* Right Column: Features Grid */}
           <motion.div 
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="w-full lg:w-[55%] flex flex-col justify-center"
+            className="w-full lg:w-[55%] flex flex-col justify-center py-6"
           >
-            <h2 className="text-[28px] md:text-3xl font-bold text-[#111827] mb-8 md:mb-10 text-center lg:text-left">
-              Powerful Features
-            </h2>
+            <div className="mb-10 lg:mb-14 text-center lg:text-left">
+              <h2 className="text-3xl md:text-4xl font-extrabold text-[#111827] mb-4">
+                Powerful Features
+              </h2>
+              <p className="text-gray-500 text-lg max-w-lg mx-auto lg:mx-0">
+                A complete suite of creative tools packed into one intuitive interface.
+              </p>
+            </div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-8 md:gap-y-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-8 md:gap-x-10 md:gap-y-12">
               {features.map((feature, idx) => (
-                <div key={idx} className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-11 h-11 bg-[#00B4B4] rounded-xl flex items-center justify-center shadow-md shadow-[#00B4B4]/20">
+                <motion.div 
+                  whileHover={{ y: -5 }}
+                  key={idx} 
+                  className="flex items-start gap-4 p-4 -m-4 rounded-2xl hover:bg-white hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-300 border border-transparent hover:border-gray-100 cursor-pointer"
+                >
+                  <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-[#00B4B4] to-[#009b9b] rounded-2xl flex items-center justify-center shadow-lg shadow-[#00B4B4]/30">
                     {feature.icon}
                   </div>
-                  <div className="flex flex-col">
-                    <h3 className="text-gray-900 font-bold text-[15px] mb-1">
+                  <div className="flex flex-col pt-1">
+                    <h3 className="text-gray-900 font-bold text-base md:text-lg mb-1.5">
                       {feature.title}
                     </h3>
-                    <p className="text-gray-500 text-[13px] leading-snug whitespace-pre-line">
+                    <p className="text-gray-500 text-sm leading-relaxed whitespace-pre-line">
                       {feature.desc}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
 
-            <div className="mt-12 flex justify-start sm:justify-center lg:justify-start">
-              <button className="flex items-center gap-2 px-8 py-3.5 bg-[#00B4B4] hover:bg-[#009b9b] text-white font-bold rounded-full transition-colors shadow-lg shadow-[#00B4B4]/20">
+            <div className="mt-12 flex justify-center lg:justify-start">
+              <button className="group flex items-center gap-3 px-8 py-4 bg-gray-900 hover:bg-black text-white font-bold rounded-full transition-all duration-300 shadow-xl shadow-gray-900/20 hover:shadow-gray-900/40 hover:-translate-y-1">
                 View All Features
-                <ChevronRight className="w-5 h-5" strokeWidth={2.5} />
+                <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" strokeWidth={2.5} />
               </button>
             </div>
           </motion.div>
