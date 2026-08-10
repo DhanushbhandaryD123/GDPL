@@ -1,3 +1,5 @@
+import { motion } from 'motion/react';
+
 export function Boom3DHero() {
   return (
     <div className="w-full max-w-[1920px] mx-auto px-4 md:px-4 pt-2 md:pt-4 pb-8 md:pb-12">
@@ -15,20 +17,37 @@ export function Boom3DHero() {
           <div className="w-full lg:w-1/2 text-left space-y-6 mt-16 md:mt-0">
            
             {/* Boom 3D Logo */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+            >
               <img src="/boom3D/boomLogo3D.png" alt="Boom 3D Logo" className="h-16 md:h-20 w-auto object-contain" />
-            </div>
+            </motion.div>
             
-            <h1 className="text-base sm:text-xl md:text-7xl font-bold leading-[1.05] tracking-tighter text-white">
+            <motion.h1 
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              className="text-base sm:text-xl md:text-7xl font-bold leading-[1.05] tracking-tighter text-white"
+            >
               Experience Audio in <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
                 Magical 3D
               </span>
-            </h1>
+            </motion.h1>
             
-            <p className="text-xs sm:text-sm md:text-xl text-gray-200 max-w-[600px] leading-relaxed font-medium">
+            <motion.p 
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+              className="text-xs sm:text-sm md:text-xl text-gray-200 max-w-[600px] leading-relaxed font-medium"
+            >
               Boom 3D is a system-wide volume booster and equalizer for Mac and Windows that delivers an unbelievably immersive surround sound experience.
-            </p>
+            </motion.p>
             
             
             

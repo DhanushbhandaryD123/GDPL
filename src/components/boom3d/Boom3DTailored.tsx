@@ -1,3 +1,4 @@
+import { motion } from 'motion/react';
 import { Film, Music, Gamepad2 } from 'lucide-react';
 
 export function Boom3DTailored() {
@@ -40,8 +41,12 @@ export function Boom3DTailored() {
         {/* Right Column: Cards Grid */}
         <div className="w-full lg:w-[72%] grid grid-cols-1 md:grid-cols-3 gap-3">
           {cards.map((card, index) => (
-            <div 
-              key={index} 
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
               className="bg-[#111111] rounded-[1.5rem] overflow-hidden relative flex flex-col h-[480px] group cursor-pointer transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl shadow-lg border border-[#222]"
             >
               {/* Image Section */}
@@ -71,7 +76,7 @@ export function Boom3DTailored() {
             
 
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
