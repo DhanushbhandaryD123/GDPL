@@ -1,6 +1,6 @@
 export function Boom3DAward() {
   return (
-    <section className="relative py-32 overflow-hidden bg-white">
+    <section className="relative py-16 md:py-32 overflow-hidden bg-white">
       <div className="max-w-[1000px] mx-auto px-4 relative z-10">
         <div className="text-center space-y-8">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-[#1d1d1f] leading-tight">

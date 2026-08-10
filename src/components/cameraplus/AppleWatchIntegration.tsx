@@ -3,22 +3,22 @@ import { Camera, ChevronRight } from 'lucide-react';
 
 export function AppleWatchIntegration() {
   return (
-    <section className="py-24 bg-white relative">
-      <div className="container mx-auto px-6 max-w-7xl">
-        <div className="bg-gradient-to-r from-[#F0FDFD] to-[#E0F6F6] rounded-[40px] overflow-hidden flex flex-col md:flex-row items-center gap-12 lg:gap-24 p-12 lg:p-16">
+    <section className="py-16 md:py-24 bg-white relative">
+      <div className="container mx-auto px-4 md:px-6 max-w-7xl">
+        <div className="bg-gradient-to-r from-[#F0FDFD] to-[#E0F6F6] rounded-[30px] md:rounded-[40px] overflow-hidden flex flex-col md:flex-row items-center gap-10 lg:gap-24 p-8 md:p-12 lg:p-16">
           
           {/* Left Side: Text */}
-          <div className="w-full md:w-1/2">
+          <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
             <motion.div 
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-[#00B4B4] font-bold text-[15px] mb-4">
+              <h4 className="text-[#00B4B4] font-bold text-[15px] mb-3 md:mb-4">
                 Apple Watch
               </h4>
               
-              <h2 className="text-4xl lg:text-[44px] font-bold text-[#111827] leading-[1.1] mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-[44px] font-bold text-[#111827] leading-[1.1] mb-4 md:mb-6">
                 Live Preview &<br />Remote Trigger
               </h2>
               

@@ -35,7 +35,7 @@ export function UseCases() {
   const activeUseCase = useCases.find(uc => uc.id === activeTab) || useCases[0];
 
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section className="py-16 md:py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">

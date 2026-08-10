@@ -24,8 +24,8 @@ export function MacroFocus() {
   ];
 
   return (
-    <section className="py-24 bg-white relative">
-      <div className="container mx-auto px-6 max-w-7xl">
+    <section className="py-16 md:py-24 bg-white relative">
+      <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
           
           {/* Left Column: Macro Feature Card */}
@@ -45,7 +45,7 @@ export function MacroFocus() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none" />
 
             {/* Text Content overlaying the image */}
-            <div className="absolute inset-0 flex flex-col justify-end p-10 z-20 pointer-events-none">
+            <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-10 z-20 pointer-events-none">
               <div className="pointer-events-auto">
                 <span className="text-[#A3D9A5] text-xs font-bold tracking-wider uppercase mb-3 block">
                   MACRO MODE
@@ -70,11 +70,11 @@ export function MacroFocus() {
             viewport={{ once: true }}
             className="w-full lg:w-[55%] flex flex-col justify-center"
           >
-            <h2 className="text-[28px] font-bold text-[#111827] mb-10">
+            <h2 className="text-[28px] md:text-3xl font-bold text-[#111827] mb-8 md:mb-10 text-center lg:text-left">
               Powerful Features
             </h2>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-8 md:gap-y-10">
               {features.map((feature, idx) => (
                 <div key={idx} className="flex items-start gap-4">
                   <div className="flex-shrink-0 w-11 h-11 bg-[#00B4B4] rounded-xl flex items-center justify-center shadow-md shadow-[#00B4B4]/20">

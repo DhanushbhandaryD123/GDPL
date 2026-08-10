@@ -21,9 +21,11 @@ export function Boom2() {
 
       <main>
         <Boom2Hero />
-        <Boom2FeaturesBanner />
+        <div className="bg-white">
+          <Boom2FeaturesBanner />
+        </div>
         
-        <div className="bg-[#f5f5f7] text-gray-900 pb-16 pt-8 rounded-t-[2.5rem] md:rounded-t-[4rem] -mt-10 relative z-10">
+        <div className="bg-[#f5f5f7] text-gray-900 pb-16 pt-8 relative z-10 border-t border-gray-200">
           <Boom2PrecisionControl />
           <Boom2FeatureGrid />
           <Boom2RemoteControl />

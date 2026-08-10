@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 
 export function NewsletterSection() {
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-16 md:py-24 relative overflow-hidden">
       {/* Gradient Background matching image */}
       <div className="absolute inset-0 bg-gradient-to-r from-orange-600 via-pink-600 to-indigo-900 z-0" />
       
@@ -42,16 +42,16 @@ export function NewsletterSection() {
           className="w-full max-w-md relative"
           onSubmit={(e) => e.preventDefault()}
         >
-          <div className="flex bg-white rounded-lg p-1.5 shadow-2xl">
+          <div className="flex flex-col sm:flex-row bg-white rounded-lg p-1.5 shadow-2xl gap-2 sm:gap-0">
             <input 
               type="email" 
               placeholder="Enter your email ID" 
-              className="flex-grow px-4 py-3 bg-transparent text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-0 text-sm md:text-base"
+              className="flex-grow px-4 py-3 bg-transparent text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-0 text-sm md:text-base text-center sm:text-left"
               required
             />
             <button 
               type="submit"
-              className="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-md font-semibold transition-colors whitespace-nowrap text-sm md:text-base"
+              className="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-md font-semibold transition-colors whitespace-nowrap text-sm md:text-base w-full sm:w-auto"
             >
               Subscribe
             </button>

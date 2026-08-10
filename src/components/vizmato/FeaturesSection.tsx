@@ -21,12 +21,12 @@ const features = [
 
 export function FeaturesSection() {
   return (
-    <section className="py-24 bg-gray-50 relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-gray-50 relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-black/5 to-transparent" />
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 md:mb-20">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -37,7 +37,7 @@ export function FeaturesSection() {
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 max-w-5xl mx-auto">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}

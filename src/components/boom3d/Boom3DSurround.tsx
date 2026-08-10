@@ -151,16 +151,16 @@ export function Boom3DSurround() {
           <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left relative z-10 w-full max-w-[950px]">
             
             {/* Top Row: Headline + Buttons */}
-            <div className="flex flex-col lg:flex-row items-center justify-start gap-4 lg:gap-6 mb-5 w-full">
-              <h3 className="text-2xl md:text-[1.75rem] font-bold text-white tracking-tight whitespace-nowrap">
+            <div className="flex flex-col lg:flex-row items-center justify-start gap-4 lg:gap-6 mb-5 w-full text-center md:text-left">
+              <h3 className="text-2xl md:text-[1.75rem] font-bold text-white tracking-tight whitespace-normal sm:whitespace-nowrap">
                 Download the 5.1 Extension for Netflix
               </h3>
-              <div className="flex items-center gap-4">
-                <a href="https://chromewebstore.google.com/detail/boom3d-51-surround-for-ne/ndjhebiohmanieefhnhcmlbflfljmhdn?hl=en&authuser=0" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#2ab2da] hover:bg-[#2399bd] text-black font-bold px-6 py-2 rounded-full text-[14px] transition-colors border border-[#021833] shadow-md">
+              <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+                <a href="https://chromewebstore.google.com/detail/boom3d-51-surround-for-ne/ndjhebiohmanieefhnhcmlbflfljmhdn?hl=en&authuser=0" target="_blank" rel="noopener noreferrer" className="flex w-full sm:w-auto items-center justify-center gap-2 bg-[#2ab2da] hover:bg-[#2399bd] text-black font-bold px-6 py-2 rounded-full text-[14px] transition-colors border border-[#021833] shadow-md">
                   <img src="/boom3D/Chrome-icon.png" alt="Chrome" className="w-[32px] h-[32px]" />
                   For Chrome
                 </a>
-                <a href="https://apps.apple.com/us/app/boom3d-5-1-audio-for-netflix/id6445882848?mt=12" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#2ab2da] hover:bg-[#2399bd] text-black font-bold px-6 py-2 rounded-full text-[14px] transition-colors border border-[#021833] shadow-md">
+                <a href="https://apps.apple.com/us/app/boom3d-5-1-audio-for-netflix/id6445882848?mt=12" target="_blank" rel="noopener noreferrer" className="flex w-full sm:w-auto items-center justify-center gap-2 bg-[#2ab2da] hover:bg-[#2399bd] text-black font-bold px-6 py-2 rounded-full text-[14px] transition-colors border border-[#021833] shadow-md">
                   <img src="/boom3D/Safari-icon.png" alt="Safari" className="w-[32px] h-[32px]" />
                   For Safari
                 </a>

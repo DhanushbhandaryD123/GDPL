@@ -33,9 +33,9 @@ const features = [
 
 export function ProFeatures() {
   return (
-    <section id="features" className="bg-white py-24">
+    <section id="features" className="bg-white py-16 md:py-24">
       <div className="max-w-[1400px] mx-auto px-4 md:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Powerful Features
           </h2>

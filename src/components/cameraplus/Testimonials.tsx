@@ -18,8 +18,8 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="py-24 bg-white relative">
-      <div className="container mx-auto px-6 max-w-7xl">
+    <section className="py-16 md:py-24 bg-white relative">
+      <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-[#111827]">
@@ -27,7 +27,7 @@ export function Testimonials() {
           </h2>
         </div>
 
-        <div className="relative max-w-6xl mx-auto flex items-center mb-20">
+        <div className="relative max-w-6xl mx-auto flex items-center mb-12 md:mb-20">
           
           {/* Left Arrow */}
           <button className="hidden md:flex absolute -left-6 z-10 w-12 h-12 bg-white rounded-full items-center justify-center shadow-lg border border-gray-100 hover:scale-105 transition-transform">

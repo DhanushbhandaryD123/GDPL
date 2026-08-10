@@ -54,9 +54,9 @@ const EffectsScreen = () => {
 
 export function ProEditingTools() {
   return (
-    <section id="gallery" className="bg-white py-24 overflow-hidden">
+    <section id="gallery" className="bg-white py-16 md:py-24 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 md:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left — copy */}
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-6">

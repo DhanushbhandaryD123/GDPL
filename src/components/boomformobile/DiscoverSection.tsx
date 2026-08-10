@@ -41,7 +41,7 @@ const integrations = [
 
 export function DiscoverSection() {
   return (
-    <section className="py-24 bg-[#060814] relative border-t border-white/5">
+    <section className="py-16 md:py-24 bg-[#060814] relative border-t border-white/5">
       {/* Background Decor */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[600px] bg-gradient-to-r from-blue-900/10 to-purple-900/10 blur-[100px] rounded-full" />

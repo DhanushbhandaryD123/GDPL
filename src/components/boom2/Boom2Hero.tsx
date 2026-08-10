@@ -1,4 +1,4 @@
-
+import { motion } from 'motion/react';
 
 const AppleLogo = ({ className = "" }: { className?: string }) => (
   <svg 
@@ -13,8 +13,8 @@ const AppleLogo = ({ className = "" }: { className?: string }) => (
 
 export function Boom2Hero() {
   return (
-    <div className="w-full max-w-[1920px] mx-auto px-2 md:px-4 pb-12 pt-2 md:pt-4 bg-white">
-      <section className="relative w-full rounded-3xl md:rounded-[2.5rem] shadow-2xl pt-12 pb-24 md:pt-16 md:pb-32 flex items-center min-h-[60vh] overflow-hidden">
+    <div className="w-full max-w-[1920px] mx-auto px-4 md:px-4 pt-2 md:pt-4 pb-8 md:pb-12 bg-white">
+      <section className="relative w-full rounded-3xl md:rounded-[2.5rem] shadow-2xl py-8 md:pt-16 md:pb-32 flex items-center aspect-[4/3] sm:aspect-[16/9] md:aspect-auto md:min-h-[70vh] overflow-hidden">
 
       {/* Video Background */}
       <video
@@ -33,37 +33,61 @@ export function Boom2Hero() {
       <div className="max-w-[1400px] mx-auto px-4 md:px-8 w-full relative z-10">
         <div className="max-w-xl">
 
-          <div className="flex items-center gap-3 mb-8">
+          <motion.div 
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+            className="flex items-center gap-3 mb-4 md:mb-8"
+          >
             <img
               src="/boom2/Boom2-icon.png"
               alt="Boom 2 Logo"
-              className="w-20 h-30 object-contain drop-shadow-lg"
+              className="w-12 md:w-20 h-auto object-contain drop-shadow-lg"
             />
-            <span className="text-white font-semibold text-xl tracking-wide drop-shadow-md">
-              Boom <span className="font-light text-gray-300 border border-gray-500 rounded px-1.5 text-sm ml-1 align-middle">2</span>
+            <span className="text-white font-semibold text-lg md:text-xl tracking-wide drop-shadow-md">
+              Boom <span className="font-light text-gray-300 border border-gray-500 rounded px-1 md:px-1.5 text-xs md:text-sm ml-1 align-middle">2</span>
             </span>
-          </div>
+          </motion.div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight drop-shadow-lg text-white">
+          <motion.h1 
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="text-base sm:text-xl md:text-6xl lg:text-7xl font-bold mb-3 md:mb-6 leading-tight drop-shadow-lg text-white"
+          >
             Your Audio, <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">Reimagined.</span>
-          </h1>
+          </motion.h1>
           
-          <p className="text-gray-300 text-lg md:text-xl mb-10 leading-relaxed max-w-lg drop-shadow-md">
+          <motion.p 
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            className="text-gray-300 text-[11px] sm:text-sm md:text-xl mb-6 md:mb-10 leading-relaxed max-w-lg drop-shadow-md"
+          >
             Boom 2 is the ultimate audio enhancement app that brings your music, movies, and games to life with powerful tools and immersive 3D sound.
-          </p>
+          </motion.p>
           
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-            <button className="flex items-center justify-center gap-2.5 bg-white text-black px-4 py-3 rounded-lg font-bold transition-all hover:bg-[#1390FB] hover:text-white hover:scale-[1.02] w-full sm:w-[210px] text-sm md:text-base tracking-wide shadow-lg group">
-              <AppleLogo className="w-5 h-5 mb-0.5" />
+          <motion.div 
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+            className="flex flex-col sm:flex-row items-center gap-2 md:gap-4 w-full sm:w-auto"
+          >
+            <button className="flex items-center justify-center gap-2 bg-white text-black px-4 py-1.5 md:px-4 md:py-3.5 rounded-full md:rounded-xl font-bold transition-all hover:bg-[#1390FB] hover:text-white hover:scale-[1.02] w-full sm:w-[210px] text-[10px] sm:text-xs md:text-[15px] tracking-wide shadow-lg group">
+              <AppleLogo className="w-3.5 h-3.5 md:w-5 md:h-5 mb-0.5" />
               DOWNLOAD TRIAL
             </button>
             
-            <button className="flex items-center justify-center gap-2.5 bg-black/40 backdrop-blur-sm border-2 border-white/90 text-white px-4 py-3 rounded-lg font-bold transition-all hover:bg-[#1390FB] hover:border-[#1390FB] w-full sm:w-[210px] text-sm md:text-base tracking-wide shadow-lg group">
-              <AppleLogo className="w-5 h-5 mb-0.5" />
+            <button className="flex items-center justify-center gap-2 bg-black/40 backdrop-blur-sm border border-white/40 text-white px-4 py-1.5 md:px-4 md:py-3.5 rounded-full md:rounded-xl font-bold transition-all hover:bg-[#1390FB] hover:border-[#1390FB] w-full sm:w-[210px] text-[10px] sm:text-xs md:text-[15px] tracking-wide shadow-lg group">
+              <AppleLogo className="w-3.5 h-3.5 md:w-5 md:h-5 mb-0.5" />
               BUY NOW
             </button>
-          </div>
+          </motion.div>
         </div>
       </div>
       </section>

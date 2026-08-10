@@ -37,7 +37,7 @@ export function StatsSection() {
   });
 
   return (
-    <section className="py-24 bg-[#0a0a0f] relative overflow-hidden" ref={ref}>
+    <section className="py-16 md:py-24 bg-[#0a0a0f] relative overflow-hidden" ref={ref}>
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.h2 

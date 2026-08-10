@@ -32,9 +32,9 @@ export function QuickFeaturesBar() {
 
   return (
     <section className="relative z-20 -mt-8 pb-12 bg-white">
-      <div className="container mx-auto px-6 max-w-[1400px]">
+      <div className="container mx-auto px-4 md:px-6 max-w-[1400px]">
         {/* We use a flex container that can scroll horizontally on mobile if needed */}
-        <div className="flex flex-col md:flex-row items-center md:items-stretch justify-between gap-4 lg:gap-6 bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 p-6 lg:p-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-row items-start md:items-stretch justify-between gap-4 lg:gap-6 bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 p-4 md:p-6 lg:p-8">
           
           {features.map((feature, index) => (
             <motion.div
@@ -43,7 +43,7 @@ export function QuickFeaturesBar() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.15 }}
-              className="flex flex-row md:flex-col lg:flex-row items-center md:items-start lg:items-center gap-4 lg:gap-5 w-full md:w-1/5 group"
+              className="flex flex-col lg:flex-row items-center lg:items-center text-center lg:text-left gap-2 lg:gap-5 w-full md:w-1/5 group relative"
             >
               {/* Icon Container */}
               <div className="flex-shrink-0 w-12 h-12 lg:w-14 lg:h-14 rounded-2xl bg-[#F0FDFD] border border-[#E0F6F6] flex items-center justify-center transition-transform group-hover:scale-110">

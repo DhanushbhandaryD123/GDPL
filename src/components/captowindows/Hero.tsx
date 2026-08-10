@@ -3,7 +3,7 @@ import { Download } from 'lucide-react';
 
 export function Hero() {
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-white">
+    <section className="relative px-4 pt-2 pb-8 md:px-0 md:pt-40 md:pb-32 overflow-hidden bg-white">
       {/* Background Decor */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
         <div className="absolute -top-[20%] -right-[10%] w-[70%] h-[70%] rounded-full bg-[#0078D7]/10 blur-[120px]" />
@@ -21,21 +21,21 @@ export function Hero() {
             Available on Windows 10 & 11
           </div>
           
-          <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight mb-6">
+          <h1 className="text-base sm:text-xl md:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight mb-6">
             Your All-in-One Solution for <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0078D7] to-[#005a9e]">
               Screenshots & Screen Recording
             </span>
           </h1>
           
-          <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xs sm:text-sm md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
             Capture, edit, and share your screen effortlessly. Capto for Windows offers a robust set of tools for creating professional video tutorials, capturing images, and annotating screenshots.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a 
               href="#"
-              className="w-full sm:w-auto px-8 py-4 bg-[#0078D7] hover:bg-[#005a9e] text-white rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-all shadow-lg shadow-blue-500/30 hover:-translate-y-1"
+              className="w-full sm:w-auto px-4 py-1.5 md:px-8 md:py-4 bg-[#0078D7] hover:bg-[#005a9e] text-white rounded-[2rem] md:rounded-xl font-bold text-[10px] sm:text-xs md:text-lg flex items-center justify-center gap-2 transition-all shadow-lg shadow-blue-500/30 hover:-translate-y-1"
             >
               <Download size={20} />
               Download Free Trial
@@ -48,7 +48,7 @@ export function Hero() {
               <img 
                 src="https://get.microsoft.com/images/en-us%20light.svg" 
                 alt="Get it from Microsoft" 
-                className="h-[56px] w-auto border border-gray-200 rounded-xl"
+                className="h-8 sm:h-10 md:h-[56px] w-auto border border-gray-200 rounded-xl"
                 onError={(e) => {
                   (e.target as HTMLImageElement).style.display = 'none';
                 }}
@@ -63,8 +63,8 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.2 }}
           className="mt-16 relative mx-auto max-w-5xl"
         >
-          <div className="relative rounded-2xl md:rounded-[2rem] overflow-hidden shadow-2xl shadow-blue-900/10 border border-gray-200 bg-white p-2">
-            <div className="rounded-xl overflow-hidden bg-gray-100 aspect-video relative flex items-center justify-center">
+          <div className="relative rounded-3xl md:rounded-[2rem] overflow-hidden shadow-2xl shadow-blue-900/10 border border-gray-200 bg-white p-2 aspect-[4/3] sm:aspect-[16/9] md:aspect-auto">
+            <div className="rounded-xl overflow-hidden bg-gray-100 h-full md:aspect-video relative flex items-center justify-center">
               <img 
                 src="https://www.globaldelight.com/capto/windows/assets/banner_win-3591456d.png" 
                 alt="Capto for Windows Interface"

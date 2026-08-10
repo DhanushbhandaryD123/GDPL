@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 
 export function BoomStory() {
   return (
-    <section className="py-24 bg-[#060814] relative border-b border-white/5">
+    <section className="py-16 md:py-24 bg-[#060814] relative border-b border-white/5">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div

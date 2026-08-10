@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export function MacPromo() {
   return (
-    <section className="py-12 bg-[#0078D7] text-white">
+    <section className="py-10 md:py-12 bg-[#0078D7] text-white">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

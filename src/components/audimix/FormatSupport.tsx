@@ -46,7 +46,7 @@ function ExportPanelMockup() {
 
 export function FormatSupport() {
   return (
-    <section className="py-24 bg-gray-50 overflow-hidden">
+    <section className="py-16 md:py-24 bg-gray-50 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
 

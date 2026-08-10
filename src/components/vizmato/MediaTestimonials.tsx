@@ -78,7 +78,7 @@ export function MediaTestimonials() {
   const currentData = activeTab === 'MEDIA' ? mediaTestimonials : userTestimonials;
 
   return (
-    <section className="relative w-full py-24 bg-white overflow-hidden">
+    <section className="relative w-full py-16 md:py-24 bg-white overflow-hidden">
       
       {/* Network / Constellation Background Pattern */}
       <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
@@ -92,24 +92,24 @@ export function MediaTestimonials() {
       <div className="absolute top-1/4 left-10 w-2 h-2 bg-gray-300 rounded-full blur-[2px] z-0" />
       <div className="absolute bottom-1/4 right-20 w-3 h-3 bg-gray-300 rounded-full blur-[2px] z-0" />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         
         {/* Top Tabs */}
-        <div className="flex justify-center mb-24">
-          <div className="flex items-center bg-[#f0f0f0] rounded-full px-10 py-3 border border-gray-200">
+        <div className="flex justify-center mb-12 md:mb-24">
+          <div className="flex items-center bg-[#f0f0f0] rounded-full px-6 md:px-10 py-2 md:py-3 border border-gray-200">
             <button 
               onClick={() => setActiveTab('MEDIA')}
-              className={`text-[20px] font-bold tracking-wide transition-colors ${
+              className={`text-[16px] md:text-[20px] font-bold tracking-wide transition-colors ${
                 activeTab === 'MEDIA' ? 'text-black' : 'text-gray-400'
               }`}
               style={{ fontFamily: 'Sora, sans-serif' }}
             >
               MEDIA
             </button>
-            <div className="w-px h-6 bg-gray-300 mx-8" />
+            <div className="w-px h-5 md:h-6 bg-gray-300 mx-4 md:mx-8" />
             <button 
               onClick={() => setActiveTab('USERS')}
-              className={`text-[20px] font-bold tracking-wide transition-colors ${
+              className={`text-[16px] md:text-[20px] font-bold tracking-wide transition-colors ${
                 activeTab === 'USERS' ? 'text-black' : 'text-gray-400'
               }`}
               style={{ fontFamily: 'Sora, sans-serif' }}

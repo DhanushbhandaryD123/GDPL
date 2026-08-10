@@ -2,8 +2,8 @@
 
 export function Boom2PrecisionControl() {
   return (
-    <section className="py-20 px-4 max-w-[1400px] mx-auto">
-      <div className="grid lg:grid-cols-2 gap-16 items-center">
+    <section className="py-12 md:py-20 px-4 max-w-[1400px] mx-auto">
+      <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         
         {/* Left Content */}
         <div className="max-w-xl pr-4 lg:pr-8">

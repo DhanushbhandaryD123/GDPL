@@ -106,7 +106,7 @@ export function CameraPlusHero({ logoUrl }: CameraPlusHeroProps) {
   return (
     <section
       id="top"
-      className="relative overflow-hidden bg-gradient-to-b from-[#0a0e1a] to-[#0f1729] text-white pt-2 pb-4 md:pt-2 md:pb-4"
+      className="relative overflow-hidden bg-gradient-to-b from-[#0a0e1a] to-[#0f1729] text-white pt-2 pb-8 md:pt-2 md:pb-4"
     >
       {/* Starfield */}
       <div
@@ -145,17 +145,17 @@ export function CameraPlusHero({ logoUrl }: CameraPlusHeroProps) {
           </div>
 
           <div className="flex flex-col items-end gap-12 sm:gap-20">
-            <button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-4 py-2 rounded-full transition-colors shadow-lg shadow-blue-600/30">
+            <button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white text-[10px] sm:text-xs md:text-xs font-bold px-4 py-1.5 md:px-4 md:py-2 rounded-full transition-colors shadow-lg shadow-blue-600/30">
               Download App Store
             </button>
             
-            <div className="text-right max-w-[200px] md:max-w-[280px] hidden sm:flex flex-col items-end z-20 relative">
+            <div className="text-right max-w-[200px] md:max-w-[280px] flex flex-col items-end z-20 relative mt-4 sm:mt-0">
               
-              <h2 className="text-3xl md:text-4xl font-black bg-gradient-to-br from-white via-white to-blue-400 bg-clip-text text-transparent mb-4 leading-[1.15] tracking-tight drop-shadow-sm">
+              <h2 className="text-base sm:text-xl md:text-4xl font-black bg-gradient-to-br from-white via-white to-blue-400 bg-clip-text text-transparent mb-4 leading-[1.15] tracking-tight drop-shadow-sm">
                 Capture.<br/>Edit.<br/>Create.
               </h2>
               <div className="w-16 h-[2px] bg-gradient-to-l from-blue-500 to-transparent mb-4 rounded-full opacity-60"></div>
-              <p className="text-xs md:text-sm text-blue-100/80 font-medium leading-relaxed drop-shadow-sm">
+              <p className="text-xs sm:text-sm text-blue-100/80 font-medium leading-relaxed drop-shadow-sm">
                 Professional photography tools meticulously designed for iPhone.
               </p>
             </div>
@@ -163,7 +163,7 @@ export function CameraPlusHero({ logoUrl }: CameraPlusHeroProps) {
         </div>
 
         {/* Globe — fixed, static hero visual */}
-        <div className="flex justify-center mb-0 -mt-42 sm:-mt-58 md:-mt-[440px]">
+        <div className="flex justify-center mb-0 mt-[-10.5rem] sm:mt-[-14.5rem] md:-mt-[440px]">
           <div className="relative w-[400px] h-[400px] sm:w-[500px] sm:h-[500px] md:w-[680px] md:h-[680px]">
             {/* Outer rim glow */}
             <div className="absolute -inset-3 rounded-full bg-blue-500/20 blur-2xl" />

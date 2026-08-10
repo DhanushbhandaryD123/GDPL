@@ -1,9 +1,8 @@
 import { motion } from 'motion/react';
-import { Mic } from 'lucide-react';
 
 export function Hero() {
   return (
-    <div className="w-full max-w-[1920px] mx-auto px-2 md:px-4 pb-12 pt-2 md:pt-4 bg-white">
+    <div className="w-full max-w-[1920px] mx-auto px-4 md:px-4 pt-2 md:pt-4 pb-8 md:pb-12 bg-white">
       <section className="relative w-full rounded-3xl md:rounded-[2.5rem] shadow-xl pt-8 pb-8 md:pt-12 md:pb-12 bg-gray-50/50 border border-gray-100 flex items-center">
       {/* Dynamic Background Decor for Light Theme */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden rounded-3xl md:rounded-[2.5rem] z-0 pointer-events-none">
@@ -30,14 +29,14 @@ export function Hero() {
               />
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight leading-[1.1] mb-6">
+            <h1 className="text-base sm:text-xl md:text-6xl font-extrabold text-gray-900 tracking-tight leading-[1.1] mb-6">
               Enhance your audio recordings with{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
                 AudiOn
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl text-gray-500 mb-10 max-w-xl leading-relaxed">
+            <p className="text-xs sm:text-sm md:text-xl text-gray-500 mb-10 max-w-xl leading-relaxed">
               The cutting-edge voice recorder app designed for professionals, students, and creators. Experience studio-quality recording, editing, and transcription right in your pocket.
             </p>
 
@@ -49,7 +48,7 @@ export function Hero() {
                 <img
                   src="/Audio/storeCTA2.png"
                   alt="Download on the App Store"
-                  className="h-[50px] w-auto"
+                  className="h-8 sm:h-10 md:h-[50px] w-auto"
                 />
               </a>
               <a
@@ -59,7 +58,7 @@ export function Hero() {
                 <img
                   src="/Audio/playstoreCTA.png"
                   alt="Get it on Google Play"
-                  className="h-[50px] w-auto"
+                  className="h-8 sm:h-10 md:h-[50px] w-auto"
                 />
               </a>
             </div>

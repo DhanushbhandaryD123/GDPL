@@ -13,7 +13,7 @@ const WindowsIcon = ({ className }: { className?: string }) => (
 
 export function Boom3DAppDownload() {
   return (
-    <section className="bg-white pt-20 pb-10 flex flex-col items-center justify-center relative z-20">
+    <section className="bg-white pt-16 pb-10 flex flex-col items-center justify-center relative z-20">
       <div className="max-w-[1000px] mx-auto px-6 text-center w-full">
         
         <h2 className="text-3xl md:text-[2.5rem] lg:text-[2.75rem] font-medium tracking-tight text-[#111111] mb-6 leading-tight">
@@ -27,7 +27,7 @@ export function Boom3DAppDownload() {
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
           {/* macOS Button */}
-          <button className="flex items-center justify-center gap-5 bg-[#111111] hover:bg-black text-white px-8 py-3 rounded-[1rem] min-w-[240px] transition-all">
+          <button className="flex items-center justify-center gap-5 bg-[#111111] hover:bg-black text-white px-8 py-3 rounded-[1rem] min-w-[240px] w-full sm:w-auto transition-all">
             <AppleIcon className="w-9 h-9" />
             <div className="text-left flex flex-col">
               <span className="text-[1.35rem] font-bold leading-tight">macOS</span>
@@ -36,7 +36,7 @@ export function Boom3DAppDownload() {
           </button>
 
           {/* Windows Button */}
-          <button className="flex items-center justify-center gap-5 bg-white hover:bg-gray-50 text-[#111111] px-8 py-3 rounded-[1rem] min-w-[240px] transition-all border border-gray-100 shadow-[0_8px_30px_rgba(0,0,0,0.06)]">
+          <button className="flex items-center justify-center gap-5 bg-white hover:bg-gray-50 text-[#111111] px-8 py-3 rounded-[1rem] min-w-[240px] w-full sm:w-auto transition-all border border-gray-100 shadow-[0_8px_30px_rgba(0,0,0,0.06)]">
             <WindowsIcon className="w-8 h-8 text-[#0099ff]" />
             <div className="text-left flex flex-col">
               <span className="text-[1.35rem] font-bold leading-tight">Windows</span>

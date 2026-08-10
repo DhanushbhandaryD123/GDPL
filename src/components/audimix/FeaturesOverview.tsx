@@ -69,7 +69,7 @@ function StepMockup({ type }: { type: 'import' | 'levels' | 'export' }) {
 
 export function FeaturesOverview() {
   return (
-    <section className="pt-24 pb-32 bg-gray-50 relative border-t border-gray-100 overflow-hidden">
+    <section className="pt-16 pb-24 md:pt-24 md:pb-32 bg-gray-50 relative border-t border-gray-100 overflow-hidden">
       <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-cyan-100/40 to-transparent pointer-events-none" />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">

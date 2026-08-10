@@ -62,7 +62,7 @@ export function CaptoUseCases() {
   }, [paused, activeTab]);
 
   return (
-    <section className="py-24 relative overflow-hidden bg-[#fafbfe]">
+    <section className="py-16 md:py-24 relative overflow-hidden bg-[#fafbfe]">
       {/* Background decor — consistent with hero's dot grid */}
       <div className="absolute -top-10 right-[8%] opacity-40 pointer-events-none">
         <div className="w-40 h-40" style={{ backgroundImage: 'radial-gradient(#6554ff 2px, transparent 2px)', backgroundSize: '18px 18px' }} />

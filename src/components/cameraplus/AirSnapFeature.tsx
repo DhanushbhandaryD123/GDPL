@@ -3,19 +3,19 @@ import { Smartphone, Tablet, Wifi, Bluetooth } from 'lucide-react';
 
 export function AirSnapFeature() {
   return (
-    <section className="py-24 bg-white overflow-hidden border-t border-gray-100">
+    <section className="py-16 md:py-24 bg-white overflow-hidden border-t border-gray-100">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           
           {/* Left Side: Mockups */}
-          <div className="w-full lg:w-1/2 relative h-[500px] flex justify-center items-center">
+          <div className="w-full lg:w-1/2 relative h-[350px] md:h-[500px] flex justify-center items-center mb-10 lg:mb-0">
             {/* iPad (Remote) */}
             <motion.div 
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="absolute left-0 md:left-[10%] z-20 w-[240px] md:w-[280px] aspect-[3/4] bg-white rounded-[2rem] border-8 border-gray-200 shadow-2xl overflow-hidden"
+              className="absolute left-0 sm:left-[5%] md:left-[10%] z-20 w-[160px] sm:w-[200px] md:w-[280px] aspect-[3/4] bg-white rounded-[1.5rem] md:rounded-[2rem] border-4 md:border-8 border-gray-200 shadow-2xl overflow-hidden"
             >
               <div className="absolute inset-0 bg-black flex flex-col items-center justify-center p-4">
                 <div className="w-16 h-16 rounded-full border-4 border-white mb-4 flex items-center justify-center">
@@ -44,7 +44,7 @@ export function AirSnapFeature() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="absolute right-0 md:right-[10%] z-20 w-[180px] md:w-[220px] aspect-[9/19.5] bg-gray-900 rounded-[3rem] border-8 border-gray-800 shadow-2xl overflow-hidden"
+              className="absolute right-0 sm:right-[5%] md:right-[10%] z-20 w-[120px] sm:w-[160px] md:w-[220px] aspect-[9/19.5] bg-gray-900 rounded-[2rem] md:rounded-[3rem] border-4 md:border-8 border-gray-800 shadow-2xl overflow-hidden"
             >
               <img 
                 src="https://images.unsplash.com/photo-1517511620798-cec17d428bc0?q=80&w=600&auto=format&fit=crop" 
@@ -61,7 +61,7 @@ export function AirSnapFeature() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
+              <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 mb-4 md:mb-6 tracking-tight">
                 Introducing <span className="text-blue-600">AirSnap</span>
               </h2>
               <h3 className="text-2xl font-bold text-gray-700 mb-6">

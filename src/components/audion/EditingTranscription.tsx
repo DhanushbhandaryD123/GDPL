@@ -27,7 +27,7 @@ const workflowSteps = [
 
 export function EditingTranscription() {
   return (
-    <section className="py-24 bg-gray-50 relative border-t border-gray-100 overflow-hidden">
+    <section className="py-16 md:py-24 bg-gray-50 relative border-t border-gray-100 overflow-hidden">
       {/* Abstract Grid Background */}
       <div className="absolute inset-0 z-0 opacity-40"
            style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px)', backgroundSize: '40px 40px' }} />

@@ -58,7 +58,8 @@ export function HeroCarousel() {
   }, [emblaApi]);
 
   return (
-    <section className="relative h-[90vh] min-h-[600px] overflow-hidden bg-[#060814]">
+    <div className="w-full mx-auto px-4 md:px-0 pt-2 md:pt-0 pb-8 md:pb-0 bg-white md:bg-transparent">
+    <section className="relative rounded-3xl md:rounded-none aspect-[4/3] sm:aspect-[16/9] md:aspect-auto md:h-[90vh] min-h-[600px] overflow-hidden bg-[#060814]">
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#060814]/50 to-[#060814] z-10" />
       </div>
@@ -77,7 +78,7 @@ export function HeroCarousel() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: selectedIndex === index ? 1 : 0, y: selectedIndex === index ? 0 : 20 }}
                       transition={{ duration: 0.6 }}
-                      className="text-5xl md:text-7xl font-bold mb-4 tracking-tight"
+                      className="text-base sm:text-xl md:text-7xl font-bold mb-4 tracking-tight"
                     >
                       {slide.title} <br />
                       <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-500">
@@ -89,7 +90,7 @@ export function HeroCarousel() {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: selectedIndex === index ? 1 : 0 }}
                       transition={{ duration: 0.6, delay: 0.2 }}
-                      className="text-xl text-gray-300 mb-8 max-w-lg"
+                      className="text-xs sm:text-sm md:text-xl text-gray-300 mb-8 max-w-lg"
                     >
                       {slide.description}
                     </motion.p>
@@ -98,12 +99,12 @@ export function HeroCarousel() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: selectedIndex === index ? 1 : 0, y: selectedIndex === index ? 0 : 20 }}
                       transition={{ duration: 0.6, delay: 0.4 }}
-                      className="flex gap-4"
+                      className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
                     >
-                      <a href="#" className="bg-pink-500 hover:bg-pink-600 text-white px-8 py-4 rounded-full font-bold flex items-center gap-2 transition-all shadow-lg shadow-pink-500/25 hover:shadow-pink-500/40">
+                      <a href="#" className="bg-pink-500 hover:bg-pink-600 text-white px-4 py-1.5 md:px-8 md:py-4 rounded-full font-bold flex items-center justify-center gap-2 transition-all shadow-lg shadow-pink-500/25 hover:shadow-pink-500/40 w-full sm:w-auto text-[10px] sm:text-xs md:text-base">
                         <Download size={20} /> App Store
                       </a>
-                      <a href="#" className="bg-white/10 hover:bg-white/20 border border-white/10 text-white px-8 py-4 rounded-full font-bold flex items-center gap-2 transition-all backdrop-blur-sm">
+                      <a href="#" className="bg-white/10 hover:bg-white/20 border border-white/10 text-white px-4 py-1.5 md:px-8 md:py-4 rounded-full font-bold flex items-center justify-center gap-2 transition-all backdrop-blur-sm w-full sm:w-auto text-[10px] sm:text-xs md:text-base">
                         Google Play
                       </a>
                     </motion.div>
@@ -141,5 +142,6 @@ export function HeroCarousel() {
         ))}
       </div>
     </section>
+    </div>
   );
 }

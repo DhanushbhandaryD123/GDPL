@@ -67,7 +67,7 @@ export function CaptoFooterCTA() {
   const activeLogos = currentLogoArray.slice(pageIndex * ITEMS_PER_PAGE, (pageIndex + 1) * ITEMS_PER_PAGE);
 
   return (
-    <section className="py-20 relative overflow-hidden bg-white">
+    <section className="py-16 md:py-20 relative overflow-hidden bg-white">
       {/* Background Decor (Faint Wireframe Globes based on image) */}
       <div className="absolute top-[40%] left-0 -translate-y-1/2 -translate-x-1/2 opacity-10 pointer-events-none">
         <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg" className="w-[500px] h-[500px]" alt="Globe Decor Left" />
@@ -78,7 +78,7 @@ export function CaptoFooterCTA() {
 
       <div className="container mx-auto px-6 max-w-[1200px] relative z-10 text-center">
         
-        <h2 className="text-[1.75rem] md:text-[2.25rem] font-bold text-[#1c2331] mb-6 leading-snug">
+        <h2 className="text-2xl md:text-[2.25rem] font-bold text-[#1c2331] mb-6 leading-snug">
           The all-in-one screen recording and video editing <br className="hidden md:block" />
           solution that's tried, tested, and trusted by all.
         </h2>

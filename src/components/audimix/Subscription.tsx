@@ -20,7 +20,7 @@ export function Subscription() {
   };
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden border-t border-gray-100">
+    <section className="py-16 md:py-24 bg-white relative overflow-hidden border-t border-gray-100">
       {/* Background Decor */}
       <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
         <div className="w-[800px] h-[800px] bg-gradient-to-tr from-purple-200/40 to-blue-200/40 rounded-full blur-[120px] opacity-70" />

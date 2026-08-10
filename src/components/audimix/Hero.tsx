@@ -17,7 +17,7 @@ const stemChips = [
 
 export function Hero() {
   return (
-    <section className="relative min-h-[90vh] pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-white flex items-center">
+    <section className="relative min-h-[85vh] pt-2 pb-8 px-4 md:px-0 md:pt-40 md:pb-28 overflow-hidden bg-white flex items-center">
       {/* Dynamic Background Decor for Light Theme */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
         <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-purple-200/50 blur-[120px] opacity-70" />
@@ -50,12 +50,12 @@ export function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left lg:pl-8"
           > 
-            <h1 className="text-5xl md:text-7xl font-extrabold text-gray-900 tracking-tight leading-[1.1] mb-6">
+            <h1 className="text-base sm:text-xl md:text-7xl font-extrabold text-gray-900 tracking-tight leading-[1.1] mb-6">
               Music <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">separation</span> <br className="hidden lg:block" />
               made easy.
             </h1>
 
-            <p className="text-lg md:text-xl text-gray-500 mb-10 max-w-xl leading-relaxed">
+            <p className="text-xs sm:text-sm md:text-xl text-gray-500 mb-10 max-w-xl leading-relaxed">
               Remove vocals, create instrumentals and backing tracks, and unleash
               your creativity with AuDimix for Windows.
             </p>
@@ -63,14 +63,14 @@ export function Hero() {
             <div className="flex flex-col sm:flex-row items-center gap-4">
               <a
                 href="#"
-                className="w-full sm:w-auto px-8 py-4 bg-gray-900 hover:bg-gray-800 text-white rounded-full font-bold text-lg flex items-center justify-center gap-2 transition-all shadow-lg hover:scale-105"
+                className="w-full sm:w-auto px-4 py-1.5 md:px-8 md:py-4 bg-gray-900 hover:bg-gray-800 text-white rounded-full font-bold text-[10px] sm:text-xs md:text-lg flex items-center justify-center gap-2 transition-all shadow-lg hover:scale-105"
               >
                 <Download size={20} />
                 Download Free Trial
               </a>
               <a
                 href="#"
-                className="w-full sm:w-auto flex items-center gap-2.5 px-5 py-3.5 rounded-xl bg-gray-50 border border-gray-200 hover:border-gray-400 transition-colors"
+                className="w-full sm:w-auto flex items-center justify-center gap-2.5 px-4 py-1.5 md:px-5 md:py-3.5 rounded-xl bg-gray-50 border border-gray-200 hover:border-gray-400 transition-colors"
               >
                 <svg viewBox="0 0 23 23" className="w-6 h-6 shrink-0">
                   <path fill="#f25022" d="M1 1h10v10H1z" />
@@ -93,7 +93,7 @@ export function Hero() {
             transition={{ duration: 1, delay: 0.2 }}
             className="w-full lg:w-1/2 relative"
           >
-            <div className="relative rounded-2xl md:rounded-[2rem] overflow-hidden border border-gray-200 shadow-2xl shadow-purple-200/60 aspect-[4/3]">
+            <div className="relative rounded-3xl md:rounded-[2rem] overflow-hidden border border-gray-200 shadow-2xl shadow-purple-200/60 aspect-[4/3] sm:aspect-[16/9] md:aspect-[4/3]">
               <img
                 src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1200&q=80&auto=format&fit=crop"
                 alt="Live vocal performance"

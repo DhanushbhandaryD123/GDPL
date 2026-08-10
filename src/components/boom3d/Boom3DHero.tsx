@@ -1,14 +1,14 @@
 export function Boom3DHero() {
   return (
-    <div className="w-full max-w-[1920px] mx-auto px-2 md:px-4 pb-12 pt-2 md:pt-4">
+    <div className="w-full max-w-[1920px] mx-auto px-4 md:px-4 pt-2 md:pt-4 pb-8 md:pb-12">
       <section 
-        className="relative w-full rounded-3xl md:rounded-[2.5rem] shadow-2xl min-h-[600px] md:min-h-[800px] lg:min-h-[85vh] flex items-center pt-20 pb-16 overflow-hidden bg-cover bg-center bg-no-repeat"
+        className="relative w-full rounded-3xl md:rounded-[2.5rem] shadow-2xl aspect-[4/3] sm:aspect-[16/9] md:aspect-auto md:min-h-[800px] lg:min-h-[85vh] flex items-center pt-12 md:pt-20 pb-16 overflow-hidden bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: 'url("/boom3D/boom3d-hero.png")' }}
       >
       {/* Overlay to ensure text readability if needed (optional) */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent pointer-events-none" />
 
-      <div className="max-w-[1200px] mx-auto px-8 md:px-16 lg:px-24 relative z-10 w-full">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-16 lg:px-24 relative z-10 w-full">
         <div className="flex flex-col lg:flex-row items-start justify-start">
           
           {/* Text Content - Aligned Left */}
@@ -19,14 +19,14 @@ export function Boom3DHero() {
               <img src="/boom3D/boomLogo3D.png" alt="Boom 3D Logo" className="h-16 md:h-20 w-auto object-contain" />
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold leading-[1.05] tracking-tighter text-white">
+            <h1 className="text-base sm:text-xl md:text-7xl font-bold leading-[1.05] tracking-tighter text-white">
               Experience Audio in <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
                 Magical 3D
               </span>
             </h1>
             
-            <p className="text-lg md:text-xl text-gray-200 max-w-[600px] leading-relaxed font-medium">
+            <p className="text-xs sm:text-sm md:text-xl text-gray-200 max-w-[600px] leading-relaxed font-medium">
               Boom 3D is a system-wide volume booster and equalizer for Mac and Windows that delivers an unbelievably immersive surround sound experience.
             </p>
             

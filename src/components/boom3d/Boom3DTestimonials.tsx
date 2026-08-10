@@ -52,7 +52,7 @@ export function Boom3DTestimonials() {
   const row2 = reviews.slice(6, 11);
 
   return (
-    <section className="relative pt-32 pb-16 overflow-hidden bg-white">
+    <section className="relative pt-16 md:pt-32 pb-16 overflow-hidden bg-white">
       
       <style>{`
         @keyframes marquee-left {
@@ -84,6 +84,10 @@ export function Boom3DTestimonials() {
       </div>
 
       <div className="relative z-10 flex flex-col gap-8 w-full">
+        {/* Edge Fades for Seamless Marquee Effect - Moved here to only cover the scrolling area */}
+        <div className="absolute inset-y-0 left-0 w-16 md:w-64 bg-gradient-to-r from-white to-transparent z-20 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-16 md:w-64 bg-gradient-to-l from-white to-transparent z-20 pointer-events-none" />
+
         {/* Row 1 - Moving Left */}
         <div className="flex w-max animate-marquee-left pause-on-hover">
           {[...row1, ...row1].map((review, idx) => (
@@ -122,10 +126,6 @@ export function Boom3DTestimonials() {
           ))}
         </div>
       </div>
-      
-      {/* Edge Fades for Seamless Marquee Effect */}
-      <div className="absolute top-0 bottom-0 left-0 w-24 md:w-64 bg-gradient-to-r from-white to-transparent z-20 pointer-events-none" />
-      <div className="absolute top-0 bottom-0 right-0 w-24 md:w-64 bg-gradient-to-l from-white to-transparent z-20 pointer-events-none" />
     </section>
   );
 }

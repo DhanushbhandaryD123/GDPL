@@ -117,6 +117,7 @@ import { AudionFaq } from './pages/faq/AudionFaq';
 import { Contact } from './pages/Contact';
 import { Careers } from './pages/Careers';
 import { ScrollToTop } from './components/layout/ScrollToTop';
+import { Boom } from './pages/Boom';
 import { Boom2 } from './pages/Boom2';
 import { Boom3D } from './pages/Boom3D';
 import { Capto } from './pages/Capto';
@@ -156,6 +157,7 @@ function App() {
         <Route path="/faq/audion" element={<AudionFaq />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/careers" element={<Careers />} />
+        <Route path="/boom" element={<Boom />} />
         <Route path="/boom2" element={<Boom2 />} />
         <Route path="/boom3D" element={<Boom3D />} />
         <Route path="/capto" element={<Capto />} />

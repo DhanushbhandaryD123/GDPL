@@ -29,8 +29,8 @@ export function Boom2RemoteControl() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="py-6 px-4 max-w-[1400px] mx-auto bg-[#F8F9FA] rounded-3xl mt-4 mb-12 shadow-sm">
-      <div className="grid lg:grid-cols-12 gap-12 items-center">
+    <section className="py-8 md:py-6 px-4 max-w-[1400px] mx-auto bg-[#F8F9FA] rounded-3xl mt-4 mb-12 shadow-sm">
+      <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
         {/* Left List */}
         <div className="lg:col-span-5 flex flex-col gap-4 relative z-10">
@@ -77,7 +77,7 @@ export function Boom2RemoteControl() {
              </div>
           </div>
           
-          <div className="relative z-10 w-full max-w-[800px] h-[450px] flex items-center justify-center">
+          <div className="relative z-10 w-full max-w-[800px] h-[300px] md:h-[450px] flex items-center justify-center">
             {/* The image will swap based on active index */}
             <img 
               key={options[activeIndex].imagePath}

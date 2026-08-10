@@ -20,7 +20,7 @@ export function Newsletter() {
   };
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden border-t border-gray-100">
+    <section className="py-16 md:py-24 bg-white relative overflow-hidden border-t border-gray-100">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}

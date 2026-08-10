@@ -3,7 +3,7 @@ import { ShoppingCart } from 'lucide-react';
 
 export function CaptoHero() {
   return (
-    <section className="relative pt-8 pb-16 overflow-hidden bg-[#fafbfe]">
+    <section className="relative px-4 pt-2 pb-8 md:px-0 md:pt-8 md:pb-16 overflow-hidden bg-[#fafbfe]">
       {/* Background Decor (Grid & squiggles based on image) */}
       <div className="absolute top-[20%] left-[45%] opacity-30 pointer-events-none">
          {/* Dot grid */}
@@ -31,27 +31,27 @@ export function CaptoHero() {
               </div>
               <span className="text-[2.25rem] md:text-[3rem] font-bold tracking-tight text-[#1c2331]">Capto</span>
             </div>
-            <h1 className="text-[2.75rem] lg:text-[3.25rem] font-bold tracking-tight leading-[1.1] mb-6 text-[#1c2331]">
+            <h1 className="text-base sm:text-xl md:text-[2.75rem] lg:text-[3.25rem] font-bold tracking-tight leading-[1.1] mb-6 text-[#1c2331]">
               <span className="text-[#6554ff]">Screenshots, Screen</span><br />
               <span className="text-[#6554ff]">Recording,</span> and<br />
               Image Editing.
             </h1>
             
-            <p className="text-lg md:text-xl text-[#2d3748] font-bold mb-10">
+            <p className="text-xs sm:text-sm md:text-xl text-[#2d3748] font-bold mb-10">
               Capto Makes Visual Storytelling Effortless.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-5 mb-5">
               <a 
                 href="#"
-                className="w-full sm:w-auto px-8 py-3.5 bg-[#6953ff] hover:bg-[#5b48df] text-white rounded-[2rem] font-bold text-[15px] flex items-center justify-center gap-2.5 transition-all shadow-lg shadow-indigo-500/30"
+                className="w-full sm:w-auto px-4 py-1.5 md:px-8 md:py-3.5 bg-[#6953ff] hover:bg-[#5b48df] text-white rounded-[2rem] font-bold text-[10px] sm:text-xs md:text-[15px] flex items-center justify-center gap-2.5 transition-all shadow-lg shadow-indigo-500/30"
               >
                 <svg className="w-[18px] h-[18px] fill-current" viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
                 Download Trial
               </a>
               <a 
                 href="#"
-                className="w-full sm:w-auto px-8 py-3.5 bg-white border border-gray-200 hover:bg-gray-50 text-gray-800 rounded-[2rem] font-bold text-[15px] flex items-center justify-center gap-2.5 transition-all shadow-sm"
+                className="w-full sm:w-auto px-4 py-1.5 md:px-8 md:py-3.5 bg-white border border-gray-200 hover:bg-gray-50 text-gray-800 rounded-[2rem] font-bold text-[10px] sm:text-xs md:text-[15px] flex items-center justify-center gap-2.5 transition-all shadow-sm"
               >
                 <ShoppingCart size={18} strokeWidth={2.5} />
                 Buy Now
@@ -71,11 +71,13 @@ export function CaptoHero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="flex-1 w-full max-w-[700px] relative flex flex-col items-center"
           >
+            <div className="relative rounded-3xl md:rounded-none aspect-[4/3] sm:aspect-[16/9] md:aspect-auto overflow-hidden md:overflow-visible bg-black md:bg-transparent w-full">
             <img 
               src="/capto/c-hero.png" 
               alt="Capto Interface"
-              className="w-full h-auto object-contain"
+              className="w-full h-full md:h-auto absolute inset-0 md:static object-cover md:object-contain"
             />
+            </div>
             
             <div className="mt-4 flex justify-center lg:ml-20">
               <a href="#" className="inline-block hover:opacity-80 transition-opacity bg-white px-2 py-1 rounded-lg border border-gray-100 shadow-sm">
