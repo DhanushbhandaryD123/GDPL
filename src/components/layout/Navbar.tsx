@@ -21,12 +21,18 @@ export function Navbar({ logoUrl }: NavbarProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const searchRef = useRef<HTMLDivElement>(null);
   
+  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
+  const languageRef = useRef<HTMLDivElement>(null);
+  
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
         setIsSearchOpen(false);
+      }
+      if (languageRef.current && !languageRef.current.contains(event.target as Node)) {
+        setIsLanguageOpen(false);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -51,7 +57,10 @@ export function Navbar({ logoUrl }: NavbarProps) {
     product.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-
+  const languages = [
+    'English', 'German', 'Italian', 'Japanese', 'French', 
+    'Portuguese', 'Spanish', 'Chinese (S)', 'Chinese (T)'
+  ];
   return (
     <nav className="sticky top-0 z-50 w-full bg-white/85 backdrop-blur-md border-b border-gray-100">
       <div className="w-full max-w-[1920px] mx-auto px-4 md:px-6 lg:px-8 h-20 flex items-center justify-between">
@@ -151,15 +160,65 @@ export function Navbar({ logoUrl }: NavbarProps) {
               </div>
             )}
           </div>
+          
+          {/* Desktop Language Dropdown */}
+          <div className="relative ml-2" ref={languageRef}>
+            <button 
+              onClick={() => setIsLanguageOpen(!isLanguageOpen)}
+              className="hover:opacity-80 transition-opacity focus:outline-none"
+            >
+              <img src="/button/LanguageIcon.png" alt="Language" className="w-7 h-7 md:w-8 md:h-8 object-contain brightness-0" />
+            </button>
+            
+            {isLanguageOpen && (
+              <div className="absolute right-0 top-full mt-4 w-40 bg-[#0a0f18] rounded-xl shadow-2xl overflow-hidden z-50 border border-gray-800 py-2">
+                {languages.map((lang) => (
+                  <button
+                    key={lang}
+                    onClick={() => setIsLanguageOpen(false)}
+                    className="w-full text-left px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-[#1a2333] transition-colors"
+                  >
+                    {lang}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center">
+        {/* Mobile Section (Right Side) */}
+        <div className="md:hidden flex items-center gap-4">
+          
+          {/* Mobile Language Dropdown */}
+          <div className="relative flex items-center" ref={languageRef}>
+            <button 
+              onClick={() => setIsLanguageOpen(!isLanguageOpen)}
+              className="hover:opacity-80 transition-opacity focus:outline-none flex items-center"
+            >
+              <img src="/button/LanguageIcon.png" alt="Language" className="w-8 h-8 object-contain brightness-0" />
+            </button>
+            
+            {isLanguageOpen && (
+              <div className="absolute right-0 top-full mt-4 w-40 bg-[#0a0f18] rounded-xl shadow-2xl overflow-hidden z-50 border border-gray-800 py-2">
+                {languages.map((lang) => (
+                  <button
+                    key={lang}
+                    onClick={() => setIsLanguageOpen(false)}
+                    className="w-full text-left px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-[#1a2333] transition-colors"
+                  >
+                    {lang}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Mobile Menu Button */}
           <button 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="text-gray-700 hover:text-gray-900 transition-colors"
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
           </button>
         </div>
       </div>

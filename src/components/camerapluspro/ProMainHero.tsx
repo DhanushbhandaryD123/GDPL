@@ -12,7 +12,7 @@ export function ProMainHero() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           
           {/* Left Content */}
-          <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+          <div className="order-2 lg:order-1 flex flex-col items-center text-center lg:items-start lg:text-left">
            
 
             <motion.h1 
@@ -40,11 +40,11 @@ export function ProMainHero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
+              className="flex flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 w-full"
             >
-              <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-gray-900 hover:bg-black text-white px-8 py-4 rounded-full font-semibold text-lg transition-all hover:shadow-xl hover:shadow-gray-900/20 group">
+              <button className="flex-1 sm:flex-none sm:w-auto flex items-center justify-center gap-2 bg-gray-900 hover:bg-black text-white px-4 py-3 md:px-8 md:py-4 rounded-full font-semibold text-sm md:text-lg transition-all hover:shadow-xl hover:shadow-gray-900/20 group">
                 Download Now
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
               </button>
               
              
@@ -52,7 +52,7 @@ export function ProMainHero() {
           </div>
 
           {/* Right Content - Visuals */}
-          <div className="relative flex justify-center lg:justify-end mt-12 lg:mt-0">
+          <div className="order-1 lg:order-2 relative flex justify-center lg:justify-end mb-12 lg:mb-0">
             <motion.div 
               initial={{ opacity: 0, scale: 0.9, rotate: -5 }}
               animate={{ opacity: 1, scale: 1, rotate: 0 }}

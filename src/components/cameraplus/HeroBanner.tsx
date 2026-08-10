@@ -9,7 +9,7 @@ export function HeroBanner() {
       <div className="absolute -top-[20%] -right-[10%] w-[600px] h-[600px] bg-[#00B4B4]/5 rounded-full blur-[80px] pointer-events-none" />
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-7xl">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
+        <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-8">
           
           {/* Left Side: Text Content */}
           <motion.div
@@ -32,19 +32,19 @@ export function HeroBanner() {
             </p>
 
             {/* Store Buttons */}
-            <div className="flex flex-col sm:flex-row items-center gap-4 w-full justify-center lg:justify-start">
-              <a href="#" className="transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#00B4B4]/20 rounded-xl overflow-hidden w-full sm:w-auto flex justify-center">
+            <div className="flex flex-row items-center gap-3 sm:gap-4 w-full justify-center lg:justify-start">
+              <a href="#" className="transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#00B4B4]/20 rounded-xl overflow-hidden flex justify-center">
                 <img 
                   src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" 
                   alt="Download on the App Store" 
-                  className="h-12 sm:h-14 md:h-[60px] w-auto"
+                  className="h-10 sm:h-14 md:h-[60px] w-auto"
                 />
               </a>
-              <a href="#" className="transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#00B4B4]/20 rounded-xl overflow-hidden w-full sm:w-auto flex justify-center">
+              <a href="#" className="transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#00B4B4]/20 rounded-xl overflow-hidden flex justify-center">
                 <img 
                   src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" 
                   alt="Get it on Google Play" 
-                  className="h-12 sm:h-14 md:h-[60px] w-auto"
+                  className="h-10 sm:h-14 md:h-[60px] w-auto"
                 />
               </a>
             </div>
