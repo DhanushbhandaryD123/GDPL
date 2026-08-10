@@ -12,6 +12,7 @@
   },
   "reactSnap": {
     "source": "dist",
+    "minifyHtml": false,
     "include": [
       "/", "/about", "/business", "/technology/audio", "/technology/video", "/technology/camera", "/technology/screen-capture", "/faq", "/contact", "/careers", "/boom", "/boom2", "/boom3D", "/capto", "/capto/windows", "/audion", "/vizmato", "/cameraplus", "/camerapluspro", "/audimix", "/boomformobile",
       "/de", "/de/about", "/de/business", "/de/technology/audio", "/de/technology/video", "/de/technology/camera", "/de/technology/screen-capture", "/de/faq", "/de/contact", "/de/careers", "/de/boom", "/de/boom2", "/de/boom3D", "/de/capto", "/de/capto/windows", "/de/audion", "/de/vizmato", "/de/cameraplus", "/de/camerapluspro", "/de/audimix", "/de/boomformobile",
