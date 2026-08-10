@@ -20,7 +20,7 @@ export function MacroFocus() {
     { icon: <Camera className="w-5 h-5 text-white" />, title: 'Photo & Video', desc: 'Take photos or record\nvideos with ease' },
     { icon: <Lock className="w-5 h-5 text-white" />, title: 'Lock Protection', desc: 'Protect your private\nphotos & videos' },
     { icon: <Type className="w-5 h-5 text-white" />, title: 'Text Capture', desc: 'Extract text instantly\nfrom any image' },
-    { icon: <MoreHorizontal className="w-5 h-5 text-white" />, title: 'More Tools', desc: 'And many more\npowerful tools' }
+    
   ];
 
   return (

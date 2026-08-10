@@ -57,17 +57,12 @@ export function HeroBanner() {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="w-full lg:w-[55%] flex justify-center relative mt-4 lg:mt-0"
           >
-            {/* Image Container with precise aspect ratio control to prevent overflow */}
-            <div className="relative w-full max-w-[500px] lg:max-w-[700px] aspect-[4/5] sm:aspect-square lg:aspect-[16/10] xl:aspect-[2/1] rounded-3xl md:rounded-[40px] overflow-visible flex items-center justify-center">
-              
+            <div className="relative w-full max-w-[500px] lg:max-w-[700px] rounded-3xl md:rounded-[40px] flex items-center justify-center">
               <img 
                 src="/cameraplus/hero.png" 
                 alt="Camera Plus App Interface" 
-                className="absolute inset-0 md:static w-full h-full md:h-auto object-contain mx-auto z-20"
-              />
-
-             
-              
+                className="w-full h-auto object-contain mx-auto z-20"
+              />    
             </div>
           </motion.div>
         </div>

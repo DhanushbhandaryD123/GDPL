@@ -1,11 +1,11 @@
 import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../components/layout/Navbar';
-import { CameraPlusHero } from '../components/camerapluspro/CameraPlusHero';
+import { Footer } from '../components/layout/Footer';
+import { ProMainHero } from '../components/camerapluspro/ProMainHero';
 import { ProFeatures } from '../components/camerapluspro/ProFeatures';
 import { ProEditingTools } from '../components/camerapluspro/ProEditingTools';
 import { ProShare } from '../components/camerapluspro/ProShare';
 import { ProCTABanner } from '../components/camerapluspro/ProCTABanner';
-import { ProFooter } from '../components/camerapluspro/ProFooter';
 
 export function CameraPlusProPage() {
   return (
@@ -18,14 +18,14 @@ export function CameraPlusProPage() {
       <Navbar />
 
       <main>
-        <CameraPlusHero logoUrl="/cameraplus/cpp-icon@2x.png" />
+        <ProMainHero />
         <ProFeatures />
         <ProEditingTools />
         <ProShare />
         <ProCTABanner />
       </main>
 
-      <ProFooter />
+      <Footer />
     </div>
   );
 }
