@@ -129,45 +129,68 @@ import { VizmatoPage } from './pages/VizmatoPage';
 import { CameraPlusPage } from './pages/CameraPlusPage';
 import { CameraPlusProPage } from './pages/CameraPlusProPage';
 
+import { LanguageSync } from './components/layout/LanguageSync';
+import { SEOHead } from './components/layout/SEOHead';
+
+const appRoutes = [
+  { path: "/", element: <Home /> },
+  { path: "/about", element: <About /> },
+  { path: "/business", element: <Business /> },
+  { path: "/technology/audio", element: <AudioTechnology /> },
+  { path: "/technology/video", element: <VideoTechnology /> },
+  { path: "/technology/camera", element: <CameraTechnology /> },
+  { path: "/technology/screen-capture", element: <ScreenCaptureTechnology /> },
+  { path: "/faq", element: <Faq /> },
+  { path: "/faq/boom3dmac", element: <Boom3DMacFaq /> },
+  { path: "/faq/boom3dmas", element: <Boom3DMasFaq /> },
+  { path: "/faq/boom3dwin", element: <Boom3DWinFaq /> },
+  { path: "/faq/audimixwin", element: <AuDimixWinFaq /> },
+  { path: "/faq/boom2", element: <Boom2Faq /> },
+  { path: "/faq/boomios", element: <BoomIosFaq /> },
+  { path: "/faq/vizmato", element: <VizmatoFaq /> },
+  { path: "/faq/captomac", element: <CaptoMacFaq /> },
+  { path: "/faq/captowin", element: <CaptoWinFaq /> },
+  { path: "/faq/audion", element: <AudionFaq /> },
+  { path: "/contact", element: <Contact /> },
+  { path: "/careers", element: <Careers /> },
+  { path: "/boom", element: <Boom /> },
+  { path: "/boom2", element: <Boom2 /> },
+  { path: "/boom3D", element: <Boom3D /> },
+  { path: "/capto", element: <Capto /> },
+  { path: "/capto/windows", element: <CaptoWindowsPage /> },
+  { path: "/audion", element: <AudiOnPage /> },
+  { path: "/vizmato", element: <VizmatoPage /> },
+  { path: "/cameraplus", element: <CameraPlusPage /> },
+  { path: "/camerapluspro", element: <CameraPlusProPage /> },
+  { path: "/audimix", element: <AuDimixPage /> },
+  { path: "/boomformobile", element: <BoomForMobilePage /> }
+];
+
 function App() {
   const [isAppReady, setIsAppReady] = useState(false);
 
   return (
     <>
+      <SEOHead />
       {!isAppReady && <SplashScreen onComplete={() => setIsAppReady(true)} />}
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/business" element={<Business />} />
-        <Route path="/technology/audio" element={<AudioTechnology />} />
-        <Route path="/technology/video" element={<VideoTechnology />} />
-        <Route path="/technology/camera" element={<CameraTechnology />} />
-        <Route path="/technology/screen-capture" element={<ScreenCaptureTechnology />} />
-        <Route path="/faq" element={<Faq />} />
-        <Route path="/faq/boom3dmac" element={<Boom3DMacFaq />} />
-        <Route path="/faq/boom3dmas" element={<Boom3DMasFaq />} />
-        <Route path="/faq/boom3dwin" element={<Boom3DWinFaq />} />
-        <Route path="/faq/audimixwin" element={<AuDimixWinFaq />} />
-        <Route path="/faq/boom2" element={<Boom2Faq />} />
-        <Route path="/faq/boomios" element={<BoomIosFaq />} />
-        <Route path="/faq/vizmato" element={<VizmatoFaq />} />
-        <Route path="/faq/captomac" element={<CaptoMacFaq />} />
-        <Route path="/faq/captowin" element={<CaptoWinFaq />} />
-        <Route path="/faq/audion" element={<AudionFaq />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/careers" element={<Careers />} />
-        <Route path="/boom" element={<Boom />} />
-        <Route path="/boom2" element={<Boom2 />} />
-        <Route path="/boom3D" element={<Boom3D />} />
-        <Route path="/capto" element={<Capto />} />
-        <Route path="/capto/windows" element={<CaptoWindowsPage />} />
-        <Route path="/audion" element={<AudiOnPage />} />
-        <Route path="/vizmato" element={<VizmatoPage />} />
-        <Route path="/cameraplus" element={<CameraPlusPage />} />
-        <Route path="/camerapluspro" element={<CameraPlusProPage />} />
-        <Route path="/audimix" element={<AuDimixPage />} />
-        <Route path="/boomformobile" element={<BoomForMobilePage />} />
+        {appRoutes.map((route, i) => (
+          <Route key={`en-${i}`} path={route.path} element={
+            <>
+              <LanguageSync />
+              {route.element}
+            </>
+          } />
+        ))}
+        {appRoutes.map((route, i) => (
+          <Route key={`lang-${i}`} path={`/:lang${route.path === '/' ? '' : route.path}`} element={
+            <>
+              <LanguageSync />
+              {route.element}
+            </>
+          } />
+        ))}
       </Routes>
       <Toaster position="bottom-right" />
     </>

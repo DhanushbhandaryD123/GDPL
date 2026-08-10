@@ -27,8 +27,15 @@ export function Faq() {
   return (
     <div className="min-h-screen bg-[#fff] text-gray-900 font-sans flex flex-col">
       <Helmet>
-        <title>FAQ & Support | Global Delight</title>
-        <meta name="description" content="Find solutions to common questions and get the help you need." />
+        <title>FAQ & Support | Global Delight Product Help Center</title>
+        <meta name="description" content="Find answers to common questions about Global Delight products including Boom 3D, Boom 2, Capto, Vizmato, and Camera Plus. Get troubleshooting and usage tips." />
+        <meta name="keywords" content="Global Delight FAQ, customer support, product help, Boom 3D support, Capto troubleshooting, software tutorials, app help" />
+        <meta property="og:title" content="FAQ & Support | Global Delight Product Help Center" />
+        <meta property="og:description" content="Need help with our apps? Browse our frequently asked questions and support guides." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.globaldelight.com/faq" />
+        <meta property="og:locale" content="en_US" />
+        <link rel="canonical" href="https://www.globaldelight.com/faq" />
       </Helmet>
 
       <Navbar />

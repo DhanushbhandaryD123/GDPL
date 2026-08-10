@@ -11,8 +11,15 @@ export function CameraPlusProPage() {
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans overflow-x-hidden selection:bg-blue-500 selection:text-white">
       <Helmet>
-        <title>Camera Plus Pro | Capture. Edit. Create.</title>
-        <meta name="description" content="Professional photography tools for iPhone. Faster, smarter and more powerful — capture, edit and share stunning photos with Camera Plus Pro." />
+        <title>Camera Plus Pro | Professional Camera & Editing App for iPhone</title>
+        <meta name="description" content="Experience professional photography tools for iPhone. Capture, edit, and share stunning photos with Camera Plus Pro's advanced filters and editing suite." />
+        <meta name="keywords" content="Camera Plus Pro, professional camera app, iPhone photography, advanced photo editor iOS, pro camera features" />
+        <meta property="og:title" content="Camera Plus Pro | Capture. Edit. Create." />
+        <meta property="og:description" content="Professional photography tools and powerful editing suite for iPhone." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.globaldelight.com/camerapluspro" />
+        <meta property="og:locale" content="en_US" />
+        <link rel="canonical" href="https://www.globaldelight.com/camerapluspro" />
       </Helmet>
 
       <Navbar />

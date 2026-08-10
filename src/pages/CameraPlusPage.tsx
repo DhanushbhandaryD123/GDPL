@@ -14,7 +14,14 @@ export function CameraPlusPage() {
     <div className="min-h-screen bg-white text-gray-900 font-sans selection:bg-blue-500 selection:text-white">
       <Helmet>
         <title>Camera Plus | The Best Camera App for iPhone, iPad & Apple Watch</title>
-        <meta name="description" content="Capture brilliant photos and videos with Camera Plus. Features AirSnap, Macro Focus, Lumy, and Apple Watch integration." />
+        <meta name="description" content="Capture brilliant photos and videos with Camera Plus. Take control with AirSnap, Macro Focus, Lumy, and seamless Apple Watch integration." />
+        <meta name="keywords" content="Camera Plus, iPhone camera app, iPad camera app, Apple Watch camera app, AirSnap remote capture, Macro Focus, mobile photography" />
+        <meta property="og:title" content="Camera Plus | The Best Camera App for Apple Devices" />
+        <meta property="og:description" content="Capture and enhance brilliant photos with Camera Plus." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.globaldelight.com/cameraplus" />
+        <meta property="og:locale" content="en_US" />
+        <link rel="canonical" href="https://www.globaldelight.com/cameraplus" />
       </Helmet>
       
       <Navbar />

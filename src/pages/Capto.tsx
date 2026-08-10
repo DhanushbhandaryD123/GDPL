@@ -12,6 +12,13 @@ export function Capto() {
       <Helmet>
         <title>Capto | Screen Capture and Video Editing Software for Mac</title>
         <meta name="description" content="Capto is a powerful screen recording, video editing, and image editing software for Mac. It's the ultimate tool to turn your captures into creations." />
+        <meta name="keywords" content="Capto, Mac screen recorder, Mac video editor, screen capture software, screenshot tool for Mac, video tutorials" />
+        <meta property="og:title" content="Capto | Screen Capture & Video Editing for Mac" />
+        <meta property="og:description" content="Record your screen, edit videos, and share instantly with Capto for Mac." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.globaldelight.com/capto" />
+        <meta property="og:locale" content="en_US" />
+        <link rel="canonical" href="https://www.globaldelight.com/capto" />
       </Helmet>
       
       <Navbar />

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
 import { FloatingSocials } from '../components/layout/FloatingSocials';
@@ -31,7 +32,18 @@ export function VideoTechnology() {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-gray-900 font-sans flex flex-col">
+    <div className="min-h-screen bg-[#fff] text-gray-900 font-sans flex flex-col">
+      <Helmet>
+        <title>Video Technology Engine | Global Delight B2B</title>
+        <meta name="description" content="Leverage Global Delight's award-winning video engine. Fast, scalable SDK integration, custom branding, and white-label video editing solutions for businesses." />
+        <meta name="keywords" content="video engine, video SDK, OEM video editor, white label video app, Global Delight B2B, Vizmato engine" />
+        <meta property="og:title" content="Video Technology Engine | Global Delight B2B" />
+        <meta property="og:description" content="Empower your app with our robust video editing technology." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.globaldelight.com/technology/video" />
+        <meta property="og:locale" content="en_US" />
+        <link rel="canonical" href="https://www.globaldelight.com/technology/video" />
+      </Helmet>
       <Navbar />
       <FloatingSocials />
 

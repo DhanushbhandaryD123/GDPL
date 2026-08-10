@@ -105,8 +105,15 @@ export function AudioTechnology() {
   return (
     <div className="min-h-screen bg-[#fff] text-gray-900 font-sans">
       <Helmet>
-        <title>Audio Technology | Global Delight</title>
-        <meta name="description" content="Discover Global Delight's industry-leading audio technology solutions." />
+        <title>Audio Technology & Engine | Global Delight B2B</title>
+        <meta name="description" content="Discover Global Delight's patented audio engine, featuring 3D Surround Sound and advanced equalizer tech available for OEM integration and B2B partnerships." />
+        <meta name="keywords" content="audio engine, 3D surround sound, OEM audio technology, equalizer SDK, Global Delight audio, sound enhancement" />
+        <meta property="og:title" content="Audio Technology | Global Delight B2B" />
+        <meta property="og:description" content="Integrate our award-winning 3D surround sound audio engine into your products." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.globaldelight.com/technology/audio" />
+        <meta property="og:locale" content="en_US" />
+        <link rel="canonical" href="https://www.globaldelight.com/technology/audio" />
         <style>{`
           @keyframes soundWave {
             0%, 100% { transform: scaleY(0.4); }

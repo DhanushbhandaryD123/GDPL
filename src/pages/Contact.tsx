@@ -28,8 +28,15 @@ export function Contact() {
   return (
     <div className="min-h-screen bg-[#383838] font-sans flex flex-col">
       <Helmet>
-        <title>Contact Us | Global Delight</title>
-        <meta name="description" content="Get in touch with us." />
+        <title>Contact Us | Global Delight | Customer Support & Inquiries</title>
+        <meta name="description" content="Get in touch with Global Delight for technical support, business inquiries, media requests, or feedback. We are here to help you with our audio, video, and photography apps." />
+        <meta name="keywords" content="Contact Global Delight, customer support, tech support, business inquiries, software help, reach out" />
+        <meta property="og:title" content="Contact Us | Global Delight" />
+        <meta property="og:description" content="We're here to help. Reach out to Global Delight for support, partnerships, or any questions." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.globaldelight.com/contact" />
+        <meta property="og:locale" content="en_US" />
+        <link rel="canonical" href="https://www.globaldelight.com/contact" />
       </Helmet>
       
       <Navbar />

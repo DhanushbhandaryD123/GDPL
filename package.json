@@ -6,8 +6,23 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "postbuild": "react-snap",
     "lint": "eslint .",
     "preview": "vite preview"
+  },
+  "reactSnap": {
+    "source": "dist",
+    "include": [
+      "/", "/about", "/business", "/technology/audio", "/technology/video", "/technology/camera", "/technology/screen-capture", "/faq", "/contact", "/careers", "/boom", "/boom2", "/boom3D", "/capto", "/capto/windows", "/audion", "/vizmato", "/cameraplus", "/camerapluspro", "/audimix", "/boomformobile",
+      "/de", "/de/about", "/de/business", "/de/technology/audio", "/de/technology/video", "/de/technology/camera", "/de/technology/screen-capture", "/de/faq", "/de/contact", "/de/careers", "/de/boom", "/de/boom2", "/de/boom3D", "/de/capto", "/de/capto/windows", "/de/audion", "/de/vizmato", "/de/cameraplus", "/de/camerapluspro", "/de/audimix", "/de/boomformobile",
+      "/it", "/it/about", "/it/business", "/it/technology/audio", "/it/technology/video", "/it/technology/camera", "/it/technology/screen-capture", "/it/faq", "/it/contact", "/it/careers", "/it/boom", "/it/boom2", "/it/boom3D", "/it/capto", "/it/capto/windows", "/it/audion", "/it/vizmato", "/it/cameraplus", "/it/camerapluspro", "/it/audimix", "/it/boomformobile",
+      "/ja", "/ja/about", "/ja/business", "/ja/technology/audio", "/ja/technology/video", "/ja/technology/camera", "/ja/technology/screen-capture", "/ja/faq", "/ja/contact", "/ja/careers", "/ja/boom", "/ja/boom2", "/ja/boom3D", "/ja/capto", "/ja/capto/windows", "/ja/audion", "/ja/vizmato", "/ja/cameraplus", "/ja/camerapluspro", "/ja/audimix", "/ja/boomformobile",
+      "/fr", "/fr/about", "/fr/business", "/fr/technology/audio", "/fr/technology/video", "/fr/technology/camera", "/fr/technology/screen-capture", "/fr/faq", "/fr/contact", "/fr/careers", "/fr/boom", "/fr/boom2", "/fr/boom3D", "/fr/capto", "/fr/capto/windows", "/fr/audion", "/fr/vizmato", "/fr/cameraplus", "/fr/camerapluspro", "/fr/audimix", "/fr/boomformobile",
+      "/pt", "/pt/about", "/pt/business", "/pt/technology/audio", "/pt/technology/video", "/pt/technology/camera", "/pt/technology/screen-capture", "/pt/faq", "/pt/contact", "/pt/careers", "/pt/boom", "/pt/boom2", "/pt/boom3D", "/pt/capto", "/pt/capto/windows", "/pt/audion", "/pt/vizmato", "/pt/cameraplus", "/pt/camerapluspro", "/pt/audimix", "/pt/boomformobile",
+      "/es", "/es/about", "/es/business", "/es/technology/audio", "/es/technology/video", "/es/technology/camera", "/es/technology/screen-capture", "/es/faq", "/es/contact", "/es/careers", "/es/boom", "/es/boom2", "/es/boom3D", "/es/capto", "/es/capto/windows", "/es/audion", "/es/vizmato", "/es/cameraplus", "/es/camerapluspro", "/es/audimix", "/es/boomformobile",
+      "/zh", "/zh/about", "/zh/business", "/zh/technology/audio", "/zh/technology/video", "/zh/technology/camera", "/zh/technology/screen-capture", "/zh/faq", "/zh/contact", "/zh/careers", "/zh/boom", "/zh/boom2", "/zh/boom3D", "/zh/capto", "/zh/capto/windows", "/zh/audion", "/zh/vizmato", "/zh/cameraplus", "/zh/camerapluspro", "/zh/audimix", "/zh/boomformobile"
+    ],
+    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"]
   },
   "dependencies": {
     "@hookform/resolvers": "^4.0.0",
@@ -49,6 +64,7 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.18",
     "globals": "^15.14.0",
+    "react-snap": "^1.23.0",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.22.0",
     "vite": "^6.1.0"

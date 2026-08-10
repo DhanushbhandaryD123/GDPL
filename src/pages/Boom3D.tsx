@@ -18,8 +18,15 @@ export function Boom3D() {
       style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", sans-serif' }}
     >
       <Helmet>
-        <title>Boom 3D | The Best Volume Booster & Equalizer</title>
-        <meta name="description" content="Experience audio in 3D with the best bass, equalizer and volume booster. Enjoy your Movies, Music and Games in cinematic surround sound." />
+        <title>Boom 3D | Best Volume Booster & Equalizer for Mac & Windows</title>
+        <meta name="description" content="Experience audio in magical 3D. Boom 3D is a pro audio enhancement app with a 31-band equalizer, volume booster, and immersive surround sound for Mac and Windows." />
+        <meta name="keywords" content="Boom 3D, 3D surround sound, volume booster, Mac equalizer, Windows equalizer, sound enhancement software" />
+        <meta property="og:title" content="Boom 3D | Best Volume Booster & Equalizer" />
+        <meta property="og:description" content="Transform your computer into a cinematic sound stage with Boom 3D." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.globaldelight.com/boom3D" />
+        <meta property="og:locale" content="en_US" />
+        <link rel="canonical" href="https://www.globaldelight.com/boom3D" />
       </Helmet>
       
       {/* We can use the global Navbar with a dark theme prop if needed, or just standard */}

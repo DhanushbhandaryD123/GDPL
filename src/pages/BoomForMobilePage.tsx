@@ -13,8 +13,15 @@ export function BoomForMobilePage() {
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans overflow-x-hidden selection:bg-pink-500/30 selection:text-white">
       <Helmet>
-        <title>Boom for Mobile | Best Bass & Volume Booster</title>
-        <meta name="description" content="Boom for Mobile - Don't just listen. Feel your music with 3D surround sound, equalizer presets, and audio intensity slider." />
+        <title>Boom for Mobile | 3D Surround Sound & Equalizer App</title>
+        <meta name="description" content="Feel your music on the go. Boom for iOS and Android features incredible 3D surround sound, custom equalizer presets, and a powerful audio intensity slider." />
+        <meta name="keywords" content="Boom for mobile, Boom iOS, Boom Android, 3D surround sound mobile, audio equalizer app, mobile volume booster" />
+        <meta property="og:title" content="Boom for Mobile | Best Bass & Volume Booster" />
+        <meta property="og:description" content="Transform your smartphone into an immersive sound system." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.globaldelight.com/boomformobile" />
+        <meta property="og:locale" content="en_US" />
+        <link rel="canonical" href="https://www.globaldelight.com/boomformobile" />
       </Helmet>
       
       <Navbar />

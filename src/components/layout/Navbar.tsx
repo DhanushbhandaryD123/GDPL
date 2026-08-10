@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Search, ShoppingCart, Menu, X, Smile } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
@@ -27,6 +27,25 @@ export function Navbar({ logoUrl }: NavbarProps) {
   const languageRef = useRef<HTMLDivElement>(null);
   
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleLanguageSwitch = (langCode: string) => {
+    const supportedLangs = ['en', 'de', 'it', 'ja', 'fr', 'pt', 'es', 'zh'];
+    let currentPath = location.pathname;
+    const pathParts = currentPath.split('/').filter(Boolean);
+    
+    if (pathParts.length > 0 && supportedLangs.includes(pathParts[0])) {
+      pathParts.shift();
+      currentPath = '/' + pathParts.join('/');
+    }
+
+    const newPath = langCode === 'en' ? currentPath : `/${langCode}${currentPath === '/' ? '' : currentPath}`;
+    
+    navigate(newPath);
+    setIsLanguageOpen(false);
+  };
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -182,10 +201,7 @@ export function Navbar({ logoUrl }: NavbarProps) {
                 {languages.map((lang) => (
                   <button
                     key={lang.code}
-                    onClick={() => {
-                      i18n.changeLanguage(lang.code);
-                      setIsLanguageOpen(false);
-                    }}
+                    onClick={() => handleLanguageSwitch(lang.code)}
                     className="w-full text-left px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-[#1a2333] transition-colors"
                   >
                     {lang.name}
@@ -214,10 +230,7 @@ export function Navbar({ logoUrl }: NavbarProps) {
                 {languages.map((lang) => (
                   <button
                     key={lang.code}
-                    onClick={() => {
-                      i18n.changeLanguage(lang.code);
-                      setIsLanguageOpen(false);
-                    }}
+                    onClick={() => handleLanguageSwitch(lang.code)}
                     className="w-full text-left px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-[#1a2333] transition-colors"
                   >
                     {lang.name}

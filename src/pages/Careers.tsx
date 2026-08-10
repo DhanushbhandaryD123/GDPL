@@ -241,8 +241,15 @@ export function Careers() {
   return (
     <div className="min-h-screen bg-white font-sans">
       <Helmet>
-        <title>Careers | Global Delight</title>
-        <meta name="description" content="Join Global Delight and help us build amazing products together." />
+        <title>Careers at Global Delight | Join Our Innovative Team</title>
+        <meta name="description" content="Explore exciting career opportunities at Global Delight. Join a passionate team of developers, designers, and marketers building world-class software and mobile apps." />
+        <meta name="keywords" content="Careers at Global Delight, software jobs, developer jobs, UI/UX design jobs, marketing careers, tech jobs in Udupi, tech jobs in India" />
+        <meta property="og:title" content="Careers at Global Delight | Join Our Innovative Team" />
+        <meta property="og:description" content="Build the future of digital media software with us. Check out our open positions." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.globaldelight.com/careers" />
+        <meta property="og:locale" content="en_US" />
+        <link rel="canonical" href="https://www.globaldelight.com/careers" />
       </Helmet>
       
       <Navbar />

@@ -10,8 +10,15 @@ export function Business() {
   return (
     <div className="min-h-screen bg-[#fff] text-gray-900 font-sans">
       <Helmet>
-        <title>Business | Global Delight</title>
-        <meta name="description" content="Global Delight Business Solutions" />
+        <title>Business Solutions | Global Delight B2B</title>
+        <meta name="description" content="Global Delight offers cutting-edge B2B solutions in audio, video, and photography technology. Partner with us for powerful OEM integrations and enterprise software." />
+        <meta name="keywords" content="Global Delight Business, B2B software solutions, OEM integration, audio technology licensing, video engine, business software" />
+        <meta property="og:title" content="Business Solutions | Global Delight B2B" />
+        <meta property="og:description" content="Empowering businesses with award-winning audio, video, and imaging technologies." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.globaldelight.com/business" />
+        <meta property="og:locale" content="en_US" />
+        <link rel="canonical" href="https://www.globaldelight.com/business" />
       </Helmet>
       
       <Navbar logoUrl="/logos/GDL_B2B_Logo.png" />

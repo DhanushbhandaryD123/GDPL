@@ -10,8 +10,15 @@ export function VizmatoPage() {
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans overflow-x-hidden selection:bg-pink-500 selection:text-white">
       <Helmet>
-        <title>Vizmato | Video Editor & Movie Maker</title>
-        <meta name="description" content="Add ZING to your moviemaking! Vizmato is a powerful video editor and movie maker for iOS and Android." />
+        <title>Vizmato | Powerful Video Editor & Movie Maker App</title>
+        <meta name="description" content="Add ZING to your moviemaking! Vizmato is an easy-to-use, powerful video editor and movie maker for iOS and Android. Apply themes, FX, and music instantly." />
+        <meta name="keywords" content="Vizmato, video editor app, movie maker app, iOS video editor, Android video editor, add effects to video, video creation app" />
+        <meta property="og:title" content="Vizmato | Video Editor & Movie Maker" />
+        <meta property="og:description" content="Create stunning videos instantly with FX, themes, and music on Vizmato." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.globaldelight.com/vizmato" />
+        <meta property="og:locale" content="en_US" />
+        <link rel="canonical" href="https://www.globaldelight.com/vizmato" />
       </Helmet>
       
       {/* Keeping global navbar, but normally a landing page like this might have a specialized header */}
