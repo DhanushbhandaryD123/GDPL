@@ -1,0 +1,48 @@
+{
+  "nav": {
+    "home": "首页",
+    "products": "产品",
+    "store": "商店",
+    "support": "支持",
+    "about": "关于",
+    "business": "商业",
+    "faq": "常见问题",
+    "contact": "联系我们",
+    "blog": "博客"
+  },
+  "hero": {
+    "master_photography": "精通您的 <br className=\"hidden lg:block\" /> <span className=\"text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600\">摄影。</span>",
+    "description": "在您的 iPhone 上体验前所未有的控制，享受类似数码单反相机的功能、高级微距对焦和强大的编辑工具。",
+    "download": "立即下载"
+  },
+  "boom_mobile": {
+    "discover_title": "探索您的 <span className=\"text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600\">音乐宇宙</span>",
+    "discover_desc": "Boom 与您喜爱的平台无缝集成，让您随时随地享受增强的音频。",
+    "dropbox_title": "Dropbox 和 Google Drive",
+    "dropbox_desc": "使用 Boom 音效串流存储在云端的所有个人音乐。",
+    "radio_title": "网络电台",
+    "radio_desc": "访问 120 个国家/地区的 2 万多个网络电台。",
+    "podcasts_title": "播客",
+    "podcasts_desc": "以增强的人声清晰度收听数以千计的播客。",
+    "tidal_title": "Tidal",
+    "tidal_desc": "体验前所未有的高保真流媒体。",
+    "local_title": "本地曲库",
+    "local_desc": "使用 3D 环绕声播放所有下载的曲目。",
+    "stats_title": "我们的 <span className=\"text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600\">受欢迎程度</span>",
+    "songs_played": "播放歌曲数",
+    "downloads": "下载量",
+    "rating": "App Store 评分"
+  },
+  "camera_plus_pro": {
+    "features_title": "强大功能",
+    "features_desc": "让您的摄影水平更上一层楼所需的一切。",
+    "f1_title": "专业相机",
+    "f1_desc": "具有实时滤镜和控件的高级捕捉模式。",
+    "f2_title": "智能修饰",
+    "f2_desc": "基于 AI 的工具，可增强和完善每一个细节。",
+    "f3_title": "全面控制",
+    "f3_desc": "手动对焦、曝光、白平衡等。",
+    "f4_title": "即时分享",
+    "f4_desc": "将高质量照片即时分享到社交媒体。"
+  }
+}

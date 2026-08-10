@@ -1,0 +1,48 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "products": "Productos",
+    "store": "Tienda",
+    "support": "Soporte",
+    "about": "Acerca de",
+    "business": "Negocios",
+    "faq": "FAQ",
+    "contact": "Contacto",
+    "blog": "Blog"
+  },
+  "hero": {
+    "master_photography": "Domina tu <br className=\"hidden lg:block\" /> <span className=\"text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600\">Fotografía.</span>",
+    "description": "Experimenta un control sin precedentes con funciones similares a las de una cámara DSLR, enfoque macro avanzado y potentes herramientas de edición directamente en tu iPhone.",
+    "download": "Descargar Ahora"
+  },
+  "boom_mobile": {
+    "discover_title": "Descubre tu <span className=\"text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600\">Universo Musical</span>",
+    "discover_desc": "Boom se integra a la perfección con tus plataformas favoritas para que puedas disfrutar de un audio mejorado en todas partes.",
+    "dropbox_title": "Dropbox & Google Drive",
+    "dropbox_desc": "Transmite toda tu música personal almacenada en la nube con los efectos de Boom.",
+    "radio_title": "Radio por Internet",
+    "radio_desc": "Accede a más de 20,000 estaciones de radio por internet en 120 países.",
+    "podcasts_title": "Podcasts",
+    "podcasts_desc": "Escucha miles de podcasts con una claridad vocal mejorada.",
+    "tidal_title": "Tidal",
+    "tidal_desc": "Experimenta un streaming de alta fidelidad como nunca antes.",
+    "local_title": "Biblioteca Local",
+    "local_desc": "Reproduce todas tus pistas descargadas con Sonido Envolvente 3D.",
+    "stats_title": "Nuestra <span className=\"text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600\">Popularidad</span>",
+    "songs_played": "Canciones Reproducidas",
+    "downloads": "Descargas",
+    "rating": "Calificación App Store"
+  },
+  "camera_plus_pro": {
+    "features_title": "Potentes Funciones",
+    "features_desc": "Todo lo que necesitas para llevar tu fotografía al siguiente nivel.",
+    "f1_title": "Cámara Profesional",
+    "f1_desc": "Modos de captura avanzados con filtros y controles en tiempo real.",
+    "f2_title": "Retoque Inteligente",
+    "f2_desc": "Herramientas impulsadas por IA para mejorar y perfeccionar cada detalle.",
+    "f3_title": "Control Total",
+    "f3_desc": "Enfoque manual, exposición, balance de blancos y más.",
+    "f4_title": "Uso Compartido Instantáneo",
+    "f4_desc": "Comparte fotos de alta calidad en las redes sociales al instante."
+  }
+}

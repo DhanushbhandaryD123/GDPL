@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { motion } from 'motion/react';
 import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
 import { FloatingSocials } from '../components/layout/FloatingSocials';
@@ -8,15 +9,12 @@ import { BarChart3, Laptop, Volume2, SlidersHorizontal, Activity, Box, Headphone
 const SoundWave = () => (
   <div className="flex items-center justify-center gap-[3px] h-6">
     {[40, 80, 100, 60, 90].map((h, i) => (
-      <div 
+      <motion.div 
         key={i} 
         className="w-[3px] bg-[#e61c24] rounded-full"
-        style={{ 
-          height: `${h}%`,
-          animation: `soundWave 1.2s ease-in-out infinite`,
-          animationDelay: `${i * 0.15}s`,
-          transformOrigin: 'center'
-        }} 
+        style={{ height: `${h}%`, transformOrigin: 'center' }} 
+        animate={{ scaleY: [0.4, 1, 0.4] }}
+        transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut", delay: i * 0.15 }}
       />
     ))}
   </div>
@@ -213,11 +211,17 @@ solutions for your audio, photo and video needs.
                     <div className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center mb-2">
                       <div className="h-10 sm:h-12 flex items-center justify-center gap-1 sm:gap-1.5">
                         {[40, 60, 100, 70, 90, 50, 80, 40].map((h, i) => (
-                          <div key={i} className="w-1 sm:w-1.5 bg-[#ff4a5a] rounded-full shadow-[0_0_10px_rgba(255,74,90,0.8)]" style={{ height: `${h}%` }}></div>
+                          <motion.div 
+                            key={i} 
+                            className="w-1 sm:w-1.5 bg-[#ff4a5a] rounded-full shadow-[0_0_10px_rgba(255,74,90,0.8)]" 
+                            style={{ height: `${h}%`, transformOrigin: 'center' }}
+                            animate={{ scaleY: [0.4, 1, 0.4] }}
+                            transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut", delay: i * 0.15 }}
+                          />
                         ))}
                       </div>
                     </div>
-                    <span className="text-[11px] sm:text-xs font-medium text-gray-200 text-center max-w-[100px] leading-snug drop-shadow-md">
+                    <span className=" text-[11px] sm:text-xs font-medium text-gray-200 text-center max-w-[100px] leading-snug drop-shadow-md">
                       Immersive<br/>3D Surround<br/>Sound
                     </span>
                   </div>
@@ -263,7 +267,13 @@ solutions for your audio, photo and video needs.
                     <div className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center mb-2">
                       <div className="h-10 sm:h-12 flex items-center justify-center gap-1 sm:gap-1.5">
                         {[40, 60, 100, 70, 90, 50, 80, 40].map((h, i) => (
-                          <div key={i} className="w-1 sm:w-1.5 bg-[#ff4a5a] rounded-full shadow-[0_0_10px_rgba(255,74,90,0.8)]" style={{ height: `${h}%` }}></div>
+                          <motion.div 
+                            key={i} 
+                            className="w-1 sm:w-1.5 bg-[#ff4a5a] rounded-full shadow-[0_0_10px_rgba(255,74,90,0.8)]" 
+                            style={{ height: `${h}%`, transformOrigin: 'center' }}
+                            animate={{ scaleY: [0.4, 1, 0.4] }}
+                            transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut", delay: i * 0.15 }}
+                          />
                         ))}
                       </div>
                     </div>

@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Camera, Zap } from 'lucide-react';
+
 
 export function HeroBanner() {
   return (

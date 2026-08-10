@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Instagram, Facebook, Twitter, Share2, MoreHorizontal } from 'lucide-react';
+import { Instagram, Facebook, Twitter, Share2 } from 'lucide-react';
 import { PhoneFrame } from './PhoneFrame';
 import { motion, AnimatePresence } from 'motion/react';
 

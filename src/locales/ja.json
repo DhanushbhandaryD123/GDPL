@@ -1,0 +1,48 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "products": "製品",
+    "store": "ストア",
+    "support": "サポート",
+    "about": "概要",
+    "business": "ビジネス",
+    "faq": "よくある質問",
+    "contact": "お問い合わせ",
+    "blog": "ブログ"
+  },
+  "hero": {
+    "master_photography": "あなたの<br className=\"hidden lg:block\" /> <span className=\"text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600\">写真を極める。</span>",
+    "description": "一眼レフのような機能、高度なマクロフォーカス、強力な編集ツールを使って、iPhoneで直接かつてないコントロールを体験してください。",
+    "download": "今すぐダウンロード"
+  },
+  "boom_mobile": {
+    "discover_title": "あなたの <span className=\"text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600\">音楽ユニバース</span> を発見しよう",
+    "discover_desc": "Boomはお気に入りのプラットフォームとシームレスに統合し、どこでも強化されたオーディオを楽しめます。",
+    "dropbox_title": "Dropbox & Google Drive",
+    "dropbox_desc": "クラウドに保存されたあなたの音楽をBoomのエフェクト付きでストリーミング。",
+    "radio_title": "インターネットラジオ",
+    "radio_desc": "120カ国の2万以上のインターネットラジオ局にアクセス。",
+    "podcasts_title": "ポッドキャスト",
+    "podcasts_desc": "強化されたクリアな音声で数千のポッドキャストを聴こう。",
+    "tidal_title": "Tidal",
+    "tidal_desc": "これまでにない高忠実度ストリーミングを体験。",
+    "local_title": "ローカルライブラリ",
+    "local_desc": "ダウンロードしたすべてのトラックを3Dサラウンドサウンドで再生。",
+    "stats_title": "私たちの <span className=\"text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600\">人気度</span>",
+    "songs_played": "再生された曲",
+    "downloads": "ダウンロード数",
+    "rating": "App Storeの評価"
+  },
+  "camera_plus_pro": {
+    "features_title": "強力な機能",
+    "features_desc": "写真を次のレベルに引き上げるために必要なすべて。",
+    "f1_title": "プロフェッショナルカメラ",
+    "f1_desc": "リアルタイムフィルターとコントロールを備えた高度なキャプチャモード。",
+    "f2_title": "スマートレタッチ",
+    "f2_desc": "あらゆる細部を向上させ完璧にするAI搭載ツール。",
+    "f3_title": "フルコントロール",
+    "f3_desc": "マニュアルフォーカス、露出、ホワイトバランスなど。",
+    "f4_title": "即時共有",
+    "f4_desc": "高品質な写真をすぐにソーシャルメディアに共有。"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Prodotti",
+    "store": "Negozio",
+    "support": "Supporto",
+    "about": "Chi Siamo",
+    "business": "Azienda",
+    "faq": "FAQ",
+    "contact": "Contatti",
+    "blog": "Blog"
+  },
+  "hero": {
+    "master_photography": "Padroneggia la Tua <br className=\"hidden lg:block\" /> <span className=\"text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600\">Fotografia.</span>",
+    "description": "Sperimenta un controllo senza precedenti con funzioni simili a quelle di una DSLR, messa a fuoco macro avanzata e potenti strumenti di editing direttamente sul tuo iPhone.",
+    "download": "Scarica Ora"
+  },
+  "boom_mobile": {
+    "discover_title": "Scopri il tuo <span className=\"text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600\">Universo Musicale</span>",
+    "discover_desc": "Boom si integra perfettamente con le tue piattaforme preferite per farti godere di un audio potenziato ovunque.",
+    "dropbox_title": "Dropbox & Google Drive",
+    "dropbox_desc": "Riproduci in streaming la tua musica archiviata nel cloud con gli effetti Boom.",
+    "radio_title": "Internet Radio",
+    "radio_desc": "Accedi a oltre 20k stazioni radio web in 120 paesi.",
+    "podcasts_title": "Podcast",
+    "podcasts_desc": "Ascolta migliaia di podcast con una maggiore chiarezza vocale.",
+    "tidal_title": "Tidal",
+    "tidal_desc": "Vivi un'esperienza di streaming ad alta fedeltà come mai prima.",
+    "local_title": "Libreria Locale",
+    "local_desc": "Riproduci i tuoi brani scaricati con audio 3D Surround.",
+    "stats_title": "Quanto Siamo <span className=\"text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600\">Popolari</span>",
+    "songs_played": "Brani Riprodotti",
+    "downloads": "Download",
+    "rating": "Valutazione App Store"
+  },
+  "camera_plus_pro": {
+    "features_title": "Funzionalità Potenti",
+    "features_desc": "Tutto ciò di cui hai bisogno per portare la tua fotografia al livello successivo.",
+    "f1_title": "Fotocamera Professionale",
+    "f1_desc": "Modalità di acquisizione avanzate con filtri e controlli in tempo reale.",
+    "f2_title": "Ritocco Intelligente",
+    "f2_desc": "Strumenti basati sull'IA per migliorare e perfezionare ogni dettaglio.",
+    "f3_title": "Controllo Totale",
+    "f3_desc": "Messa a fuoco manuale, esposizione, bilanciamento del bianco e altro.",
+    "f4_title": "Condivisione Istantanea",
+    "f4_desc": "Condividi istantaneamente foto di alta qualità sui social media."
+  }
+}

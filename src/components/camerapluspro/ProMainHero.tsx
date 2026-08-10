@@ -1,7 +1,10 @@
 import { motion } from 'motion/react';
-import { Aperture, ArrowRight, Star } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export function ProMainHero() {
+  const { t } = useTranslation();
+  
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-white pt-24 pb-16">
       {/* Premium Light Background Elements */}
@@ -20,12 +23,8 @@ export function ProMainHero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
               className="text-5xl sm:text-6xl lg:text-[5.5rem] font-extrabold text-gray-900 tracking-tight leading-[1.05] mb-6"
-            >
-              Master Your <br className="hidden lg:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
-                Photography.
-              </span>
-            </motion.h1>
+              dangerouslySetInnerHTML={{ __html: t('hero.master_photography') }}
+            />
 
             <motion.p 
               initial={{ opacity: 0, y: 30 }}
@@ -33,7 +32,7 @@ export function ProMainHero() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="text-lg sm:text-xl text-gray-500 mb-10 max-w-[500px] leading-relaxed"
             >
-              Experience unprecedented control with DSLR-like features, advanced macro focus, and powerful editing tools directly on your iPhone.
+              {t('hero.description')}
             </motion.p>
 
             <motion.div 
@@ -43,7 +42,7 @@ export function ProMainHero() {
               className="flex flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 w-full"
             >
               <button className="flex-1 sm:flex-none sm:w-auto flex items-center justify-center gap-2 bg-gray-900 hover:bg-black text-white px-4 py-3 md:px-8 md:py-4 rounded-full font-semibold text-sm md:text-lg transition-all hover:shadow-xl hover:shadow-gray-900/20 group">
-                Download Now
+                {t('hero.download')}
                 <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
               </button>
               

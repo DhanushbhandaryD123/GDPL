@@ -1,0 +1,48 @@
+{
+  "nav": {
+    "home": "Início",
+    "products": "Produtos",
+    "store": "Loja",
+    "support": "Suporte",
+    "about": "Sobre",
+    "business": "Negócios",
+    "faq": "FAQ",
+    "contact": "Contato",
+    "blog": "Blog"
+  },
+  "hero": {
+    "master_photography": "Domine sua <br className=\"hidden lg:block\" /> <span className=\"text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600\">Fotografia.</span>",
+    "description": "Experimente um controle sem precedentes com recursos semelhantes aos de uma câmera DSLR, foco macro avançado e poderosas ferramentas de edição diretamente no seu iPhone.",
+    "download": "Baixe Agora"
+  },
+  "boom_mobile": {
+    "discover_title": "Descubra seu <span className=\"text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600\">Universo Musical</span>",
+    "discover_desc": "O Boom se integra perfeitamente às suas plataformas favoritas para que você possa desfrutar de áudio aprimorado em qualquer lugar.",
+    "dropbox_title": "Dropbox & Google Drive",
+    "dropbox_desc": "Transmita toda a sua música pessoal armazenada na nuvem com os efeitos do Boom.",
+    "radio_title": "Rádio na Internet",
+    "radio_desc": "Acesse mais de 20.000 estações de rádio na internet em 120 países.",
+    "podcasts_title": "Podcasts",
+    "podcasts_desc": "Ouça milhares de podcasts com clareza vocal aprimorada.",
+    "tidal_title": "Tidal",
+    "tidal_desc": "Experimente streaming de alta fidelidade como nunca antes.",
+    "local_title": "Biblioteca Local",
+    "local_desc": "Toque todas as suas faixas baixadas com Som Surround 3D.",
+    "stats_title": "Nossa <span className=\"text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600\">Popularidade</span>",
+    "songs_played": "Músicas Tocadas",
+    "downloads": "Downloads",
+    "rating": "Avaliação App Store"
+  },
+  "camera_plus_pro": {
+    "features_title": "Recursos Poderosos",
+    "features_desc": "Tudo o que você precisa para levar sua fotografia para o próximo nível.",
+    "f1_title": "Câmera Profissional",
+    "f1_desc": "Modos de captura avançados com filtros e controles em tempo real.",
+    "f2_title": "Retoque Inteligente",
+    "f2_desc": "Ferramentas com tecnologia de IA para aprimorar e aperfeiçoar cada detalhe.",
+    "f3_title": "Controle Total",
+    "f3_desc": "Foco manual, exposição, balanço de branco e mais.",
+    "f4_title": "Compartilhamento Instantâneo",
+    "f4_desc": "Compartilhe fotos de alta qualidade nas redes sociais instantaneamente."
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "store": "Store",
+    "support": "Support",
+    "about": "About",
+    "business": "Business",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "blog": "Blog"
+  },
+  "hero": {
+    "master_photography": "Master Your <br className=\"hidden lg:block\" /> <span className=\"text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600\">Photography.</span>",
+    "description": "Experience unprecedented control with DSLR-like features, advanced macro focus, and powerful editing tools directly on your iPhone.",
+    "download": "Download Now"
+  },
+  "boom_mobile": {
+    "discover_title": "Discover your <span className=\"text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600\">Music Universe</span>",
+    "discover_desc": "Boom seamlessly integrates with your favorite platforms so you can enjoy enhanced audio everywhere.",
+    "dropbox_title": "Dropbox & Google Drive",
+    "dropbox_desc": "Stream all your personal music stored in the cloud with Boom effects.",
+    "radio_title": "Internet Radio",
+    "radio_desc": "Access 20k+ internet radio stations across 120 countries.",
+    "podcasts_title": "Podcasts",
+    "podcasts_desc": "Listen to thousands of podcasts with enhanced vocal clarity.",
+    "tidal_title": "Tidal",
+    "tidal_desc": "Experience high-fidelity streaming like never before.",
+    "local_title": "Local Library",
+    "local_desc": "Play all your downloaded tracks with 3D Surround Sound.",
+    "stats_title": "How Popular <span className=\"text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600\">We Are</span>",
+    "songs_played": "Songs Played",
+    "downloads": "Downloads",
+    "rating": "App Store Rating"
+  },
+  "camera_plus_pro": {
+    "features_title": "Powerful Features",
+    "features_desc": "Everything you need to take your photography to the next level.",
+    "f1_title": "Professional Camera",
+    "f1_desc": "Advanced capture modes with real-time filters and controls.",
+    "f2_title": "Smart Retouch",
+    "f2_desc": "AI-powered tools to enhance and perfect every detail.",
+    "f3_title": "Full Control",
+    "f3_desc": "Manual focus, exposure, white balance & more.",
+    "f4_title": "Instant Sharing",
+    "f4_desc": "Share high-quality photos to social media instantly."
+  }
+}

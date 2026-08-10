@@ -1,18 +1,20 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, ShoppingCart, Menu, X, Smile } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface NavbarProps {
   logoUrl?: string;
 }
 
 export function Navbar({ logoUrl }: NavbarProps) {
+  const { t, i18n } = useTranslation();
   const rightLinks = [
-    { name: 'About', href: '/about' },
-    { name: 'Business', href: '/business' },
-    { name: 'FAQ', href: '/faq' },
-    { name: 'Contact', href: '/contact' },
-    { name: 'Blog', href: 'https://blog.globaldelight.com/' },
+    { name: t('nav.about'), href: '/about' },
+    { name: t('nav.business'), href: '/business' },
+    { name: t('nav.faq'), href: '/faq' },
+    { name: t('nav.contact'), href: '/contact' },
+    { name: t('nav.blog'), href: 'https://blog.globaldelight.com/' },
   ];
 
   const defaultLogo = "https://d3jbf8nvvpx3fh.cloudfront.net/home/_resource/_img/website/2015/GDTPL_logo_.png";
@@ -58,16 +60,23 @@ export function Navbar({ logoUrl }: NavbarProps) {
   );
 
   const languages = [
-    'English', 'German', 'Italian', 'Japanese', 'French', 
-    'Portuguese', 'Spanish', 'Chinese (S)', 'Chinese (T)'
+    { code: 'en', name: 'English' },
+    { code: 'de', name: 'German' },
+    { code: 'it', name: 'Italian' },
+    { code: 'ja', name: 'Japanese' },
+    { code: 'fr', name: 'French' },
+    { code: 'pt', name: 'Portuguese' },
+    { code: 'es', name: 'Spanish' },
+    { code: 'zh', name: 'Chinese (S)' },
   ];
+
+  const currentLanguage = languages.find(l => i18n.language?.startsWith(l.code)) || languages[0];
+
   return (
     <nav className="sticky top-0 z-50 w-full bg-white/85 backdrop-blur-md border-b border-gray-100">
       <div className="w-full max-w-[1920px] mx-auto px-4 md:px-6 lg:px-8 h-20 flex items-center justify-between">
         
-        {/* Left Section: Logo + Products + Store */}
         <div className="flex items-center gap-8 lg:gap-12">
-          {/* Logo */}
           <a href="/" className="flex items-center">
             <img 
               src={logoUrl || defaultLogo} 
@@ -76,12 +85,10 @@ export function Navbar({ logoUrl }: NavbarProps) {
             />
           </a>
 
-          {/* Left Links */}
           <div className="hidden md:flex items-center gap-8">
-            
             <a href="https://www.globaldelight.com/store/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 group">
               <ShoppingCart className="w-5 h-5 text-gray-700 group-hover:text-gray-900 transition-colors" />
-              <span className="text-base font-bold text-gray-700 group-hover:text-gray-900 transition-colors">Store</span>
+              <span className="text-base font-bold text-gray-700 group-hover:text-gray-900 transition-colors">{t('nav.store') || "Store"}</span>
               {/* Badge Icon (Blue spiky with smile) */}
               <div className="relative flex items-center justify-center w-6 h-6 ml-0.5">
                  {/* Spiky star shape via SVG */}
@@ -94,7 +101,6 @@ export function Navbar({ logoUrl }: NavbarProps) {
           </div>
         </div>
 
-        {/* Right Section: Other Links */}
         <div className="hidden md:flex items-center gap-6 lg:gap-8">
           {rightLinks.map((link) => (
             link.href.startsWith('http') ? (
@@ -165,20 +171,24 @@ export function Navbar({ logoUrl }: NavbarProps) {
           <div className="relative ml-2" ref={languageRef}>
             <button 
               onClick={() => setIsLanguageOpen(!isLanguageOpen)}
-              className="hover:opacity-80 transition-opacity focus:outline-none"
+              className="hover:opacity-80 transition-opacity focus:outline-none flex items-center gap-1.5"
             >
-              <img src="/button/LanguageIcon.png" alt="Language" className="w-7 h-7 md:w-8 md:h-8 object-contain brightness-0" />
+              <img src="/button/LanguageIcon.png" alt="Language" className="w-5 h-5 md:w-6 md:h-6 object-contain brightness-0" />
+              <span className="text-[13px] font-semibold text-gray-700 hidden lg:block">{currentLanguage.name}</span>
             </button>
             
             {isLanguageOpen && (
               <div className="absolute right-0 top-full mt-4 w-40 bg-[#0a0f18] rounded-xl shadow-2xl overflow-hidden z-50 border border-gray-800 py-2">
                 {languages.map((lang) => (
                   <button
-                    key={lang}
-                    onClick={() => setIsLanguageOpen(false)}
+                    key={lang.code}
+                    onClick={() => {
+                      i18n.changeLanguage(lang.code);
+                      setIsLanguageOpen(false);
+                    }}
                     className="w-full text-left px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-[#1a2333] transition-colors"
                   >
-                    {lang}
+                    {lang.name}
                   </button>
                 ))}
               </div>
@@ -193,20 +203,24 @@ export function Navbar({ logoUrl }: NavbarProps) {
           <div className="relative flex items-center" ref={languageRef}>
             <button 
               onClick={() => setIsLanguageOpen(!isLanguageOpen)}
-              className="hover:opacity-80 transition-opacity focus:outline-none flex items-center"
+              className="hover:opacity-80 transition-opacity focus:outline-none flex items-center gap-1.5"
             >
-              <img src="/button/LanguageIcon.png" alt="Language" className="w-8 h-8 object-contain brightness-0" />
+              <img src="/button/LanguageIcon.png" alt="Language" className="w-6 h-6 object-contain brightness-0" />
+              <span className="text-[13px] font-semibold text-gray-700">{currentLanguage.code.toUpperCase()}</span>
             </button>
             
             {isLanguageOpen && (
               <div className="absolute right-0 top-full mt-4 w-40 bg-[#0a0f18] rounded-xl shadow-2xl overflow-hidden z-50 border border-gray-800 py-2">
                 {languages.map((lang) => (
                   <button
-                    key={lang}
-                    onClick={() => setIsLanguageOpen(false)}
+                    key={lang.code}
+                    onClick={() => {
+                      i18n.changeLanguage(lang.code);
+                      setIsLanguageOpen(false);
+                    }}
                     className="w-full text-left px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-[#1a2333] transition-colors"
                   >
-                    {lang}
+                    {lang.name}
                   </button>
                 ))}
               </div>

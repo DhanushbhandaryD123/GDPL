@@ -1,0 +1,48 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "products": "Produits",
+    "store": "Boutique",
+    "support": "Support",
+    "about": "À propos",
+    "business": "Entreprise",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "blog": "Blog"
+  },
+  "hero": {
+    "master_photography": "Maîtrisez votre <br className=\"hidden lg:block\" /> <span className=\"text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600\">Photographie.</span>",
+    "description": "Faites l'expérience d'un contrôle sans précédent avec des fonctionnalités de type reflex numérique, une mise au point macro avancée et de puissants outils d'édition directement sur votre iPhone.",
+    "download": "Télécharger"
+  },
+  "boom_mobile": {
+    "discover_title": "Découvrez votre <span className=\"text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600\">Univers Musical</span>",
+    "discover_desc": "Boom s'intègre parfaitement à vos plateformes préférées pour que vous puissiez profiter d'un son amélioré partout.",
+    "dropbox_title": "Dropbox & Google Drive",
+    "dropbox_desc": "Diffusez toute votre musique personnelle stockée dans le cloud avec les effets Boom.",
+    "radio_title": "Radio Internet",
+    "radio_desc": "Accédez à plus de 20 000 stations de radio Internet dans 120 pays.",
+    "podcasts_title": "Podcasts",
+    "podcasts_desc": "Écoutez des milliers de podcasts avec une clarté vocale améliorée.",
+    "tidal_title": "Tidal",
+    "tidal_desc": "Vivez un streaming haute fidélité comme jamais auparavant.",
+    "local_title": "Bibliothèque Locale",
+    "local_desc": "Lisez toutes vos pistes téléchargées avec le son surround 3D.",
+    "stats_title": "Notre <span className=\"text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600\">Popularité</span>",
+    "songs_played": "Chansons Jouées",
+    "downloads": "Téléchargements",
+    "rating": "Note App Store"
+  },
+  "camera_plus_pro": {
+    "features_title": "Fonctionnalités Puissantes",
+    "features_desc": "Tout ce dont vous avez besoin pour faire passer votre photographie au niveau supérieur.",
+    "f1_title": "Appareil Photo Professionnel",
+    "f1_desc": "Modes de capture avancés avec filtres et contrôles en temps réel.",
+    "f2_title": "Retouche Intelligente",
+    "f2_desc": "Outils alimentés par l'IA pour améliorer et perfectionner chaque détail.",
+    "f3_title": "Contrôle Total",
+    "f3_desc": "Mise au point manuelle, exposition, balance des blancs et plus.",
+    "f4_title": "Partage Instantané",
+    "f4_desc": "Partagez instantanément des photos de haute qualité sur les réseaux sociaux."
+  }
+}

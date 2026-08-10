@@ -2,38 +2,41 @@ import { motion } from 'motion/react';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
 import { Play, Download, Star } from 'lucide-react';
-
-const stats = [
-  {
-    id: 1,
-    label: 'Songs Played',
-    value: 6,
-    suffix: 'M+',
-    icon: Play,
-    color: 'text-pink-500',
-    bg: 'bg-pink-50'
-  },
-  {
-    id: 2,
-    label: 'Downloads',
-    value: 4,
-    suffix: 'M+',
-    icon: Download,
-    color: 'text-purple-600',
-    bg: 'bg-purple-50'
-  },
-  {
-    id: 3,
-    label: 'App Store Rating',
-    value: 4.5,
-    suffix: ' Stars',
-    icon: Star,
-    color: 'text-yellow-500',
-    bg: 'bg-yellow-50'
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 export function StatsSection() {
+  const { t } = useTranslation();
+  
+  const stats = [
+    {
+      id: 1,
+      label: t('boom_mobile.songs_played'),
+      value: 6,
+      suffix: 'M+',
+      icon: Play,
+      color: 'text-pink-500',
+      bg: 'bg-pink-50'
+    },
+    {
+      id: 2,
+      label: t('boom_mobile.downloads'),
+      value: 4,
+      suffix: 'M+',
+      icon: Download,
+      color: 'text-purple-600',
+      bg: 'bg-purple-50'
+    },
+    {
+      id: 3,
+      label: t('boom_mobile.rating'),
+      value: 4.5,
+      suffix: ' Stars',
+      icon: Star,
+      color: 'text-yellow-500',
+      bg: 'bg-yellow-50'
+    }
+  ];
+
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.2,
@@ -47,9 +50,8 @@ export function StatsSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             className="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900 tracking-tight"
-          >
-            How Popular <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600">We Are</span>
-          </motion.h2>
+            dangerouslySetInnerHTML={{ __html: t('boom_mobile.stats_title') }}
+          />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">

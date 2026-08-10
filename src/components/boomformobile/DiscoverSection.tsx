@@ -1,55 +1,58 @@
 import { motion } from 'motion/react';
 import { Cloud, Radio, Music, FolderOpen, Headphones } from 'lucide-react';
-
-const integrations = [
-  {
-    title: 'Dropbox & Google Drive',
-    description: 'Stream all your personal music stored in the cloud with Boom effects.',
-    icon: Cloud,
-    color: 'text-blue-500',
-    bg: 'bg-blue-50',
-    border: 'border-blue-100',
-    hoverBorder: 'hover:border-blue-300'
-  },
-  {
-    title: 'Internet Radio',
-    description: 'Access 20k+ internet radio stations across 120 countries.',
-    icon: Radio,
-    color: 'text-green-500',
-    bg: 'bg-green-50',
-    border: 'border-green-100',
-    hoverBorder: 'hover:border-green-300'
-  },
-  {
-    title: 'Podcasts',
-    description: 'Listen to thousands of podcasts with enhanced vocal clarity.',
-    icon: Headphones,
-    color: 'text-orange-500',
-    bg: 'bg-orange-50',
-    border: 'border-orange-100',
-    hoverBorder: 'hover:border-orange-300'
-  },
-  {
-    title: 'Tidal',
-    description: 'Experience high-fidelity streaming like never before.',
-    icon: Music,
-    color: 'text-cyan-500',
-    bg: 'bg-cyan-50',
-    border: 'border-cyan-100',
-    hoverBorder: 'hover:border-cyan-300'
-  },
-  {
-    title: 'Local Library',
-    description: 'Play all your downloaded tracks with 3D Surround Sound.',
-    icon: FolderOpen,
-    color: 'text-pink-500',
-    bg: 'bg-pink-50',
-    border: 'border-pink-100',
-    hoverBorder: 'hover:border-pink-300'
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 export function DiscoverSection() {
+  const { t } = useTranslation();
+  
+  const integrations = [
+    {
+      title: t('boom_mobile.dropbox_title'),
+      description: t('boom_mobile.dropbox_desc'),
+      icon: Cloud,
+      color: 'text-blue-500',
+      bg: 'bg-blue-50',
+      border: 'border-blue-100',
+      hoverBorder: 'hover:border-blue-300'
+    },
+    {
+      title: t('boom_mobile.radio_title'),
+      description: t('boom_mobile.radio_desc'),
+      icon: Radio,
+      color: 'text-green-500',
+      bg: 'bg-green-50',
+      border: 'border-green-100',
+      hoverBorder: 'hover:border-green-300'
+    },
+    {
+      title: t('boom_mobile.podcasts_title'),
+      description: t('boom_mobile.podcasts_desc'),
+      icon: Headphones,
+      color: 'text-orange-500',
+      bg: 'bg-orange-50',
+      border: 'border-orange-100',
+      hoverBorder: 'hover:border-orange-300'
+    },
+    {
+      title: t('boom_mobile.tidal_title'),
+      description: t('boom_mobile.tidal_desc'),
+      icon: Music,
+      color: 'text-cyan-500',
+      bg: 'bg-cyan-50',
+      border: 'border-cyan-100',
+      hoverBorder: 'hover:border-cyan-300'
+    },
+    {
+      title: t('boom_mobile.local_title'),
+      description: t('boom_mobile.local_desc'),
+      icon: FolderOpen,
+      color: 'text-pink-500',
+      bg: 'bg-pink-50',
+      border: 'border-pink-100',
+      hoverBorder: 'hover:border-pink-300'
+    }
+  ];
+
   return (
     <section className="py-20 md:py-32 bg-white relative">
       {/* Background Decor */}
@@ -64,9 +67,8 @@ export function DiscoverSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900 tracking-tight"
-          >
-            Discover your <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600">Music Universe</span>
-          </motion.h2>
+            dangerouslySetInnerHTML={{ __html: t('boom_mobile.discover_title') }}
+          />
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -74,7 +76,7 @@ export function DiscoverSection() {
             transition={{ delay: 0.1 }}
             className="text-lg md:text-xl text-gray-500 font-medium"
           >
-            Boom seamlessly integrates with your favorite platforms so you can enjoy enhanced audio everywhere.
+            {t('boom_mobile.discover_desc')}
           </motion.p>
         </div>
 

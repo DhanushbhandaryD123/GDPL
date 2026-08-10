@@ -7,7 +7,6 @@ import {
   Wand2, 
   PlayCircle, 
   Lock,
-  MoreHorizontal,
   ChevronRight
 } from 'lucide-react';
 

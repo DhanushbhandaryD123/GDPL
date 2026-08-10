@@ -1,46 +1,49 @@
 import { Camera, Wand2, SlidersHorizontal, Share2 } from 'lucide-react';
-
-const features = [
-  {
-    icon: Camera,
-    title: 'Professional Camera',
-    description: 'Advanced capture modes with real-time filters and controls.',
-    bg: 'bg-blue-50',
-    color: 'text-blue-500',
-  },
-  {
-    icon: Wand2,
-    title: 'Smart Retouch',
-    description: 'AI-powered tools to enhance and perfect every detail.',
-    bg: 'bg-purple-50',
-    color: 'text-purple-500',
-  },
-  {
-    icon: SlidersHorizontal,
-    title: 'Full Control',
-    description: 'Manual focus, exposure, white balance & more.',
-    bg: 'bg-teal-50',
-    color: 'text-teal-500',
-  },
-  {
-    icon: Share2,
-    title: 'Instant Sharing',
-    description: 'Share high-quality photos to social media instantly.',
-    bg: 'bg-pink-50',
-    color: 'text-pink-500',
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 export function ProFeatures() {
+  const { t } = useTranslation();
+
+  const features = [
+    {
+      icon: Camera,
+      title: t('camera_plus_pro.f1_title'),
+      description: t('camera_plus_pro.f1_desc'),
+      bg: 'bg-blue-50',
+      color: 'text-blue-500',
+    },
+    {
+      icon: Wand2,
+      title: t('camera_plus_pro.f2_title'),
+      description: t('camera_plus_pro.f2_desc'),
+      bg: 'bg-purple-50',
+      color: 'text-purple-500',
+    },
+    {
+      icon: SlidersHorizontal,
+      title: t('camera_plus_pro.f3_title'),
+      description: t('camera_plus_pro.f3_desc'),
+      bg: 'bg-teal-50',
+      color: 'text-teal-500',
+    },
+    {
+      icon: Share2,
+      title: t('camera_plus_pro.f4_title'),
+      description: t('camera_plus_pro.f4_desc'),
+      bg: 'bg-pink-50',
+      color: 'text-pink-500',
+    },
+  ];
+
   return (
     <section id="features" className="bg-white py-16 md:py-24">
       <div className="max-w-[1400px] mx-auto px-4 md:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Powerful Features
+            {t('camera_plus_pro.features_title')}
           </h2>
           <p className="text-lg text-gray-500">
-            Everything you need to take your photography to the next level.
+            {t('camera_plus_pro.features_desc')}
           </p>
         </div>
 

@@ -1,0 +1,48 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "products": "Produkte",
+    "store": "Shop",
+    "support": "Support",
+    "about": "Über uns",
+    "business": "Unternehmen",
+    "faq": "FAQ",
+    "contact": "Kontakt",
+    "blog": "Blog"
+  },
+  "hero": {
+    "master_photography": "Meistere deine <br className=\"hidden lg:block\" /> <span className=\"text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600\">Fotografie.</span>",
+    "description": "Erlebe beispiellose Kontrolle mit DSLR-ähnlichen Funktionen, fortgeschrittenem Makro-Fokus und leistungsstarken Bearbeitungstools direkt auf deinem iPhone.",
+    "download": "Jetzt Herunterladen"
+  },
+  "boom_mobile": {
+    "discover_title": "Entdecke dein <span className=\"text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600\">Musik-Universum</span>",
+    "discover_desc": "Boom integriert sich nahtlos in deine Lieblingsplattformen, damit du überall verbesserten Sound genießen kannst.",
+    "dropbox_title": "Dropbox & Google Drive",
+    "dropbox_desc": "Streame all deine persönliche Musik aus der Cloud mit Boom-Effekten.",
+    "radio_title": "Internetradio",
+    "radio_desc": "Greife auf über 20.000 Internetradiosender in 120 Ländern zu.",
+    "podcasts_title": "Podcasts",
+    "podcasts_desc": "Höre Tausende von Podcasts mit verbesserter Sprachklarheit.",
+    "tidal_title": "Tidal",
+    "tidal_desc": "Erlebe High-Fidelity-Streaming wie nie zuvor.",
+    "local_title": "Lokale Bibliothek",
+    "local_desc": "Spiele all deine heruntergeladenen Titel mit 3D-Surround-Sound ab.",
+    "stats_title": "Wie beliebt <span className=\"text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600\">wir sind</span>",
+    "songs_played": "Gespielte Lieder",
+    "downloads": "Downloads",
+    "rating": "App Store Bewertung"
+  },
+  "camera_plus_pro": {
+    "features_title": "Leistungsstarke Funktionen",
+    "features_desc": "Alles, was du brauchst, um deine Fotografie auf das nächste Level zu heben.",
+    "f1_title": "Professionelle Kamera",
+    "f1_desc": "Erweiterte Aufnahmemodi mit Echtzeitfiltern und Kontrollen.",
+    "f2_title": "Smart Retusche",
+    "f2_desc": "KI-gestützte Tools zur Verbesserung und Perfektionierung jedes Details.",
+    "f3_title": "Volle Kontrolle",
+    "f3_desc": "Manueller Fokus, Belichtung, Weißabgleich & mehr.",
+    "f4_title": "Sofortiges Teilen",
+    "f4_desc": "Teile hochwertige Fotos sofort in sozialen Netzwerken."
+  }
+}
