@@ -12,8 +12,8 @@ export function Business() {
     <div className="min-h-screen bg-[#fff] text-gray-900 font-sans">
       <Helmet>
         <title>Business Solutions | Global Delight B2B</title>
-        <meta name="description" content="Global Delight offers cutting-edge B2B solutions in audio, video, and photography technology. Partner with us for powerful OEM integrations and enterprise software." />
-        <meta name="keywords" content="Global Delight Business, B2B software solutions, OEM integration, audio technology licensing, video engine, business software" />
+        <meta name="description" content="Global Delight offers cutting-edge B2B solutions in audio, video, and photography technology. Partner with us for powerful OEM integrations, white-label apps, and enterprise software licensing." />
+        <meta name="keywords" content="Global Delight Business, B2B software solutions, OEM integration, audio technology licensing, video engine, business software, white label app development, SDK licensing, enterprise software partner, technology licensing" />
         <meta property="og:title" content="Business Solutions | Global Delight B2B" />
         <meta property="og:description" content="Empowering businesses with award-winning audio, video, and imaging technologies." />
         <meta property="og:type" content="website" />

@@ -120,6 +120,8 @@ export function Boom3DMacFaq() {
   return (
     <FaqTemplate 
       title="Boom 3D Mac FAQ"
+      description="Answers to frequently asked questions about Boom 3D for Mac — 3D surround sound, the 31-band equalizer, volume boosting, licensing, and troubleshooting."
+      keywords="Boom 3D FAQ, Boom 3D Mac help, 3D surround sound questions, Boom 3D equalizer support, Boom 3D license help, Boom 3D troubleshooting"
       logoSrc="/Faq/Boom3D.png"
       logoAlt="Boom 3D Logo"
       categories={categories}

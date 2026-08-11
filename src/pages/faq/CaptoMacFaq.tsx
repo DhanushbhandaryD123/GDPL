@@ -9,6 +9,8 @@ export function CaptoMacFaq() {
   return (
     <FaqTemplate 
       title="Capto Mac FAQ"
+      description="Answers to common questions about Capto for Mac — screen recording, screenshot editing, video export formats, licensing, and troubleshooting."
+      keywords="Capto FAQ, Capto Mac help, screen recorder questions, screenshot tool support, Capto video export help, Capto license, Capto troubleshooting"
       logoSrc="/apps/Capto-mac.jpeg"
       logoAlt="Capto Mac Logo"
       faqs={faqs}

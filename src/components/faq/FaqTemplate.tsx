@@ -19,13 +19,15 @@ export interface FaqCategory {
 
 interface FaqTemplateProps {
   title: string;
+  description?: string;
+  keywords?: string;
   logoSrc: string;
   logoAlt: string;
   faqs?: FaqItem[];
   categories?: FaqCategory[];
 }
 
-export function FaqTemplate({ title, logoSrc, logoAlt, faqs, categories }: FaqTemplateProps) {
+export function FaqTemplate({ title, description, keywords, logoSrc, logoAlt, faqs, categories }: FaqTemplateProps) {
   const [openIndex, setOpenIndex] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   
@@ -99,6 +101,8 @@ export function FaqTemplate({ title, logoSrc, logoAlt, faqs, categories }: FaqTe
     <div className="min-h-screen bg-white text-gray-900 font-sans flex flex-col relative overflow-x-hidden">
       <Helmet>
         <title>{title} | Global Delight</title>
+        {description && <meta name="description" content={description} />}
+        {keywords && <meta name="keywords" content={keywords} />}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",

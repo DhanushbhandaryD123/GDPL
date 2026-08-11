@@ -113,6 +113,8 @@ export function Boom3DMasFaq() {
   return (
     <FaqTemplate 
       title="Boom 3D MAS FAQ"
+      description="Frequently asked questions about the Boom 3D Mac App Store edition — features, restrictions, purchase and refund policy, and how it differs from the direct download version."
+      keywords="Boom 3D MAS FAQ, Boom 3D App Store help, Boom 3D Mac App Store questions, Boom 3D purchase support, Boom 3D refund policy"
       logoSrc="/Faq/Boom3D.png"
       logoAlt="Boom 3D MAS Logo"
       categories={categories}

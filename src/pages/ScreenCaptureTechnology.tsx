@@ -44,8 +44,8 @@ export function ScreenCaptureTechnology() {
     <div className="min-h-screen bg-[#fff] text-gray-900 font-sans flex flex-col">
       <Helmet>
         <title>Screen Capture Technology | Global Delight B2B</title>
-        <meta name="description" content="Global Delight's customized Screen Capture and Screen Recording engine. High-performance recording and editing solutions for macOS and Windows applications." />
-        <meta name="keywords" content="screen capture engine, screen recording SDK, video capture OEM, Global Delight screen recorder" />
+        <meta name="description" content="Global Delight's customized Screen Capture and Screen Recording engine. High-performance recording and editing solutions for macOS and Windows applications, available for OEM licensing." />
+        <meta name="keywords" content="screen capture engine, screen recording SDK, video capture OEM, Global Delight screen recorder, screen recording SDK licensing, white label screen recorder, Capto engine" />
         <meta property="og:title" content="Screen Capture Technology | Global Delight B2B" />
         <meta property="og:description" content="Integrate our reliable screen capture and recording technology." />
         <meta property="og:type" content="website" />

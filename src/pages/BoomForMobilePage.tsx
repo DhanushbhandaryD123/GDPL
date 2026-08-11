@@ -15,8 +15,8 @@ export function BoomForMobilePage() {
     <div className="min-h-screen bg-white text-gray-900 font-sans overflow-x-hidden selection:bg-pink-500/30 selection:text-white">
       <Helmet>
         <title>Boom for Mobile | 3D Surround Sound & Equalizer App</title>
-        <meta name="description" content="Feel your music on the go. Boom for iOS and Android features incredible 3D surround sound, custom equalizer presets, and a powerful audio intensity slider." />
-        <meta name="keywords" content="Boom for mobile, Boom iOS, Boom Android, 3D surround sound mobile, audio equalizer app, mobile volume booster" />
+        <meta name="description" content="Feel your music on the go. Boom for iOS and Android features incredible 3D surround sound, custom equalizer presets, and a powerful audio intensity slider for headphones and speakers." />
+        <meta name="keywords" content="Boom for mobile, Boom iOS, Boom Android, 3D surround sound mobile, audio equalizer app, mobile volume booster, bass booster app, headphone equalizer, sound booster iPhone, sound booster Android" />
         <meta property="og:title" content="Boom for Mobile | Best Bass & Volume Booster" />
         <meta property="og:description" content="Transform your smartphone into an immersive sound system." />
         <meta property="og:type" content="website" />

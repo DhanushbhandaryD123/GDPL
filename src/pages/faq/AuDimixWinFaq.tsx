@@ -10,6 +10,8 @@ export function AuDimixWinFaq() {
   return (
     <FaqTemplate 
       title="AuDimix Windows FAQ"
+      description="Answers to common questions about AuDimix for Windows — vocal isolation, instrumental extraction, supported audio formats, and karaoke track creation."
+      keywords="AuDimix FAQ, AuDimix Windows help, vocal remover questions, instrumental extractor support, karaoke track maker help, AuDimix troubleshooting"
       logoSrc="/Faq/AudimixFaqLogo.png"
       logoAlt="AuDimix Faq Logo"
       faqs={faqs}

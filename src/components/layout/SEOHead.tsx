@@ -51,8 +51,8 @@ export function SEOHead() {
       <meta name="ICBM" content="13.3409, 74.7421" />
 
       {/* Default SEO Tags (can be overridden by specific pages) */}
-      <meta name="description" content="Global Delight creates apps that have bass booster, speaker booster and amplifier for both Mac & Windows | Screen recorders for Mac" />
-      <meta name="keywords" content="Bass Boosters, speaker booster, amplifier, screen recorder" />
+      <meta name="description" content="Global Delight builds award-winning audio, video, and photography apps — Boom 3D volume booster & equalizer, Capto screen recorder, Vizmato video editor, and Camera Plus Pro for Mac, Windows, iOS & Android." />
+      <meta name="keywords" content="Global Delight, Boom 3D, volume booster, Mac equalizer, 3D surround sound, Capto, screen recorder, Vizmato, video editor app, Camera Plus Pro, AuDimix, AudiOn, bass booster, speaker booster, amplifier" />
       <meta property="og:type" content="website" />
       <meta property="og:locale" content="en_US" />
       <meta property="og:site_name" content="Global Delight Technologies Pvt. Ltd." />

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Toaster } from 'react-hot-toast';
 
@@ -44,11 +44,11 @@ function Home() {
   return (
     <div className="min-h-screen bg-[#fff] text-gray-900 font-sans">
       <Helmet>
-        <title>Global Delight (Makers of Boom3D, Capto, Vizmato and Cameraplus pro)</title>
-        <meta name="description" content="Global Delight creates apps that have bass booster, speaker booster and amplifier for both Mac & Windows | Screen recorders for Mac" />
-        <meta name="keywords" content="Bass Boosters, speaker booster, amplifier, screen recorder" />
-        <meta property="og:title" content="Global Delight" />
-        <meta property="og:description" content="Global Delight creates apps that have bass booster, speaker booster and amplifier for both Mac & Windows | Screen recorders for Mac" />
+        <title>Global Delight | Boom 3D, Capto, Vizmato & Camera Plus Pro Apps</title>
+        <meta name="description" content="Global Delight builds award-winning audio, video, and photography apps — Boom 3D volume booster & equalizer, Capto screen recorder, Vizmato video editor, and Camera Plus Pro for Mac, Windows, iOS & Android." />
+        <meta name="keywords" content="Global Delight, Boom 3D, volume booster, Mac equalizer, 3D surround sound, Capto, screen recorder, screenshot tool, Vizmato, video editor app, Camera Plus Pro, iPhone camera app, AuDimix, vocal remover, AudiOn, voice recorder app, bass booster, speaker booster, amplifier" />
+        <meta property="og:title" content="Global Delight | Makers of Boom 3D, Capto, Vizmato & Camera Plus Pro" />
+        <meta property="og:description" content="Award-winning audio, video, and photography apps for Mac, Windows, iOS & Android — including Boom 3D, Capto, Vizmato, Camera Plus Pro, AuDimix, and AudiOn." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${domain}/`} />
         <meta property="og:locale" content="en_US" />
@@ -162,6 +162,13 @@ import { NotFound } from './pages/NotFound';
 import { AnalyticsTracker } from './components/layout/AnalyticsTracker';
 
 const appRoutes = [
+  // Redirects and Aliases for Old Website URLs
+  { path: "/career", element: <Careers /> },
+  { path: "/store/*", element: <Navigate to="/" replace /> },
+  { path: "/lostlicense", element: <Navigate to="/contact" replace /> },
+  { path: "/purchase/thank_you_purchase", element: <Navigate to="/" replace /> },
+  { path: "/help/*", element: <Navigate to="/faq" replace /> },
+
   { path: "/", element: <Home /> },
   { path: "/about", element: <About /> },
   { path: "/business", element: <Business /> },

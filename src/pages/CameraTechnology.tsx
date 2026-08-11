@@ -44,8 +44,8 @@ export function CameraTechnology() {
     <div className="min-h-screen bg-[#fff] text-gray-900 font-sans flex flex-col">
       <Helmet>
         <title>Camera Technology | Global Delight B2B OEM Solutions</title>
-        <meta name="description" content="Discover Global Delight's advanced camera technology. Integrate AirSnap, Live Filters, and One-Touch Image Editing SDKs into your photography apps." />
-        <meta name="keywords" content="camera technology, photography SDK, AirSnap, live filters SDK, image editing SDK, Global Delight OEM" />
+        <meta name="description" content="Discover Global Delight's advanced camera technology. Integrate AirSnap, Live Filters, and One-Touch Image Editing SDKs into your photography apps through OEM licensing." />
+        <meta name="keywords" content="camera technology, photography SDK, AirSnap, live filters SDK, image editing SDK, Global Delight OEM, camera app SDK, photo editing SDK licensing, white label camera app" />
         <meta property="og:title" content="Camera Technology | Global Delight B2B" />
         <meta property="og:description" content="Elevate your photography app with our cutting-edge camera engine." />
         <meta property="og:type" content="website" />
