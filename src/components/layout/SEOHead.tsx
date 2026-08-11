@@ -55,6 +55,14 @@ export function SEOHead() {
       <meta name="keywords" content="Global Delight, screen recording, video editing, audio enhancement, Mac apps, Windows apps, iOS apps, Android apps" />
       <meta property="og:type" content="website" />
       <meta property="og:locale" content="en_US" />
+      <meta property="og:site_name" content="Global Delight Technologies Pvt. Ltd." />
+      <meta property="og:image" content="https://d3jbf8nvvpx3fh.cloudfront.net/Boom3D-Web/OGImages/Global-Delight.jpg" />
+      
+      {/* Twitter Card Defaults */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@GlobalDelight" />
+      <meta name="twitter:creator" content="@GlobalDelight" />
+      <meta name="twitter:image" content="https://d3jbf8nvvpx3fh.cloudfront.net/Boom3D-Web/OGImages/Global-Delight.jpg" />
 
       {/* Language Hreflang Tags */}
       {supportedLangs.map((lang) => {
