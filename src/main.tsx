@@ -1,4 +1,4 @@
-import { StrictMode } from 'react';
+
 import { createRoot, hydrateRoot } from 'react-dom/client';
 import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter } from 'react-router-dom';
@@ -11,15 +11,13 @@ const queryClient = new QueryClient();
 
 const rootElement = document.getElementById('root')!;
 const app = (
-  <StrictMode>
-    <HelmetProvider>
-      <QueryClientProvider client={queryClient}>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </QueryClientProvider>
-    </HelmetProvider>
-  </StrictMode>
+  <HelmetProvider>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </QueryClientProvider>
+  </HelmetProvider>
 );
 
 if (rootElement.hasChildNodes()) {

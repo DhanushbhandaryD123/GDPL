@@ -26,6 +26,12 @@ export function SEOHead() {
       <meta name="geo.position" content="13.3409;74.7421" />
       <meta name="ICBM" content="13.3409, 74.7421" />
 
+      {/* Default SEO Tags (can be overridden by specific pages) */}
+      <meta name="description" content="Global Delight provides powerful screen recording, video editing, and audio enhancement tools for Mac, Windows, iOS, and Android." />
+      <meta name="keywords" content="Global Delight, screen recording, video editing, audio enhancement, Mac apps, Windows apps, iOS apps, Android apps" />
+      <meta property="og:type" content="website" />
+      <meta property="og:locale" content="en_US" />
+
       {/* Language Hreflang Tags */}
       {supportedLangs.map((lang) => {
         const langPath = lang === 'en' ? currentPath : `/${lang}${currentPath === '/' ? '' : currentPath}`;
