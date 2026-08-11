@@ -20,6 +20,11 @@ export function CaptoWindowsPage() {
         <meta property="og:url" content="https://www.globaldelight.com/capto/windows" />
         <meta property="og:locale" content="en_US" />
         <link rel="canonical" href="https://www.globaldelight.com/capto/windows" />
+      
+        <meta property="og:image" content="https://www.globaldelight.com/apps/Capto-window.jpeg" />
+        <meta name="twitter:title" content="Capto for Windows | Screen Capture & Video Editing" />
+        <meta name="twitter:description" content="Capto for Windows is your all-in-one solution for screenshots, screen recording, and video editing on PC. Create tutorials, vlog, and share with ease." />
+        <meta name="twitter:image" content="https://www.globaldelight.com/apps/Capto-window.jpeg" />
       </Helmet>
       
       <Navbar />

@@ -19,6 +19,11 @@ export function VizmatoPage() {
         <meta property="og:url" content="https://www.globaldelight.com/vizmato" />
         <meta property="og:locale" content="en_US" />
         <link rel="canonical" href="https://www.globaldelight.com/vizmato" />
+      
+        <meta property="og:image" content="https://www.globaldelight.com/apps/Vizmato-ios.jpeg" />
+        <meta name="twitter:title" content="Vizmato | Powerful Video Editor & Movie Maker App" />
+        <meta name="twitter:description" content="Add ZING to your moviemaking! Vizmato is an easy-to-use, powerful video editor and movie maker for iOS and Android. Apply themes, FX, and music instantly." />
+        <meta name="twitter:image" content="https://www.globaldelight.com/apps/Vizmato-ios.jpeg" />
       </Helmet>
       
       {/* Keeping global navbar, but normally a landing page like this might have a specialized header */}

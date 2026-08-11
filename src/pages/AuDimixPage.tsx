@@ -21,6 +21,11 @@ export function AuDimixPage() {
         <meta property="og:url" content="https://www.globaldelight.com/audimix" />
         <meta property="og:locale" content="en_US" />
         <link rel="canonical" href="https://www.globaldelight.com/audimix" />
+      
+        <meta property="og:image" content="https://www.globaldelight.com/apps/AuDimix-Window.jpeg" />
+        <meta name="twitter:title" content="AuDimix | Vocal Extractor & Music Separation Software" />
+        <meta name="twitter:description" content="AuDimix is a powerful vocal isolation and extraction tool. Isolate vocals, extract instruments, and create your own music mix with ease on Mac." />
+        <meta name="twitter:image" content="https://www.globaldelight.com/apps/AuDimix-Window.jpeg" />
       </Helmet>
       
       <Navbar />

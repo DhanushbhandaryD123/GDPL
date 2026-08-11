@@ -43,6 +43,11 @@ export function Boom3D() {
             "image": "https://www.globaldelight.com/apps/boom3d-window.png"
           })}
         </script>
+      
+        <meta property="og:image" content="https://www.globaldelight.com/apps/Boom3D-mac.jpeg" />
+        <meta name="twitter:title" content="Boom 3D | Best Volume Booster & Equalizer for Mac & Windows" />
+        <meta name="twitter:description" content="Experience audio in magical 3D. Boom 3D is a pro audio enhancement app with a 31-band equalizer, volume booster, and immersive surround sound for Mac and Windows." />
+        <meta name="twitter:image" content="https://www.globaldelight.com/apps/Boom3D-mac.jpeg" />
       </Helmet>
       
       {/* We can use the global Navbar with a dark theme prop if needed, or just standard */}

@@ -22,6 +22,11 @@ export function BoomForMobilePage() {
         <meta property="og:url" content="https://www.globaldelight.com/boomformobile" />
         <meta property="og:locale" content="en_US" />
         <link rel="canonical" href="https://www.globaldelight.com/boomformobile" />
+      
+        <meta property="og:image" content="https://www.globaldelight.com/apps/Boom%20for%20iOS.jpeg" />
+        <meta name="twitter:title" content="Boom for Mobile | 3D Surround Sound & Equalizer App" />
+        <meta name="twitter:description" content="Feel your music on the go. Boom for iOS and Android features incredible 3D surround sound, custom equalizer presets, and a powerful audio intensity slider." />
+        <meta name="twitter:image" content="https://www.globaldelight.com/apps/Boom%20for%20iOS.jpeg" />
       </Helmet>
       
       <Navbar />

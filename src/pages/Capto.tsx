@@ -35,6 +35,11 @@ export function Capto() {
             "image": "https://www.globaldelight.com/apps/Capto-mac.jpeg"
           })}
         </script>
+      
+        <meta property="og:image" content="https://www.globaldelight.com/apps/Capto-mac.jpeg" />
+        <meta name="twitter:title" content="Capto | Screen Capture and Video Editing Software for Mac" />
+        <meta name="twitter:description" content="Capto is a powerful screen recording, video editing, and image editing software for Mac. It's the ultimate tool to turn your captures into creations." />
+        <meta name="twitter:image" content="https://www.globaldelight.com/apps/Capto-mac.jpeg" />
       </Helmet>
       
       <Navbar />

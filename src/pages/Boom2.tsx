@@ -33,6 +33,11 @@ export function Boom2() {
             "image": "https://www.globaldelight.com/apps/Boom2-mac.jpeg"
           })}
         </script>
+      
+        <meta property="og:image" content="https://www.globaldelight.com/apps/Boom2-mac.jpeg" />
+        <meta name="twitter:title" content="Boom 2 | System-Wide Volume Booster & Equalizer for Mac" />
+        <meta name="twitter:description" content="Boom 2 is the ultimate audio enhancement app for Mac. Enjoy system-wide volume boosting, advanced equalizers, and immersive 3D sound for movies, music, and games." />
+        <meta name="twitter:image" content="https://www.globaldelight.com/apps/Boom2-mac.jpeg" />
       </Helmet>
       
       <Navbar />

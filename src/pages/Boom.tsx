@@ -24,6 +24,11 @@ export function Boom() {
         <meta property="og:url" content="https://www.globaldelight.com/boom" />
         <meta property="og:locale" content="en_US" />
         <link rel="canonical" href="https://www.globaldelight.com/boom" />
+      
+        <meta property="og:image" content="https://www.globaldelight.com/apps/Boom2-mac.jpeg" />
+        <meta name="twitter:title" content="Boom | Feel Your Music in 3D Surround Sound | Mac Audio Equalizer" />
+        <meta name="twitter:description" content="Boom is Global Delight's award-winning audio family for Mac, Windows, iOS and Android — featuring 3D surround sound, advanced equalizers, and a powerful volume booster." />
+        <meta name="twitter:image" content="https://www.globaldelight.com/apps/Boom2-mac.jpeg" />
       </Helmet>
 
       <Navbar />

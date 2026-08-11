@@ -20,6 +20,11 @@ export function AudiOnPage() {
         <meta property="og:url" content="https://www.globaldelight.com/audion" />
         <meta property="og:locale" content="en_US" />
         <link rel="canonical" href="https://www.globaldelight.com/audion" />
+      
+        <meta property="og:image" content="https://www.globaldelight.com/apps/AudiOn-ios.jpeg" />
+        <meta name="twitter:title" content="AudiOn | Pro Voice Recorder & Audio Editor for iOS & Android" />
+        <meta name="twitter:description" content="AudiOn is the cutting-edge voice recorder app for mobile. Experience lossless recording, powerful noise removal, audio enhancement, and AI transcription." />
+        <meta name="twitter:image" content="https://www.globaldelight.com/apps/AudiOn-ios.jpeg" />
       </Helmet>
       
       <Navbar />
