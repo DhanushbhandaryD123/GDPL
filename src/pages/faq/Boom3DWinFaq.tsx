@@ -97,6 +97,8 @@ export function Boom3DWinFaq() {
   return (
     <FaqTemplate 
       title="Boom 3D Windows FAQ"
+      description="Common questions about Boom 3D for Windows — installation, 3D surround sound setup, equalizer presets, system requirements, and troubleshooting."
+      keywords="Boom 3D Windows FAQ, Boom 3D PC help, Windows surround sound questions, Boom 3D equalizer support, Boom 3D system requirements"
       logoSrc="/Faq/Boom3D.png"
       logoAlt="Boom 3D Windows Logo"
       categories={categories}

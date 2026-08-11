@@ -17,8 +17,8 @@ export function Boom() {
     >
       <Helmet>
         <title>Boom | Feel Your Music in 3D Surround Sound | Mac Audio Equalizer</title>
-        <meta name="description" content="Boom is Global Delight's award-winning audio family for Mac, Windows, iOS and Android — featuring 3D surround sound, advanced equalizers, and a powerful volume booster." />
-        <meta name="keywords" content="Boom, volume booster, Mac audio equalizer, 3D surround sound, sound enhancer, Global Delight Boom" />
+        <meta name="description" content="Boom is Global Delight's award-winning audio family for Mac, Windows, iOS and Android — featuring 3D surround sound, advanced equalizers, and a powerful volume booster for movies, music and games." />
+        <meta name="keywords" content="Boom, volume booster, Mac audio equalizer, 3D surround sound, sound enhancer, bass booster, audio booster app, system-wide equalizer, Boom 2, Boom 3D, Boom for mobile, Global Delight Boom" />
         <meta property="og:title" content="Boom | Feel Your Music in 3D Surround Sound" />
         <meta property="og:description" content="Award-winning 3D surround sound and volume booster for your devices." />
         <meta property="og:type" content="website" />

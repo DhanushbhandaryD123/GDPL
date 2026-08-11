@@ -20,8 +20,8 @@ export function Boom3D() {
     >
       <Helmet>
         <title>Boom 3D - Best 3D Surround Sound for Mac & Windows</title>
-        <meta name="description" content="Experience audio in magical 3D. Boom 3D is a pro audio enhancement app with a 31-band equalizer, volume booster, and immersive surround sound for Mac and Windows." />
-        <meta name="keywords" content="Boom 3D, 3D surround sound, volume booster, Mac equalizer, Windows equalizer, sound enhancement software" />
+        <meta name="description" content="Experience audio in magical 3D. Boom 3D is a pro audio enhancement app with a 31-band equalizer, volume booster, and immersive surround sound for Mac and Windows, with custom presets for every genre." />
+        <meta name="keywords" content="Boom 3D, 3D surround sound, volume booster, Mac equalizer, Windows equalizer, sound enhancement software, 31-band equalizer, bass booster, audio enhancer app, surround sound software, best equalizer for Mac" />
         <meta property="og:title" content="Boom 3D | Best Volume Booster & Equalizer" />
         <meta property="og:description" content="Transform your computer into a cinematic sound stage with Boom 3D." />
         <meta property="og:type" content="website" />

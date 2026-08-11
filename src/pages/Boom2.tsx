@@ -15,8 +15,8 @@ export function Boom2() {
     <div className="min-h-screen bg-[#060814] text-white font-sans overflow-x-hidden selection:bg-[#4F46E5] selection:text-white">
       <Helmet>
         <title>Boom 2 | System-Wide Volume Booster & Equalizer for Mac</title>
-        <meta name="description" content="Boom 2 is the ultimate audio enhancement app for Mac. Enjoy system-wide volume boosting, advanced equalizers, and immersive 3D sound for movies, music, and games." />
-        <meta name="keywords" content="Boom 2, Mac volume booster, Mac equalizer, audio enhancer, improve Mac sound, Boom app" />
+        <meta name="description" content="Boom 2 is the ultimate audio enhancement app for Mac. Enjoy system-wide volume boosting, advanced equalizers, immersive 3D sound, and custom presets for movies, music, and games." />
+        <meta name="keywords" content="Boom 2, Mac volume booster, Mac equalizer, audio enhancer, improve Mac sound, bass booster Mac, sound booster app, system-wide audio control, equalizer presets, Boom app" />
         <meta property="og:title" content="Boom 2 | Your Audio, Reimagined" />
         <meta property="og:description" content="System-wide volume booster and equalizer designed exclusively for Mac." />
         <meta property="og:type" content="website" />

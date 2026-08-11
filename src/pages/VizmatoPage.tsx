@@ -12,8 +12,8 @@ export function VizmatoPage() {
     <div className="min-h-screen bg-white text-gray-900 font-sans overflow-x-hidden selection:bg-pink-500 selection:text-white">
       <Helmet>
         <title>Vizmato | Powerful Video Editor & Movie Maker App</title>
-        <meta name="description" content="Add ZING to your moviemaking! Vizmato is an easy-to-use, powerful video editor and movie maker for iOS and Android. Apply themes, FX, and music instantly." />
-        <meta name="keywords" content="Vizmato, video editor app, movie maker app, iOS video editor, Android video editor, add effects to video, video creation app" />
+        <meta name="description" content="Add ZING to your moviemaking! Vizmato is an easy-to-use, powerful video editor and movie maker for iOS and Android. Apply themes, FX, filters and music instantly, then share to social media." />
+        <meta name="keywords" content="Vizmato, video editor app, movie maker app, iOS video editor, Android video editor, add effects to video, video creation app, video editing with music, social media video maker, slow motion video editor" />
         <meta property="og:title" content="Vizmato | Video Editor & Movie Maker" />
         <meta property="og:description" content="Create stunning videos instantly with FX, themes, and music on Vizmato." />
         <meta property="og:type" content="website" />
