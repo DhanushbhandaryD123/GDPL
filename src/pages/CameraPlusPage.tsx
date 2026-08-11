@@ -17,6 +17,7 @@ export function CameraPlusPage() {
         <title>Camera Plus | The Best Camera App for iPhone, iPad & Apple Watch</title>
         <meta name="description" content="Capture brilliant photos and videos with Camera Plus. Take control with AirSnap remote capture, Macro Focus, Lumy lighting, and seamless Apple Watch integration." />
         <meta name="keywords" content="Camera Plus, iPhone camera app, iPad camera app, Apple Watch camera app, AirSnap remote capture, Macro Focus, mobile photography, camera app for iPhone, remote shutter app, low light camera app" />
+        <meta name="subject" content="Camera Plus | The Best Camera App for Apple Devices" />
         <meta property="og:title" content="Camera Plus | The Best Camera App for Apple Devices" />
         <meta property="og:description" content="Capture and enhance brilliant photos with Camera Plus." />
         <meta property="og:type" content="website" />
@@ -25,6 +26,7 @@ export function CameraPlusPage() {
         <link rel="canonical" href={`${domain}/cameraplus`} />
       
         <meta property="og:image" content={`${domain}/website/GlobalDelight/icons/CameraPlus_SubheaderLogo.png`} />
+        <meta name="thumbnail" content={`${domain}/website/GlobalDelight/icons/CameraPlus_SubheaderLogo.png`} />
         <meta name="twitter:title" content="Camera Plus | The Best Camera App for iPhone, iPad & Apple Watch" />
         <meta name="twitter:description" content="Capture brilliant photos and videos with Camera Plus. Take control with AirSnap, Macro Focus, Lumy, and seamless Apple Watch integration." />
         <meta name="twitter:image" content={`${domain}/website/GlobalDelight/icons/CameraPlus_SubheaderLogo.png`} />

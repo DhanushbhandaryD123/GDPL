@@ -108,6 +108,7 @@ export function AudioTechnology() {
         <title>Audio Technology & Engine | Global Delight B2B</title>
         <meta name="description" content="Discover Global Delight's patented audio engine, featuring 3D Surround Sound and advanced equalizer tech available for OEM integration, white-label licensing, and B2B partnerships." />
         <meta name="keywords" content="audio engine, 3D surround sound, OEM audio technology, equalizer SDK, Global Delight audio, sound enhancement, audio SDK licensing, volume booster SDK, white label audio app, patented audio engine" />
+        <meta name="subject" content="Audio Technology | Global Delight B2B" />
         <meta property="og:title" content="Audio Technology | Global Delight B2B" />
         <meta property="og:description" content="Integrate our award-winning 3D surround sound audio engine into your products." />
         <meta property="og:type" content="website" />

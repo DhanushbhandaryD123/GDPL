@@ -61,12 +61,14 @@ export function SEOHead() {
       </script>
 
       {/* Default SEO Tags (can be overridden by specific pages) */}
+      <meta name="robots" content="index, follow" />
       <meta name="description" content="Global Delight builds award-winning audio, video, and photography apps — Boom 3D volume booster & equalizer, Capto screen recorder, Vizmato video editor, and Camera Plus Pro for Mac, Windows, iOS & Android." />
       <meta name="keywords" content="Global Delight, Boom 3D, volume booster, Mac equalizer, 3D surround sound, Capto, screen recorder, Vizmato, video editor app, Camera Plus Pro, AuDimix, AudiOn, bass booster, speaker booster, amplifier" />
       <meta property="og:type" content="website" />
       <meta property="og:locale" content="en_US" />
       <meta property="og:site_name" content="Global Delight Technologies Pvt. Ltd." />
       <meta property="og:image" content="https://d3jbf8nvvpx3fh.cloudfront.net/Boom3D-Web/OGImages/Global-Delight.jpg" />
+      <meta name="thumbnail" content="https://d3jbf8nvvpx3fh.cloudfront.net/Boom3D-Web/OGImages/Global-Delight.jpg" />
       
       {/* Twitter Card Defaults */}
       <meta name="twitter:card" content="summary_large_image" />

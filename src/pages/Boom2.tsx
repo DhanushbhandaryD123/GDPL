@@ -36,9 +36,20 @@ export function Boom2() {
         </script>
       
         <meta property="og:image" content={`${domain}/apps/Boom2-mac.jpeg`} />
+        <meta name="subject" content="Boom 2 | Your Audio, Reimagined" />
+        <meta name="thumbnail" content={`${domain}/apps/Boom2-mac.jpeg`} />
         <meta name="twitter:title" content="Boom 2 | System-Wide Volume Booster & Equalizer for Mac" />
         <meta name="twitter:description" content="Boom 2 is the ultimate audio enhancement app for Mac. Enjoy system-wide volume boosting, advanced equalizers, and immersive 3D sound for movies, music, and games." />
         <meta name="twitter:image" content={`${domain}/apps/Boom2-mac.jpeg`} />
+        <meta name="twitter:site" content="@boomapp" />
+        <meta name="twitter:creator" content="@boomapp" />
+        <meta property="fb:app_id" content="574953960066003" />
+        <meta property="fb:pages" content="206541726104573" />
+        <meta name="apple-itunes-app" content="id948176063" />
+        <meta property="og:see_also" content="https://www.instagram.com/boomaudioapp/" />
+        <meta property="og:see_also" content="https://www.facebook.com/boomapp" />
+        <meta property="og:see_also" content="https://twitter.com/boomapp" />
+        <meta property="og:see_also" content="https://www.youtube.com/channel/UCiHp8wkTV2h7u8afCIij0YQ" />
       </Helmet>
       
       <Navbar />

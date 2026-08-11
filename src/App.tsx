@@ -47,6 +47,7 @@ function Home() {
         <title>Global Delight | Boom 3D, Capto, Vizmato & Camera Plus Pro Apps</title>
         <meta name="description" content="Global Delight builds award-winning audio, video, and photography apps — Boom 3D volume booster & equalizer, Capto screen recorder, Vizmato video editor, and Camera Plus Pro for Mac, Windows, iOS & Android." />
         <meta name="keywords" content="Global Delight, Boom 3D, volume booster, Mac equalizer, 3D surround sound, Capto, screen recorder, screenshot tool, Vizmato, video editor app, Camera Plus Pro, iPhone camera app, AuDimix, vocal remover, AudiOn, voice recorder app, bass booster, speaker booster, amplifier" />
+        <meta name="subject" content="Global Delight | Makers of Boom 3D, Capto, Vizmato & Camera Plus Pro" />
         <meta property="og:title" content="Global Delight | Makers of Boom 3D, Capto, Vizmato & Camera Plus Pro" />
         <meta property="og:description" content="Award-winning audio, video, and photography apps for Mac, Windows, iOS & Android — including Boom 3D, Capto, Vizmato, Camera Plus Pro, AuDimix, and AudiOn." />
         <meta property="og:type" content="website" />

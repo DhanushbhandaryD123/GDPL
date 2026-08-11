@@ -37,6 +37,7 @@ export function VideoTechnology() {
         <title>Video Technology Engine | Global Delight B2B</title>
         <meta name="description" content="Leverage Global Delight's award-winning video engine. Fast, scalable SDK integration, custom branding, and white-label video editing solutions for businesses and app developers." />
         <meta name="keywords" content="video engine, video SDK, OEM video editor, white label video app, Global Delight B2B, Vizmato engine, video editing SDK licensing, mobile video editor SDK, custom branded video app" />
+        <meta name="subject" content="Video Technology Engine | Global Delight B2B" />
         <meta property="og:title" content="Video Technology Engine | Global Delight B2B" />
         <meta property="og:description" content="Empower your app with our robust video editing technology." />
         <meta property="og:type" content="website" />

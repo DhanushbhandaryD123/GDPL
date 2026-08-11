@@ -14,6 +14,7 @@ export function Capto() {
         <title>Capto | Screen Capture and Video Editing Software for Mac</title>
         <meta name="description" content="Capto is a powerful screen recording, video editing, and image editing software for Mac. It's the ultimate tool to turn your captures into creations — record tutorials, annotate screenshots, and share instantly." />
         <meta name="keywords" content="Capto, Mac screen recorder, Mac video editor, screen capture software, screenshot tool for Mac, video tutorials, annotate screenshots, webcam recorder Mac, GIF recorder, record screen Mac" />
+        <meta name="subject" content="Capto | Screen Capture & Video Editing for Mac" />
         <meta property="og:title" content="Capto | Screen Capture & Video Editing for Mac" />
         <meta property="og:description" content="Record your screen, edit videos, and share instantly with Capto for Mac." />
         <meta property="og:type" content="website" />
@@ -38,6 +39,7 @@ export function Capto() {
         </script>
       
         <meta property="og:image" content={`${domain}/apps/Capto-mac.jpeg`} />
+        <meta name="thumbnail" content={`${domain}/apps/Capto-mac.jpeg`} />
         <meta name="twitter:title" content="Capto | Screen Capture and Video Editing Software for Mac" />
         <meta name="twitter:description" content="Capto is a powerful screen recording, video editing, and image editing software for Mac. It's the ultimate tool to turn your captures into creations." />
         <meta name="twitter:image" content={`${domain}/apps/Capto-mac.jpeg`} />

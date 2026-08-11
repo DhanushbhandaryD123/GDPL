@@ -25,9 +25,20 @@ export function BoomForMobilePage() {
         <link rel="canonical" href={`${domain}/boomformobile`} />
       
         <meta property="og:image" content={`${domain}/apps/Boom%20for%20iOS.jpeg`} />
+        <meta name="subject" content="Boom for Mobile | Best Bass & Volume Booster" />
+        <meta name="thumbnail" content={`${domain}/apps/Boom%20for%20iOS.jpeg`} />
         <meta name="twitter:title" content="Boom for Mobile | 3D Surround Sound & Equalizer App" />
         <meta name="twitter:description" content="Feel your music on the go. Boom for iOS and Android features incredible 3D surround sound, custom equalizer presets, and a powerful audio intensity slider." />
         <meta name="twitter:image" content={`${domain}/apps/Boom%20for%20iOS.jpeg`} />
+        <meta name="twitter:site" content="@boomapp" />
+        <meta name="twitter:creator" content="@boomapp" />
+        <meta property="fb:app_id" content="574953960066003" />
+        <meta property="fb:pages" content="206541726104573" />
+        <meta name="apple-itunes-app" content="id948176063" />
+        <meta property="og:see_also" content="https://www.instagram.com/boomaudioapp/" />
+        <meta property="og:see_also" content="https://www.facebook.com/boomapp" />
+        <meta property="og:see_also" content="https://twitter.com/boomapp" />
+        <meta property="og:see_also" content="https://www.youtube.com/channel/UCiHp8wkTV2h7u8afCIij0YQ" />
       </Helmet>
       
       <Navbar />

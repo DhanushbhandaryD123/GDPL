@@ -32,6 +32,7 @@ export function Faq() {
         <title>FAQ & Support | Global Delight</title>
         <meta name="description" content="Find answers to frequently asked questions about Boom, Capto, Vizmato, Camera Plus, AuDimix, AudiOn, and other Global Delight software." />
         <meta name="keywords" content="Global Delight FAQ, software support, Boom support, Capto help, Vizmato FAQ, Camera Plus help, AuDimix FAQ, AudiOn support, app troubleshooting, licensing FAQ" />
+        <meta name="subject" content="FAQ & Support | Global Delight" />
         <meta property="og:title" content="FAQ & Support | Global Delight" />
         <meta property="og:description" content="Find answers to frequently asked questions about Boom, Capto, Vizmato, and other Global Delight software." />
         <meta property="og:type" content="website" />

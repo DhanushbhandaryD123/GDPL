@@ -244,6 +244,7 @@ export function Careers() {
         <title>Careers at Global Delight | Join Our Innovative Team</title>
         <meta name="description" content="Explore exciting career opportunities at Global Delight. Join a passionate team of developers, designers, and marketers building world-class audio, video, and photography apps." />
         <meta name="keywords" content="Careers at Global Delight, software jobs, developer jobs, UI/UX design jobs, marketing careers, tech jobs in Udupi, tech jobs in India, mobile app developer jobs, iOS developer careers, remote software jobs India" />
+        <meta name="subject" content="Careers at Global Delight | Join Our Innovative Team" />
         <meta property="og:title" content="Careers at Global Delight | Join Our Innovative Team" />
         <meta property="og:description" content="Build the future of digital media software with us. Check out our open positions." />
         <meta property="og:type" content="website" />

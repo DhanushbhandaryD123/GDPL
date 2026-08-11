@@ -15,6 +15,7 @@ export function CameraPlusProPage() {
         <title>Camera Plus Pro | Professional Camera & Editing App for iPhone</title>
         <meta name="description" content="Experience professional photography tools for iPhone. Capture, edit, and share stunning photos with Camera Plus Pro's advanced filters, manual controls, and editing suite." />
         <meta name="keywords" content="Camera Plus Pro, professional camera app, iPhone photography, advanced photo editor iOS, pro camera features, manual camera controls iPhone, photo filters app, RAW camera app iPhone" />
+        <meta name="subject" content="Camera Plus Pro | Capture. Edit. Create." />
         <meta property="og:title" content="Camera Plus Pro | Capture. Edit. Create." />
         <meta property="og:description" content="Professional photography tools and powerful editing suite for iPhone." />
         <meta property="og:type" content="website" />
@@ -23,6 +24,7 @@ export function CameraPlusProPage() {
         <link rel="canonical" href={`${domain}/camerapluspro`} />
       
         <meta property="og:image" content={`${domain}/website/GlobalDelight/icons/CameraPlus_SubheaderLogo.png`} />
+        <meta name="thumbnail" content={`${domain}/website/GlobalDelight/icons/CameraPlus_SubheaderLogo.png`} />
         <meta name="twitter:title" content="Camera Plus Pro | Professional Camera & Editing App for iPhone" />
         <meta name="twitter:description" content="Experience professional photography tools for iPhone. Capture, edit, and share stunning photos with Camera Plus Pro's advanced filters and editing suite." />
         <meta name="twitter:image" content={`${domain}/website/GlobalDelight/icons/CameraPlus_SubheaderLogo.png`} />

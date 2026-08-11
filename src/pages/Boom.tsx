@@ -27,9 +27,20 @@ export function Boom() {
         <link rel="canonical" href={`${domain}/boom`} />
       
         <meta property="og:image" content={`${domain}/apps/Boom2-mac.jpeg`} />
+        <meta name="subject" content="Boom | Feel Your Music in 3D Surround Sound" />
+        <meta name="thumbnail" content={`${domain}/apps/Boom2-mac.jpeg`} />
         <meta name="twitter:title" content="Boom | Feel Your Music in 3D Surround Sound | Mac Audio Equalizer" />
         <meta name="twitter:description" content="Boom is Global Delight's award-winning audio family for Mac, Windows, iOS and Android — featuring 3D surround sound, advanced equalizers, and a powerful volume booster." />
         <meta name="twitter:image" content={`${domain}/apps/Boom2-mac.jpeg`} />
+        <meta name="twitter:site" content="@boomapp" />
+        <meta name="twitter:creator" content="@boomapp" />
+        <meta property="fb:app_id" content="574953960066003" />
+        <meta property="fb:pages" content="206541726104573" />
+        <meta name="apple-itunes-app" content="id948176063" />
+        <meta property="og:see_also" content="https://www.instagram.com/boomaudioapp/" />
+        <meta property="og:see_also" content="https://www.facebook.com/boomapp" />
+        <meta property="og:see_also" content="https://twitter.com/boomapp" />
+        <meta property="og:see_also" content="https://www.youtube.com/channel/UCiHp8wkTV2h7u8afCIij0YQ" />
       </Helmet>
 
       <Navbar />
