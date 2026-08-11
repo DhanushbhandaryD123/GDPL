@@ -132,6 +132,8 @@ import { CameraPlusProPage } from './pages/CameraPlusProPage';
 
 import { LanguageSync } from './components/layout/LanguageSync';
 import { SEOHead } from './components/layout/SEOHead';
+import { NotFound } from './pages/NotFound';
+import { AnalyticsTracker } from './components/layout/AnalyticsTracker';
 
 const appRoutes = [
   { path: "/", element: <Home /> },
@@ -173,6 +175,7 @@ function App() {
   return (
     <>
       <SEOHead />
+      <AnalyticsTracker />
       {!isAppReady && <SplashScreen onComplete={() => setIsAppReady(true)} />}
       <ScrollToTop />
       <Routes>
@@ -192,6 +195,8 @@ function App() {
             </>
           } />
         ))}
+        {/* Catch-all 404 route */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Toaster position="bottom-right" />
     </>

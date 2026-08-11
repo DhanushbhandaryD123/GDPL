@@ -22,7 +22,8 @@
       "/fr", "/fr/about", "/fr/business", "/fr/technology/audio", "/fr/technology/video", "/fr/technology/camera", "/fr/technology/screen-capture", "/fr/faq", "/fr/contact", "/fr/careers", "/fr/boom", "/fr/boom2", "/fr/boom3D", "/fr/capto", "/fr/capto/windows", "/fr/audion", "/fr/vizmato", "/fr/cameraplus", "/fr/camerapluspro", "/fr/audimix", "/fr/boomformobile",
       "/pt", "/pt/about", "/pt/business", "/pt/technology/audio", "/pt/technology/video", "/pt/technology/camera", "/pt/technology/screen-capture", "/pt/faq", "/pt/contact", "/pt/careers", "/pt/boom", "/pt/boom2", "/pt/boom3D", "/pt/capto", "/pt/capto/windows", "/pt/audion", "/pt/vizmato", "/pt/cameraplus", "/pt/camerapluspro", "/pt/audimix", "/pt/boomformobile",
       "/es", "/es/about", "/es/business", "/es/technology/audio", "/es/technology/video", "/es/technology/camera", "/es/technology/screen-capture", "/es/faq", "/es/contact", "/es/careers", "/es/boom", "/es/boom2", "/es/boom3D", "/es/capto", "/es/capto/windows", "/es/audion", "/es/vizmato", "/es/cameraplus", "/es/camerapluspro", "/es/audimix", "/es/boomformobile",
-      "/zh", "/zh/about", "/zh/business", "/zh/technology/audio", "/zh/technology/video", "/zh/technology/camera", "/zh/technology/screen-capture", "/zh/faq", "/zh/contact", "/zh/careers", "/zh/boom", "/zh/boom2", "/zh/boom3D", "/zh/capto", "/zh/capto/windows", "/zh/audion", "/zh/vizmato", "/zh/cameraplus", "/zh/camerapluspro", "/zh/audimix", "/zh/boomformobile"
+      "/zh", "/zh/about", "/zh/business", "/zh/technology/audio", "/zh/technology/video", "/zh/technology/camera", "/zh/technology/screen-capture", "/zh/faq", "/zh/contact", "/zh/careers", "/zh/boom", "/zh/boom2", "/zh/boom3D", "/zh/capto", "/zh/capto/windows", "/zh/audion", "/zh/vizmato", "/zh/cameraplus", "/zh/camerapluspro", "/zh/audimix", "/zh/boomformobile",
+      "/404"
     ],
     "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"]
   },
