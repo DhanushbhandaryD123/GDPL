@@ -15,6 +15,7 @@ export function CaptoWindowsPage() {
         <title>Capto for Windows | Screen Capture & Video Editing</title>
         <meta name="description" content="Capto for Windows is your all-in-one solution for screenshots, screen recording, and video editing on PC. Create tutorials, vlog, and share with ease — no watermarks, no time limits." />
         <meta name="keywords" content="Capto for Windows, Windows screen recorder, PC video editor, screenshot tool Windows, record screen PC, webcam recorder Windows, tutorial recording software, screen capture app Windows, annotate screenshots PC" />
+        <meta name="subject" content="Capto for Windows | Screen Capture & Video Editing" />
         <meta property="og:title" content="Capto for Windows | Screen Capture & Video Editing" />
         <meta property="og:description" content="Your all-in-one solution for screen recording and editing on Windows." />
         <meta property="og:type" content="website" />
@@ -23,6 +24,7 @@ export function CaptoWindowsPage() {
         <link rel="canonical" href={`${domain}/capto/windows`} />
       
         <meta property="og:image" content={`${domain}/apps/Capto-window.jpeg`} />
+        <meta name="thumbnail" content={`${domain}/apps/Capto-window.jpeg`} />
         <meta name="twitter:title" content="Capto for Windows | Screen Capture & Video Editing" />
         <meta name="twitter:description" content="Capto for Windows is your all-in-one solution for screenshots, screen recording, and video editing on PC. Create tutorials, vlog, and share with ease." />
         <meta name="twitter:image" content={`${domain}/apps/Capto-window.jpeg`} />

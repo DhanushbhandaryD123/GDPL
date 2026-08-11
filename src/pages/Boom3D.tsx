@@ -46,9 +46,20 @@ export function Boom3D() {
         </script>
       
         <meta property="og:image" content={`${domain}/apps/Boom3D-mac.jpeg`} />
+        <meta name="subject" content="Boom 3D | Best Volume Booster & Equalizer" />
+        <meta name="thumbnail" content={`${domain}/apps/Boom3D-mac.jpeg`} />
         <meta name="twitter:title" content="Boom 3D | Best Volume Booster & Equalizer for Mac & Windows" />
         <meta name="twitter:description" content="Experience audio in magical 3D. Boom 3D is a pro audio enhancement app with a 31-band equalizer, volume booster, and immersive surround sound for Mac and Windows." />
         <meta name="twitter:image" content={`${domain}/apps/Boom3D-mac.jpeg`} />
+        <meta name="twitter:site" content="@boomapp" />
+        <meta name="twitter:creator" content="@boomapp" />
+        <meta property="fb:app_id" content="574953960066003" />
+        <meta property="fb:pages" content="206541726104573" />
+        <meta name="apple-itunes-app" content="id948176063" />
+        <meta property="og:see_also" content="https://www.instagram.com/boomaudioapp/" />
+        <meta property="og:see_also" content="https://www.facebook.com/boomapp" />
+        <meta property="og:see_also" content="https://twitter.com/boomapp" />
+        <meta property="og:see_also" content="https://www.youtube.com/channel/UCiHp8wkTV2h7u8afCIij0YQ" />
       </Helmet>
       
       {/* We can use the global Navbar with a dark theme prop if needed, or just standard */}

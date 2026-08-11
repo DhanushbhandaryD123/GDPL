@@ -33,6 +33,7 @@ export function Contact() {
         <title>Contact Us | Global Delight | Customer Support & Inquiries</title>
         <meta name="description" content="Get in touch with Global Delight for technical support, business inquiries, media requests, or feedback. We are here to help you with Boom, Capto, Vizmato, and our other apps." />
         <meta name="keywords" content="Contact Global Delight, customer support, tech support, business inquiries, software help, reach out, Global Delight email, app support contact, refund request, licensing inquiry" />
+        <meta name="subject" content="Contact Us | Global Delight" />
         <meta property="og:title" content="Contact Us | Global Delight" />
         <meta property="og:description" content="We're here to help. Reach out to Global Delight for support, partnerships, or any questions." />
         <meta property="og:type" content="website" />
