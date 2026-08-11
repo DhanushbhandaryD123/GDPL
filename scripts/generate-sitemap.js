@@ -11,8 +11,12 @@ const sitemapPath = path.resolve(__dirname, '../public/sitemap.xml');
 // Read package.json
 const pkg = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
 const routes = pkg.reactSnap?.include || [];
-
-const DOMAIN = 'https://www.globaldelight.com';
+let DOMAIN = 'http://localhost:5173';
+try {
+  const envContent = fs.readFileSync(path.resolve(__dirname, '../.env'), 'utf8');
+  const match = envContent.match(/VITE_SITE_URL=(.*)/);
+  if (match) DOMAIN = match[1].trim();
+} catch(e) {}
 
 // Generate sitemap content
 let sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>\n`;
@@ -34,3 +38,9 @@ sitemapContent += `</urlset>\n`;
 // Write to public/sitemap.xml
 fs.writeFileSync(sitemapPath, sitemapContent, 'utf8');
 console.log(`✅ Sitemap successfully generated at public/sitemap.xml with ${routes.length} URLs.`);
+
+// Write robots.txt
+const robotsPath = path.resolve(__dirname, '../public/robots.txt');
+const robotsContent = `User-agent: *\nAllow: /\n\nSitemap: ${DOMAIN}/sitemap.xml\n`;
+fs.writeFileSync(robotsPath, robotsContent, 'utf8');
+console.log(`✅ robots.txt successfully generated at public/robots.txt with domain ${DOMAIN}`);

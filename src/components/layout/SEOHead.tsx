@@ -16,7 +16,7 @@ export function SEOHead() {
   }
 
   // Domain of the application
-  const domain = 'https://www.globaldelight.com';
+  const domain = import.meta.env.VITE_SITE_URL || 'http://localhost:5173';
   
   return (
     <Helmet>
