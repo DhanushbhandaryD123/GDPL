@@ -7,7 +7,7 @@ import { BusinessAbout } from '../components/business/BusinessAbout';
 import { BusinessTechnologies } from '../components/business/BusinessTechnologies';
 
 export function Business() {
-  const domain = '';
+  const domain = import.meta.env.VITE_SITE_URL || '';
   return (
     <div className="min-h-screen bg-[#fff] text-gray-900 font-sans">
       <Helmet>

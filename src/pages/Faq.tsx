@@ -24,7 +24,7 @@ export function Faq() {
   const showAudioRecorder = isMatch("Audio Recorder Simple, reliable");
   const showUtilityApps = showCapto || showAudioRecorder;
 
-  const domain = '';
+  const domain = import.meta.env.VITE_SITE_URL || '';
 
   return (
     <div className="min-h-screen bg-[#fff] text-gray-900 font-sans flex flex-col">

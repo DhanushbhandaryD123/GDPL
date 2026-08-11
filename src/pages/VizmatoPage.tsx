@@ -7,7 +7,7 @@ import { NewsletterSection } from '../components/vizmato/NewsletterSection';
 import { Footer } from '../components/layout/Footer';
 
 export function VizmatoPage() {
-  const domain = '';
+  const domain = import.meta.env.VITE_SITE_URL || '';
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans overflow-x-hidden selection:bg-pink-500 selection:text-white">
       <Helmet>
