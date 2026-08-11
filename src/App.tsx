@@ -43,9 +43,9 @@ function Home() {
   return (
     <div className="min-h-screen bg-[#fff] text-gray-900 font-sans">
       <Helmet>
-        <title>Global Delight | Turn Captures into Creations</title>
-        <meta name="description" content="Global Delight provides powerful screen recording, video editing, and audio enhancement tools for Mac, Windows, iOS, and Android." />
-        <meta name="keywords" content="Global Delight, screen recording, video editing, audio enhancement, Mac apps, Windows apps, iOS apps, Android apps" />
+        <title>Global Delight (Makers of Boom3D, Capto, Vizmato and Cameraplus pro)</title>
+        <meta name="description" content="Global Delight creates apps that have bass booster, speaker booster and amplifier for both Mac & Windows | Screen recorders for Mac" />
+        <meta name="keywords" content="Bass Boosters, speaker booster, amplifier, screen recorder" />
       </Helmet>
       
       <Navbar />

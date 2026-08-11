@@ -18,7 +18,7 @@ export function Boom3D() {
       style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", sans-serif' }}
     >
       <Helmet>
-        <title>Boom 3D | Best Volume Booster & Equalizer for Mac & Windows</title>
+        <title>Boom 3D - Best 3D Surround Sound for Mac & Windows</title>
         <meta name="description" content="Experience audio in magical 3D. Boom 3D is a pro audio enhancement app with a 31-band equalizer, volume booster, and immersive surround sound for Mac and Windows." />
         <meta name="keywords" content="Boom 3D, 3D surround sound, volume booster, Mac equalizer, Windows equalizer, sound enhancement software" />
         <meta property="og:title" content="Boom 3D | Best Volume Booster & Equalizer" />
