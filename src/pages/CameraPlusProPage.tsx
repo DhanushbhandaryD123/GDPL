@@ -8,7 +8,7 @@ import { ProShare } from '../components/camerapluspro/ProShare';
 import { ProCTABanner } from '../components/camerapluspro/ProCTABanner';
 
 export function CameraPlusProPage() {
-  const domain = import.meta.env.VITE_SITE_URL || 'http://localhost:5173';
+  const domain = import.meta.env.VITE_SITE_URL || '';
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans overflow-x-hidden selection:bg-blue-500 selection:text-white">
       <Helmet>

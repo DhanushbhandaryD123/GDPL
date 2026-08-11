@@ -12,7 +12,7 @@ import { Boom3DAppDownload } from '../components/boom3d/Boom3DAppDownload';
 import { Boom3DTailored } from '../components/boom3d/Boom3DTailored';
 
 export function Boom3D() {
-  const domain = import.meta.env.VITE_SITE_URL || 'http://localhost:5173';
+  const domain = import.meta.env.VITE_SITE_URL || '';
   return (
     <div 
       className="min-h-screen bg-white text-gray-900 overflow-x-hidden selection:bg-[#4F46E5] selection:text-white"

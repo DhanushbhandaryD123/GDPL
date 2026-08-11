@@ -10,7 +10,7 @@ import { UserTestimonials } from '../components/boomformobile/UserTestimonials';
 import { Footer } from '../components/layout/Footer';
 
 export function BoomForMobilePage() {
-  const domain = import.meta.env.VITE_SITE_URL || 'http://localhost:5173';
+  const domain = import.meta.env.VITE_SITE_URL || '';
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans overflow-x-hidden selection:bg-pink-500/30 selection:text-white">
       <Helmet>
