@@ -8,7 +8,7 @@ import { OurValues } from '../components/about/OurValues';
 import { MeetOurTeam } from '../components/about/MeetOurTeam';
 
 export function About() {
-  const domain = '';
+  const domain = import.meta.env.VITE_SITE_URL || '';
   return (
     <div className="min-h-screen bg-[#ffffff] text-gray-900 font-sans">
       <Helmet>

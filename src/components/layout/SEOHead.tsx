@@ -32,7 +32,7 @@ export function SEOHead() {
   }
 
   // Domain of the application
-  const domain = '';
+  const domain = import.meta.env.VITE_SITE_URL || '';
   
   return (
     <Helmet>

@@ -8,7 +8,7 @@ import { Newsletter } from '../components/audion/Newsletter';
 import { Footer } from '../components/layout/Footer';
 
 export function AudiOnPage() {
-  const domain = '';
+  const domain = import.meta.env.VITE_SITE_URL || '';
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans overflow-x-hidden selection:bg-purple-200">
       <Helmet>

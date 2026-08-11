@@ -10,7 +10,7 @@ import { Testimonials } from '../components/cameraplus/Testimonials';
 import { Footer } from '../components/layout/Footer';
 
 export function CameraPlusPage() {
-  const domain = '';
+  const domain = import.meta.env.VITE_SITE_URL || '';
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans selection:bg-blue-500 selection:text-white">
       <Helmet>

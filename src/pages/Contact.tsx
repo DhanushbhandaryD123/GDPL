@@ -25,7 +25,7 @@ export function Contact() {
     setFormData({ subject: '', name: '', email: '', mobile: '', comment: '' });
   };
 
-  const domain = '';
+  const domain = import.meta.env.VITE_SITE_URL || '';
 
   return (
     <div className="min-h-screen bg-[#383838] font-sans flex flex-col">
@@ -46,16 +46,21 @@ export function Contact() {
 
       {/* Map Section */}
       <div className="w-full h-[45vh] relative">
-        <iframe
-          src="https://maps.google.com/maps?q=Global%20Delight%20Technologies%20Pvt.%20Ltd.&t=&z=15&ie=UTF8&iwloc=&output=embed"
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          allowFullScreen={false}
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          className="absolute inset-0"
-        ></iframe>
+        {/* Google's embed script throws a parse error in the old headless
+            Chromium used by the react-snap prerender step, which aborts the
+            static build. Skip loading it during prerendering. */}
+        {navigator.userAgent !== 'ReactSnap' && (
+          <iframe
+            src="https://maps.google.com/maps?q=Global%20Delight%20Technologies%20Pvt.%20Ltd.&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen={false}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="absolute inset-0"
+          ></iframe>
+        )}
       </div>
 
       {/* Orange Separator */}
