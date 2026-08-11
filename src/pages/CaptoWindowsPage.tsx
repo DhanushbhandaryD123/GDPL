@@ -8,7 +8,7 @@ import { Newsletter } from '../components/captowindows/Newsletter';
 import { Footer } from '../components/layout/Footer';
 
 export function CaptoWindowsPage() {
-  const domain = import.meta.env.VITE_SITE_URL || '';
+  const domain = '';
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 font-sans overflow-x-hidden selection:bg-[#0078D7] selection:text-white">
       <Helmet>

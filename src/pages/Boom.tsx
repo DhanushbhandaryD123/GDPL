@@ -9,7 +9,7 @@ import { BoomTestimonials } from '../components/boom/BoomTestimonials';
 import { BoomCTA } from '../components/boom/BoomCTA';
 
 export function Boom() {
-  const domain = import.meta.env.VITE_SITE_URL || '';
+  const domain = '';
   return (
     <div
       className="min-h-screen bg-white text-gray-900 overflow-x-hidden selection:bg-indigo-500 selection:text-white"

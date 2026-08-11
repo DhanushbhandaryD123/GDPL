@@ -9,7 +9,7 @@ import { Subscription } from '../components/audimix/Subscription';
 import { Footer } from '../components/layout/Footer';
 
 export function AuDimixPage() {
-  const domain = import.meta.env.VITE_SITE_URL || '';
+  const domain = '';
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans overflow-x-hidden selection:bg-purple-200">
       <Helmet>

@@ -10,7 +10,7 @@ import { Boom2FooterCTA } from '../components/boom2/Boom2FooterCTA';
 import { Footer } from '../components/layout/Footer';
 
 export function Boom2() {
-  const domain = import.meta.env.VITE_SITE_URL || '';
+  const domain = '';
   return (
     <div className="min-h-screen bg-[#060814] text-white font-sans overflow-x-hidden selection:bg-[#4F46E5] selection:text-white">
       <Helmet>

@@ -7,7 +7,7 @@ import { CaptoFooterCTA } from '../components/capto/CaptoFooterCTA';
 import { Footer } from '../components/layout/Footer';
 
 export function Capto() {
-  const domain = import.meta.env.VITE_SITE_URL || '';
+  const domain = '';
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans overflow-x-hidden selection:bg-[#4F46E5] selection:text-white">
       <Helmet>

@@ -16,7 +16,7 @@ export function SEOHead() {
   }
 
   // Domain of the application
-  const domain = import.meta.env.VITE_SITE_URL || '';
+  const domain = '';
   
   return (
     <Helmet>
