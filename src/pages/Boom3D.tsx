@@ -27,6 +27,22 @@ export function Boom3D() {
         <meta property="og:url" content="https://www.globaldelight.com/boom3D" />
         <meta property="og:locale" content="en_US" />
         <link rel="canonical" href="https://www.globaldelight.com/boom3D" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Boom 3D",
+            "operatingSystem": "Mac, Windows",
+            "applicationCategory": "MultimediaApplication",
+            "offers": {
+              "@type": "Offer",
+              "price": "925.37",
+              "priceCurrency": "INR"
+            },
+            "description": "System-wide volume booster and equalizer for Mac & Windows with immersive 3D surround sound.",
+            "image": "https://www.globaldelight.com/apps/boom3d-window.png"
+          })}
+        </script>
       </Helmet>
       
       {/* We can use the global Navbar with a dark theme prop if needed, or just standard */}

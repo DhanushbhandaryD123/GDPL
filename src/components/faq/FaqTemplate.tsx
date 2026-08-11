@@ -99,6 +99,31 @@ export function FaqTemplate({ title, logoSrc, logoAlt, faqs, categories }: FaqTe
     <div className="min-h-screen bg-white text-gray-900 font-sans flex flex-col relative overflow-x-hidden">
       <Helmet>
         <title>{title} | Global Delight</title>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.globaldelight.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "FAQ",
+                "item": "https://www.globaldelight.com/faq"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": title
+              }
+            ]
+          })}
+        </script>
       </Helmet>
       
       <Navbar />

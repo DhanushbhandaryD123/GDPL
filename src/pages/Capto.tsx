@@ -19,6 +19,22 @@ export function Capto() {
         <meta property="og:url" content="https://www.globaldelight.com/capto" />
         <meta property="og:locale" content="en_US" />
         <link rel="canonical" href="https://www.globaldelight.com/capto" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Capto",
+            "operatingSystem": "Mac",
+            "applicationCategory": "MultimediaApplication",
+            "offers": {
+              "@type": "Offer",
+              "price": "749.50",
+              "priceCurrency": "INR"
+            },
+            "description": "Powerful screen recording, video editing, and image editing software for Mac.",
+            "image": "https://www.globaldelight.com/apps/Capto-mac.jpeg"
+          })}
+        </script>
       </Helmet>
       
       <Navbar />

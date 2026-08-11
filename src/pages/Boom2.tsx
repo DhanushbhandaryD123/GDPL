@@ -22,6 +22,17 @@ export function Boom2() {
         <meta property="og:url" content="https://www.globaldelight.com/boom2" />
         <meta property="og:locale" content="en_US" />
         <link rel="canonical" href="https://www.globaldelight.com/boom2" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Boom 2",
+            "operatingSystem": "Mac",
+            "applicationCategory": "MultimediaApplication",
+            "description": "System-wide volume booster and equalizer designed exclusively for Mac.",
+            "image": "https://www.globaldelight.com/apps/Boom2-mac.jpeg"
+          })}
+        </script>
       </Helmet>
       
       <Navbar />

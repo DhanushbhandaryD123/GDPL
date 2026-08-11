@@ -20,6 +20,30 @@ export function SEOHead() {
   
   return (
     <Helmet>
+      {/* Self-referencing Canonical URL */}
+      <link rel="canonical" href={`${domain}${currentPath}`} />
+
+      {/* Global Organization JSON-LD */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Global Delight",
+          "url": domain,
+          "logo": `${domain}/logos/GDTPL_logo_.png`,
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "availableLanguage": ["English"]
+          },
+          "sameAs": [
+            "https://www.facebook.com/GlobalDelight",
+            "https://twitter.com/GlobalDelight",
+            "https://www.instagram.com/globaldelight"
+          ]
+        })}
+      </script>
+
       {/* Geographic Meta Tags */}
       <meta name="geo.region" content="IN-KA" />
       <meta name="geo.placename" content="Udupi" />
