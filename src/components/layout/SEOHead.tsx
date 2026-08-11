@@ -60,12 +60,6 @@ export function SEOHead() {
         })}
       </script>
 
-      {/* Geographic Meta Tags */}
-      <meta name="geo.region" content="IN-KA" />
-      <meta name="geo.placename" content="Udupi" />
-      <meta name="geo.position" content="13.3409;74.7421" />
-      <meta name="ICBM" content="13.3409, 74.7421" />
-
       {/* Default SEO Tags (can be overridden by specific pages) */}
       <meta name="description" content="Global Delight builds award-winning audio, video, and photography apps — Boom 3D volume booster & equalizer, Capto screen recorder, Vizmato video editor, and Camera Plus Pro for Mac, Windows, iOS & Android." />
       <meta name="keywords" content="Global Delight, Boom 3D, volume booster, Mac equalizer, 3D surround sound, Capto, screen recorder, Vizmato, video editor app, Camera Plus Pro, AuDimix, AudiOn, bass booster, speaker booster, amplifier" />
