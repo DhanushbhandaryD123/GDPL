@@ -1,9 +1,25 @@
+import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
+
+// index.html ships static fallback <meta name="description"/"keywords"> tags so
+// raw page source always shows something even before React/Helmet mounts (e.g. in
+// dev mode, or for non-JS crawlers). Once Helmet takes over, its own tags (marked
+// with data-rh) are the source of truth, so the static ones are removed here to
+// avoid duplicate tags in the prerendered production build.
+function removeStaticFallbackMetaTags() {
+  document
+    .querySelectorAll('meta[name="description"]:not([data-rh]), meta[name="keywords"]:not([data-rh])')
+    .forEach((el) => el.remove());
+}
 
 export function SEOHead() {
   const location = useLocation();
   const supportedLangs = ['en', 'de', 'it', 'ja', 'fr', 'pt', 'es', 'zh'];
+
+  useEffect(() => {
+    removeStaticFallbackMetaTags();
+  }, []);
   
   // Extract the base path without the language prefix
   let currentPath = location.pathname;
