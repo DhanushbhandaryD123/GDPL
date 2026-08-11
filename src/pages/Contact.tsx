@@ -25,6 +25,8 @@ export function Contact() {
     setFormData({ subject: '', name: '', email: '', mobile: '', comment: '' });
   };
 
+  const domain = '';
+
   return (
     <div className="min-h-screen bg-[#383838] font-sans flex flex-col">
       <Helmet>
@@ -34,9 +36,9 @@ export function Contact() {
         <meta property="og:title" content="Contact Us | Global Delight" />
         <meta property="og:description" content="We're here to help. Reach out to Global Delight for support, partnerships, or any questions." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.globaldelight.com/contact" />
+        <meta property="og:url" content={`${domain}/contact`} />
         <meta property="og:locale" content="en_US" />
-        <link rel="canonical" href="https://www.globaldelight.com/contact" />
+        <link rel="canonical" href={`${domain}/contact`} />
       </Helmet>
       
       <Navbar />

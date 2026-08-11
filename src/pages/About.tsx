@@ -8,6 +8,7 @@ import { OurValues } from '../components/about/OurValues';
 import { MeetOurTeam } from '../components/about/MeetOurTeam';
 
 export function About() {
+  const domain = '';
   return (
     <div className="min-h-screen bg-[#ffffff] text-gray-900 font-sans">
       <Helmet>
@@ -17,9 +18,9 @@ export function About() {
         <meta property="og:title" content="About Global Delight | Innovators in Digital Media Software" />
         <meta property="og:description" content="Award-winning creators of Boom, Capto, Vizmato, and Camera Plus. Enhancing digital experiences since 2007." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.globaldelight.com/about" />
+        <meta property="og:url" content={`${domain}/about`} />
         <meta property="og:locale" content="en_US" />
-        <link rel="canonical" href="https://www.globaldelight.com/about" />
+        <link rel="canonical" href={`${domain}/about`} />
       </Helmet>
       
       <Navbar />

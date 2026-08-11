@@ -7,6 +7,7 @@ import { BusinessAbout } from '../components/business/BusinessAbout';
 import { BusinessTechnologies } from '../components/business/BusinessTechnologies';
 
 export function Business() {
+  const domain = '';
   return (
     <div className="min-h-screen bg-[#fff] text-gray-900 font-sans">
       <Helmet>
@@ -16,9 +17,9 @@ export function Business() {
         <meta property="og:title" content="Business Solutions | Global Delight B2B" />
         <meta property="og:description" content="Empowering businesses with award-winning audio, video, and imaging technologies." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.globaldelight.com/business" />
+        <meta property="og:url" content={`${domain}/business`} />
         <meta property="og:locale" content="en_US" />
-        <link rel="canonical" href="https://www.globaldelight.com/business" />
+        <link rel="canonical" href={`${domain}/business`} />
       </Helmet>
       
       <Navbar logoUrl="/logos/GDL_B2B_Logo.png" />

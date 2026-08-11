@@ -40,12 +40,38 @@ const androidApps: AppItem[] = [
 ];
 
 function Home() {
+  const domain = '';
   return (
     <div className="min-h-screen bg-[#fff] text-gray-900 font-sans">
       <Helmet>
         <title>Global Delight (Makers of Boom3D, Capto, Vizmato and Cameraplus pro)</title>
         <meta name="description" content="Global Delight creates apps that have bass booster, speaker booster and amplifier for both Mac & Windows | Screen recorders for Mac" />
         <meta name="keywords" content="Bass Boosters, speaker booster, amplifier, screen recorder" />
+        <meta property="og:title" content="Global Delight" />
+        <meta property="og:description" content="Global Delight creates apps that have bass booster, speaker booster and amplifier for both Mac & Windows | Screen recorders for Mac" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${domain}/`} />
+        <meta property="og:locale" content="en_US" />
+        <link rel="canonical" href={`${domain}/`} />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Global Delight",
+            "url": `${domain}/`,
+            "logo": `${domain}/logos/GDTPL_logo_.png`,
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer service",
+              "availableLanguage": ["English"]
+            },
+            "sameAs": [
+              "https://www.facebook.com/GlobalDelight",
+              "https://twitter.com/GlobalDelight",
+              "https://www.instagram.com/globaldelight"
+            ]
+          })}
+        </script>
       </Helmet>
       
       <Navbar />

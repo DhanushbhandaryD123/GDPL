@@ -24,18 +24,20 @@ export function Faq() {
   const showAudioRecorder = isMatch("Audio Recorder Simple, reliable");
   const showUtilityApps = showCapto || showAudioRecorder;
 
+  const domain = '';
+
   return (
     <div className="min-h-screen bg-[#fff] text-gray-900 font-sans flex flex-col">
       <Helmet>
-        <title>FAQ & Support | Global Delight Product Help Center</title>
-        <meta name="description" content="Find answers to common questions about Global Delight products including Boom 3D, Boom 2, Capto, Vizmato, and Camera Plus. Get troubleshooting and usage tips." />
-        <meta name="keywords" content="Global Delight FAQ, customer support, product help, Boom 3D support, Capto troubleshooting, software tutorials, app help" />
-        <meta property="og:title" content="FAQ & Support | Global Delight Product Help Center" />
-        <meta property="og:description" content="Need help with our apps? Browse our frequently asked questions and support guides." />
+        <title>FAQ & Support | Global Delight</title>
+        <meta name="description" content="Find answers to frequently asked questions about Boom, Capto, Vizmato, and other Global Delight software." />
+        <meta name="keywords" content="Global Delight FAQ, software support, Boom support, Capto help, Vizmato FAQ" />
+        <meta property="og:title" content="FAQ & Support | Global Delight" />
+        <meta property="og:description" content="Find answers to frequently asked questions about Boom, Capto, Vizmato, and other Global Delight software." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.globaldelight.com/faq" />
+        <meta property="og:url" content={`${domain}/faq`} />
         <meta property="og:locale" content="en_US" />
-        <link rel="canonical" href="https://www.globaldelight.com/faq" />
+        <link rel="canonical" href={`${domain}/faq`} />
       </Helmet>
 
       <Navbar />
