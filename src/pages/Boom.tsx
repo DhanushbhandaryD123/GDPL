@@ -9,6 +9,7 @@ import { BoomTestimonials } from '../components/boom/BoomTestimonials';
 import { BoomCTA } from '../components/boom/BoomCTA';
 
 export function Boom() {
+  const domain = import.meta.env.VITE_SITE_URL || 'http://localhost:5173';
   return (
     <div
       className="min-h-screen bg-white text-gray-900 overflow-x-hidden selection:bg-indigo-500 selection:text-white"
@@ -21,14 +22,14 @@ export function Boom() {
         <meta property="og:title" content="Boom | Feel Your Music in 3D Surround Sound" />
         <meta property="og:description" content="Award-winning 3D surround sound and volume booster for your devices." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.globaldelight.com/boom" />
+        <meta property="og:url" content={`${domain}/boom`} />
         <meta property="og:locale" content="en_US" />
-        <link rel="canonical" href="https://www.globaldelight.com/boom" />
+        <link rel="canonical" href={`${domain}/boom`} />
       
-        <meta property="og:image" content="https://www.globaldelight.com/apps/Boom2-mac.jpeg" />
+        <meta property="og:image" content={`${domain}/apps/Boom2-mac.jpeg`} />
         <meta name="twitter:title" content="Boom | Feel Your Music in 3D Surround Sound | Mac Audio Equalizer" />
         <meta name="twitter:description" content="Boom is Global Delight's award-winning audio family for Mac, Windows, iOS and Android — featuring 3D surround sound, advanced equalizers, and a powerful volume booster." />
-        <meta name="twitter:image" content="https://www.globaldelight.com/apps/Boom2-mac.jpeg" />
+        <meta name="twitter:image" content={`${domain}/apps/Boom2-mac.jpeg`} />
       </Helmet>
 
       <Navbar />

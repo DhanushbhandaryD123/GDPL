@@ -10,6 +10,7 @@ import { Boom2FooterCTA } from '../components/boom2/Boom2FooterCTA';
 import { Footer } from '../components/layout/Footer';
 
 export function Boom2() {
+  const domain = import.meta.env.VITE_SITE_URL || 'http://localhost:5173';
   return (
     <div className="min-h-screen bg-[#060814] text-white font-sans overflow-x-hidden selection:bg-[#4F46E5] selection:text-white">
       <Helmet>
@@ -19,9 +20,9 @@ export function Boom2() {
         <meta property="og:title" content="Boom 2 | Your Audio, Reimagined" />
         <meta property="og:description" content="System-wide volume booster and equalizer designed exclusively for Mac." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.globaldelight.com/boom2" />
+        <meta property="og:url" content={`${domain}/boom2`} />
         <meta property="og:locale" content="en_US" />
-        <link rel="canonical" href="https://www.globaldelight.com/boom2" />
+        <link rel="canonical" href={`${domain}/boom2`} />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -30,14 +31,14 @@ export function Boom2() {
             "operatingSystem": "Mac",
             "applicationCategory": "MultimediaApplication",
             "description": "System-wide volume booster and equalizer designed exclusively for Mac.",
-            "image": "https://www.globaldelight.com/apps/Boom2-mac.jpeg"
+            "image": `${domain}/apps/Boom2-mac.jpeg`
           })}
         </script>
       
-        <meta property="og:image" content="https://www.globaldelight.com/apps/Boom2-mac.jpeg" />
+        <meta property="og:image" content={`${domain}/apps/Boom2-mac.jpeg`} />
         <meta name="twitter:title" content="Boom 2 | System-Wide Volume Booster & Equalizer for Mac" />
         <meta name="twitter:description" content="Boom 2 is the ultimate audio enhancement app for Mac. Enjoy system-wide volume boosting, advanced equalizers, and immersive 3D sound for movies, music, and games." />
-        <meta name="twitter:image" content="https://www.globaldelight.com/apps/Boom2-mac.jpeg" />
+        <meta name="twitter:image" content={`${domain}/apps/Boom2-mac.jpeg`} />
       </Helmet>
       
       <Navbar />

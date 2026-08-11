@@ -8,6 +8,7 @@ import { Newsletter } from '../components/captowindows/Newsletter';
 import { Footer } from '../components/layout/Footer';
 
 export function CaptoWindowsPage() {
+  const domain = import.meta.env.VITE_SITE_URL || 'http://localhost:5173';
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 font-sans overflow-x-hidden selection:bg-[#0078D7] selection:text-white">
       <Helmet>
@@ -17,14 +18,14 @@ export function CaptoWindowsPage() {
         <meta property="og:title" content="Capto for Windows | Screen Capture & Video Editing" />
         <meta property="og:description" content="Your all-in-one solution for screen recording and editing on Windows." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.globaldelight.com/capto/windows" />
+        <meta property="og:url" content={`${domain}/capto/windows`} />
         <meta property="og:locale" content="en_US" />
-        <link rel="canonical" href="https://www.globaldelight.com/capto/windows" />
+        <link rel="canonical" href={`${domain}/capto/windows`} />
       
-        <meta property="og:image" content="https://www.globaldelight.com/apps/Capto-window.jpeg" />
+        <meta property="og:image" content={`${domain}/apps/Capto-window.jpeg`} />
         <meta name="twitter:title" content="Capto for Windows | Screen Capture & Video Editing" />
         <meta name="twitter:description" content="Capto for Windows is your all-in-one solution for screenshots, screen recording, and video editing on PC. Create tutorials, vlog, and share with ease." />
-        <meta name="twitter:image" content="https://www.globaldelight.com/apps/Capto-window.jpeg" />
+        <meta name="twitter:image" content={`${domain}/apps/Capto-window.jpeg`} />
       </Helmet>
       
       <Navbar />

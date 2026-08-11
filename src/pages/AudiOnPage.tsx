@@ -8,6 +8,7 @@ import { Newsletter } from '../components/audion/Newsletter';
 import { Footer } from '../components/layout/Footer';
 
 export function AudiOnPage() {
+  const domain = import.meta.env.VITE_SITE_URL || 'http://localhost:5173';
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans overflow-x-hidden selection:bg-purple-200">
       <Helmet>
@@ -17,14 +18,14 @@ export function AudiOnPage() {
         <meta property="og:title" content="AudiOn | Voice Recorder for Android & iOS" />
         <meta property="og:description" content="Enhance your mobile audio recordings with noise removal and lossless quality." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.globaldelight.com/audion" />
+        <meta property="og:url" content={`${domain}/audion`} />
         <meta property="og:locale" content="en_US" />
-        <link rel="canonical" href="https://www.globaldelight.com/audion" />
+        <link rel="canonical" href={`${domain}/audion`} />
       
-        <meta property="og:image" content="https://www.globaldelight.com/apps/AudiOn-ios.jpeg" />
+        <meta property="og:image" content={`${domain}/apps/AudiOn-ios.jpeg`} />
         <meta name="twitter:title" content="AudiOn | Pro Voice Recorder & Audio Editor for iOS & Android" />
         <meta name="twitter:description" content="AudiOn is the cutting-edge voice recorder app for mobile. Experience lossless recording, powerful noise removal, audio enhancement, and AI transcription." />
-        <meta name="twitter:image" content="https://www.globaldelight.com/apps/AudiOn-ios.jpeg" />
+        <meta name="twitter:image" content={`${domain}/apps/AudiOn-ios.jpeg`} />
       </Helmet>
       
       <Navbar />

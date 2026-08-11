@@ -8,6 +8,7 @@ import { ProShare } from '../components/camerapluspro/ProShare';
 import { ProCTABanner } from '../components/camerapluspro/ProCTABanner';
 
 export function CameraPlusProPage() {
+  const domain = import.meta.env.VITE_SITE_URL || 'http://localhost:5173';
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans overflow-x-hidden selection:bg-blue-500 selection:text-white">
       <Helmet>
@@ -17,14 +18,14 @@ export function CameraPlusProPage() {
         <meta property="og:title" content="Camera Plus Pro | Capture. Edit. Create." />
         <meta property="og:description" content="Professional photography tools and powerful editing suite for iPhone." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.globaldelight.com/camerapluspro" />
+        <meta property="og:url" content={`${domain}/camerapluspro`} />
         <meta property="og:locale" content="en_US" />
-        <link rel="canonical" href="https://www.globaldelight.com/camerapluspro" />
+        <link rel="canonical" href={`${domain}/camerapluspro`} />
       
-        <meta property="og:image" content="https://www.globaldelight.com/website/GlobalDelight/icons/CameraPlus_SubheaderLogo.png" />
+        <meta property="og:image" content={`${domain}/website/GlobalDelight/icons/CameraPlus_SubheaderLogo.png`} />
         <meta name="twitter:title" content="Camera Plus Pro | Professional Camera & Editing App for iPhone" />
         <meta name="twitter:description" content="Experience professional photography tools for iPhone. Capture, edit, and share stunning photos with Camera Plus Pro's advanced filters and editing suite." />
-        <meta name="twitter:image" content="https://www.globaldelight.com/website/GlobalDelight/icons/CameraPlus_SubheaderLogo.png" />
+        <meta name="twitter:image" content={`${domain}/website/GlobalDelight/icons/CameraPlus_SubheaderLogo.png`} />
       </Helmet>
 
       <Navbar />

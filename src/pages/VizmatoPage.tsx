@@ -7,6 +7,7 @@ import { NewsletterSection } from '../components/vizmato/NewsletterSection';
 import { Footer } from '../components/layout/Footer';
 
 export function VizmatoPage() {
+  const domain = import.meta.env.VITE_SITE_URL || 'http://localhost:5173';
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans overflow-x-hidden selection:bg-pink-500 selection:text-white">
       <Helmet>
@@ -16,14 +17,14 @@ export function VizmatoPage() {
         <meta property="og:title" content="Vizmato | Video Editor & Movie Maker" />
         <meta property="og:description" content="Create stunning videos instantly with FX, themes, and music on Vizmato." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.globaldelight.com/vizmato" />
+        <meta property="og:url" content={`${domain}/vizmato`} />
         <meta property="og:locale" content="en_US" />
-        <link rel="canonical" href="https://www.globaldelight.com/vizmato" />
+        <link rel="canonical" href={`${domain}/vizmato`} />
       
-        <meta property="og:image" content="https://www.globaldelight.com/apps/Vizmato-ios.jpeg" />
+        <meta property="og:image" content={`${domain}/apps/Vizmato-ios.jpeg`} />
         <meta name="twitter:title" content="Vizmato | Powerful Video Editor & Movie Maker App" />
         <meta name="twitter:description" content="Add ZING to your moviemaking! Vizmato is an easy-to-use, powerful video editor and movie maker for iOS and Android. Apply themes, FX, and music instantly." />
-        <meta name="twitter:image" content="https://www.globaldelight.com/apps/Vizmato-ios.jpeg" />
+        <meta name="twitter:image" content={`${domain}/apps/Vizmato-ios.jpeg`} />
       </Helmet>
       
       {/* Keeping global navbar, but normally a landing page like this might have a specialized header */}

@@ -9,6 +9,7 @@ import { Subscription } from '../components/audimix/Subscription';
 import { Footer } from '../components/layout/Footer';
 
 export function AuDimixPage() {
+  const domain = import.meta.env.VITE_SITE_URL || 'http://localhost:5173';
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans overflow-x-hidden selection:bg-purple-200">
       <Helmet>
@@ -18,14 +19,14 @@ export function AuDimixPage() {
         <meta property="og:title" content="AuDimix | Vocal Extractor & Music Separation Software" />
         <meta property="og:description" content="Isolate vocals and extract instruments instantly with AuDimix." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.globaldelight.com/audimix" />
+        <meta property="og:url" content={`${domain}/audimix`} />
         <meta property="og:locale" content="en_US" />
-        <link rel="canonical" href="https://www.globaldelight.com/audimix" />
+        <link rel="canonical" href={`${domain}/audimix`} />
       
-        <meta property="og:image" content="https://www.globaldelight.com/apps/AuDimix-Window.jpeg" />
+        <meta property="og:image" content={`${domain}/apps/AuDimix-Window.jpeg`} />
         <meta name="twitter:title" content="AuDimix | Vocal Extractor & Music Separation Software" />
         <meta name="twitter:description" content="AuDimix is a powerful vocal isolation and extraction tool. Isolate vocals, extract instruments, and create your own music mix with ease on Mac." />
-        <meta name="twitter:image" content="https://www.globaldelight.com/apps/AuDimix-Window.jpeg" />
+        <meta name="twitter:image" content={`${domain}/apps/AuDimix-Window.jpeg`} />
       </Helmet>
       
       <Navbar />

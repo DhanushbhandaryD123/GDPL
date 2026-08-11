@@ -10,6 +10,7 @@ import { UserTestimonials } from '../components/boomformobile/UserTestimonials';
 import { Footer } from '../components/layout/Footer';
 
 export function BoomForMobilePage() {
+  const domain = import.meta.env.VITE_SITE_URL || 'http://localhost:5173';
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans overflow-x-hidden selection:bg-pink-500/30 selection:text-white">
       <Helmet>
@@ -19,14 +20,14 @@ export function BoomForMobilePage() {
         <meta property="og:title" content="Boom for Mobile | Best Bass & Volume Booster" />
         <meta property="og:description" content="Transform your smartphone into an immersive sound system." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.globaldelight.com/boomformobile" />
+        <meta property="og:url" content={`${domain}/boomformobile`} />
         <meta property="og:locale" content="en_US" />
-        <link rel="canonical" href="https://www.globaldelight.com/boomformobile" />
+        <link rel="canonical" href={`${domain}/boomformobile`} />
       
-        <meta property="og:image" content="https://www.globaldelight.com/apps/Boom%20for%20iOS.jpeg" />
+        <meta property="og:image" content={`${domain}/apps/Boom%20for%20iOS.jpeg`} />
         <meta name="twitter:title" content="Boom for Mobile | 3D Surround Sound & Equalizer App" />
         <meta name="twitter:description" content="Feel your music on the go. Boom for iOS and Android features incredible 3D surround sound, custom equalizer presets, and a powerful audio intensity slider." />
-        <meta name="twitter:image" content="https://www.globaldelight.com/apps/Boom%20for%20iOS.jpeg" />
+        <meta name="twitter:image" content={`${domain}/apps/Boom%20for%20iOS.jpeg`} />
       </Helmet>
       
       <Navbar />
