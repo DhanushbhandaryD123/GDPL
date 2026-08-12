@@ -1,6 +1,5 @@
 import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../components/layout/Navbar';
-import { Breadcrumbs } from '../components/layout/Breadcrumbs';
 import { Footer } from '../components/layout/Footer';
 import { Boom3DHero } from '../components/boom3d/Boom3DHero';
 import { Boom3DOSSelector } from '../components/boom3d/Boom3DOSSelector';
@@ -67,10 +66,7 @@ export function Boom3D() {
         <Navbar />
       </div>
       
-      <main className="relative pt-20">
-        <div className="relative z-10 w-full">
-          <Breadcrumbs items={[{ name: 'Boom 3D' }]} />
-        </div>
+      <main className="relative">
         <Boom3DHero />
         <Boom3DOSSelector />
         <Boom3DSurround />

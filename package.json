@@ -193,7 +193,17 @@
       "/zh/camerapluspro",
       "/zh/audimix",
       "/zh/boomformobile",
-      "/404"
+      "/404",
+      "/boom3D/privacy-policy",
+      "/boom2/privacy-policy",
+      "/boom/privacy-policy",
+      "/privacy-policy",
+      "/capto/privacy-policy",
+      "/whatsnew/boom",
+      "/whatsnew/capto",
+      "/whatsnew/boom2",
+      "/whatsnew/audion",
+      "/whatsnew/audimix"
     ],
     "puppeteerArgs": [
       "--no-sandbox",
