@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 declare global {
   interface Window {
     dataLayer: any[];
+    gtag?: (...args: any[]) => void;
   }
 }
 
@@ -11,14 +12,15 @@ export function AnalyticsTracker() {
   const location = useLocation();
 
   useEffect(() => {
-    // Check if dataLayer exists (meaning GA4 is initialized on the page)
-    if (window.dataLayer) {
-      // Push a custom event to the dataLayer to record the page view on route changes
-      window.dataLayer.push({
-        event: 'spa_page_view',
-        page_path: location.pathname + location.search,
-        page_title: document.title
-      });
+    // If gtag is initialized, send standard GA4 page_view event on route changes
+    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+      // Small timeout to allow document.title to update via Helmet
+      setTimeout(() => {
+        window.gtag!('event', 'page_view', {
+          page_path: location.pathname + location.search,
+          page_title: document.title
+        });
+      }, 100);
     }
   }, [location]);
 
