@@ -18,8 +18,11 @@ export function About() {
         <meta name="subject" content="About Global Delight | Innovators in Digital Media Software" />
         <meta property="og:title" content="About Global Delight | Innovators in Digital Media Software" />
         <meta property="og:description" content="Award-winning creators of Boom, Capto, Vizmato, and Camera Plus. Enhancing digital experiences since 2007." />
+        <meta name="twitter:title" content="About Global Delight | Innovators in Digital Media Software" />
+        <meta name="twitter:description" content="Award-winning creators of Boom, Capto, Vizmato, and Camera Plus. Enhancing digital experiences since 2007." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${domain}/about`} />
+        <meta name="twitter:url" content={`${domain}/about`} />
         <meta property="og:locale" content="en_US" />
         <link rel="canonical" href={`${domain}/about`} />
       </Helmet>

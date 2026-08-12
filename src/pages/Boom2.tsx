@@ -17,7 +17,7 @@ export function Boom2() {
         <title>Boom 2 - Stereo Sound Enhancer for Mac</title>
         <meta name="description" content="Boom 2 is an award-winning stereo sound enhancer app for macOS that gives you precision control over your audio, with cutting-edge features for pristine sound." />
         <meta name="keywords" content="Boom 2, Mac volume booster, Mac equalizer, audio enhancer, improve Mac sound, bass booster Mac, sound booster app, system-wide audio control, equalizer presets, Boom app" />
-        <link rel="canonical" href="https://www.globaldelight.com/boom2/" />
+        <link rel="canonical" href={`${domain}/boom2/`} />
         
         {/* OG Tags */}
         <meta property="og:locale" content="en-US" />
@@ -25,7 +25,7 @@ export function Boom2() {
         <meta property="og:site_name" content="Global Delight Technologies Pvt. Ltd." />
         <meta property="og:title" content="Boom 2 - Stereo Sound Enhancer for Mac" />
         <meta property="og:description" content="Boom 2 is an award-winning stereo sound enhancer app for macOS that gives you precision control over your audio, with cutting-edge features for pristine sound." />
-        <meta property="og:url" content="https://www.globaldelight.com/boom2/" />
+        <meta property="og:url" content={`${domain}/boom2/`} />
         <meta property="og:image" content="https://d3jbf8nvvpx3fh.cloudfront.net/Boom2/web/images/OGImages/Boom2OGImage.png" />
         <meta name="subject" content="Boom 2 - Stereo Sound Enhancer for Mac" />
         <meta name="author" content="Global Delight Technologies Pvt. Ltd." />
@@ -57,7 +57,7 @@ export function Boom2() {
         <meta name="twitter:title" content="Boom 2 - Stereo Sound Enhancer for Mac" />
         <meta name="twitter:description" content="Boom 2 is an award-winning stereo sound enhancer app for macOS that gives you precision control over your audio, with cutting-edge features for pristine sound." />
         <meta name="twitter:image" content="https://d3jbf8nvvpx3fh.cloudfront.net/Boom2/web/images/OGImages/Boom2OGImage.png" />
-        <meta name="twitter:url" content="https://www.globaldelight.com/boom2/" />
+        <meta name="twitter:url" content={`${domain}/boom2/`} />
         
         <meta property="fb:app_id" content="574953960066003" />
         <meta property="fb:pages" content="206541726104573" />

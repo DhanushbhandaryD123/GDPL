@@ -6,6 +6,7 @@ import { FloatingSocials } from '../components/layout/FloatingSocials';
 import { Download, PenTool, Code, CloudDownload, Rocket, Smartphone, LayoutGrid, Laptop, Globe, Terminal, Tv, Camera, Apple } from 'lucide-react';
 
 export function VideoTechnology() {
+  const domain = import.meta.env.VITE_SITE_URL || '';
   const [activeTab, setActiveTab] = useState(0);
 
   const tabsData = [
@@ -40,10 +41,13 @@ export function VideoTechnology() {
         <meta name="subject" content="Video Technology Engine | Global Delight B2B" />
         <meta property="og:title" content="Video Technology Engine | Global Delight B2B" />
         <meta property="og:description" content="Empower your app with our robust video editing technology." />
+        <meta name="twitter:title" content="Video Technology Engine | Global Delight B2B" />
+        <meta name="twitter:description" content="Empower your app with our robust video editing technology." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.globaldelight.com/technology/video" />
+        <meta property="og:url" content={`${domain}/technology/video`} />
+        <meta name="twitter:url" content={`${domain}/technology/video`} />
         <meta property="og:locale" content="en_US" />
-        <link rel="canonical" href="https://www.globaldelight.com/technology/video" />
+        <link rel="canonical" href={`${domain}/technology/video`} />
       </Helmet>
       <Navbar />
       <FloatingSocials />
