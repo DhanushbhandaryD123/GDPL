@@ -166,7 +166,7 @@ import { CameraPlusProPage } from './pages/CameraPlusProPage';
 import { LanguageSync } from './components/layout/LanguageSync';
 import { SEOHead } from './components/layout/SEOHead';
 import { NotFound } from './pages/NotFound';
-import { AnalyticsTracker } from './components/layout/AnalyticsTracker';
+import { Analytics } from '@vercel/analytics/react';
 
 const appRoutes = [
   // Redirects and Aliases for Old Website URLs
@@ -245,7 +245,7 @@ function App() {
   return (
     <>
       <SEOHead />
-      <AnalyticsTracker />
+      <Analytics />
       {!isAppReady && <SplashScreen onComplete={() => setIsAppReady(true)} />}
       <ScrollToTop />
       <Routes>
