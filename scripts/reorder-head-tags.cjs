@@ -40,7 +40,8 @@ function processFile(filePath) {
   }
 
   const insertAfter = titleMatch[0];
-  result = result.replace(insertAfter, insertAfter + tags.join(''));
+  const formattedTags = tags.map((tag) => `\n    ${tag}`).join('');
+  result = result.replace(insertAfter, insertAfter + formattedTags + '\n');
 
   if (result !== html) {
     fs.writeFileSync(filePath, result, 'utf8');
