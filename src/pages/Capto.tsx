@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../components/layout/Navbar';
+import { Breadcrumbs } from '../components/layout/Breadcrumbs';
 import { CaptoHero } from '../components/capto/CaptoHero';
 import { CaptoFeatures } from '../components/capto/CaptoFeatures';
 import { CaptoUseCases } from '../components/capto/CaptoUseCases';
@@ -48,6 +49,7 @@ export function Capto() {
       <Navbar />
       
       <main>
+        <Breadcrumbs items={[{ name: 'Capto' }]} />
         <CaptoHero />
         <CaptoFeatures />
         <CaptoUseCases />
