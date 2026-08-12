@@ -1,7 +1,9 @@
 import { motion } from 'motion/react';
 import { Download } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export function Hero() {
+  const { t } = useTranslation();
   return (
     <section className="relative px-4 pt-2 pb-8 md:px-0 md:pt-40 md:pb-32 overflow-hidden bg-white">
       {/* Background Decor */}
@@ -18,27 +20,27 @@ export function Hero() {
           className="max-w-4xl mx-auto"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-[#0078D7] text-sm font-bold mb-8 border border-blue-100 shadow-sm">
-            Available on Windows 10 & 11
+            {t('captoWindows.hero.badge')}
           </div>
-          
+
           <h1 className="text-base sm:text-xl md:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight mb-6">
-            Your All-in-One Solution for <br className="hidden md:block" />
+            {t('captoWindows.hero.title_1')} <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0078D7] to-[#005a9e]">
-              Screenshots & Screen Recording
+              {t('captoWindows.hero.title_2')}
             </span>
           </h1>
-          
+
           <p className="text-xs sm:text-sm md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Capture, edit, and share your screen effortlessly. Capto for Windows offers a robust set of tools for creating professional video tutorials, capturing images, and annotating screenshots.
+            {t('captoWindows.hero.subtitle')}
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a 
+            <a
               href="#"
               className="w-full sm:w-auto px-4 py-1.5 md:px-8 md:py-4 bg-[#0078D7] hover:bg-[#005a9e] text-white rounded-[2rem] md:rounded-xl font-bold text-[10px] sm:text-xs md:text-lg flex items-center justify-center gap-2 transition-all shadow-lg shadow-blue-500/30 hover:-translate-y-1"
             >
               <Download size={20} />
-              Download Free Trial
+              {t('captoWindows.hero.download')}
             </a>
             <a 
               href="#"

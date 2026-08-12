@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Download, Facebook, Twitter, Instagram, Youtube, Volume2, VolumeX } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const socialLinks = [
   { icon: Facebook, href: 'https://facebook.com' },
@@ -16,6 +17,7 @@ const stemChips = [
 ];
 
 export function Hero() {
+  const { t } = useTranslation();
   return (
     <section className="relative min-h-[85vh] pt-2 pb-8 px-4 md:px-0 md:pt-40 md:pb-28 overflow-hidden bg-white flex items-center">
       {/* Dynamic Background Decor for Light Theme */}
@@ -51,13 +53,12 @@ export function Hero() {
             className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left lg:pl-8"
           > 
             <h1 className="text-base sm:text-xl md:text-7xl font-extrabold text-gray-900 tracking-tight leading-[1.1] mb-6">
-              Music <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">separation</span> <br className="hidden lg:block" />
-              made easy.
+              {t('audimix.hero.title_1')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">{t('audimix.hero.title_2')}</span> <br className="hidden lg:block" />
+              {t('audimix.hero.title_3')}
             </h1>
 
             <p className="text-xs sm:text-sm md:text-xl text-gray-500 mb-10 max-w-xl leading-relaxed">
-              Remove vocals, create instrumentals and backing tracks, and unleash
-              your creativity with AuDimix for Windows.
+              {t('audimix.hero.subtitle')}
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-4">
@@ -66,7 +67,7 @@ export function Hero() {
                 className="w-full sm:w-auto px-4 py-1.5 md:px-8 md:py-4 bg-gray-900 hover:bg-gray-800 text-white rounded-full font-bold text-[10px] sm:text-xs md:text-lg flex items-center justify-center gap-2 transition-all shadow-lg hover:scale-105"
               >
                 <Download size={20} />
-                Download Free Trial
+                {t('audimix.hero.download')}
               </a>
               <a
                 href="#"
@@ -79,8 +80,8 @@ export function Hero() {
                   <path fill="#ffb900" d="M12 12h10v10H12z" />
                 </svg>
                 <span className="text-left leading-tight">
-                  <span className="block text-[11px] text-gray-500">Download from the</span>
-                  <span className="block text-sm font-bold text-gray-900">Microsoft Store</span>
+                  <span className="block text-[11px] text-gray-500">{t('audimix.hero.download_from')}</span>
+                  <span className="block text-sm font-bold text-gray-900">{t('audimix.hero.ms_store')}</span>
                 </span>
               </a>
             </div>

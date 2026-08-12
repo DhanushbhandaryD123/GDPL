@@ -1,4 +1,30 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/boom/de", "destination": "/de/boom", "permanent": true },
+    { "source": "/boom/es", "destination": "/es/boom", "permanent": true },
+    { "source": "/boom/fr", "destination": "/fr/boom", "permanent": true },
+    { "source": "/boom/it", "destination": "/it/boom", "permanent": true },
+    { "source": "/boom/ja", "destination": "/ja/boom", "permanent": true },
+    { "source": "/boom/pt", "destination": "/pt/boom", "permanent": true },
+    { "source": "/boom/zh-cn", "destination": "/zh/boom", "permanent": true },
+    { "source": "/boom/zh-tw", "destination": "/zh/boom", "permanent": true },
+    { "source": "/boom/features", "destination": "/boom", "permanent": true },
+    { "source": "/boom2/de", "destination": "/de/boom2", "permanent": true },
+    { "source": "/boom2/es", "destination": "/es/boom2", "permanent": true },
+    { "source": "/boom2/fr", "destination": "/fr/boom2", "permanent": true },
+    { "source": "/boom2/it", "destination": "/it/boom2", "permanent": true },
+    { "source": "/boom2/ja", "destination": "/ja/boom2", "permanent": true },
+    { "source": "/boom2/pt", "destination": "/pt/boom2", "permanent": true },
+    { "source": "/boom2/zh-cn", "destination": "/zh/boom2", "permanent": true },
+    { "source": "/boom2/zh-tw", "destination": "/zh/boom2", "permanent": true },
+    { "source": "/capto/educators", "destination": "/capto", "permanent": true },
+    { "source": "/capto/features-comparison", "destination": "/capto", "permanent": true },
+    { "source": "/capto/help-videos", "destination": "/capto", "permanent": true },
+    { "source": "/capto/privacy-policy", "destination": "/capto", "permanent": true },
+    { "source": "/capto/thankyou", "destination": "/capto", "permanent": true },
+    { "source": "/capto/user-guide.php", "destination": "/capto", "permanent": true },
+    { "source": "/captoformac", "destination": "/capto", "permanent": true }
+  ]
 }

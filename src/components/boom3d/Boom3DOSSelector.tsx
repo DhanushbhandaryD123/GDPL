@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { useTranslation } from 'react-i18next';
 
 type OSMode = 'mac' | 'windows';
 
@@ -16,35 +17,36 @@ const WindowsIcon = ({ className }: { className?: string }) => (
 );
 
 export function Boom3DOSSelector() {
+  const { t } = useTranslation();
   const [os, setOS] = useState<OSMode>('mac');
 
   return (
     <section className="bg-white py-10 lg:py-12 flex flex-col items-center justify-center relative z-20 overflow-hidden">
       <div className="max-w-[900px] mx-auto px-6 w-full flex flex-col items-center">
-        
+
         {/* Text Content */}
         <div className="text-center mb-6 flex flex-col items-center">
           <h2 className="text-4xl md:text-[3.5rem] font-bold tracking-tight text-[#111111] mb-5 leading-[1.15]">
-            What sound, should<br />
-            sound like.
+            {t('boom3d.os_selector.title_1')}<br />
+            {t('boom3d.os_selector.title_2')}
           </h2>
           <p className="text-gray-500 text-lg md:text-[1.2rem] max-w-[550px] leading-relaxed font-medium">
-            Everything you watch, listen to, or play,<br />
-            comes to life with Boom 3D.
+            {t('boom3d.os_selector.subtitle_1')}<br />
+            {t('boom3d.os_selector.subtitle_2')}
           </p>
         </div>
 
         {/* Toggle Section */}
         <div className="flex items-center gap-4 mb-6">
           <span className={`font-bold transition-opacity duration-300 ${os === 'mac' ? 'text-gray-900' : 'text-transparent hidden md:block'}`}>
-            (macOS 11 or later)
+            {t('boom3d.os_selector.macos_req')}
           </span>
 
-          <div 
-            className="flex items-center bg-gray-100 rounded-[2rem] p-1 border border-gray-200 shadow-inner relative w-[130px] h-[56px] cursor-pointer" 
+          <div
+            className="flex items-center bg-gray-100 rounded-[2rem] p-1 border border-gray-200 shadow-inner relative w-[130px] h-[56px] cursor-pointer"
             onClick={() => setOS(os === 'mac' ? 'windows' : 'mac')}
           >
-            <motion.div 
+            <motion.div
               className="absolute top-1 bottom-1 w-[60px] rounded-full shadow-md z-0 bg-white border border-gray-100"
               animate={{ left: os === 'mac' ? '4px' : '64px' }}
               transition={{ type: "spring", stiffness: 500, damping: 30 }}
@@ -60,13 +62,13 @@ export function Boom3DOSSelector() {
           </div>
 
           <span className={`font-bold transition-opacity duration-300 ${os === 'windows' ? 'text-gray-900' : 'text-transparent hidden md:block'}`}>
-            Windows 10 & 11
+            {t('boom3d.os_selector.windows_req')}
           </span>
         </div>
 
         {/* Buttons & Pricing */}
         <AnimatePresence mode="wait">
-          <motion.div 
+          <motion.div
             key={os}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -78,13 +80,13 @@ export function Boom3DOSSelector() {
             <div className="flex-1 flex flex-col items-center max-w-[320px]">
               <button className="w-full bg-[#0099ff] hover:bg-[#0088ee] text-white font-bold py-5 px-6 rounded-xl flex items-center justify-center gap-3 transition-colors text-lg tracking-wide shadow-[0_4px_14px_rgba(0,153,255,0.3)]">
                 {os === 'mac' ? <AppleIcon className="w-6 h-6" /> : <WindowsIcon className="w-6 h-6" />}
-                {os === 'mac' ? 'DOWNLOAD TRIAL' : 'DOWNLOAD TRIAL (x64)'}
+                {os === 'mac' ? t('boom3d.os_selector.download_trial_mac') : t('boom3d.os_selector.download_trial_win')}
               </button>
-              <p className="text-gray-500 mt-4 text-[15px] font-medium text-center">Try it free for 15 days</p>
-              
+              <p className="text-gray-500 mt-4 text-[15px] font-medium text-center">{t('boom3d.os_selector.free_trial')}</p>
+
               {os === 'mac' && (
                 <a href="#" className="text-gray-400 hover:text-gray-700 underline underline-offset-4 mt-6 transition-colors text-sm font-medium text-center">
-                  Using on older version of macOS?
+                  {t('boom3d.os_selector.older_macos')}
                 </a>
               )}
             </div>
@@ -93,7 +95,7 @@ export function Boom3DOSSelector() {
             <div className="flex-1 flex flex-col items-center max-w-[320px]">
               <button className={`w-full font-bold py-5 px-6 rounded-xl flex items-center justify-center gap-3 transition-colors text-lg tracking-wide bg-white border-2 hover:bg-gray-50 ${os === 'mac' ? 'border-[#111111] text-[#111111]' : 'border-[#0099ff] text-[#0099ff]'}`}>
                 {os === 'mac' ? <AppleIcon className="w-6 h-6" /> : <WindowsIcon className="w-6 h-6" />}
-                BUY NOW
+                {t('boom3d.os_selector.buy_now')}
               </button>
               <div className="mt-4 flex flex-col items-center">
                 <span className="text-[#111111] text-[15px] font-bold">INR 1850</span>

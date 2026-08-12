@@ -1,25 +1,16 @@
 import { motion } from 'motion/react';
 import { Camera, Wand2, Share2 } from 'lucide-react';
-
-const features = [
-  {
-    title: 'HD Recording',
-    description: 'Capture crystal clear video in full high definition with ease.',
-    icon: Camera,
-  },
-  {
-    title: 'Instant FX',
-    description: 'Apply stunning real-time video effects while you record.',
-    icon: Wand2,
-  },
-  {
-    title: 'Easy Sharing',
-    description: 'Share your creations instantly to all your favorite social platforms.',
-    icon: Share2,
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 export function FeaturesSection() {
+  const { t } = useTranslation();
+
+  const features = [
+    { title: t('vizmato.features.f1_title'), description: t('vizmato.features.f1_desc'), icon: Camera },
+    { title: t('vizmato.features.f2_title'), description: t('vizmato.features.f2_desc'), icon: Wand2 },
+    { title: t('vizmato.features.f3_title'), description: t('vizmato.features.f3_desc'), icon: Share2 },
+  ];
+
   return (
     <section className="py-16 md:py-24 bg-gray-50 relative overflow-hidden">
       {/* Background Decor */}
@@ -33,7 +24,7 @@ export function FeaturesSection() {
             viewport={{ once: true }}
             className="text-2xl md:text-3xl font-bold text-gray-900 tracking-widest uppercase"
           >
-            Powerful Features
+            {t('vizmato.features.title')}
           </motion.h2>
         </div>
 

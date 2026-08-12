@@ -1,9 +1,10 @@
 import { motion } from 'motion/react';
+import { useTranslation } from 'react-i18next';
 
 const AppleLogo = ({ className = "" }: { className?: string }) => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    viewBox="0 0 384 512" 
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 384 512"
     className={className}
     fill="currentColor"
   >
@@ -12,6 +13,7 @@ const AppleLogo = ({ className = "" }: { className?: string }) => (
 );
 
 export function Boom2Hero() {
+  const { t } = useTranslation();
   return (
     <div className="w-full max-w-[1920px] mx-auto px-4 md:px-4 pt-2 md:pt-4 pb-8 md:pb-12 bg-white">
       <section className="relative w-full rounded-3xl md:rounded-[2.5rem] shadow-2xl py-8 md:pt-16 md:pb-32 flex items-center aspect-[4/3] sm:aspect-[16/9] md:aspect-auto md:min-h-[70vh] overflow-hidden">
@@ -33,7 +35,7 @@ export function Boom2Hero() {
       <div className="max-w-[1400px] mx-auto px-4 md:px-8 w-full relative z-10">
         <div className="max-w-xl">
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -50,28 +52,28 @@ export function Boom2Hero() {
             </span>
           </motion.div>
 
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="text-base sm:text-xl md:text-6xl lg:text-7xl font-bold mb-3 md:mb-6 leading-tight drop-shadow-lg text-white"
           >
-            Your Audio, <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">Reimagined.</span>
+            {t('boom2.hero.title_1')} <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">{t('boom2.hero.title_2')}</span>
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             className="text-gray-300 text-[11px] sm:text-sm md:text-xl mb-6 md:mb-10 leading-relaxed max-w-lg drop-shadow-md"
           >
-            Boom 2 is the ultimate audio enhancement app that brings your music, movies, and games to life with powerful tools and immersive 3D sound.
+            {t('boom2.hero.subtitle')}
           </motion.p>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -80,12 +82,12 @@ export function Boom2Hero() {
           >
             <button className="flex items-center justify-center gap-2 bg-white text-black px-4 py-1.5 md:px-4 md:py-3.5 rounded-full md:rounded-xl font-bold transition-all hover:bg-[#1390FB] hover:text-white hover:scale-[1.02] w-full sm:w-[210px] text-[10px] sm:text-xs md:text-[15px] tracking-wide shadow-lg group">
               <AppleLogo className="w-3.5 h-3.5 md:w-5 md:h-5 mb-0.5" />
-              DOWNLOAD TRIAL
+              {t('boom2.hero.download_trial')}
             </button>
-            
+
             <button className="flex items-center justify-center gap-2 bg-black/40 backdrop-blur-sm border border-white/40 text-white px-4 py-1.5 md:px-4 md:py-3.5 rounded-full md:rounded-xl font-bold transition-all hover:bg-[#1390FB] hover:border-[#1390FB] w-full sm:w-[210px] text-[10px] sm:text-xs md:text-[15px] tracking-wide shadow-lg group">
               <AppleLogo className="w-3.5 h-3.5 md:w-5 md:h-5 mb-0.5" />
-              BUY NOW
+              {t('boom2.hero.buy_now')}
             </button>
           </motion.div>
         </div>

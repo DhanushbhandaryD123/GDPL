@@ -1,16 +1,17 @@
 import { useState } from 'react';
 import { Box, Radio, Music, Speaker, Activity, Mic2 } from 'lucide-react';
-
-const presets = [
-  { name: 'Bass Boost', icon: Box, image: '/boom3D/s1.png' },
-  { name: 'Acoustic', icon: Radio, image: '/boom3D/s3.png' },
-  { name: 'Pop', icon: Music, image: '/boom3D/s4.png' },
-  { name: 'Electronic', icon: Speaker, image: '/boom3D/s5.png' },
-  { name: 'Classical', icon: Activity, image: '/boom3D/s6.png' },
-  { name: 'Vocals', icon: Mic2, image: '/boom3D/s7.png' },
-];
+import { useTranslation } from 'react-i18next';
 
 export function Boom3DEqualizer() {
+  const { t } = useTranslation();
+  const presets = [
+    { name: t('boom3d.equalizer.preset_bass'), icon: Box, image: '/boom3D/s1.png' },
+    { name: t('boom3d.equalizer.preset_acoustic'), icon: Radio, image: '/boom3D/s3.png' },
+    { name: t('boom3d.equalizer.preset_pop'), icon: Music, image: '/boom3D/s4.png' },
+    { name: t('boom3d.equalizer.preset_electronic'), icon: Speaker, image: '/boom3D/s5.png' },
+    { name: t('boom3d.equalizer.preset_classical'), icon: Activity, image: '/boom3D/s6.png' },
+    { name: t('boom3d.equalizer.preset_vocals'), icon: Mic2, image: '/boom3D/s7.png' },
+  ];
   const [activePreset, setActivePreset] = useState(presets[0]);
 
   return (
@@ -41,11 +42,11 @@ export function Boom3DEqualizer() {
         <div className="w-full lg:w-1/2 px-6 lg:px-12 xl:pr-32 mt-16 lg:mt-0">
           <div className="max-w-[600px]">
             <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold tracking-tight text-[#111111] leading-[1.1] mb-6">
-              Precise control.<br/>
-              Perfect sound.
+              {t('boom3d.equalizer.title_1')}<br/>
+              {t('boom3d.equalizer.title_2')}
             </h2>
             <p className="text-lg md:text-[1.15rem] text-gray-500 leading-relaxed font-medium mb-10">
-              Equipped with an advanced 31-band equalizer for absolute audio tuning. Boom 3D also provides a vast array of presets carefully crafted to match different genres and individual tastes.
+              {t('boom3d.equalizer.subtitle')}
             </p>
             
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">

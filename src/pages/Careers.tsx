@@ -19,37 +19,7 @@ import {
 
 import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
-
-const perks = [
-  {
-    icon: Rocket,
-    title: 'Grow Your Career',
-    description: 'Continuous learning & development',
-    color: 'text-purple-600',
-    bgColor: 'bg-purple-100',
-  },
-  {
-    icon: Heart,
-    title: 'Inclusive Culture',
-    description: 'Diverse, supportive & respectful team',
-    color: 'text-red-500',
-    bgColor: 'bg-red-100',
-  },
-  {
-    icon: Star,
-    title: 'Make an Impact',
-    description: 'Work that creates real change',
-    color: 'text-orange-500',
-    bgColor: 'bg-orange-100',
-  },
-  {
-    icon: Gift,
-    title: 'Awesome Benefits',
-    description: 'Health, flexibility & more for your well-being',
-    color: 'text-green-500',
-    bgColor: 'bg-green-100',
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 const jobs = [
   {
@@ -237,7 +207,15 @@ const jobs = [
 
 export function Careers() {
   const domain = import.meta.env.VITE_SITE_URL || '';
+  const { t } = useTranslation();
   const [expandedJobId, setExpandedJobId] = useState<number | null>(null);
+
+  const perks = [
+    { icon: Rocket, title: t('careers.perks.p1_title'), description: t('careers.perks.p1_desc'), color: 'text-purple-600', bgColor: 'bg-purple-100' },
+    { icon: Heart, title: t('careers.perks.p2_title'), description: t('careers.perks.p2_desc'), color: 'text-red-500', bgColor: 'bg-red-100' },
+    { icon: Star, title: t('careers.perks.p3_title'), description: t('careers.perks.p3_desc'), color: 'text-orange-500', bgColor: 'bg-orange-100' },
+    { icon: Gift, title: t('careers.perks.p4_title'), description: t('careers.perks.p4_desc'), color: 'text-green-500', bgColor: 'bg-green-100' },
+  ];
 
   return (
     <div className="min-h-screen bg-white font-sans">
@@ -272,12 +250,12 @@ export function Careers() {
             {/* Left-aligned Content */}
             <div className="w-full md:w-[50%] lg:w-[45%] text-left">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1a202c] leading-[1.2] mb-3 md:mb-4 tracking-tight">
-                Where Talent <br />
-                Meets <span className="text-[#667eea]">Opportunity</span>
+                {t('careers.hero.title_1')} <br />
+                {t('careers.hero.title_2')} <span className="text-[#667eea]">{t('careers.hero.title_3')}</span>
               </h1>
-              
+
               <p className="text-[13px] md:text-[15px] text-gray-700 md:text-gray-500 max-w-xs md:max-w-sm leading-relaxed font-medium">
-                Join a team that inspires, innovates, and creates impact every day.
+                {t('careers.hero.subtitle')}
               </p>
             </div>
           </div>
@@ -309,16 +287,16 @@ export function Careers() {
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-12 gap-4">
               <div>
                 <div className="text-[10px] md:text-xs font-bold text-[#667eea] uppercase tracking-wider mb-2 md:mb-3">
-                  OPEN POSITIONS
+                  {t('careers.openings.badge')}
                 </div>
-                <h2 className="text-2xl md:text-[32px] font-extrabold text-gray-900">Current Openings</h2>
+                <h2 className="text-2xl md:text-[32px] font-extrabold text-gray-900">{t('careers.openings.title')}</h2>
               </div>
-              
+
               <div className="relative w-full md:w-auto">
                 <button className="flex items-center justify-between gap-4 w-full md:w-56 px-4 py-2.5 bg-white border border-gray-200 rounded-lg text-[13px] md:text-sm text-gray-700 shadow-sm hover:border-gray-300 transition-colors">
                   <div className="flex items-center gap-2">
                     <MapPin className="w-4 h-4 text-gray-400" />
-                    <span className="font-medium">All Locations</span>
+                    <span className="font-medium">{t('careers.openings.all_locations')}</span>
                   </div>
                   <ChevronDown className="w-4 h-4 text-gray-400" />
                 </button>
@@ -363,14 +341,14 @@ export function Careers() {
                             </div>
                             <div className="w-1 h-1 rounded-full bg-gray-300 hidden sm:block"></div>
                             <div className={`${job.iconBg} ${job.iconColor} bg-opacity-30 px-2 md:px-3 py-0.5 md:py-1 rounded-md`}>
-                              Experience: {job.experience}
+                              {t('careers.openings.experience')} {job.experience}
                             </div>
                           </div>
                         </div>
                       </div>
 
                       <button className="w-full md:w-auto flex items-center justify-center md:justify-between gap-2 px-6 py-2.5 bg-white border border-[#e2e8f0] text-[#5a67d8] font-semibold rounded-lg hover:border-[#cbd5e1] hover:bg-indigo-50 transition-colors text-[12px] md:text-[13px]">
-                        {isExpanded ? 'Hide Details' : 'View Details'}
+                        {isExpanded ? t('careers.openings.hide_details') : t('careers.openings.view_details')}
                         <Plus className={`w-3.5 h-3.5 md:w-4 md:h-4 transition-transform duration-300 ${isExpanded ? 'rotate-45' : ''}`} />
                       </button>
                     </div>
@@ -410,7 +388,7 @@ export function Careers() {
 
                             <div className="mt-6 md:mt-10 pt-4 md:pt-6 border-t border-gray-100">
                               <a href="mailto:jobs@globaldelight.com" className="inline-flex w-full md:w-auto justify-center items-center gap-2 px-8 py-3 bg-[#5a67d8] text-white font-medium rounded-lg hover:bg-[#4c51bf] transition-colors shadow-md shadow-indigo-500/20 text-[13px] md:text-sm">
-                                Apply Now <Send className="w-3 h-3 md:w-4 md:h-4 ml-1 -rotate-45" />
+                                {t('careers.openings.apply_now')} <Send className="w-3 h-3 md:w-4 md:h-4 ml-1 -rotate-45" />
                               </a>
                             </div>
                           </div>

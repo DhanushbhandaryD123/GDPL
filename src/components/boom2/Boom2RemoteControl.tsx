@@ -1,50 +1,52 @@
 import { useState } from 'react';
 import { Smartphone, Mic, Headphones } from 'lucide-react';
-
-const options = [
-  {
-    id: 'remote',
-    icon: Smartphone,
-    title: 'Remote Control',
-    description: 'Control Boom 2 from your iPhone with the Boom Remote app.',
-    imagePath: '/boom2/remote.png'
-  },
-  {
-    id: 'recorder',
-    icon: Mic,
-    title: 'Audio Recorder',
-    description: 'Record any audio playing on your Mac in high quality.',
-    imagePath: '/boom2/audio.png'
-  },
-  {
-    id: 'output',
-    icon: Headphones,
-    title: 'Output Devices',
-    description: 'Switch between multiple audio outputs with ease.',
-    imagePath: '/boom2/output.png'
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 export function Boom2RemoteControl() {
+  const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(0);
+
+  const options = [
+    {
+      id: 'remote',
+      icon: Smartphone,
+      title: t('boom2.remote_control.remote_title'),
+      description: t('boom2.remote_control.remote_desc'),
+      imagePath: '/boom2/remote.png'
+    },
+    {
+      id: 'recorder',
+      icon: Mic,
+      title: t('boom2.remote_control.recorder_title'),
+      description: t('boom2.remote_control.recorder_desc'),
+      imagePath: '/boom2/audio.png'
+    },
+    {
+      id: 'output',
+      icon: Headphones,
+      title: t('boom2.remote_control.output_title'),
+      description: t('boom2.remote_control.output_desc'),
+      imagePath: '/boom2/output.png'
+    }
+  ];
 
   return (
     <section className="py-8 md:py-6 px-4 max-w-[1400px] mx-auto bg-[#F8F9FA] rounded-3xl mt-4 mb-12 shadow-sm">
       <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-        
+
         {/* Left List */}
         <div className="lg:col-span-5 flex flex-col gap-4 relative z-10">
           {options.map((option, index) => {
             const isActive = activeIndex === index;
             const Icon = option.icon;
-            
+
             return (
-              <div 
+              <div
                 key={option.id}
                 onClick={() => setActiveIndex(index)}
                 className={`flex gap-5 p-5 rounded-2xl cursor-pointer transition-all duration-300 border-2 ${
-                  isActive 
-                    ? 'border-[#4F46E5] bg-white shadow-lg scale-[1.02]' 
+                  isActive
+                    ? 'border-[#4F46E5] bg-white shadow-lg scale-[1.02]'
                     : 'border-transparent hover:bg-white/60'
                 }`}
               >
@@ -76,13 +78,13 @@ export function Boom2RemoteControl() {
                ))}
              </div>
           </div>
-          
+
           <div className="relative z-10 w-full max-w-[800px] h-[300px] md:h-[450px] flex items-center justify-center">
             {/* The image will swap based on active index */}
-            <img 
+            <img
               key={options[activeIndex].imagePath}
-              src={options[activeIndex].imagePath} 
-              alt={options[activeIndex].title} 
+              src={options[activeIndex].imagePath}
+              alt={options[activeIndex].title}
               className="w-full h-full object-contain drop-shadow-2xl transition-opacity duration-500 rounded-xl"
             />
           </div>

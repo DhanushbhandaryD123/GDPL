@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const heroImages = [
   '/hero/hero-banner.png',
@@ -10,6 +11,7 @@ const heroImages = [
 ];
 
 export function HeroMobile() {
+  const { t } = useTranslation();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
@@ -82,8 +84,8 @@ export function HeroMobile() {
                 className="absolute bottom-10 right-4 flex flex-col items-end text-right space-y-3 pointer-events-auto max-w-[85%]"
               >
                 <h2 className="text-sm sm:text-base font-medium tracking-tight leading-snug drop-shadow-lg text-white">
-                  <span className="text-red-500 font-bold">Record, edit, share:</span><br />
-                  Tell your story with Audion
+                  <span className="text-red-500 font-bold">{t('home.hero_banner.audion_tagline')}</span><br />
+                  {t('home.hero_banner.audion_subtitle')}
                 </h2>
                 <div className="flex flex-row items-center gap-3 mt-2">
                   <a 
@@ -135,7 +137,7 @@ export function HeroMobile() {
                 className="absolute bottom-10 right-4 flex flex-col items-end text-right space-y-3 pointer-events-auto max-w-[85%]"
               >
                 <h2 className="text-sm sm:text-base font-medium tracking-tight leading-snug drop-shadow-lg text-white">
-                  Creating dazzling videos with a few taps!
+                  {t('home.hero_banner.vizmato_tagline')}
                 </h2>
                 <div className="flex flex-row items-center gap-3 mt-2">
                   <a 
@@ -187,9 +189,9 @@ export function HeroMobile() {
                 className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center text-center space-y-3 pointer-events-auto w-[90%] sm:w-[80%]"
               >
                 <h2 className="text-sm sm:text-base font-medium tracking-tight leading-snug drop-shadow-lg text-white">
-                  Experience rich & true to life audio quality with Boom 3D
+                  {t('home.hero_banner.boom3d_tagline')}
                 </h2>
-                
+
                 <div className="flex flex-row items-center justify-center gap-3 mt-2">
                   <a 
                     href="https://apps.apple.com/us/app/boom3d-volume-booster-and-eq/id1233048948?mt=12" 
@@ -210,7 +212,7 @@ export function HeroMobile() {
                 </div>
 
                 <button className="bg-[#00e5ff] text-black font-bold px-4 py-1.5 rounded-full text-[10px] sm:text-xs hover:bg-[#00ccdd] active:scale-95 transition shadow-[0_0_10px_rgba(0,229,255,0.4)] mt-2">
-                  Learn More
+                  {t('home.hero_banner.learn_more')}
                 </button>
               </motion.div>
             </motion.div>
@@ -229,23 +231,23 @@ export function HeroMobile() {
                 className="absolute top-1/2 -translate-y-1/2 right-3 w-[60%] flex flex-col items-end text-right space-y-3 z-10 pointer-events-auto pr-2"
               >
                 <h1 className="text-base sm:text-xl font-bold tracking-tight leading-tight drop-shadow-lg text-white">
-                  Turn Captures into Creations
+                  {t('home.hero_banner.capto_title_1')} {t('home.hero_banner.capto_title_2')}
                 </h1>
                 <p className="text-xs sm:text-sm text-white/95 drop-shadow-md font-medium leading-relaxed">
-                  Powerful screen recording and editing tools
+                  {t('home.hero_banner.capto_subtitle')}
                 </p>
-                
+
                 <div className="flex flex-col sm:flex-row items-end sm:items-center gap-3 pt-2">
-                  <a 
-                    href="https://apps.microsoft.com/detail/9pp81h1nczs1?cid=GD-Homepage-Banner&hl=en-US&gl=IN" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href="https://apps.microsoft.com/detail/9pp81h1nczs1?cid=GD-Homepage-Banner&hl=en-US&gl=IN"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="hover:scale-105 transition-transform block shrink-0"
                   >
                     <img src="/button/en-us dark.svg" alt="Get it from Microsoft Store" className="h-8 sm:h-10 object-contain drop-shadow-md" />
                   </a>
                   <button className="bg-white/10 border border-white/80 text-white font-bold px-4 py-1.5 rounded text-[10px] sm:text-xs hover:bg-white/20 active:scale-95 transition shadow-lg whitespace-nowrap backdrop-blur-sm flex items-center justify-center">
-                    Learn More
+                    {t('home.hero_banner.learn_more')}
                   </button>
                 </div>
               </motion.div>
@@ -263,7 +265,7 @@ export function HeroMobile() {
               <img src="/button/Boom2-Logo.png" alt="Boom 2" className="w-24 sm:w-28 object-contain drop-shadow-2xl" />
               
               <h2 className="text-xs sm:text-sm font-semibold tracking-tight leading-snug drop-shadow-lg text-white">
-                Sculpt your system audio for the best stereo sound experience.
+                {t('home.hero_banner.boom2_tagline')}
               </h2>
               
               <div className="flex flex-col items-center gap-3 pt-2 w-full">
@@ -281,7 +283,7 @@ export function HeroMobile() {
                     rel="noopener noreferrer" 
                     className="bg-[#00e5ff] text-black font-bold px-4 py-1.5 rounded-full text-[10px] sm:text-xs hover:bg-[#00ccdd] active:scale-95 transition shadow-[0_0_10px_rgba(0,229,255,0.4)] text-center block"
                   >
-                  Learn More
+                  {t('home.hero_banner.learn_more')}
                 </a>
               </div>
             </motion.div>

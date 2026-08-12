@@ -1,42 +1,45 @@
 import { CheckCircle2, ChevronLeft, ChevronRight } from 'lucide-react';
 import { PhoneFrame } from './PhoneFrame';
+import { useTranslation } from 'react-i18next';
 
-const checklist = [
-  'Crop & Straighten',
-  'Adjust Lighting & Color',
-  'Apply Stunning Filters',
-  'Add Creative Effects',
-];
-
-const AdjustScreen = () => (
-  <div className="relative w-full h-full bg-black">
-    <img
-      src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=600&q=80&auto=format&fit=crop"
-      alt="Bridge — adjust preview"
-      className="w-full h-full object-cover opacity-90"
-    />
-    <div className="absolute inset-x-0 bottom-0 bg-black/85 backdrop-blur-sm px-4 py-4 space-y-3">
-      <p className="text-white text-[10px] font-bold tracking-widest mb-2">ADJUST</p>
-      {['Brightness', 'Contrast', 'Saturation'].map((label, idx) => (
-        <div key={label} className="space-y-1">
-          <span className="text-[9px] text-gray-400">{label}</span>
-          <div className="h-1 rounded-full bg-white/20 overflow-hidden">
-            <div
-              className="h-full bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"
-              style={{ width: `${45 + idx * 20}%` }}
-            />
+const AdjustScreen = () => {
+  const { t } = useTranslation();
+  const rows = [
+    t('camera_plus_pro.editing_tools.brightness'),
+    t('camera_plus_pro.editing_tools.contrast'),
+    t('camera_plus_pro.editing_tools.saturation'),
+  ];
+  return (
+    <div className="relative w-full h-full bg-black">
+      <img
+        src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=600&q=80&auto=format&fit=crop"
+        alt="Bridge — adjust preview"
+        className="w-full h-full object-cover opacity-90"
+      />
+      <div className="absolute inset-x-0 bottom-0 bg-black/85 backdrop-blur-sm px-4 py-4 space-y-3">
+        <p className="text-white text-[10px] font-bold tracking-widest mb-2">{t('camera_plus_pro.editing_tools.adjust')}</p>
+        {rows.map((label, idx) => (
+          <div key={label} className="space-y-1">
+            <span className="text-[9px] text-gray-400">{label}</span>
+            <div className="h-1 rounded-full bg-white/20 overflow-hidden">
+              <div
+                className="h-full bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"
+                style={{ width: `${45 + idx * 20}%` }}
+              />
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const EffectsScreen = () => {
+  const { t } = useTranslation();
   const filters = ['grayscale', 'sepia', 'contrast-125', 'saturate-150', 'brightness-110', 'hue-rotate-15', 'invert', 'contrast-75', ''];
   return (
     <div className="w-full h-full bg-black flex flex-col">
-      <p className="text-white text-[10px] font-bold tracking-widest px-4 pt-4 pb-2">EFFECTS</p>
+      <p className="text-white text-[10px] font-bold tracking-widest px-4 pt-4 pb-2">{t('camera_plus_pro.editing_tools.effects')}</p>
       <div className="grid grid-cols-3 gap-0.5 flex-1">
         {filters.map((filter, idx) => (
           <div key={idx} className="relative overflow-hidden">
@@ -53,6 +56,13 @@ const EffectsScreen = () => {
 };
 
 export function ProEditingTools() {
+  const { t } = useTranslation();
+  const checklist = [
+    t('camera_plus_pro.editing_tools.c1'),
+    t('camera_plus_pro.editing_tools.c2'),
+    t('camera_plus_pro.editing_tools.c3'),
+    t('camera_plus_pro.editing_tools.c4'),
+  ];
   return (
     <section id="gallery" className="bg-white py-16 md:py-24 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 md:px-8">
@@ -60,14 +70,14 @@ export function ProEditingTools() {
           {/* Left — copy */}
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-6">
-              Professional Tools
+              {t('camera_plus_pro.editing_tools.title_1')}
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
-                at Your Fingertips
+                {t('camera_plus_pro.editing_tools.title_2')}
               </span>
             </h2>
             <p className="text-gray-500 text-lg leading-relaxed mb-8 max-w-md">
-              A complete editing suite built right into your camera — no need to jump between apps.
+              {t('camera_plus_pro.editing_tools.subtitle')}
             </p>
             <ul className="space-y-4">
               {checklist.map((item) => (

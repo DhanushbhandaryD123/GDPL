@@ -3,10 +3,12 @@ import { Helmet } from 'react-helmet-async';
 import { Facebook, Twitter, Instagram, Linkedin, Youtube, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import { useTranslation } from 'react-i18next';
 import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
 
 export function Contact() {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     subject: '',
     name: '',
@@ -21,7 +23,7 @@ export function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success('Message sent successfully!');
+    toast.success(t('contact.sent_success'));
     setFormData({ subject: '', name: '', email: '', mobile: '', comment: '' });
   };
 
@@ -80,26 +82,23 @@ export function Contact() {
             {/* Left Column: Contact Info */}
             <div className="w-full lg:w-5/12 text-white">
               <div className="mb-10">
-                <h2 className="text-3xl font-bold mb-2">Contact us</h2>
+                <h2 className="text-3xl font-bold mb-2">{t('contact.title')}</h2>
                 <div className="h-[2px] w-24 bg-white"></div>
               </div>
 
               <div className="space-y-6 text-[14px] text-gray-200 leading-relaxed font-light mb-12">
-                <p>
-                  Grosvenor Business Tower Suite<br />
-                  1207 Barsha Heights<br />
-                  P.O. Box 5004400<br />
-                  Dubai United Arab Emirates
+                <p style={{ whiteSpace: 'pre-line' }}>
+                  {t('contact.address')}
                 </p>
 
                 <p>
-                  +971-4-427-2420<br />
-                  support.uae@codweb.com
+                  {t('contact.phone')}<br />
+                  {t('contact.email')}
                 </p>
               </div>
 
               <div>
-                <h3 className="text-base font-bold text-white mb-4">Follow Me On Social Media</h3>
+                <h3 className="text-base font-bold text-white mb-4">{t('contact.follow_us')}</h3>
                 <div className="flex items-center gap-4 mb-10">
                   <a href="https://www.facebook.com/GlobalDelight" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors"><Facebook className="w-5 h-5 fill-current" /></a>
                   <a href="https://x.com/GlobalDelight" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors"><Twitter className="w-5 h-5 fill-current" /></a>
@@ -113,7 +112,7 @@ export function Contact() {
                   <span className="w-8 h-8 rounded-full bg-[#E85D22] flex items-center justify-center">
                     <ArrowLeft className="w-4 h-4 text-white" />
                   </span>
-                  <span className="text-sm text-gray-300">Back to Home</span>
+                  <span className="text-sm text-gray-300">{t('contact.back_home')}</span>
                 </Link>
               </div>
             </div>
@@ -122,8 +121,8 @@ export function Contact() {
             <div className="w-full lg:w-6/12 xl:w-5/12">
               <div className="bg-[#2b2b2b] p-8 md:p-10">
                 <div className="text-center mb-10">
-                  <h3 className="text-xl md:text-2xl font-bold text-white mb-2">GET IN TOUCH</h3>
-                  <p className="text-[10px] text-gray-400 uppercase tracking-wider">Please fill the form for any query or suggestion</p>
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{t('contact.form_title')}</h3>
+                  <p className="text-[10px] text-gray-400 uppercase tracking-wider">{t('contact.form_subtitle')}</p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -134,16 +133,16 @@ export function Contact() {
                       onChange={handleChange}
                       className="w-full bg-white border border-gray-200 text-gray-800 px-4 py-3 pr-10 focus:outline-none focus:ring-1 focus:ring-[#E85D22] appearance-none cursor-pointer"
                     >
-                      <option value="">Select Subject</option>
-                      <option value="Media Enquiry">Media Enquiry</option>
-                      <option value="Product Support / Customer Service">Product Support / Customer Service</option>
+                      <option value="">{t('contact.select_subject')}</option>
+                      <option value="Media Enquiry">{t('contact.media_enquiry')}</option>
+                      <option value="Product Support / Customer Service">{t('contact.product_support')}</option>
                     </select>
                     <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400">
                       <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                     </div>
                   </div>
                   <div>
-                    <label className="block text-[11px] text-gray-300 uppercase mb-2">Full Name*</label>
+                    <label className="block text-[11px] text-gray-300 uppercase mb-2">{t('contact.full_name')}</label>
                     <input 
                       type="text" 
                       name="name"
@@ -156,7 +155,7 @@ export function Contact() {
                   
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-[11px] text-gray-300 uppercase mb-2">Email*</label>
+                      <label className="block text-[11px] text-gray-300 uppercase mb-2">{t('contact.email_label')}</label>
                       <input 
                         type="email" 
                         name="email"
@@ -167,7 +166,7 @@ export function Contact() {
                       />
                     </div>
                     <div>
-                      <label className="block text-[11px] text-gray-300 uppercase mb-2">Mobile No*</label>
+                      <label className="block text-[11px] text-gray-300 uppercase mb-2">{t('contact.mobile')}</label>
                       <input 
                         type="tel" 
                         name="mobile"
@@ -180,7 +179,7 @@ export function Contact() {
                   </div>
 
                   <div>
-                    <label className="block text-[11px] text-gray-300 uppercase mb-2">Your Comment</label>
+                    <label className="block text-[11px] text-gray-300 uppercase mb-2">{t('contact.comment')}</label>
                     <textarea 
                       name="comment"
                       value={formData.comment}
@@ -195,7 +194,7 @@ export function Contact() {
                       type="submit" 
                       className="bg-white text-black text-[11px] font-bold px-8 py-3 hover:bg-gray-200 transition-colors uppercase tracking-wider"
                     >
-                      Submit
+                      {t('contact.submit')}
                     </button>
                   </div>
                 </form>
@@ -207,25 +206,25 @@ export function Contact() {
       </div>
       {/* Newsletter Section */}
       <div className="bg-[#1a1a1a] py-20 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Be in the know</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{t('contact.newsletter_title')}</h2>
         <p className="text-gray-200 text-[15px] md:text-[16px] max-w-2xl mx-auto mb-10 px-4 leading-relaxed">
-          Join our mailing list to hear about new releases, product updates, feature additions, and special deals before anyone else!
+          {t('contact.newsletter_subtitle')}
         </p>
-        <form 
-          onSubmit={(e) => { e.preventDefault(); toast.success('Successfully subscribed to the newsletter!'); }}
+        <form
+          onSubmit={(e) => { e.preventDefault(); toast.success(t('contact.newsletter_success')); }}
           className="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-2xl mx-auto px-4"
         >
-          <input 
-            type="email" 
-            placeholder="xyz1234@example.com" 
+          <input
+            type="email"
+            placeholder={t('contact.newsletter_placeholder')}
             className="w-full sm:w-[400px] bg-[#0a0a0a] text-white px-6 py-3.5 rounded-xl border border-transparent focus:outline-none focus:border-gray-600 placeholder-gray-600"
             required
           />
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             className="w-full sm:w-auto bg-[#2399c9] hover:bg-[#1d82ab] transition-colors text-white font-bold px-8 py-3.5 rounded-xl whitespace-nowrap"
           >
-            Sign me up
+            {t('contact.newsletter_signup')}
           </button>
         </form>
       </div>

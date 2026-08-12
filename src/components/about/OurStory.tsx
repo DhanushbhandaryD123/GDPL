@@ -1,7 +1,8 @@
 import { motion } from 'motion/react';
-
+import { useTranslation } from 'react-i18next';
 
 export function OurStory() {
+  const { t } = useTranslation();
   return (
     <section className="w-full bg-[#ffffff] py-4 md:py-0 px-2 md:px-6 lg:px-12">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row-reverse items-center gap-8 md:gap-16 lg:gap-24">
@@ -24,8 +25,8 @@ export function OurStory() {
             transition={{ delay: 0.1 }}
             className="text-2xl sm:text-3xl md:text-4xl lg:text-[52px] font-bold text-gray-900 leading-[1.2] md:leading-[1.1] mb-4 md:mb-8"
           >
-            Built with Passion.<br />
-            Driven by Purpose.
+            {t('about.story.title_1')}<br />
+            {t('about.story.title_2')}
           </motion.h2>
 
           <motion.div
@@ -44,10 +45,10 @@ export function OurStory() {
             className="text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed space-y-4 md:space-y-6 mb-6 md:mb-10 pl-0 lg:pl-8"
           >
             <p>
-              Founded on the southwest coast of India, Udupi, Global Delight was started in 2007. With our perfect blend of professionals, we have created leading edge, award-winning cross platform audio, video and photography applications.
+              {t('about.story.p1')}
             </p>
             <p>
-              All this has made Global Delight the home of some of the most creative and innovative apps that are being used by over 30 million consumers globally.
+              {t('about.story.p2')}
             </p>
           </motion.div>
         </div>

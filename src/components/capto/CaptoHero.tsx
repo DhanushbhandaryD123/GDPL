@@ -1,7 +1,9 @@
 import { motion } from 'motion/react';
 import { ShoppingCart } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export function CaptoHero() {
+  const { t } = useTranslation();
   return (
     <section className="relative px-4 pt-2 pb-8 md:px-0 md:pt-8 md:pb-16 overflow-hidden bg-[#fafbfe]">
       {/* Background Decor (Grid & squiggles based on image) */}
@@ -32,35 +34,35 @@ export function CaptoHero() {
               <span className="text-[2.25rem] md:text-[3rem] font-bold tracking-tight text-[#1c2331]">Capto</span>
             </div>
             <h1 className="text-base sm:text-xl md:text-[2.75rem] lg:text-[3.25rem] font-bold tracking-tight leading-[1.1] mb-6 text-[#1c2331]">
-              <span className="text-[#6554ff]">Screenshots, Screen</span><br />
-              <span className="text-[#6554ff]">Recording,</span> and<br />
-              Image Editing.
+              <span className="text-[#6554ff]">{t('capto.hero.title_1')}</span><br />
+              <span className="text-[#6554ff]">{t('capto.hero.title_2')}</span> {t('capto.hero.title_3')}<br />
+              {t('capto.hero.title_4')}
             </h1>
-            
+
             <p className="text-xs sm:text-sm md:text-xl text-[#2d3748] font-bold mb-10">
-              Capto Makes Visual Storytelling Effortless.
+              {t('capto.hero.subtitle')}
             </p>
 
             <div className="flex flex-row items-center justify-center lg:justify-start gap-3 sm:gap-5 mb-5 w-full">
-              <a 
+              <a
                 href="#"
                 className="flex-1 sm:flex-none sm:w-auto px-2 py-2.5 md:px-8 md:py-3.5 bg-[#6953ff] hover:bg-[#5b48df] text-white rounded-[2rem] font-bold text-[11px] sm:text-xs md:text-[15px] flex items-center justify-center gap-1.5 sm:gap-2.5 transition-all shadow-lg shadow-indigo-500/30"
               >
                 <svg className="w-[14px] h-[14px] sm:w-[18px] sm:h-[18px] fill-current" viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-                Download Trial
+                {t('capto.hero.download_trial')}
               </a>
-              <a 
+              <a
                 href="#"
                 className="flex-1 sm:flex-none sm:w-auto px-2 py-2.5 md:px-8 md:py-3.5 bg-white border border-gray-200 hover:bg-gray-50 text-gray-800 rounded-[2rem] font-bold text-[11px] sm:text-xs md:text-[15px] flex items-center justify-center gap-1.5 sm:gap-2.5 transition-all shadow-sm"
               >
                 <ShoppingCart className="w-[14px] h-[14px] sm:w-[18px] sm:h-[18px]" strokeWidth={2.5} />
-                Buy Now
+                {t('capto.hero.buy_now')}
               </a>
             </div>
-            
-            <p className="text-[13px] text-gray-500 font-medium mb-3">For macOS 10.14 & later</p>
+
+            <p className="text-[13px] text-gray-500 font-medium mb-3">{t('capto.hero.macos_req')}</p>
             <p className="text-[12px] text-gray-400 font-medium leading-relaxed max-w-[420px] mx-auto lg:mx-0">
-              *To continue using Capto after the 15-day trial, buy the premium version from our store.
+              {t('capto.hero.trial_note')}
             </p>
           </motion.div>
 
@@ -97,34 +99,34 @@ export function CaptoHero() {
         >
           <div className="flex items-center gap-4 mb-6 md:mb-0">
             <div className="font-black text-[1.6rem] leading-none text-transparent bg-clip-text bg-gradient-to-br from-[#77a6f7] to-[#998ceb] transform -rotate-2 drop-shadow-sm text-center md:text-left">
-              BACK <span className="text-sm align-top">TO</span><br/>SCHOOL
+              {t('capto.hero.back')} <span className="text-sm align-top">{t('capto.hero.to')}</span><br/>{t('capto.hero.school')}
             </div>
           </div>
-          
+
           <div className="flex items-center gap-4 mb-6 md:mb-0">
-            <span className="font-bold text-gray-800 text-sm">ONLY</span>
+            <span className="font-bold text-gray-800 text-sm">{t('capto.hero.only')}</span>
             <div className="flex gap-2 text-center items-start">
               <div>
                 <div className="bg-white rounded-md px-3 py-1.5 text-[#7c63ff] font-bold text-xl shadow-[0_2px_10px_rgba(0,0,0,0.05)] w-[46px] border border-gray-50">08</div>
-                <div className="text-[8px] text-gray-400 mt-1.5 font-bold tracking-wider">HOURS</div>
+                <div className="text-[8px] text-gray-400 mt-1.5 font-bold tracking-wider">{t('capto.hero.hours')}</div>
               </div>
               <span className="font-bold text-gray-300 mt-1.5">:</span>
               <div>
                 <div className="bg-white rounded-md px-3 py-1.5 text-[#7c63ff] font-bold text-xl shadow-[0_2px_10px_rgba(0,0,0,0.05)] w-[46px] border border-gray-50">06</div>
-                <div className="text-[8px] text-gray-400 mt-1.5 font-bold tracking-wider">MINUTES</div>
+                <div className="text-[8px] text-gray-400 mt-1.5 font-bold tracking-wider">{t('capto.hero.minutes')}</div>
               </div>
               <span className="font-bold text-gray-300 mt-1.5">:</span>
               <div>
                 <div className="bg-white rounded-md px-3 py-1.5 text-[#7c63ff] font-bold text-xl shadow-[0_2px_10px_rgba(0,0,0,0.05)] w-[46px] border border-gray-50">49</div>
-                <div className="text-[8px] text-gray-400 mt-1.5 font-bold tracking-wider">SECONDS</div>
+                <div className="text-[8px] text-gray-400 mt-1.5 font-bold tracking-wider">{t('capto.hero.seconds')}</div>
               </div>
             </div>
-            <span className="font-bold text-gray-800 text-sm">LEFT!</span>
+            <span className="font-bold text-gray-800 text-sm">{t('capto.hero.left')}</span>
           </div>
 
           <div className="mt-2 md:mt-0">
             <span className="font-extrabold text-[#1c2331] text-[1.1rem]">
-              AVAIL <span className="text-[#6554ff]">50% OFF</span>
+              {t('capto.hero.avail')} <span className="text-[#6554ff]">{t('capto.hero.off')}</span>
             </span>
           </div>
         </motion.div>

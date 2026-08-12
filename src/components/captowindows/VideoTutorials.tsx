@@ -1,41 +1,44 @@
 import { motion } from 'motion/react';
 import { PlayCircle } from 'lucide-react';
 import ReactPlayer from 'react-player/lazy';
-
-const tutorials = [
-  {
-    title: 'How to Capture Screen',
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', // Placeholder URLs
-    thumbnail: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800&auto=format&fit=crop',
-  },
-  {
-    title: 'How to Record Window',
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    thumbnail: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop',
-  },
-  {
-    title: 'How to copy text from images?',
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    thumbnail: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800&auto=format&fit=crop',
-  },
-  {
-    title: 'How to Edit Video',
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    thumbnail: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=800&auto=format&fit=crop',
-  },
-  {
-    title: 'How to Add Annotations',
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    thumbnail: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=800&auto=format&fit=crop',
-  },
-  {
-    title: 'How to Export and Share',
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    thumbnail: 'https://images.unsplash.com/photo-1616469829581-73993eb86b02?q=80&w=800&auto=format&fit=crop',
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 export function VideoTutorials() {
+  const { t } = useTranslation();
+
+  const tutorials = [
+    {
+      title: t('captoWindows.tutorials.t1'),
+      url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', // Placeholder URLs
+      thumbnail: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800&auto=format&fit=crop',
+    },
+    {
+      title: t('captoWindows.tutorials.t2'),
+      url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+      thumbnail: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop',
+    },
+    {
+      title: t('captoWindows.tutorials.t3'),
+      url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+      thumbnail: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800&auto=format&fit=crop',
+    },
+    {
+      title: t('captoWindows.tutorials.t4'),
+      url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+      thumbnail: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=800&auto=format&fit=crop',
+    },
+    {
+      title: t('captoWindows.tutorials.t5'),
+      url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+      thumbnail: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=800&auto=format&fit=crop',
+    },
+    {
+      title: t('captoWindows.tutorials.t6'),
+      url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+      thumbnail: 'https://images.unsplash.com/photo-1616469829581-73993eb86b02?q=80&w=800&auto=format&fit=crop',
+    }
+  ];
+
   return (
     <section className="py-16 md:py-24 bg-gray-50 relative border-t border-gray-200">
       <div className="container mx-auto px-4 md:px-6">
@@ -46,10 +49,10 @@ export function VideoTutorials() {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-bold text-gray-900 mb-6"
           >
-            See Capto in <span className="text-[#0078D7]">Action</span>
+            {t('captoWindows.tutorials.title_1')} <span className="text-[#0078D7]">{t('captoWindows.tutorials.title_2')}</span>
           </motion.h2>
           <p className="text-lg text-gray-600">
-            Watch our quick video tutorials to learn how to master screen capture and editing on Windows.
+            {t('captoWindows.tutorials.subtitle')}
           </p>
         </div>
 

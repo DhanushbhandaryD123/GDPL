@@ -1,7 +1,8 @@
 import { motion } from 'motion/react';
-
+import { useTranslation } from 'react-i18next';
 
 export function HeroBanner() {
+  const { t } = useTranslation();
   return (
     <section className="relative pt-6 pb-12 md:pt-12 lg:pb-16 overflow-hidden bg-white">
       {/* Background Decorative Gradient & Elements */}
@@ -22,13 +23,13 @@ export function HeroBanner() {
             
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-extrabold text-[#111827] tracking-tight leading-[1.05] mb-6 drop-shadow-sm mt-0 md:mt-4">
-              Capture more.<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00B4B4] to-[#009b9b]">Create</span> more.
+              {t('cameraplus.hero.title_1')}<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00B4B4] to-[#009b9b]">{t('cameraplus.hero.title_2')}</span> {t('cameraplus.hero.title_3')}
             </h1>
-            
+
             {/* Subhead */}
             <p className="text-base sm:text-lg md:text-xl text-gray-500 mb-8 sm:mb-12 max-w-[480px] leading-relaxed">
-              Camera Plus gives you powerful tools, stunning filters, and advanced controls to take your photography to the next level.
+              {t('cameraplus.hero.subtitle')}
             </p>
 
             {/* Store Buttons */}

@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const heroImages = [
   '/hero/hero-banner.png',
@@ -10,6 +11,7 @@ const heroImages = [
 ];
 
 export function HeroDesktop() {
+  const { t } = useTranslation();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
@@ -85,8 +87,8 @@ export function HeroDesktop() {
                 className="absolute bottom-16 right-8 md:bottom-20 md:right-12 lg:right-20 flex flex-col items-end text-right space-y-4 pointer-events-auto max-w-[90%] md:max-w-[550px]"
               >
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-normal tracking-tight leading-snug drop-shadow-lg text-white">
-                  <span className="text-red-500">Record, edit, share:</span><br />
-                  Tell your story with Audion
+                  <span className="text-red-500">{t('home.hero_banner.audion_tagline')}</span><br />
+                  {t('home.hero_banner.audion_subtitle')}
                 </h2>
                 <div className="flex flex-row items-center gap-3 md:gap-4 mt-2">
                   <a 
@@ -140,7 +142,7 @@ export function HeroDesktop() {
                 className="absolute bottom-16 right-8 md:bottom-20 md:right-12 lg:right-20 flex flex-col items-end text-right space-y-4 pointer-events-auto max-w-[90%] md:max-w-[450px]"
               >
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-normal tracking-tight leading-snug drop-shadow-lg text-white">
-                  Creating dazzling videos with a few taps!
+                  {t('home.hero_banner.vizmato_tagline')}
                 </h2>
                 <div className="flex flex-row items-center gap-3 md:gap-4 mt-2">
                   <a 
@@ -194,9 +196,9 @@ export function HeroDesktop() {
                 className="absolute bottom-12 left-1/2 -translate-x-1/2 md:bottom-16 flex flex-col items-center text-center space-y-4 pointer-events-auto max-w-[90%] md:max-w-[700px] w-full"
               >
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-normal tracking-tight leading-snug drop-shadow-lg text-white">
-                  Experience rich & true to life audio quality with Boom 3D
+                  {t('home.hero_banner.boom3d_tagline')}
                 </h2>
-                
+
                 {/* Store Buttons */}
                 <div className="flex flex-row items-center justify-center gap-3 md:gap-4 mt-2">
                   <a 
@@ -218,7 +220,7 @@ export function HeroDesktop() {
                 </div>
 
                 <button className="bg-[#00e5ff] text-black font-semibold px-8 py-2.5 rounded-full text-[15px] hover:bg-[#00ccdd] hover:scale-105 active:scale-95 transition shadow-[0_0_20px_rgba(0,229,255,0.4)] mt-4">
-                  Learn More
+                  {t('home.hero_banner.learn_more')}
                 </button>
               </motion.div>
             </motion.div>
@@ -241,23 +243,23 @@ export function HeroDesktop() {
                 className="w-full lg:w-[45%] xl:w-[40%] space-y-6 text-center lg:text-left z-10 lg:pl-8 py-12"
               >
                 <h1 className="text-5xl md:text-6xl font-normal tracking-tight leading-tight drop-shadow-md">
-                  Turn Captures <br className="hidden md:block" /> into Creations
+                  {t('home.hero_banner.capto_title_1')} <br className="hidden md:block" /> {t('home.hero_banner.capto_title_2')}
                 </h1>
                 <p className="text-lg md:text-xl text-white max-w-xl mx-auto lg:mx-0 drop-shadow-md font-medium">
-                  Powerful screen recording and editing tools
+                  {t('home.hero_banner.capto_subtitle')}
                 </p>
-                
+
                 <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start pt-4">
-                  <a 
-                    href="https://apps.microsoft.com/detail/9pp81h1nczs1?cid=GD-Homepage-Banner&hl=en-US&gl=IN" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href="https://apps.microsoft.com/detail/9pp81h1nczs1?cid=GD-Homepage-Banner&hl=en-US&gl=IN"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="hover:scale-105 transition-transform"
                   >
                     <img src="/button/en-us dark.svg" alt="Get it from Microsoft Store" className="h-10 md:h-12 object-contain drop-shadow-md" />
                   </a>
                   <button className="bg-transparent border border-white/80 text-white font-semibold px-6 py-3 rounded text-sm hover:bg-white/10 active:scale-95 transition shadow-lg w-full sm:w-auto whitespace-nowrap backdrop-blur-sm">
-                    Learn More
+                    {t('home.hero_banner.learn_more')}
                   </button>
                 </div>
               </motion.div>
@@ -275,7 +277,7 @@ export function HeroDesktop() {
                 <img src="/button/Boom2-Logo.png" alt="Boom 2" className="w-48 md:w-56 object-contain drop-shadow-lg" />
                 
                 <h2 className="text-2xl md:text-[28px] font-normal tracking-tight leading-snug drop-shadow-md text-white max-w-[400px]">
-                  Sculpt your system audio for the best stereo sound experience.
+                  {t('home.hero_banner.boom2_tagline')}
                 </h2>
                 
                 <div className="flex flex-col items-center gap-4 pt-2">
@@ -293,7 +295,7 @@ export function HeroDesktop() {
                     rel="noopener noreferrer" 
                     className="bg-[#00e5ff] text-black font-semibold px-8 py-2.5 rounded-full text-[15px] hover:bg-[#00ccdd] hover:scale-105 active:scale-95 transition shadow-[0_0_20px_rgba(0,229,255,0.4)] block text-center"
                   >
-                    Learn More
+                    {t('home.hero_banner.learn_more')}
                   </a>
                 </div>
               </motion.div>

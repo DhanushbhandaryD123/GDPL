@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export interface AppItem {
   id: string;
@@ -22,6 +23,7 @@ interface AppCategoryDesktopProps {
 }
 
 function AppCardDesktop({ app, index }: { app: AppItem, index: number }) {
+  const { t } = useTranslation();
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
@@ -75,7 +77,7 @@ function AppCardDesktop({ app, index }: { app: AppItem, index: number }) {
                   </span>
                 </div>
                 <span className="text-[#d95d39] text-base font-semibold group-hover/link:text-orange-700 transition-colors">
-                  Learn More
+                  {t('home.categories.learn_more')}
                 </span>
               </>
             ) : app.priceDiscounted ? (
@@ -86,7 +88,7 @@ function AppCardDesktop({ app, index }: { app: AppItem, index: number }) {
                   </span>
                 </div>
                 <span className="text-[#d95d39] text-base font-semibold group-hover/link:text-orange-700 transition-colors">
-                  Learn More
+                  {t('home.categories.learn_more')}
                 </span>
               </>
             ) : (

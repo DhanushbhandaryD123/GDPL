@@ -1,35 +1,16 @@
 import { motion } from 'motion/react';
 import { Upload, SlidersHorizontal, Download } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
 
-const steps = [
-  {
-    id: 1,
-    title: 'Import a track.',
-    icon: Upload,
-    mockup: 'import' as const,
-  },
-  {
-    id: 2,
-    title: 'Change the levels of each stem.',
-    icon: SlidersHorizontal,
-    mockup: 'levels' as const,
-  },
-  {
-    id: 3,
-    title: 'Export your track.',
-    icon: Download,
-    mockup: 'export' as const,
-  },
-];
-
-function StepMockup({ type }: { type: 'import' | 'levels' | 'export' }) {
+function StepMockup({ type, t }: { type: 'import' | 'levels' | 'export'; t: TFunction }) {
   if (type === 'import') {
     return (
       <div className="w-full h-full bg-[#0a0a12] rounded-lg flex flex-col items-center justify-center gap-3 p-4">
         <Upload className="w-6 h-6 text-white/30" strokeWidth={1.5} />
-        <span className="text-[9px] text-white/30 text-center">Drop a song here to split</span>
+        <span className="text-[9px] text-white/30 text-center">{t('audimix.features_overview.drop_song')}</span>
         <span className="text-[8px] font-semibold text-white/50 border border-white/15 rounded-full px-3 py-1">
-          Select a song
+          {t('audimix.features_overview.select_song')}
         </span>
       </div>
     );
@@ -58,16 +39,24 @@ function StepMockup({ type }: { type: 'import' | 'levels' | 'export' }) {
 
   return (
     <div className="w-full h-full bg-[#0a0a12] rounded-lg flex flex-col items-center justify-center gap-2 p-4">
-      <span className="text-[9px] text-white/40">Export Stems</span>
+      <span className="text-[9px] text-white/40">{t('audimix.features_overview.export_stems')}</span>
       <div className="w-3/4 h-1.5 rounded-full bg-white/10 overflow-hidden">
         <div className="h-full w-4/5 rounded-full bg-gradient-to-r from-blue-400 to-cyan-400" />
       </div>
-      <span className="text-[8px] font-semibold text-white bg-blue-600 rounded-full px-3 py-1">Export</span>
+      <span className="text-[8px] font-semibold text-white bg-blue-600 rounded-full px-3 py-1">{t('audimix.features_overview.export')}</span>
     </div>
   );
 }
 
 export function FeaturesOverview() {
+  const { t } = useTranslation();
+
+  const steps = [
+    { id: 1, title: t('audimix.features_overview.step1'), icon: Upload, mockup: 'import' as const },
+    { id: 2, title: t('audimix.features_overview.step2'), icon: SlidersHorizontal, mockup: 'levels' as const },
+    { id: 3, title: t('audimix.features_overview.step3'), icon: Download, mockup: 'export' as const },
+  ];
+
   return (
     <section className="pt-16 pb-24 md:pt-24 md:pb-32 bg-gray-50 relative border-t border-gray-100 overflow-hidden">
       <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-cyan-100/40 to-transparent pointer-events-none" />
@@ -80,7 +69,7 @@ export function FeaturesOverview() {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-bold text-gray-900 mb-6"
           >
-            Split tracks like a pro, in <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500">3 simple steps.</span>
+            {t('audimix.features_overview.title_1')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500">{t('audimix.features_overview.title_2')}</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -89,7 +78,7 @@ export function FeaturesOverview() {
             transition={{ delay: 0.1 }}
             className="text-lg text-gray-500"
           >
-            Remove vocals and instruments from any song with AuDimix for Windows. It's as easy as 1, 2, 3.
+            {t('audimix.features_overview.subtitle')}
           </motion.p>
         </div>
 
@@ -104,7 +93,7 @@ export function FeaturesOverview() {
               className="rounded-3xl bg-gradient-to-br from-blue-500 to-blue-700 p-5 pb-8 shadow-xl shadow-blue-900/30"
             >
               <div className="rounded-xl overflow-hidden border border-white/10 bg-black/40 aspect-[4/3] mb-6">
-                <StepMockup type={step.mockup} />
+                <StepMockup type={step.mockup} t={t} />
               </div>
               <div className="flex flex-col items-center text-center">
                 <div className="w-11 h-11 rounded-full bg-white text-blue-700 font-extrabold flex items-center justify-center text-lg mb-4 shadow-lg">

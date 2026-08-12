@@ -1,23 +1,25 @@
 import { motion } from 'motion/react';
 import { Film, Music, Gamepad2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export function Boom3DTailored() {
+  const { t } = useTranslation();
   const cards = [
     {
-      title: 'Movies',
-      description: 'Feel every explosion, every whisper with true 3D cinematic audio.',
+      title: t('boom3d.tailored.movies_title'),
+      description: t('boom3d.tailored.movies_desc'),
       icon: <Film className="w-5 h-5 text-white" />,
       image: '/boom3D/g1.png'
     },
     {
-      title: 'Music',
-      description: 'Rediscover your music with rich details and deeper bass.',
+      title: t('boom3d.tailored.music_title'),
+      description: t('boom3d.tailored.music_desc'),
       icon: <Music className="w-5 h-5 text-white" />,
       image: '/boom3D/g2.png'
     },
     {
-      title: 'Gaming',
-      description: 'Hear every shot, every step and every move with unmatched precision.',
+      title: t('boom3d.tailored.gaming_title'),
+      description: t('boom3d.tailored.gaming_desc'),
       icon: <Gamepad2 className="w-5 h-5 text-white" />,
       image: '/boom3D/g3.png'
     }
@@ -30,10 +32,10 @@ export function Boom3DTailored() {
         {/* Left Column: Text Content */}
         <div className="w-full lg:w-[28%] flex flex-col justify-center text-center lg:text-left pt-12 lg:pt-0 lg:pr-6">
           <h2 className="text-4xl lg:text-[2.75rem] font-bold tracking-tight text-[#111111] leading-[1.15] mb-6">
-            Perfect Sound<br className="hidden lg:block" /> For Every Moment.
+            {t('boom3d.tailored.title_1')}<br className="hidden lg:block" /> {t('boom3d.tailored.title_2')}
           </h2>
           <p className="text-gray-500 text-[15px] leading-relaxed mb-10 max-w-[400px] mx-auto lg:mx-0 font-medium">
-            Boom 3D adapts to what you love<br className="hidden lg:block" /> and makes every sound extraordinary.
+            {t('boom3d.tailored.subtitle_1')}<br className="hidden lg:block" /> {t('boom3d.tailored.subtitle_2')}
           </p>
          
         </div>

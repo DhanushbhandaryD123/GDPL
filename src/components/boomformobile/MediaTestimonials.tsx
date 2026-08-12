@@ -1,27 +1,18 @@
 import Marquee from 'react-fast-marquee';
 import { Quote } from 'lucide-react';
 import { motion } from 'motion/react';
-
-const mediaReviews = [
-  {
-    source: 'ЛАЙФХАКЕР',
-    quote: 'Boom turns your iPhone into an advanced music player with a 3D surround sound effect.',
-  },
-  {
-    source: 'macitynet.it',
-    quote: 'Boom is an app that promises to improve the audio quality of the iPhone, especially with headphones.',
-  },
-  {
-    source: 'The Next Web',
-    quote: 'Boom makes your music sound amazing. It’s a must-have for audiophiles.',
-  },
-  {
-    source: 'Macworld',
-    quote: 'If you use headphones, Boom will make your music sound noticeably better and more immersive.',
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 export function MediaTestimonials() {
+  const { t } = useTranslation();
+
+  const mediaReviews = [
+    { source: 'ЛАЙФХАКЕР', quote: t('boom_mobile.media_testimonials.m1') },
+    { source: 'macitynet.it', quote: t('boom_mobile.media_testimonials.m2') },
+    { source: 'The Next Web', quote: t('boom_mobile.media_testimonials.m3') },
+    { source: 'Macworld', quote: t('boom_mobile.media_testimonials.m4') }
+  ];
+
   return (
     <section className="py-20 md:py-32 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 mb-16">
@@ -32,7 +23,7 @@ export function MediaTestimonials() {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-extrabold text-gray-900 tracking-tight"
           >
-            Media <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600">Buzz</span>
+            {t('boom_mobile.media_testimonials.title_1')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600">{t('boom_mobile.media_testimonials.title_2')}</span>
           </motion.h2>
         </div>
       </div>

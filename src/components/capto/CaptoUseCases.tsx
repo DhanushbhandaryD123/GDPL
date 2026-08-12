@@ -1,49 +1,52 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { GraduationCap, BookOpen, Palette, Share2, ArrowUpRight } from 'lucide-react';
-
-const useCases = [
-  {
-    id: 'educators',
-    title: 'Educators',
-    tag: 'Teaching & Training',
-    icon: GraduationCap,
-    description: 'Create engaging, high-quality video tutorials and instructional materials. Add annotations, highlight cursor movements, and record your voice simultaneously to build the perfect online lesson for your students.',
-    image: '/capto/s2.webp',
-    features: ['Record narrated lessons in one take', 'Drop in callouts & captions instantly', 'Export straight to your LMS']
-  },
-  {
-    id: 'students',
-    title: 'Students',
-    tag: 'Study & Research',
-    icon: BookOpen,
-    description: 'Capture online lectures, take smarter notes with screenshots, and record project presentations. Capto keeps every visual study material organized in one searchable library.',
-    image: '/capto/s8.webp',
-    features: ['Record online classes & webinars', 'Annotate research materials', 'Auto-organize files into folders']
-  },
-  {
-    id: 'creatives',
-    title: 'Creatives',
-    tag: 'Design & Production',
-    icon: Palette,
-    description: 'Present your designs, record your creative process, or provide visual feedback to clients. Pixel-perfect capture and a full color-grading toolkit make professional output effortless.',
-    image: '/capto/s5.webp',
-    features: ['Pixel-perfect, retina-ready captures', 'Built-in color correction & effects', 'Export in every format you need']
-  },
-  {
-    id: 'everyday',
-    title: 'Everyday Use',
-    tag: 'Sharing & Life',
-    icon: Share2,
-    description: 'From showing family how an app works to saving an important receipt, Capto is the fastest way to capture, edit, and share anything on your screen — instantly, anywhere.',
-    image: '/capto/s9.webp',
-    features: ['One-click capture shortcuts', 'Share directly to Drive, Dropbox & more', 'Simple enough for anyone to use']
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 const AUTOPLAY_MS = 6000;
 
 export function CaptoUseCases() {
+  const { t } = useTranslation();
+
+  const useCases = [
+    {
+      id: 'educators',
+      title: t('capto.use_cases.educators_title'),
+      tag: t('capto.use_cases.educators_tag'),
+      icon: GraduationCap,
+      description: t('capto.use_cases.educators_desc'),
+      image: '/capto/s2.webp',
+      features: [t('capto.use_cases.educators_f1'), t('capto.use_cases.educators_f2'), t('capto.use_cases.educators_f3')]
+    },
+    {
+      id: 'students',
+      title: t('capto.use_cases.students_title'),
+      tag: t('capto.use_cases.students_tag'),
+      icon: BookOpen,
+      description: t('capto.use_cases.students_desc'),
+      image: '/capto/s8.webp',
+      features: [t('capto.use_cases.students_f1'), t('capto.use_cases.students_f2'), t('capto.use_cases.students_f3')]
+    },
+    {
+      id: 'creatives',
+      title: t('capto.use_cases.creatives_title'),
+      tag: t('capto.use_cases.creatives_tag'),
+      icon: Palette,
+      description: t('capto.use_cases.creatives_desc'),
+      image: '/capto/s5.webp',
+      features: [t('capto.use_cases.creatives_f1'), t('capto.use_cases.creatives_f2'), t('capto.use_cases.creatives_f3')]
+    },
+    {
+      id: 'everyday',
+      title: t('capto.use_cases.everyday_title'),
+      tag: t('capto.use_cases.everyday_tag'),
+      icon: Share2,
+      description: t('capto.use_cases.everyday_desc'),
+      image: '/capto/s9.webp',
+      features: [t('capto.use_cases.everyday_f1'), t('capto.use_cases.everyday_f2'), t('capto.use_cases.everyday_f3')]
+    }
+  ];
+
   const [activeTab, setActiveTab] = useState(useCases[0].id);
   const [paused, setPaused] = useState(false);
 
@@ -59,6 +62,7 @@ export function CaptoUseCases() {
       });
     }, AUTOPLAY_MS);
     return () => clearInterval(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [paused, activeTab]);
 
   return (
@@ -72,10 +76,10 @@ export function CaptoUseCases() {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl md:text-[2.75rem] font-bold text-[#1c2331] leading-tight mb-5">
-            Designed for <span className="text-[#6554ff]">everyone</span>
+            {t('capto.use_cases.title_1')} <span className="text-[#6554ff]">{t('capto.use_cases.title_2')}</span>
           </h2>
           <p className="text-lg text-gray-500">
-            See how Capto transforms your daily workflow, no matter what you do.
+            {t('capto.use_cases.subtitle')}
           </p>
         </div>
 
@@ -108,7 +112,7 @@ export function CaptoUseCases() {
                     </div>
                     <div className="min-w-0">
                       <h3 className={`font-bold text-[15px] mb-0.5 ${isActive ? 'text-[#1c2331]' : 'text-gray-600'}`}>
-                        For {uc.title}
+                        {t('capto.use_cases.for')} {uc.title}
                       </h3>
                       <p className={`text-xs font-medium ${isActive ? 'text-[#6554ff]' : 'text-gray-400'}`}>
                         {uc.tag}
@@ -161,7 +165,7 @@ export function CaptoUseCases() {
                         <activeUseCase.icon size={18} strokeWidth={2.5} />
                       </div>
                       <h3 className="text-2xl md:text-3xl font-bold text-[#1c2331]">
-                        For {activeUseCase.title}
+                        {t('capto.use_cases.for')} {activeUseCase.title}
                       </h3>
                     </div>
                     <p className="text-gray-500 text-[15px] md:text-base leading-relaxed mb-7 max-w-2xl">
@@ -185,7 +189,7 @@ export function CaptoUseCases() {
                       href="#"
                       className="inline-flex items-center gap-1.5 mt-8 text-[#6554ff] font-bold text-sm hover:gap-2.5 transition-all"
                     >
-                      See what else Capto can do
+                      {t('capto.use_cases.cta')}
                       <ArrowUpRight size={16} strokeWidth={2.5} />
                     </a>
                   </div>

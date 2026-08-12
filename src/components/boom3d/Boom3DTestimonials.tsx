@@ -1,59 +1,29 @@
 import { Star } from 'lucide-react';
-
-const reviews = [
-  {
-    title: "Completely immersive.",
-    text: "Boom 3D totally changes how audio sounds. The 3D surround sound effect is especially apparent with headphones. It makes them sound like a $200 pair."
-  },
-  {
-    title: "Great equalizer.",
-    text: "I'm listening to all my favourite music all over again. I use studio monitors connected to my Mac and the 31-band EQ lets me tune them perfectly."
-  },
-  {
-    title: "Best sound ever!",
-    text: "This has been a well worth investment. My MacBook Pro with my 5.1 external speakers sound amazing with the 3D surround effect turned on!!"
-  },
-  {
-    title: "Volume booster works!",
-    text: "The speakers in my laptop were way too quiet. I installed Boom 3D and now at less than half volume they are louder and clearer than before. EXCELLENT APP!"
-  },
-  {
-    title: "Really works..",
-    text: "Once you configure Boom 3D and start using it with a good pair of headphones, you aren't going back. It really is the best way to tune music to sound enveloping and rich."
-  },
-  {
-    title: "Night and day difference!",
-    text: "Listening to music with and without the application on is a night and day difference. Highly recommended for any audiophile!"
-  },
-  {
-    title: "Must-have app.",
-    text: "Sound from my computer completely changes once Boom 3D is installed and activated. The per-app volume controller is incredibly useful."
-  },
-  {
-    title: "Better than I imagined!",
-    text: "I got Boom 3D and WOW. I have no idea how it works but the surround sound does! Amazing sound now blasting through my speakers. Yes!"
-  },
-  {
-    title: "Makes music more enjoyable.",
-    text: "Love having the ability to tweak the sound. The presets are fantastic. It almost reminds me of the old SRS WOW stuff from the 2000s, but better."
-  },
-  {
-    title: "Elevates your listening experience.",
-    text: "Being able to use the equalizer to adjust the sound coming out of my PC is incredible. I'm able to draw out each instrument perfectly."
-  },
-  {
-    title: "Worth it..",
-    text: "I love this app. The equalizer is amazing and simply makes everything sound better. I also like being able to turn up the volume so I can hear it from another room."
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 export function Boom3DTestimonials() {
+  const { t } = useTranslation();
+
+  const reviews = [
+    { title: t('boom3d.testimonials.r1_title'), text: t('boom3d.testimonials.r1_text') },
+    { title: t('boom3d.testimonials.r2_title'), text: t('boom3d.testimonials.r2_text') },
+    { title: t('boom3d.testimonials.r3_title'), text: t('boom3d.testimonials.r3_text') },
+    { title: t('boom3d.testimonials.r4_title'), text: t('boom3d.testimonials.r4_text') },
+    { title: t('boom3d.testimonials.r5_title'), text: t('boom3d.testimonials.r5_text') },
+    { title: t('boom3d.testimonials.r6_title'), text: t('boom3d.testimonials.r6_text') },
+    { title: t('boom3d.testimonials.r7_title'), text: t('boom3d.testimonials.r7_text') },
+    { title: t('boom3d.testimonials.r8_title'), text: t('boom3d.testimonials.r8_text') },
+    { title: t('boom3d.testimonials.r9_title'), text: t('boom3d.testimonials.r9_text') },
+    { title: t('boom3d.testimonials.r10_title'), text: t('boom3d.testimonials.r10_text') },
+    { title: t('boom3d.testimonials.r11_title'), text: t('boom3d.testimonials.r11_text') },
+  ];
+
   const row1 = reviews.slice(0, 6);
   const row2 = reviews.slice(6, 11);
 
   return (
     <section className="relative pt-16 md:pt-32 pb-16 overflow-hidden bg-white">
-      
+
       <style>{`
         @keyframes marquee-left {
           0% { transform: translateX(0); }
@@ -76,10 +46,10 @@ export function Boom3DTestimonials() {
 
       <div className="max-w-[1400px] mx-auto px-4 mb-24 relative z-10 text-center">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1d1d1f] mb-6 tracking-tighter">
-          Loved by Millions
+          {t('boom3d.testimonials.title')}
         </h2>
         <p className="text-[#86868b] text-lg md:text-xl max-w-2xl mx-auto font-medium">
-          See what our users have to say about the Boom 3D experience.
+          {t('boom3d.testimonials.subtitle')}
         </p>
       </div>
 

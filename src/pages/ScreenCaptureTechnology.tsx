@@ -1,27 +1,29 @@
 import { useState, useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
 import { FloatingSocials } from '../components/layout/FloatingSocials';
 
-const tabsData = [
-  {
-    id: 'capture',
-    title: 'Customised Screen Capture',
-    description: 'Easy to use recording and editing suite allows users to record their mac screen with simple key commands. Start, pause, stop, record computer or outside audio or both, or record through the camera, this tech employs the most versatile screen record options available.',
-    image: '/business/ST/S2.png'
-  },
-  {
-    id: 'record-edit',
-    title: 'Customised Screen Recording & Edit',
-    description: 'Post-record edit your Screen Record or Screen capture with the latest image and video editing technology',
-    image: '/business/ST/S1.png'
-  }
-];
-
 export function ScreenCaptureTechnology() {
+  const { t } = useTranslation();
   const domain = import.meta.env.VITE_SITE_URL || '';
   const [activeTab, setActiveTab] = useState(0);
+
+  const tabsData = [
+    {
+      id: 'capture',
+      title: t('technology.screenCapture.tab1_title'),
+      description: t('technology.screenCapture.tab1_desc'),
+      image: '/business/ST/S2.png'
+    },
+    {
+      id: 'record-edit',
+      title: t('technology.screenCapture.tab2_title'),
+      description: t('technology.screenCapture.tab2_desc'),
+      image: '/business/ST/S1.png'
+    }
+  ];
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -76,7 +78,7 @@ export function ScreenCaptureTechnology() {
             <div className="absolute inset-0 flex items-center justify-start px-4 md:px-8 lg:px-12 z-10">
               <div className="max-w-2xl">
                 <h1 className="text-2 xl md:text-5xl lg:text-5xl text-white font-normal drop-shadow-lg leading-tight">
-                  Full suite of Screen Capture, Recording & Editing tools
+                  {t('technology.screenCapture.hero_title')}
                 </h1>
               </div>
             </div>
@@ -87,7 +89,7 @@ export function ScreenCaptureTechnology() {
         <section className="py-12 bg-white">
           <div className="container mx-auto px-4 max-w-4xl text-center">
             <p className="text-[#9e9e9e] text-base md:text-[17px] font-medium leading-relaxed max-w-3xl mx-auto">
-              Global Delight has the depth & scale of experience to build outstanding digital products with leading edge solutions for your audio, photo and video needs.
+              {t('technology.screenCapture.intro')}
             </p>
           </div>
         </section>
@@ -96,7 +98,7 @@ export function ScreenCaptureTechnology() {
         <section className="pb-4 bg-white">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-xl md:text-2xl font-semibold text-center mb-10 text-[#2d3748]">
-              <span className="border-b-[1.5px] border-gray-600 pb-1">Screen Capture Technology</span>
+              <span className="border-b-[1.5px] border-gray-600 pb-1">{t('technology.screenCapture.section_title')}</span>
             </h2>
 
             <div className="flex flex-col items-center justify-center gap-4 lg:gap-6 w-full">
@@ -142,7 +144,7 @@ export function ScreenCaptureTechnology() {
         <section className="py-16 bg-[#fafbfc]">
           <div className="container mx-auto px-4 max-w-5xl">
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-[#1a202c]">
-              Simple Steps to Stunning Results
+              {t('technology.screenCapture.steps_title')}
             </h2>
 
             <div ref={scrollRef} className="flex flex-row overflow-x-auto snap-x snap-mandatory items-start justify-start md:justify-between relative gap-8 md:gap-0 pb-6 md:pb-0 mt-8 [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: 'none' }}>
@@ -159,21 +161,21 @@ export function ScreenCaptureTechnology() {
                     <rect x="6" y="6" width="12" height="12"></rect>
                   </svg>
                 </div>
-                <h4 className="text-red-500 font-semibold text-sm mb-2">Step 1</h4>
-                <h3 className="font-bold text-[#2d3748] text-base mb-2">Select Area</h3>
-                <p className="text-sm text-gray-500 leading-relaxed max-w-[200px]">Choose the area you<br/>want to capture.</p>
+                <h4 className="text-red-500 font-semibold text-sm mb-2">{t('technology.screenCapture.step1_label')}</h4>
+                <h3 className="font-bold text-[#2d3748] text-base mb-2">{t('technology.screenCapture.step1_title')}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed max-w-[200px]" style={{ whiteSpace: 'pre-line' }}>{t('technology.screenCapture.step1_desc')}</p>
               </div>
 
               {/* Step 2 */}
               <div className="flex flex-col items-center text-center relative z-10 w-full flex-none px-4 snap-center md:flex-1 md:w-auto md:min-w-0 md:shrink">
                 <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center mb-6 shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
                   <div className="flex items-center gap-1.5 px-3 py-1 rounded bg-red-600 text-white font-bold text-[10px] tracking-wider">
-                    <div className="w-2 h-2 bg-white rounded-full"></div> REC
+                    <div className="w-2 h-2 bg-white rounded-full"></div> {t('technology.screenCapture.rec_label')}
                   </div>
                 </div>
-                <h4 className="text-red-500 font-semibold text-sm mb-2">Step 2</h4>
-                <h3 className="font-bold text-[#2d3748] text-base mb-2">Record</h3>
-                <p className="text-sm text-gray-500 leading-relaxed max-w-[200px]">Start recording your<br/>screen with audio.</p>
+                <h4 className="text-red-500 font-semibold text-sm mb-2">{t('technology.screenCapture.step2_label')}</h4>
+                <h3 className="font-bold text-[#2d3748] text-base mb-2">{t('technology.screenCapture.step2_title')}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed max-w-[200px]" style={{ whiteSpace: 'pre-line' }}>{t('technology.screenCapture.step2_desc')}</p>
               </div>
 
               {/* Step 3 */}
@@ -183,9 +185,9 @@ export function ScreenCaptureTechnology() {
                     <circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><line x1="20" y1="4" x2="8.12" y2="15.88"></line><line x1="14.47" y1="14.48" x2="20" y2="20"></line><line x1="8.12" y1="8.12" x2="12" y2="12"></line>
                   </svg>
                 </div>
-                <h4 className="text-red-500 font-semibold text-sm mb-2">Step 3</h4>
-                <h3 className="font-bold text-[#2d3748] text-base mb-2">Edit</h3>
-                <p className="text-sm text-gray-500 leading-relaxed max-w-[200px]">Trim, annotate and<br/>enhance your video.</p>
+                <h4 className="text-red-500 font-semibold text-sm mb-2">{t('technology.screenCapture.step3_label')}</h4>
+                <h3 className="font-bold text-[#2d3748] text-base mb-2">{t('technology.screenCapture.step3_title')}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed max-w-[200px]" style={{ whiteSpace: 'pre-line' }}>{t('technology.screenCapture.step3_desc')}</p>
               </div>
 
               {/* Step 4 */}
@@ -195,9 +197,9 @@ export function ScreenCaptureTechnology() {
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line>
                   </svg>
                 </div>
-                <h4 className="text-red-500 font-semibold text-sm mb-2">Step 4</h4>
-                <h3 className="font-bold text-[#2d3748] text-base mb-2">Save & Share</h3>
-                <p className="text-sm text-gray-500 leading-relaxed max-w-[200px]">Export in your preferred<br/>format and share.</p>
+                <h4 className="text-red-500 font-semibold text-sm mb-2">{t('technology.screenCapture.step4_label')}</h4>
+                <h3 className="font-bold text-[#2d3748] text-base mb-2">{t('technology.screenCapture.step4_title')}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed max-w-[200px]" style={{ whiteSpace: 'pre-line' }}>{t('technology.screenCapture.step4_desc')}</p>
               </div>
             </div>
           </div>
@@ -233,11 +235,10 @@ export function ScreenCaptureTechnology() {
                   
                   <div className="flex flex-col justify-center">
                     <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-2">
-                      Global Delight Business is here for you.
+                      {t('technology.screenCapture.cta_title')}
                     </h2>
                     <p className="text-sm md:text-base text-gray-300 max-w-2xl">
-                      Find the solutions you need to create engaging products,
-                      content & entertainment experiences. You may also write to us to discuss licensing opportunities.
+                      {t('technology.screenCapture.cta_text')}
                     </p>
                   </div>
                 </div>
@@ -245,7 +246,7 @@ export function ScreenCaptureTechnology() {
                 {/* Right Side: Button */}
                 <div className="shrink-0">
                   <button className="bg-[#ef5252] hover:bg-[#e04141] text-white text-sm md:text-base font-semibold py-3 px-10 rounded shadow-md transition-all hover:shadow-lg hover:-translate-y-0.5 whitespace-nowrap">
-                    CONTACT
+                    {t('technology.screenCapture.cta_button')}
                   </button>
                 </div>
               </div>

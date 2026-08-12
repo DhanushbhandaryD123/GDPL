@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Instagram, Facebook, Twitter, Share2 } from 'lucide-react';
 import { PhoneFrame } from './PhoneFrame';
 import { motion, AnimatePresence } from 'motion/react';
+import { useTranslation } from 'react-i18next';
 
 const floatingIcons = [
   { icon: Instagram, pos: 'top-4 -left-6', color: 'text-[#E1306C]' },
@@ -28,6 +29,7 @@ const moments = [
 ];
 
 export function ProShare() {
+  const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -73,10 +75,10 @@ export function ProShare() {
           {/* Right — copy */}
           <div className="order-1 lg:order-2">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Share Your Moments
+              {t('camera_plus_pro.share.title')}
             </h2>
             <p className="text-lg text-gray-500 mb-10 max-w-md leading-relaxed">
-              Share instantly to your favorite platforms in the highest quality.
+              {t('camera_plus_pro.share.subtitle')}
             </p>
 
             <div className="flex items-center gap-4 flex-wrap">

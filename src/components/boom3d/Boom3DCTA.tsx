@@ -1,6 +1,8 @@
 import { Apple } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export function Boom3DCTA() {
+  const { t } = useTranslation();
   return (
     <section className="relative py-12 lg:py-16 overflow-hidden bg-white">
       <div className="max-w-[1400px] mx-auto px-4 relative z-10">
@@ -21,7 +23,7 @@ export function Boom3DCTA() {
           <div className="w-full lg:w-[50%] flex flex-col items-center lg:items-start text-center lg:text-left relative z-10">
             
             <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] font-medium text-white mb-10 leading-[1.2] tracking-tight">
-              Find <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff8c69] to-[#f47499] font-bold">Boom 3D</span> on your favorite store.
+              {t('boom3d.cta.title_plain')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff8c69] to-[#f47499] font-bold">{t('boom3d.cta.title_highlight')}</span> {t('boom3d.cta.title_end')}
             </h2>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full justify-center lg:justify-start">
@@ -30,8 +32,8 @@ export function Boom3DCTA() {
               <button className="flex items-center gap-3 bg-black hover:bg-[#1a1a1a] text-white px-5 py-3 rounded-xl min-w-[200px] transition-colors border border-white/10">
                 <Apple size={32} fill="currentColor" />
                 <div className="flex flex-col items-start text-left">
-                  <span className="text-[11px] leading-tight text-gray-300">Download on the</span>
-                  <span className="text-[17px] font-semibold leading-tight">Mac App Store</span>
+                  <span className="text-[11px] leading-tight text-gray-300">{t('boom3d.cta.mac_download_on')}</span>
+                  <span className="text-[17px] font-semibold leading-tight">{t('boom3d.cta.mac_store')}</span>
                 </div>
               </button>
 
@@ -45,8 +47,8 @@ export function Boom3DCTA() {
                   <path fill="#ffb900" d="M13 13h10v10H13z"/>
                 </svg>
                 <div className="flex flex-col items-start text-left">
-                  <span className="text-[11px] leading-tight text-gray-300">Download from the</span>
-                  <span className="text-[17px] font-semibold leading-tight">Microsoft Store</span>
+                  <span className="text-[11px] leading-tight text-gray-300">{t('boom3d.cta.win_download_from')}</span>
+                  <span className="text-[17px] font-semibold leading-tight">{t('boom3d.cta.win_store')}</span>
                 </div>
               </button>
 

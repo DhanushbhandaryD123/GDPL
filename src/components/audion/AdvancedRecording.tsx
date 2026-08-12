@@ -1,38 +1,17 @@
 import { motion } from 'motion/react';
 import { Settings2, FastForward, Mic2, FileText } from 'lucide-react';
-
-const features = [
-  {
-    title: 'Lossless Audio Recording',
-    description: 'Capture every nuance with uncompressed, studio-quality WAV recording formats designed for professionals.',
-    icon: Mic2,
-    color: 'text-purple-500',
-    bg: 'bg-purple-50'
-  },
-  {
-    title: 'Microphone Sensitivity Boost',
-    description: 'Amplify your device’s built-in microphone up to 200% to capture quiet speakers or distant sounds clearly.',
-    icon: Settings2,
-    color: 'text-pink-500',
-    bg: 'bg-pink-50'
-  },
-  {
-    title: 'Real-time Customization',
-    description: 'Adjust pitch and playback speed on the fly without affecting the original recording quality.',
-    icon: FastForward,
-    color: 'text-blue-500',
-    bg: 'bg-blue-50'
-  },
-  {
-    title: 'Built-in Teleprompter',
-    description: 'Read your scripts flawlessly while recording. Our floating teleprompter scrolls your text at your preferred speed.',
-    icon: FileText,
-    color: 'text-teal-500',
-    bg: 'bg-teal-50'
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 export function AdvancedRecording() {
+  const { t } = useTranslation();
+
+  const features = [
+    { title: t('audion.advanced_recording.f1_title'), description: t('audion.advanced_recording.f1_desc'), icon: Mic2, color: 'text-purple-500', bg: 'bg-purple-50' },
+    { title: t('audion.advanced_recording.f2_title'), description: t('audion.advanced_recording.f2_desc'), icon: Settings2, color: 'text-pink-500', bg: 'bg-pink-50' },
+    { title: t('audion.advanced_recording.f3_title'), description: t('audion.advanced_recording.f3_desc'), icon: FastForward, color: 'text-blue-500', bg: 'bg-blue-50' },
+    { title: t('audion.advanced_recording.f4_title'), description: t('audion.advanced_recording.f4_desc'), icon: FileText, color: 'text-teal-500', bg: 'bg-teal-50' }
+  ];
+
   return (
     <section className="py-16 md:py-24 bg-gray-50 relative border-t border-gray-100">
       <div className="container mx-auto px-4 md:px-6">
@@ -43,7 +22,7 @@ export function AdvancedRecording() {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-bold text-gray-900 mb-6"
           >
-            Advanced <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">Recording</span>
+            {t('audion.advanced_recording.title_1')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">{t('audion.advanced_recording.title_2')}</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -52,7 +31,7 @@ export function AdvancedRecording() {
             transition={{ delay: 0.1 }}
             className="text-lg text-gray-500"
           >
-            AudiOn pushes the hardware limits of your smartphone, giving you unprecedented control over how you capture sound.
+            {t('audion.advanced_recording.subtitle')}
           </motion.p>
         </div>
 

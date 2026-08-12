@@ -1,5 +1,6 @@
 import { Headphones, Music, MonitorPlay, Gamepad2, Volume2 } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useTranslation } from 'react-i18next';
 
 const DottedWave = ({ className, color }: { className?: string, color: string }) => (
   <svg viewBox="0 0 500 200" preserveAspectRatio="none" className={className}>
@@ -12,6 +13,7 @@ const DottedWave = ({ className, color }: { className?: string, color: string })
 );
 
 export function Boom3DSurround() {
+  const { t } = useTranslation();
   return (
     <section className="relative py-16 md:py-24 bg-white overflow-hidden">
       
@@ -39,10 +41,10 @@ export function Boom3DSurround() {
       <div className="max-w-[1200px] mx-auto px-4 relative z-10">
         <div className="text-center mb-16 space-y-6">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900">
-            Magical 3D Surround Sound
+            {t('boom3d.surround.title')}
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-[800px] mx-auto font-medium leading-relaxed">
-            Experience movies, games and music with 3D Surround Sound technology that offers a mind-blowing virtual surround sound without any special headphones or expensive surround sound boosters.
+            {t('boom3d.surround.subtitle')}
           </p>
         </div>
 
@@ -153,29 +155,29 @@ export function Boom3DSurround() {
             {/* Top Row: Headline + Buttons */}
             <div className="flex flex-col lg:flex-row items-center justify-start gap-4 lg:gap-6 mb-5 w-full text-center md:text-left">
               <h3 className="text-2xl md:text-[1.75rem] font-bold text-white tracking-tight whitespace-normal sm:whitespace-nowrap">
-                Download the 5.1 Extension for Netflix
+                {t('boom3d.surround.extension_title')}
               </h3>
               <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
                 <a href="https://chromewebstore.google.com/detail/boom3d-51-surround-for-ne/ndjhebiohmanieefhnhcmlbflfljmhdn?hl=en&authuser=0" target="_blank" rel="noopener noreferrer" className="flex w-full sm:w-auto items-center justify-center gap-2 bg-[#2ab2da] hover:bg-[#2399bd] text-black font-bold px-6 py-2 rounded-full text-[14px] transition-colors border border-[#021833] shadow-md">
                   <img src="/boom3D/Chrome-icon.png" alt="Chrome" className="w-[32px] h-[32px]" />
-                  For Chrome
+                  {t('boom3d.surround.for_chrome')}
                 </a>
                 <a href="https://apps.apple.com/us/app/boom3d-5-1-audio-for-netflix/id6445882848?mt=12" target="_blank" rel="noopener noreferrer" className="flex w-full sm:w-auto items-center justify-center gap-2 bg-[#2ab2da] hover:bg-[#2399bd] text-black font-bold px-6 py-2 rounded-full text-[14px] transition-colors border border-[#021833] shadow-md">
                   <img src="/boom3D/Safari-icon.png" alt="Safari" className="w-[32px] h-[32px]" />
-                  For Safari
+                  {t('boom3d.surround.for_safari')}
                 </a>
               </div>
             </div>
 
             {/* Second Row: Italic Text */}
             <p className="text-white/90 italic text-[14px] md:text-[16px] mb-8 font-medium w-full text-center md:text-left">
-              *Use the 5.1 extension along with the Boom 3D desktop app for a lifelike audio experience like no other.
+              {t('boom3d.surround.extension_note')}
             </p>
 
             {/* Third Row: Learn More (Centered) */}
             <div className="w-full flex justify-center mt-2">
               <button className="bg-[#030614] hover:bg-[#060c2b] text-white border border-[#00d2ff] font-bold px-10 py-2.5 rounded-full text-[14px] transition-all shadow-[0_0_15px_rgba(0,210,255,0.2)] hover:shadow-[0_0_25px_rgba(0,210,255,0.4)]">
-                Learn More
+                {t('boom3d.surround.learn_more')}
               </button>
             </div>
             

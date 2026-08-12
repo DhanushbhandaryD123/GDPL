@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Volume2, Camera, Wand2, Mail } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
 import { FloatingSocials } from '../components/layout/FloatingSocials';
 
 export function Faq() {
+  const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState("");
   const query = searchQuery.toLowerCase();
 
@@ -62,10 +64,10 @@ export function Faq() {
             <div className="absolute inset-0 flex flex-col justify-center px-6 md:px-16 lg:px-24 z-10 max-w-3xl">
              
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                Got Questions?
+                {t('faq.hero_title1')}
               </h1>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#3b82f6] mb-6 leading-tight">
-                We Have Answers!
+                {t('faq.hero_title2')}
               </h2>
               
               {/* Search Bar */}
@@ -78,13 +80,13 @@ export function Faq() {
                 </div>
                 <input
                   type="text"
-                  placeholder="Search for answers..."
+                  placeholder={t('faq.search_placeholder')}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="flex-grow min-w-0 bg-transparent border-none outline-none text-white px-2 py-1.5 md:py-3 text-[12px] md:text-base placeholder-gray-500"
                 />
                 <button className="shrink-0 bg-[#1e88e5] hover:bg-[#1565c0] text-white font-semibold text-[12px] md:text-base py-2 px-4 md:py-3 md:px-8 rounded-lg transition-colors">
-                  Search
+                  {t('faq.search_button')}
                 </button>
               </div>
             </div>
@@ -97,7 +99,7 @@ export function Faq() {
             {/* Heading */}
             <div className="flex flex-col items-center mb-16">
               <h2 className="text-2xl md:text-4xl font-extrabold text-[#0f172a] text-center">
-                Select From the Following List of Product
+                {t('faq.select_heading')}
               </h2>
             </div>
 
@@ -106,7 +108,7 @@ export function Faq() {
               <>
                 <div className="flex items-center justify-center gap-3 mb-8">
                   <Volume2 className="w-6 h-6 text-[#1e293b]" />
-                  <h3 className="text-xl font-bold text-[#1e293b]">Audio Apps</h3>
+                  <h3 className="text-xl font-bold text-[#1e293b]">{t('faq.audio_apps_heading')}</h3>
                 </div>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-20 max-w-5xl mx-auto">
@@ -117,22 +119,22 @@ export function Faq() {
                       <div className="h-20 mb-4 flex items-center justify-center">
                         <img src="/apps/boom3d-window.png" alt="Boom 3D" className="h-full object-contain" />
                       </div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-3">Boom 3D™</h3>
-                      <p className="text-[13px] md:text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Advanced 3D surround sound for an immersive audio experience.</p>
+                      <h3 className="text-xl font-bold text-gray-900 mb-3">{t('faq.boom3d_name')}</h3>
+                      <p className="text-[13px] md:text-sm text-gray-500 mb-6 flex-grow leading-relaxed">{t('faq.boom3d_desc')}</p>
 
                       {/* Mobile Links (Visible only on mobile) */}
                       <div className="w-full flex flex-row flex-wrap justify-center gap-2.5 md:hidden mt-3">
                         <a href="https://www.globaldelight.com/faq/boom3dmac" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 px-4 py-1.5 bg-slate-900 hover:bg-black rounded-full text-white transition-all shadow-md active:scale-95">
                            <svg viewBox="0 0 384 512" className="w-3.5 h-3.5 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-                           <span className="text-xs font-semibold tracking-wide">Mac</span>
+                           <span className="text-xs font-semibold tracking-wide">{t('faq.mac_label')}</span>
                         </a>
                         <a href="https://www.globaldelight.com/faq/boom3dmas" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 px-4 py-1.5 bg-slate-900 hover:bg-black rounded-full text-white transition-all shadow-md active:scale-95">
                            <svg viewBox="0 0 384 512" className="w-3.5 h-3.5 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-                           <span className="text-xs font-semibold tracking-wide">Mas</span>
+                           <span className="text-xs font-semibold tracking-wide">{t('faq.mas_label')}</span>
                         </a>
                         <a href="https://www.globaldelight.com/faq/boom3dwin" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 px-4 py-1.5 bg-[#0078d4] hover:bg-[#005a9e] rounded-full text-white transition-all shadow-md active:scale-95">
                            <svg viewBox="0 0 448 512" className="w-3.5 h-3.5 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M0 93.7l183.6-25.3v177.4H0V93.7zm0 324.6l183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"/></svg>
-                           <span className="text-xs font-semibold tracking-wide">Windows</span>
+                           <span className="text-xs font-semibold tracking-wide">{t('faq.windows_label')}</span>
                         </a>
                       </div>
 
@@ -140,15 +142,15 @@ export function Faq() {
                       <div className="hidden md:flex absolute inset-0 mt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 bg-white/95 z-30 flex-col rounded-[24px] overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.1)]">
                         <a href="https://www.globaldelight.com/faq/boom3dmac" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-4 hover:bg-gray-100/90 border-b border-gray-200 text-black transition-colors">
                           <svg viewBox="0 0 384 512" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-                          <span className="text-[22px] tracking-wide font-normal leading-none mt-1">Mac</span>
+                          <span className="text-[22px] tracking-wide font-normal leading-none mt-1">{t('faq.mac_label')}</span>
                         </a>
                         <a href="https://www.globaldelight.com/faq/boom3dmas" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-4 hover:bg-gray-100/90 border-b border-gray-200 text-black transition-colors">
                           <svg viewBox="0 0 384 512" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-                          <span className="text-[22px] tracking-wide font-normal leading-none mt-1">Mas</span>
+                          <span className="text-[22px] tracking-wide font-normal leading-none mt-1">{t('faq.mas_label')}</span>
                         </a>
                         <a href="https://www.globaldelight.com/faq/boom3dwin" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-4 hover:bg-gray-100/90 text-black transition-colors">
                           <svg viewBox="0 0 448 512" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M0 93.7l183.6-25.3v177.4H0V93.7zm0 324.6l183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"/></svg>
-                          <span className="text-[22px] tracking-wide font-normal leading-none mt-1">Windows</span>
+                          <span className="text-[22px] tracking-wide font-normal leading-none mt-1">{t('faq.windows_label')}</span>
                         </a>
                       </div>
                     </div>
@@ -161,7 +163,7 @@ export function Faq() {
                       <div className="h-20 mb-4 flex items-center justify-center">
                         <img src="/faq/Boom2LogoFaq.png" alt="Boom 2" className="h-full object-contain" />
                       </div>
-                      <p className="text-[13px] md:text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Powerful audio enhancer that delivers rich and balanced sound.</p>
+                      <p className="text-[13px] md:text-sm text-gray-500 mb-6 flex-grow leading-relaxed">{t('faq.boom2_desc')}</p>
                     </a>
                   )}
 
@@ -172,7 +174,7 @@ export function Faq() {
                       <div className="h-20 mb-4 flex items-center justify-center">
                         <img src="/faq/iBoom.png" alt="Boom for iOS" className="h-full object-contain" />
                       </div>
-                      <p className="text-[13px] md:text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Experience Boom sound on your iPhone and iPad like never before.</p>
+                      <p className="text-[13px] md:text-sm text-gray-500 mb-6 flex-grow leading-relaxed">{t('faq.boomios_desc')}</p>
                     </a>
                   )}
 
@@ -183,14 +185,14 @@ export function Faq() {
                       <div className="h-20 mb-4 flex items-center justify-center">
                         <img src="/apps/AuDimix-Window.jpeg" alt="Audmike" className="h-full object-contain" />
                       </div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-3">Audmike</h3>
-                      <p className="text-[13px] md:text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Professional audio recorder and editor for crystal clear recordings.</p>
+                      <h3 className="text-xl font-bold text-gray-900 mb-3">{t('faq.audmike_name')}</h3>
+                      <p className="text-[13px] md:text-sm text-gray-500 mb-6 flex-grow leading-relaxed">{t('faq.audmike_desc')}</p>
 
                       {/* Mobile Links (Visible only on mobile) */}
                       <div className="w-full flex flex-row flex-wrap justify-center gap-2.5 md:hidden mt-3">
                         <a href="https://www.globaldelight.com/faq/audimixwin" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 px-4 py-1.5 bg-[#0078d4] hover:bg-[#005a9e] rounded-full text-white transition-all shadow-md active:scale-95">
                            <svg viewBox="0 0 448 512" className="w-3.5 h-3.5 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M0 93.7l183.6-25.3v177.4H0V93.7zm0 324.6l183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"/></svg>
-                           <span className="text-xs font-semibold tracking-wide">Windows</span>
+                           <span className="text-xs font-semibold tracking-wide">{t('faq.windows_label')}</span>
                         </a>
                       </div>
 
@@ -198,7 +200,7 @@ export function Faq() {
                       <div className="hidden md:flex absolute inset-0 mt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 bg-white/95 z-30 flex-col rounded-[24px] overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.1)]">
                         <a href="https://www.globaldelight.com/faq/audimixwin" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-4 hover:bg-gray-100/90 text-black transition-colors">
                           <svg viewBox="0 0 448 512" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M0 93.7l183.6-25.3v177.4H0V93.7zm0 324.6l183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"/></svg>
-                          <span className="text-[22px] tracking-wide font-normal leading-none mt-1">Windows</span>
+                          <span className="text-[22px] tracking-wide font-normal leading-none mt-1">{t('faq.windows_label')}</span>
                         </a>
                       </div>
                     </div>
@@ -212,7 +214,7 @@ export function Faq() {
               <>
                 <div className="flex items-center justify-center gap-3 mb-8">
                   <Camera className="w-6 h-6 text-[#1e293b]" />
-                  <h3 className="text-xl font-bold text-[#1e293b]">Video App</h3>
+                  <h3 className="text-xl font-bold text-[#1e293b]">{t('faq.video_app_heading')}</h3>
                 </div>
                 
                 <div className="flex justify-center mb-20 max-w-5xl mx-auto">
@@ -222,7 +224,7 @@ export function Faq() {
                     <div className="h-20 mb-4 flex items-center justify-center">
                       <img src="/faq/Vizmato.png" alt="Vizmato" className="h-full object-contain" />
                     </div>
-                    <p className="text-[13px] md:text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Create stunning videos with powerful editing tools and effects in minutes.</p>
+                    <p className="text-[13px] md:text-sm text-gray-500 mb-6 flex-grow leading-relaxed">{t('faq.vizmato_desc')}</p>
                   </a>
                 </div>
               </>
@@ -233,7 +235,7 @@ export function Faq() {
               <>
                 <div className="flex items-center justify-center gap-3 mb-8">
                   <Wand2 className="w-6 h-6 text-[#1e293b]" />
-                  <h3 className="text-xl font-bold text-[#1e293b]">Utility Apps</h3>
+                  <h3 className="text-xl font-bold text-[#1e293b]">{t('faq.utility_apps_heading')}</h3>
                 </div>
                 
                 <div className="flex flex-col sm:flex-row justify-center items-center sm:items-stretch gap-6 lg:gap-8 max-w-5xl mx-auto mb-16">
@@ -244,18 +246,18 @@ export function Faq() {
                       <div className="h-20 mb-4 flex items-center justify-center">
                         <img src="/apps/Capto-mac.jpeg" alt="Capto" className="h-full object-contain" />
                       </div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-3">Capto</h3>
-                      <p className="text-[13px] md:text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Capture, edit and share your ideas with ease and precision.</p>
+                      <h3 className="text-xl font-bold text-gray-900 mb-3">{t('faq.capto_name')}</h3>
+                      <p className="text-[13px] md:text-sm text-gray-500 mb-6 flex-grow leading-relaxed">{t('faq.capto_desc')}</p>
 
                       {/* Mobile Links (Visible only on mobile) */}
                       <div className="w-full flex flex-row flex-wrap justify-center gap-2.5 md:hidden mt-3">
                         <a href="https://www.globaldelight.com/faq/captomac" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 px-4 py-1.5 bg-slate-900 hover:bg-black rounded-full text-white transition-all shadow-md active:scale-95">
                           <svg viewBox="0 0 384 512" className="w-3.5 h-3.5 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-                          <span className="text-xs font-semibold tracking-wide">Mac</span>
+                          <span className="text-xs font-semibold tracking-wide">{t('faq.mac_label')}</span>
                         </a>
                         <a href="https://www.globaldelight.com/faq/captowin" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 px-4 py-1.5 bg-[#0078d4] hover:bg-[#005a9e] rounded-full text-white transition-all shadow-md active:scale-95">
                           <svg viewBox="0 0 448 512" className="w-3.5 h-3.5 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M0 93.7l183.6-25.3v177.4H0V93.7zm0 324.6l183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"/></svg>
-                          <span className="text-xs font-semibold tracking-wide">Windows</span>
+                          <span className="text-xs font-semibold tracking-wide">{t('faq.windows_label')}</span>
                         </a>
                       </div>
 
@@ -263,11 +265,11 @@ export function Faq() {
                       <div className="hidden md:flex absolute inset-0 mt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 bg-white/95 z-30 flex-col rounded-[24px] overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.1)]">
                         <a href="https://www.globaldelight.com/faq/captomac" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-3 hover:bg-gray-100/90 border-b border-gray-200 text-black transition-colors">
                           <svg viewBox="0 0 384 512" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-                          <span className="text-[20px] tracking-wide font-normal leading-none mt-1">Mac</span>
+                          <span className="text-[20px] tracking-wide font-normal leading-none mt-1">{t('faq.mac_label')}</span>
                         </a>
                         <a href="https://www.globaldelight.com/faq/captowin" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-3 hover:bg-gray-100/90 text-black transition-colors">
                           <svg viewBox="0 0 448 512" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M0 93.7l183.6-25.3v177.4H0V93.7zm0 324.6l183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"/></svg>
-                          <span className="text-[20px] tracking-wide font-normal leading-none mt-1">Windows</span>
+                          <span className="text-[20px] tracking-wide font-normal leading-none mt-1">{t('faq.windows_label')}</span>
                         </a>
                       </div>
                     </div>
@@ -280,7 +282,7 @@ export function Faq() {
                       <div className="h-20 mb-4 flex items-center justify-center">
                         <img src="/faq/AudionFaqLogo.png" alt="Audio Recorder" className="h-full object-contain" />
                       </div>
-                      <p className="text-[13px] md:text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Simple, reliable and high quality audio recording app.</p>
+                      <p className="text-[13px] md:text-sm text-gray-500 mb-6 flex-grow leading-relaxed">{t('faq.audio_recorder_desc')}</p>
                     </a>
                   )}
                 </div>
@@ -290,7 +292,7 @@ export function Faq() {
             {/* Show message if no results */}
             {!showAudioApps && !showVideoApp && !showUtilityApps && (
               <div className="text-center py-10 text-gray-500">
-                <p className="text-lg">No products found matching "{searchQuery}"</p>
+                <p className="text-lg">{t('faq.no_results_prefix')} "{searchQuery}"</p>
               </div>
             )}
           </div>
@@ -327,10 +329,10 @@ export function Faq() {
                   <Mail className="w-8 h-8 md:w-10 md:h-10 text-blue-500" />
                 </div>
                 <div className="flex flex-col pt-1">
-                  <h4 className="text-blue-500 text-[11px] md:text-xs font-bold tracking-widest mb-2 uppercase">STAY UPDATED</h4>
-                  <h2 className="text-3xl md:text-[34px] font-bold text-white mb-4 leading-tight">Be in the know</h2>
+                  <h4 className="text-blue-500 text-[11px] md:text-xs font-bold tracking-widest mb-2 uppercase">{t('faq.newsletter_badge')}</h4>
+                  <h2 className="text-3xl md:text-[34px] font-bold text-white mb-4 leading-tight">{t('faq.newsletter_title')}</h2>
                   <p className="text-gray-400 text-sm md:text-[15px] leading-relaxed max-w-sm">
-                    Join our mailing list to hear about new releases, product updates, feature additions, and special deals before anyone else!
+                    {t('faq.newsletter_subtitle')}
                   </p>
                 </div>
               </div>
@@ -338,18 +340,18 @@ export function Faq() {
               {/* Right form */}
               <div className="w-full lg:w-[55%] flex flex-col items-center lg:items-end">
                 <form className="w-full max-w-lg flex flex-row gap-0 rounded-xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.3)] focus-within:ring-2 focus-within:ring-blue-500 transition-all border border-gray-700">
-                  <input 
-                    type="email" 
-                    placeholder="Enter your email" 
+                  <input
+                    type="email"
+                    placeholder={t('faq.newsletter_placeholder')}
                     className="flex-grow min-w-0 bg-[#1e293b] text-white px-4 md:px-6 py-3.5 md:py-4 outline-none placeholder-gray-400 text-sm md:text-[15px]"
                     required
                   />
                   <button type="submit" className="shrink-0 bg-[#3b82f6] hover:bg-[#2563eb] text-white font-bold px-5 md:px-8 py-3.5 md:py-4 transition-colors whitespace-nowrap text-sm md:text-[15px]">
-                    Sign up
+                    {t('faq.newsletter_signup')}
                   </button>
                 </form>
                 <p className="text-[11px] md:text-xs text-gray-400 mt-4 text-center lg:text-left w-full max-w-lg pl-1 opacity-80">
-                  We respect your privacy. Unsubscribe at any time.
+                  {t('faq.newsletter_privacy')}
                 </p>
               </div>
             </div>

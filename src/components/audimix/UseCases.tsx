@@ -1,35 +1,38 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Mic2, Music, Headphones } from 'lucide-react';
-
-const useCases = [
-  {
-    id: 'musicians',
-    title: 'Musicians',
-    icon: Mic2,
-    description: 'Perfect for singers and instrumentalists. Isolate the vocals from any track to practice your singing, or remove the guitar track to play along with your favorite band.',
-    image: 'https://images.unsplash.com/photo-1508973379184-7517410fb0bc?q=80&w=2000&auto=format&fit=crop',
-    color: 'text-purple-500'
-  },
-  {
-    id: 'djs',
-    title: 'DJs',
-    icon: Music,
-    description: 'Create unique mashups and remixes. Extract clean acapellas and instrumentals from mixed tracks to elevate your live sets and productions.',
-    image: 'https://images.unsplash.com/photo-1516873240891-4bf014598ab4?q=80&w=2000&auto=format&fit=crop',
-    color: 'text-blue-500'
-  },
-  {
-    id: 'producers',
-    title: 'Producers',
-    icon: Headphones,
-    description: 'Sample with precision. Isolate individual stems like drums, bass, or synths from stereo files to use in your own beats and compositions.',
-    image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=2000&auto=format&fit=crop',
-    color: 'text-pink-500'
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 export function UseCases() {
+  const { t } = useTranslation();
+
+  const useCases = [
+    {
+      id: 'musicians',
+      title: t('audimix.use_cases.musicians_title'),
+      icon: Mic2,
+      description: t('audimix.use_cases.musicians_desc'),
+      image: 'https://images.unsplash.com/photo-1508973379184-7517410fb0bc?q=80&w=2000&auto=format&fit=crop',
+      color: 'text-purple-500'
+    },
+    {
+      id: 'djs',
+      title: t('audimix.use_cases.djs_title'),
+      icon: Music,
+      description: t('audimix.use_cases.djs_desc'),
+      image: 'https://images.unsplash.com/photo-1516873240891-4bf014598ab4?q=80&w=2000&auto=format&fit=crop',
+      color: 'text-blue-500'
+    },
+    {
+      id: 'producers',
+      title: t('audimix.use_cases.producers_title'),
+      icon: Headphones,
+      description: t('audimix.use_cases.producers_desc'),
+      image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=2000&auto=format&fit=crop',
+      color: 'text-pink-500'
+    }
+  ];
+
   const [activeTab, setActiveTab] = useState(useCases[0].id);
 
   const activeUseCase = useCases.find(uc => uc.id === activeTab) || useCases[0];
@@ -39,10 +42,10 @@ export function UseCases() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-            Audio separation for <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">any use</span>
+            {t('audimix.use_cases.title_1')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">{t('audimix.use_cases.title_2')}</span>
           </h2>
           <p className="text-lg text-gray-500">
-            Whether you are practicing, performing, or producing, AuDimix provides the stems you need.
+            {t('audimix.use_cases.subtitle')}
           </p>
         </div>
 

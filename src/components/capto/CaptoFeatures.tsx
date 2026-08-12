@@ -1,82 +1,40 @@
 import { motion } from 'motion/react';
 import { Video, MonitorPlay, Film, Image as ImageIcon, Mic, Smartphone, Folder, Share2, MonitorSmartphone } from 'lucide-react';
-
-const features = [
-  {
-    title: 'Screen Recorder 333',
-    description: 'Capture your screen in all its high definition glory along with clear audio! By doing so at a smooth 60 FPS, you get sharp and clear recordings that look great on any device.',
-    icon: MonitorPlay,
-    image: '/capto/s1.png'
-  },
-  {
-    title: 'Video Recorder',
-    description: 'Make professional tutorial videos, amazing reaction videos, and informative how-to videos with the new video recording feature of Capto. You may also use external recording devices for added flexibility.',
-    icon: Video,
-    image: '/capto/s2.png'
-  },
-  {
-    title: 'Video Editor',
-    description: 'Make your screen recordings look professional. Capto\'s powerful video editing suite gives you all the tools necessary to perfect your screen recordings, post capture.',
-    icon: Film,
-    image: '/capto/s3.png'
-  },
-  {
-    title: 'Screen & Web Capture',
-    description: 'Capto\'s options allow for effortless capturing of screenshots in different ways. Capture fullscreen or just select parts as required. You can also save a whole webpage in one click!',
-    icon: MonitorSmartphone,
-    image: '/capto/s4.png'
-  },
-  {
-    title: 'Image Editor',
-    description: 'Expand and build upon captured screenshots with Capto\'s image editing features. Annotate, correct, or adjust the properties of the image and make them informative and easy to comprehend.',
-    icon: ImageIcon,
-    image: '/capto/s5.png'
-  },
-  {
-    title: 'Dual Audio Editor',
-    description: 'Capto allows you to individually edit the audio coming from your system and from the microphone, thus adding impact and perfection to the quality of output.',
-    icon: Mic,
-    image: '/capto/s6.png'
-  },
-  {
-    title: 'iOS Screen Recording',
-    description: 'Video record your iPhone or iPad\'s screen by connecting it to a Mac running Capto. Capture, add a voiceover and edit them to instantly create tutorials.',
-    icon: Smartphone,
-    image: '/capto/s7.png'
-  },
-  {
-    title: 'File Management',
-    description: 'Capto has the best file management structure for quick searches. Your screen captures and recordings are placed in easy-to-spot folders by default. You can also add custom files to place contents in folders of your choice.',
-    icon: Folder,
-    image: '/capto/s8.png'
-  },
-  {
-    title: 'Easy Sharing',
-    description: 'Upload or share screenshots and screen recordings to Facebook, Tumblr, Dropbox, Evernote, YouTube and more without leaving the app. If you have your own FTP/SFTP setup, upload them in a click!',
-    icon: Share2,
-    image: '/capto/s9.png'
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 export function CaptoFeatures() {
+  const { t } = useTranslation();
+
+  const features = [
+    { title: t('capto.features.f1_title'), description: t('capto.features.f1_desc'), icon: MonitorPlay, image: '/capto/s1.png' },
+    { title: t('capto.features.f2_title'), description: t('capto.features.f2_desc'), icon: Video, image: '/capto/s2.png' },
+    { title: t('capto.features.f3_title'), description: t('capto.features.f3_desc'), icon: Film, image: '/capto/s3.png' },
+    { title: t('capto.features.f4_title'), description: t('capto.features.f4_desc'), icon: MonitorSmartphone, image: '/capto/s4.png' },
+    { title: t('capto.features.f5_title'), description: t('capto.features.f5_desc'), icon: ImageIcon, image: '/capto/s5.png' },
+    { title: t('capto.features.f6_title'), description: t('capto.features.f6_desc'), icon: Mic, image: '/capto/s6.png' },
+    { title: t('capto.features.f7_title'), description: t('capto.features.f7_desc'), icon: Smartphone, image: '/capto/s7.png' },
+    { title: t('capto.features.f8_title'), description: t('capto.features.f8_desc'), icon: Folder, image: '/capto/s8.png' },
+    { title: t('capto.features.f9_title'), description: t('capto.features.f9_desc'), icon: Share2, image: '/capto/s9.png' }
+  ];
+
   return (
     <div className="w-full max-w-[1920px] mx-auto px-2 md:px-4 pb-12 pt-2 md:pt-4 bg-white">
       <section className="py-24 bg-[#616AD8] relative w-full rounded-3xl md:rounded-[2.5rem] shadow-2xl">
         <div className="container mx-auto px-6 max-w-[1536px]">
-        
+
         {/* Header & Badges */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-2xl md:text-[2rem] font-bold text-white leading-tight mb-8"
           >
-            Unlock <span className="text-white drop-shadow-sm">powerful features</span> for <br className="hidden md:block" />
-            seamless content creation across platforms.
+            {t('capto.features.title_1')} <span className="text-white drop-shadow-sm">{t('capto.features.title_2')}</span> {t('capto.features.title_3')} <br className="hidden md:block" />
+            {t('capto.features.title_4')}
           </motion.h2>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -110,17 +68,17 @@ export function CaptoFeatures() {
             >
               {/* Image Container with overlapping icon */}
               <div className="relative mb-8 rounded-[1rem] shadow-sm border border-gray-100 flex items-center justify-center bg-white aspect-[1.45] w-full">
-                 <img 
-                    src={feature.image} 
-                    alt={feature.title} 
-                    className="w-full h-full object-cover rounded-[1rem] transform transition-transform" 
+                 <img
+                    src={feature.image}
+                    alt={feature.title}
+                    className="w-full h-full object-cover rounded-[1rem] transform transition-transform"
                     style={{ WebkitFontSmoothing: 'antialiased' }}
                  />
                  <div className="absolute -bottom-5 left-4 w-12 h-12 bg-white rounded-[14px] flex items-center justify-center shadow-md border border-gray-100 text-[#6554ff] group-hover:scale-110 transition-transform z-20">
                    <feature.icon size={22} strokeWidth={2.5} />
                  </div>
               </div>
-              
+
               <h3 className="text-[20px] font-bold text-white mb-3 px-2 drop-shadow-sm">{feature.title}</h3>
               <p className="text-[15px] text-white/80 leading-relaxed px-2">
                 {feature.description}

@@ -1,46 +1,45 @@
 import { motion } from 'motion/react';
 import { Sparkles, SlidersHorizontal, Volume2, AppWindow } from 'lucide-react';
-
-const features = [
-  {
-    icon: Sparkles,
-    tag: 'Immersive Audio',
-    title: 'Magical 3D Surround Sound',
-    description:
-      "Feel movies, games and music come alive with a virtual surround sound effect that works on any headphones or speakers — no expensive gear required.",
-    image: 'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?q=80&w=1200&auto=format&fit=crop',
-    accent: 'from-indigo-500 to-purple-500',
-  },
-  {
-    icon: SlidersHorizontal,
-    tag: 'Fine Tuned',
-    title: '31-Band Precision Equalizer',
-    description:
-      'Shape every frequency exactly how you like it with studio-grade EQ presets, or build your own from scratch and save it for later.',
-    image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=1200&auto=format&fit=crop',
-    accent: 'from-fuchsia-500 to-pink-500',
-  },
-  {
-    icon: Volume2,
-    tag: 'Louder & Clearer',
-    title: 'Smart Volume Booster',
-    description:
-      'Push far past 100% without distortion. Boom intelligently amplifies your audio so quiet laptop speakers finally sound full.',
-    image: 'https://images.unsplash.com/photo-1545454675-3531b543be5d?q=80&w=1200&auto=format&fit=crop',
-    accent: 'from-cyan-500 to-blue-500',
-  },
-  {
-    icon: AppWindow,
-    tag: 'Total Control',
-    title: 'Per-App Audio Control',
-    description:
-      'Set independent volume and EQ profiles for every app — keep Spotify booming while Slack stays polite in the background.',
-    image: 'https://images.unsplash.com/photo-1614680376593-902f74cf0d41?q=80&w=1200&auto=format&fit=crop',
-    accent: 'from-amber-500 to-orange-500',
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 export function BoomFeatureShowcase() {
+  const { t } = useTranslation();
+
+  const features = [
+    {
+      icon: Sparkles,
+      tag: t('boom.showcase.f1_tag'),
+      title: t('boom.showcase.f1_title'),
+      description: t('boom.showcase.f1_desc'),
+      image: 'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?q=80&w=1200&auto=format&fit=crop',
+      accent: 'from-indigo-500 to-purple-500',
+    },
+    {
+      icon: SlidersHorizontal,
+      tag: t('boom.showcase.f2_tag'),
+      title: t('boom.showcase.f2_title'),
+      description: t('boom.showcase.f2_desc'),
+      image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=1200&auto=format&fit=crop',
+      accent: 'from-fuchsia-500 to-pink-500',
+    },
+    {
+      icon: Volume2,
+      tag: t('boom.showcase.f3_tag'),
+      title: t('boom.showcase.f3_title'),
+      description: t('boom.showcase.f3_desc'),
+      image: 'https://images.unsplash.com/photo-1545454675-3531b543be5d?q=80&w=1200&auto=format&fit=crop',
+      accent: 'from-cyan-500 to-blue-500',
+    },
+    {
+      icon: AppWindow,
+      tag: t('boom.showcase.f4_tag'),
+      title: t('boom.showcase.f4_title'),
+      description: t('boom.showcase.f4_desc'),
+      image: 'https://images.unsplash.com/photo-1614680376593-902f74cf0d41?q=80&w=1200&auto=format&fit=crop',
+      accent: 'from-amber-500 to-orange-500',
+    },
+  ];
+
   return (
     <section id="showcase" className="relative bg-white py-16 md:py-28 overflow-hidden">
       <div className="absolute top-[10%] left-0 w-[400px] h-[400px] bg-indigo-50 rounded-full blur-[120px] -translate-x-1/2 pointer-events-none" />
@@ -48,9 +47,9 @@ export function BoomFeatureShowcase() {
 
       <div className="max-w-[1200px] mx-auto px-4 relative z-10">
         <div className="text-center max-w-[700px] mx-auto mb-20">
-          <span className="text-xs font-bold tracking-[0.2em] text-indigo-500 uppercase">Why Boom</span>
+          <span className="text-xs font-bold tracking-[0.2em] text-indigo-500 uppercase">{t('boom.showcase.eyebrow')}</span>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mt-4">
-            Every feature, engineered to move you
+            {t('boom.showcase.title')}
           </h2>
         </div>
 

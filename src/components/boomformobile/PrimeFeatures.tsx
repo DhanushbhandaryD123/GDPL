@@ -2,56 +2,59 @@ import { useState, useCallback, useEffect } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { motion } from 'motion/react';
 import { Headphones, SlidersHorizontal, Settings2, Music2, Radio } from 'lucide-react';
-
-const features = [
-  {
-    id: '3d-surround',
-    title: '3D Surround Sound',
-    description: 'Experience mind-blowing 3D Surround Sound on ANY headphones. You\'ll feel like you\'re in the studio with the artist.',
-    icon: Headphones,
-    image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1000&auto=format&fit=crop',
-    color: 'text-pink-500',
-    bgLight: 'bg-pink-50'
-  },
-  {
-    id: 'equalizer',
-    title: 'Equalizer Presets',
-    description: 'Choose from 29 handcrafted EQ presets or create your own to make every song sound exactly how you want it.',
-    icon: SlidersHorizontal,
-    image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1000&auto=format&fit=crop',
-    color: 'text-purple-600',
-    bgLight: 'bg-purple-50'
-  },
-  {
-    id: 'intensity',
-    title: 'Audio Intensity Slider',
-    description: 'Control the intensity of the audio effects to perfectly match your listening environment and preferences.',
-    icon: Settings2,
-    image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=1000&auto=format&fit=crop',
-    color: 'text-blue-500',
-    bgLight: 'bg-blue-50'
-  },
-  {
-    id: 'tidal',
-    title: 'Stream Tidal with Boom',
-    description: 'Experience your favorite Tidal tracks in high-fidelity 3D Surround Sound directly within the Boom app.',
-    icon: Music2,
-    image: 'https://images.unsplash.com/photo-1516280440502-86105c2a13cc?q=80&w=1000&auto=format&fit=crop',
-    color: 'text-cyan-500',
-    bgLight: 'bg-cyan-50'
-  },
-  {
-    id: 'radio',
-    title: '20,000+ Radio & Podcasts',
-    description: 'Access thousands of internet radio stations and podcasts across 120 countries, all enhanced with Boom effects.',
-    icon: Radio,
-    image: 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?q=80&w=1000&auto=format&fit=crop',
-    color: 'text-green-500',
-    bgLight: 'bg-green-50'
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 export function PrimeFeatures() {
+  const { t } = useTranslation();
+
+  const features = [
+    {
+      id: '3d-surround',
+      title: t('boom_mobile.prime_features.f1_title'),
+      description: t('boom_mobile.prime_features.f1_desc'),
+      icon: Headphones,
+      image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1000&auto=format&fit=crop',
+      color: 'text-pink-500',
+      bgLight: 'bg-pink-50'
+    },
+    {
+      id: 'equalizer',
+      title: t('boom_mobile.prime_features.f2_title'),
+      description: t('boom_mobile.prime_features.f2_desc'),
+      icon: SlidersHorizontal,
+      image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1000&auto=format&fit=crop',
+      color: 'text-purple-600',
+      bgLight: 'bg-purple-50'
+    },
+    {
+      id: 'intensity',
+      title: t('boom_mobile.prime_features.f3_title'),
+      description: t('boom_mobile.prime_features.f3_desc'),
+      icon: Settings2,
+      image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=1000&auto=format&fit=crop',
+      color: 'text-blue-500',
+      bgLight: 'bg-blue-50'
+    },
+    {
+      id: 'tidal',
+      title: t('boom_mobile.prime_features.f4_title'),
+      description: t('boom_mobile.prime_features.f4_desc'),
+      icon: Music2,
+      image: 'https://images.unsplash.com/photo-1516280440502-86105c2a13cc?q=80&w=1000&auto=format&fit=crop',
+      color: 'text-cyan-500',
+      bgLight: 'bg-cyan-50'
+    },
+    {
+      id: 'radio',
+      title: t('boom_mobile.prime_features.f5_title'),
+      description: t('boom_mobile.prime_features.f5_desc'),
+      icon: Radio,
+      image: 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?q=80&w=1000&auto=format&fit=crop',
+      color: 'text-green-500',
+      bgLight: 'bg-green-50'
+    }
+  ];
+
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -79,16 +82,16 @@ export function PrimeFeatures() {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-extrabold mb-4 text-gray-900 tracking-tight"
           >
-            Prime <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600">Features</span>
+            {t('boom_mobile.prime_features.title_1')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600">{t('boom_mobile.prime_features.title_2')}</span>
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="text-gray-500 text-lg max-w-2xl mx-auto font-medium"
           >
-            Everything you need to elevate your listening experience.
+            {t('boom_mobile.prime_features.subtitle')}
           </motion.p>
         </div>
 

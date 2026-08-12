@@ -1,15 +1,17 @@
 import { motion } from 'motion/react';
 import { FileAudio, Share2, Check } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const waveformBars = [8, 14, 22, 16, 28, 20, 32, 24, 18, 26, 14, 20, 10, 24, 30, 18, 22, 14, 26, 16, 20, 12, 28, 18, 22, 10, 16, 24];
 
 function ExportPanelMockup() {
+  const { t } = useTranslation();
   return (
     <div className="w-full h-full rounded-xl bg-[#0d0a14] flex flex-col p-6">
       <div className="flex items-center justify-between mb-6">
-        <span className="text-[11px] text-white/50 font-medium">Export Stems</span>
+        <span className="text-[11px] text-white/50 font-medium">{t('audimix.features_overview.export_stems')}</span>
         <span className="text-[10px] font-semibold text-white bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full px-3 py-1">
-          Ready
+          {t('audimix.format_support.ready')}
         </span>
       </div>
 
@@ -38,13 +40,14 @@ function ExportPanelMockup() {
 
       <div className="mt-auto flex items-center gap-2 text-white/40 text-[10px]">
         <Check className="w-3.5 h-3.5 text-green-400" />
-        Lossless quality, ready to share
+        {t('audimix.format_support.lossless_note')}
       </div>
     </div>
   );
 }
 
 export function FormatSupport() {
+  const { t } = useTranslation();
   return (
     <section className="py-16 md:py-24 bg-gray-50 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
@@ -70,10 +73,10 @@ export function FormatSupport() {
             className="w-full lg:w-1/2 flex flex-col"
           >
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-              Export in <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500">High Quality</span>
+              {t('audimix.format_support.title_1')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500">{t('audimix.format_support.title_2')}</span>
             </h2>
             <p className="text-lg text-gray-500 mb-10 leading-relaxed max-w-lg">
-              Whether you need lossless audio for professional production or compressed files for easy sharing, AuDimix has you covered.
+              {t('audimix.format_support.subtitle')}
             </p>
 
             <div className="flex flex-col gap-6">
@@ -82,8 +85,8 @@ export function FormatSupport() {
                   <FileAudio size={24} />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">Universal Formats</h4>
-                  <p className="text-gray-500">Export your stems or mixed tracks in standard MP3 or high-fidelity lossless WAV formats.</p>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2">{t('audimix.format_support.universal_title')}</h4>
+                  <p className="text-gray-500">{t('audimix.format_support.universal_desc')}</p>
                 </div>
               </div>
 
@@ -92,8 +95,8 @@ export function FormatSupport() {
                   <Share2 size={24} />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">Easy Sharing</h4>
-                  <p className="text-gray-500">Instantly save your creations locally or share them directly from the export menu to your favorite platforms.</p>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2">{t('audimix.format_support.sharing_title')}</h4>
+                  <p className="text-gray-500">{t('audimix.format_support.sharing_desc')}</p>
                 </div>
               </div>
             </div>

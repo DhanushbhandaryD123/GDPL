@@ -1,29 +1,23 @@
 import { motion } from 'motion/react';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
-
-const testimonials = [
-  {
-    quote: "Camera Plus has completely changed the way I shoot. The advanced tools are incredibly intuitive and produce stunning results. Highly recommended!",
-    author: "Alex Morgan"
-  },
-  {
-    quote: "The macro mode and filters are professional and easy to use. Love how it integrates seamlessly with my Apple Watch for remote shots!",
-    author: "Sarah Lee"
-  },
-  {
-    quote: "Best camera app I've used. Superb quality, robust features, and the user interface is just beautiful. It's my daily driver now.",
-    author: "James Walker"
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 export function Testimonials() {
+  const { t } = useTranslation();
+
+  const testimonials = [
+    { quote: t('cameraplus.testimonials.t1'), author: "Alex Morgan" },
+    { quote: t('cameraplus.testimonials.t2'), author: "Sarah Lee" },
+    { quote: t('cameraplus.testimonials.t3'), author: "James Walker" }
+  ];
+
   return (
     <section className="py-20 md:py-32 bg-white relative">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-extrabold text-[#111827] tracking-tight">
-            Loved by Photographers
+            {t('cameraplus.testimonials.title')}
           </h2>
         </div>
 

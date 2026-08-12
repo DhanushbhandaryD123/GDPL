@@ -1,8 +1,10 @@
 import { motion } from 'motion/react';
 import { Send } from 'lucide-react';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export function Subscription() {
+  const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success'>('idle');
 
@@ -34,16 +36,16 @@ export function Subscription() {
           className="max-w-2xl mx-auto bg-white/90 backdrop-blur-xl border border-gray-100 rounded-3xl p-8 md:p-12 text-center shadow-2xl shadow-purple-100"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Be in the <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500">know</span>
+            {t('audimix.subscription.title_1')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500">{t('audimix.subscription.title_2')}</span>
           </h2>
           <p className="text-gray-500 mb-8 text-lg">
-            Subscribe to our newsletter to get the latest updates, tutorials, and exclusive offers for AuDimix.
+            {t('audimix.subscription.subtitle')}
           </p>
 
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <input
               type="email"
-              placeholder="Enter your email address"
+              placeholder={t('audimix.subscription.email_placeholder')}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="flex-1 bg-gray-50 border border-gray-200 rounded-full px-6 py-4 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all"
@@ -57,18 +59,18 @@ export function Subscription() {
               {status === 'loading' ? (
                 <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
               ) : status === 'success' ? (
-                <span>Subscribed!</span>
+                <span>{t('audimix.subscription.subscribed')}</span>
               ) : (
                 <>
-                  Subscribe
+                  {t('audimix.subscription.subscribe')}
                   <Send size={18} className="ml-1" />
                 </>
               )}
             </button>
           </form>
-          
+
           <p className="text-gray-400 text-sm mt-6">
-            By subscribing, you agree to our <a href="#" className="text-purple-500 hover:underline">Privacy Policy</a>. We never spam.
+            {t('audimix.subscription.privacy_note')} <a href="#" className="text-purple-500 hover:underline">{t('audimix.subscription.privacy_policy')}</a>{t('audimix.subscription.privacy_note_end')}
           </p>
         </motion.div>
       </div>

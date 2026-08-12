@@ -1,4 +1,7 @@
+import { useTranslation } from 'react-i18next';
+
 export function BusinessAbout() {
+  const { t } = useTranslation();
   return (
     <div className="w-full md:p-0 px-2 pt-1 pb-4">
       <section className="w-full bg-[#111111] md:bg-transparent rounded-3xl md:rounded-none overflow-hidden">
@@ -21,20 +24,20 @@ export function BusinessAbout() {
           <div className="relative z-10 w-full px-6 py-6 pb-8 md:absolute md:inset-0 md:px-12 flex flex-col justify-center md:flex-row md:items-center md:justify-end">
             <div className="w-full md:w-[60%] lg:w-1/2 text-white max-w-xl text-center md:text-left">
               <span className="inline-block text-red-500 font-bold uppercase tracking-widest text-[10px] md:text-sm mb-2 md:mb-4">
-                About Us
+                {t('business.about.badge')}
               </span>
 
               <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold leading-[1.2] mb-4 md:mb-6">
-                Technology That Inspires.<br />
-                <span className="text-red-500">Solutions That Deliver.</span>
+                {t('business.about.title_1')}<br />
+                <span className="text-red-500">{t('business.about.title_2')}</span>
               </h2>
 
               <p className="text-sm md:text-lg text-white/90 leading-relaxed mb-4 md:mb-6 drop-shadow-sm">
-                Global Delight has the depth & scale of experience to build outstanding digital products with leading edge solutions for your audio, photo and video needs. Find the solutions you need to create engaging products, content & entertainment experiences.
+                {t('business.about.p1')}
               </p>
 
               <p className="text-sm md:text-lg text-white/90 leading-relaxed drop-shadow-sm">
-                You may also <a href="mailto:licensing@globaldelight.com" className="text-red-500 font-semibold hover:underline hover:text-red-400 transition-colors">write to us</a> to discuss licensing opportunities.
+                {t('business.about.p2_prefix')} <a href="mailto:licensing@globaldelight.com" className="text-red-500 font-semibold hover:underline hover:text-red-400 transition-colors">{t('business.about.p2_link')}</a> {t('business.about.p2_suffix')}
               </p>
             </div>
           </div>

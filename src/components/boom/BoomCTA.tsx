@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Download } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const AppleIcon = ({ className }: { className?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" className={className} fill="currentColor">
@@ -14,6 +15,7 @@ const WindowsIcon = ({ className }: { className?: string }) => (
 );
 
 export function BoomCTA() {
+  const { t } = useTranslation();
   return (
     <section className="relative bg-white pb-16 md:pb-32">
       <div className="max-w-[1200px] mx-auto px-4">
@@ -23,10 +25,10 @@ export function BoomCTA() {
 
           <div className="relative z-10 max-w-[700px] mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight mb-6">
-              Ready to feel your music?
+              {t('boom.cta.title')}
             </h2>
             <p className="text-lg md:text-xl text-white/85 font-medium leading-relaxed mb-10">
-              Boom is free to try on every platform. Pick your device and start listening differently today.
+              {t('boom.cta.subtitle')}
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4">
@@ -35,21 +37,21 @@ export function BoomCTA() {
                 className="inline-flex w-full sm:w-auto justify-center items-center gap-2 bg-white text-gray-900 font-bold px-6 py-3.5 rounded-full text-[15px] hover:bg-gray-100 transition-colors shadow-lg"
               >
                 <AppleIcon className="w-[18px] h-[18px]" />
-                macOS
+                {t('boom.cta.macos')}
               </Link>
               <Link
                 to="/boom3D"
                 className="inline-flex w-full sm:w-auto justify-center items-center gap-2 bg-white/10 border border-white/25 text-white font-bold px-6 py-3.5 rounded-full text-[15px] hover:bg-white/20 transition-colors backdrop-blur-md"
               >
                 <WindowsIcon className="w-4 h-4" />
-                Windows
+                {t('boom.cta.windows')}
               </Link>
               <Link
                 to="/boomformobile"
                 className="inline-flex w-full sm:w-auto justify-center items-center gap-2 bg-white/10 border border-white/25 text-white font-bold px-6 py-3.5 rounded-full text-[15px] hover:bg-white/20 transition-colors backdrop-blur-md"
               >
                 <Download size={16} />
-                iOS &amp; Android
+                {t('boom.cta.ios_android')}
               </Link>
             </div>
           </div>

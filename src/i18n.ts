@@ -10,6 +10,14 @@ import pt from './locales/pt.json';
 import es from './locales/es.json';
 import zh from './locales/zh.json';
 
+const supportedLangs = ['en', 'de', 'it', 'ja', 'fr', 'pt', 'es', 'zh'];
+
+function detectInitialLanguage(): string {
+  if (typeof window === 'undefined') return 'en';
+  const firstSegment = window.location.pathname.split('/')[1];
+  return supportedLangs.includes(firstSegment) ? firstSegment : 'en';
+}
+
 i18n
   .use(initReactI18next)
   .init({
@@ -23,7 +31,7 @@ i18n
       es: { translation: es },
       zh: { translation: zh }
     },
-    lng: 'en',
+    lng: detectInitialLanguage(),
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false

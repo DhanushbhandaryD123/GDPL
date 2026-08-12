@@ -1,7 +1,9 @@
 import { motion } from 'motion/react';
 import { Smartphone, Tablet, Wifi, Bluetooth } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export function AirSnapFeature() {
+  const { t } = useTranslation();
   return (
     <section className="py-20 md:py-32 bg-white overflow-hidden relative">
       {/* Decorative Background */}
@@ -58,7 +60,7 @@ export function AirSnapFeature() {
                   {/* Radar pulse effect */}
                   <div className="absolute inset-0 rounded-full border border-white/40 animate-ping" />
                 </motion.div>
-                <p className="text-white text-[8px] sm:text-xs font-bold tracking-[0.2em] uppercase text-center">Remote Viewfinder</p>
+                <p className="text-white text-[8px] sm:text-xs font-bold tracking-[0.2em] uppercase text-center">{t('cameraplus.airsnap.remote_viewfinder')}</p>
                 <div className="mt-4 sm:mt-12 flex gap-4 sm:gap-6 text-white/40">
                   <Wifi size={16} className="sm:w-8 sm:h-8" />
                   <Bluetooth size={16} className="sm:w-8 sm:h-8" />
@@ -98,15 +100,15 @@ export function AirSnapFeature() {
               
               
               <h2 className="text-4xl md:text-5xl lg:text-[56px] font-extrabold text-[#111827] mb-4 md:mb-6 tracking-tight leading-[1.1]">
-                Introducing <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">AirSnap</span>
+                {t('cameraplus.airsnap.title_1')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">{t('cameraplus.airsnap.title_2')}</span>
               </h2>
-              
+
               <h3 className="text-xl md:text-2xl font-bold text-gray-700 mb-6">
-                Remote photography made magical.
+                {t('cameraplus.airsnap.subtitle')}
               </h3>
-              
+
               <p className="text-base md:text-lg text-gray-500 mb-10 leading-relaxed max-w-lg">
-                Want to be in the group photo without setting a timer and running? AirSnap allows you to connect two iOS devices via Wi-Fi or Bluetooth. Use one device to remotely trigger the camera on the other!
+                {t('cameraplus.airsnap.description')}
               </p>
 
               <div className="flex flex-col gap-8">
@@ -115,18 +117,18 @@ export function AirSnapFeature() {
                     <Tablet size={24} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900 text-lg mb-1">Use iPad as a Remote Viewfinder</h4>
-                    <p className="text-gray-500 text-sm leading-relaxed max-w-sm">See exactly what the iPhone camera sees on your iPad's large screen before taking the perfect shot.</p>
+                    <h4 className="font-bold text-gray-900 text-lg mb-1">{t('cameraplus.airsnap.f1_title')}</h4>
+                    <p className="text-gray-500 text-sm leading-relaxed max-w-sm">{t('cameraplus.airsnap.f1_desc')}</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start gap-5 group">
                   <div className="w-14 h-14 rounded-2xl bg-white border border-gray-100 shadow-sm text-indigo-600 flex items-center justify-center flex-shrink-0 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300">
                     <Smartphone size={24} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900 text-lg mb-1">Instant Syncing</h4>
-                    <p className="text-gray-500 text-sm leading-relaxed max-w-sm">Captured photos are instantly saved to both the capturing device and the remote device seamlessly.</p>
+                    <h4 className="font-bold text-gray-900 text-lg mb-1">{t('cameraplus.airsnap.f2_title')}</h4>
+                    <p className="text-gray-500 text-sm leading-relaxed max-w-sm">{t('cameraplus.airsnap.f2_desc')}</p>
                   </div>
                 </div>
               </div>

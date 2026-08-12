@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { Award, Star } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export function HonorsReviews() {
+  const { t } = useTranslation();
   const [isStarClicked, setIsStarClicked] = useState(false);
   const [isTrophyClicked, setIsTrophyClicked] = useState(false);
 
@@ -49,7 +51,7 @@ export function HonorsReviews() {
               style={{ stroke: isTrophyClicked ? undefined : 'url(#blackGrad)' }}
               onClick={() => setIsTrophyClicked(!isTrophyClicked)}
             />
-            <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-br from-gray-900 via-gray-700 to-black bg-clip-text text-transparent">Honors</h3>
+            <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-br from-gray-900 via-gray-700 to-black bg-clip-text text-transparent">{t('home.honors_reviews.honors')}</h3>
           </div>
           <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20">
             {honorLogos.map((logo, index) => (
@@ -77,7 +79,7 @@ export function HonorsReviews() {
               style={{ stroke: isStarClicked ? 'currentColor' : 'url(#blackGrad)' }}
               onClick={() => setIsStarClicked(!isStarClicked)}
             />
-            <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-br from-gray-900 via-gray-700 to-black bg-clip-text text-transparent">Reviews</h3>
+            <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-br from-gray-900 via-gray-700 to-black bg-clip-text text-transparent">{t('home.honors_reviews.reviews')}</h3>
           </div>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
             {reviewLogos.map((logo, index) => (
