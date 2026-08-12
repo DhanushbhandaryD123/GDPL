@@ -28,10 +28,9 @@ export function Navbar({ logoUrl }: NavbarProps) {
   
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const navigate = useNavigate();
   const location = useLocation();
 
-  const handleLanguageSwitch = (langCode: string) => {
+  const getLanguagePath = (langCode: string) => {
     const supportedLangs = ['en', 'de', 'it', 'ja', 'fr', 'pt', 'es', 'zh'];
     let currentPath = location.pathname;
     const pathParts = currentPath.split('/').filter(Boolean);
@@ -41,10 +40,7 @@ export function Navbar({ logoUrl }: NavbarProps) {
       currentPath = '/' + pathParts.join('/');
     }
 
-    const newPath = langCode === 'en' ? currentPath : `/${langCode}${currentPath === '/' ? '' : currentPath}`;
-    
-    navigate(newPath);
-    setIsLanguageOpen(false);
+    return langCode === 'en' ? currentPath : `/${langCode}${currentPath === '/' ? '' : currentPath}`;
   };
 
   useEffect(() => {
@@ -202,16 +198,17 @@ export function Navbar({ logoUrl }: NavbarProps) {
                   {languages.map((lang) => {
                     const isSelected = i18n.language?.startsWith(lang.code);
                     return (
-                      <button
+                      <Link
                         key={lang.code}
-                        onClick={() => handleLanguageSwitch(lang.code)}
+                        to={getLanguagePath(lang.code)}
+                        onClick={() => setIsLanguageOpen(false)}
                         className={`flex items-center gap-3 text-left py-3 border-b border-gray-100 hover:bg-gray-50 transition-colors w-full px-2 rounded-sm ${
                           isSelected ? 'font-bold text-[#003366]' : 'text-gray-700'
                         }`}
                       >
                         <img src={lang.flagUrl} alt={lang.name} className="w-[22px] h-[16px] object-cover rounded-[2px] shadow-sm" />
                         <span className="text-[15px]">{lang.name}</span>
-                      </button>
+                      </Link>
                     );
                   })}
                 </div>
@@ -239,16 +236,17 @@ export function Navbar({ logoUrl }: NavbarProps) {
                   {languages.map((lang) => {
                     const isSelected = i18n.language?.startsWith(lang.code);
                     return (
-                      <button
+                      <Link
                         key={lang.code}
-                        onClick={() => handleLanguageSwitch(lang.code)}
+                        to={getLanguagePath(lang.code)}
+                        onClick={() => setIsLanguageOpen(false)}
                         className={`flex items-center gap-2 text-left py-3 border-b border-gray-100 hover:bg-gray-50 transition-colors w-full px-2 rounded-sm ${
                           isSelected ? 'font-bold text-[#003366]' : 'text-gray-700'
                         }`}
                       >
                         <img src={lang.flagUrl} alt={lang.name} className="w-[20px] h-[14px] object-cover rounded-[2px] shadow-sm" />
                         <span className="text-[14px]">{lang.name}</span>
-                      </button>
+                      </Link>
                     );
                   })}
                 </div>

@@ -10,7 +10,7 @@ const sitemapPath = path.resolve(__dirname, '../public/sitemap.xml');
 
 // Read package.json
 const pkg = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
-const routes = pkg.reactSnap?.include || [];
+const routes = (pkg.reactSnap?.include || []).filter(route => route !== '/404');
 let DOMAIN = 'http://localhost:5173';
 try {
   const envContent = fs.readFileSync(path.resolve(__dirname, '../.env'), 'utf8');
