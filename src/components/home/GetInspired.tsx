@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { useTranslation } from 'react-i18next';
 
 const inspiredPeople = [
   {
@@ -40,6 +41,7 @@ const inspiredPeople = [
 ];
 
 export function GetInspired() {
+  const { t } = useTranslation();
   return (
     <section className="w-full bg-white py-8 lg:py-12 px-3 md:px-6 flex flex-col items-center font-sans">
       {/* Boxed blue container */}
@@ -53,19 +55,18 @@ export function GetInspired() {
             viewport={{ once: true }}
             className="text-4xl lg:text-[48px] text-gray-900 mb-6 tracking-tight"
           >
-            <span className="font-normal">Get</span> <span className="text-[#cc0000] font-bold">Inspired</span>
+            <span className="font-normal">{t('home.get_inspired.get')}</span> <span className="text-[#cc0000] font-bold">{t('home.get_inspired.inspired')}</span>
           </motion.h2>
 
           {/* Subtitle */}
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="text-[15px] lg:text-[17px] text-gray-800 max-w-[600px] leading-relaxed mb-10 lg:mb-16 px-2"
           >
-            Extraordinary individuals; unexpected stories. Meet the people around the
-            world using Global Delight Apps to elevate everyday life.
+            {t('home.get_inspired.subtitle')}
           </motion.p>
 
           {/* Cards Layout */}

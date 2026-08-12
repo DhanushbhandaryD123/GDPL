@@ -2,35 +2,18 @@ import { useCallback, useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion } from 'motion/react';
-
-const testimonials = [
-  {
-    name: 'Sarah J.',
-    role: 'Music Lover',
-    text: 'This app is incredible. The 3D surround sound actually makes my cheap earbuds sound like premium studio headphones. I can never go back to listening to music without Boom.',
-    rating: 5
-  },
-  {
-    name: 'David M.',
-    role: 'Audio Enthusiast',
-    text: 'The equalizer presets are perfectly tuned. Being able to connect my Spotify and Tidal accounts directly makes this my go-to music player on iOS.',
-    rating: 5
-  },
-  {
-    name: 'Alex T.',
-    role: 'Podcast Listener',
-    text: 'I listen to podcasts on my commute, and the vocal clarity enhancement in Boom makes it so much easier to hear every word over the train noise.',
-    rating: 5
-  },
-  {
-    name: 'Emily R.',
-    role: 'Fitness Coach',
-    text: 'The bass boost feature gives my workout playlists that extra punch I need. Absolutely love the sleek interface too.',
-    rating: 5
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 export function UserTestimonials() {
+  const { t } = useTranslation();
+
+  const testimonials = [
+    { name: 'Sarah J.', role: t('boom_mobile.user_testimonials.u1_role'), text: t('boom_mobile.user_testimonials.u1_text'), rating: 5 },
+    { name: 'David M.', role: t('boom_mobile.user_testimonials.u2_role'), text: t('boom_mobile.user_testimonials.u2_text'), rating: 5 },
+    { name: 'Alex T.', role: t('boom_mobile.user_testimonials.u3_role'), text: t('boom_mobile.user_testimonials.u3_text'), rating: 5 },
+    { name: 'Emily R.', role: t('boom_mobile.user_testimonials.u4_role'), text: t('boom_mobile.user_testimonials.u4_text'), rating: 5 }
+  ];
+
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'center', slidesToScroll: 1 });
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(true);
@@ -65,16 +48,16 @@ export function UserTestimonials() {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight"
           >
-            Our Users <span className="text-pink-500">❤️</span> Us
+            {t('boom_mobile.user_testimonials.title_1')} <span className="text-pink-500">❤️</span> {t('boom_mobile.user_testimonials.title_2')}
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="text-gray-500 text-lg md:text-xl font-medium"
           >
-            Don't just take our word for it.
+            {t('boom_mobile.user_testimonials.subtitle')}
           </motion.p>
         </div>
 

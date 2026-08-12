@@ -3,48 +3,31 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Users } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { useState, useCallback, useEffect } from 'react';
-
-const leaders = [
-  {
-    name: 'Rohith Bhat',
-    role: 'Founder',
-    image: '/team/R_B.png',
-    description: "'Dream big, achieve big' is Rohith Bhat's mantra. He founded Global Delight and is responsible for where it is today. Fond of movies, emerging technologies and gadgets, Rohith also loves traveling and exploring new places.",
-  },
-  {
-    name: 'M. Ramachandra Acharya',
-    role: 'CEO',
-    image: '/team/MRA-1.png',
-    description: 'An ex-professor, patent holder in browser technologies, violin maestro, and a coder at heart - Ram Acharya is all this and more. As the Chief Technological Officer, he provides immense technical direction and guidance.',
-  },
-  {
-    name: 'Purushotham Bhat',
-    role: 'Director',
-    image: '/team/PRB.png',
-    description: 'An experienced industry veteran with exposure to diverse fields of Engineering, manufacturing, software development and administration. An engineering graduate from KREC Surathkal.',
-  },
-  {
-    name: 'Pradeep Kumar Udupi',
-    role: 'Senior Vice President - Engineering',
-    image: '/team/Pradeep_Udupi_200X200.png',
-    description: 'Astronomy, Physics, Philosophy, Ontology and Technology are just some of the passions of this cerebral engineer. A graduate in engineering, He has extensive experience in Apple technology with nearly 20 years on the Mac and 10+ years of iOS. He has worked on one of the biggest open source project, the Netscape Navigator. He brings this extensive experience to the team along with some hands-on stealth to the engineering of our products.',
-  }
-];
-
-const teamMembers = [
-  { name: 'Bifin Manohara', role: 'Systems Engineer', image: '/team/Bifin_Manohara.png', quote: 'Growing future\nleaders' },
-  { name: 'Deepa Pai', role: 'Principal Architect', image: '/team/deepa.png', quote: 'Reigniting\nthe passion' },
-  { name: 'Kishan V Murthi', role: 'Junior Executive -\nAdministration', image: '/team/kishan.png', quote: 'Improving\nthe culture' },
-  { name: 'Madhusudan N V', role: 'UI Designer', image: '/team/madhusudan.png', quote: 'Bridging the divide' },
-  { name: 'Pradeep R', role: 'Senior Test Lead', image: '/team/pradeep_r.png' },
-  { name: 'Prathap Poojary', role: 'Web Developer', image: '/team/prathap.png' },
-  { name: 'Prashantha Ballal', role: 'Accounts Executive', image: '/team/prashantha.png' },
-  { name: 'Shikshan Chandrashekar', role: 'Software Engineer', image: '/team/shikshan.png' },
-  { name: 'Vipin Kumar Mishra', role: 'Marketing Manager', image: '/team/vipin.png' },
-  { name: 'Vignesh Shenoy', role: 'Senior Accounts Executive', image: '/team/vignesh.png' },
-];
+import { useTranslation } from 'react-i18next';
 
 export function MeetOurTeam() {
+  const { t } = useTranslation();
+
+  const leaders = [
+    { name: 'Rohith Bhat', role: t('about.team.leader1_role'), image: '/team/R_B.png', description: t('about.team.leader1_desc') },
+    { name: 'M. Ramachandra Acharya', role: t('about.team.leader2_role'), image: '/team/MRA-1.png', description: t('about.team.leader2_desc') },
+    { name: 'Purushotham Bhat', role: t('about.team.leader3_role'), image: '/team/PRB.png', description: t('about.team.leader3_desc') },
+    { name: 'Pradeep Kumar Udupi', role: t('about.team.leader4_role'), image: '/team/Pradeep_Udupi_200X200.png', description: t('about.team.leader4_desc') }
+  ];
+
+  const teamMembers = [
+    { name: 'Bifin Manohara', role: t('about.team.m1_role'), image: '/team/Bifin_Manohara.png', quote: t('about.team.m1_quote') },
+    { name: 'Deepa Pai', role: t('about.team.m2_role'), image: '/team/deepa.png', quote: t('about.team.m2_quote') },
+    { name: 'Kishan V Murthi', role: t('about.team.m3_role'), image: '/team/kishan.png', quote: t('about.team.m3_quote') },
+    { name: 'Madhusudan N V', role: t('about.team.m4_role'), image: '/team/madhusudan.png', quote: t('about.team.m4_quote') },
+    { name: 'Pradeep R', role: t('about.team.m5_role'), image: '/team/pradeep_r.png' },
+    { name: 'Prathap Poojary', role: t('about.team.m6_role'), image: '/team/prathap.png' },
+    { name: 'Prashantha Ballal', role: t('about.team.m7_role'), image: '/team/prashantha.png' },
+    { name: 'Shikshan Chandrashekar', role: t('about.team.m8_role'), image: '/team/shikshan.png' },
+    { name: 'Vipin Kumar Mishra', role: t('about.team.m9_role'), image: '/team/vipin.png' },
+    { name: 'Vignesh Shenoy', role: t('about.team.m10_role'), image: '/team/vignesh.png' },
+  ];
+
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'center', containScroll: false });
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -71,13 +54,13 @@ export function MeetOurTeam() {
           className="text-center mb-16"
         >
           <span className="text-sm font-bold tracking-[0.1em] text-blue-500 uppercase mb-4 block">
-            Meet Our Team
+            {t('about.team.badge')}
           </span>
           <h2 className="text-4xl md:text-[44px] font-bold text-[#0f172a] leading-tight mb-4">
-            The people behind our success
+            {t('about.team.title')}
           </h2>
           <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-            A passionate team of innovators, creators, and problem solvers working together to create delight and deliver impact.
+            {t('about.team.subtitle')}
           </p>
         </motion.div>
 
@@ -170,9 +153,9 @@ export function MeetOurTeam() {
                 <div className="w-16 h-16 rounded-full mb-4 bg-blue-100 flex items-center justify-center text-blue-500">
                   <Users className="w-8 h-8" />
                 </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-2 leading-tight">This could be you!</h4>
+                <h4 className="text-xl font-bold text-gray-900 mb-2 leading-tight">{t('about.team.could_be_you')}</h4>
                 <Link to="/careers" className="text-blue-500 text-sm font-medium flex items-center gap-1 hover:text-blue-700 transition-colors">
-                  Join us <ArrowRight className="w-4 h-4" />
+                  {t('about.team.join_us')} <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>
@@ -187,7 +170,7 @@ export function MeetOurTeam() {
           transition={{ delay: 0.5 }}
         >
           <Link to="/careers" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-blue-100 text-blue-600 font-semibold hover:bg-blue-50 transition-colors duration-300">
-            View All Careers <ArrowRight className="w-4 h-4" />
+            {t('about.team.view_all')} <ArrowRight className="w-4 h-4" />
           </Link>
         </motion.div>
 

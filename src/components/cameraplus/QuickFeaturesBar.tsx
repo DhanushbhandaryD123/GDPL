@@ -1,33 +1,15 @@
 import { motion } from 'motion/react';
 import { Camera, Wand2, SlidersHorizontal, Image, Monitor } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export function QuickFeaturesBar() {
+  const { t } = useTranslation();
   const features = [
-    {
-      icon: <Camera className="w-5 h-5 sm:w-6 sm:h-6 text-[#00B4B4]" strokeWidth={2} />,
-      title: "Professional\nTools",
-      description: "All-in-one editing"
-    },
-    {
-      icon: <Wand2 className="w-5 h-5 sm:w-6 sm:h-6 text-[#00B4B4]" strokeWidth={2} />,
-      title: "Stunning\nFilters",
-      description: "Unique for every mood"
-    },
-    {
-      icon: <SlidersHorizontal className="w-5 h-5 sm:w-6 sm:h-6 text-[#00B4B4]" strokeWidth={2} />,
-      title: "Advanced\nControls",
-      description: "Manual settings"
-    },
-    {
-      icon: <Image className="w-5 h-5 sm:w-6 sm:h-6 text-[#00B4B4]" strokeWidth={2} />,
-      title: "RAW\nSupport",
-      description: "High quality photos"
-    },
-    {
-      icon: <Monitor className="w-5 h-5 sm:w-6 sm:h-6 text-[#00B4B4]" strokeWidth={2} />,
-      title: "Ultra HD\nQuality",
-      description: "Capture every detail"
-    }
+    { icon: <Camera className="w-5 h-5 sm:w-6 sm:h-6 text-[#00B4B4]" strokeWidth={2} />, title: t('cameraplus.quick_features.f1_title'), description: t('cameraplus.quick_features.f1_desc') },
+    { icon: <Wand2 className="w-5 h-5 sm:w-6 sm:h-6 text-[#00B4B4]" strokeWidth={2} />, title: t('cameraplus.quick_features.f2_title'), description: t('cameraplus.quick_features.f2_desc') },
+    { icon: <SlidersHorizontal className="w-5 h-5 sm:w-6 sm:h-6 text-[#00B4B4]" strokeWidth={2} />, title: t('cameraplus.quick_features.f3_title'), description: t('cameraplus.quick_features.f3_desc') },
+    { icon: <Image className="w-5 h-5 sm:w-6 sm:h-6 text-[#00B4B4]" strokeWidth={2} />, title: t('cameraplus.quick_features.f4_title'), description: t('cameraplus.quick_features.f4_desc') },
+    { icon: <Monitor className="w-5 h-5 sm:w-6 sm:h-6 text-[#00B4B4]" strokeWidth={2} />, title: t('cameraplus.quick_features.f5_title'), description: t('cameraplus.quick_features.f5_desc') }
   ];
 
   return (

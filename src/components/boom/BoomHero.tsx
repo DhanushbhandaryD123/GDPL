@@ -1,8 +1,10 @@
 import { useRef, useState } from 'react';
 import { motion, useMotionValue, useSpring } from 'motion/react';
 import { ArrowRight, Play, Pause, ChevronDown } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export function BoomHero() {
+  const { t } = useTranslation();
   const cardRef = useRef<HTMLDivElement>(null);
   const rotateX = useMotionValue(0);
   const rotateY = useMotionValue(0);
@@ -68,9 +70,9 @@ export function BoomHero() {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="text-base sm:text-xl md:text-7xl lg:text-[5.25rem] leading-[0.98] font-bold tracking-tighter text-white"
             >
-              <span className="block font-light text-white/60">Don't just listen.</span>
+              <span className="block font-light text-white/60">{t('boom.hero.eyebrow')}</span>
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-rose-300 to-fuchsia-400">
-                Feel your music.
+                {t('boom.hero.headline')}
               </span>
             </motion.h1>
 
@@ -80,7 +82,7 @@ export function BoomHero() {
               transition={{ duration: 0.7, delay: 0.25 }}
               className="text-xs sm:text-sm md:text-xl text-white/65 max-w-[520px] leading-relaxed font-medium mt-7"
             >
-              A system-wide equalizer, volume booster and 3D surround sound engine — crafted for Mac, Windows, iPhone and Android.
+              {t('boom.hero.subtitle')}
             </motion.p>
 
             <motion.div
@@ -95,7 +97,7 @@ export function BoomHero() {
                 href="#platforms"
                 className="group inline-flex w-full sm:w-auto justify-center items-center gap-2.5 bg-white text-black font-bold px-4 py-1.5 md:pl-7 md:pr-6 md:py-3.5 rounded-full text-[10px] sm:text-xs md:text-[15px] shadow-[0_10px_40px_rgba(255,255,255,0.2)]"
               >
-                Get Boom Free
+                {t('boom.hero.cta_primary')}
                 <ArrowRight size={17} strokeWidth={2.5} className="group-hover:translate-x-0.5 transition-transform" />
               </motion.a>
               <motion.a
@@ -105,7 +107,7 @@ export function BoomHero() {
                 className="inline-flex w-full sm:w-auto justify-center items-center gap-2.5 border border-white/20 text-white font-semibold px-4 py-1.5 md:px-7 md:py-3.5 rounded-full text-[10px] sm:text-xs md:text-[15px] hover:bg-white/[0.06] transition-colors backdrop-blur-sm"
               >
                 <Play size={14} fill="currentColor" />
-                Watch it work
+                {t('boom.hero.cta_secondary')}
               </motion.a>
             </motion.div>
 
@@ -117,7 +119,7 @@ export function BoomHero() {
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
           >
-            
+
 
             {/* Main tilting glass player card */}
             <motion.div
@@ -137,8 +139,8 @@ export function BoomHero() {
                   />
                 </div>
                 <div className="min-w-0">
-                  <div className="text-white font-bold text-[15px] md:text-base truncate">Midnight Frequencies</div>
-                  <div className="text-white/50 text-[13px] font-medium truncate">Boom Radio &middot; 3D Mix</div>
+                  <div className="text-white font-bold text-[15px] md:text-base truncate">{t('boom.hero.now_playing_title')}</div>
+                  <div className="text-white/50 text-[13px] font-medium truncate">{t('boom.hero.now_playing_subtitle')}</div>
                 </div>
               </div>
 
@@ -188,7 +190,7 @@ export function BoomHero() {
           transition={{ delay: 1 }}
           className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-white/40"
         >
-          <span className="text-[10px] font-semibold tracking-[0.2em] uppercase">Scroll</span>
+          <span className="text-[10px] font-semibold tracking-[0.2em] uppercase">{t('boom.hero.scroll')}</span>
           <motion.span animate={{ y: [0, 6, 0] }} transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}>
             <ChevronDown size={16} />
           </motion.span>

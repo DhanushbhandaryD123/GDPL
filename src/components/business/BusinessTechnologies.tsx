@@ -1,43 +1,18 @@
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-
-const technologies = [
-  {
-    id: 'audio',
-    title: 'Audio Technology',
-    description: '3D Virtual Surround, System-Wide Volume Boosting Sound Technology',
-    bgImage: '/business/Audio_Technology.png',
-    icon: '/business/Boom_normal.png',
-    path: '/technology/audio'
-  },
-  {
-    id: 'video',
-    title: 'Video Technology',
-    description: 'Mobile Video Technology that offers Real-time FX at high FPS Recording',
-    bgImage: '/business/Video_Technology.png',
-    icon: '/business/Vizmato_normal.png',
-    path: '/technology/video'
-  },
-  {
-    id: 'photo',
-    title: 'Camera Technology',
-    description: 'Mobile Photography reimagined with Pro capture tools and Secure Access Control',
-    bgImage: '/business/Camera_Technology.png',
-    icon: '/business/CameraTechnology_Normal.png',
-    path: '/technology/camera'
-  },
-  {
-    id: 'screen',
-    title: 'Screen Capture Technology',
-    description: 'Full suite of Screen Capture, Recording & Editing tools',
-    bgImage: '/business/Screen_Capture_Technology.png',
-    icon: '/business/ScreenCapture_Normal.png',
-    path: '/technology/screen-capture'
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 export function BusinessTechnologies() {
+  const { t } = useTranslation();
+
+  const technologies = [
+    { id: 'audio', title: t('business.technologies.audio_title'), description: t('business.technologies.audio_desc'), bgImage: '/business/Audio_Technology.png', icon: '/business/Boom_normal.png', path: '/technology/audio' },
+    { id: 'video', title: t('business.technologies.video_title'), description: t('business.technologies.video_desc'), bgImage: '/business/Video_Technology.png', icon: '/business/Vizmato_normal.png', path: '/technology/video' },
+    { id: 'photo', title: t('business.technologies.photo_title'), description: t('business.technologies.photo_desc'), bgImage: '/business/Camera_Technology.png', icon: '/business/CameraTechnology_Normal.png', path: '/technology/camera' },
+    { id: 'screen', title: t('business.technologies.screen_title'), description: t('business.technologies.screen_desc'), bgImage: '/business/Screen_Capture_Technology.png', icon: '/business/ScreenCapture_Normal.png', path: '/technology/screen-capture' }
+  ];
+
   return (
     <section className="w-full py-16 bg-[#fafbfc] overflow-hidden">
       <div className="container mx-auto px-6 lg:px-12">
@@ -45,7 +20,7 @@ export function BusinessTechnologies() {
         {/* Header */}
         <div className="text-center max-w-4xl mx-auto mb-12 flex flex-col items-center">
           <h2 className="text-2xl md:text-3xl font-medium text-[#475569]">
-            Technologies We Offer
+            {t('business.technologies.title')}
           </h2>
         </div>
 
@@ -89,7 +64,7 @@ export function BusinessTechnologies() {
                 </p>
                 
                 <div className="flex items-center text-red-500 font-semibold text-sm transition-colors relative z-10">
-                  Explore More <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  {t('business.technologies.explore_more')} <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
             </motion.div>

@@ -1,28 +1,6 @@
 import { motion } from 'motion/react';
 import { MicOff, Music4, AudioWaveform, Clock, Play, Drum, Mic, Piano, Music2, Guitar } from 'lucide-react';
-
-const features = [
-  {
-    title: 'Create Your Own Mix',
-    description: 'Adjust the volume of individual stems like drums, bass, and vocals to create a custom mix of any song.',
-    icon: AudioWaveform,
-  },
-  {
-    title: 'Vocal Remover',
-    description: 'Instantly strip away vocals to create high-quality instrumental backing tracks for karaoke or practice.',
-    icon: MicOff,
-  },
-  {
-    title: 'Change your Pitch',
-    description: 'Shift the key of the song up or down without affecting the tempo to match your vocal range perfectly.',
-    icon: Music4,
-  },
-  {
-    title: 'Adjust your Tempo',
-    description: 'Speed up or slow down the track without changing its pitch, perfect for practicing difficult sections.',
-    icon: Clock,
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 const stems = [
   { label: 'Drums', icon: Drum, pct: 40, color: 'text-purple-400', track: 'from-purple-400 to-purple-500' },
@@ -33,6 +11,7 @@ const stems = [
 ];
 
 function StemMixerMockup() {
+  const { t } = useTranslation();
   return (
     <div className="w-full h-full rounded-xl bg-[#0d0a14] flex flex-col">
       {/* Title bar */}
@@ -67,9 +46,9 @@ function StemMixerMockup() {
 
       {/* Export footer */}
       <div className="flex items-center justify-between px-4 py-3 border-t border-white/5">
-        <span className="text-[9px] text-white/40">Save stems separately</span>
+        <span className="text-[9px] text-white/40">{t('audimix.detailed_features.save_stems')}</span>
         <span className="text-[9px] font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 rounded-full px-3 py-1">
-          Export
+          {t('audimix.detailed_features.export')}
         </span>
       </div>
     </div>
@@ -77,6 +56,15 @@ function StemMixerMockup() {
 }
 
 export function DetailedFeatures() {
+  const { t } = useTranslation();
+
+  const features = [
+    { title: t('audimix.detailed_features.f1_title'), description: t('audimix.detailed_features.f1_desc'), icon: AudioWaveform },
+    { title: t('audimix.detailed_features.f2_title'), description: t('audimix.detailed_features.f2_desc'), icon: MicOff },
+    { title: t('audimix.detailed_features.f3_title'), description: t('audimix.detailed_features.f3_desc'), icon: Music4 },
+    { title: t('audimix.detailed_features.f4_title'), description: t('audimix.detailed_features.f4_desc'), icon: Clock },
+  ];
+
   return (
     <section className="py-16 md:py-24 bg-white border-t border-gray-100 relative">
       <div className="container mx-auto px-4 md:px-6">
@@ -87,7 +75,7 @@ export function DetailedFeatures() {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-bold text-gray-900 mb-6"
           >
-            Powerful tools for <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">total control</span>
+            {t('audimix.detailed_features.title_1')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">{t('audimix.detailed_features.title_2')}</span>
           </motion.h2>
         </div>
 

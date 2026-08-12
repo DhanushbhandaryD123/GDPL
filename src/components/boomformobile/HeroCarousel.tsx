@@ -2,35 +2,38 @@ import { useCallback, useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { motion } from 'motion/react';
 import { Download } from 'lucide-react';
-
-const slides = [
-  {
-    id: 1,
-    title: 'Don’t just listen.',
-    highlight: 'Feel your music.',
-    description: 'Experience 3D Surround Sound that transports you right into the heart of your favorite tracks.',
-    image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1000&auto=format&fit=crop',
-    gradient: 'from-pink-500/10 to-purple-600/10'
-  },
-  {
-    id: 2,
-    title: 'Your music,',
-    highlight: 'your way.',
-    description: 'Customize your sound with advanced equalizer presets and a dynamic audio intensity slider.',
-    image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1000&auto=format&fit=crop',
-    gradient: 'from-blue-500/10 to-cyan-600/10'
-  },
-  {
-    id: 3,
-    title: 'Immersive listening,',
-    highlight: 'on the go.',
-    description: 'Take the ultimate audio experience wherever you go with Boom for iOS and Android.',
-    image: 'https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?q=80&w=1000&auto=format&fit=crop',
-    gradient: 'from-purple-500/10 to-indigo-600/10'
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 export function HeroCarousel() {
+  const { t } = useTranslation();
+
+  const slides = [
+    {
+      id: 1,
+      title: t('boom_mobile.hero.s1_title'),
+      highlight: t('boom_mobile.hero.s1_highlight'),
+      description: t('boom_mobile.hero.s1_desc'),
+      image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1000&auto=format&fit=crop',
+      gradient: 'from-pink-500/10 to-purple-600/10'
+    },
+    {
+      id: 2,
+      title: t('boom_mobile.hero.s2_title'),
+      highlight: t('boom_mobile.hero.s2_highlight'),
+      description: t('boom_mobile.hero.s2_desc'),
+      image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1000&auto=format&fit=crop',
+      gradient: 'from-blue-500/10 to-cyan-600/10'
+    },
+    {
+      id: 3,
+      title: t('boom_mobile.hero.s3_title'),
+      highlight: t('boom_mobile.hero.s3_highlight'),
+      description: t('boom_mobile.hero.s3_desc'),
+      image: 'https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?q=80&w=1000&auto=format&fit=crop',
+      gradient: 'from-purple-500/10 to-indigo-600/10'
+    }
+  ];
+
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 30 });
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -102,10 +105,10 @@ export function HeroCarousel() {
                         className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
                       >
                         <a href="#" className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-bold flex items-center justify-center gap-2 transition-all shadow-xl shadow-pink-500/20 hover:shadow-pink-500/40 w-full sm:w-auto text-sm md:text-base hover:-translate-y-1">
-                          <Download size={20} /> App Store
+                          <Download size={20} /> {t('boom_mobile.hero.app_store')}
                         </a>
                         <a href="#" className="bg-white hover:bg-gray-50 border border-gray-200 text-gray-900 px-6 py-3 md:px-8 md:py-4 rounded-full font-bold flex items-center justify-center gap-2 transition-all shadow-sm w-full sm:w-auto text-sm md:text-base hover:-translate-y-1">
-                          Google Play
+                          {t('boom_mobile.hero.google_play')}
                         </a>
                       </motion.div>
                     </div>

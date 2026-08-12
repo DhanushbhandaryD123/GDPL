@@ -79,14 +79,14 @@ export function Navbar({ logoUrl }: NavbarProps) {
   );
 
   const languages = [
-    { code: 'en', name: 'English' },
-    { code: 'de', name: 'German' },
-    { code: 'it', name: 'Italian' },
-    { code: 'ja', name: 'Japanese' },
-    { code: 'fr', name: 'French' },
-    { code: 'pt', name: 'Portuguese' },
-    { code: 'es', name: 'Spanish' },
-    { code: 'zh', name: 'Chinese (S)' },
+    { code: 'en', name: 'English', flagUrl: 'https://flagcdn.com/gb.svg' },
+    { code: 'zh', name: 'Chinese (Simplified)', flagUrl: 'https://flagcdn.com/cn.svg' },
+    { code: 'fr', name: 'French', flagUrl: 'https://flagcdn.com/fr.svg' },
+    { code: 'de', name: 'German', flagUrl: 'https://flagcdn.com/de.svg' },
+    { code: 'it', name: 'Italian', flagUrl: 'https://flagcdn.com/it.svg' },
+    { code: 'ja', name: 'Japanese', flagUrl: 'https://flagcdn.com/jp.svg' },
+    { code: 'es', name: 'Spanish', flagUrl: 'https://flagcdn.com/es.svg' },
+    { code: 'pt', name: 'Portuguese', flagUrl: 'https://flagcdn.com/pt.svg' },
   ];
 
   const currentLanguage = languages.find(l => i18n.language?.startsWith(l.code)) || languages[0];
@@ -197,16 +197,24 @@ export function Navbar({ logoUrl }: NavbarProps) {
             </button>
             
             {isLanguageOpen && (
-              <div className="absolute right-0 top-full mt-4 w-40 bg-[#0a0f18] rounded-xl shadow-2xl overflow-hidden z-50 border border-gray-800 py-2">
-                {languages.map((lang) => (
-                  <button
-                    key={lang.code}
-                    onClick={() => handleLanguageSwitch(lang.code)}
-                    className="w-full text-left px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-[#1a2333] transition-colors"
-                  >
-                    {lang.name}
-                  </button>
-                ))}
+              <div className="absolute right-0 top-full mt-4 w-[600px] bg-white rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.15)] z-50 border border-gray-200 p-4">
+                <div className="grid grid-cols-3 gap-x-6 gap-y-0">
+                  {languages.map((lang) => {
+                    const isSelected = i18n.language?.startsWith(lang.code);
+                    return (
+                      <button
+                        key={lang.code}
+                        onClick={() => handleLanguageSwitch(lang.code)}
+                        className={`flex items-center gap-3 text-left py-3 border-b border-gray-100 hover:bg-gray-50 transition-colors w-full px-2 rounded-sm ${
+                          isSelected ? 'font-bold text-[#003366]' : 'text-gray-700'
+                        }`}
+                      >
+                        <img src={lang.flagUrl} alt={lang.name} className="w-[22px] h-[16px] object-cover rounded-[2px] shadow-sm" />
+                        <span className="text-[15px]">{lang.name}</span>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
             )}
           </div>
@@ -226,16 +234,24 @@ export function Navbar({ logoUrl }: NavbarProps) {
             </button>
             
             {isLanguageOpen && (
-              <div className="absolute right-0 top-full mt-4 w-40 bg-[#0a0f18] rounded-xl shadow-2xl overflow-hidden z-50 border border-gray-800 py-2">
-                {languages.map((lang) => (
-                  <button
-                    key={lang.code}
-                    onClick={() => handleLanguageSwitch(lang.code)}
-                    className="w-full text-left px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-[#1a2333] transition-colors"
-                  >
-                    {lang.name}
-                  </button>
-                ))}
+              <div className="absolute right-[-60px] sm:right-0 top-full mt-4 w-[320px] bg-white rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.15)] z-50 border border-gray-200 p-4">
+                <div className="grid grid-cols-2 gap-x-4 gap-y-0">
+                  {languages.map((lang) => {
+                    const isSelected = i18n.language?.startsWith(lang.code);
+                    return (
+                      <button
+                        key={lang.code}
+                        onClick={() => handleLanguageSwitch(lang.code)}
+                        className={`flex items-center gap-2 text-left py-3 border-b border-gray-100 hover:bg-gray-50 transition-colors w-full px-2 rounded-sm ${
+                          isSelected ? 'font-bold text-[#003366]' : 'text-gray-700'
+                        }`}
+                      >
+                        <img src={lang.flagUrl} alt={lang.name} className="w-[20px] h-[14px] object-cover rounded-[2px] shadow-sm" />
+                        <span className="text-[14px]">{lang.name}</span>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
             )}
           </div>

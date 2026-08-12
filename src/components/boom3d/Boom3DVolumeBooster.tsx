@@ -1,6 +1,8 @@
 import { Volume2, Sliders, MessageCircle } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export function Boom3DVolumeBooster() {
+  const { t } = useTranslation();
   return (
     <section className="relative py-12 lg:py-16 overflow-hidden bg-[#0b0b0f]">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10 flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
@@ -8,10 +10,10 @@ export function Boom3DVolumeBooster() {
         {/* Left Side: Text */}
         <div className="lg:w-[35%] space-y-6">
           <h2 className="text-4xl md:text-[2.75rem] font-bold tracking-tight text-white leading-tight">
-            Complete Volume<br />Control
+            {t('boom3d.volume_booster.title')}
           </h2>
           <p className="text-[#a0a0a5] text-[1.05rem] leading-relaxed">
-            Safely increase the volume beyond its regular limits, and take granular control over every individual app on your system.
+            {t('boom3d.volume_booster.subtitle')}
           </p>
         </div>
 
@@ -24,19 +26,19 @@ export function Boom3DVolumeBooster() {
               <Volume2 size={20} className="text-[#c0c0c5]" />
             </div>
             
-            <h3 className="text-[1.35rem] font-bold mb-4 text-white tracking-wide">System-Wide Boost</h3>
+            <h3 className="text-[1.35rem] font-bold mb-4 text-white tracking-wide">{t('boom3d.volume_booster.system_wide_title')}</h3>
             <p className="text-[#808088] text-[0.95rem] leading-relaxed mb-12">
-              Boom 3D acts as a volume booster that safely elevates audio levels to deliver a profoundly louder and clearer experience.
+              {t('boom3d.volume_booster.system_wide_desc')}
             </p>
-            
+
             <div className="space-y-3 mt-auto">
               <div className="relative h-1.5 w-full bg-[#2a2a30] rounded-full flex items-center">
                 <div className="h-full bg-gradient-to-r from-[#7c3aed] to-[#3b82f6] w-[100%] rounded-full relative" />
                 <div className="absolute right-0 w-3.5 h-3.5 bg-white rounded-full shadow-[0_0_10px_rgba(255,255,255,1)] translate-x-1/2" />
               </div>
               <div className="flex justify-between text-[10px] font-semibold tracking-wider text-[#606068]">
-                <span>Standard</span>
-                <span>Boom Volume</span>
+                <span>{t('boom3d.volume_booster.standard')}</span>
+                <span>{t('boom3d.volume_booster.boom_volume')}</span>
               </div>
             </div>
           </div>
@@ -46,8 +48,8 @@ export function Boom3DVolumeBooster() {
             <div className="w-12 h-12 bg-[#232329] rounded-[1rem] flex items-center justify-center mb-8">
               <Sliders size={20} className="text-[#c0c0c5]" />
             </div>
-            
-            <h3 className="text-[1.35rem] font-bold mb-4 text-white tracking-wide">App Volume Controller</h3>
+
+            <h3 className="text-[1.35rem] font-bold mb-4 text-white tracking-wide">{t('boom3d.volume_booster.app_controller_title')}</h3>
             
             {/* App Sliders */}
             <div className="space-y-8 mt-6">

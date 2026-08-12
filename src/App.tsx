@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Toaster } from 'react-hot-toast';
+import { useTranslation } from 'react-i18next';
 
 import { SplashScreen } from './components/layout/SplashScreen';
 
@@ -15,32 +16,34 @@ import { GetInspired } from './components/home/GetInspired';
 import { FloatingSocials } from './components/layout/FloatingSocials';
 import { ScrollToTopButton } from './components/layout/ScrollToTopButton';
 
-const macApps: AppItem[] = [
-  { id: 'm1', name: 'Boom 3D', description: 'Boom 3D is a system-wide volume booster and equalizer.', iconPath: '/apps/Boom3D-mac.jpeg', priceOriginal: 'INR 3700', priceDiscounted: 'INR 925.37', learnMoreUrl: '/boom3D' },
-  { id: 'm2', name: 'Boom 2', description: 'Powerful audio enhancement tool for Mac.', iconPath: '/apps/Boom2-mac.jpeg', learnMoreUrl: '/boom2' },
-  { id: 'm3', name: 'Capto', description: 'Powerful screen recording and editing tools in one place.', iconPath: '/apps/Capto-mac.jpeg', priceOriginal: 'INR 1499', priceDiscounted: 'INR 749.5', learnMoreUrl: '/capto' },
-];
-
-const windowsApps: AppItem[] = [
-  { id: 'w1', name: 'Boom 3D', description: 'Boom 3D is a system-wide volume booster and equalizer.', iconPath: '/apps/boom3d-window.png', priceOriginal: 'INR 3700', priceDiscounted: 'INR 925.37', learnMoreUrl: '/boom3D' },
-  { id: 'w2', name: 'AuDimix', description: 'Vocal isolation and extraction tool.', iconPath: '/apps/AuDimix-Window.jpeg', learnMoreUrl: '/audimix' },
-  { id: 'w3', name: 'Capto', description: 'Powerful screen recording and editing tools in one place.', iconPath: '/apps/Capto-window.jpeg', priceOriginal: 'INR 1499', priceDiscounted: 'INR 749.5', learnMoreUrl: '/capto/windows' },
-];
-
-const iosApps: AppItem[] = [
-  { id: 'i1', name: 'Boom for iOS', description: 'The Best Music Player with Magical 3D Surround Sound', iconPath: '/apps/Boom for iOS.jpeg', priceDiscounted: 'Free (with in-apps)', learnMoreUrl: '/boomformobile' },
-  { id: 'i2', name: 'Vizmato', description: 'An award-winning moviemaker in your pocket.', iconPath: '/apps/Vizmato-ios.jpeg', priceDiscounted: 'Free (with in-apps)', learnMoreUrl: '/vizmato' },
-  { id: 'i3', name: 'AudiOn', description: 'An Voice recorder and editor for iOS.', iconPath: '/apps/AudiOn-ios.jpeg', priceDiscounted: 'Free (with in-apps)', learnMoreUrl: '/audion' },
-];
-
-const androidApps: AppItem[] = [
-  { id: 'a1', name: 'Boom for Android', description: 'The Best Music Player with Magical 3D Surround Sound', iconPath: '/apps/Boom for Android.jpeg', priceDiscounted: 'Free (with in-apps)', learnMoreUrl: '/boomformobile' },
-  { id: 'a2', name: 'Vizmato', description: 'An award-winning moviemaker in your pocket.', iconPath: '/apps/Vizmato-android.png', priceDiscounted: 'Free (with in-apps)', learnMoreUrl: '/vizmato' },
-  { id: 'a3', name: 'AudiOn', description: 'An Voice recorder and editor for Android.', iconPath: '/apps/AudiON-android.png', priceDiscounted: 'Free (with in-apps)', learnMoreUrl: '/audion' },
-];
-
 function Home() {
   const domain = import.meta.env.VITE_SITE_URL || '';
+  const { t } = useTranslation();
+
+  const macApps: AppItem[] = [
+    { id: 'm1', name: 'Boom 3D', description: t('home.apps.boom3d_desc'), iconPath: '/apps/Boom3D-mac.jpeg', priceOriginal: 'INR 3700', priceDiscounted: 'INR 925.37', learnMoreUrl: '/boom3D' },
+    { id: 'm2', name: 'Boom 2', description: t('home.apps.boom2_desc'), iconPath: '/apps/Boom2-mac.jpeg', learnMoreUrl: '/boom2' },
+    { id: 'm3', name: 'Capto', description: t('home.apps.capto_desc'), iconPath: '/apps/Capto-mac.jpeg', priceOriginal: 'INR 1499', priceDiscounted: 'INR 749.5', learnMoreUrl: '/capto' },
+  ];
+
+  const windowsApps: AppItem[] = [
+    { id: 'w1', name: 'Boom 3D', description: t('home.apps.boom3d_desc'), iconPath: '/apps/boom3d-window.png', priceOriginal: 'INR 3700', priceDiscounted: 'INR 925.37', learnMoreUrl: '/boom3D' },
+    { id: 'w2', name: 'AuDimix', description: t('home.apps.audimix_desc'), iconPath: '/apps/AuDimix-Window.jpeg', learnMoreUrl: '/audimix' },
+    { id: 'w3', name: 'Capto', description: t('home.apps.capto_desc'), iconPath: '/apps/Capto-window.jpeg', priceOriginal: 'INR 1499', priceDiscounted: 'INR 749.5', learnMoreUrl: '/capto/windows' },
+  ];
+
+  const iosApps: AppItem[] = [
+    { id: 'i1', name: 'Boom for iOS', description: t('home.apps.boom_ios_desc'), iconPath: '/apps/Boom for iOS.jpeg', priceDiscounted: t('home.apps.free_with_iap'), learnMoreUrl: '/boomformobile' },
+    { id: 'i2', name: 'Vizmato', description: t('home.apps.vizmato_desc'), iconPath: '/apps/Vizmato-ios.jpeg', priceDiscounted: t('home.apps.free_with_iap'), learnMoreUrl: '/vizmato' },
+    { id: 'i3', name: 'AudiOn', description: t('home.apps.audion_desc'), iconPath: '/apps/AudiOn-ios.jpeg', priceDiscounted: t('home.apps.free_with_iap'), learnMoreUrl: '/audion' },
+  ];
+
+  const androidApps: AppItem[] = [
+    { id: 'a1', name: 'Boom for Android', description: t('home.apps.boom_ios_desc'), iconPath: '/apps/Boom for Android.jpeg', priceDiscounted: t('home.apps.free_with_iap'), learnMoreUrl: '/boomformobile' },
+    { id: 'a2', name: 'Vizmato', description: t('home.apps.vizmato_desc'), iconPath: '/apps/Vizmato-android.png', priceDiscounted: t('home.apps.free_with_iap'), learnMoreUrl: '/vizmato' },
+    { id: 'a3', name: 'AudiOn', description: t('home.apps.audion_android_desc'), iconPath: '/apps/AudiON-android.png', priceDiscounted: t('home.apps.free_with_iap'), learnMoreUrl: '/audion' },
+  ];
+
   return (
     <div className="min-h-screen bg-[#fff] text-gray-900 font-sans">
       <Helmet>
@@ -87,14 +90,14 @@ function Home() {
         
         <div className="py-4">
           <AppCategory 
-            title="Mac App" 
+            title={t('home.categories.mac_app')}
             deviceImageAlt="MacBook" 
             deviceImagePath="/devices/macbook.png" 
             imageClassName="max-w-[350px] md:max-w-[450px]"
             apps={macApps} 
           />
           <AppCategory 
-            title="Windows App" 
+            title={t('home.categories.windows_app')}
             deviceImageAlt="Windows Laptop" 
             deviceImagePath="/devices/windows.png" 
             imageClassName="max-w-[350px] md:max-w-[450px]"
@@ -102,14 +105,14 @@ function Home() {
             reverse={false} 
           />
           <AppCategory 
-            title="iOS App" 
+            title={t('home.categories.ios_app')}
             deviceImageAlt="iPhone" 
             deviceImagePath="/devices/iphone.png" 
             imageClassName="max-w-[250px] md:max-w-[300px]"
             apps={iosApps} 
           />
           <AppCategory 
-            title="Android App" 
+            title={t('home.categories.android_app')} 
             deviceImageAlt="Android Phone" 
             deviceImagePath="/devices/Android.png" 
             imageClassName="max-w-[150px] md:max-w-[180px]"
@@ -172,6 +175,36 @@ const appRoutes = [
   { path: "/lostlicense", element: <Navigate to="/contact" replace /> },
   { path: "/purchase/thank_you_purchase", element: <Navigate to="/" replace /> },
   { path: "/help/*", element: <Navigate to="/faq" replace /> },
+
+  // Old Boom Language URLs
+  { path: "/boom/de", element: <Navigate to="/de/boom" replace /> },
+  { path: "/boom/es", element: <Navigate to="/es/boom" replace /> },
+  { path: "/boom/fr", element: <Navigate to="/fr/boom" replace /> },
+  { path: "/boom/it", element: <Navigate to="/it/boom" replace /> },
+  { path: "/boom/ja", element: <Navigate to="/ja/boom" replace /> },
+  { path: "/boom/pt", element: <Navigate to="/pt/boom" replace /> },
+  { path: "/boom/zh-cn", element: <Navigate to="/zh/boom" replace /> },
+  { path: "/boom/zh-tw", element: <Navigate to="/zh/boom" replace /> },
+  { path: "/boom/features", element: <Navigate to="/boom" replace /> },
+
+  // Old Boom2 Language URLs
+  { path: "/boom2/de", element: <Navigate to="/de/boom2" replace /> },
+  { path: "/boom2/es", element: <Navigate to="/es/boom2" replace /> },
+  { path: "/boom2/fr", element: <Navigate to="/fr/boom2" replace /> },
+  { path: "/boom2/it", element: <Navigate to="/it/boom2" replace /> },
+  { path: "/boom2/ja", element: <Navigate to="/ja/boom2" replace /> },
+  { path: "/boom2/pt", element: <Navigate to="/pt/boom2" replace /> },
+  { path: "/boom2/zh-cn", element: <Navigate to="/zh/boom2" replace /> },
+  { path: "/boom2/zh-tw", element: <Navigate to="/zh/boom2" replace /> },
+
+  // Old Capto URLs
+  { path: "/capto/educators", element: <Navigate to="/capto" replace /> },
+  { path: "/capto/features-comparison", element: <Navigate to="/capto" replace /> },
+  { path: "/capto/help-videos", element: <Navigate to="/capto" replace /> },
+  { path: "/capto/privacy-policy", element: <Navigate to="/capto" replace /> },
+  { path: "/capto/thankyou", element: <Navigate to="/capto" replace /> },
+  { path: "/capto/user-guide.php", element: <Navigate to="/capto" replace /> },
+  { path: "/captoformac", element: <Navigate to="/capto" replace /> },
 
   { path: "/", element: <Home /> },
   { path: "/about", element: <About /> },

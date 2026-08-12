@@ -1,31 +1,16 @@
 import { motion } from 'motion/react';
 import { Scissors, MapPin, Type } from 'lucide-react';
-
-const workflowSteps = [
-  {
-    title: 'Precision Editing',
-    description: 'Effortlessly trim, cut, and merge audio clips. Our intuitive waveform editor lets you zoom in to make millisecond-accurate edits directly on your mobile device.',
-    icon: Scissors,
-    color: 'text-blue-500',
-    bg: 'bg-blue-50'
-  },
-  {
-    title: 'Timestamp Markers',
-    description: 'Drop markers during recording or playback to instantly jump back to important moments. Perfect for navigating long lectures, interviews, or meetings.',
-    icon: MapPin,
-    color: 'text-green-500',
-    bg: 'bg-green-50'
-  },
-  {
-    title: 'Speech-to-Text Transcription',
-    description: 'Convert your voice notes into text instantly. AudiOn supports highly accurate transcription, making it easy to search, copy, and share your spoken ideas.',
-    icon: Type,
-    color: 'text-orange-500',
-    bg: 'bg-orange-50'
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 export function EditingTranscription() {
+  const { t } = useTranslation();
+
+  const workflowSteps = [
+    { title: t('audion.transcription.editing_title'), description: t('audion.transcription.editing_desc'), icon: Scissors, color: 'text-blue-500', bg: 'bg-blue-50' },
+    { title: t('audion.transcription.markers_title'), description: t('audion.transcription.markers_desc'), icon: MapPin, color: 'text-green-500', bg: 'bg-green-50' },
+    { title: t('audion.transcription.transcription_title'), description: t('audion.transcription.transcription_desc'), icon: Type, color: 'text-orange-500', bg: 'bg-orange-50' }
+  ];
+
   return (
     <section className="py-16 md:py-24 bg-gray-50 relative border-t border-gray-100 overflow-hidden">
       {/* Abstract Grid Background */}
@@ -40,10 +25,10 @@ export function EditingTranscription() {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-bold text-gray-900 mb-6"
           >
-            Powerful <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-500">Post-Recording Workflow</span>
+            {t('audion.transcription.title_1')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-500">{t('audion.transcription.title_2')}</span>
           </motion.h2>
           <p className="text-lg text-gray-500">
-            AudiOn provides a full suite of editing tools so you never have to export to a desktop application to finalize your audio.
+            {t('audion.transcription.subtitle')}
           </p>
         </div>
 

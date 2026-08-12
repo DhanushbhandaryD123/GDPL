@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
+import { useTranslation } from 'react-i18next';
 
 export interface AppItem {
   id: string;
@@ -21,6 +22,7 @@ interface AppCategoryMobileProps {
 }
 
 function AppCardMobile({ app, index }: { app: AppItem, index: number }) {
+  const { t } = useTranslation();
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
@@ -93,7 +95,7 @@ function AppCardMobile({ app, index }: { app: AppItem, index: number }) {
               </div>
             ) : null}
             <span className="bg-[#003057] text-white px-4 py-2 rounded-full text-xs font-bold group-hover/link:bg-blue-600 transition-colors block mt-3 shadow-md">
-              Learn More →
+              {t('home.categories.learn_more')} →
             </span>
           </div>
         </div>

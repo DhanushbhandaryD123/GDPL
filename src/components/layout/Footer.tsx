@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDown, ChevronUp } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface FooterProps {
   logoUrl?: string;
 }
 
 export function Footer({ logoUrl }: FooterProps = {}) {
+  const { t } = useTranslation();
   const defaultLogo = "https://d3jbf8nvvpx3fh.cloudfront.net/home/_resource/_img/website/2015/GDTPL_logo_.png";
   const [openSection, setOpenSection] = useState<string | null>(null);
 
@@ -41,7 +43,7 @@ export function Footer({ logoUrl }: FooterProps = {}) {
           <img src={logoUrl || defaultLogo} alt="Global Delight Logo" className="h-8 w-auto brightness-0 invert opacity-90" />
           {socialLinks}
           <button className="flex items-center justify-between w-40 border border-gray-600 rounded-lg px-4 py-2 text-[14px] bg-[#18181b] text-gray-300">
-            <span>English</span>
+            <span>{t('nav.language', 'English')}</span>
             <ChevronDown className="w-4 h-4" />
           </button>
         </div>
@@ -54,23 +56,23 @@ export function Footer({ logoUrl }: FooterProps = {}) {
               className="font-bold text-white text-[15px] mb-0 md:mb-6 flex justify-between items-center cursor-pointer md:cursor-default py-4 md:py-0"
               onClick={() => toggleSection('products')}
             >
-              Products
+              {t('footer.products')}
               <span className="md:hidden text-white font-bold">
                 {openSection === 'products' ? <ChevronUp className="w-5 h-5 stroke-[3]" /> : <ChevronDown className="w-5 h-5 stroke-[3]" />}
               </span>
             </h4>
             <ul className={`space-y-4 text-[13px] text-gray-400 pb-6 md:pb-0 ${openSection === 'products' ? 'block' : 'hidden md:block'}`}>
-              <li><Link to="/boom3D" className="hover:text-white transition">Boom 3D Mac</Link></li>
-              <li><Link to="/boom3D" className="hover:text-white transition">Boom 3D Windows</Link></li>
-              <li><Link to="/boom2" className="hover:text-white transition">Boom 2</Link></li>
-              <li><Link to="/boomformobile" className="hover:text-white transition">Boom for Mobile</Link></li>
-              <li><Link to="/capto" className="hover:text-white transition">Capto for Mac</Link></li>
-              <li><Link to="/capto/windows" className="hover:text-white transition">Capto for Windows</Link></li>
-              <li><Link to="/audimix" className="hover:text-white transition">AuDimix</Link></li>
-              <li><Link to="/audion" className="hover:text-white transition">AudiOn</Link></li>
-              <li><Link to="/vizmato" className="hover:text-white transition">Vizmato IOS and Android</Link></li>
-              <li><Link to="/cameraplus" className="hover:text-white transition">Camera Plus</Link></li>
-              <li><Link to="/camerapluspro" className="hover:text-white transition">Camera Plus Pro</Link></li>
+              <li><Link to="/boom3D" className="hover:text-white transition">{t('footer.boom3d_mac')}</Link></li>
+              <li><Link to="/boom3D" className="hover:text-white transition">{t('footer.boom3d_windows')}</Link></li>
+              <li><Link to="/boom2" className="hover:text-white transition">{t('footer.boom2')}</Link></li>
+              <li><Link to="/boomformobile" className="hover:text-white transition">{t('footer.boom_mobile')}</Link></li>
+              <li><Link to="/capto" className="hover:text-white transition">{t('footer.capto_mac')}</Link></li>
+              <li><Link to="/capto/windows" className="hover:text-white transition">{t('footer.capto_windows')}</Link></li>
+              <li><Link to="/audimix" className="hover:text-white transition">{t('footer.audimix')}</Link></li>
+              <li><Link to="/audion" className="hover:text-white transition">{t('footer.audion')}</Link></li>
+              <li><Link to="/vizmato" className="hover:text-white transition">{t('footer.vizmato')}</Link></li>
+              <li><Link to="/cameraplus" className="hover:text-white transition">{t('footer.cameraplus')}</Link></li>
+              <li><Link to="/camerapluspro" className="hover:text-white transition">{t('footer.camerapluspro')}</Link></li>
             </ul>
           </div>
 
@@ -80,17 +82,17 @@ export function Footer({ logoUrl }: FooterProps = {}) {
               className="font-bold text-white text-[15px] mb-0 md:mb-6 flex justify-between items-center cursor-pointer md:cursor-default py-4 md:py-0"
               onClick={() => toggleSection('about')}
             >
-              About
+              {t('footer.about')}
               <span className="md:hidden text-white font-bold">
                 {openSection === 'about' ? <ChevronUp className="w-5 h-5 stroke-[3]" /> : <ChevronDown className="w-5 h-5 stroke-[3]" />}
               </span>
             </h4>
             <ul className={`space-y-4 text-[13px] text-gray-400 pb-6 md:pb-0 ${openSection === 'about' ? 'block' : 'hidden md:block'}`}>
-              <li><Link to="/about" className="hover:text-white transition">About Us</Link></li>
-              <li><a href="https://blog.globaldelight.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Blog</a></li>
-              <li><Link to="/careers" className="hover:text-white transition">Careers</Link></li>
-              <li><Link to="#" className="hover:text-white transition">Media</Link></li>
-              <li><Link to="#" className="hover:text-white transition">Become An Affiliate</Link></li>
+              <li><Link to="/about" className="hover:text-white transition">{t('footer.about_us')}</Link></li>
+              <li><a href="https://blog.globaldelight.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">{t('footer.blog')}</a></li>
+              <li><Link to="/careers" className="hover:text-white transition">{t('footer.careers')}</Link></li>
+              <li><Link to="#" className="hover:text-white transition">{t('footer.media')}</Link></li>
+              <li><Link to="#" className="hover:text-white transition">{t('footer.become_affiliate')}</Link></li>
             </ul>
           </div>
 
@@ -100,7 +102,7 @@ export function Footer({ logoUrl }: FooterProps = {}) {
               className="font-bold text-white text-[15px] mb-0 md:mb-6 flex justify-between items-center cursor-pointer md:cursor-default py-4 md:py-0"
               onClick={() => toggleSection('store')}
             >
-              Store
+              {t('footer.store')}
               <span className="md:hidden text-white font-bold">
                 {openSection === 'store' ? <ChevronUp className="w-5 h-5 stroke-[3]" /> : <ChevronDown className="w-5 h-5 stroke-[3]" />}
               </span>
@@ -123,27 +125,27 @@ export function Footer({ logoUrl }: FooterProps = {}) {
                   className="h-10 w-auto brightness-0 invert opacity-100"
                 />
               </div>
-              <p className="text-[13px] font-bold text-white mb-4">Delighting the world</p>
+              <p className="text-[13px] font-bold text-white mb-4">{t('footer.delighting_world')}</p>
               <button className="flex items-center justify-between w-32 border border-gray-600 rounded-lg px-4 py-2 text-[14px] hover:bg-white/5 transition bg-transparent text-gray-300">
-                <span>English</span>
+                <span>{t('nav.language', 'English')}</span>
                 <span className="text-[10px]">▼</span>
               </button>
             </div>
-            
+
             <div className="w-full sm:w-1/2 border-b border-gray-800 md:border-none">
-              <h4 
+              <h4
                 className="font-bold text-white text-[15px] mb-0 md:mb-6 flex justify-between items-center cursor-pointer md:cursor-default py-4 md:py-0"
                 onClick={() => toggleSection('resources')}
               >
-                Resources
+                {t('footer.resources')}
                 <span className="md:hidden text-white font-bold">
                   {openSection === 'resources' ? <ChevronUp className="w-5 h-5 stroke-[3]" /> : <ChevronDown className="w-5 h-5 stroke-[3]" />}
                 </span>
               </h4>
               <ul className={`space-y-4 text-[13px] text-gray-400 pb-6 md:pb-0 ${openSection === 'resources' ? 'block' : 'hidden md:block'}`}>
-                <li><Link to="/faq" className="hover:text-white transition">FAQs</Link></li>
-                <li><Link to="/contact" className="hover:text-white transition">Contact</Link></li>
-                <li><Link to="#" className="hover:text-white transition">What's New</Link></li>
+                <li><Link to="/faq" className="hover:text-white transition">{t('footer.faqs')}</Link></li>
+                <li><Link to="/contact" className="hover:text-white transition">{t('footer.contact')}</Link></li>
+                <li><Link to="#" className="hover:text-white transition">{t('footer.whats_new')}</Link></li>
               </ul>
             </div>
           </div>
@@ -161,14 +163,14 @@ export function Footer({ logoUrl }: FooterProps = {}) {
 
           {/* Links */}
           <div className="flex items-center gap-6 text-[12px] font-bold text-gray-400 mb-6 tracking-wide">
-            <a href="https://www.globaldelight.com/privacypolicy" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Privacy Policy</a>
+            <a href="https://www.globaldelight.com/privacypolicy" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">{t('footer.privacy_policy')}</a>
             <span className="text-gray-700">|</span>
-            <Link to="/contact" className="hover:text-white transition">Contact</Link>
+            <Link to="/contact" className="hover:text-white transition">{t('footer.contact')}</Link>
           </div>
 
           {/* Copyright */}
           <p className="text-[11px] text-gray-500 font-medium leading-loose">
-            © 2008 - 2026 Global Delight Technologies Pvt. Ltd. <span className="mx-2 hidden md:inline">|</span><br className="md:hidden" /> All trademarks registered to their respective companies
+            {t('footer.copyright')}
           </p>
         </div>
       </div>

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export function CaptoFooterCTA() {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<'EDUCATION' | 'BUSINESS'>('EDUCATION');
   const [pageIndex, setPageIndex] = useState(0);
 
@@ -79,40 +81,39 @@ export function CaptoFooterCTA() {
       <div className="container mx-auto px-6 max-w-[1200px] relative z-10 text-center">
         
         <h2 className="text-2xl md:text-[2.25rem] font-bold text-[#1c2331] mb-6 leading-snug">
-          The all-in-one screen recording and video editing <br className="hidden md:block" />
-          solution that's tried, tested, and trusted by all.
+          {t('capto.footer_cta.title')}
         </h2>
 
         {/* Toggle Switch */}
         <div className="flex items-center justify-center mb-6">
           <div className="bg-[#f2f2f7] p-1 rounded-full inline-flex">
-            <button 
+            <button
               onClick={() => setActiveTab('EDUCATION')}
               className={`px-8 py-2 rounded-full text-[13px] md:text-[14px] font-bold transition-all ${
-                activeTab === 'EDUCATION' 
-                  ? 'bg-[#6554ff] text-white shadow-md' 
+                activeTab === 'EDUCATION'
+                  ? 'bg-[#6554ff] text-white shadow-md'
                   : 'text-gray-600 hover:text-gray-900'
               }`}
             >
-              EDUCATION
+              {t('capto.footer_cta.education')}
             </button>
-            <button 
+            <button
               onClick={() => setActiveTab('BUSINESS')}
               className={`px-8 py-2 rounded-full text-[13px] md:text-[14px] font-bold transition-all ${
-                activeTab === 'BUSINESS' 
-                  ? 'bg-[#6554ff] text-white shadow-md' 
+                activeTab === 'BUSINESS'
+                  ? 'bg-[#6554ff] text-white shadow-md'
                   : 'text-gray-600 hover:text-gray-900'
               }`}
             >
-              BUSINESS
+              {t('capto.footer_cta.business')}
             </button>
           </div>
         </div>
 
         <p className="text-[15px] md:text-[17px] text-gray-500 mb-14 font-medium">
-          {activeTab === 'EDUCATION' 
-            ? 'Capto is used by teaching professionals and students from around the world.'
-            : 'Capto is used by thousands of creative professionals and businesses worldwide.'
+          {activeTab === 'EDUCATION'
+            ? t('capto.footer_cta.education_desc')
+            : t('capto.footer_cta.business_desc')
           }
         </p>
 
@@ -147,24 +148,24 @@ export function CaptoFooterCTA() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
-          <a 
-            href="#" 
+          <a
+            href="#"
             className="w-full sm:w-auto px-12 py-3 rounded-full text-[#6554ff] border border-[#6554ff] font-bold text-[14px] hover:bg-indigo-50 transition-colors"
           >
-            Learn More
+            {t('capto.footer_cta.learn_more')}
           </a>
-          <a 
-            href="#" 
+          <a
+            href="#"
             className="w-full sm:w-auto px-12 py-3 rounded-full bg-[#6554ff] text-white font-bold text-[14px] hover:bg-[#5746df] transition-colors shadow-lg shadow-indigo-200"
           >
-            Download Trial
+            {t('capto.footer_cta.download_trial')}
           </a>
         </div>
 
         {/* Localized Footer Sub-bar */}
         <div className="flex flex-col md:flex-row items-center justify-between text-left gap-6 border-t border-gray-100 pt-8 mt-8">
           <p className="text-[10px] md:text-[11px] text-gray-500 max-w-[450px] leading-relaxed font-medium">
-            Capto is fully localized and can be used in Spanish, French, German, Japanese, Portuguese, and Simplified Chinese.
+            {t('capto.footer_cta.localized_note')}
           </p>
           <a href="#" className="shrink-0 hover:opacity-80 transition-opacity">
              <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Download on the Mac App Store" className="h-[36px]" />

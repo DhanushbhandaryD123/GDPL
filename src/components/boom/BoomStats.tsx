@@ -1,14 +1,17 @@
 import { motion } from 'motion/react';
 import { Download, Globe, Star, Award } from 'lucide-react';
-
-const stats = [
-  { icon: Download, value: '10M+', label: 'Total downloads' },
-  { icon: Globe, value: '150+', label: 'Countries reached' },
-  { icon: Star, value: '4.8/5', label: 'Average rating' },
-  { icon: Award, value: '12+', label: 'Editor awards' },
-];
+import { useTranslation } from 'react-i18next';
 
 export function BoomStats() {
+  const { t } = useTranslation();
+
+  const stats = [
+    { icon: Download, value: '10M+', label: t('boom.stats.downloads') },
+    { icon: Globe, value: '150+', label: t('boom.stats.countries') },
+    { icon: Star, value: '4.8/5', label: t('boom.stats.rating') },
+    { icon: Award, value: '12+', label: t('boom.stats.awards') },
+  ];
+
   return (
     <section className="relative bg-white pb-16 md:pb-28">
       <div className="max-w-[1200px] mx-auto px-4">

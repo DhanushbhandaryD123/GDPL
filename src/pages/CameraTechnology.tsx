@@ -1,45 +1,47 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
 import { FloatingSocials } from '../components/layout/FloatingSocials';
 import { Wand2, Zap, Layers } from 'lucide-react';
 
-const tabsData: any[] = [
-  {
-    id: 'airsnap',
-    title: 'AirSnap Feature',
-    description: 'AirSnap lets you hook two iOS devices, where one becomes the camera and the other is a trigger for you to remote control.',
-    image: '/business/CT/C1.png'
-  },
-  {
-    id: 'live-filters',
-    title: 'Live Filters',
-    description: 'Choose from visual and lighting filters and apply them while capturing to get full effect of our photography.',
-    image: '/business/CT/C2.png',
-    features: [
-      { icon: Wand2, label: 'Real-time Filters' },
-      { icon: Zap, label: 'Live Lighting Adjustments' },
-      { icon: Layers, label: 'Instant Preview' }
-    ]
-  },
-  {
-    id: 'editing',
-    title: 'One Touch Image Editing Solutions',
-    description: 'Intuitive, easy-to-use image editing suite allows you to edit images instantly.',
-    image: '/business/CT/C3.png'
-  },
-  {
-    id: 'secure',
-    title: 'Secure Access Control',
-    description: 'Set privacy control to your photo albums.',
-    image: '/business/CT/C4.png'
-  }
-];
-
 export function CameraTechnology() {
+  const { t } = useTranslation();
   const domain = import.meta.env.VITE_SITE_URL || '';
   const [activeTab, setActiveTab] = useState(0);
+
+  const tabsData: any[] = [
+    {
+      id: 'airsnap',
+      title: t('technology.camera.tab1_title'),
+      description: t('technology.camera.tab1_desc'),
+      image: '/business/CT/C1.png'
+    },
+    {
+      id: 'live-filters',
+      title: t('technology.camera.tab2_title'),
+      description: t('technology.camera.tab2_desc'),
+      image: '/business/CT/C2.png',
+      features: [
+        { icon: Wand2, label: t('technology.camera.tab2_feature1') },
+        { icon: Zap, label: t('technology.camera.tab2_feature2') },
+        { icon: Layers, label: t('technology.camera.tab2_feature3') }
+      ]
+    },
+    {
+      id: 'editing',
+      title: t('technology.camera.tab3_title'),
+      description: t('technology.camera.tab3_desc'),
+      image: '/business/CT/C3.png'
+    },
+    {
+      id: 'secure',
+      title: t('technology.camera.tab4_title'),
+      description: t('technology.camera.tab4_desc'),
+      image: '/business/CT/C4.png'
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-[#fff] text-gray-900 font-sans flex flex-col">
@@ -75,10 +77,8 @@ export function CameraTechnology() {
             {/* Text Overlay (Right Side) */}
             <div className="absolute inset-0 flex items-center justify-end px-8 md:px-16 lg:px-24 z-10">
               <div className="max-w-xl text-right">
-                <h1 className="text-xl md:text-2xl lg:text-[28px] text-white font-normal drop-shadow-md lg:leading-[1.4] text-right">
-                  Mobile Photography reimagined with <br className="hidden md:block" />
-                  Pro capture tools and Secure Access <br className="hidden md:block" />
-                  Control
+                <h1 className="text-xl md:text-2xl lg:text-[28px] text-white font-normal drop-shadow-md lg:leading-[1.4] text-right" style={{ whiteSpace: 'pre-line' }}>
+                  {t('technology.camera.hero_title')}
                 </h1>
               </div>
             </div>
@@ -89,7 +89,7 @@ export function CameraTechnology() {
         <section className="py-12 bg-white">
           <div className="container mx-auto px-4 max-w-4xl text-center">
             <p className="text-[#9e9e9e] text-base md:text-[17px] font-medium leading-relaxed max-w-3xl mx-auto">
-              Global Delight has the depth & scale of experience to build outstanding digital products with leading edge solutions for your audio, photo and video needs.
+              {t('technology.camera.intro')}
             </p>
           </div>
         </section>
@@ -98,7 +98,7 @@ export function CameraTechnology() {
         <section className="pb-4 bg-white">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-xl md:text-2xl font-semibold text-center mb-10 text-[#2d3748]">
-              <span className="border-b-[1.5px] border-gray-600 pb-1">Camera Technology</span>
+                <span className="border-b-[1.5px] border-gray-600 pb-1">{t('technology.camera.section_title')}</span>
             </h2>
 
             <div className="flex flex-col items-center justify-center gap-4 lg:gap-6 w-full">
@@ -170,15 +170,14 @@ export function CameraTechnology() {
 
             <div className="relative z-20 text-center px-6 py-12 max-w-4xl mx-auto flex flex-col items-center">
               <h2 className="text-xl md:text-2xl font-bold text-white mb-6 drop-shadow-md">
-                Global Delight Business is here for you.
+                {t('technology.camera.cta_title')}
               </h2>
               <p className="text-sm md:text-base text-white/95 leading-relaxed font-medium drop-shadow-sm max-w-3xl mx-auto">
-                Find the solutions you need to create engaging products,
-                content & entertainment experiences. You may also write to us to discuss licensing opportunities.
+                {t('technology.camera.cta_text')}
               </p>
               <div className="mt-8">
                 <button className="bg-[#ef5252] hover:bg-[#e04141] text-white text-sm font-semibold tracking-wider py-3 px-12 rounded shadow-md transition-all hover:shadow-lg hover:-translate-y-0.5">
-                  CONTACT
+                  {t('technology.camera.cta_button')}
                 </button>
               </div>
             </div>

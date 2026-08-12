@@ -1,8 +1,10 @@
 import { motion } from 'motion/react';
 import CountUp from 'react-countup';
 import { Calendar, Users, Package } from 'lucide-react'; // Removed MoveRight since button is removed
+import { useTranslation } from 'react-i18next';
 
 export function AboutHero() {
+  const { t } = useTranslation();
   return (
     <div className="w-full md:p-0 px-2 pt-1 pb-4">
       <section className="relative w-full overflow-hidden bg-[#020617] font-sans h-auto aspect-[16/9] md:aspect-auto md:h-[60vh] md:min-h-[450px] flex items-center rounded-3xl md:rounded-none">
@@ -35,8 +37,8 @@ export function AboutHero() {
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
               className="text-[14px] md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-1.5 md:mb-4 text-white"
             >
-              Creating Delight.<br />
-              Delivering Impact.
+              {t('about.hero.title_1')}<br />
+              {t('about.hero.title_2')}
             </motion.h1>
 
             {/* Stats Row */}
@@ -54,7 +56,7 @@ export function AboutHero() {
                   <div className="text-[10px] md:text-xl font-bold text-white leading-tight">
                     <CountUp end={2007} duration={2.5} separator="" />
                   </div>
-                  <div className="text-[6px] md:text-[10px] text-gray-400">Founded</div>
+                  <div className="text-[6px] md:text-[10px] text-gray-400">{t('about.hero.founded')}</div>
                 </div>
               </div>
 
@@ -66,7 +68,7 @@ export function AboutHero() {
                   <div className="text-[10px] md:text-xl font-bold text-white leading-tight">
                     <CountUp end={30} duration={2.5} />M+
                   </div>
-                  <div className="text-[6px] md:text-[10px] text-gray-400">Users Globally</div>
+                  <div className="text-[6px] md:text-[10px] text-gray-400">{t('about.hero.users')}</div>
                 </div>
               </div>
 
@@ -78,7 +80,7 @@ export function AboutHero() {
                   <div className="text-[10px] md:text-xl font-bold text-white leading-tight">
                     <CountUp end={50} duration={2.5} />+
                   </div>
-                  <div className="text-[6px] md:text-[10px] text-gray-400">Products Built</div>
+                  <div className="text-[6px] md:text-[10px] text-gray-400">{t('about.hero.products')}</div>
                 </div>
               </div>
             </motion.div>

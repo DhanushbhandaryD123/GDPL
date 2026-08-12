@@ -1,25 +1,26 @@
 import { motion } from 'motion/react';
-import { 
-  Flower2, 
-  Video, 
-  Camera, 
-  Type, 
-  Wand2, 
-  PlayCircle, 
+import {
+  Flower2,
+  Video,
+  Camera,
+  Type,
+  Wand2,
+  PlayCircle,
   Lock,
   ChevronRight
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export function MacroFocus() {
+  const { t } = useTranslation();
   const features = [
-    { icon: <Flower2 className="w-5 h-5 text-white" />, title: 'Macro Mode', desc: 'Capture tiny details\nwith stunning clarity' },
-    { icon: <Wand2 className="w-5 h-5 text-white" />, title: 'Filters', desc: 'Apply beautiful filters\nto make shots stand out' },
-    { icon: <Video className="w-5 h-5 text-white" />, title: 'HD Camera Mode', desc: 'High resolution for\nsharp & vibrant photos' },
-    { icon: <PlayCircle className="w-5 h-5 text-white" />, title: 'Live Photos', desc: 'Capture moments in\nmotion with Live Photo' },
-    { icon: <Camera className="w-5 h-5 text-white" />, title: 'Photo & Video', desc: 'Take photos or record\nvideos with ease' },
-    { icon: <Lock className="w-5 h-5 text-white" />, title: 'Lock Protection', desc: 'Protect your private\nphotos & videos' },
-    { icon: <Type className="w-5 h-5 text-white" />, title: 'Text Capture', desc: 'Extract text instantly\nfrom any image' },
-    
+    { icon: <Flower2 className="w-5 h-5 text-white" />, title: t('cameraplus.macro.f1_title'), desc: t('cameraplus.macro.f1_desc') },
+    { icon: <Wand2 className="w-5 h-5 text-white" />, title: t('cameraplus.macro.f2_title'), desc: t('cameraplus.macro.f2_desc') },
+    { icon: <Video className="w-5 h-5 text-white" />, title: t('cameraplus.macro.f3_title'), desc: t('cameraplus.macro.f3_desc') },
+    { icon: <PlayCircle className="w-5 h-5 text-white" />, title: t('cameraplus.macro.f4_title'), desc: t('cameraplus.macro.f4_desc') },
+    { icon: <Camera className="w-5 h-5 text-white" />, title: t('cameraplus.macro.f5_title'), desc: t('cameraplus.macro.f5_desc') },
+    { icon: <Lock className="w-5 h-5 text-white" />, title: t('cameraplus.macro.f6_title'), desc: t('cameraplus.macro.f6_desc') },
+    { icon: <Type className="w-5 h-5 text-white" />, title: t('cameraplus.macro.f7_title'), desc: t('cameraplus.macro.f7_desc') },
   ];
 
   return (
@@ -52,13 +53,13 @@ export function MacroFocus() {
               <div className="pointer-events-auto translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                 <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#A3D9A5] text-xs font-bold tracking-widest uppercase mb-4">
                   <Flower2 className="w-3.5 h-3.5" />
-                  MACRO MODE
+                  {t('cameraplus.macro.badge')}
                 </span>
                 <h2 className="text-4xl md:text-5xl font-bold text-white leading-[1.1] mb-8">
-                  See the tiny world<br />in incredible detail.
+                  {t('cameraplus.macro.title')}
                 </h2>
                 <button className="flex items-center gap-4 px-6 py-4 bg-white/10 hover:bg-white text-white hover:text-black rounded-full font-bold transition-all duration-300 border border-white/20 w-fit group/btn backdrop-blur-sm">
-                  Explore Macro
+                  {t('cameraplus.macro.explore')}
                   <div className="w-8 h-8 rounded-full bg-white group-hover/btn:bg-black flex items-center justify-center transition-colors">
                     <ChevronRight className="w-5 h-5 text-black group-hover/btn:text-white" strokeWidth={3} />
                   </div>
@@ -76,10 +77,10 @@ export function MacroFocus() {
           >
             <div className="mb-10 lg:mb-14 text-center lg:text-left">
               <h2 className="text-3xl md:text-4xl font-extrabold text-[#111827] mb-4">
-                Powerful Features
+                {t('cameraplus.macro.features_title')}
               </h2>
               <p className="text-gray-500 text-lg max-w-lg mx-auto lg:mx-0">
-                A complete suite of creative tools packed into one intuitive interface.
+                {t('cameraplus.macro.features_subtitle')}
               </p>
             </div>
             
@@ -107,7 +108,7 @@ export function MacroFocus() {
 
             <div className="mt-12 flex justify-center lg:justify-start">
               <button className="group flex items-center gap-3 px-8 py-4 bg-gray-900 hover:bg-black text-white font-bold rounded-full transition-all duration-300 shadow-xl shadow-gray-900/20 hover:shadow-gray-900/40 hover:-translate-y-1">
-                View All Features
+                {t('cameraplus.macro.view_all')}
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" strokeWidth={2.5} />
               </button>
             </div>

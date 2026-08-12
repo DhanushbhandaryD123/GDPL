@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import { RotateCcw } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { useIsMobile } from '../../hooks/useIsMobile';
 
 const cardsData = [
@@ -10,7 +11,7 @@ const cardsData = [
     category: 'Audio · Mac / Win',
     bgColor: '#9b66ff',
     logo: '/hero/Boom3d.png',
-    description: 'System-wide volume booster and equalizer for immersive 3D surround sound.',
+    descriptionKey: 'home.featured_work.products.boom3d',
     link: '/boom3D'
   },
   {
@@ -18,7 +19,7 @@ const cardsData = [
     category: 'Screen Record',
     bgColor: '#1de9b6',
     logo: '/hero/capto2.png',
-    description: 'Powerful screen recording and video editing tools in one seamless workspace.',
+    descriptionKey: 'home.featured_work.products.capto',
     link: '/capto'
   },
   {
@@ -26,7 +27,7 @@ const cardsData = [
     category: 'Video Editing',
     bgColor: '#ff7043',
     logo: '/hero/vizmat3.png',
-    description: 'An award-winning moviemaker in your pocket. Edit videos with awesome effects.',
+    descriptionKey: 'home.featured_work.products.vizmato',
     link: '/vizmato'
   },
   {
@@ -34,7 +35,7 @@ const cardsData = [
     category: 'Photography',
     bgColor: '#ffd740',
     logo: '/hero/cameraplus.png',
-    description: 'Capture professional photos with macro focus, remote control, and live filters.',
+    descriptionKey: 'home.featured_work.products.cameraplus',
     link: '/cameraplus'
   },
   {
@@ -42,7 +43,7 @@ const cardsData = [
     category: 'Vocal Split - Win',
     bgColor: '#ff4b8b',
     logo: '/hero/Audiomix.png',
-    description: 'Advanced vocal isolation and extraction tool to remix tracks like a pro.',
+    descriptionKey: 'home.featured_work.products.audimix',
     link: '/audimix'
   },
   {
@@ -50,7 +51,7 @@ const cardsData = [
     category: 'Voice Record',
     bgColor: '#69f0ae',
     logo: '/hero/audioon.png',
-    description: 'Feature-rich voice recorder and audio editor with noise reduction.',
+    descriptionKey: 'home.featured_work.products.audion',
     link: '/audion'
   },
 ];
@@ -79,6 +80,7 @@ const getStackedPositions = (isMobile: boolean) => cardsData.map((_, i) => {
 });
 
 export function FeaturedWork() {
+  const { t } = useTranslation();
   const isMobile = useIsMobile();
   const [positions, setPositions] = useState(() => getStackedPositions(false));
   const [draggingIdx, setDraggingIdx] = useState<number | null>(null);
@@ -191,10 +193,10 @@ export function FeaturedWork() {
       <div className="container mx-auto px-4 relative z-10 flex-1 flex flex-col">
         <div className="text-center mb-6 md:mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 tracking-tight">
-           Featured Product
+           {t('home.featured_work.title')}
           </h2>
           <p className="text-gray-600 text-sm md:text-base max-w-[600px] mx-auto leading-relaxed">
-            Discover our flagship applications designed to elevate your everyday digital experience.
+            {t('home.featured_work.subtitle')}
           </p>
         </div>
 
@@ -259,7 +261,7 @@ export function FeaturedWork() {
                 >
                   <h4 className="text-lg md:text-xl font-bold text-white mb-2 md:mb-3 tracking-tight drop-shadow-md">{card.name}</h4>
                   <p className="text-white/90 text-[11px] md:text-[13px] leading-relaxed mb-4 drop-shadow-sm font-medium">
-                    {card.description}
+                    {t(card.descriptionKey)}
                   </p>
                   <div className="mt-auto self-stretch flex flex-col gap-2">
                     <Link
@@ -267,7 +269,7 @@ export function FeaturedWork() {
                       className="w-full text-center py-2 bg-white hover:bg-gray-100 text-gray-900 text-[11px] md:text-xs font-bold rounded-full transition-all cursor-pointer pointer-events-auto shadow-[0_4px_10px_rgba(0,0,0,0.15)] hover:scale-105 active:scale-95"
                       onClick={(e) => e.stopPropagation()}
                     >
-                      Learn More
+                      {t('home.featured_work.learn_more')}
                     </Link>
                     <button
                       onClick={(e) => {
@@ -276,7 +278,7 @@ export function FeaturedWork() {
                       }}
                       className="w-full py-2 bg-black/20 hover:bg-black/40 text-white text-[11px] md:text-xs font-semibold rounded-full border border-white/20 transition-all cursor-pointer pointer-events-auto backdrop-blur-sm hover:scale-105 active:scale-95"
                     >
-                      Close
+                      {t('home.featured_work.close')}
                     </button>
                   </div>
                 </div>
@@ -288,7 +290,7 @@ export function FeaturedWork() {
         <button
           onClick={resetLayout}
           className="absolute bottom-2 right-16 md:bottom-0 md:right-0 flex items-center justify-center w-4 h-4 md:w-10 md:h-10 bg-gray-100 hover:bg-gray-200 border border-gray-300 text-gray-700 transition-colors z-20 shadow-md rounded-full"
-          title="Reset Layout"
+          title={t('home.featured_work.reset_layout')}
         >
           <RotateCcw className="w-3.5 h-3.5 md:w-4 md:h-4" />
         </button>

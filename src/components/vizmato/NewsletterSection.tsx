@@ -1,7 +1,9 @@
 import { Play } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useTranslation } from 'react-i18next';
 
 export function NewsletterSection() {
+  const { t } = useTranslation();
   return (
     <section className="py-16 md:py-24 relative overflow-hidden">
       {/* Gradient Background matching image */}
@@ -30,7 +32,7 @@ export function NewsletterSection() {
           transition={{ delay: 0.1 }}
           className="text-2xl md:text-3xl font-medium text-white mb-10 max-w-2xl leading-relaxed drop-shadow-sm"
         >
-          Sign up now, and stay up to date with the<br className="hidden md:block" /> latest offers from Global Delight!
+          {t('vizmato.newsletter.title')}
         </motion.h3>
 
         {/* Subscription Form */}
@@ -43,17 +45,17 @@ export function NewsletterSection() {
           onSubmit={(e) => e.preventDefault()}
         >
           <div className="flex flex-col sm:flex-row bg-white rounded-lg p-1.5 shadow-2xl gap-2 sm:gap-0">
-            <input 
-              type="email" 
-              placeholder="Enter your email ID" 
+            <input
+              type="email"
+              placeholder={t('vizmato.newsletter.email_placeholder')}
               className="flex-grow px-4 py-3 bg-transparent text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-0 text-sm md:text-base text-center sm:text-left"
               required
             />
-            <button 
+            <button
               type="submit"
               className="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-md font-semibold transition-colors whitespace-nowrap text-sm md:text-base w-full sm:w-auto"
             >
-              Subscribe
+              {t('vizmato.newsletter.subscribe')}
             </button>
           </div>
         </motion.form>

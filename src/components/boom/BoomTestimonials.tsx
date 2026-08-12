@@ -1,15 +1,18 @@
 import { Star } from 'lucide-react';
-
-const reviews = [
-  { title: 'Completely immersive.', text: 'The 3D surround effect makes my regular headphones sound like a $200 pair. I can\'t go back.' },
-  { title: 'Finally, loud enough.', text: 'My laptop speakers were always too quiet. Boom fixed that instantly without any distortion.' },
-  { title: 'Best EQ I\'ve used.', text: 'The 31-band equalizer is genuinely studio-grade. I use it daily for mixing reference checks.' },
-  { title: 'Works everywhere.', text: 'I have it on my Mac and my phone — same great sound wherever I am. Seamless experience.' },
-  { title: 'Per-app control is genius.', text: 'Keeping Slack quiet while my music stays booming is such a small thing that makes a huge difference.' },
-  { title: 'Worth every rupee.', text: 'One of the few apps I happily paid for the moment the trial ended. Total game changer for audio.' },
-];
+import { useTranslation } from 'react-i18next';
 
 export function BoomTestimonials() {
+  const { t } = useTranslation();
+
+  const reviews = [
+    { title: t('boom.testimonials.r1_title'), text: t('boom.testimonials.r1_text') },
+    { title: t('boom.testimonials.r2_title'), text: t('boom.testimonials.r2_text') },
+    { title: t('boom.testimonials.r3_title'), text: t('boom.testimonials.r3_text') },
+    { title: t('boom.testimonials.r4_title'), text: t('boom.testimonials.r4_text') },
+    { title: t('boom.testimonials.r5_title'), text: t('boom.testimonials.r5_text') },
+    { title: t('boom.testimonials.r6_title'), text: t('boom.testimonials.r6_text') },
+  ];
+
   return (
     <section className="relative py-16 md:py-28 overflow-hidden bg-white">
       <style>{`
@@ -20,10 +23,10 @@ export function BoomTestimonials() {
 
       <div className="max-w-[1200px] mx-auto px-4 mb-16 text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight mb-5">
-          Loved by millions
+          {t('boom.testimonials.title')}
         </h2>
         <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto font-medium">
-          Real reviews from the Boom community across every platform.
+          {t('boom.testimonials.subtitle')}
         </p>
       </div>
 

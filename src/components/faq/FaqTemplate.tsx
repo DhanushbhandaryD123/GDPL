@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 import { Navbar } from '../layout/Navbar';
 import { Footer } from '../layout/Footer';
 import { FloatingSocials } from '../layout/FloatingSocials';
@@ -28,6 +29,7 @@ interface FaqTemplateProps {
 }
 
 export function FaqTemplate({ title, description, keywords, logoSrc, logoAlt, faqs, categories }: FaqTemplateProps) {
+  const { t } = useTranslation();
   const [openIndex, setOpenIndex] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   
@@ -144,9 +146,9 @@ export function FaqTemplate({ title, description, keywords, logoSrc, logoAlt, fa
             
             <div className="relative w-full max-w-lg group">
               <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5 group-focus-within:text-rose-500 transition-colors" />
-              <input 
-                type="text" 
-                placeholder="Search for answers..."
+              <input
+                type="text"
+                placeholder={t('faqTemplate.search_placeholder')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full bg-white border border-gray-200 text-gray-900 pl-14 pr-6 py-4 rounded-full outline-none focus:border-rose-500 transition-all shadow-md placeholder-gray-400 font-medium"
@@ -198,7 +200,7 @@ export function FaqTemplate({ title, description, keywords, logoSrc, logoAlt, fa
           {searchQuery && (
             <div className="mb-8 text-center">
               <p className="text-gray-500">
-                Found {displayFaqs.length} results for "{searchQuery}"
+                {t('faqTemplate.found_results_prefix')} {displayFaqs.length} {t('faqTemplate.found_results_suffix')} "{searchQuery}"
               </p>
             </div>
           )}
@@ -209,7 +211,7 @@ export function FaqTemplate({ title, description, keywords, logoSrc, logoAlt, fa
               displayFaqs.map(({ faq, uniqueId }) => renderFaqItem(faq, uniqueId))
             ) : (
               <div className="text-center py-16 bg-gray-50 rounded-2xl border border-gray-200">
-                <p className="text-gray-500 font-medium">No results found.</p>
+                <p className="text-gray-500 font-medium">{t('faqTemplate.no_results')}</p>
               </div>
             )}
           </div>

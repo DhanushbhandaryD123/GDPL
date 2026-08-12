@@ -1,7 +1,9 @@
 import { motion } from 'motion/react';
 import { Camera, ChevronRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export function AppleWatchIntegration() {
+  const { t } = useTranslation();
   return (
     <section className="py-20 md:py-32 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl relative z-10">
@@ -20,20 +22,20 @@ export function AppleWatchIntegration() {
               viewport={{ once: true }}
             >
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#00B4B4]/20 text-[#00B4B4] font-bold text-xs uppercase tracking-widest mb-6 shadow-sm">
-                Apple Watch App
+                {t('cameraplus.apple_watch.badge')}
               </div>
-              
+
               <h2 className="text-3xl sm:text-4xl lg:text-[50px] font-extrabold text-[#111827] leading-[1.1] mb-6 tracking-tight">
-                Live Preview &<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00B4B4] to-[#009b9b]">Remote Trigger</span>
+                {t('cameraplus.apple_watch.title_1')}<br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00B4B4] to-[#009b9b]">{t('cameraplus.apple_watch.title_2')}</span>
               </h2>
-              
+
               <p className="text-base sm:text-lg text-gray-500 mb-10 max-w-sm leading-relaxed">
-                Preview your shot live and capture remotely right from your wrist. Perfect for group photos and steady shots.
+                {t('cameraplus.apple_watch.subtitle')}
               </p>
 
               <a href="#" className="inline-flex items-center gap-3 px-8 py-4 bg-[#111827] hover:bg-black text-white font-bold rounded-full transition-all duration-300 shadow-xl shadow-gray-900/20 hover:shadow-gray-900/30 hover:-translate-y-1 group">
-                Learn more
+                {t('cameraplus.apple_watch.learn_more')}
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" strokeWidth={2.5} />
               </a>
             </motion.div>

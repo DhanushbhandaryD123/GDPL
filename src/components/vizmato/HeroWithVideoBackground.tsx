@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { useTranslation } from 'react-i18next';
 
 const VizmatoLogo = ({ className }: { className?: string }) => (
   <svg 
@@ -34,6 +35,7 @@ const VizmatoLogo = ({ className }: { className?: string }) => (
 );
 
 export function HeroWithVideoBackground() {
+  const { t } = useTranslation();
   return (
     <div className="w-full max-w-[1920px] mx-auto px-4 md:px-4 pt-2 md:pt-4">
       <section className="relative w-full rounded-3xl md:rounded-[2.5rem] shadow-2xl bg-[#09090b] overflow-hidden flex items-center justify-center aspect-[4/3] sm:aspect-[16/9] md:aspect-auto md:min-h-[600px] md:h-[85vh] md:max-h-[750px]">
@@ -70,8 +72,8 @@ export function HeroWithVideoBackground() {
               </div>
               
               <p className="text-xs sm:text-sm md:text-2xl lg:text-[30px] text-[#cccccc] mb-8 md:mb-10 leading-[1.4] font-normal max-w-[90%] md:max-w-2xl" style={{ fontFamily: 'Hanken Grotesk, sans-serif' }}>
-                Record your videos in full HD <br className="hidden md:block" />
-                with Live Instant FX
+                {t('vizmato.hero.subtitle_1')} <br className="hidden md:block" />
+                {t('vizmato.hero.subtitle_2')}
               </p>
 
               <div className="flex flex-row items-center gap-4 md:gap-5 w-full justify-center lg:justify-start">

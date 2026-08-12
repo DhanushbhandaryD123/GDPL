@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 
 const AppleIcon = ({ className }: { className?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" className={className} fill="currentColor">
@@ -12,16 +13,17 @@ const WindowsIcon = ({ className }: { className?: string }) => (
 );
 
 export function Boom3DAppDownload() {
+  const { t } = useTranslation();
   return (
     <section className="bg-white pt-16 pb-10 flex flex-col items-center justify-center relative z-20">
       <div className="max-w-[1000px] mx-auto px-6 text-center w-full">
-        
+
         <h2 className="text-3xl md:text-[2.5rem] lg:text-[2.75rem] font-medium tracking-tight text-[#111111] mb-6 leading-tight">
-          The Most Downloaded Audio Enhancement for macOS & Windows
+          {t('boom3d.app_download.title')}
         </h2>
-        
+
         <p className="text-[#6b7280] text-[1rem] md:text-[1.1rem] mb-10 font-normal leading-relaxed max-w-[900px] mx-auto">
-          Boom 3D for Mac & Windows is an award-winning pro audio enhancement app designed to play your media content with incredible 3D effects on ANY headphones, from any player, any media or streaming services. You would not need expensive headphones or surround sound boosters to feel your music!
+          {t('boom3d.app_download.description')}
         </p>
 
         {/* Buttons */}
@@ -30,8 +32,8 @@ export function Boom3DAppDownload() {
           <button className="flex items-center justify-center gap-5 bg-[#111111] hover:bg-black text-white px-8 py-3 rounded-[1rem] min-w-[240px] w-full sm:w-auto transition-all">
             <AppleIcon className="w-9 h-9" />
             <div className="text-left flex flex-col">
-              <span className="text-[1.35rem] font-bold leading-tight">macOS</span>
-              <span className="text-[11px] font-medium text-gray-400">10.11 and above</span>
+              <span className="text-[1.35rem] font-bold leading-tight">{t('boom3d.app_download.macos')}</span>
+              <span className="text-[11px] font-medium text-gray-400">{t('boom3d.app_download.macos_req')}</span>
             </div>
           </button>
 
@@ -39,8 +41,8 @@ export function Boom3DAppDownload() {
           <button className="flex items-center justify-center gap-5 bg-white hover:bg-gray-50 text-[#111111] px-8 py-3 rounded-[1rem] min-w-[240px] w-full sm:w-auto transition-all border border-gray-100 shadow-[0_8px_30px_rgba(0,0,0,0.06)]">
             <WindowsIcon className="w-8 h-8 text-[#0099ff]" />
             <div className="text-left flex flex-col">
-              <span className="text-[1.35rem] font-bold leading-tight">Windows</span>
-              <span className="text-[11px] font-medium text-gray-500">10 and above</span>
+              <span className="text-[1.35rem] font-bold leading-tight">{t('boom3d.app_download.windows')}</span>
+              <span className="text-[11px] font-medium text-gray-500">{t('boom3d.app_download.windows_req')}</span>
             </div>
           </button>
         </div>

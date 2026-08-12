@@ -1,32 +1,35 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { EarOff, SkipForward, Sliders } from 'lucide-react';
-
-const enhancements = [
-  {
-    id: 'noise',
-    title: 'Noise Removal & Voice Isolation',
-    icon: EarOff,
-    description: 'Instantly remove background hum, wind, and chatter to make your voice the focal point.',
-    visualText: 'Isolating Voice Profile...'
-  },
-  {
-    id: 'silence',
-    title: 'Skip Silence',
-    icon: SkipForward,
-    description: 'Automatically detect and skip silent pauses to save time when reviewing long recordings.',
-    visualText: 'Detecting Dead Air...'
-  },
-  {
-    id: 'eq',
-    title: 'Reverb & Pro EQ',
-    icon: Sliders,
-    description: 'Apply professional room reverb effects and tune frequencies using our 6-band equalizer.',
-    visualText: 'Applying Studio Room Reverb...'
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 export function AudioEnhancement() {
+  const { t } = useTranslation();
+
+  const enhancements = [
+    {
+      id: 'noise',
+      title: t('audion.enhancement.noise_title'),
+      icon: EarOff,
+      description: t('audion.enhancement.noise_desc'),
+      visualText: t('audion.enhancement.noise_visual')
+    },
+    {
+      id: 'silence',
+      title: t('audion.enhancement.silence_title'),
+      icon: SkipForward,
+      description: t('audion.enhancement.silence_desc'),
+      visualText: t('audion.enhancement.silence_visual')
+    },
+    {
+      id: 'eq',
+      title: t('audion.enhancement.eq_title'),
+      icon: Sliders,
+      description: t('audion.enhancement.eq_desc'),
+      visualText: t('audion.enhancement.eq_visual')
+    }
+  ];
+
   const [activeTab, setActiveTab] = useState(enhancements[0].id);
 
   const activeData = enhancements.find(e => e.id === activeTab) || enhancements[0];
@@ -88,10 +91,10 @@ export function AudioEnhancement() {
                 viewport={{ once: true }}
                 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6"
               >
-                Intelligent <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">Audio Enhancement</span>
+                {t('audion.enhancement.title_1')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">{t('audion.enhancement.title_2')}</span>
               </motion.h2>
               <p className="text-lg text-gray-500 mb-8">
-                Clean up noisy environments and polish your recordings with one-tap intelligent processing tools.
+                {t('audion.enhancement.subtitle')}
               </p>
             </div>
 

@@ -1,53 +1,23 @@
 import { Star, Quote } from 'lucide-react';
-
-const reviews = [
-  {
-    title: "Amazing!",
-    text: "This will totally change how audio sounds on your Mac. It's especially apparent with headphones. If you've got weak headphones, this app will make them sound like a $200 pair."
-  },
-  {
-    title: "Great sound.",
-    text: "I'm listening to all my favourite music all over again. I use studio monitors connected to my Mac and now I know at last what they can really do. I'm very glad I got Boom."
-  },
-  {
-    title: "Best sound ever!",
-    text: "This has been a well worth investment on this app. My MacBook Pro with my 5.1 external speakers sound amazing!! Keep up the good work!"
-  },
-  {
-    title: "Excellent app!",
-    text: "The speakers in my MacBook Pro 17 were way too quiet - even at full volume. I installed Boom 2 and now at less than half volume they are louder than before at full volume. This is an EXCELLENT APP!"
-  },
-  {
-    title: "Really works..",
-    text: "Once you configure Boom 2 and start using it with a good pair of headphones, you aren't going back. \"Normal\" music audio will just not do anymore. It really is the best way to tune music to sound enveloping and rich."
-  },
-  {
-    title: "Night and day difference!",
-    text: "Listening to music with and without the application on is a night and day difference. I actually stopped listening to music on my PC because there's nothing like this on Windows OS. Highly recommended!"
-  },
-  {
-    title: "Must-have app for any Mac.",
-    text: "Sound from Mac completely changes once Boom is installed and activated. Not only Mac speakers but also external 5.1 speakers and headphones. Must-have from my point of view."
-  },
-  {
-    title: "Better than I imagined!",
-    text: "I was ready to return my MacBook because the speakers just don't project well for movies. I got Boom and WOW. I have no idea how it works but it does! Amazing sound now blasting through my MacBook. Yes!"
-  },
-  {
-    title: "Makes music more enjoyable..",
-    text: "Love having the ability to tweak the sound on my MacBook. Ambience is my favorite setting. It almost reminds me of the old SRS WOW stuff from the 2000-2010's. Almost like magically enhancing the sound."
-  },
-  {
-    title: "Elevates your listening experience.",
-    text: "Being able to use the equalizer to adjust the sound coming out of my Mac (using studio/noise canceling headphones) is incredible. I'm able to draw out each instrument. Can't imagine listening to music without Boom!"
-  },
-  {
-    title: "Worth it..",
-    text: "I love this app. The equalizer is amazing and simply makes everything sound better. I also like being able to turn up the volume so I can actually hear it if I go to another room while listening to something."
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 export function Boom2Testimonials() {
+  const { t } = useTranslation();
+
+  const reviews = [
+    { title: t('boom2.testimonials.r1_title'), text: t('boom2.testimonials.r1_text') },
+    { title: t('boom2.testimonials.r2_title'), text: t('boom2.testimonials.r2_text') },
+    { title: t('boom2.testimonials.r3_title'), text: t('boom2.testimonials.r3_text') },
+    { title: t('boom2.testimonials.r4_title'), text: t('boom2.testimonials.r4_text') },
+    { title: t('boom2.testimonials.r5_title'), text: t('boom2.testimonials.r5_text') },
+    { title: t('boom2.testimonials.r6_title'), text: t('boom2.testimonials.r6_text') },
+    { title: t('boom2.testimonials.r7_title'), text: t('boom2.testimonials.r7_text') },
+    { title: t('boom2.testimonials.r8_title'), text: t('boom2.testimonials.r8_text') },
+    { title: t('boom2.testimonials.r9_title'), text: t('boom2.testimonials.r9_text') },
+    { title: t('boom2.testimonials.r10_title'), text: t('boom2.testimonials.r10_text') },
+    { title: t('boom2.testimonials.r11_title'), text: t('boom2.testimonials.r11_text') },
+  ];
+
   const row1 = reviews.slice(0, 6);
   const row2 = reviews.slice(6, 11);
 
@@ -56,7 +26,7 @@ export function Boom2Testimonials() {
       {/* Background Glows */}
       <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#4F46E5]/10 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute top-1/2 right-1/4 translate-x-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-[#8B5CF6]/10 blur-[120px] rounded-full pointer-events-none" />
-      
+
       <style>{`
         @keyframes marquee-left {
           0% { transform: translateX(0); }
@@ -79,10 +49,10 @@ export function Boom2Testimonials() {
 
       <div className="max-w-[1400px] mx-auto px-4 mb-10 md:mb-16 relative z-10 text-center">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
-          Loved by <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">Millions</span>
+          {t('boom2.testimonials.title_1')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">{t('boom2.testimonials.title_2')}</span>
         </h2>
         <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
-          See what our users have to say about the Boom 2 experience.
+          {t('boom2.testimonials.subtitle')}
         </p>
       </div>
 

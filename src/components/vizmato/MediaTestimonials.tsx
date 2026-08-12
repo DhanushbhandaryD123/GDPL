@@ -1,40 +1,43 @@
 import { useState, useEffect, useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { motion } from 'motion/react';
-
-const mediaTestimonials = [
-  // Slide 1
-  { id: 1, text: "Media & Entertainment winner\n– 2016", logoImg: "/vizmato/media/mbillionth.png", logoAlt: "mBillionth Award" },
-  { id: 2, text: "Like Instagram, but with a focus on smartphone videos. If you're looking to spice up short videos before sharing online, it gets the job done nicely.", logoImg: "/vizmato/media/macworld.png", logoAlt: "Macworld" },
-  { id: 3, text: "EContent's Trendsetting Products of 2016", logoImg: "/vizmato/media/logo-econtent.png", logoAlt: "EContent" },
-  
-  // Slide 2
-  { id: 4, text: "Vizmato is basically a dream combination of Snapchat and Instagram", logoImg: "/vizmato/media/teenvogue_logo_light.png", logoAlt: "teenVOGUE" },
-  { id: 5, text: "Create and edit videos made easy.", logoImg: "/vizmato/media/nerdbench.png", logoAlt: "NERDBENCH" },
-  { id: 6, text: "Create flashy videos on your iPad Pro with Vizmato", logoImg: "/vizmato/media/territorimac.png", logoAlt: "TERRITORIMAC" },
-
-  // Slide 3
-  { id: 7, text: "One of the best mobile video editors on the App Store. If you are looking for a simple video editor for mobile, then this is a must-have app for you.", logoImg: "/vizmato/media/apppicker.png", logoAlt: "appPicker" },
-  { id: 8, text: "Vizmato – Create awesome videos on your phone", logoImg: "/vizmato/media/sstateoftech.png", logoAlt: "state of TECH" },
-  { id: 9, text: "Vizmato introduces a suite of unparalleled new features for the iOS", logoImg: "/vizmato/media/logo-prn.png", logoAlt: "PR Newswire" },
-
-  // Slide 4
-  { id: 10, text: "The app enables you to edit videos quickly and easily, and has tools to tweak, re-theme and filter them live.", logoImg: "/vizmato/media/jpost.png", logoAlt: "THE JERUSALEM POST" },
-  { id: 11, text: "The app had an impressive response rate to adding elements, quickly churning out minutes-long video into completed clips in under a minute.", logoImg: "/vizmato/media/geektime-logo.png", logoAlt: "Geektime" },
-  { id: 12, text: "Now control your videos like a live game. Game Your Video changes the video world and makes it easy, quick, fun and addictive!", logoImg: "/vizmato/media/macworld.png", logoAlt: "Macworld" },
-
-  // Slide 5
-  { id: 13, text: "Game Your Video Aims To Make Mobile Video Editing As Simple As Possible!", logoImg: "/vizmato/media/cnet_page8.png", logoAlt: "c|net" },
-  { id: 14, text: "Game Your Video is a fun app - - delivering numerous tools to edit, tweak, re-theme & filter your videos so they take on a life of their own.", logoImg: "/vizmato/media/tc_page8.png", logoAlt: "TC" },
-];
-
-const userTestimonials = [
-  { id: 1, text: "Easy to use and has the features you want for easy editing, on the go!", logo: "" },
-  { id: 2, text: "The best editing app in the PLAY STORE!! Thanks soo much. This helped me feel more creative :)", logo: "" },
-  { id: 3, text: "This app is AMAZING! I will definitely use this often. If you are looking for a simple editing app that does slow motion, music & filters, this is for you.", logo: "" },
-];
+import { useTranslation } from 'react-i18next';
 
 export function MediaTestimonials() {
+  const { t } = useTranslation();
+
+  const mediaTestimonials = [
+    // Slide 1
+    { id: 1, text: t('vizmato.testimonials.m1'), logoImg: "/vizmato/media/mbillionth.png", logoAlt: "mBillionth Award" },
+    { id: 2, text: t('vizmato.testimonials.m2'), logoImg: "/vizmato/media/macworld.png", logoAlt: "Macworld" },
+    { id: 3, text: t('vizmato.testimonials.m3'), logoImg: "/vizmato/media/logo-econtent.png", logoAlt: "EContent" },
+
+    // Slide 2
+    { id: 4, text: t('vizmato.testimonials.m4'), logoImg: "/vizmato/media/teenvogue_logo_light.png", logoAlt: "teenVOGUE" },
+    { id: 5, text: t('vizmato.testimonials.m5'), logoImg: "/vizmato/media/nerdbench.png", logoAlt: "NERDBENCH" },
+    { id: 6, text: t('vizmato.testimonials.m6'), logoImg: "/vizmato/media/territorimac.png", logoAlt: "TERRITORIMAC" },
+
+    // Slide 3
+    { id: 7, text: t('vizmato.testimonials.m7'), logoImg: "/vizmato/media/apppicker.png", logoAlt: "appPicker" },
+    { id: 8, text: t('vizmato.testimonials.m8'), logoImg: "/vizmato/media/sstateoftech.png", logoAlt: "state of TECH" },
+    { id: 9, text: t('vizmato.testimonials.m9'), logoImg: "/vizmato/media/logo-prn.png", logoAlt: "PR Newswire" },
+
+    // Slide 4
+    { id: 10, text: t('vizmato.testimonials.m10'), logoImg: "/vizmato/media/jpost.png", logoAlt: "THE JERUSALEM POST" },
+    { id: 11, text: t('vizmato.testimonials.m11'), logoImg: "/vizmato/media/geektime-logo.png", logoAlt: "Geektime" },
+    { id: 12, text: t('vizmato.testimonials.m12'), logoImg: "/vizmato/media/macworld.png", logoAlt: "Macworld" },
+
+    // Slide 5
+    { id: 13, text: t('vizmato.testimonials.m13'), logoImg: "/vizmato/media/cnet_page8.png", logoAlt: "c|net" },
+    { id: 14, text: t('vizmato.testimonials.m14'), logoImg: "/vizmato/media/tc_page8.png", logoAlt: "TC" },
+  ];
+
+  const userTestimonials = [
+    { id: 1, text: t('vizmato.testimonials.u1'), logo: "" },
+    { id: 2, text: t('vizmato.testimonials.u2'), logo: "" },
+    { id: 3, text: t('vizmato.testimonials.u3'), logo: "" },
+  ];
+
   const [activeTab, setActiveTab] = useState<'MEDIA' | 'USERS'>('MEDIA');
   
   // Embla Carousel Setup
@@ -104,7 +107,7 @@ export function MediaTestimonials() {
               }`}
               style={{ fontFamily: 'Sora, sans-serif' }}
             >
-              MEDIA
+              {t('vizmato.testimonials.media_tab')}
             </button>
             <div className="w-px h-5 md:h-6 bg-gray-300 mx-4 md:mx-8" />
             <button 
@@ -114,7 +117,7 @@ export function MediaTestimonials() {
               }`}
               style={{ fontFamily: 'Sora, sans-serif' }}
             >
-              USERS
+              {t('vizmato.testimonials.users_tab')}
             </button>
           </div>
         </div>

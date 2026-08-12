@@ -1,25 +1,16 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { useState, useEffect } from 'react';
-
-const slides = [
-  {
-    image: "/business/business3.png",
-    title: "Mobile Photography reimagined",
-    description: "with pro capture tools and secure access control"
-  },
-  {
-    image: "/business/business1.png",
-    title: "Professional Video Solutions",
-    description: "That Inspire creativity"
-  },
-  {
-    image: "/business/business2.png",
-    title: "Crystal clear Recording,",
-    description: "Professional audio"
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 export function BusinessHero() {
+  const { t } = useTranslation();
+
+  const slides = [
+    { image: "/business/business3.png", title: t('business.hero.s1_title'), description: t('business.hero.s1_desc') },
+    { image: "/business/business1.png", title: t('business.hero.s2_title'), description: t('business.hero.s2_desc') },
+    { image: "/business/business2.png", title: t('business.hero.s3_title'), description: t('business.hero.s3_desc') }
+  ];
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {

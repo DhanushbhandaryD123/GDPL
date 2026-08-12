@@ -1,6 +1,8 @@
 import { motion } from 'motion/react';
+import { useTranslation } from 'react-i18next';
 
 export function Hero() {
+  const { t } = useTranslation();
   return (
     <div className="w-full max-w-[1920px] mx-auto px-4 md:px-4 pt-2 md:pt-4 pb-8 md:pb-12 bg-white">
       <section className="relative w-full rounded-3xl md:rounded-[2.5rem] shadow-xl pt-8 pb-8 md:pt-12 md:pb-12 bg-gray-50/50 border border-gray-100 flex items-center">
@@ -30,14 +32,14 @@ export function Hero() {
             </div>
             
             <h1 className="text-base sm:text-xl md:text-6xl font-extrabold text-gray-900 tracking-tight leading-[1.1] mb-6">
-              Enhance your audio recordings with{' '}
+              {t('audion.hero.title_1')}{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
-                AudiOn
+                {t('audion.hero.title_2')}
               </span>
             </h1>
 
             <p className="text-xs sm:text-sm md:text-xl text-gray-500 mb-10 max-w-xl leading-relaxed">
-              The cutting-edge voice recorder app designed for professionals, students, and creators. Experience studio-quality recording, editing, and transcription right in your pocket.
+              {t('audion.hero.subtitle')}
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full justify-center lg:justify-start">

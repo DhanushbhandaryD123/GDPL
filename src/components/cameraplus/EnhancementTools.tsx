@@ -1,28 +1,16 @@
 import { motion } from 'motion/react';
 import { Flower2, Camera, Video, ChevronRight } from 'lucide-react';
-
-const tools = [
-  {
-    title: 'Macro',
-    description: 'Explore the tiny world\nin every detail.',
-    icon: Flower2,
-    image: 'https://images.unsplash.com/photo-1477346611705-65d1883cee1e?w=800&q=80&auto=format&fit=crop'
-  },
-  {
-    title: 'AirSnap\n(Remote Photography)',
-    description: 'Click perfect shots\nremotely.',
-    icon: Camera,
-    image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=800&auto=format&fit=crop'
-  },
-  {
-    title: 'Video Recording',
-    description: 'Record smooth videos\nin high quality.',
-    icon: Video,
-    image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=800&auto=format&fit=crop'
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 export function EnhancementTools() {
+  const { t } = useTranslation();
+
+  const tools = [
+    { title: t('cameraplus.enhancement_tools.macro_title'), description: t('cameraplus.enhancement_tools.macro_desc'), icon: Flower2, image: 'https://images.unsplash.com/photo-1477346611705-65d1883cee1e?w=800&q=80&auto=format&fit=crop' },
+    { title: t('cameraplus.enhancement_tools.airsnap_title'), description: t('cameraplus.enhancement_tools.airsnap_desc'), icon: Camera, image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=800&auto=format&fit=crop' },
+    { title: t('cameraplus.enhancement_tools.video_title'), description: t('cameraplus.enhancement_tools.video_desc'), icon: Video, image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=800&auto=format&fit=crop' }
+  ];
+
   return (
     <section className="py-20 md:py-32 bg-[#F8FAFC]">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
@@ -31,14 +19,14 @@ export function EnhancementTools() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16">
           <div className="max-w-xl">
             <h2 className="text-3xl md:text-5xl font-extrabold text-[#111827] mb-4 tracking-tight">
-              Professional Tools
+              {t('cameraplus.enhancement_tools.title')}
             </h2>
             <p className="text-gray-500 text-base md:text-lg leading-relaxed">
-              Everything you need to create like a pro. Elevate your photography with powerful built-in enhancements.
+              {t('cameraplus.enhancement_tools.subtitle')}
             </p>
           </div>
           <a href="#" className="hidden md:flex items-center gap-2 px-6 py-3 rounded-full bg-white border border-gray-200 text-gray-900 font-bold hover:border-[#00B4B4] hover:text-[#00B4B4] hover:shadow-lg transition-all duration-300 mt-4 md:mt-0 group">
-            View All Tools
+            {t('cameraplus.enhancement_tools.view_all')}
             <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" strokeWidth={2.5} />
           </a>
         </div>
@@ -87,7 +75,7 @@ export function EnhancementTools() {
         {/* Mobile View All Link */}
         <div className="mt-10 flex justify-center md:hidden">
           <a href="#" className="flex items-center gap-2 px-8 py-4 rounded-full bg-white border border-gray-200 text-gray-900 font-bold active:bg-gray-50 w-full justify-center transition-colors">
-            View All Tools
+            {t('cameraplus.enhancement_tools.view_all')}
             <ChevronRight className="w-5 h-5" strokeWidth={2.5} />
           </a>
         </div>
