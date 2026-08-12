@@ -11,7 +11,7 @@ export function AudionFaq() {
       title="AudiOn FAQ"
       description="Find answers about AudiOn, the mobile voice recorder and audio editor — recording quality, noise removal, transcription, and export options for iOS and Android."
       keywords="AudiOn FAQ, AudiOn help, voice recorder app questions, audio editor support, noise removal help, AI transcription FAQ"
-      logoSrc="/Faq/AudionFaqLogo.png"
+      logoSrc="/faq/AudionFaqLogo.png"
       logoAlt="AudiOn Logo"
       faqs={faqs}
     />

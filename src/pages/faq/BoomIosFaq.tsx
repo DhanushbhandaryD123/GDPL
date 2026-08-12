@@ -11,7 +11,7 @@ export function BoomIosFaq() {
       title="Boom iOS FAQ"
       description="Frequently asked questions about Boom for iOS — 3D surround sound, equalizer presets, subscriptions, device compatibility, and troubleshooting."
       keywords="Boom iOS FAQ, Boom iPhone help, Boom app questions, iOS equalizer support, Boom subscription help, Boom app troubleshooting"
-      logoSrc="/Faq/iBoom.png"
+      logoSrc="/faq/iBoom.png"
       logoAlt="Boom iOS Logo"
       faqs={faqs}
     />

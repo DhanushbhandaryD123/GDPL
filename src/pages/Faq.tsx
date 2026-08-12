@@ -53,7 +53,7 @@ export function Faq() {
           {/* Banner Image */}
           <div className="relative w-full h-[350px] md:h-[450px] lg:h-[550px]">
             <img
-              src="/Faq/Banner.png"
+              src="/faq/Banner.png"
               alt="FAQ and Support Banner"
               className="absolute inset-0 w-full h-full object-cover object-center"
             />
@@ -159,7 +159,7 @@ export function Faq() {
                     <a href="https://www.globaldelight.com/faq/boom2" target="_blank" rel="noopener noreferrer" className="bg-white rounded-[24px] p-6 lg:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col items-center text-center transition-all hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 relative overflow-hidden group block">
                       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-300 to-blue-500"></div>
                       <div className="h-20 mb-4 flex items-center justify-center">
-                        <img src="/Faq/Boom2LogoFaq.png" alt="Boom 2" className="h-full object-contain" />
+                        <img src="/faq/Boom2LogoFaq.png" alt="Boom 2" className="h-full object-contain" />
                       </div>
                       <p className="text-[13px] md:text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Powerful audio enhancer that delivers rich and balanced sound.</p>
                     </a>
@@ -170,7 +170,7 @@ export function Faq() {
                     <a href="https://www.globaldelight.com/faq/boomios" target="_blank" rel="noopener noreferrer" className="bg-white rounded-[24px] p-6 lg:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col items-center text-center transition-all hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 relative overflow-hidden group block">
                       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-400 to-blue-500"></div>
                       <div className="h-20 mb-4 flex items-center justify-center">
-                        <img src="/Faq/iBoom.png" alt="Boom for iOS" className="h-full object-contain" />
+                        <img src="/faq/iBoom.png" alt="Boom for iOS" className="h-full object-contain" />
                       </div>
                       <p className="text-[13px] md:text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Experience Boom sound on your iPhone and iPad like never before.</p>
                     </a>
@@ -220,7 +220,7 @@ export function Faq() {
                   <a href="https://www.globaldelight.com/faq/vizmato" target="_blank" rel="noopener noreferrer" className="w-full max-w-[280px] bg-white rounded-[24px] p-6 lg:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col items-center text-center transition-all hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 relative overflow-hidden group block">
                     <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-400 to-red-600"></div>
                     <div className="h-20 mb-4 flex items-center justify-center">
-                      <img src="/Faq/Vizmato.png" alt="Vizmato" className="h-full object-contain" />
+                      <img src="/faq/Vizmato.png" alt="Vizmato" className="h-full object-contain" />
                     </div>
                     <p className="text-[13px] md:text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Create stunning videos with powerful editing tools and effects in minutes.</p>
                   </a>
@@ -278,7 +278,7 @@ export function Faq() {
                     <a href="https://www.globaldelight.com/faq/audion" target="_blank" rel="noopener noreferrer" className="w-full sm:w-[280px] bg-white rounded-[24px] p-6 lg:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col items-center text-center transition-all hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 relative overflow-hidden group block">
                       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gray-700 to-black"></div>
                       <div className="h-20 mb-4 flex items-center justify-center">
-                        <img src="/Faq/AudionFaqLogo.png" alt="Audio Recorder" className="h-full object-contain" />
+                        <img src="/faq/AudionFaqLogo.png" alt="Audio Recorder" className="h-full object-contain" />
                       </div>
                       <p className="text-[13px] md:text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Simple, reliable and high quality audio recording app.</p>
                     </a>
