@@ -11,7 +11,7 @@ export function VizmatoFaq() {
       title="Vizmato FAQ"
       description="Find answers about Vizmato — video editing tools, themes and effects, export options, subscriptions, and troubleshooting for iOS and Android."
       keywords="Vizmato FAQ, Vizmato help, video editor app questions, movie maker support, Vizmato subscription help, Vizmato export options"
-      logoSrc="/Faq/Vizmato.png"
+      logoSrc="/faq/Vizmato.png"
       logoAlt="Vizmato Logo"
       faqs={faqs}
     />

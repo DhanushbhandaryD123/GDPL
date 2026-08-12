@@ -387,7 +387,7 @@ export function Boom2Faq() {
       title="Boom 2 FAQ"
       description="Get answers about Boom 2 for Mac — system-wide volume boosting, equalizer presets, sound quality, compatibility, and troubleshooting tips."
       keywords="Boom 2 FAQ, Boom 2 help, Mac volume booster questions, Boom 2 equalizer support, Boom app troubleshooting, Boom 2 compatibility"
-      logoSrc="/Faq/Boom2LogoFaq.png"
+      logoSrc="/faq/Boom2LogoFaq.png"
       logoAlt="Boom 2 Logo"
       categories={categories}
     />
