@@ -167,6 +167,13 @@ import { LanguageSync } from './components/layout/LanguageSync';
 import { SEOHead } from './components/layout/SEOHead';
 import { NotFound } from './pages/NotFound';
 import { Analytics } from '@vercel/analytics/react';
+import { PrivacyPolicy } from './pages/PrivacyPolicy';
+import { CaptoPrivacyPolicy } from './pages/CaptoPrivacyPolicy';
+import { WhatsNewBoom } from './pages/whatsnew/WhatsNewBoom';
+import { WhatsNewCapto } from './pages/whatsnew/WhatsNewCapto';
+import { WhatsNewBoom2 } from './pages/whatsnew/WhatsNewBoom2';
+import { WhatsNewAudion } from './pages/whatsnew/WhatsNewAudion';
+import { WhatsNewAudimix } from './pages/whatsnew/WhatsNewAudimix';
 
 const appRoutes = [
   // Redirects and Aliases for Old Website URLs
@@ -201,7 +208,6 @@ const appRoutes = [
   { path: "/capto/educators", element: <Navigate to="/capto" replace /> },
   { path: "/capto/features-comparison", element: <Navigate to="/capto" replace /> },
   { path: "/capto/help-videos", element: <Navigate to="/capto" replace /> },
-  { path: "/capto/privacy-policy", element: <Navigate to="/capto" replace /> },
   { path: "/capto/thankyou", element: <Navigate to="/capto" replace /> },
   { path: "/capto/user-guide.php", element: <Navigate to="/capto" replace /> },
   { path: "/captoformac", element: <Navigate to="/capto" replace /> },
@@ -236,7 +242,17 @@ const appRoutes = [
   { path: "/cameraplus", element: <CameraPlusPage /> },
   { path: "/camerapluspro", element: <CameraPlusProPage /> },
   { path: "/audimix", element: <AuDimixPage /> },
-  { path: "/boomformobile", element: <BoomForMobilePage /> }
+  { path: "/boomformobile", element: <BoomForMobilePage /> },
+  { path: "/boom3D/privacy-policy", element: <PrivacyPolicy /> },
+  { path: "/boom2/privacy-policy", element: <PrivacyPolicy /> },
+  { path: "/boom/privacy-policy", element: <PrivacyPolicy /> },
+  { path: "/privacy-policy", element: <PrivacyPolicy /> },
+  { path: "/capto/privacy-policy", element: <CaptoPrivacyPolicy /> },
+  { path: "/whatsnew/boom", element: <WhatsNewBoom /> },
+  { path: "/whatsnew/capto", element: <WhatsNewCapto /> },
+  { path: "/whatsnew/boom2", element: <WhatsNewBoom2 /> },
+  { path: "/whatsnew/audion", element: <WhatsNewAudion /> },
+  { path: "/whatsnew/audimix", element: <WhatsNewAudimix /> }
 ];
 
 function App() {

@@ -9,16 +9,12 @@ export function LanguageSync() {
 
   useEffect(() => {
     const supportedLangs = ['en', 'de', 'it', 'ja', 'fr', 'pt', 'es', 'zh'];
-    // If a lang param exists and it's supported, switch to it.
-    if (lang && supportedLangs.includes(lang)) {
-      if (i18n.language !== lang) {
-        i18n.changeLanguage(lang);
-      }
-    } else {
-      // If there is no valid lang param, default to English
-      if (i18n.language !== 'en') {
-        i18n.changeLanguage('en');
-      }
+    // Determine the correct language based on the URL parameter, default to English
+    const targetLang = lang && supportedLangs.includes(lang) ? lang : 'en';
+    
+    // Only change if the current resolved language is different
+    if (i18n.resolvedLanguage !== targetLang) {
+      i18n.changeLanguage(targetLang);
     }
   }, [lang, i18n, location.pathname]);
 
