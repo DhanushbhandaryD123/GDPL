@@ -38,6 +38,7 @@ const tabsData: any[] = [
 ];
 
 export function CameraTechnology() {
+  const domain = import.meta.env.VITE_SITE_URL || '';
   const [activeTab, setActiveTab] = useState(0);
 
   return (
@@ -49,10 +50,13 @@ export function CameraTechnology() {
         <meta name="subject" content="Camera Technology | Global Delight B2B" />
         <meta property="og:title" content="Camera Technology | Global Delight B2B" />
         <meta property="og:description" content="Elevate your photography app with our cutting-edge camera engine." />
+        <meta name="twitter:title" content="Camera Technology | Global Delight B2B" />
+        <meta name="twitter:description" content="Elevate your photography app with our cutting-edge camera engine." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.globaldelight.com/technology/camera" />
+        <meta property="og:url" content={`${domain}/technology/camera`} />
+        <meta name="twitter:url" content={`${domain}/technology/camera`} />
         <meta property="og:locale" content="en_US" />
-        <link rel="canonical" href="https://www.globaldelight.com/technology/camera" />
+        <link rel="canonical" href={`${domain}/technology/camera`} />
       </Helmet>
 
       <Navbar />

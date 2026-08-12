@@ -50,8 +50,11 @@ function Home() {
         <meta name="subject" content="Global Delight | Makers of Boom 3D, Capto, Vizmato & Camera Plus Pro" />
         <meta property="og:title" content="Global Delight | Makers of Boom 3D, Capto, Vizmato & Camera Plus Pro" />
         <meta property="og:description" content="Award-winning audio, video, and photography apps for Mac, Windows, iOS & Android — including Boom 3D, Capto, Vizmato, Camera Plus Pro, AuDimix, and AudiOn." />
+        <meta name="twitter:title" content="Global Delight | Makers of Boom 3D, Capto, Vizmato & Camera Plus Pro" />
+        <meta name="twitter:description" content="Award-winning audio, video, and photography apps for Mac, Windows, iOS & Android — including Boom 3D, Capto, Vizmato, Camera Plus Pro, AuDimix, and AudiOn." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${domain}/`} />
+        <meta name="twitter:url" content={`${domain}/`} />
         <meta property="og:locale" content="en_US" />
         <link rel="canonical" href={`${domain}/`} />
         <script type="application/ld+json">

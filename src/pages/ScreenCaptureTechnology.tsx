@@ -20,6 +20,7 @@ const tabsData = [
 ];
 
 export function ScreenCaptureTechnology() {
+  const domain = import.meta.env.VITE_SITE_URL || '';
   const [activeTab, setActiveTab] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -49,10 +50,13 @@ export function ScreenCaptureTechnology() {
         <meta name="subject" content="Screen Capture Technology | Global Delight B2B" />
         <meta property="og:title" content="Screen Capture Technology | Global Delight B2B" />
         <meta property="og:description" content="Integrate our reliable screen capture and recording technology." />
+        <meta name="twitter:title" content="Screen Capture Technology | Global Delight B2B" />
+        <meta name="twitter:description" content="Integrate our reliable screen capture and recording technology." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.globaldelight.com/technology/screen-capture" />
+        <meta property="og:url" content={`${domain}/technology/screen-capture`} />
+        <meta name="twitter:url" content={`${domain}/technology/screen-capture`} />
         <meta property="og:locale" content="en_US" />
-        <link rel="canonical" href="https://www.globaldelight.com/technology/screen-capture" />
+        <link rel="canonical" href={`${domain}/technology/screen-capture`} />
       </Helmet>
 
       <Navbar />

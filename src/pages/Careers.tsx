@@ -236,6 +236,7 @@ const jobs = [
 ];
 
 export function Careers() {
+  const domain = import.meta.env.VITE_SITE_URL || '';
   const [expandedJobId, setExpandedJobId] = useState<number | null>(null);
 
   return (
@@ -247,10 +248,13 @@ export function Careers() {
         <meta name="subject" content="Careers at Global Delight | Join Our Innovative Team" />
         <meta property="og:title" content="Careers at Global Delight | Join Our Innovative Team" />
         <meta property="og:description" content="Build the future of digital media software with us. Check out our open positions." />
+        <meta name="twitter:title" content="Careers at Global Delight | Join Our Innovative Team" />
+        <meta name="twitter:description" content="Build the future of digital media software with us. Check out our open positions." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.globaldelight.com/careers" />
+        <meta property="og:url" content={`${domain}/careers`} />
+        <meta name="twitter:url" content={`${domain}/careers`} />
         <meta property="og:locale" content="en_US" />
-        <link rel="canonical" href="https://www.globaldelight.com/careers" />
+        <link rel="canonical" href={`${domain}/careers`} />
       </Helmet>
       
       <Navbar />

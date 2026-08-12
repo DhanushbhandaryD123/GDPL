@@ -35,8 +35,11 @@ export function Faq() {
         <meta name="subject" content="FAQ & Support | Global Delight" />
         <meta property="og:title" content="FAQ & Support | Global Delight" />
         <meta property="og:description" content="Find answers to frequently asked questions about Boom, Capto, Vizmato, and other Global Delight software." />
+        <meta name="twitter:title" content="FAQ & Support | Global Delight" />
+        <meta name="twitter:description" content="Find answers to frequently asked questions about Boom, Capto, Vizmato, and other Global Delight software." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${domain}/faq`} />
+        <meta name="twitter:url" content={`${domain}/faq`} />
         <meta property="og:locale" content="en_US" />
         <link rel="canonical" href={`${domain}/faq`} />
       </Helmet>

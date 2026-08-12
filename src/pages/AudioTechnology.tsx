@@ -94,6 +94,7 @@ const iosFeatures = [
 ];
 
 export function AudioTechnology() {
+  const domain = import.meta.env.VITE_SITE_URL || '';
   const [activeTab, setActiveTab] = useState<'mac' | 'ios'>('mac');
   const [activeMacId, setActiveMacId] = useState(1);
   const [activeIosId, setActiveIosId] = useState(1);
@@ -111,10 +112,13 @@ export function AudioTechnology() {
         <meta name="subject" content="Audio Technology | Global Delight B2B" />
         <meta property="og:title" content="Audio Technology | Global Delight B2B" />
         <meta property="og:description" content="Integrate our award-winning 3D surround sound audio engine into your products." />
+        <meta name="twitter:title" content="Audio Technology | Global Delight B2B" />
+        <meta name="twitter:description" content="Integrate our award-winning 3D surround sound audio engine into your products." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.globaldelight.com/technology/audio" />
+        <meta property="og:url" content={`${domain}/technology/audio`} />
+        <meta name="twitter:url" content={`${domain}/technology/audio`} />
         <meta property="og:locale" content="en_US" />
-        <link rel="canonical" href="https://www.globaldelight.com/technology/audio" />
+        <link rel="canonical" href={`${domain}/technology/audio`} />
         <style>{`
           @keyframes soundWave {
             0%, 100% { transform: scaleY(0.4); }
