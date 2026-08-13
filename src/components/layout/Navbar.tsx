@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { Link } from './LocalizedLink';
 import { Search, ShoppingCart, Menu, X, Smile } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
@@ -101,13 +102,13 @@ export function Navbar({ logoUrl }: NavbarProps) {
       <div className="w-full max-w-[1920px] mx-auto px-4 md:px-6 lg:px-8 h-20 flex items-center justify-between">
         
         <div className="flex items-center gap-8 lg:gap-12">
-          <a href="/" className="flex items-center">
-            <img 
-              src={logoUrl || defaultLogo} 
-              alt="Global Delight Logo" 
+          <Link to="/" className="flex items-center">
+            <img
+              src={logoUrl || defaultLogo}
+              alt="Global Delight Logo"
               className={`h-8 md:h-10 w-auto object-contain drop-shadow-sm ${logoUrl ? '' : 'invert opacity-80'}`}
             />
-          </a>
+          </Link>
 
           <div className="hidden md:flex items-center gap-8">
             <a href="https://www.globaldelight.com/store/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 group">

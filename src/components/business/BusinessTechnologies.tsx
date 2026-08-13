@@ -1,6 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
-import { Link } from 'react-router-dom';
+import { Link } from '@/components/layout/LocalizedLink';
 import { useTranslation } from 'react-i18next';
 
 export function BusinessTechnologies() {
