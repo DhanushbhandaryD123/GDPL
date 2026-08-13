@@ -1,14 +1,13 @@
 import { forwardRef } from 'react';
 import { Link as RouterLink, useParams, type LinkProps } from 'react-router-dom';
-
-const supportedLangs = ['en', 'de', 'it', 'ja', 'fr', 'pt', 'es', 'zh'];
+import { SUPPORTED_LANGS } from '@/lib/languagePreference';
 
 function localize(to: string, lang: string | undefined): string {
-  if (!lang || lang === 'en' || !supportedLangs.includes(lang)) return to;
+  if (!lang || lang === 'en' || !SUPPORTED_LANGS.includes(lang)) return to;
   if (!to.startsWith('/') || to.startsWith('#')) return to;
   // Already targets a specific language (e.g. the language-switcher itself
   // building an explicit "/fr/about" link) — don't double-prefix it.
-  if (supportedLangs.includes(to.split('/')[1])) return to;
+  if (SUPPORTED_LANGS.includes(to.split('/')[1])) return to;
   return to === '/' ? `/${lang}` : `/${lang}${to}`;
 }
 

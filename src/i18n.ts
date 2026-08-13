@@ -1,6 +1,7 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
+import { SUPPORTED_LANGS, getRememberedLanguage } from './lib/languagePreference';
 import en from './locales/en.json';
 import it from './locales/it.json';
 import ja from './locales/ja.json';
@@ -10,12 +11,18 @@ import pt from './locales/pt.json';
 import es from './locales/es.json';
 import zh from './locales/zh.json';
 
-const supportedLangs = ['en', 'de', 'it', 'ja', 'fr', 'pt', 'es', 'zh'];
-
 function detectInitialLanguage(): string {
   if (typeof window === 'undefined') return 'en';
   const firstSegment = window.location.pathname.split('/')[1];
-  return supportedLangs.includes(firstSegment) ? firstSegment : 'en';
+  if (SUPPORTED_LANGS.includes(firstSegment)) return firstSegment;
+
+  // Bare/unprefixed URL: fall back to a previously remembered language so
+  // returning visitors don't see a flash of English before LanguageSync's
+  // redirect kicks in. getRememberedLanguage() is a no-op during the
+  // prerender crawl, so this stays deterministically English there.
+  const remembered = getRememberedLanguage();
+  if (remembered && SUPPORTED_LANGS.includes(remembered)) return remembered;
+  return 'en';
 }
 
 i18n
