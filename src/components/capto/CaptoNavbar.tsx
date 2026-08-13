@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link } from '../layout/LocalizedLink';
 
 export function CaptoNavbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,9 +31,9 @@ export function CaptoNavbar() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             {/* Replace with actual Capto logo if available */}
-            <a href="/capto" className={`text-2xl font-bold ${isScrolled ? 'text-gray-900' : 'text-gray-900'} tracking-tight`}>
+            <Link to="/capto" className={`text-2xl font-bold ${isScrolled ? 'text-gray-900' : 'text-gray-900'} tracking-tight`}>
               Capto
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Nav */}

@@ -4,6 +4,7 @@ import { Navbar } from '../layout/Navbar';
 import { Footer } from '../layout/Footer';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from '../layout/LocalizedLink';
 
 export interface ReleaseVersion {
   version: string;
@@ -159,9 +160,9 @@ export function WhatsNewFullLayout({
               </ul>
 
               <div className="space-y-4 pt-6 border-t border-[#222]">
-                <a href="/faq" className="block text-gray-300 hover:text-white">Help</a>
+                <Link to="/faq" className="block text-gray-300 hover:text-white">Help</Link>
                 <a href="https://www.globaldelight.com/store/" className="block text-gray-300 hover:text-white">Store</a>
-                <a href="/contact" className="block text-gray-300 hover:text-white">Contact</a>
+                <Link to="/contact" className="block text-gray-300 hover:text-white">Contact</Link>
               </div>
             </div>
           </div>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Facebook, Twitter, Instagram, Linkedin, Youtube, ArrowLeft } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from '@/components/layout/LocalizedLink';
 import toast from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';
 import { Navbar } from '../components/layout/Navbar';
