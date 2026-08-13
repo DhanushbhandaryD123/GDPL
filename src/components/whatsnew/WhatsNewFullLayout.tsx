@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../layout/Navbar';
 import { Footer } from '../layout/Footer';
-import { ChevronDown, ChevronRight, Download } from 'lucide-react';
-import { Link, useNavigate } from 'react-router-dom';
+import { ChevronDown, ChevronRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export interface ReleaseVersion {
   version: string;
