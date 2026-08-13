@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Search, ShoppingCart, Menu, X, Smile } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
@@ -25,6 +25,7 @@ export function Navbar({ logoUrl }: NavbarProps) {
   
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const languageRef = useRef<HTMLDivElement>(null);
+  const mobileLanguageRef = useRef<HTMLDivElement>(null);
   
   const [isWhatsNewOpen, setIsWhatsNewOpen] = useState(false);
   const whatsNewRef = useRef<HTMLDivElement>(null);
@@ -51,7 +52,9 @@ export function Navbar({ logoUrl }: NavbarProps) {
       if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
         setIsSearchOpen(false);
       }
-      if (languageRef.current && !languageRef.current.contains(event.target as Node)) {
+      const clickedInsideDesktop = languageRef.current && languageRef.current.contains(event.target as Node);
+      const clickedInsideMobile = mobileLanguageRef.current && mobileLanguageRef.current.contains(event.target as Node);
+      if (!clickedInsideDesktop && !clickedInsideMobile) {
         setIsLanguageOpen(false);
       }
       if (whatsNewRef.current && !whatsNewRef.current.contains(event.target as Node)) {
@@ -263,7 +266,7 @@ export function Navbar({ logoUrl }: NavbarProps) {
         <div className="md:hidden flex items-center gap-4">
           
           {/* Mobile Language Dropdown */}
-          <div className="relative flex items-center" ref={languageRef}>
+          <div className="relative flex items-center" ref={mobileLanguageRef}>
             <button 
               onClick={() => setIsLanguageOpen(!isLanguageOpen)}
               className="hover:opacity-80 transition-opacity focus:outline-none flex items-center gap-1.5"
