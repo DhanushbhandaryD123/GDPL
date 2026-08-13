@@ -1,22 +1,37 @@
 import { useEffect } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { SUPPORTED_LANGS, rememberLanguage, getRememberedLanguage } from '@/lib/languagePreference';
 
 export function LanguageSync() {
   const { lang } = useParams<{ lang?: string }>();
   const { i18n } = useTranslation();
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const supportedLangs = ['en', 'de', 'it', 'ja', 'fr', 'pt', 'es', 'zh'];
-    // Determine the correct language based on the URL parameter, default to English
-    const targetLang = lang && supportedLangs.includes(lang) ? lang : 'en';
-    
-    // Only change if the current resolved language is different
-    if (i18n.resolvedLanguage !== targetLang) {
-      i18n.changeLanguage(targetLang);
+    if (lang && SUPPORTED_LANGS.includes(lang)) {
+      if (i18n.resolvedLanguage !== lang) {
+        i18n.changeLanguage(lang);
+      }
+      rememberLanguage(lang);
+      return;
     }
-  }, [lang, i18n, location.pathname]);
+
+    // No language prefix in the URL — if the visitor previously picked a
+    // non-English language, keep them there instead of silently falling
+    // back to English on every refresh/new page.
+    const remembered = getRememberedLanguage();
+    if (remembered && remembered !== 'en' && SUPPORTED_LANGS.includes(remembered)) {
+      const target = location.pathname === '/' ? `/${remembered}` : `/${remembered}${location.pathname}`;
+      navigate(`${target}${location.search}${location.hash}`, { replace: true });
+      return;
+    }
+
+    if (i18n.resolvedLanguage !== 'en') {
+      i18n.changeLanguage('en');
+    }
+  }, [lang, i18n, location.pathname, location.search, location.hash, navigate]);
 
   return null;
 }
