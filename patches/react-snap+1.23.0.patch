@@ -1,0 +1,27 @@
+diff --git a/node_modules/react-snap/src/puppeteer_utils.js b/node_modules/react-snap/src/puppeteer_utils.js
+index c4b7641..a49f697 100644
+--- a/node_modules/react-snap/src/puppeteer_utils.js
++++ b/node_modules/react-snap/src/puppeteer_utils.js
+@@ -220,9 +220,7 @@ const crawl = async opt => {
+           page,
+           options,
+           route,
+-          onError: () => {
+-            shuttingDown = true;
+-          },
++          onError: () => {},
+           sourcemapStore
+         });
+         beforeFetch && beforeFetch({ page, route });
+@@ -245,10 +243,7 @@ const crawl = async opt => {
+         await page.close();
+         console.log(`✅  crawled ${processed + 1} out of ${enqued} (${route})`);
+       } catch (e) {
+-        if (!shuttingDown) {
+-          console.log(`🔥  error at ${route}`, e);
+-        }
+-        shuttingDown = true;
++        console.log(`🔥  error at ${route}`, e);
+       }
+     } else {
+       // this message creates a lot of noise
