@@ -1,8 +1,9 @@
 import { useState, useRef, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link as RouterLink } from 'react-router-dom';
 import { Link } from './LocalizedLink';
 import { Search, ShoppingCart, Menu, X, Smile } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { rememberLanguage, SUPPORTED_LANGS } from '@/lib/languagePreference';
 
 interface NavbarProps {
   logoUrl?: string;
@@ -36,11 +37,10 @@ export function Navbar({ logoUrl }: NavbarProps) {
   const location = useLocation();
 
   const getLanguagePath = (langCode: string) => {
-    const supportedLangs = ['en', 'de', 'it', 'ja', 'fr', 'pt', 'es', 'zh'];
     let currentPath = location.pathname;
     const pathParts = currentPath.split('/').filter(Boolean);
-    
-    if (pathParts.length > 0 && supportedLangs.includes(pathParts[0])) {
+
+    if (pathParts.length > 0 && SUPPORTED_LANGS.includes(pathParts[0])) {
       pathParts.shift();
       currentPath = '/' + pathParts.join('/');
     }
@@ -244,17 +244,17 @@ export function Navbar({ logoUrl }: NavbarProps) {
                   {languages.map((lang) => {
                     const isSelected = i18n.language?.startsWith(lang.code);
                     return (
-                      <Link
+                      <RouterLink
                         key={lang.code}
                         to={getLanguagePath(lang.code)}
-                        onClick={() => setIsLanguageOpen(false)}
+                        onClick={() => { rememberLanguage(lang.code); setIsLanguageOpen(false); }}
                         className={`flex items-center gap-3 text-left py-3 border-b border-gray-100 hover:bg-gray-50 transition-colors w-full px-2 rounded-sm ${
                           isSelected ? 'font-bold text-[#003366]' : 'text-gray-700'
                         }`}
                       >
                         <img src={lang.flagUrl} alt={lang.name} className="w-[22px] h-[16px] object-cover rounded-[2px] shadow-sm" />
                         <span className="text-[15px]">{lang.name}</span>
-                      </Link>
+                      </RouterLink>
                     );
                   })}
                 </div>
@@ -282,17 +282,17 @@ export function Navbar({ logoUrl }: NavbarProps) {
                   {languages.map((lang) => {
                     const isSelected = i18n.language?.startsWith(lang.code);
                     return (
-                      <Link
+                      <RouterLink
                         key={lang.code}
                         to={getLanguagePath(lang.code)}
-                        onClick={() => setIsLanguageOpen(false)}
+                        onClick={() => { rememberLanguage(lang.code); setIsLanguageOpen(false); }}
                         className={`flex items-center gap-2 text-left py-3 border-b border-gray-100 hover:bg-gray-50 transition-colors w-full px-2 rounded-sm ${
                           isSelected ? 'font-bold text-[#003366]' : 'text-gray-700'
                         }`}
                       >
                         <img src={lang.flagUrl} alt={lang.name} className="w-[20px] h-[14px] object-cover rounded-[2px] shadow-sm" />
                         <span className="text-[14px]">{lang.name}</span>
-                      </Link>
+                      </RouterLink>
                     );
                   })}
                 </div>
