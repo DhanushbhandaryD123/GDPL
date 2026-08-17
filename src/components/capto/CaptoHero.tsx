@@ -33,13 +33,13 @@ export function CaptoHero() {
               </div>
               <span className="text-[2.25rem] md:text-[3rem] font-bold tracking-tight text-[#1c2331]">Capto</span>
             </div>
-            <h1 className="text-base sm:text-xl md:text-[2.75rem] lg:text-[3.25rem] font-bold tracking-tight leading-[1.1] mb-6 text-[#1c2331]">
+            <h1 className="text-[2rem] sm:text-[2.5rem] md:text-[2.75rem] lg:text-[3.25rem] font-bold tracking-tight leading-[1.15] mb-6 text-[#1c2331]">
               <span className="text-[#6554ff]">{t('capto.hero.title_1')}</span><br />
               <span className="text-[#6554ff]">{t('capto.hero.title_2')}</span> {t('capto.hero.title_3')}<br />
               {t('capto.hero.title_4')}
             </h1>
 
-            <p className="text-xs sm:text-sm md:text-xl text-[#2d3748] font-bold mb-10">
+            <p className="text-[15px] sm:text-lg md:text-xl text-[#2d3748] font-bold mb-10">
               {t('capto.hero.subtitle')}
             </p>
 
@@ -95,16 +95,16 @@ export function CaptoHero() {
            initial={{ opacity: 0, y: 20 }}
            animate={{ opacity: 1, y: 0 }}
            transition={{ duration: 0.6, delay: 0.4 }}
-           className="mt-16 md:mt-24 w-full max-w-[1000px] mx-auto bg-[#f8f8fb] rounded-2xl border border-gray-100 flex flex-col md:flex-row items-center justify-between px-8 py-5 shadow-sm"
+           className="mt-16 md:mt-24 w-full max-w-[1000px] mx-auto bg-[#f8f8fb] rounded-2xl border border-gray-100 flex flex-col md:flex-row items-center justify-between px-6 md:px-8 py-6 md:py-5 shadow-sm gap-6 md:gap-0"
         >
-          <div className="flex items-center gap-4 mb-6 md:mb-0">
+          <div className="flex items-center gap-4">
             <div className="font-black text-[1.6rem] leading-none text-transparent bg-clip-text bg-gradient-to-br from-[#77a6f7] to-[#998ceb] transform -rotate-2 drop-shadow-sm text-center md:text-left">
               {t('capto.hero.back')} <span className="text-sm align-top">{t('capto.hero.to')}</span><br/>{t('capto.hero.school')}
             </div>
           </div>
 
-          <div className="flex items-center gap-4 mb-6 md:mb-0">
-            <span className="font-bold text-gray-800 text-sm">{t('capto.hero.only')}</span>
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <span className="font-bold text-gray-800 text-sm hidden sm:block">{t('capto.hero.only')}</span>
             <div className="flex gap-2 text-center items-start">
               <div>
                 <div className="bg-white rounded-md px-3 py-1.5 text-[#7c63ff] font-bold text-xl shadow-[0_2px_10px_rgba(0,0,0,0.05)] w-[46px] border border-gray-50">08</div>
@@ -121,10 +121,10 @@ export function CaptoHero() {
                 <div className="text-[8px] text-gray-400 mt-1.5 font-bold tracking-wider">{t('capto.hero.seconds')}</div>
               </div>
             </div>
-            <span className="font-bold text-gray-800 text-sm">{t('capto.hero.left')}</span>
+            <span className="font-bold text-gray-800 text-sm hidden sm:block">{t('capto.hero.left')}</span>
           </div>
 
-          <div className="mt-2 md:mt-0">
+          <div className="text-center md:text-right">
             <span className="font-extrabold text-[#1c2331] text-[1.1rem]">
               {t('capto.hero.avail')} <span className="text-[#6554ff]">{t('capto.hero.off')}</span>
             </span>

@@ -29,9 +29,6 @@ export function Navbar({ logoUrl }: NavbarProps) {
   const languageRef = useRef<HTMLDivElement>(null);
   const mobileLanguageRef = useRef<HTMLDivElement>(null);
   
-  const [isWhatsNewOpen, setIsWhatsNewOpen] = useState(false);
-  const whatsNewRef = useRef<HTMLDivElement>(null);
-  
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const location = useLocation();
@@ -57,9 +54,6 @@ export function Navbar({ logoUrl }: NavbarProps) {
       const clickedInsideMobile = mobileLanguageRef.current && mobileLanguageRef.current.contains(event.target as Node);
       if (!clickedInsideDesktop && !clickedInsideMobile) {
         setIsLanguageOpen(false);
-      }
-      if (whatsNewRef.current && !whatsNewRef.current.contains(event.target as Node)) {
-        setIsWhatsNewOpen(false);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -96,6 +90,16 @@ export function Navbar({ logoUrl }: NavbarProps) {
   ];
 
   const currentLanguage = languages.find(l => i18n.language?.startsWith(l.code)) || languages[0];
+
+  const getWhatsNewLink = () => {
+    const path = location.pathname.toLowerCase();
+    if (path.includes('/boom3d') || path.includes('/whatsnew/boom') && !path.includes('boom2')) return '/whatsnew/boom';
+    if (path.includes('/boom2')) return '/whatsnew/boom2';
+    if (path.includes('/capto')) return '/whatsnew/capto';
+    return null;
+  };
+
+  const whatsNewLink = getWhatsNewLink();
 
   return (
     <nav className="sticky top-0 z-50 w-full bg-white border-b border-gray-100">
@@ -149,40 +153,16 @@ export function Navbar({ logoUrl }: NavbarProps) {
             )
           ))}
           
-          <div className="relative" ref={whatsNewRef}>
-            <button 
-              onClick={() => setIsWhatsNewOpen(!isWhatsNewOpen)}
-              className="text-base font-medium text-gray-700 hover:text-gray-900 transition-colors flex items-center gap-1"
-            >
-              What's New
-              <svg className={`w-4 h-4 transition-transform ${isWhatsNewOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            
-            {isWhatsNewOpen && (
-              <div className="absolute right-0 top-full mt-4 w-48 bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-gray-100 overflow-hidden z-50">
-                <div className="py-2">
-                  {[
-                    { name: 'Boom 3D', href: '/whatsnew/boom' },
-                    { name: 'Capto', href: '/whatsnew/capto' },
-                    { name: 'Boom 2', href: '/whatsnew/boom2' },
-                    { name: 'AudiOn', href: '/whatsnew/audion' },
-                    { name: 'AuDimix', href: '/whatsnew/audimix' }
-                  ].map((item) => (
-                    <Link
-                      key={item.name}
-                      to={item.href}
-                      onClick={() => setIsWhatsNewOpen(false)}
-                      className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#003366] transition-colors"
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
+          {whatsNewLink && (
+            <div className="relative">
+              <Link 
+                to={whatsNewLink}
+                className="text-base font-medium text-gray-700 hover:text-gray-900 transition-colors flex items-center gap-1"
+              >
+                What's New
+              </Link>
+            </div>
+          )}
           
           <div className="relative" ref={searchRef}>
             <button 

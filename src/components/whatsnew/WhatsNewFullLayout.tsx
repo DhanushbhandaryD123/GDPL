@@ -18,8 +18,9 @@ export interface ReleaseVersion {
 interface WhatsNewFullLayoutProps {
   productName: string;
   logoSrc: string;
-  heroMockupSrc: string;
+  heroMockupSrc?: string;
   heroBgClass?: string;
+  heroBgUrl?: string;
   activePlatform?: 'macOS' | 'windows' | 'ios' | 'android' | 'none';
   macOSNotes?: ReleaseVersion[];
   windowsNotes?: ReleaseVersion[];
@@ -33,6 +34,7 @@ export function WhatsNewFullLayout({
   logoSrc,
   heroMockupSrc,
   heroBgClass = "bg-[#060814]", // dark blue/black default
+  heroBgUrl,
   activePlatform,
   macOSNotes = [],
   windowsNotes = [],
@@ -58,8 +60,6 @@ export function WhatsNewFullLayout({
     { id: 'boom3d-win', label: 'Boom 3D Windows', productId: 'boom3d', platform: 'windows', href: '/whatsnew/boom' },
     { id: 'boom2-mac', label: 'Boom 2 Mac', productId: 'boom2', platform: 'macOS', href: '/whatsnew/boom2' },
     { id: 'capto-mac', label: 'Capto Mac', productId: 'capto', platform: 'macOS', href: '/whatsnew/capto' },
-    { id: 'audion', label: 'AudiOn', productId: 'audion', platform: 'none', href: '/whatsnew/audion' },
-    { id: 'audimix', label: 'AuDimix', productId: 'audimix', platform: 'none', href: '/whatsnew/audimix' },
   ];
 
   return (
@@ -78,21 +78,23 @@ export function WhatsNewFullLayout({
         {/* HERO SECTION */}
         <div className={`relative w-full h-[400px] md:h-[500px] overflow-hidden flex items-center justify-center ${heroBgClass}`}
              style={{ 
-               backgroundImage: 'url("/boom3D/hero-bg-waves.png")', // Placeholder for a wave background
+               backgroundImage: heroBgUrl ? `url("${heroBgUrl}")` : 'none',
                backgroundSize: 'cover',
                backgroundPosition: 'center' 
              }}>
           {/* Fallback gradient if image fails */}
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900/50 to-[#0a0515]/80 -z-10" />
           
-          <div className="max-w-[1200px] w-full mx-auto px-6 grid md:grid-cols-2 gap-8 items-center relative z-10">
+          <div className={`max-w-[1200px] w-full mx-auto px-6 ${heroMockupSrc ? 'grid md:grid-cols-2 gap-8 items-center' : 'flex flex-col items-center justify-center'} relative z-10`}>
             {/* Mockup */}
-            <div className="flex justify-center md:justify-end">
-              <img src={heroMockupSrc} alt={`${productName} Mockup`} className="max-h-[250px] md:max-h-[350px] object-contain drop-shadow-2xl" />
-            </div>
+            {heroMockupSrc && (
+              <div className="flex justify-center md:justify-end">
+                <img src={heroMockupSrc} alt={`${productName} Mockup`} className="max-h-[250px] md:max-h-[350px] object-contain drop-shadow-2xl" />
+              </div>
+            )}
             
             {/* Title */}
-            <div className="flex flex-col items-center md:items-start text-center md:text-left">
+            <div className={`flex flex-col items-center text-center ${heroMockupSrc ? 'md:items-start md:text-left' : 'max-w-3xl mx-auto'}`}>
               <img src={logoSrc} alt={productName} className="h-12 md:h-16 mb-6 object-contain" />
               <h1 className="text-2xl md:text-4xl font-bold text-white leading-tight mb-8">
                 Here's everything you need to<br className="hidden md:block"/> 

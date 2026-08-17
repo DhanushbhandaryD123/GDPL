@@ -59,41 +59,54 @@ export function AppleWatchIntegration() {
                 <Camera className="w-7 h-7 text-[#00B4B4]" strokeWidth={2} />
               </motion.div>
 
-              {/* Apple Watch Mockup Frame */}
-              <div className="relative w-[200px] sm:w-[240px] h-[240px] sm:h-[280px] bg-[#E8E8ED] rounded-[2.5rem] sm:rounded-[3rem] border-[3px] border-[#D1D1D6] shadow-[0_30px_50px_rgba(0,0,0,0.2)] z-10 p-1.5 sm:p-2 flex flex-col items-center hover:-translate-y-2 transition-transform duration-500 cursor-pointer group">
-                
-                {/* Screen */}
-                <div className="w-full h-full bg-black rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden relative border-4 border-black p-2 flex flex-col justify-between">
-                  <img 
-                    src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=400&auto=format&fit=crop" 
-                    alt="Watch Live Preview"
-                    className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700"
-                  />
-                  
-                  {/* Top Bar */}
-                  <div className="relative z-10 flex justify-between w-full pt-1 px-2">
-                    <span className="text-[#00B4B4] text-[10px] font-bold">Camera Plus</span>
-                    <span className="text-white text-[10px] font-bold">10:09</span>
-                  </div>
-                  
-                  {/* Shutter Button */}
-                  <div className="relative z-10 self-center mb-2 group-hover:scale-110 transition-transform duration-300">
-                    <div className="w-12 h-12 rounded-full border-[2px] border-white/80 flex items-center justify-center backdrop-blur-sm bg-black/20">
-                      <div className="w-9 h-9 bg-[#00B4B4] rounded-full opacity-90 shadow-[0_0_15px_rgba(0,180,180,0.6)]" />
+              {/* Apple Watch Mockup */}
+              <div className="relative flex flex-col items-center">
+
+                {/* Top Band (tapered, seamless into case) */}
+                <div
+                  className="w-[112px] sm:w-[136px] h-[64px] sm:h-[76px] bg-gradient-to-b from-[#e9e9ee] to-[#c7c7cc] shadow-inner"
+                  style={{ clipPath: 'polygon(18% 0%, 82% 0%, 100% 100%, 0% 100%)' }}
+                />
+
+                {/* Case */}
+                <div className="relative -mt-2 w-[200px] sm:w-[240px] h-[240px] sm:h-[280px] bg-[#1c1c1e] rounded-[2.5rem] sm:rounded-[3rem] shadow-[0_30px_50px_rgba(0,0,0,0.25)] z-10 p-1.5 sm:p-2 flex items-center justify-center hover:-translate-y-2 transition-transform duration-500 cursor-pointer group">
+
+                  {/* Screen */}
+                  <div className="w-full h-full bg-black rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden relative flex flex-col justify-between p-2">
+                    <img
+                      src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=400&auto=format&fit=crop"
+                      alt="Watch Live Preview"
+                      className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700"
+                    />
+
+                    {/* Top Bar */}
+                    <div className="relative z-10 flex justify-between w-full pt-1 px-2">
+                      <span className="text-[#00B4B4] text-[10px] font-bold">Camera Plus</span>
+                      <span className="text-white text-[10px] font-bold">10:09</span>
+                    </div>
+
+                    {/* Shutter Button */}
+                    <div className="relative z-10 self-center mb-2 group-hover:scale-110 transition-transform duration-300">
+                      <div className="w-12 h-12 rounded-full border-[2px] border-white/80 flex items-center justify-center backdrop-blur-sm bg-black/20">
+                        <div className="w-9 h-9 bg-[#00B4B4] rounded-full opacity-90 shadow-[0_0_15px_rgba(0,180,180,0.6)]" />
+                      </div>
                     </div>
                   </div>
+
+                  {/* Digital Crown */}
+                  <div className="absolute top-[22%] -right-[3px] w-2.5 h-9 sm:h-11 bg-gradient-to-r from-[#d1d1d6] to-[#8e8e93] rounded-r-md shadow-sm z-0" />
+                  {/* Side Button */}
+                  <div className="absolute bottom-[24%] -right-[2px] w-1.5 h-11 sm:h-14 bg-gradient-to-r from-[#c7c7cc] to-[#8e8e93] rounded-r-md z-0" />
                 </div>
 
-                {/* Digital Crown */}
-                <div className="absolute top-[25%] -right-[9px] w-2 h-10 sm:h-12 bg-gradient-to-r from-[#C7C7CC] to-[#A0A0A5] rounded-r-md border-y border-[#B0B0B5] shadow-sm z-0" />
-                {/* Side Button */}
-                <div className="absolute bottom-[25%] -right-[7px] w-1 h-12 sm:h-14 bg-gradient-to-r from-[#D1D1D6] to-[#C7C7CC] rounded-r-md z-0" />
+                {/* Bottom Band (tapered, seamless into case) */}
+                <div
+                  className="-mt-2 w-[112px] sm:w-[136px] h-[80px] sm:h-[96px] bg-gradient-to-t from-[#e9e9ee] to-[#c7c7cc] shadow-inner"
+                  style={{ clipPath: 'polygon(0% 0%, 100% 0%, 82% 100%, 18% 100%)' }}
+                />
+
               </div>
-              
-              {/* Watch Bands */}
-              <div className="absolute -top-[60px] sm:-top-[80px] left-1/2 -translate-x-1/2 w-[120px] sm:w-[150px] h-[60px] sm:h-[80px] bg-gradient-to-b from-[#f8f9fa] to-[#E8E8ED] rounded-t-[2rem] sm:rounded-t-[3rem] -z-10 shadow-inner" />
-              <div className="absolute -bottom-[60px] sm:-bottom-[80px] left-1/2 -translate-x-1/2 w-[120px] sm:w-[150px] h-[60px] sm:h-[80px] bg-gradient-to-t from-[#f8f9fa] to-[#E8E8ED] rounded-b-[2rem] sm:rounded-b-[3rem] -z-10 shadow-inner" />
-              
+
             </motion.div>
           </div>
           
