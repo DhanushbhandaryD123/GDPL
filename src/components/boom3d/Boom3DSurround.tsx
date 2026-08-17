@@ -48,86 +48,16 @@ export function Boom3DSurround() {
           </p>
         </div>
 
-        {/* Orbital Visualizer */}
-        <div className="relative w-full max-w-[1000px] mx-auto h-[300px] md:h-[400px] flex items-center justify-center mt-6">
-          
-          {/* Animated Orbital Rings (Moving Blue Sound Waves) */}
-          {[...Array(4)].map((_, i) => (
-            <motion.div
-              key={i}
-              initial={{ width: '20%', height: '25%', opacity: 0.6 }}
-              animate={{ width: '130%', height: '140%', opacity: 0 }}
-              transition={{ 
-                duration: 6, 
-                repeat: Infinity, 
-                ease: "linear",
-                delay: i * 1.5
-              }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-blue-400/50 rounded-[100%] pointer-events-none"
-            />
-          ))}
-
-          {/* Static Soft Blue Glow behind Center */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-blue-400/20 rounded-full blur-2xl pointer-events-none" />
-
-          {/* Central Main Icon */}
-          <motion.div 
-            initial={{ scale: 0.8, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, type: "spring" }}
-            className="relative z-20 w-32 h-32 bg-white rounded-full flex items-center justify-center shadow-[0_20px_50px_rgba(168,85,247,0.15)] border border-gray-50/50"
-          >
-            <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-[inset_0_4px_20px_rgba(0,0,0,0.03)]">
-              <Headphones size={48} strokeWidth={1.5} className="text-purple-600 drop-shadow-md" />
-            </div>
-          </motion.div>
-          
-          {/* Orbiting Icons */}
-          {/* Music - Top Left */}
-          <motion.div 
-            animate={{ y: [-10, 10, -10] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-[10%] md:top-[15%] left-[12%] md:left-[22%] z-10"
-          >
-            <div className="w-12 h-12 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-white">
-              <Music size={20} className="text-pink-500" strokeWidth={2} />
-            </div>
-          </motion.div>
-
-          {/* Display - Bottom Left */}
-          <motion.div 
-            animate={{ y: [10, -10, 10] }}
-            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute bottom-[12%] md:bottom-[15%] left-[5%] md:left-[30%] z-10"
-          >
-            <div className="w-12 h-12 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-white">
-              <MonitorPlay size={20} className="text-purple-500" strokeWidth={2} />
-            </div>
-          </motion.div>
-
-          {/* Gamepad - Top Right */}
-          <motion.div 
-            animate={{ y: [-8, 8, -8] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-            className="absolute top-[20%] md:top-[25%] right-[20%] md:right-[28%] z-10"
-          >
-            <div className="w-12 h-12 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-white">
-              <Gamepad2 size={20} className="text-blue-500" strokeWidth={2} />
-            </div>
-          </motion.div>
-
-          {/* Volume - Bottom Right */}
-          <motion.div 
-            animate={{ y: [12, -12, 12] }}
-            transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-            className="absolute bottom-[10%] md:bottom-[20%] right-[8%] md:right-[15%] z-10"
-          >
-            <div className="w-12 h-12 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-white">
-              <Volume2 size={20} className="text-indigo-600" strokeWidth={2} />
-            </div>
-          </motion.div>
-
+        {/* Video Player */}
+        <div className="relative w-full max-w-[1000px] mx-auto mt-10 flex justify-center shadow-2xl rounded-2xl md:rounded-[2rem] overflow-hidden">
+          <video 
+            src="/boom3D/video3D.mp4" 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            className="w-full h-auto object-cover"
+          />
         </div>
       </div>
 

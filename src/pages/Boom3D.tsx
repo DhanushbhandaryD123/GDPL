@@ -62,9 +62,7 @@ export function Boom3D() {
         <meta property="og:see_also" content="https://www.youtube.com/channel/UCiHp8wkTV2h7u8afCIij0YQ" />
       </Helmet>
       
-      <div className="absolute top-0 w-full z-50">
-        <Navbar />
-      </div>
+      <Navbar />
       
       <main className="relative">
         <Boom3DHero />
