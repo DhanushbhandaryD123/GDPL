@@ -1,72 +1,19 @@
 import { motion } from 'motion/react';
-import { MicOff, Music4, AudioWaveform, Clock, Play, Drum, Mic, Piano, Music2, Guitar } from 'lucide-react';
+import { MicOff, Music4, AudioWaveform, Clock } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-
-const stems = [
-  { label: 'Drums', icon: Drum, pct: 40, color: 'text-purple-400', track: 'from-purple-400 to-purple-500' },
-  { label: 'Vocals', icon: Mic, pct: 72, color: 'text-green-400', track: 'from-green-400 to-green-500' },
-  { label: 'Piano', icon: Piano, pct: 52, color: 'text-pink-400', track: 'from-pink-400 to-pink-500' },
-  { label: 'Bass', icon: Music2, pct: 20, color: 'text-blue-400', track: 'from-blue-400 to-blue-500' },
-  { label: 'Instruments', icon: Guitar, pct: 88, color: 'text-orange-400', track: 'from-orange-400 to-orange-500' },
-];
-
-function StemMixerMockup() {
-  const { t } = useTranslation();
-  return (
-    <div className="w-full h-full rounded-xl bg-[#0d0a14] flex flex-col">
-      {/* Title bar */}
-      <div className="flex items-center justify-between px-4 py-3 border-b border-white/5">
-        <div className="flex items-center gap-2.5 min-w-0">
-          <div className="w-7 h-7 rounded-md bg-white/10 flex items-center justify-center shrink-0">
-            <Play className="w-3 h-3 text-white fill-white" />
-          </div>
-          <div className="min-w-0">
-            <p className="text-[11px] text-white/80 font-medium truncate">Chasing-Waterfalls.mp3</p>
-            <p className="text-[9px] text-white/40">4.32 MB, MP3</p>
-          </div>
-        </div>
-        <span className="text-[9px] text-white/40 shrink-0">00:19 / 03:03</span>
-      </div>
-
-      {/* Stem rows */}
-      <div className="flex-1 flex flex-col justify-center gap-3.5 px-4 py-4">
-        {stems.map((stem) => (
-          <div key={stem.label} className="flex items-center gap-3">
-            <div className="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
-              <stem.icon className={`w-3.5 h-3.5 ${stem.color}`} strokeWidth={1.75} />
-            </div>
-            <span className="text-[10px] text-white/60 w-14 shrink-0">{stem.label}</span>
-            <div className="flex-1 h-1 rounded-full bg-white/10 overflow-hidden">
-              <div className={`h-full rounded-full bg-gradient-to-r ${stem.track}`} style={{ width: `${stem.pct}%` }} />
-            </div>
-            <span className="text-[9px] text-white/40 w-7 text-right shrink-0">{stem.pct}%</span>
-          </div>
-        ))}
-      </div>
-
-      {/* Export footer */}
-      <div className="flex items-center justify-between px-4 py-3 border-t border-white/5">
-        <span className="text-[9px] text-white/40">{t('audimix.detailed_features.save_stems')}</span>
-        <span className="text-[9px] font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 rounded-full px-3 py-1">
-          {t('audimix.detailed_features.export')}
-        </span>
-      </div>
-    </div>
-  );
-}
 
 export function DetailedFeatures() {
   const { t } = useTranslation();
 
   const features = [
-    { title: t('audimix.detailed_features.f1_title'), description: t('audimix.detailed_features.f1_desc'), icon: AudioWaveform },
-    { title: t('audimix.detailed_features.f2_title'), description: t('audimix.detailed_features.f2_desc'), icon: MicOff },
-    { title: t('audimix.detailed_features.f3_title'), description: t('audimix.detailed_features.f3_desc'), icon: Music4 },
-    { title: t('audimix.detailed_features.f4_title'), description: t('audimix.detailed_features.f4_desc'), icon: Clock },
+    { title: t('audimix.detailed_features.f1_title'), description: t('audimix.detailed_features.f1_desc'), icon: AudioWaveform, accent: 'bg-indigo-50 text-indigo-600' },
+    { title: t('audimix.detailed_features.f2_title'), description: t('audimix.detailed_features.f2_desc'), icon: MicOff, accent: 'bg-violet-50 text-violet-600' },
+    { title: t('audimix.detailed_features.f3_title'), description: t('audimix.detailed_features.f3_desc'), icon: Music4, accent: 'bg-indigo-50 text-indigo-600' },
+    { title: t('audimix.detailed_features.f4_title'), description: t('audimix.detailed_features.f4_desc'), icon: Clock, accent: 'bg-violet-50 text-violet-600' },
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-white border-t border-gray-100 relative">
+    <section className="py-20 md:py-28 bg-white border-t border-gray-100 relative">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.h2
@@ -75,13 +22,13 @@ export function DetailedFeatures() {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-bold text-gray-900 mb-6"
           >
-            {t('audimix.detailed_features.title_1')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">{t('audimix.detailed_features.title_2')}</span>
+            {t('audimix.detailed_features.title_1')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">{t('audimix.detailed_features.title_2')}</span>
           </motion.h2>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center gap-12">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           {/* Features List Left */}
-          <div className="w-full lg:w-1/3 flex flex-col gap-8">
+          <div className="w-full lg:w-1/3 flex flex-col gap-6">
             {features.slice(0, 2).map((feature, idx) => (
               <motion.div
                 key={idx}
@@ -89,31 +36,39 @@ export function DetailedFeatures() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:border-purple-300 transition-colors group"
+                className="bg-white p-7 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all group"
               >
-                <feature.icon className="text-purple-500 mb-4 group-hover:scale-110 transition-transform" size={32} />
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${feature.accent} group-hover:scale-110 transition-transform`}>
+                  <feature.icon size={24} strokeWidth={2} />
+                </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
                 <p className="text-gray-500 leading-relaxed">{feature.description}</p>
               </motion.div>
             ))}
           </div>
 
-          {/* Central app mockup — stem mixer */}
+          {/* Central photo centerpiece */}
           <div className="w-full lg:w-1/3">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.94 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="relative rounded-[2rem] overflow-hidden border border-gray-100 bg-gradient-to-br from-purple-500 via-[#1a1330] to-blue-700 p-2 shadow-2xl shadow-purple-200/60"
+              className="relative"
             >
-              <div className="aspect-[4/5] md:h-[600px] md:aspect-auto">
-                <StemMixerMockup />
+              <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-indigo-200/50 to-violet-200/50 blur-2xl pointer-events-none" />
+              <div className="relative rounded-[2rem] overflow-hidden border border-gray-100 shadow-2xl aspect-[4/5] md:h-[560px] md:aspect-auto">
+                <img
+                  src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=1000&q=80&auto=format&fit=crop"
+                  alt="Mixing console"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-indigo-950/70 via-indigo-950/5 to-transparent" />
               </div>
             </motion.div>
           </div>
 
           {/* Features List Right */}
-          <div className="w-full lg:w-1/3 flex flex-col gap-8">
+          <div className="w-full lg:w-1/3 flex flex-col gap-6">
             {features.slice(2, 4).map((feature, idx) => (
               <motion.div
                 key={idx}
@@ -121,9 +76,11 @@ export function DetailedFeatures() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:border-blue-300 transition-colors group"
+                className="bg-white p-7 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all group"
               >
-                <feature.icon className="text-blue-500 mb-4 group-hover:scale-110 transition-transform" size={32} />
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${feature.accent} group-hover:scale-110 transition-transform`}>
+                  <feature.icon size={24} strokeWidth={2} />
+                </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
                 <p className="text-gray-500 leading-relaxed">{feature.description}</p>
               </motion.div>

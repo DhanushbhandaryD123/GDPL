@@ -55,11 +55,14 @@ export function Boom2FeatureGrid() {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="rounded-3xl relative overflow-hidden group shadow-lg min-h-[400px]"
         >
-          {/* Image Background */}
+          {/* Video Background */}
           <div className="absolute inset-0 z-0">
-            <img
-              src="/boom2/t2.png"
-              alt="Powerful Audio Effects"
+            <video
+              src="/boom2/Product_animation_with_audio_eff…_202608171653.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
               className="w-full h-full object-cover"
             />
           </div>
@@ -92,11 +95,14 @@ export function Boom2FeatureGrid() {
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           className="rounded-3xl relative overflow-hidden group shadow-lg min-h-[400px]"
         >
-          {/* Image Background */}
+          {/* Video Background */}
           <div className="absolute inset-0 z-0">
-            <img
-              src="/boom2/t4.png"
-              alt="Volume Booster"
+            <video
+              src="/boom2/Volume_booster_video_generation_202608171710.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
               className="w-full h-full object-cover"
             />
           </div>
@@ -129,11 +135,14 @@ export function Boom2FeatureGrid() {
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           className="rounded-3xl relative overflow-hidden group shadow-lg min-h-[400px]"
         >
-          {/* Image Background */}
+          {/* Video Background */}
           <div className="absolute inset-0 z-0">
-            <img
-              src="/boom2/t3.png"
-              alt="System Wide Control"
+            <video
+              src="/boom2/Generate_product_demonstration_v…_202608171719.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
               className="w-full h-full object-cover"
             />
           </div>

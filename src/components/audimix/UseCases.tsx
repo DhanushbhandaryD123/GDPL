@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import { Mic2, Music, Headphones } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
@@ -12,104 +11,75 @@ export function UseCases() {
       title: t('audimix.use_cases.musicians_title'),
       icon: Mic2,
       description: t('audimix.use_cases.musicians_desc'),
-      image: 'https://images.unsplash.com/photo-1508973379184-7517410fb0bc?q=80&w=2000&auto=format&fit=crop',
-      color: 'text-purple-500'
+      image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=1200&q=80&auto=format&fit=crop',
     },
     {
       id: 'djs',
       title: t('audimix.use_cases.djs_title'),
       icon: Music,
       description: t('audimix.use_cases.djs_desc'),
-      image: 'https://images.unsplash.com/photo-1516873240891-4bf014598ab4?q=80&w=2000&auto=format&fit=crop',
-      color: 'text-blue-500'
+      image: 'https://images.unsplash.com/photo-1516873240891-4bf014598ab4?w=1200&q=80&auto=format&fit=crop',
     },
     {
       id: 'producers',
       title: t('audimix.use_cases.producers_title'),
       icon: Headphones,
       description: t('audimix.use_cases.producers_desc'),
-      image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=2000&auto=format&fit=crop',
-      color: 'text-pink-500'
+      image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1200&q=80&auto=format&fit=crop',
     }
   ];
 
-  const [activeTab, setActiveTab] = useState(useCases[0].id);
-
-  const activeUseCase = useCases.find(uc => uc.id === activeTab) || useCases[0];
-
   return (
-    <section className="py-16 md:py-24 bg-white overflow-hidden">
+    <section className="py-20 md:py-28 bg-white overflow-hidden border-t border-gray-100">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-            {t('audimix.use_cases.title_1')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">{t('audimix.use_cases.title_2')}</span>
-          </h2>
-          <p className="text-lg text-gray-500">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-5xl font-bold text-gray-900 mb-6"
+          >
+            {t('audimix.use_cases.title_1')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">{t('audimix.use_cases.title_2')}</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-lg text-gray-500"
+          >
             {t('audimix.use_cases.subtitle')}
-          </p>
+          </motion.p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-12 items-center">
-          {/* Tabs Navigation */}
-          <div className="w-full lg:w-1/3 flex flex-col gap-4">
-            {useCases.map((uc) => (
-              <button
-                key={uc.id}
-                onClick={() => setActiveTab(uc.id)}
-                className={`flex items-center gap-4 p-5 rounded-2xl text-left transition-all duration-300 ${
-                  activeTab === uc.id
-                    ? 'bg-white border border-gray-100 shadow-lg shadow-purple-100'
-                    : 'bg-transparent border border-transparent hover:border-gray-100 hover:bg-gray-50'
-                }`}
-              >
-                <div className={`p-3 rounded-xl transition-colors ${
-                  activeTab === uc.id ? 'bg-gray-100' : 'bg-transparent'
-                }`}>
-                  <uc.icon size={28} className={activeTab === uc.id ? uc.color : 'text-gray-400'} />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {useCases.map((uc, index) => (
+            <motion.div
+              key={uc.id}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.12 }}
+              className="group rounded-3xl overflow-hidden border border-gray-100 bg-white shadow-sm hover:shadow-2xl hover:shadow-indigo-100 hover:-translate-y-1.5 transition-all duration-300"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <img
+                  src={uc.image}
+                  alt={uc.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/5 to-transparent" />
+                <div className="absolute top-5 left-5 w-11 h-11 rounded-xl bg-white/15 backdrop-blur-md border border-white/30 flex items-center justify-center">
+                  <uc.icon className="text-white" size={20} strokeWidth={2} />
                 </div>
-                <div>
-                  <h3 className={`font-bold text-xl ${activeTab === uc.id ? 'text-gray-900' : 'text-gray-400'}`}>
-                    {uc.title}
-                  </h3>
-                </div>
-              </button>
-            ))}
-          </div>
+              </div>
 
-          {/* Tab Content */}
-          <div className="w-full lg:w-2/3">
-            <div className="relative rounded-[2rem] overflow-hidden bg-gray-50 border border-gray-100 shadow-2xl shadow-gray-200/60 min-h-[400px]">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeUseCase.id}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.3 }}
-                  className="absolute inset-0 flex flex-col md:flex-row h-full"
-                >
-                  <div className="h-64 md:h-full w-full md:w-1/2 relative">
-                    <img
-                      src={activeUseCase.image}
-                      alt={activeUseCase.title}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-gray-50 via-gray-50/40 to-transparent" />
-                  </div>
-
-                  <div className="p-8 md:p-12 flex-1 flex flex-col justify-center bg-gray-50 relative z-10">
-                    <h3 className="text-3xl font-bold text-gray-900 mb-4 flex items-center gap-3">
-                      <activeUseCase.icon className={activeUseCase.color} size={32} />
-                      {activeUseCase.title}
-                    </h3>
-                    <p className="text-gray-500 text-lg leading-relaxed">
-                      {activeUseCase.description}
-                    </p>
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-            </div>
-          </div>
+              <div className="p-7">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{uc.title}</h3>
+                <p className="text-gray-500 leading-relaxed">{uc.description}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
