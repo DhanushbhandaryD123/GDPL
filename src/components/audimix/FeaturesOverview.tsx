@@ -1,75 +1,42 @@
 import { motion } from 'motion/react';
 import { Upload, SlidersHorizontal, Download } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import type { TFunction } from 'i18next';
-
-function StepMockup({ type, t }: { type: 'import' | 'levels' | 'export'; t: TFunction }) {
-  if (type === 'import') {
-    return (
-      <div className="w-full h-full bg-[#0a0a12] rounded-lg flex flex-col items-center justify-center gap-3 p-4">
-        <Upload className="w-6 h-6 text-white/30" strokeWidth={1.5} />
-        <span className="text-[9px] text-white/30 text-center">{t('audimix.features_overview.drop_song')}</span>
-        <span className="text-[8px] font-semibold text-white/50 border border-white/15 rounded-full px-3 py-1">
-          {t('audimix.features_overview.select_song')}
-        </span>
-      </div>
-    );
-  }
-
-  if (type === 'levels') {
-    const rows = [
-      { label: 'Drums', pct: 40 },
-      { label: 'Vocals', pct: 72 },
-      { label: 'Piano', pct: 52 },
-      { label: 'Bass', pct: 20 },
-    ];
-    return (
-      <div className="w-full h-full bg-[#0a0a12] rounded-lg flex flex-col justify-center gap-2.5 p-4">
-        {rows.map((row) => (
-          <div key={row.label} className="flex items-center gap-2">
-            <span className="text-[8px] text-white/40 w-9 shrink-0">{row.label}</span>
-            <div className="flex-1 h-1 rounded-full bg-white/10 overflow-hidden">
-              <div className="h-full rounded-full bg-gradient-to-r from-blue-400 to-purple-400" style={{ width: `${row.pct}%` }} />
-            </div>
-          </div>
-        ))}
-      </div>
-    );
-  }
-
-  return (
-    <div className="w-full h-full bg-[#0a0a12] rounded-lg flex flex-col items-center justify-center gap-2 p-4">
-      <span className="text-[9px] text-white/40">{t('audimix.features_overview.export_stems')}</span>
-      <div className="w-3/4 h-1.5 rounded-full bg-white/10 overflow-hidden">
-        <div className="h-full w-4/5 rounded-full bg-gradient-to-r from-blue-400 to-cyan-400" />
-      </div>
-      <span className="text-[8px] font-semibold text-white bg-blue-600 rounded-full px-3 py-1">{t('audimix.features_overview.export')}</span>
-    </div>
-  );
-}
 
 export function FeaturesOverview() {
   const { t } = useTranslation();
 
   const steps = [
-    { id: 1, title: t('audimix.features_overview.step1'), icon: Upload, mockup: 'import' as const },
-    { id: 2, title: t('audimix.features_overview.step2'), icon: SlidersHorizontal, mockup: 'levels' as const },
-    { id: 3, title: t('audimix.features_overview.step3'), icon: Download, mockup: 'export' as const },
+    {
+      id: 1,
+      title: t('audimix.features_overview.step1'),
+      icon: Upload,
+      image: 'https://images.unsplash.com/photo-1598653222000-6b7b7a552625?w=1200&q=80&auto=format&fit=crop',
+    },
+    {
+      id: 2,
+      title: t('audimix.features_overview.step2'),
+      icon: SlidersHorizontal,
+      image: 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1200&q=80&auto=format&fit=crop',
+    },
+    {
+      id: 3,
+      title: t('audimix.features_overview.step3'),
+      icon: Download,
+      image: 'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?w=1200&q=80&auto=format&fit=crop',
+    },
   ];
 
   return (
-    <section className="pt-16 pb-24 md:pt-24 md:pb-32 bg-gray-50 relative border-t border-gray-100 overflow-hidden">
-      <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-cyan-100/40 to-transparent pointer-events-none" />
-
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+    <section className="pt-20 pb-24 md:pt-28 md:pb-32 bg-white relative border-t border-gray-100">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="text-center max-w-3xl mx-auto mb-14">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-bold text-gray-900 mb-6"
           >
-            {t('audimix.features_overview.title_1')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500">{t('audimix.features_overview.title_2')}</span>
+            {t('audimix.features_overview.title_1')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">{t('audimix.features_overview.title_2')}</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -82,24 +49,50 @@ export function FeaturesOverview() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        {/* Animated flow connector — signal traveling from step to step */}
+        <div className="hidden md:flex items-center justify-center max-w-5xl mx-auto mb-8 px-[8%]">
+          {steps.map((step, index) => (
+            <div key={step.id} className="flex items-center flex-1 last:flex-none">
+              <div className="w-3 h-3 rounded-full bg-indigo-600 shadow-md shrink-0" />
+              {index < steps.length - 1 && (
+                <div className="relative flex-1 h-[2px] mx-2 bg-gray-200 overflow-hidden rounded-full">
+                  <motion.div
+                    className="absolute inset-y-0 w-1/3 rounded-full bg-gradient-to-r from-indigo-500 to-violet-500"
+                    animate={{ x: ['-40%', '140%'] }}
+                    transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut', delay: index * 0.4 }}
+                  />
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {steps.map((step, index) => (
             <motion.div
               key={step.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.15 }}
-              className="rounded-3xl bg-gradient-to-br from-blue-500 to-blue-700 p-5 pb-8 shadow-xl shadow-blue-900/30"
+              className="group relative rounded-3xl overflow-hidden aspect-[3/4] shadow-lg border border-gray-100"
             >
-              <div className="rounded-xl overflow-hidden border border-white/10 bg-black/40 aspect-[4/3] mb-6">
-                <StepMockup type={step.mockup} t={t} />
+              <img
+                src={step.image}
+                alt={step.title}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
+
+              <div className="absolute top-5 left-5 w-10 h-10 rounded-full bg-white/15 backdrop-blur-md border border-white/30 flex items-center justify-center text-white font-bold text-sm">
+                {step.id}
               </div>
-              <div className="flex flex-col items-center text-center">
-                <div className="w-11 h-11 rounded-full bg-white text-blue-700 font-extrabold flex items-center justify-center text-lg mb-4 shadow-lg">
-                  {step.id}
+
+              <div className="absolute bottom-5 left-5 right-5 flex items-center gap-3">
+                <div className="w-11 h-11 rounded-xl bg-white flex items-center justify-center shrink-0 shadow-lg">
+                  <step.icon className="text-indigo-600" size={20} strokeWidth={2} />
                 </div>
-                <h3 className="text-lg font-bold text-white">{step.title}</h3>
+                <h3 className="text-white font-bold text-lg leading-tight drop-shadow">{step.title}</h3>
               </div>
             </motion.div>
           ))}
