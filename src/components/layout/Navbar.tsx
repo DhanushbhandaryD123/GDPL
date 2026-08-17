@@ -98,7 +98,7 @@ export function Navbar({ logoUrl }: NavbarProps) {
   const currentLanguage = languages.find(l => i18n.language?.startsWith(l.code)) || languages[0];
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-white/85 backdrop-blur-md border-b border-gray-100">
+    <nav className="sticky top-0 z-50 w-full bg-white border-b border-gray-100">
       <div className="w-full max-w-[1920px] mx-auto px-4 md:px-6 lg:px-8 h-20 flex items-center justify-between">
         
         <div className="flex items-center gap-8 lg:gap-12">
