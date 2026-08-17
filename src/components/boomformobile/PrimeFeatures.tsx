@@ -13,45 +13,35 @@ export function PrimeFeatures() {
       title: t('boom_mobile.prime_features.f1_title'),
       description: t('boom_mobile.prime_features.f1_desc'),
       icon: Headphones,
-      image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1000&auto=format&fit=crop',
-      color: 'text-pink-500',
-      bgLight: 'bg-pink-50'
+      image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1200&auto=format&fit=crop'
     },
     {
       id: 'equalizer',
       title: t('boom_mobile.prime_features.f2_title'),
       description: t('boom_mobile.prime_features.f2_desc'),
       icon: SlidersHorizontal,
-      image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1000&auto=format&fit=crop',
-      color: 'text-purple-600',
-      bgLight: 'bg-purple-50'
+      image: 'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?q=80&w=1200&auto=format&fit=crop'
     },
     {
       id: 'intensity',
       title: t('boom_mobile.prime_features.f3_title'),
       description: t('boom_mobile.prime_features.f3_desc'),
       icon: Settings2,
-      image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=1000&auto=format&fit=crop',
-      color: 'text-blue-500',
-      bgLight: 'bg-blue-50'
+      image: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=1200&auto=format&fit=crop'
     },
     {
       id: 'tidal',
       title: t('boom_mobile.prime_features.f4_title'),
       description: t('boom_mobile.prime_features.f4_desc'),
       icon: Music2,
-      image: 'https://images.unsplash.com/photo-1516280440502-86105c2a13cc?q=80&w=1000&auto=format&fit=crop',
-      color: 'text-cyan-500',
-      bgLight: 'bg-cyan-50'
+      image: 'https://images.unsplash.com/photo-1571330735066-03aaa9429d89?q=80&w=1200&auto=format&fit=crop'
     },
     {
       id: 'radio',
       title: t('boom_mobile.prime_features.f5_title'),
       description: t('boom_mobile.prime_features.f5_desc'),
       icon: Radio,
-      image: 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?q=80&w=1000&auto=format&fit=crop',
-      color: 'text-green-500',
-      bgLight: 'bg-green-50'
+      image: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?q=80&w=1200&auto=format&fit=crop'
     }
   ];
 
@@ -73,10 +63,10 @@ export function PrimeFeatures() {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="py-24 bg-[#F8FAFC]">
-      <div className="container mx-auto px-4 md:px-6">
+    <section className="py-24 bg-[#F8FAFC] relative">
+      <div className="container mx-auto px-6 md:px-10">
         <div className="text-center mb-16">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -95,25 +85,25 @@ export function PrimeFeatures() {
           </motion.p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center max-w-6xl mx-auto">
-          {/* Feature List / Navigation */}
-          <div className="w-full lg:w-[35%] flex flex-col gap-3">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-stretch max-w-6xl mx-auto">
+          {/* Numbered tab navigation */}
+          <div className="w-full lg:w-[30%] flex lg:flex-col gap-2 overflow-x-auto lg:overflow-visible pb-2 lg:pb-0">
             {features.map((feature, index) => (
               <button
                 key={feature.id}
                 onClick={() => scrollTo(index)}
-                className={`flex items-center gap-4 p-4 rounded-2xl text-left transition-all duration-300 group ${
-                  selectedIndex === index 
-                    ? 'bg-white shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-gray-100 scale-[1.02]' 
-                    : 'bg-transparent border border-transparent hover:bg-gray-50 text-gray-500'
+                className={`flex items-center gap-4 p-4 rounded-2xl text-left transition-all duration-300 group shrink-0 lg:shrink w-auto lg:w-full border ${
+                  selectedIndex === index
+                    ? 'bg-white border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.06)]'
+                    : 'bg-transparent border-transparent hover:bg-white/60 text-gray-500'
                 }`}
               >
-                <div className={`p-3 rounded-xl transition-colors duration-300 ${
-                  selectedIndex === index ? feature.bgLight : 'bg-gray-100 group-hover:bg-gray-200'
+                <span className={`text-2xl font-extrabold tracking-tight transition-colors duration-300 ${
+                  selectedIndex === index ? 'text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600' : 'text-gray-300'
                 }`}>
-                  <feature.icon className={`${selectedIndex === index ? feature.color : 'text-gray-400'} transition-colors duration-300`} size={24} />
-                </div>
-                <h3 className={`font-bold text-[17px] transition-colors duration-300 ${selectedIndex === index ? 'text-gray-900' : 'text-gray-500'}`}>
+                  0{index + 1}
+                </span>
+                <h3 className={`font-bold text-[15px] whitespace-nowrap lg:whitespace-normal transition-colors duration-300 ${selectedIndex === index ? 'text-gray-900' : 'text-gray-500'}`}>
                   {feature.title}
                 </h3>
               </button>
@@ -121,29 +111,28 @@ export function PrimeFeatures() {
           </div>
 
           {/* Carousel Viewport */}
-          <div className="w-full lg:w-[65%]">
-            <div className="overflow-hidden rounded-[2.5rem] bg-white border border-gray-100 shadow-[0_20px_40px_rgba(0,0,0,0.04)]" ref={emblaRef}>
+          <div className="w-full lg:w-[70%]">
+            <div className="overflow-hidden rounded-[2rem] bg-white border border-gray-100 shadow-[0_20px_40px_rgba(0,0,0,0.04)]" ref={emblaRef}>
               <div className="flex">
                 {features.map((feature, index) => (
-                  <div key={feature.id} className="flex-[0_0_100%] min-w-0 p-6 sm:p-10">
-                    <div className="flex flex-col gap-8 h-full">
-                      <div className="rounded-2xl overflow-hidden aspect-video bg-gray-100 relative shadow-inner">
-                         <motion.img 
-                            animate={{ scale: selectedIndex === index ? 1.05 : 1 }}
-                            transition={{ duration: 10, ease: "linear" }}
-                            src={feature.image} 
-                            alt={feature.title} 
-                            className="w-full h-full object-cover" 
-                          />
+                  <div key={feature.id} className="flex-[0_0_100%] min-w-0">
+                    <div className="relative aspect-[16/10] sm:aspect-video">
+                      <motion.img
+                        animate={{ scale: selectedIndex === index ? 1.05 : 1 }}
+                        transition={{ duration: 10, ease: 'linear' }}
+                        src={feature.image}
+                        alt={feature.title}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+                      <div className="absolute top-5 left-5 w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center">
+                        <feature.icon className="text-white" size={26} />
                       </div>
-                      <div>
-                        <h3 className="text-2xl sm:text-3xl font-bold mb-4 flex items-center gap-3 text-gray-900 tracking-tight">
-                           <div className={`p-2 rounded-lg ${feature.bgLight}`}>
-                             <feature.icon className={feature.color} size={28} />
-                           </div>
-                           {feature.title}
+                      <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+                        <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-white tracking-tight">
+                          {feature.title}
                         </h3>
-                        <p className="text-gray-600 text-[17px] leading-relaxed font-medium">
+                        <p className="text-white/70 text-[15px] sm:text-[17px] leading-relaxed font-medium max-w-lg">
                           {feature.description}
                         </p>
                       </div>

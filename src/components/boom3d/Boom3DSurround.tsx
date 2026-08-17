@@ -1,4 +1,4 @@
-import { Headphones, Music, MonitorPlay, Gamepad2, Volume2 } from 'lucide-react';
+import { Music, MonitorPlay, Gamepad2, Volume2 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 
@@ -48,16 +48,91 @@ export function Boom3DSurround() {
           </p>
         </div>
 
-        {/* Video Player */}
-        <div className="relative w-full max-w-[1000px] mx-auto mt-10 flex justify-center shadow-2xl rounded-2xl md:rounded-[2rem] overflow-hidden">
-          <video 
-            src="/boom3D/video3D.mp4" 
-            autoPlay 
-            loop 
-            muted 
-            playsInline 
-            className="w-full h-auto object-cover"
-          />
+        {/* Orbital Visualizer */}
+        <div className="relative w-full max-w-[1000px] mx-auto h-[350px] md:h-[450px] flex items-center justify-center mt-6">
+          
+          {/* Animated Orbital Rings (Moving Blue Sound Waves) */}
+          {[...Array(4)].map((_, i) => (
+            <motion.div
+              key={i}
+              initial={{ width: '20%', height: '25%', opacity: 0.6 }}
+              animate={{ width: '130%', height: '140%', opacity: 0 }}
+              transition={{ 
+                duration: 6, 
+                repeat: Infinity, 
+                ease: "linear",
+                delay: i * 1.5
+              }}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-blue-400/50 rounded-[100%] pointer-events-none"
+            />
+          ))}
+
+          {/* Static Soft Blue Glow behind Center */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-400/20 rounded-full blur-3xl pointer-events-none" />
+
+          {/* Central Video Player (Replaces the Headphones Icon) */}
+          <motion.div 
+            initial={{ scale: 0.8, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, type: "spring" }}
+            className="relative z-20 w-[280px] md:w-[480px] aspect-video bg-black rounded-2xl md:rounded-3xl shadow-[0_20px_50px_rgba(59,130,246,0.25)] border border-gray-100/50 overflow-hidden flex items-center justify-center"
+          >
+            <video 
+              src="/boom3D/video3D.mp4" 
+              autoPlay 
+              loop 
+              muted 
+              playsInline 
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
+          
+          {/* Orbiting Icons */}
+          {/* Music - Top Left */}
+          <motion.div 
+            animate={{ y: [-10, 10, -10] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-[10%] md:top-[15%] left-[5%] md:left-[15%] z-10"
+          >
+            <div className="w-12 h-12 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-white">
+              <Music size={20} className="text-pink-500" strokeWidth={2} />
+            </div>
+          </motion.div>
+
+          {/* Display - Bottom Left */}
+          <motion.div 
+            animate={{ y: [10, -10, 10] }}
+            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            className="absolute bottom-[12%] md:bottom-[15%] left-[2%] md:left-[22%] z-10"
+          >
+            <div className="w-12 h-12 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-white">
+              <MonitorPlay size={20} className="text-purple-500" strokeWidth={2} />
+            </div>
+          </motion.div>
+
+          {/* Gamepad - Top Right */}
+          <motion.div 
+            animate={{ y: [-8, 8, -8] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+            className="absolute top-[15%] md:top-[20%] right-[10%] md:right-[20%] z-10"
+          >
+            <div className="w-12 h-12 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-white">
+              <Gamepad2 size={20} className="text-blue-500" strokeWidth={2} />
+            </div>
+          </motion.div>
+
+          {/* Volume - Bottom Right */}
+          <motion.div 
+            animate={{ y: [12, -12, 12] }}
+            transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+            className="absolute bottom-[5%] md:bottom-[15%] right-[5%] md:right-[12%] z-10"
+          >
+            <div className="w-12 h-12 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-white">
+              <Volume2 size={20} className="text-indigo-600" strokeWidth={2} />
+            </div>
+          </motion.div>
+
         </div>
       </div>
 

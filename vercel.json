@@ -26,5 +26,8 @@
     { "source": "/capto/thankyou", "destination": "/capto", "permanent": true },
     { "source": "/capto/user-guide.php", "destination": "/capto", "permanent": true },
     { "source": "/captoformac", "destination": "/capto", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
