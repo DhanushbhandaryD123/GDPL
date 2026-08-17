@@ -18,17 +18,17 @@ export function CaptoFeatures() {
   ];
 
   return (
-    <div className="w-full max-w-[1920px] mx-auto px-2 md:px-4 pb-12 pt-2 md:pt-4 bg-white">
+    <div className="w-full max-w-[1920px] mx-auto px-4 md:px-8 pb-12 pt-8 bg-white">
       <section className="py-24 bg-[#616AD8] relative w-full rounded-3xl md:rounded-[2.5rem] shadow-2xl">
-        <div className="container mx-auto px-6 max-w-[1536px]">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-[1400px]">
 
         {/* Header & Badges */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-2xl md:text-[2rem] font-bold text-white leading-tight mb-8"
+            className="text-3xl md:text-[2.5rem] font-bold text-white leading-tight mb-8"
           >
             {t('capto.features.title_1')} <span className="text-white drop-shadow-sm">{t('capto.features.title_2')}</span> {t('capto.features.title_3')} <br className="hidden md:block" />
             {t('capto.features.title_4')}
@@ -56,7 +56,7 @@ export function CaptoFeatures() {
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16 mt-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -64,23 +64,23 @@ export function CaptoFeatures() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: (index % 3) * 0.1 }}
-              className="flex flex-col group"
+              className="flex flex-col group bg-white rounded-[2rem] p-6 pb-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
             >
               {/* Image Container with overlapping icon */}
-              <div className="relative mb-8 rounded-[1rem] shadow-sm border border-gray-100 flex items-center justify-center bg-white aspect-[1.45] w-full">
+              <div className="relative mb-10 rounded-2xl flex items-center justify-center bg-gray-50 aspect-[1.3] w-full p-2 border border-gray-100">
                  <img
                     src={feature.image}
                     alt={feature.title}
-                    className="w-full h-full object-cover rounded-[1rem] transform transition-transform"
+                    className="w-full h-full object-cover rounded-xl"
                     style={{ WebkitFontSmoothing: 'antialiased' }}
                  />
-                 <div className="absolute -bottom-5 left-4 w-12 h-12 bg-white rounded-[14px] flex items-center justify-center shadow-md border border-gray-100 text-[#6554ff] group-hover:scale-110 transition-transform z-20">
-                   <feature.icon size={22} strokeWidth={2.5} />
+                 <div className="absolute -bottom-6 left-6 w-14 h-14 bg-white rounded-[1rem] flex items-center justify-center shadow-lg border border-gray-100 text-[#616AD8] group-hover:scale-110 transition-transform duration-300 z-20">
+                   <feature.icon size={26} strokeWidth={2.5} />
                  </div>
               </div>
 
-              <h3 className="text-[20px] font-bold text-white mb-3 px-2 drop-shadow-sm">{feature.title}</h3>
-              <p className="text-[15px] text-white/80 leading-relaxed px-2">
+              <h3 className="text-[22px] font-bold text-gray-900 mb-4 px-2">{feature.title}</h3>
+              <p className="text-[15px] text-gray-600 leading-relaxed px-2">
                 {feature.description}
               </p>
             </motion.div>
