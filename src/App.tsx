@@ -1,8 +1,29 @@
-import { useState } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Toaster } from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';
+
+// Legacy-URL alias redirects use a real browser navigation (not React
+// Router's client-side navigate/<Navigate>) so the app's language state is
+// always initialized fresh from the destination URL, matching exactly what
+// happens in production where vercel.json 301-redirects these same URLs at
+// the edge before the SPA ever loads.
+function Redirect({ to }: { to: string }) {
+  useEffect(() => {
+    window.location.replace(to);
+  }, [to]);
+  return null;
+}
+
+// Old reversed-order "/product/lang" URLs (e.g. /boom3D/de).
+function LegacyLangAlias({ lang, bareTo }: { lang: string; bareTo: string }) {
+  useEffect(() => {
+    rememberLanguage(lang);
+    window.location.replace(`/${lang}${bareTo}`);
+  }, [lang, bareTo]);
+  return null;
+}
 
 import { SplashScreen } from './components/layout/SplashScreen';
 
@@ -164,6 +185,7 @@ import { CameraPlusPage } from './pages/CameraPlusPage';
 import { CameraPlusProPage } from './pages/CameraPlusProPage';
 
 import { LanguageSync } from './components/layout/LanguageSync';
+import { rememberLanguage } from './lib/languagePreference';
 import { SEOHead } from './components/layout/SEOHead';
 import { NotFound } from './pages/NotFound';
 import { Analytics } from '@vercel/analytics/react';
@@ -178,39 +200,49 @@ import { WhatsNewAudimix } from './pages/whatsnew/WhatsNewAudimix';
 const appRoutes = [
   // Redirects and Aliases for Old Website URLs
   { path: "/career", element: <Careers /> },
-  { path: "/store/*", element: <Navigate to="/" replace /> },
-  { path: "/lostlicense", element: <Navigate to="/contact" replace /> },
-  { path: "/purchase/thank_you_purchase", element: <Navigate to="/" replace /> },
-  { path: "/help/*", element: <Navigate to="/faq" replace /> },
+  { path: "/store/*", element: <Redirect to="/" /> },
+  { path: "/lostlicense", element: <Redirect to="/contact" /> },
+  { path: "/purchase/thank_you_purchase", element: <Redirect to="/" /> },
+  { path: "/help/*", element: <Redirect to="/faq" /> },
 
   // Old Boom Language URLs
-  { path: "/boom/de", element: <Navigate to="/de/boom" replace /> },
-  { path: "/boom/es", element: <Navigate to="/es/boom" replace /> },
-  { path: "/boom/fr", element: <Navigate to="/fr/boom" replace /> },
-  { path: "/boom/it", element: <Navigate to="/it/boom" replace /> },
-  { path: "/boom/ja", element: <Navigate to="/ja/boom" replace /> },
-  { path: "/boom/pt", element: <Navigate to="/pt/boom" replace /> },
-  { path: "/boom/zh-cn", element: <Navigate to="/zh/boom" replace /> },
-  { path: "/boom/zh-tw", element: <Navigate to="/zh/boom" replace /> },
-  { path: "/boom/features", element: <Navigate to="/boom" replace /> },
+  { path: "/boom/de", element: <LegacyLangAlias lang="de" bareTo="/boom" /> },
+  { path: "/boom/es", element: <LegacyLangAlias lang="es" bareTo="/boom" /> },
+  { path: "/boom/fr", element: <LegacyLangAlias lang="fr" bareTo="/boom" /> },
+  { path: "/boom/it", element: <LegacyLangAlias lang="it" bareTo="/boom" /> },
+  { path: "/boom/ja", element: <LegacyLangAlias lang="ja" bareTo="/boom" /> },
+  { path: "/boom/pt", element: <LegacyLangAlias lang="pt" bareTo="/boom" /> },
+  { path: "/boom/zh-cn", element: <LegacyLangAlias lang="zh" bareTo="/boom" /> },
+  { path: "/boom/zh-tw", element: <LegacyLangAlias lang="zh" bareTo="/boom" /> },
+  { path: "/boom/features", element: <Redirect to="/boom" /> },
 
   // Old Boom2 Language URLs
-  { path: "/boom2/de", element: <Navigate to="/de/boom2" replace /> },
-  { path: "/boom2/es", element: <Navigate to="/es/boom2" replace /> },
-  { path: "/boom2/fr", element: <Navigate to="/fr/boom2" replace /> },
-  { path: "/boom2/it", element: <Navigate to="/it/boom2" replace /> },
-  { path: "/boom2/ja", element: <Navigate to="/ja/boom2" replace /> },
-  { path: "/boom2/pt", element: <Navigate to="/pt/boom2" replace /> },
-  { path: "/boom2/zh-cn", element: <Navigate to="/zh/boom2" replace /> },
-  { path: "/boom2/zh-tw", element: <Navigate to="/zh/boom2" replace /> },
+  { path: "/boom2/de", element: <LegacyLangAlias lang="de" bareTo="/boom2" /> },
+  { path: "/boom2/es", element: <LegacyLangAlias lang="es" bareTo="/boom2" /> },
+  { path: "/boom2/fr", element: <LegacyLangAlias lang="fr" bareTo="/boom2" /> },
+  { path: "/boom2/it", element: <LegacyLangAlias lang="it" bareTo="/boom2" /> },
+  { path: "/boom2/ja", element: <LegacyLangAlias lang="ja" bareTo="/boom2" /> },
+  { path: "/boom2/pt", element: <LegacyLangAlias lang="pt" bareTo="/boom2" /> },
+  { path: "/boom2/zh-cn", element: <LegacyLangAlias lang="zh" bareTo="/boom2" /> },
+  { path: "/boom2/zh-tw", element: <LegacyLangAlias lang="zh" bareTo="/boom2" /> },
+
+  // Old Boom3D Language URLs
+  { path: "/boom3D/de", element: <LegacyLangAlias lang="de" bareTo="/boom3D" /> },
+  { path: "/boom3D/es", element: <LegacyLangAlias lang="es" bareTo="/boom3D" /> },
+  { path: "/boom3D/fr", element: <LegacyLangAlias lang="fr" bareTo="/boom3D" /> },
+  { path: "/boom3D/it", element: <LegacyLangAlias lang="it" bareTo="/boom3D" /> },
+  { path: "/boom3D/ja", element: <LegacyLangAlias lang="ja" bareTo="/boom3D" /> },
+  { path: "/boom3D/pt", element: <LegacyLangAlias lang="pt" bareTo="/boom3D" /> },
+  { path: "/boom3D/zh-cn", element: <LegacyLangAlias lang="zh" bareTo="/boom3D" /> },
+  { path: "/boom3D/zh-tw", element: <LegacyLangAlias lang="zh" bareTo="/boom3D" /> },
 
   // Old Capto URLs
-  { path: "/capto/educators", element: <Navigate to="/capto" replace /> },
-  { path: "/capto/features-comparison", element: <Navigate to="/capto" replace /> },
-  { path: "/capto/help-videos", element: <Navigate to="/capto" replace /> },
-  { path: "/capto/thankyou", element: <Navigate to="/capto" replace /> },
-  { path: "/capto/user-guide.php", element: <Navigate to="/capto" replace /> },
-  { path: "/captoformac", element: <Navigate to="/capto" replace /> },
+  { path: "/capto/educators", element: <Redirect to="/capto" /> },
+  { path: "/capto/features-comparison", element: <Redirect to="/capto" /> },
+  { path: "/capto/help-videos", element: <Redirect to="/capto" /> },
+  { path: "/capto/thankyou", element: <Redirect to="/capto" /> },
+  { path: "/capto/user-guide.php", element: <Redirect to="/capto" /> },
+  { path: "/captoformac", element: <Redirect to="/capto" /> },
 
   { path: "/", element: <Home /> },
   { path: "/about", element: <About /> },

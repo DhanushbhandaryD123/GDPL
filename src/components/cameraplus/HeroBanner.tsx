@@ -19,7 +19,15 @@ export function HeroBanner() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="w-full lg:w-[45%] flex flex-col items-center lg:items-start text-center lg:text-left z-20"
           >
-            
+            {/* App Icon and Name */}
+            <div className="flex items-center gap-4 mb-6 md:mb-8 -mt-8 md:-mt-12 lg:-mt-16">
+              <img 
+                src="/cameraplus/camera-plus-icon.png" 
+                alt="Camera Plus Icon" 
+                className="w-14 h-14 md:w-16 md:h-16 object-contain"
+              />
+              <span className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-800 tracking-tight">Camera Plus</span>
+            </div>
             
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-extrabold text-[#111827] tracking-tight leading-[1.05] mb-6 drop-shadow-sm mt-0 md:mt-4">

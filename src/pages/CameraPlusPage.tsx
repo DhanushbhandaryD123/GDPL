@@ -6,6 +6,8 @@ import { AirSnapFeature } from '../components/cameraplus/AirSnapFeature';
 import { MacroFocus } from '../components/cameraplus/MacroFocus';
 import { EnhancementTools } from '../components/cameraplus/EnhancementTools';
 import { AppleWatchIntegration } from '../components/cameraplus/AppleWatchIntegration';
+import { CameraPlusLiveFilters } from '../components/cameraplus/CameraPlusLiveFilters';
+import { CameraPlusLumySlider } from '../components/cameraplus/CameraPlusLumySlider';
 import { Testimonials } from '../components/cameraplus/Testimonials';
 import { Footer } from '../components/layout/Footer';
 
@@ -37,7 +39,9 @@ export function CameraPlusPage() {
       <main>
         <HeroBanner />
         <QuickFeaturesBar />
+        <CameraPlusLumySlider />
         <AirSnapFeature />
+        <CameraPlusLiveFilters />
         <MacroFocus />
         <EnhancementTools />
         <AppleWatchIntegration />

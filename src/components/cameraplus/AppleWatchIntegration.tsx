@@ -1,9 +1,27 @@
-import { motion } from 'motion/react';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { Camera, ChevronRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
+const watchImages = [
+  "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=400&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=400&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=400&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1505322022379-7c3353ee6291?q=80&w=400&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1534360699709-3286f0d7e63f?q=80&w=400&auto=format&fit=crop"
+];
+
 export function AppleWatchIntegration() {
   const { t } = useTranslation();
+  const [currentImgIndex, setCurrentImgIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImgIndex((prev) => (prev + 1) % watchImages.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="py-20 md:py-32 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl relative z-10">
@@ -50,14 +68,7 @@ export function AppleWatchIntegration() {
               transition={{ duration: 0.8 }}
               className="relative w-full max-w-[280px] sm:max-w-none flex justify-center scale-90 sm:scale-100" // Scaling on very small screens to prevent clipping
             >
-              {/* Floating Camera Icon */}
-              <motion.div 
-                animate={{ y: [-8, 8, -8] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-[40%] -left-8 sm:-left-12 -translate-y-1/2 w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-2xl flex items-center justify-center shadow-[0_20px_40px_rgba(0,180,180,0.15)] border border-white/50 z-20 backdrop-blur-md"
-              >
-                <Camera className="w-7 h-7 text-[#00B4B4]" strokeWidth={2} />
-              </motion.div>
+                
 
               {/* Apple Watch Mockup */}
               <div className="relative flex flex-col items-center">
@@ -73,11 +84,19 @@ export function AppleWatchIntegration() {
 
                   {/* Screen */}
                   <div className="w-full h-full bg-black rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden relative flex flex-col justify-between p-2">
-                    <img
-                      src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=400&auto=format&fit=crop"
-                      alt="Watch Live Preview"
-                      className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700"
-                    />
+                    
+                    <AnimatePresence mode="wait">
+                      <motion.img
+                        key={currentImgIndex}
+                        src={watchImages[currentImgIndex]}
+                        alt={`Watch Live Preview ${currentImgIndex + 1}`}
+                        className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-110"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 0.8 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 1 }}
+                      />
+                    </AnimatePresence>
 
                     {/* Top Bar */}
                     <div className="relative z-10 flex justify-between w-full pt-1 px-2">
