@@ -9,7 +9,7 @@ const inspiredPeople = [
     rotation: -15,
     yOffset: -30,
     xOffset: -310,
-    zIndex: 40,
+    zIndex: 10,
   },
   {
     name: 'Pradeep Udupi',
