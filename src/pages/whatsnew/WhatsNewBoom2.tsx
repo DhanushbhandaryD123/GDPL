@@ -37,7 +37,7 @@ export function WhatsNewBoom2() {
       date: "Aug 01, 2024",
       bugFixes: [
         "Defect fix related to preset selection."
-      ],
+      ],      
       downloadUrl: "https://www.globaldelight.com/boom2/thankyou/download"
     },
     {
