@@ -10,6 +10,7 @@ import { Boom3DTestimonials } from '../components/boom3d/Boom3DTestimonials';
 import { Boom3DCTA } from '../components/boom3d/Boom3DCTA';
 import { Boom3DAppDownload } from '../components/boom3d/Boom3DAppDownload';
 import { Boom3DTailored } from '../components/boom3d/Boom3DTailored';
+import { Boom3DFAQ } from '../components/boom3d/Boom3DFAQ';
 
 export function Boom3D() {
   const domain = import.meta.env.VITE_SITE_URL || '';
@@ -74,6 +75,7 @@ export function Boom3D() {
         <Boom3DTailored />
         <Boom3DTestimonials />
         <Boom3DCTA />
+        <Boom3DFAQ />
       </main>
 
       <div className="relative z-10 border-t border-gray-100 bg-white">
