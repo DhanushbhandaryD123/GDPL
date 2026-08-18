@@ -49,7 +49,7 @@ export function Boom3DSurround() {
         </div>
 
         {/* Orbital Visualizer */}
-        <div className="relative w-full max-w-[1200px] mx-auto h-[450px] md:h-[550px] lg:h-[650px] flex items-center justify-center mt-6">
+        <div className="relative w-full max-w-[1200px] mx-auto h-[260px] sm:h-[320px] md:h-[550px] lg:h-[650px] flex items-center justify-center mt-6">
           
           {/* Animated Orbital Rings (Moving Blue Sound Waves) */}
           {[...Array(4)].map((_, i) => (
@@ -76,7 +76,7 @@ export function Boom3DSurround() {
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, type: "spring" }}
-            className="relative z-20 w-[380px] sm:w-[500px] md:w-[750px] lg:w-[950px] xl:w-[1050px] aspect-video bg-black rounded-2xl md:rounded-3xl shadow-[0_20px_50px_rgba(59,130,246,0.25)] border border-gray-100/50 overflow-hidden flex items-center justify-center"
+            className="relative z-20 w-[300px] sm:w-[500px] md:w-[750px] lg:w-[950px] xl:w-[1050px] aspect-video bg-black rounded-2xl md:rounded-3xl shadow-[0_20px_50px_rgba(59,130,246,0.25)] border border-gray-100/50 overflow-hidden flex items-center justify-center"
           >
             <video 
               src="/boom3D/video3D.mp4" 

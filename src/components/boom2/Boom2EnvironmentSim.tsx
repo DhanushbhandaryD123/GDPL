@@ -1,12 +1,13 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Coffee, Plane, Home, Play, Pause } from 'lucide-react';
+import { Play, Pause } from 'lucide-react';
+import { Coffee01Icon, Airplane01Icon, Home01Icon } from 'hugeicons-react';
 
 const environments = [
   {
     id: 'cafe',
     name: 'Noisy Café',
-    icon: Coffee,
+    icon: Coffee01Icon,
     description: 'Drown out the chatter and focus on your music with enhanced clarity.',
     image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1920&auto=format&fit=crop',
     audio: '/boom2/cafe.mp3'
@@ -14,7 +15,7 @@ const environments = [
   {
     id: 'airplane',
     name: 'Airplane Cabin',
-    icon: Plane,
+    icon: Airplane01Icon,
     description: 'Boost low-volume movies over the roar of the jet engine.',
     image: 'https://images.unsplash.com/photo-1530521954074-e64f6810b32d?q=80&w=1920&auto=format&fit=crop',
     audio: '/boom2/airplane.mp3'
@@ -22,7 +23,7 @@ const environments = [
   {
     id: 'home',
     name: 'Living Room',
-    icon: Home,
+    icon: Home01Icon,
     description: 'Transform your room into a cinematic 3D surround sound theater.',
     image: 'https://images.unsplash.com/photo-1593696140826-c58b021acf8b?q=80&w=1920&auto=format&fit=crop',
     audio: '/boom2/home.mp3'

@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Link } from '@/components/layout/LocalizedLink';
-import { RotateCcw } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useIsMobile } from '../../hooks/useIsMobile';
 
@@ -289,10 +289,10 @@ export function FeaturedWork() {
         {/* Reset Button */}
         <button
           onClick={resetLayout}
-          className="absolute bottom-2 right-16 md:bottom-0 md:right-0 flex items-center justify-center w-4 h-4 md:w-10 md:h-10 bg-gray-100 hover:bg-gray-200 border border-gray-300 text-gray-700 transition-colors z-20 shadow-md rounded-full"
+          className="absolute bottom-4 right-4 md:bottom-6 md:right-6 flex items-center justify-center w-9 h-9 md:w-12 md:h-12 bg-gray-900 hover:bg-black text-white transition-all z-20 shadow-lg rounded-full hover:scale-110 active:scale-95"
           title={t('home.featured_work.reset_layout')}
         >
-          <RotateCcw className="w-3.5 h-3.5 md:w-4 md:h-4" />
+          <ArrowRight className="w-4 h-4 md:w-5 md:h-5" strokeWidth={2.5} />
         </button>
       </div>
     </section>
