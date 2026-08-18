@@ -5,6 +5,7 @@ import { Boom2FeaturesBanner } from '../components/boom2/Boom2FeaturesBanner';
 import { Boom2PrecisionControl } from '../components/boom2/Boom2PrecisionControl';
 import { Boom2FeatureGrid } from '../components/boom2/Boom2FeatureGrid';
 import { Boom2RemoteControl } from '../components/boom2/Boom2RemoteControl';
+import { Boom2Awards } from '../components/boom2/Boom2Awards';
 import { Boom2Testimonials } from '../components/boom2/Boom2Testimonials';
 import { Boom2FooterCTA } from '../components/boom2/Boom2FooterCTA';
 import { Footer } from '../components/layout/Footer';
@@ -77,6 +78,7 @@ export function Boom2() {
           <Boom2RemoteControl />
         </div>
         
+        <Boom2Awards />
         <Boom2Testimonials />
         
         <Boom2FooterCTA />
