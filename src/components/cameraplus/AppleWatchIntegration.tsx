@@ -27,8 +27,7 @@ export function AppleWatchIntegration() {
       <div className="container mx-auto px-4 md:px-6 max-w-7xl relative z-10">
         
         <div className="bg-gradient-to-br from-[#00B4B4]/5 via-[#F0FDFD] to-[#E0F6F6]/50 rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden flex flex-col md:flex-row items-center gap-12 lg:gap-24 p-8 md:p-16 lg:p-20 border border-[#00B4B4]/10 shadow-[0_20px_40px_rgba(0,180,180,0.05)] relative">
-          
-          {/* Decorative Background Elements */}
+      
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#00B4B4]/10 rounded-full blur-[60px]" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-400/10 rounded-full blur-[60px]" />
 
@@ -39,9 +38,7 @@ export function AppleWatchIntegration() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#00B4B4]/20 text-[#00B4B4] font-bold text-xs uppercase tracking-widest mb-6 shadow-sm">
-                {t('cameraplus.apple_watch.badge')}
-              </div>
+             
 
               <h2 className="text-3xl sm:text-4xl lg:text-[50px] font-extrabold text-[#111827] leading-[1.1] mb-6 tracking-tight">
                 {t('cameraplus.apple_watch.title_1')}<br />
@@ -68,7 +65,7 @@ export function AppleWatchIntegration() {
               transition={{ duration: 0.8 }}
               className="relative w-full max-w-[280px] sm:max-w-none flex justify-center scale-90 sm:scale-100" // Scaling on very small screens to prevent clipping
             >
-                
+
 
               {/* Apple Watch Mockup */}
               <div className="relative flex flex-col items-center">
