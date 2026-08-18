@@ -37,7 +37,7 @@ export function Boom2Testimonials() {
     <section className="relative py-16 md:py-24 bg-[#060814] overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
         <h2 className="text-4xl md:text-5xl lg:text-[56px] text-white mb-16 md:mb-24 text-center font-normal tracking-wide">
-          Boom 2 User Reviews
+          User Reviews
         </h2>
 
         <div className="flex flex-col items-center">
