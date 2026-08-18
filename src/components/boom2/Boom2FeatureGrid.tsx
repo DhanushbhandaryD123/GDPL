@@ -56,14 +56,14 @@ export function Boom2FeatureGrid() {
           className="rounded-3xl relative overflow-hidden group shadow-lg min-h-[400px]"
         >
           {/* Video Background */}
-          <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 z-0 bg-black">
             <video
               src="/boom2/Product_animation_with_audio_eff…_202608171653.mp4"
               autoPlay
               loop
               muted
               playsInline
-              className="w-full h-full object-cover"
+              className="w-full h-full object-fill"
             />
           </div>
 
@@ -96,14 +96,14 @@ export function Boom2FeatureGrid() {
           className="rounded-3xl relative overflow-hidden group shadow-lg min-h-[400px]"
         >
           {/* Video Background */}
-          <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 z-0 bg-black">
             <video
               src="/boom2/Volume_booster_video_generation_202608171710.mp4"
               autoPlay
               loop
               muted
               playsInline
-              className="w-full h-full object-cover"
+              className="w-full h-full object-fill"
             />
           </div>
 
@@ -136,14 +136,14 @@ export function Boom2FeatureGrid() {
           className="rounded-3xl relative overflow-hidden group shadow-lg min-h-[400px]"
         >
           {/* Video Background */}
-          <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 z-0 bg-black">
             <video
               src="/boom2/Generate_product_demonstration_v…_202608171719.mp4"
               autoPlay
               loop
               muted
               playsInline
-              className="w-full h-full object-cover"
+              className="w-full h-full object-fill"
             />
           </div>
 
