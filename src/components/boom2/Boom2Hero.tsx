@@ -36,16 +36,17 @@ export function Boom2Hero() {
         <div className="max-w-xl">
 
           <motion.div
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
             className="flex items-center gap-3 mb-4 md:mb-8"
           >
-            <img
+            <motion.img
               src="/boom2/Boom2-icon.png"
               alt="Boom 2 Logo"
               className="w-12 md:w-20 h-auto object-contain drop-shadow-lg"
+              animate={{ y: [0, -12, 0] }}
+              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
             />
             <span className="text-white font-semibold text-lg md:text-xl tracking-wide drop-shadow-md">
               Boom <span className="font-light text-gray-300 border border-gray-500 rounded px-1 md:px-1.5 text-xs md:text-sm ml-1 align-middle">2</span>
@@ -53,10 +54,9 @@ export function Boom2Hero() {
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
             className="text-base sm:text-xl md:text-6xl lg:text-7xl font-bold mb-3 md:mb-6 leading-tight drop-shadow-lg text-white"
           >
             {t('boom2.hero.title_1')} <br/>
@@ -64,20 +64,18 @@ export function Boom2Hero() {
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
             className="text-gray-300 text-[11px] sm:text-sm md:text-xl mb-6 md:mb-10 leading-relaxed max-w-lg drop-shadow-md"
           >
             {t('boom2.hero.subtitle')}
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7, ease: "easeOut" }}
             className="flex flex-col sm:flex-row items-center gap-2 md:gap-4 w-full sm:w-auto"
           >
             <button className="flex items-center justify-center gap-2 bg-white text-black px-4 py-1.5 md:px-4 md:py-3.5 rounded-full md:rounded-xl font-bold transition-all hover:bg-[#1390FB] hover:text-white hover:scale-[1.02] w-full sm:w-[210px] text-[10px] sm:text-xs md:text-[15px] tracking-wide shadow-lg group">
