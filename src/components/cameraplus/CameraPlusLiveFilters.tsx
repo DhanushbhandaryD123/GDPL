@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Wand2 } from 'lucide-react';
 
 const filters = [
   { 

@@ -589,6 +589,14 @@
       "t5": "Comment Ajouter des Annotations",
       "t6": "Comment Exporter et Partager"
     },
+    "showcase": {
+      "title_1": "Conçu pour",
+      "title_2": "chaque flux de travail",
+      "subtitle": "D'une simple capture d'écran à un tutoriel soigné, Capto s'adapte à votre façon de créer — sans filigrane, sans limite de temps, sans compromis.",
+      "badge_1": "Sans Filigrane",
+      "badge_2": "Sans Limite de Temps",
+      "badge_3": "Compatible 4K"
+    },
     "mac_promo": {
       "title": "Vous cherchez Capto pour Mac ?",
       "subtitle": "Découvrez l'outil de capture d'écran ultime conçu sur mesure pour macOS.",
