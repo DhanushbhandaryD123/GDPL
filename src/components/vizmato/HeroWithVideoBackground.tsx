@@ -38,7 +38,7 @@ export function HeroWithVideoBackground() {
   const { t } = useTranslation();
   return (
     <div className="w-full max-w-[1920px] mx-auto px-4 md:px-4 pt-2 md:pt-4">
-      <section className="relative w-full rounded-3xl md:rounded-[2.5rem] shadow-2xl bg-[#09090b] overflow-hidden flex items-center justify-center aspect-[4/3] sm:aspect-[16/9] md:aspect-auto md:min-h-[600px] md:h-[85vh] md:max-h-[750px]">
+      <section className="relative w-full rounded-3xl md:rounded-[2.5rem] shadow-2xl bg-[#09090b] overflow-hidden flex items-center justify-center min-h-[550px] sm:min-h-[600px] md:aspect-auto md:h-[85vh] md:max-h-[750px]">
       {/* Video Background */}
       <video
         autoPlay
@@ -46,32 +46,35 @@ export function HeroWithVideoBackground() {
         muted
         playsInline
         poster="/vizmato/hero.png"
-        className="absolute inset-0 w-full h-full object-cover opacity-80 md:opacity-100"
+        className="absolute inset-0 w-full h-full object-cover object-[15%_center] md:object-center opacity-80 md:opacity-100"
       >
         <source src="/vizmato/vizmato-hero.mp4" type="video/mp4" />
       </video>
       
       {/* Absolute Overlay for Content */}
-      <div className="absolute inset-0 w-full h-full flex items-center">
-        <div className="container mx-auto px-4 md:px-8 h-full flex items-center">
-          <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-end w-full max-w-[1400px] mx-auto h-full mt-auto lg:mt-0">
+      <div className="absolute inset-0 w-full h-full flex flex-col justify-end lg:justify-center">
+        {/* Mobile Gradient for readability */}
+        <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-black via-black/60 to-transparent lg:hidden pointer-events-none" />
+
+        <div className="container mx-auto px-4 md:px-8 h-full flex items-end lg:items-center pb-8 lg:pb-0 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-end w-full max-w-[1400px] mx-auto">
             
             {/* Right Side: Text and Badges, pushed fully to the right */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-              className="w-full lg:w-[50%] xl:w-[45%] flex flex-col items-center lg:items-start text-center lg:text-left relative z-20 py-6 lg:py-0 lg:ml-auto lg:pr-8"
+              className="w-full lg:w-[50%] xl:w-[45%] flex flex-col items-center lg:items-start text-center lg:text-left relative z-20 py-6 lg:py-0 lg:ml-auto lg:pr-8 mt-auto lg:mt-0"
             >
               {/* Title / Logo Row */}
-              <div className="flex items-center gap-4 md:gap-6 mb-3 md:mb-4">
-                <VizmatoLogo className="w-14 h-14 md:w-20 md:h-20 lg:w-24 lg:h-24 shadow-[0_4px_20px_rgba(255,42,75,0.4)] rounded-[1.2rem] md:rounded-[1.5rem]" />
-                <h1 className="text-base sm:text-xl md:text-6xl lg:text-[76px] font-bold text-white tracking-tight leading-none" style={{ fontFamily: 'Sora, sans-serif' }}>
+              <div className="flex items-center gap-4 md:gap-6 mb-4 md:mb-4">
+                <VizmatoLogo className="w-16 h-16 sm:w-20 sm:h-20 md:w-20 md:h-20 lg:w-24 lg:h-24 shadow-[0_4px_20px_rgba(255,42,75,0.4)] rounded-[1.2rem] md:rounded-[1.5rem]" />
+                <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-[76px] font-bold text-white tracking-tight leading-none" style={{ fontFamily: 'Sora, sans-serif' }}>
                   Vizmato
                 </h1>
               </div>
               
-              <p className="text-xs sm:text-sm md:text-2xl lg:text-[30px] text-[#cccccc] mb-8 md:mb-10 leading-[1.4] font-normal max-w-[90%] md:max-w-2xl" style={{ fontFamily: 'Hanken Grotesk, sans-serif' }}>
+              <p className="text-sm sm:text-base md:text-2xl lg:text-[30px] text-[#eaeaea] mb-6 md:mb-10 leading-[1.5] font-medium max-w-[95%] md:max-w-2xl drop-shadow-md" style={{ fontFamily: 'Hanken Grotesk, sans-serif' }}>
                 {t('vizmato.hero.subtitle_1')} <br className="hidden md:block" />
                 {t('vizmato.hero.subtitle_2')}
               </p>
@@ -86,7 +89,7 @@ export function HeroWithVideoBackground() {
                   <img 
                     src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" 
                     alt="Download on the App Store" 
-                    className="h-8 sm:h-10 md:h-[55px] lg:h-[65px] w-auto"
+                    className="h-10 sm:h-12 md:h-[55px] lg:h-[65px] w-auto"
                   />
                 </a>
                 <a 
@@ -98,7 +101,7 @@ export function HeroWithVideoBackground() {
                   <img 
                     src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" 
                     alt="Get it on Google Play" 
-                    className="h-8 sm:h-10 md:h-[55px] lg:h-[65px] w-auto"
+                    className="h-10 sm:h-12 md:h-[55px] lg:h-[65px] w-auto"
                   />
                 </a>
               </div>
