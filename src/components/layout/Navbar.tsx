@@ -102,200 +102,220 @@ export function Navbar({ logoUrl }: NavbarProps) {
   const whatsNewLink = getWhatsNewLink();
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-white border-b border-gray-100">
-      <div className="w-full max-w-[1920px] mx-auto px-4 md:px-6 lg:px-8 h-20 flex items-center justify-between">
-        
-        <div className="flex items-center gap-8 lg:gap-12">
-          <Link to="/" className="flex items-center">
-            <img
-              src={logoUrl || defaultLogo}
-              alt="Global Delight Logo"
-              className={`h-8 md:h-10 w-auto object-contain drop-shadow-sm ${logoUrl ? '' : 'invert opacity-80'}`}
+    <nav className={`sticky top-0 z-50 w-full transition-colors duration-300 border-b ${isSearchOpen ? 'bg-[#0a0a0f] border-gray-800' : 'bg-white border-gray-100'}`}>
+      
+      {isSearchOpen ? (
+        // Global Search Mode
+        <div className="w-full max-w-[1200px] mx-auto px-4 md:px-6 lg:px-8 h-20 flex flex-col justify-center">
+          <div className="flex items-center gap-4 w-full">
+            <Search className="w-6 h-6 text-gray-400 shrink-0" />
+            <input
+              type="text"
+              placeholder="Search products..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              autoFocus
+              className="w-full bg-transparent text-white placeholder-gray-500 text-lg md:text-xl focus:outline-none"
             />
-          </Link>
+            <button 
+              onClick={() => { setIsSearchOpen(false); setSearchQuery(''); }}
+              className="p-2 text-gray-400 hover:text-white transition-colors shrink-0"
+            >
+              <X className="w-6 h-6" />
+            </button>
+          </div>
 
-          <div className="hidden md:flex items-center gap-8">
-            <a href="https://www.globaldelight.com/store/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 group">
-              <ShoppingCart className="w-5 h-5 text-gray-700 group-hover:text-gray-900 transition-colors" />
-              <span className="text-base font-bold text-gray-700 group-hover:text-gray-900 transition-colors">{t('nav.store') || "Store"}</span>
-              {/* Badge Icon (Blue spiky with smile) */}
-              <div className="relative flex items-center justify-center w-6 h-6 ml-0.5">
-                 {/* Spiky star shape via SVG */}
-                 <svg viewBox="0 0 24 24" className="w-full h-full text-[#00A3FF] fill-current">
-                   <path d="M12 2l2.4 3.6 4.3-1.1 1.1 4.3 3.6 2.4-2.4 3.6 1.1 4.3-4.3 1.1-1.1 4.3-3.6-2.4-3.6 2.4-1.1-4.3-4.3-1.1 1.1-4.3-2.4-3.6 3.6-2.4-1.1-4.3 4.3-1.1 2.4-3.6z" />
-                 </svg>
-                 <Smile className="w-3.5 h-3.5 text-white absolute" strokeWidth={3} />
-              </div>
-            </a>
+          {/* Full Width Dropdown Results */}
+          <div className="absolute top-full left-0 right-0 bg-[#0a0a0f] border-t border-gray-800 shadow-[0_20px_40px_rgba(0,0,0,0.5)] overflow-hidden">
+            <div className="max-w-[1200px] mx-auto p-4 md:p-8 max-h-[70vh] overflow-y-auto">
+              {searchQuery.trim().length > 0 ? (
+                filteredProducts.length > 0 ? (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {filteredProducts.map((product, idx) => (
+                      <Link
+                        key={idx}
+                        to={product.href}
+                        onClick={() => { setIsSearchOpen(false); setSearchQuery(''); }}
+                        className="flex items-center px-4 py-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-gray-200 hover:text-white"
+                      >
+                        <Search className="w-4 h-4 mr-3 opacity-50" />
+                        {product.name}
+                      </Link>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="py-12 text-center text-gray-500 text-lg">
+                    No results found for "{searchQuery}"
+                  </div>
+                )
+              ) : (
+                <div className="py-12 text-center text-gray-600">
+                  Start typing to search across the application...
+                </div>
+              )}
+            </div>
           </div>
         </div>
+      ) : (
+        // Normal Navbar Mode
+        <div className="w-full max-w-[1920px] mx-auto px-4 md:px-6 lg:px-8 h-20 flex items-center justify-between">
+          <div className="flex items-center gap-8 lg:gap-12">
+            <Link to="/" className="flex items-center">
+              <img
+                src={logoUrl || defaultLogo}
+                alt="Global Delight Logo"
+                className={`h-8 md:h-10 w-auto object-contain drop-shadow-sm ${logoUrl ? '' : 'invert opacity-80'}`}
+              />
+            </Link>
 
-        <div className="hidden md:flex items-center gap-6 lg:gap-8">
-          {rightLinks.map((link) => (
-            link.href.startsWith('http') ? (
-              <a
-                key={link.name}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-base font-medium text-gray-700 hover:text-gray-900 transition-colors"
-              >
-                {link.name}
+            <div className="hidden md:flex items-center gap-8">
+              <a href="https://www.globaldelight.com/store/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 group">
+                <ShoppingCart className="w-5 h-5 text-gray-700 group-hover:text-gray-900 transition-colors" />
+                <span className="text-base font-bold text-gray-700 group-hover:text-gray-900 transition-colors">{t('nav.store') || "Store"}</span>
+                <div className="relative flex items-center justify-center w-6 h-6 ml-0.5">
+                   <svg viewBox="0 0 24 24" className="w-full h-full text-[#00A3FF] fill-current">
+                     <path d="M12 2l2.4 3.6 4.3-1.1 1.1 4.3 3.6 2.4-2.4 3.6 1.1 4.3-4.3 1.1-1.1 4.3-3.6-2.4-3.6 2.4-1.1-4.3-4.3-1.1 1.1-4.3-2.4-3.6 3.6-2.4-1.1-4.3 4.3-1.1 2.4-3.6z" />
+                   </svg>
+                   <Smile className="w-3.5 h-3.5 text-white absolute" strokeWidth={3} />
+                </div>
               </a>
-            ) : (
-              <Link
-                key={link.name}
-                to={link.href}
-                className="text-base font-medium text-gray-700 hover:text-gray-900 transition-colors"
-              >
-                {link.name}
-              </Link>
-            )
-          ))}
-          
-          {whatsNewLink && (
-            <div className="relative">
-              <Link 
-                to={whatsNewLink}
-                className="text-base font-medium text-gray-700 hover:text-gray-900 transition-colors flex items-center gap-1"
-              >
-                What's New
-              </Link>
             </div>
-          )}
-          
-          <div className="relative" ref={searchRef}>
+          </div>
+
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
+            {rightLinks.map((link) => (
+              link.href.startsWith('http') ? (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-base font-medium text-gray-700 hover:text-gray-900 transition-colors"
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  className="text-base font-medium text-gray-700 hover:text-gray-900 transition-colors"
+                >
+                  {link.name}
+                </Link>
+              )
+            ))}
+            
+            {whatsNewLink && (
+              <div className="relative">
+                <Link 
+                  to={whatsNewLink}
+                  className="text-base font-medium text-gray-700 hover:text-gray-900 transition-colors flex items-center gap-1"
+                >
+                  What's New
+                </Link>
+              </div>
+            )}
+            
             <button 
-              onClick={() => setIsSearchOpen(!isSearchOpen)}
+              onClick={() => setIsSearchOpen(true)}
               className="text-gray-700 hover:text-gray-900 transition-colors ml-2"
             >
               <Search className="w-4 h-4 md:w-5 md:h-5" />
             </button>
             
-            {isSearchOpen && (
-              <div className="absolute right-0 top-full mt-4 w-72 bg-[#1b1f3b] rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.2)] overflow-hidden z-50 transform origin-top-right transition-all border border-gray-700">
-                <div className="p-2">
-                  <input
-                    type="text"
-                    placeholder="Search products..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    autoFocus
-                    className="w-full bg-[#1b1f3b] text-gray-200 placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:bg-[#252b4d] transition-all text-[15px]"
-                  />
-                </div>
-                <div className="max-h-64 overflow-y-auto px-2 pb-2">
-                  {searchQuery.trim().length > 0 ? (
-                    filteredProducts.length > 0 ? (
-                      filteredProducts.map((product, idx) => (
-                        <Link
-                          key={idx}
-                          to={product.href}
-                          onClick={() => setIsSearchOpen(false)}
-                          className="block px-4 py-2.5 text-sm text-gray-300 hover:bg-[#252b4d] hover:text-white rounded-lg transition-colors"
+            {/* Desktop Language Dropdown */}
+            <div className="relative ml-2" ref={languageRef}>
+              <button 
+                onClick={() => setIsLanguageOpen(!isLanguageOpen)}
+                className="hover:opacity-80 transition-opacity focus:outline-none flex items-center gap-1.5"
+              >
+                <img src="/button/LanguageIcon.png" alt="Language" className="w-5 h-5 md:w-6 md:h-6 object-contain brightness-0" />
+                <span className="text-[13px] font-semibold text-gray-700 hidden lg:block">{currentLanguage.name}</span>
+              </button>
+              
+              {isLanguageOpen && (
+                <div className="absolute right-0 top-full mt-4 w-[600px] bg-white rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.15)] z-50 border border-gray-200 p-4">
+                  <div className="grid grid-cols-3 gap-x-6 gap-y-0">
+                    {languages.map((lang) => {
+                      const isSelected = i18n.language?.startsWith(lang.code);
+                      return (
+                        <RouterLink
+                          key={lang.code}
+                          to={getLanguagePath(lang.code)}
+                          onClick={() => { rememberLanguage(lang.code); setIsLanguageOpen(false); }}
+                          className={`flex items-center gap-3 text-left py-3 border-b border-gray-100 hover:bg-gray-50 transition-colors w-full px-2 rounded-sm ${
+                            isSelected ? 'font-bold text-[#003366]' : 'text-gray-700'
+                          }`}
                         >
-                          {product.name}
-                        </Link>
-                      ))
-                    ) : (
-                      <div className="px-4 py-3 text-sm text-gray-500 text-center">
-                        No products found
-                      </div>
-                    )
-                  ) : null}
+                          <img src={lang.flagUrl} alt={lang.name} className="w-[22px] h-[16px] object-cover rounded-[2px] shadow-sm" />
+                          <span className="text-[15px]">{lang.name}</span>
+                        </RouterLink>
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
-            )}
-          </div>
-          
-          {/* Desktop Language Dropdown */}
-          <div className="relative ml-2" ref={languageRef}>
-            <button 
-              onClick={() => setIsLanguageOpen(!isLanguageOpen)}
-              className="hover:opacity-80 transition-opacity focus:outline-none flex items-center gap-1.5"
-            >
-              <img src="/button/LanguageIcon.png" alt="Language" className="w-5 h-5 md:w-6 md:h-6 object-contain brightness-0" />
-              <span className="text-[13px] font-semibold text-gray-700 hidden lg:block">{currentLanguage.name}</span>
-            </button>
-            
-            {isLanguageOpen && (
-              <div className="absolute right-0 top-full mt-4 w-[600px] bg-white rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.15)] z-50 border border-gray-200 p-4">
-                <div className="grid grid-cols-3 gap-x-6 gap-y-0">
-                  {languages.map((lang) => {
-                    const isSelected = i18n.language?.startsWith(lang.code);
-                    return (
-                      <RouterLink
-                        key={lang.code}
-                        to={getLanguagePath(lang.code)}
-                        onClick={() => { rememberLanguage(lang.code); setIsLanguageOpen(false); }}
-                        className={`flex items-center gap-3 text-left py-3 border-b border-gray-100 hover:bg-gray-50 transition-colors w-full px-2 rounded-sm ${
-                          isSelected ? 'font-bold text-[#003366]' : 'text-gray-700'
-                        }`}
-                      >
-                        <img src={lang.flagUrl} alt={lang.name} className="w-[22px] h-[16px] object-cover rounded-[2px] shadow-sm" />
-                        <span className="text-[15px]">{lang.name}</span>
-                      </RouterLink>
-                    );
-                  })}
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-
-        {/* Mobile Section (Right Side) */}
-        <div className="md:hidden flex items-center gap-4">
-          
-          {/* Mobile Language Dropdown */}
-          <div className="relative flex items-center" ref={mobileLanguageRef}>
-            <button 
-              onClick={() => setIsLanguageOpen(!isLanguageOpen)}
-              className="hover:opacity-80 transition-opacity focus:outline-none flex items-center gap-1.5"
-            >
-              <img src="/button/LanguageIcon.png" alt="Language" className="w-6 h-6 object-contain brightness-0" />
-              <span className="text-[13px] font-semibold text-gray-700">{currentLanguage.code.toUpperCase()}</span>
-            </button>
-            
-            {isLanguageOpen && (
-              <div className="absolute right-[-60px] sm:right-0 top-full mt-4 w-[320px] bg-white rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.15)] z-50 border border-gray-200 p-4">
-                <div className="grid grid-cols-2 gap-x-4 gap-y-0">
-                  {languages.map((lang) => {
-                    const isSelected = i18n.language?.startsWith(lang.code);
-                    return (
-                      <RouterLink
-                        key={lang.code}
-                        to={getLanguagePath(lang.code)}
-                        onClick={() => { rememberLanguage(lang.code); setIsLanguageOpen(false); }}
-                        className={`flex items-center gap-2 text-left py-3 border-b border-gray-100 hover:bg-gray-50 transition-colors w-full px-2 rounded-sm ${
-                          isSelected ? 'font-bold text-[#003366]' : 'text-gray-700'
-                        }`}
-                      >
-                        <img src={lang.flagUrl} alt={lang.name} className="w-[20px] h-[14px] object-cover rounded-[2px] shadow-sm" />
-                        <span className="text-[14px]">{lang.name}</span>
-                      </RouterLink>
-                    );
-                  })}
-                </div>
-              </div>
-            )}
+              )}
+            </div>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button 
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="text-gray-700 hover:text-gray-900 transition-colors"
-          >
-            {isMobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
-          </button>
+          {/* Mobile Section (Right Side) */}
+          <div className="md:hidden flex items-center gap-4">
+            <button 
+              onClick={() => setIsSearchOpen(true)}
+              className="text-gray-700 hover:text-gray-900 transition-colors"
+            >
+              <Search className="w-5 h-5" />
+            </button>
+
+            {/* Mobile Language Dropdown */}
+            <div className="relative flex items-center" ref={mobileLanguageRef}>
+              <button 
+                onClick={() => setIsLanguageOpen(!isLanguageOpen)}
+                className="hover:opacity-80 transition-opacity focus:outline-none flex items-center gap-1.5"
+              >
+                <img src="/button/LanguageIcon.png" alt="Language" className="w-6 h-6 object-contain brightness-0" />
+                <span className="text-[13px] font-semibold text-gray-700">{currentLanguage.code.toUpperCase()}</span>
+              </button>
+              
+              {isLanguageOpen && (
+                <div className="absolute right-[-60px] sm:right-0 top-full mt-4 w-[320px] bg-white rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.15)] z-50 border border-gray-200 p-4">
+                  <div className="grid grid-cols-2 gap-x-4 gap-y-0">
+                    {languages.map((lang) => {
+                      const isSelected = i18n.language?.startsWith(lang.code);
+                      return (
+                        <RouterLink
+                          key={lang.code}
+                          to={getLanguagePath(lang.code)}
+                          onClick={() => { rememberLanguage(lang.code); setIsLanguageOpen(false); }}
+                          className={`flex items-center gap-2 text-left py-3 border-b border-gray-100 hover:bg-gray-50 transition-colors w-full px-2 rounded-sm ${
+                            isSelected ? 'font-bold text-[#003366]' : 'text-gray-700'
+                          }`}
+                        >
+                          <img src={lang.flagUrl} alt={lang.name} className="w-[20px] h-[14px] object-cover rounded-[2px] shadow-sm" />
+                          <span className="text-[14px]">{lang.name}</span>
+                        </RouterLink>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="text-gray-700 hover:text-gray-900 transition-colors"
+            >
+              {isMobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+            </button>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Mobile Menu Dropdown */}
-      {isMobileMenuOpen && (
+      {!isSearchOpen && isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-xl border-t border-gray-100 max-h-[calc(100vh-80px)] overflow-y-auto">
           <div className="flex flex-col py-4 px-6 gap-4">
-            
-            {/* Store Link */}
             <a 
               href="https://www.globaldelight.com/store/" 
               target="_blank" 
@@ -313,7 +333,6 @@ export function Navbar({ logoUrl }: NavbarProps) {
               </div>
             </a>
 
-            {/* Other Links */}
             <div className="flex flex-col gap-4 py-2">
               {rightLinks.map((link) => (
                 link.href.startsWith('http') ? (
@@ -339,7 +358,6 @@ export function Navbar({ logoUrl }: NavbarProps) {
                 )
               ))}
             </div>
-
           </div>
         </div>
       )}

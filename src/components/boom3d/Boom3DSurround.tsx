@@ -1,4 +1,3 @@
-import { Music, MonitorPlay, Gamepad2, Volume2 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 
@@ -88,50 +87,7 @@ export function Boom3DSurround() {
             />
           </motion.div>
           
-          {/* Orbiting Icons */}
-          {/* Music - Top Left */}
-          <motion.div 
-            animate={{ y: [-10, 10, -10] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-[2%] md:top-[8%] left-[2%] md:left-[8%] lg:left-[5%] z-30"
-          >
-            <div className="w-12 h-12 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.12)] border border-white">
-              <Music size={20} className="text-pink-500" strokeWidth={2} />
-            </div>
-          </motion.div>
 
-          {/* Display - Bottom Left */}
-          <motion.div 
-            animate={{ y: [10, -10, 10] }}
-            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute bottom-[2%] md:bottom-[8%] left-[1%] md:left-[12%] lg:left-[8%] z-30"
-          >
-            <div className="w-12 h-12 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.12)] border border-white">
-              <MonitorPlay size={20} className="text-purple-500" strokeWidth={2} />
-            </div>
-          </motion.div>
-
-          {/* Gamepad - Top Right */}
-          <motion.div 
-            animate={{ y: [-8, 8, -8] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-            className="absolute top-[5%] md:top-[12%] right-[5%] md:right-[15%] lg:right-[8%] z-30"
-          >
-            <div className="w-12 h-12 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.12)] border border-white">
-              <Gamepad2 size={20} className="text-blue-500" strokeWidth={2} />
-            </div>
-          </motion.div>
-
-          {/* Volume - Bottom Right */}
-          <motion.div 
-            animate={{ y: [12, -12, 12] }}
-            transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-            className="absolute bottom-[2%] md:bottom-[5%] right-[2%] md:right-[8%] lg:right-[4%] z-30"
-          >
-            <div className="w-12 h-12 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.12)] border border-white">
-              <Volume2 size={20} className="text-indigo-600" strokeWidth={2} />
-            </div>
-          </motion.div>
 
         </div>
       </div>
