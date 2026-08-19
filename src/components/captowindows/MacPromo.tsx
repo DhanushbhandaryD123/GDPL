@@ -6,9 +6,17 @@ import { useTranslation } from 'react-i18next';
 export function MacPromo() {
   const { t } = useTranslation();
   return (
-    <section className="py-10 md:py-12 bg-[#0078D7] text-white">
-      <div className="container mx-auto px-4 md:px-6">
-        <motion.div 
+    <section className="py-10 md:py-12 bg-[#0078D7] text-white relative overflow-hidden">
+      <img
+        src="https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?w=1920&q=80&auto=format&fit=crop"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover opacity-15"
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0078D7] via-[#0078D7]/95 to-[#005a9e]/90" />
+
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

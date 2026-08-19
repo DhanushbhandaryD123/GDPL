@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../components/layout/Navbar';
 import { Hero } from '../components/captowindows/Hero';
 import { FeaturesGrid } from '../components/captowindows/FeaturesGrid';
+import { Showcase } from '../components/captowindows/Showcase';
 import { VideoTutorials } from '../components/captowindows/VideoTutorials';
 import { MacPromo } from '../components/captowindows/MacPromo';
 import { Newsletter } from '../components/captowindows/Newsletter';
@@ -10,7 +11,7 @@ import { Footer } from '../components/layout/Footer';
 export function CaptoWindowsPage() {
   const domain = import.meta.env.VITE_SITE_URL || '';
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900 font-sans overflow-x-hidden selection:bg-[#0078D7] selection:text-white">
+    <div className="min-h-screen bg-white text-gray-900 font-sans overflow-x-hidden selection:bg-[#0078D7] selection:text-white">
       <Helmet>
         <title>Capto for Windows | Screen Capture & Video Editing</title>
         <meta name="description" content="Capto for Windows is your all-in-one solution for screenshots, screen recording, and video editing on PC. Create tutorials, vlog, and share with ease — no watermarks, no time limits." />
@@ -35,6 +36,7 @@ export function CaptoWindowsPage() {
       <main>
         <Hero />
         <FeaturesGrid />
+        <Showcase />
         <VideoTutorials />
         <MacPromo />
         <Newsletter />

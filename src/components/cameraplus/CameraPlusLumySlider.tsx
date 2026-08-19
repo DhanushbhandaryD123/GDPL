@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { SlidersHorizontal, Sun, Moon } from 'lucide-react';
+import { Sun, Moon } from 'lucide-react';
 
 export function CameraPlusLumySlider() {
   const [exposure, setExposure] = useState(50);
