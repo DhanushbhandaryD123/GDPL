@@ -629,6 +629,36 @@
       "f3_title": "Partage Facile",
       "f3_desc": "Partagez vos créations instantanément sur toutes vos plateformes sociales préférées."
     },
+    "showcase": {
+      "title_1": "Des Possibilités Infinies pour",
+      "title_2": "Créer",
+      "subtitle": "D'une escapade du week-end à une soirée du vendredi, Vizmato transforme chaque instant en une histoire digne d'un film.",
+      "c1_title": "Carnets de Voyage",
+      "c1_desc": "Transformez vos aventures en résumés cinématographiques grâce à des thèmes adaptés à chaque voyage.",
+      "c2_title": "Musique & Vie Nocturne",
+      "c2_desc": "Synchronisez vos coupes sur le rythme et ajoutez des effets qui font ressortir chaque clip de soirée.",
+      "c3_title": "Vlogs du Quotidien",
+      "c3_desc": "Montez vos vidéos en déplacement et publiez des vlogs soignés avant que l'instant ne passe."
+    },
+    "process": {
+      "title_1": "De l'Enregistrement au",
+      "title_2": "Montage en Quelques Minutes",
+      "subtitle": "Trois étapes simples pour passer d'un écran vide à une vidéo prête à partager.",
+      "step1": "Enregistrer",
+      "step1_desc": "Filmez en Full HD directement depuis votre téléphone, sans équipement supplémentaire.",
+      "step2": "Styliser",
+      "step2_desc": "Ajoutez des thèmes, des effets en direct et de la musique pour donner du caractère à votre clip.",
+      "step3": "Partager",
+      "step3_desc": "Exportez en quelques secondes et publiez directement sur vos plateformes préférées."
+    },
+    "toolkit": {
+      "title_1": "Des Effets Dignes d'un Studio,",
+      "title_2": "Directement dans Votre Poche",
+      "subtitle": "Vizmato regroupe des outils de montage professionnels dans une application toujours prête dès que l'inspiration arrive.",
+      "badge_1": "50+ Thèmes",
+      "badge_2": "Effets en Direct",
+      "badge_3": "Ralenti"
+    },
     "testimonials": {
       "media_tab": "MÉDIAS",
       "users_tab": "UTILISATEURS",

@@ -629,6 +629,36 @@
       "f3_title": "Compartilhamento Fácil",
       "f3_desc": "Compartilhe suas criações instantaneamente em todas as suas plataformas sociais favoritas."
     },
+    "showcase": {
+      "title_1": "Infinitas Formas de",
+      "title_2": "Criar",
+      "subtitle": "De uma aventura de fim de semana a uma festa de sexta-feira, o Vizmato transforma cada momento em uma história digna de filme.",
+      "c1_title": "Diários de Viagem",
+      "c1_desc": "Transforme suas aventuras em resumos cinematográficos com temas feitos para cada viagem.",
+      "c2_title": "Música e Vida Noturna",
+      "c2_desc": "Sincronize os cortes com o ritmo e adicione efeitos que destacam cada clipe de festa.",
+      "c3_title": "Vlogs do Dia a Dia",
+      "c3_desc": "Edite em qualquer lugar e publique vlogs impecáveis antes que o momento passe."
+    },
+    "process": {
+      "title_1": "Da Gravação ao",
+      "title_2": "Vídeo Pronto em Minutos",
+      "subtitle": "Três passos simples levam você de uma tela em branco a um vídeo pronto para compartilhar.",
+      "step1": "Grave",
+      "step1_desc": "Grave em Full HD direto do seu celular, sem equipamento extra.",
+      "step2": "Estilize",
+      "step2_desc": "Adicione temas, efeitos ao vivo e música para dar personalidade ao seu clipe.",
+      "step3": "Compartilhe",
+      "step3_desc": "Exporte em segundos e publique direto nas suas plataformas favoritas."
+    },
+    "toolkit": {
+      "title_1": "Efeitos de Nível Profissional,",
+      "title_2": "Direto no Seu Bolso",
+      "subtitle": "O Vizmato reúne ferramentas de edição profissionais em um app sempre pronto quando a inspiração surgir.",
+      "badge_1": "50+ Temas",
+      "badge_2": "Efeitos ao Vivo",
+      "badge_3": "Câmera Lenta"
+    },
     "testimonials": {
       "media_tab": "MÍDIA",
       "users_tab": "USUÁRIOS",

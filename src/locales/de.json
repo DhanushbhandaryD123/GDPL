@@ -629,6 +629,36 @@
       "f3_title": "Einfaches Teilen",
       "f3_desc": "Teile deine Kreationen sofort auf all deinen bevorzugten sozialen Plattformen."
     },
+    "showcase": {
+      "title_1": "Endlose Wege zu",
+      "title_2": "Erschaffen",
+      "subtitle": "Vom Wochenendausflug bis zur Freitagnacht – Vizmato macht aus jedem Moment eine filmreife Geschichte.",
+      "c1_title": "Reisetagebücher",
+      "c1_desc": "Verwandle deine Abenteuer mit passenden Themes in filmreife Zusammenfassungen.",
+      "c2_title": "Musik & Nightlife",
+      "c2_desc": "Schneide im Takt der Musik und lege Effekte darüber, die jeden Party-Clip aufleben lassen.",
+      "c3_title": "Alltags-Vlogs",
+      "c3_desc": "Bearbeite unterwegs und veröffentliche fertige Vlogs, bevor der Moment vorbei ist."
+    },
+    "process": {
+      "title_1": "Von der Aufnahme zum",
+      "title_2": "fertigen Clip in Minuten",
+      "subtitle": "Drei einfache Schritte führen dich vom leeren Bildschirm zum teilbereiten Video.",
+      "step1": "Aufnehmen",
+      "step1_desc": "Nimm in voller HD-Qualität direkt mit deinem Handy auf – keine zusätzliche Ausrüstung nötig.",
+      "step2": "Stylen",
+      "step2_desc": "Füge Themes, Live-Effekte und Musik hinzu, um deinem Clip eine eigene Note zu geben.",
+      "step3": "Teilen",
+      "step3_desc": "Exportiere in Sekunden und poste direkt auf deinen Lieblingsplattformen."
+    },
+    "toolkit": {
+      "title_1": "Effekte in Studioqualität,",
+      "title_2": "direkt in deiner Tasche",
+      "subtitle": "Vizmato packt professionelle Bearbeitungswerkzeuge in eine App, die immer bereit ist, wenn die Inspiration zuschlägt.",
+      "badge_1": "50+ Themes",
+      "badge_2": "Live-Effekte",
+      "badge_3": "Zeitlupe"
+    },
     "testimonials": {
       "media_tab": "MEDIEN",
       "users_tab": "NUTZER",

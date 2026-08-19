@@ -2,6 +2,9 @@ import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../components/layout/Navbar';
 import { HeroWithVideoBackground } from '../components/vizmato/HeroWithVideoBackground';
 import { FeaturesSection } from '../components/vizmato/FeaturesSection';
+import { CreativeShowcase } from '../components/vizmato/CreativeShowcase';
+import { ProcessSteps } from '../components/vizmato/ProcessSteps';
+import { ToolkitShowcase } from '../components/vizmato/ToolkitShowcase';
 import { MediaTestimonials } from '../components/vizmato/MediaTestimonials';
 import { NewsletterSection } from '../components/vizmato/NewsletterSection';
 import { Footer } from '../components/layout/Footer';
@@ -35,6 +38,9 @@ export function VizmatoPage() {
       <main>
         <HeroWithVideoBackground />
         <FeaturesSection />
+        <CreativeShowcase />
+        <ProcessSteps />
+        <ToolkitShowcase />
         <MediaTestimonials />
         <NewsletterSection />
       </main>

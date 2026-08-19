@@ -629,6 +629,36 @@
       "f3_title": "Easy Sharing",
       "f3_desc": "Share your creations instantly to all your favorite social platforms."
     },
+    "showcase": {
+      "title_1": "Endless Ways to",
+      "title_2": "Create",
+      "subtitle": "From weekend adventures to Friday night parties, Vizmato turns every moment into a movie-worthy story.",
+      "c1_title": "Travel Diaries",
+      "c1_desc": "Turn your adventures into cinematic recaps with themes built for every trip.",
+      "c2_title": "Music & Nightlife",
+      "c2_desc": "Sync cuts to the beat and layer FX that make every party clip pop.",
+      "c3_title": "Everyday Vlogs",
+      "c3_desc": "Edit on the go and post polished vlogs before the moment passes."
+    },
+    "process": {
+      "title_1": "From Record to",
+      "title_2": "Reel in Minutes",
+      "subtitle": "Three simple steps take you from a blank screen to a share-ready video.",
+      "step1": "Record",
+      "step1_desc": "Capture in full HD straight from your phone, no extra gear needed.",
+      "step2": "Style",
+      "step2_desc": "Drop in themes, live FX, and music to give your clip its own personality.",
+      "step3": "Share",
+      "step3_desc": "Export in seconds and post directly to your favorite platforms."
+    },
+    "toolkit": {
+      "title_1": "Studio-Grade Effects,",
+      "title_2": "Right In Your Pocket",
+      "subtitle": "Vizmato packs professional-level editing tools into an app that's ready whenever inspiration strikes.",
+      "badge_1": "50+ Themes",
+      "badge_2": "Live FX",
+      "badge_3": "Slow Motion"
+    },
     "testimonials": {
       "media_tab": "MEDIA",
       "users_tab": "USERS",
