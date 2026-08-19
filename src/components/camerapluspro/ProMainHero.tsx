@@ -17,7 +17,20 @@ export function ProMainHero() {
           {/* Left Content */}
           <div className="order-2 lg:order-1 flex flex-col items-center text-center lg:items-start lg:text-left">
            
-
+            {/* App Icon and Name */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.05 }}
+              className="flex items-center gap-4 mb-6 lg:-mt-10"
+            >
+              <img 
+                src="/cameraplus/cpp-icon@2x.png" 
+                alt="Camera Plus Pro Icon" 
+                className="w-14 h-14 md:w-16 md:h-16 object-contain"
+              />
+              <span className="text-2xl md:text-3xl font-extrabold text-gray-800 tracking-tight">Camera Plus Pro</span>
+            </motion.div>
             <motion.h1 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
