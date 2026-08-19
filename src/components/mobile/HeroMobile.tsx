@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from '../layout/LocalizedLink';
 
 const heroImages = [
   '/hero/hero-banner.png',
@@ -211,9 +212,9 @@ export function HeroMobile() {
                   </a>
                 </div>
 
-                <button className="bg-[#00e5ff] text-black font-bold px-4 py-1.5 rounded-full text-[10px] sm:text-xs hover:bg-[#00ccdd] active:scale-95 transition shadow-[0_0_10px_rgba(0,229,255,0.4)] mt-2">
+                <Link to="/boom3D" className="bg-[#00e5ff] text-black font-bold px-4 py-1.5 rounded-full text-[10px] sm:text-xs hover:bg-[#00ccdd] active:scale-95 transition shadow-[0_0_10px_rgba(0,229,255,0.4)] mt-2 pointer-events-auto">
                   {t('home.hero_banner.learn_more')}
-                </button>
+                </Link>
               </motion.div>
             </motion.div>
           )}
@@ -246,9 +247,9 @@ export function HeroMobile() {
                   >
                     <img src="/button/en-us dark.svg" alt="Get it from Microsoft Store" className="h-8 sm:h-10 object-contain drop-shadow-md" />
                   </a>
-                  <button className="bg-white/10 border border-white/80 text-white font-bold px-4 py-1.5 rounded text-[10px] sm:text-xs hover:bg-white/20 active:scale-95 transition shadow-lg whitespace-nowrap backdrop-blur-sm flex items-center justify-center">
+                  <Link to="/capto" className="bg-white/10 border border-white/80 text-white font-bold px-4 py-1.5 rounded text-[10px] sm:text-xs hover:bg-white/20 active:scale-95 transition shadow-lg whitespace-nowrap backdrop-blur-sm flex items-center justify-center">
                     {t('home.hero_banner.learn_more')}
-                  </button>
+                  </Link>
                 </div>
               </motion.div>
             )}
@@ -277,14 +278,12 @@ export function HeroMobile() {
                 >
                   <img src="/button/DownloadonMacAppStore.png" alt="Download on Mac App Store" className="h-8 sm:h-10 object-contain drop-shadow-md" />
                 </a>
-                  <a 
-                    href="https://www.globaldelight.com/boom2/?source_page=GD%20Home%20page" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <Link
+                    to="/boom2"
                     className="bg-[#00e5ff] text-black font-bold px-4 py-1.5 rounded-full text-[10px] sm:text-xs hover:bg-[#00ccdd] active:scale-95 transition shadow-[0_0_10px_rgba(0,229,255,0.4)] text-center block"
                   >
                   {t('home.hero_banner.learn_more')}
-                </a>
+                </Link>
               </div>
             </motion.div>
           )}
