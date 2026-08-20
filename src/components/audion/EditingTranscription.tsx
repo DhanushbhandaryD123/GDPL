@@ -25,7 +25,7 @@ export function EditingTranscription() {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-bold text-gray-900 mb-6"
           >
-            {t('audion.transcription.title_1')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-500">{t('audion.transcription.title_2')}</span>
+            {t('audion.transcription.title_1')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">{t('audion.transcription.title_2')}</span>
           </motion.h2>
           <p className="text-lg text-gray-500">
             {t('audion.transcription.subtitle')}

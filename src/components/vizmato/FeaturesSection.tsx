@@ -40,14 +40,14 @@ export function FeaturesSection() {
             >
               <div className="mb-8 relative">
                 {/* Neon Glow effect behind icon */}
-                <div className="absolute inset-0 bg-fuchsia-500 blur-2xl opacity-40 group-hover:opacity-70 transition-opacity duration-500 rounded-full" />
+                <div className="absolute inset-0 bg-red-500 blur-2xl opacity-40 group-hover:opacity-70 transition-opacity duration-500 rounded-full" />
                 
                 {/* Icon Container */}
                 <div className="relative w-24 h-24 flex items-center justify-center">
                   <feature.icon 
                     size={64} 
                     strokeWidth={1.5}
-                    className="text-fuchsia-400 drop-shadow-[0_0_10px_rgba(217,70,239,0.8)] transition-transform duration-500 group-hover:scale-110" 
+                    className="text-red-500 drop-shadow-[0_0_10px_rgba(239,68,68,0.8)] transition-transform duration-500 group-hover:scale-110" 
                   />
                 </div>
               </div>

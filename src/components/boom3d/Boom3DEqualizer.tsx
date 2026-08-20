@@ -15,7 +15,7 @@ export function Boom3DEqualizer() {
   const [activePreset, setActivePreset] = useState(presets[0]);
 
   return (
-    <section className="relative py-10 lg:py-0 overflow-hidden bg-[#fafafa]">
+    <section className="relative py-10 lg:py-16 overflow-hidden bg-[#fafafa]">
       <div className="flex flex-col lg:flex-row items-center w-full max-w-[1600px] mx-auto">
         
         {/* Left Side: Full-bleed Image */}

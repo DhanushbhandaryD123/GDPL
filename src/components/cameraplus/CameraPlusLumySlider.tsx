@@ -27,9 +27,12 @@ export function CameraPlusLumySlider() {
             transition={{ duration: 0.8 }}
           >
            
+            <p className="text-sm font-semibold tracking-widest uppercase mb-3 text-transparent bg-clip-text bg-gradient-to-r from-[#00B4B4] to-[#007a7a]">
+              Introducing AirSnap
+            </p>
             
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tight mb-6">
-              Perfect Exposure, <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">One Handed.</span>
+              Perfect Exposure, <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00B4B4] to-[#007a7a]">One Handed.</span>
             </h2>
             
             <p className="text-lg md:text-xl text-gray-500 leading-relaxed mb-12 max-w-lg">
