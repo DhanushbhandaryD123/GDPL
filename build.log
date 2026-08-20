@@ -1,0 +1,2350 @@
+
+> globaldelight-website-frontend@0.0.0 build
+> node scripts/generate-sitemap.js && tsc -b && vite build
+
+✅ Sitemap successfully generated at public/sitemap.xml with 188 URLs.
+✅ robots.txt successfully generated at public/robots.txt with domain https://gdpl-six.vercel.app
+[36mvite v6.4.3 [32mbuilding for production...[36m[39m
+transforming...
+[32m✓[39m 6950 modules transformed.
+rendering chunks...
+computing gzip size...
+[2mdist/[22m[32mindex.html                      [39m[1m[2m    2.05 kB[22m[1m[22m[2m │ gzip:   1.03 kB[22m
+[2mdist/[22m[35massets/index-sWSiby8p.css       [39m[1m[2m  236.39 kB[22m[1m[22m[2m │ gzip:  30.39 kB[22m
+[2mdist/[22m[36massets/Kaltura-Dtr8QdE3.js      [39m[1m[2m    2.85 kB[22m[1m[22m[2m │ gzip:   1.35 kB[22m
+[2mdist/[22m[36massets/Streamable-RL4QrAou.js   [39m[1m[2m    3.00 kB[22m[1m[22m[2m │ gzip:   1.38 kB[22m
+[2mdist/[22m[36massets/Mixcloud-Dyo1RQTJ.js     [39m[1m[2m    3.14 kB[22m[1m[22m[2m │ gzip:   1.45 kB[22m
+[2mdist/[22m[36massets/Vidyard-D7E_fmBK.js      [39m[1m[2m    3.26 kB[22m[1m[22m[2m │ gzip:   1.49 kB[22m
+[2mdist/[22m[36massets/DailyMotion-DK1fn-fa.js  [39m[1m[2m    3.37 kB[22m[1m[22m[2m │ gzip:   1.53 kB[22m
+[2mdist/[22m[36massets/Preview-Bt5SfWL8.js      [39m[1m[2m    3.41 kB[22m[1m[22m[2m │ gzip:   1.60 kB[22m
+[2mdist/[22m[36massets/SoundCloud-Dh4-Esyk.js   [39m[1m[2m    3.42 kB[22m[1m[22m[2m │ gzip:   1.53 kB[22m
+[2mdist/[22m[36massets/Twitch-BIvbqEDH.js       [39m[1m[2m    3.49 kB[22m[1m[22m[2m │ gzip:   1.57 kB[22m
+[2mdist/[22m[36massets/Facebook-B4WYDDfP.js     [39m[1m[2m    3.62 kB[22m[1m[22m[2m │ gzip:   1.59 kB[22m
+[2mdist/[22m[36massets/Wistia-BNIhE72Z.js       [39m[1m[2m    3.93 kB[22m[1m[22m[2m │ gzip:   1.67 kB[22m
+[2mdist/[22m[36massets/Vimeo-CessSzc6.js        [39m[1m[2m    4.03 kB[22m[1m[22m[2m │ gzip:   1.66 kB[22m
+[2mdist/[22m[36massets/YouTube-CkuwvSOE.js      [39m[1m[2m    4.87 kB[22m[1m[22m[2m │ gzip:   2.21 kB[22m
+[2mdist/[22m[36massets/Mux-CUqUvtNB.js          [39m[1m[2m    6.00 kB[22m[1m[22m[2m │ gzip:   2.18 kB[22m
+[2mdist/[22m[36massets/FilePlayer-BwdT4BE4.js   [39m[1m[2m    9.47 kB[22m[1m[22m[2m │ gzip:   3.24 kB[22m
+[2mdist/[22m[36massets/index-Cz02_B61.js        [39m[1m[33m1,756.57 kB[39m[22m[2m │ gzip: 497.38 kB[22m
+[33m
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[39m
+[32m✓ built in 2m 31s[39m
+
+> globaldelight-website-frontend@0.0.0 postbuild
+> node scripts/snap-batches.cjs && node scripts/reorder-head-tags.cjs && node scripts/dedupe-head-tags.cjs
+
+
+=== react-snap batch: en (42 routes) ===
+🔥  pageerror at /: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /about: SyntaxError: Unexpected token '<'
+
+✅  crawled 1 out of 43 (/about)
+✅  crawled 2 out of 43 (/)
+🔥  pageerror at /business: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /404.html: SyntaxError: Unexpected token '<'
+
+✅  crawled 3 out of 44 (/business)
+⚠️  warning: 404 page title does not contain "404" string
+✅  crawled 4 out of 44 (/404.html)
+🔥  pageerror at /technology/audio: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /technology/video: SyntaxError: Unexpected token '<'
+
+✅  crawled 5 out of 44 (/technology/audio)
+✅  crawled 6 out of 44 (/technology/video)
+🔥  pageerror at /technology/camera: SyntaxError: Unexpected token '<'
+
+✅  crawled 7 out of 44 (/technology/camera)
+🔥  pageerror at /technology/screen-capture: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /faq: SyntaxError: Unexpected token '<'
+
+✅  crawled 8 out of 44 (/technology/screen-capture)
+✅  crawled 9 out of 45 (/faq)
+🔥  pageerror at /faq/boom3dmac: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /faq/boom3dmas: SyntaxError: Unexpected token '<'
+
+✅  crawled 10 out of 45 (/faq/boom3dmac)
+✅  crawled 11 out of 45 (/faq/boom3dmas)
+🔥  pageerror at /faq/boom3dwin: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /faq/audimixwin: SyntaxError: Unexpected token '<'
+
+✅  crawled 12 out of 45 (/faq/boom3dwin)
+✅  crawled 13 out of 45 (/faq/audimixwin)
+🔥  pageerror at /faq/boom2: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /faq/boomios: SyntaxError: Unexpected token '<'
+
+✅  crawled 14 out of 45 (/faq/boom2)
+✅  crawled 15 out of 45 (/faq/boomios)
+🔥  pageerror at /faq/vizmato: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /faq/captomac: SyntaxError: Unexpected token '<'
+
+✅  crawled 16 out of 45 (/faq/vizmato)
+✅  crawled 17 out of 45 (/faq/captomac)
+🔥  pageerror at /faq/captowin: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /faq/audion: SyntaxError: Unexpected token '<'
+
+✅  crawled 18 out of 45 (/faq/captowin)
+✅  crawled 19 out of 45 (/faq/audion)
+🔥  pageerror at /contact: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /careers: SyntaxError: Unexpected token '<'
+
+✅  crawled 20 out of 45 (/contact)
+✅  crawled 21 out of 45 (/careers)
+️️️💬  console.log at /boom2: Unrecognized feature: 'clipboard-write'.
+🔥  pageerror at /boom: SyntaxError: Unexpected token '<'
+
+️️️💬  console.log at /boom2: An <img> element was lazyloaded with loading=lazy, but had no dimensions specified. Specifying dimensions improves performance. See https://crbug.com/954323
+️️️💬  console.log at /boom2: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+🔥  pageerror at /boom2: SyntaxError: Unexpected token '<'
+
+✅  crawled 22 out of 45 (/boom)
+🔥  pageerror at /boom3D: SyntaxError: Unexpected token '<'
+
+✅  crawled 23 out of 46 (/boom3D)
+✅  crawled 24 out of 47 (/boom2)
+️️️⚠️  warning at /capto/: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /capto: Failed to load resource: the server responded with a status of 404 ()
+🔥  pageerror at /capto: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /capto/windows: SyntaxError: Unexpected token '<'
+
+✅  crawled 25 out of 48 (/capto)
+✅  crawled 26 out of 48 (/capto/windows)
+🔥  pageerror at /audion: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /vizmato: SyntaxError: Unexpected token '<'
+
+✅  crawled 27 out of 48 (/audion)
+✅  crawled 28 out of 49 (/vizmato)
+🔥  pageerror at /cameraplus: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /camerapluspro: SyntaxError: Unexpected token '<'
+
+✅  crawled 29 out of 50 (/cameraplus)
+✅  crawled 30 out of 50 (/camerapluspro)
+🔥  pageerror at /audimix: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /boomformobile: SyntaxError: Unexpected token '<'
+
+✅  crawled 31 out of 50 (/audimix)
+✅  crawled 32 out of 50 (/boomformobile)
+🔥  pageerror at /boom3D/privacy-policy: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /404: SyntaxError: Unexpected token '<'
+
+✅  crawled 33 out of 50 (/boom3D/privacy-policy)
+✅  crawled 34 out of 50 (/404)
+🔥  pageerror at /boom2/privacy-policy: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /boom/privacy-policy: SyntaxError: Unexpected token '<'
+
+✅  crawled 35 out of 50 (/boom2/privacy-policy)
+✅  crawled 36 out of 50 (/boom/privacy-policy)
+🔥  pageerror at /privacy-policy: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /capto/privacy-policy: SyntaxError: Unexpected token '<'
+
+✅  crawled 37 out of 50 (/privacy-policy)
+✅  crawled 38 out of 50 (/capto/privacy-policy)
+🔥  pageerror at /whatsnew/boom: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /whatsnew/capto: SyntaxError: Unexpected token '<'
+
+✅  crawled 39 out of 50 (/whatsnew/boom)
+✅  crawled 40 out of 50 (/whatsnew/capto)
+🔥  pageerror at /whatsnew/boom2: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /whatsnew/audion: SyntaxError: Unexpected token '<'
+
+✅  crawled 41 out of 50 (/whatsnew/boom2)
+🔥  pageerror at /whatsnew/audimix: SyntaxError: Unexpected token '<'
+
+✅  crawled 42 out of 50 (/whatsnew/audion)
+️️️⚠️  warning at /whatsnew/audimix: got 404 HTTP code for https://images.unsplash.com/photo-1516280440502-3c825a0a3821?auto=format&fit=crop&q=80&w=2000
+️️️💬  console.log at /whatsnew/audimix: Failed to load resource: the server responded with a status of 404 ()
+🔥  pageerror at /business/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /business/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 43 out of 50 (/whatsnew/audimix)
+🔥  pageerror at /faq/: SyntaxError: Unexpected token '<'
+
+✅  crawled 44 out of 50 (/business/)
+✅  crawled 45 out of 50 (/faq/)
+️️️💬  console.log at /boom2/: Unrecognized feature: 'clipboard-write'.
+️️️💬  console.log at /boom2/: An <img> element was lazyloaded with loading=lazy, but had no dimensions specified. Specifying dimensions improves performance. See https://crbug.com/954323
+🔥  pageerror at /boom3D/: SyntaxError: Unexpected token '<'
+
+️️️💬  console.log at /boom2/: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+💬  console.log at /boom3D/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /boom2/: SyntaxError: Unexpected token '<'
+
+️️️💬  console.log at /boom2/: Unrecognized feature: 'clipboard-write'.
+💬  console.log at /boom2/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️💬  console.log at /boom2/: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+✅  crawled 46 out of 50 (/boom3D/)
+️️️⚠️  warning at /capto/: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /capto/: Failed to load resource: the server responded with a status of 404 ()
+🔥  pageerror at /capto/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /capto/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️⚠️  warning at /capto/: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /capto/: Failed to load resource: the server responded with a status of 404 ()
+✅  crawled 47 out of 50 (/capto/)
+✅  crawled 48 out of 50 (/boom2/)
+🔥  pageerror at /vizmato/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /vizmato/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /cameraplus/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /cameraplus/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 49 out of 50 (/vizmato/)
+✅  crawled 50 out of 50 (/cameraplus/)
+
+=== react-snap batch: de (21 routes) ===
+🔥  pageerror at /de: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /de/about: SyntaxError: Unexpected token '<'
+
+💬  console.log at /de: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /de/about: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 1 out of 30 (/de)
+✅  crawled 2 out of 30 (/de/about)
+🔥  pageerror at /404.html: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /de/business: SyntaxError: Unexpected token '<'
+
+💬  console.log at /de/business: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /404.html: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+⚠️  warning: 404 page title does not contain "404" string
+✅  crawled 3 out of 38 (/de/business)
+✅  crawled 4 out of 38 (/404.html)
+🔥  pageerror at /de/technology/audio: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /de/technology/video: SyntaxError: Unexpected token '<'
+
+💬  console.log at /de/technology/video: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /de/technology/audio: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 5 out of 38 (/de/technology/video)
+✅  crawled 6 out of 38 (/de/technology/audio)
+🔥  pageerror at /de/technology/camera: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /de/technology/screen-capture: SyntaxError: Unexpected token '<'
+
+💬  console.log at /de/technology/camera: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /de/technology/screen-capture: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 7 out of 38 (/de/technology/camera)
+✅  crawled 8 out of 38 (/de/technology/screen-capture)
+🔥  pageerror at /de/faq: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /de/contact: SyntaxError: Unexpected token '<'
+
+💬  console.log at /de/faq: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /de/contact: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 9 out of 38 (/de/faq)
+✅  crawled 10 out of 38 (/de/contact)
+🔥  pageerror at /de/careers: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /de/boom: SyntaxError: Unexpected token '<'
+
+💬  console.log at /de/careers: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /de/boom: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 11 out of 38 (/de/careers)
+🔥  pageerror at /de/boom2: SyntaxError: Unexpected token '<'
+
+✅  crawled 12 out of 38 (/de/boom)
+️️️💬  console.log at /de/boom2: Unrecognized feature: 'clipboard-write'.
+️️️💬  console.log at /de/boom2: An <img> element was lazyloaded with loading=lazy, but had no dimensions specified. Specifying dimensions improves performance. See https://crbug.com/954323
+💬  console.log at /de/boom2: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️💬  console.log at /de/boom2: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+🔥  pageerror at /de/boom3D: SyntaxError: Unexpected token '<'
+
+💬  console.log at /de/boom3D: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 13 out of 39 (/de/boom3D)
+🔥  pageerror at /de/capto: SyntaxError: Unexpected token '<'
+
+✅  crawled 14 out of 40 (/de/boom2)
+💬  console.log at /de/capto: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️⚠️  warning at /de/capto: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /de/capto: Failed to load resource: the server responded with a status of 404 ()
+🔥  pageerror at /de/capto/windows: SyntaxError: Unexpected token '<'
+
+💬  console.log at /de/capto/windows: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 15 out of 41 (/de/capto)
+🔥  pageerror at /de/audion: SyntaxError: Unexpected token '<'
+
+✅  crawled 16 out of 41 (/de/capto/windows)
+💬  console.log at /de/audion: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /de/vizmato: SyntaxError: Unexpected token '<'
+
+💬  console.log at /de/vizmato: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 17 out of 41 (/de/audion)
+✅  crawled 18 out of 41 (/de/vizmato)
+🔥  pageerror at /de/cameraplus: SyntaxError: Unexpected token '<'
+
+💬  console.log at /de/cameraplus: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /de/camerapluspro: SyntaxError: Unexpected token '<'
+
+💬  console.log at /de/camerapluspro: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 19 out of 41 (/de/cameraplus)
+✅  crawled 20 out of 41 (/de/camerapluspro)
+🔥  pageerror at /de/audimix: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /de/boomformobile: SyntaxError: Unexpected token '<'
+
+💬  console.log at /de/audimix: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /de/boomformobile: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 21 out of 41 (/de/audimix)
+✅  crawled 22 out of 41 (/de/boomformobile)
+️️️💬  console.log at /boom2: Unrecognized feature: 'clipboard-write'.
+️️️💬  console.log at /boom2: An <img> element was lazyloaded with loading=lazy, but had no dimensions specified. Specifying dimensions improves performance. See https://crbug.com/954323
+🔥  pageerror at /boom3D: SyntaxError: Unexpected token '<'
+
+💬  console.log at /boom3D: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 23 out of 43 (/boom3D)
+️️️💬  console.log at /boom2: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+🔥  pageerror at /boom2: SyntaxError: Unexpected token '<'
+
+️️️⚠️  warning at /capto/: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /capto: Failed to load resource: the server responded with a status of 404 ()
+️️️💬  console.log at /boom2: Unrecognized feature: 'clipboard-write'.
+🔥  pageerror at /capto: SyntaxError: Unexpected token '<'
+
+💬  console.log at /boom2: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️💬  console.log at /boom2: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+💬  console.log at /capto: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️⚠️  warning at /capto/: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /capto: Failed to load resource: the server responded with a status of 404 ()
+✅  crawled 24 out of 45 (/capto)
+🔥  pageerror at /audimix: SyntaxError: Unexpected token '<'
+
+💬  console.log at /audimix: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 25 out of 46 (/audimix)
+✅  crawled 26 out of 48 (/boom2)
+🔥  pageerror at /capto/windows: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /boomformobile: SyntaxError: Unexpected token '<'
+
+💬  console.log at /capto/windows: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /boomformobile: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 27 out of 49 (/capto/windows)
+✅  crawled 28 out of 50 (/boomformobile)
+🔥  pageerror at /audion: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /vizmato: SyntaxError: Unexpected token '<'
+
+💬  console.log at /audion: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /vizmato: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 29 out of 51 (/audion)
+✅  crawled 30 out of 52 (/vizmato)
+🔥  pageerror at /: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /about: SyntaxError: Unexpected token '<'
+
+💬  console.log at /: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /about: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 31 out of 52 (/)
+✅  crawled 32 out of 53 (/about)
+🔥  pageerror at /business: SyntaxError: Unexpected token '<'
+
+💬  console.log at /business: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /faq: SyntaxError: Unexpected token '<'
+
+✅  crawled 33 out of 58 (/business)
+✅  crawled 34 out of 59 (/faq)
+🔥  pageerror at /contact: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /cameraplus: SyntaxError: Unexpected token '<'
+
+💬  console.log at /cameraplus: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 35 out of 60 (/contact)
+✅  crawled 36 out of 61 (/cameraplus)
+🔥  pageerror at /camerapluspro: SyntaxError: Unexpected token '<'
+
+💬  console.log at /camerapluspro: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /careers: SyntaxError: Unexpected token '<'
+
+💬  console.log at /careers: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 37 out of 62 (/camerapluspro)
+✅  crawled 38 out of 63 (/careers)
+🔥  pageerror at /de/whatsnew/boom: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /de/whatsnew/boom2: SyntaxError: Unexpected token '<'
+
+💬  console.log at /de/whatsnew/boom: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /de/whatsnew/boom2: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 39 out of 63 (/de/whatsnew/boom)
+✅  crawled 40 out of 63 (/de/whatsnew/boom2)
+🔥  pageerror at /de/whatsnew/capto: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /whatsnew/boom: SyntaxError: Unexpected token '<'
+
+💬  console.log at /de/whatsnew/capto: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /whatsnew/boom: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 41 out of 64 (/de/whatsnew/capto)
+✅  crawled 42 out of 64 (/whatsnew/boom)
+🔥  pageerror at /whatsnew/capto: SyntaxError: Unexpected token '<'
+
+💬  console.log at /whatsnew/capto: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /boom3D/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /boom3D/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 43 out of 65 (/whatsnew/capto)
+✅  crawled 44 out of 65 (/boom3D/)
+️️️⚠️  warning at /capto/: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /capto/: Failed to load resource: the server responded with a status of 404 ()
+🔥  pageerror at /capto/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /capto/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️⚠️  warning at /capto/: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /capto/: Failed to load resource: the server responded with a status of 404 ()
+🔥  pageerror at /audimix/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /audimix/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 45 out of 65 (/capto/)
+✅  crawled 46 out of 65 (/audimix/)
+️️️💬  console.log at /boom2/: Unrecognized feature: 'clipboard-write'.
+️️️💬  console.log at /boom2/: An <img> element was lazyloaded with loading=lazy, but had no dimensions specified. Specifying dimensions improves performance. See https://crbug.com/954323
+🔥  pageerror at /whatsnew/boom2: SyntaxError: Unexpected token '<'
+
+️️️💬  console.log at /boom2/: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+💬  console.log at /whatsnew/boom2: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /boom2/: SyntaxError: Unexpected token '<'
+
+️️️💬  console.log at /boom2/: Unrecognized feature: 'clipboard-write'.
+💬  console.log at /boom2/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️💬  console.log at /boom2/: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+✅  crawled 47 out of 66 (/whatsnew/boom2)
+🔥  pageerror at /capto/windows/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /capto/windows/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 48 out of 66 (/capto/windows/)
+🔥  pageerror at /boomformobile/: SyntaxError: Unexpected token '<'
+
+✅  crawled 49 out of 66 (/boom2/)
+💬  console.log at /boomformobile/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /audion/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /audion/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 50 out of 66 (/boomformobile/)
+✅  crawled 51 out of 66 (/audion/)
+🔥  pageerror at /vizmato/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /about/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /vizmato/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /about/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 52 out of 66 (/vizmato/)
+✅  crawled 53 out of 66 (/about/)
+🔥  pageerror at /business/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /technology/audio: SyntaxError: Unexpected token '<'
+
+💬  console.log at /business/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 54 out of 66 (/business/)
+✅  crawled 55 out of 67 (/technology/audio)
+🔥  pageerror at /technology/video: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /technology/camera: SyntaxError: Unexpected token '<'
+
+💬  console.log at /technology/video: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 56 out of 69 (/technology/camera)
+✅  crawled 57 out of 69 (/technology/video)
+🔥  pageerror at /technology/screen-capture: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /faq/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /technology/screen-capture: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 58 out of 69 (/faq/)
+✅  crawled 59 out of 70 (/technology/screen-capture)
+🔥  pageerror at /contact/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /cameraplus/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /cameraplus/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 60 out of 70 (/contact/)
+✅  crawled 61 out of 70 (/cameraplus/)
+🔥  pageerror at /camerapluspro/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /careers/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /camerapluspro/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /careers/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 62 out of 70 (/camerapluspro/)
+✅  crawled 63 out of 70 (/careers/)
+🔥  pageerror at /whatsnew/boom/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /whatsnew/capto/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /whatsnew/boom/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /whatsnew/capto/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 64 out of 70 (/whatsnew/boom/)
+✅  crawled 65 out of 70 (/whatsnew/capto/)
+🔥  pageerror at /whatsnew/boom2/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /technology/audio/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /whatsnew/boom2/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 66 out of 70 (/whatsnew/boom2/)
+✅  crawled 67 out of 70 (/technology/audio/)
+🔥  pageerror at /technology/camera/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /technology/video/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /technology/video/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 68 out of 70 (/technology/camera/)
+✅  crawled 69 out of 70 (/technology/video/)
+🔥  pageerror at /technology/screen-capture/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /technology/screen-capture/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 70 out of 70 (/technology/screen-capture/)
+
+=== react-snap batch: it (21 routes) ===
+🔥  pageerror at /it: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /it/about: SyntaxError: Unexpected token '<'
+
+💬  console.log at /it: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /it/about: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 1 out of 30 (/it)
+✅  crawled 2 out of 30 (/it/about)
+🔥  pageerror at /404.html: SyntaxError: Unexpected token '<'
+
+💬  console.log at /404.html: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /it/business: SyntaxError: Unexpected token '<'
+
+💬  console.log at /it/business: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+⚠️  warning: 404 page title does not contain "404" string
+✅  crawled 3 out of 38 (/404.html)
+✅  crawled 4 out of 38 (/it/business)
+🔥  pageerror at /it/technology/audio: SyntaxError: Unexpected token '<'
+
+💬  console.log at /it/technology/audio: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /it/technology/video: SyntaxError: Unexpected token '<'
+
+💬  console.log at /it/technology/video: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 5 out of 38 (/it/technology/audio)
+✅  crawled 6 out of 38 (/it/technology/video)
+🔥  pageerror at /it/technology/camera: SyntaxError: Unexpected token '<'
+
+💬  console.log at /it/technology/camera: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /it/technology/screen-capture: SyntaxError: Unexpected token '<'
+
+💬  console.log at /it/technology/screen-capture: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 7 out of 38 (/it/technology/camera)
+✅  crawled 8 out of 38 (/it/technology/screen-capture)
+🔥  pageerror at /it/faq: SyntaxError: Unexpected token '<'
+
+💬  console.log at /it/faq: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /it/contact: SyntaxError: Unexpected token '<'
+
+💬  console.log at /it/contact: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 9 out of 38 (/it/faq)
+✅  crawled 10 out of 38 (/it/contact)
+🔥  pageerror at /it/careers: SyntaxError: Unexpected token '<'
+
+💬  console.log at /it/careers: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /it/boom: SyntaxError: Unexpected token '<'
+
+💬  console.log at /it/boom: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 11 out of 38 (/it/careers)
+🔥  pageerror at /it/boom2: SyntaxError: Unexpected token '<'
+
+✅  crawled 12 out of 38 (/it/boom)
+️️️💬  console.log at /it/boom2: Unrecognized feature: 'clipboard-write'.
+️️️💬  console.log at /it/boom2: An <img> element was lazyloaded with loading=lazy, but had no dimensions specified. Specifying dimensions improves performance. See https://crbug.com/954323
+💬  console.log at /it/boom2: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️💬  console.log at /it/boom2: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+🔥  pageerror at /it/boom3D: SyntaxError: Unexpected token '<'
+
+💬  console.log at /it/boom3D: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 13 out of 39 (/it/boom3D)
+🔥  pageerror at /it/capto: SyntaxError: Unexpected token '<'
+
+💬  console.log at /it/capto: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️⚠️  warning at /it/capto: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /it/capto: Failed to load resource: the server responded with a status of 404 ()
+✅  crawled 14 out of 40 (/it/boom2)
+🔥  pageerror at /it/capto/windows: SyntaxError: Unexpected token '<'
+
+✅  crawled 15 out of 41 (/it/capto)
+💬  console.log at /it/capto/windows: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /it/audion: SyntaxError: Unexpected token '<'
+
+💬  console.log at /it/audion: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 16 out of 41 (/it/capto/windows)
+✅  crawled 17 out of 41 (/it/audion)
+🔥  pageerror at /it/vizmato: SyntaxError: Unexpected token '<'
+
+💬  console.log at /it/vizmato: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /it/cameraplus: SyntaxError: Unexpected token '<'
+
+💬  console.log at /it/cameraplus: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 18 out of 41 (/it/vizmato)
+✅  crawled 19 out of 41 (/it/cameraplus)
+🔥  pageerror at /it/camerapluspro: SyntaxError: Unexpected token '<'
+
+💬  console.log at /it/camerapluspro: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /it/audimix: SyntaxError: Unexpected token '<'
+
+💬  console.log at /it/audimix: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 20 out of 41 (/it/camerapluspro)
+🔥  pageerror at /it/boomformobile: SyntaxError: Unexpected token '<'
+
+✅  crawled 21 out of 41 (/it/audimix)
+💬  console.log at /it/boomformobile: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /boom3D: SyntaxError: Unexpected token '<'
+
+💬  console.log at /boom3D: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 22 out of 41 (/it/boomformobile)
+️️️💬  console.log at /boom2: Unrecognized feature: 'clipboard-write'.
+️️️💬  console.log at /boom2: An <img> element was lazyloaded with loading=lazy, but had no dimensions specified. Specifying dimensions improves performance. See https://crbug.com/954323
+✅  crawled 23 out of 43 (/boom3D)
+️️️⚠️  warning at /capto/: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /capto: Failed to load resource: the server responded with a status of 404 ()
+🔥  pageerror at /capto: SyntaxError: Unexpected token '<'
+
+️️️💬  console.log at /boom2: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+🔥  pageerror at /boom2: SyntaxError: Unexpected token '<'
+
+💬  console.log at /capto: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️⚠️  warning at /capto/: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /capto: Failed to load resource: the server responded with a status of 404 ()
+️️️💬  console.log at /boom2: Unrecognized feature: 'clipboard-write'.
+💬  console.log at /boom2: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️💬  console.log at /boom2: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+✅  crawled 24 out of 45 (/capto)
+🔥  pageerror at /audimix: SyntaxError: Unexpected token '<'
+
+💬  console.log at /audimix: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 25 out of 46 (/audimix)
+✅  crawled 26 out of 48 (/boom2)
+🔥  pageerror at /capto/windows: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /boomformobile: SyntaxError: Unexpected token '<'
+
+💬  console.log at /capto/windows: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /boomformobile: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 27 out of 49 (/capto/windows)
+✅  crawled 28 out of 50 (/boomformobile)
+🔥  pageerror at /vizmato: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /audion: SyntaxError: Unexpected token '<'
+
+💬  console.log at /vizmato: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /audion: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 29 out of 51 (/vizmato)
+✅  crawled 30 out of 52 (/audion)
+🔥  pageerror at /: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /about: SyntaxError: Unexpected token '<'
+
+💬  console.log at /: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /about: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 31 out of 53 (/)
+✅  crawled 32 out of 53 (/about)
+🔥  pageerror at /faq: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /business: SyntaxError: Unexpected token '<'
+
+💬  console.log at /business: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 33 out of 54 (/faq)
+✅  crawled 34 out of 59 (/business)
+🔥  pageerror at /contact: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /cameraplus: SyntaxError: Unexpected token '<'
+
+💬  console.log at /cameraplus: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 35 out of 60 (/contact)
+✅  crawled 36 out of 61 (/cameraplus)
+🔥  pageerror at /camerapluspro: SyntaxError: Unexpected token '<'
+
+💬  console.log at /camerapluspro: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /careers: SyntaxError: Unexpected token '<'
+
+💬  console.log at /careers: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 37 out of 62 (/camerapluspro)
+✅  crawled 38 out of 63 (/careers)
+🔥  pageerror at /it/whatsnew/boom: SyntaxError: Unexpected token '<'
+
+💬  console.log at /it/whatsnew/boom: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /it/whatsnew/boom2: SyntaxError: Unexpected token '<'
+
+💬  console.log at /it/whatsnew/boom2: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 39 out of 63 (/it/whatsnew/boom)
+🔥  pageerror at /it/whatsnew/capto: SyntaxError: Unexpected token '<'
+
+✅  crawled 40 out of 63 (/it/whatsnew/boom2)
+💬  console.log at /it/whatsnew/capto: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /whatsnew/boom: SyntaxError: Unexpected token '<'
+
+💬  console.log at /whatsnew/boom: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 41 out of 63 (/it/whatsnew/capto)
+✅  crawled 42 out of 64 (/whatsnew/boom)
+🔥  pageerror at /boom3D/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /whatsnew/capto: SyntaxError: Unexpected token '<'
+
+💬  console.log at /whatsnew/capto: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /boom3D/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 43 out of 65 (/whatsnew/capto)
+✅  crawled 44 out of 65 (/boom3D/)
+️️️⚠️  warning at /capto/: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /capto/: Failed to load resource: the server responded with a status of 404 ()
+🔥  pageerror at /capto/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /audimix/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /capto/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️⚠️  warning at /capto/: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /capto/: Failed to load resource: the server responded with a status of 404 ()
+💬  console.log at /audimix/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 45 out of 65 (/audimix/)
+✅  crawled 46 out of 65 (/capto/)
+️️️💬  console.log at /boom2/: Unrecognized feature: 'clipboard-write'.
+️️️💬  console.log at /boom2/: An <img> element was lazyloaded with loading=lazy, but had no dimensions specified. Specifying dimensions improves performance. See https://crbug.com/954323
+️️️💬  console.log at /boom2/: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+🔥  pageerror at /whatsnew/boom2: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /boom2/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /whatsnew/boom2: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️💬  console.log at /boom2/: Unrecognized feature: 'clipboard-write'.
+💬  console.log at /boom2/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️💬  console.log at /boom2/: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+✅  crawled 47 out of 66 (/whatsnew/boom2)
+🔥  pageerror at /capto/windows/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /capto/windows/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 48 out of 66 (/capto/windows/)
+✅  crawled 49 out of 66 (/boom2/)
+🔥  pageerror at /boomformobile/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /boomformobile/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /vizmato/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /vizmato/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 50 out of 66 (/boomformobile/)
+✅  crawled 51 out of 66 (/vizmato/)
+🔥  pageerror at /audion/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /audion/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /about/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /about/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 52 out of 66 (/audion/)
+🔥  pageerror at /faq/: SyntaxError: Unexpected token '<'
+
+✅  crawled 53 out of 66 (/about/)
+🔥  pageerror at /business/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /business/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 54 out of 66 (/faq/)
+🔥  pageerror at /technology/audio: SyntaxError: Unexpected token '<'
+
+✅  crawled 55 out of 66 (/business/)
+🔥  pageerror at /technology/video: SyntaxError: Unexpected token '<'
+
+💬  console.log at /technology/video: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 56 out of 67 (/technology/audio)
+✅  crawled 57 out of 68 (/technology/video)
+🔥  pageerror at /technology/camera: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /technology/screen-capture: SyntaxError: Unexpected token '<'
+
+💬  console.log at /technology/screen-capture: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 58 out of 69 (/technology/camera)
+✅  crawled 59 out of 70 (/technology/screen-capture)
+🔥  pageerror at /contact/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /cameraplus/: SyntaxError: Unexpected token '<'
+
+✅  crawled 60 out of 70 (/contact/)
+💬  console.log at /cameraplus/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /camerapluspro/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /camerapluspro/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 61 out of 70 (/cameraplus/)
+🔥  pageerror at /careers/: SyntaxError: Unexpected token '<'
+
+✅  crawled 62 out of 70 (/camerapluspro/)
+💬  console.log at /careers/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 63 out of 70 (/careers/)
+🔥  pageerror at /whatsnew/boom/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /whatsnew/boom/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /whatsnew/capto/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /whatsnew/capto/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 64 out of 70 (/whatsnew/boom/)
+✅  crawled 65 out of 70 (/whatsnew/capto/)
+🔥  pageerror at /whatsnew/boom2/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /whatsnew/boom2/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /technology/audio/: SyntaxError: Unexpected token '<'
+
+✅  crawled 66 out of 70 (/whatsnew/boom2/)
+✅  crawled 67 out of 70 (/technology/audio/)
+🔥  pageerror at /technology/video/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /technology/video/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /technology/camera/: SyntaxError: Unexpected token '<'
+
+✅  crawled 68 out of 70 (/technology/video/)
+✅  crawled 69 out of 70 (/technology/camera/)
+🔥  pageerror at /technology/screen-capture/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /technology/screen-capture/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 70 out of 70 (/technology/screen-capture/)
+ERROR: The process with PID 18604 (child process of PID 11120) could not be terminated.
+Reason: There is no running instance of the task.
+
+=== react-snap batch: ja (21 routes) ===
+🔥  pageerror at /ja/about: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /ja: SyntaxError: Unexpected token '<'
+
+💬  console.log at /ja/about: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /ja: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 1 out of 30 (/ja)
+✅  crawled 2 out of 30 (/ja/about)
+🔥  pageerror at /404.html: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /ja/business: SyntaxError: Unexpected token '<'
+
+💬  console.log at /404.html: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /ja/business: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+⚠️  warning: 404 page title does not contain "404" string
+✅  crawled 3 out of 38 (/404.html)
+✅  crawled 4 out of 38 (/ja/business)
+🔥  pageerror at /ja/technology/audio: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /ja/technology/video: SyntaxError: Unexpected token '<'
+
+💬  console.log at /ja/technology/audio: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /ja/technology/video: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 5 out of 38 (/ja/technology/video)
+✅  crawled 6 out of 38 (/ja/technology/audio)
+🔥  pageerror at /ja/technology/camera: SyntaxError: Unexpected token '<'
+
+💬  console.log at /ja/technology/camera: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /ja/technology/screen-capture: SyntaxError: Unexpected token '<'
+
+💬  console.log at /ja/technology/screen-capture: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 7 out of 38 (/ja/technology/camera)
+✅  crawled 8 out of 38 (/ja/technology/screen-capture)
+🔥  pageerror at /ja/faq: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /ja/contact: SyntaxError: Unexpected token '<'
+
+💬  console.log at /ja/faq: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /ja/contact: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 9 out of 38 (/ja/faq)
+✅  crawled 10 out of 38 (/ja/contact)
+🔥  pageerror at /ja/careers: SyntaxError: Unexpected token '<'
+
+💬  console.log at /ja/careers: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /ja/boom: SyntaxError: Unexpected token '<'
+
+💬  console.log at /ja/boom: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 11 out of 38 (/ja/careers)
+🔥  pageerror at /ja/boom2: SyntaxError: Unexpected token '<'
+
+️️️💬  console.log at /ja/boom2: Unrecognized feature: 'clipboard-write'.
+️️️💬  console.log at /ja/boom2: An <img> element was lazyloaded with loading=lazy, but had no dimensions specified. Specifying dimensions improves performance. See https://crbug.com/954323
+✅  crawled 12 out of 38 (/ja/boom)
+💬  console.log at /ja/boom2: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️💬  console.log at /ja/boom2: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+🔥  pageerror at /ja/boom3D: SyntaxError: Unexpected token '<'
+
+💬  console.log at /ja/boom3D: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 13 out of 39 (/ja/boom3D)
+🔥  pageerror at /ja/capto: SyntaxError: Unexpected token '<'
+
+✅  crawled 14 out of 40 (/ja/boom2)
+💬  console.log at /ja/capto: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️⚠️  warning at /ja/capto: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /ja/capto: Failed to load resource: the server responded with a status of 404 ()
+🔥  pageerror at /ja/capto/windows: SyntaxError: Unexpected token '<'
+
+💬  console.log at /ja/capto/windows: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 15 out of 41 (/ja/capto)
+🔥  pageerror at /ja/audion: SyntaxError: Unexpected token '<'
+
+✅  crawled 16 out of 41 (/ja/capto/windows)
+💬  console.log at /ja/audion: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /ja/vizmato: SyntaxError: Unexpected token '<'
+
+💬  console.log at /ja/vizmato: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 17 out of 41 (/ja/audion)
+🔥  pageerror at /ja/cameraplus: SyntaxError: Unexpected token '<'
+
+✅  crawled 18 out of 41 (/ja/vizmato)
+💬  console.log at /ja/cameraplus: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /ja/camerapluspro: SyntaxError: Unexpected token '<'
+
+✅  crawled 19 out of 41 (/ja/cameraplus)
+💬  console.log at /ja/camerapluspro: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /ja/audimix: SyntaxError: Unexpected token '<'
+
+💬  console.log at /ja/audimix: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 20 out of 41 (/ja/camerapluspro)
+🔥  pageerror at /ja/boomformobile: SyntaxError: Unexpected token '<'
+
+✅  crawled 21 out of 41 (/ja/audimix)
+💬  console.log at /ja/boomformobile: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /boom3D: SyntaxError: Unexpected token '<'
+
+💬  console.log at /boom3D: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 22 out of 41 (/ja/boomformobile)
+️️️💬  console.log at /boom2: Unrecognized feature: 'clipboard-write'.
+️️️💬  console.log at /boom2: An <img> element was lazyloaded with loading=lazy, but had no dimensions specified. Specifying dimensions improves performance. See https://crbug.com/954323
+️️️💬  console.log at /boom2: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+✅  crawled 23 out of 43 (/boom3D)
+🔥  pageerror at /boom2: SyntaxError: Unexpected token '<'
+
+️️️💬  console.log at /boom2: Unrecognized feature: 'clipboard-write'.
+💬  console.log at /boom2: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️⚠️  warning at /capto/: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /capto: Failed to load resource: the server responded with a status of 404 ()
+️️️💬  console.log at /boom2: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+🔥  pageerror at /capto: SyntaxError: Unexpected token '<'
+
+💬  console.log at /capto: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️⚠️  warning at /capto/: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /capto: Failed to load resource: the server responded with a status of 404 ()
+✅  crawled 24 out of 45 (/capto)
+🔥  pageerror at /audimix: SyntaxError: Unexpected token '<'
+
+💬  console.log at /audimix: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 25 out of 47 (/boom2)
+✅  crawled 26 out of 48 (/audimix)
+🔥  pageerror at /capto/windows: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /boomformobile: SyntaxError: Unexpected token '<'
+
+💬  console.log at /capto/windows: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /boomformobile: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 27 out of 49 (/capto/windows)
+✅  crawled 28 out of 50 (/boomformobile)
+🔥  pageerror at /vizmato: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /audion: SyntaxError: Unexpected token '<'
+
+💬  console.log at /vizmato: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /audion: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 29 out of 52 (/vizmato)
+✅  crawled 30 out of 52 (/audion)
+🔥  pageerror at /: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /about: SyntaxError: Unexpected token '<'
+
+💬  console.log at /: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /about: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 31 out of 53 (/about)
+✅  crawled 32 out of 53 (/)
+🔥  pageerror at /business: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /faq: SyntaxError: Unexpected token '<'
+
+💬  console.log at /business: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 33 out of 54 (/faq)
+✅  crawled 34 out of 59 (/business)
+🔥  pageerror at /contact: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /cameraplus: SyntaxError: Unexpected token '<'
+
+💬  console.log at /cameraplus: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 35 out of 60 (/contact)
+🔥  pageerror at /camerapluspro: SyntaxError: Unexpected token '<'
+
+✅  crawled 36 out of 61 (/cameraplus)
+💬  console.log at /camerapluspro: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /careers: SyntaxError: Unexpected token '<'
+
+💬  console.log at /careers: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 37 out of 62 (/camerapluspro)
+🔥  pageerror at /ja/whatsnew/boom: SyntaxError: Unexpected token '<'
+
+✅  crawled 38 out of 63 (/careers)
+💬  console.log at /ja/whatsnew/boom: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /ja/whatsnew/boom2: SyntaxError: Unexpected token '<'
+
+💬  console.log at /ja/whatsnew/boom2: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 39 out of 63 (/ja/whatsnew/boom)
+✅  crawled 40 out of 63 (/ja/whatsnew/boom2)
+🔥  pageerror at /ja/whatsnew/capto: SyntaxError: Unexpected token '<'
+
+💬  console.log at /ja/whatsnew/capto: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /whatsnew/boom: SyntaxError: Unexpected token '<'
+
+💬  console.log at /whatsnew/boom: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 41 out of 63 (/ja/whatsnew/capto)
+✅  crawled 42 out of 64 (/whatsnew/boom)
+🔥  pageerror at /whatsnew/capto: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /boom3D/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /whatsnew/capto: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /boom3D/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 43 out of 65 (/whatsnew/capto)
+✅  crawled 44 out of 65 (/boom3D/)
+️️️⚠️  warning at /capto/: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /capto/: Failed to load resource: the server responded with a status of 404 ()
+🔥  pageerror at /capto/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /capto/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /whatsnew/boom2: SyntaxError: Unexpected token '<'
+
+️️️⚠️  warning at /capto/: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /capto/: Failed to load resource: the server responded with a status of 404 ()
+💬  console.log at /whatsnew/boom2: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 45 out of 66 (/capto/)
+✅  crawled 46 out of 66 (/whatsnew/boom2)
+️️️💬  console.log at /boom2/: Unrecognized feature: 'clipboard-write'.
+️️️💬  console.log at /boom2/: An <img> element was lazyloaded with loading=lazy, but had no dimensions specified. Specifying dimensions improves performance. See https://crbug.com/954323
+️️️💬  console.log at /boom2/: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+🔥  pageerror at /audimix/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /boom2/: SyntaxError: Unexpected token '<'
+
+️️️💬  console.log at /boom2/: Unrecognized feature: 'clipboard-write'.
+💬  console.log at /audimix/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /boom2/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️💬  console.log at /boom2/: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+✅  crawled 47 out of 66 (/audimix/)
+🔥  pageerror at /capto/windows/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /capto/windows/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 48 out of 66 (/capto/windows/)
+✅  crawled 49 out of 66 (/boom2/)
+🔥  pageerror at /boomformobile/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /vizmato/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /boomformobile/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /vizmato/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 50 out of 66 (/boomformobile/)
+✅  crawled 51 out of 66 (/vizmato/)
+🔥  pageerror at /audion/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /audion/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 52 out of 66 (/audion/)
+🔥  pageerror at /about/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /about/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /faq/: SyntaxError: Unexpected token '<'
+
+✅  crawled 53 out of 66 (/about/)
+✅  crawled 54 out of 66 (/faq/)
+🔥  pageerror at /business/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /technology/audio: SyntaxError: Unexpected token '<'
+
+💬  console.log at /business/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 55 out of 67 (/business/)
+✅  crawled 56 out of 67 (/technology/audio)
+🔥  pageerror at /technology/video: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /technology/camera: SyntaxError: Unexpected token '<'
+
+💬  console.log at /technology/video: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 57 out of 68 (/technology/camera)
+✅  crawled 58 out of 69 (/technology/video)
+🔥  pageerror at /technology/screen-capture: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /contact/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /technology/screen-capture: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 59 out of 70 (/technology/screen-capture)
+✅  crawled 60 out of 70 (/contact/)
+🔥  pageerror at /cameraplus/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /camerapluspro/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /cameraplus/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /camerapluspro/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 61 out of 70 (/camerapluspro/)
+✅  crawled 62 out of 70 (/cameraplus/)
+🔥  pageerror at /careers/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /careers/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /whatsnew/boom/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /whatsnew/boom/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 63 out of 70 (/careers/)
+✅  crawled 64 out of 70 (/whatsnew/boom/)
+🔥  pageerror at /whatsnew/capto/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /whatsnew/capto/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 65 out of 70 (/whatsnew/capto/)
+🔥  pageerror at /whatsnew/boom2/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /technology/audio/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /whatsnew/boom2/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 66 out of 70 (/whatsnew/boom2/)
+✅  crawled 67 out of 70 (/technology/audio/)
+🔥  pageerror at /technology/camera/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /technology/video/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /technology/video/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 68 out of 70 (/technology/camera/)
+✅  crawled 69 out of 70 (/technology/video/)
+🔥  pageerror at /technology/screen-capture/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /technology/screen-capture/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 70 out of 70 (/technology/screen-capture/)
+
+=== react-snap batch: fr (21 routes) ===
+🔥  pageerror at /fr: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /fr/about: SyntaxError: Unexpected token '<'
+
+💬  console.log at /fr: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /fr/about: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 1 out of 30 (/fr)
+✅  crawled 2 out of 30 (/fr/about)
+🔥  pageerror at /404.html: SyntaxError: Unexpected token '<'
+
+💬  console.log at /404.html: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /fr/business: SyntaxError: Unexpected token '<'
+
+💬  console.log at /fr/business: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+⚠️  warning: 404 page title does not contain "404" string
+✅  crawled 3 out of 38 (/404.html)
+✅  crawled 4 out of 38 (/fr/business)
+🔥  pageerror at /fr/technology/audio: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /fr/technology/video: SyntaxError: Unexpected token '<'
+
+💬  console.log at /fr/technology/audio: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /fr/technology/video: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 5 out of 38 (/fr/technology/audio)
+✅  crawled 6 out of 38 (/fr/technology/video)
+🔥  pageerror at /fr/technology/screen-capture: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /fr/technology/camera: SyntaxError: Unexpected token '<'
+
+💬  console.log at /fr/technology/screen-capture: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /fr/technology/camera: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 7 out of 38 (/fr/technology/screen-capture)
+✅  crawled 8 out of 38 (/fr/technology/camera)
+🔥  pageerror at /fr/contact: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /fr/faq: SyntaxError: Unexpected token '<'
+
+💬  console.log at /fr/faq: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /fr/contact: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 9 out of 38 (/fr/faq)
+✅  crawled 10 out of 38 (/fr/contact)
+🔥  pageerror at /fr/careers: SyntaxError: Unexpected token '<'
+
+💬  console.log at /fr/careers: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /fr/boom: SyntaxError: Unexpected token '<'
+
+💬  console.log at /fr/boom: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 11 out of 38 (/fr/careers)
+🔥  pageerror at /fr/boom2: SyntaxError: Unexpected token '<'
+
+✅  crawled 12 out of 38 (/fr/boom)
+️️️💬  console.log at /fr/boom2: Unrecognized feature: 'clipboard-write'.
+️️️💬  console.log at /fr/boom2: An <img> element was lazyloaded with loading=lazy, but had no dimensions specified. Specifying dimensions improves performance. See https://crbug.com/954323
+💬  console.log at /fr/boom2: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️💬  console.log at /fr/boom2: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+🔥  pageerror at /fr/boom3D: SyntaxError: Unexpected token '<'
+
+💬  console.log at /fr/boom3D: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 13 out of 39 (/fr/boom3D)
+🔥  pageerror at /fr/capto: SyntaxError: Unexpected token '<'
+
+💬  console.log at /fr/capto: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 14 out of 40 (/fr/boom2)
+️️️⚠️  warning at /fr/capto: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /fr/capto: Failed to load resource: the server responded with a status of 404 ()
+🔥  pageerror at /fr/capto/windows: SyntaxError: Unexpected token '<'
+
+💬  console.log at /fr/capto/windows: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 15 out of 41 (/fr/capto)
+✅  crawled 16 out of 41 (/fr/capto/windows)
+🔥  pageerror at /fr/audion: SyntaxError: Unexpected token '<'
+
+💬  console.log at /fr/audion: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /fr/vizmato: SyntaxError: Unexpected token '<'
+
+💬  console.log at /fr/vizmato: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 17 out of 41 (/fr/audion)
+✅  crawled 18 out of 41 (/fr/vizmato)
+🔥  pageerror at /fr/cameraplus: SyntaxError: Unexpected token '<'
+
+💬  console.log at /fr/cameraplus: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /fr/camerapluspro: SyntaxError: Unexpected token '<'
+
+✅  crawled 19 out of 41 (/fr/cameraplus)
+💬  console.log at /fr/camerapluspro: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /fr/audimix: SyntaxError: Unexpected token '<'
+
+💬  console.log at /fr/audimix: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 20 out of 41 (/fr/camerapluspro)
+🔥  pageerror at /fr/boomformobile: SyntaxError: Unexpected token '<'
+
+✅  crawled 21 out of 41 (/fr/audimix)
+💬  console.log at /fr/boomformobile: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /boom3D: SyntaxError: Unexpected token '<'
+
+💬  console.log at /boom3D: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 22 out of 41 (/fr/boomformobile)
+️️️💬  console.log at /boom2: Unrecognized feature: 'clipboard-write'.
+️️️💬  console.log at /boom2: An <img> element was lazyloaded with loading=lazy, but had no dimensions specified. Specifying dimensions improves performance. See https://crbug.com/954323
+✅  crawled 23 out of 43 (/boom3D)
+️️️⚠️  warning at /capto/: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /capto: Failed to load resource: the server responded with a status of 404 ()
+️️️💬  console.log at /boom2: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+🔥  pageerror at /capto: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /boom2: SyntaxError: Unexpected token '<'
+
+💬  console.log at /capto: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️💬  console.log at /boom2: Unrecognized feature: 'clipboard-write'.
+️️️⚠️  warning at /capto/: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /capto: Failed to load resource: the server responded with a status of 404 ()
+💬  console.log at /boom2: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️💬  console.log at /boom2: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+✅  crawled 24 out of 45 (/capto)
+🔥  pageerror at /audimix: SyntaxError: Unexpected token '<'
+
+💬  console.log at /audimix: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 25 out of 46 (/audimix)
+✅  crawled 26 out of 48 (/boom2)
+🔥  pageerror at /capto/windows: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /boomformobile: SyntaxError: Unexpected token '<'
+
+💬  console.log at /capto/windows: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /boomformobile: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 27 out of 50 (/capto/windows)
+✅  crawled 28 out of 50 (/boomformobile)
+🔥  pageerror at /audion: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /vizmato: SyntaxError: Unexpected token '<'
+
+💬  console.log at /audion: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /vizmato: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 29 out of 51 (/audion)
+✅  crawled 30 out of 52 (/vizmato)
+🔥  pageerror at /: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /about: SyntaxError: Unexpected token '<'
+
+💬  console.log at /: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /about: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 31 out of 53 (/about)
+✅  crawled 32 out of 53 (/)
+🔥  pageerror at /business: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /faq: SyntaxError: Unexpected token '<'
+
+💬  console.log at /business: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 33 out of 54 (/faq)
+✅  crawled 34 out of 59 (/business)
+🔥  pageerror at /contact: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /cameraplus: SyntaxError: Unexpected token '<'
+
+💬  console.log at /cameraplus: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 35 out of 60 (/contact)
+✅  crawled 36 out of 61 (/cameraplus)
+🔥  pageerror at /camerapluspro: SyntaxError: Unexpected token '<'
+
+💬  console.log at /camerapluspro: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /careers: SyntaxError: Unexpected token '<'
+
+💬  console.log at /careers: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 37 out of 62 (/camerapluspro)
+✅  crawled 38 out of 63 (/careers)
+🔥  pageerror at /fr/whatsnew/boom: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /fr/whatsnew/boom2: SyntaxError: Unexpected token '<'
+
+💬  console.log at /fr/whatsnew/boom: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /fr/whatsnew/boom2: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 39 out of 63 (/fr/whatsnew/boom)
+✅  crawled 40 out of 63 (/fr/whatsnew/boom2)
+🔥  pageerror at /fr/whatsnew/capto: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /whatsnew/boom: SyntaxError: Unexpected token '<'
+
+💬  console.log at /fr/whatsnew/capto: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /whatsnew/boom: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 41 out of 63 (/fr/whatsnew/capto)
+✅  crawled 42 out of 64 (/whatsnew/boom)
+🔥  pageerror at /whatsnew/capto: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /boom3D/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /whatsnew/capto: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /boom3D/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 43 out of 65 (/whatsnew/capto)
+✅  crawled 44 out of 65 (/boom3D/)
+️️️⚠️  warning at /capto/: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /capto/: Failed to load resource: the server responded with a status of 404 ()
+🔥  pageerror at /capto/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /audimix/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /capto/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️⚠️  warning at /capto/: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /capto/: Failed to load resource: the server responded with a status of 404 ()
+💬  console.log at /audimix/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 45 out of 65 (/capto/)
+✅  crawled 46 out of 65 (/audimix/)
+🔥  pageerror at /whatsnew/boom2: SyntaxError: Unexpected token '<'
+
+️️️💬  console.log at /boom2/: Unrecognized feature: 'clipboard-write'.
+️️️💬  console.log at /boom2/: An <img> element was lazyloaded with loading=lazy, but had no dimensions specified. Specifying dimensions improves performance. See https://crbug.com/954323
+💬  console.log at /whatsnew/boom2: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️💬  console.log at /boom2/: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+🔥  pageerror at /boom2/: SyntaxError: Unexpected token '<'
+
+✅  crawled 47 out of 66 (/whatsnew/boom2)
+️️️💬  console.log at /boom2/: Unrecognized feature: 'clipboard-write'.
+💬  console.log at /boom2/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️💬  console.log at /boom2/: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+🔥  pageerror at /capto/windows/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /capto/windows/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 48 out of 66 (/capto/windows/)
+🔥  pageerror at /boomformobile/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /boomformobile/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 49 out of 66 (/boom2/)
+🔥  pageerror at /audion/: SyntaxError: Unexpected token '<'
+
+✅  crawled 50 out of 66 (/boomformobile/)
+💬  console.log at /audion/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /vizmato/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /vizmato/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 51 out of 66 (/audion/)
+🔥  pageerror at /about/: SyntaxError: Unexpected token '<'
+
+✅  crawled 52 out of 66 (/vizmato/)
+💬  console.log at /about/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /faq/: SyntaxError: Unexpected token '<'
+
+✅  crawled 53 out of 66 (/about/)
+✅  crawled 54 out of 66 (/faq/)
+🔥  pageerror at /business/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /business/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /technology/audio: SyntaxError: Unexpected token '<'
+
+✅  crawled 55 out of 66 (/business/)
+✅  crawled 56 out of 67 (/technology/audio)
+🔥  pageerror at /technology/video: SyntaxError: Unexpected token '<'
+
+💬  console.log at /technology/video: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /technology/camera: SyntaxError: Unexpected token '<'
+
+✅  crawled 57 out of 69 (/technology/video)
+✅  crawled 58 out of 69 (/technology/camera)
+🔥  pageerror at /technology/screen-capture: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /contact/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /technology/screen-capture: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 59 out of 70 (/technology/screen-capture)
+✅  crawled 60 out of 70 (/contact/)
+🔥  pageerror at /camerapluspro/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /cameraplus/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /camerapluspro/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /cameraplus/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 61 out of 70 (/camerapluspro/)
+✅  crawled 62 out of 70 (/cameraplus/)
+🔥  pageerror at /careers/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /whatsnew/boom/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /careers/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /whatsnew/boom/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 63 out of 70 (/careers/)
+✅  crawled 64 out of 70 (/whatsnew/boom/)
+🔥  pageerror at /whatsnew/capto/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /whatsnew/boom2/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /whatsnew/capto/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /whatsnew/boom2/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 65 out of 70 (/whatsnew/capto/)
+✅  crawled 66 out of 70 (/whatsnew/boom2/)
+🔥  pageerror at /technology/audio/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /technology/video/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /technology/video/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 67 out of 70 (/technology/audio/)
+✅  crawled 68 out of 70 (/technology/video/)
+🔥  pageerror at /technology/camera/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /technology/screen-capture/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /technology/screen-capture/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 69 out of 70 (/technology/camera/)
+✅  crawled 70 out of 70 (/technology/screen-capture/)
+
+=== react-snap batch: pt (21 routes) ===
+🔥  pageerror at /pt: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /pt/about: SyntaxError: Unexpected token '<'
+
+💬  console.log at /pt: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /pt/about: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 1 out of 30 (/pt)
+✅  crawled 2 out of 30 (/pt/about)
+🔥  pageerror at /404.html: SyntaxError: Unexpected token '<'
+
+💬  console.log at /404.html: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /pt/business: SyntaxError: Unexpected token '<'
+
+💬  console.log at /pt/business: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+⚠️  warning: 404 page title does not contain "404" string
+✅  crawled 3 out of 38 (/404.html)
+✅  crawled 4 out of 38 (/pt/business)
+🔥  pageerror at /pt/technology/audio: SyntaxError: Unexpected token '<'
+
+💬  console.log at /pt/technology/audio: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /pt/technology/video: SyntaxError: Unexpected token '<'
+
+💬  console.log at /pt/technology/video: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 5 out of 38 (/pt/technology/audio)
+✅  crawled 6 out of 38 (/pt/technology/video)
+🔥  pageerror at /pt/technology/camera: SyntaxError: Unexpected token '<'
+
+💬  console.log at /pt/technology/camera: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /pt/technology/screen-capture: SyntaxError: Unexpected token '<'
+
+💬  console.log at /pt/technology/screen-capture: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 7 out of 38 (/pt/technology/camera)
+✅  crawled 8 out of 38 (/pt/technology/screen-capture)
+🔥  pageerror at /pt/faq: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /pt/contact: SyntaxError: Unexpected token '<'
+
+💬  console.log at /pt/faq: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /pt/contact: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 9 out of 38 (/pt/faq)
+✅  crawled 10 out of 38 (/pt/contact)
+🔥  pageerror at /pt/careers: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /pt/boom: SyntaxError: Unexpected token '<'
+
+💬  console.log at /pt/careers: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /pt/boom: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 11 out of 38 (/pt/careers)
+🔥  pageerror at /pt/boom2: SyntaxError: Unexpected token '<'
+
+️️️💬  console.log at /pt/boom2: Unrecognized feature: 'clipboard-write'.
+✅  crawled 12 out of 38 (/pt/boom)
+️️️💬  console.log at /pt/boom2: An <img> element was lazyloaded with loading=lazy, but had no dimensions specified. Specifying dimensions improves performance. See https://crbug.com/954323
+💬  console.log at /pt/boom2: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️💬  console.log at /pt/boom2: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+🔥  pageerror at /pt/boom3D: SyntaxError: Unexpected token '<'
+
+💬  console.log at /pt/boom3D: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 13 out of 39 (/pt/boom3D)
+🔥  pageerror at /pt/capto: SyntaxError: Unexpected token '<'
+
+💬  console.log at /pt/capto: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️⚠️  warning at /pt/capto: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /pt/capto: Failed to load resource: the server responded with a status of 404 ()
+✅  crawled 14 out of 40 (/pt/boom2)
+🔥  pageerror at /pt/capto/windows: SyntaxError: Unexpected token '<'
+
+✅  crawled 15 out of 41 (/pt/capto)
+💬  console.log at /pt/capto/windows: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /pt/audion: SyntaxError: Unexpected token '<'
+
+💬  console.log at /pt/audion: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 16 out of 41 (/pt/capto/windows)
+🔥  pageerror at /pt/vizmato: SyntaxError: Unexpected token '<'
+
+✅  crawled 17 out of 41 (/pt/audion)
+💬  console.log at /pt/vizmato: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /pt/cameraplus: SyntaxError: Unexpected token '<'
+
+💬  console.log at /pt/cameraplus: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 18 out of 41 (/pt/vizmato)
+🔥  pageerror at /pt/camerapluspro: SyntaxError: Unexpected token '<'
+
+💬  console.log at /pt/camerapluspro: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 19 out of 41 (/pt/cameraplus)
+✅  crawled 20 out of 41 (/pt/camerapluspro)
+🔥  pageerror at /pt/boomformobile: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /pt/audimix: SyntaxError: Unexpected token '<'
+
+💬  console.log at /pt/audimix: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /pt/boomformobile: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 21 out of 41 (/pt/audimix)
+✅  crawled 22 out of 41 (/pt/boomformobile)
+️️️💬  console.log at /boom2: Unrecognized feature: 'clipboard-write'.
+️️️💬  console.log at /boom2: An <img> element was lazyloaded with loading=lazy, but had no dimensions specified. Specifying dimensions improves performance. See https://crbug.com/954323
+️️️💬  console.log at /boom2: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+🔥  pageerror at /boom3D: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /boom2: SyntaxError: Unexpected token '<'
+
+️️️💬  console.log at /boom2: Unrecognized feature: 'clipboard-write'.
+💬  console.log at /boom3D: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /boom2: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️💬  console.log at /boom2: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+✅  crawled 23 out of 43 (/boom3D)
+️️️⚠️  warning at /capto/: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /capto: Failed to load resource: the server responded with a status of 404 ()
+🔥  pageerror at /capto: SyntaxError: Unexpected token '<'
+
+💬  console.log at /capto: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️⚠️  warning at /capto/: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /capto: Failed to load resource: the server responded with a status of 404 ()
+✅  crawled 24 out of 45 (/capto)
+✅  crawled 25 out of 47 (/boom2)
+🔥  pageerror at /audimix: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /capto/windows: SyntaxError: Unexpected token '<'
+
+💬  console.log at /audimix: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /capto/windows: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 26 out of 48 (/audimix)
+✅  crawled 27 out of 49 (/capto/windows)
+🔥  pageerror at /boomformobile: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /vizmato: SyntaxError: Unexpected token '<'
+
+💬  console.log at /boomformobile: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /vizmato: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 28 out of 50 (/boomformobile)
+✅  crawled 29 out of 51 (/vizmato)
+🔥  pageerror at /audion: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /: SyntaxError: Unexpected token '<'
+
+💬  console.log at /audion: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 30 out of 52 (/audion)
+✅  crawled 31 out of 52 (/)
+🔥  pageerror at /about: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /business: SyntaxError: Unexpected token '<'
+
+💬  console.log at /about: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /business: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 32 out of 58 (/business)
+✅  crawled 33 out of 58 (/about)
+🔥  pageerror at /faq: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /contact: SyntaxError: Unexpected token '<'
+
+✅  crawled 34 out of 60 (/faq)
+✅  crawled 35 out of 60 (/contact)
+🔥  pageerror at /camerapluspro: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /cameraplus: SyntaxError: Unexpected token '<'
+
+💬  console.log at /camerapluspro: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /cameraplus: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 36 out of 62 (/camerapluspro)
+✅  crawled 37 out of 62 (/cameraplus)
+🔥  pageerror at /careers: SyntaxError: Unexpected token '<'
+
+💬  console.log at /careers: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /pt/whatsnew/boom: SyntaxError: Unexpected token '<'
+
+💬  console.log at /pt/whatsnew/boom: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 38 out of 63 (/careers)
+✅  crawled 39 out of 63 (/pt/whatsnew/boom)
+🔥  pageerror at /pt/whatsnew/boom2: SyntaxError: Unexpected token '<'
+
+💬  console.log at /pt/whatsnew/boom2: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /pt/whatsnew/capto: SyntaxError: Unexpected token '<'
+
+💬  console.log at /pt/whatsnew/capto: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 40 out of 63 (/pt/whatsnew/boom2)
+✅  crawled 41 out of 63 (/pt/whatsnew/capto)
+🔥  pageerror at /whatsnew/boom: SyntaxError: Unexpected token '<'
+
+💬  console.log at /whatsnew/boom: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /boom3D/: SyntaxError: Unexpected token '<'
+
+✅  crawled 42 out of 64 (/whatsnew/boom)
+💬  console.log at /boom3D/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /whatsnew/capto: SyntaxError: Unexpected token '<'
+
+💬  console.log at /whatsnew/capto: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 43 out of 64 (/boom3D/)
+✅  crawled 44 out of 65 (/whatsnew/capto)
+️️️⚠️  warning at /capto/: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /capto/: Failed to load resource: the server responded with a status of 404 ()
+🔥  pageerror at /capto/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /whatsnew/boom2: SyntaxError: Unexpected token '<'
+
+💬  console.log at /capto/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️⚠️  warning at /capto/: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /capto/: Failed to load resource: the server responded with a status of 404 ()
+💬  console.log at /whatsnew/boom2: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 45 out of 66 (/whatsnew/boom2)
+✅  crawled 46 out of 66 (/capto/)
+️️️💬  console.log at /boom2/: Unrecognized feature: 'clipboard-write'.
+️️️💬  console.log at /boom2/: An <img> element was lazyloaded with loading=lazy, but had no dimensions specified. Specifying dimensions improves performance. See https://crbug.com/954323
+️️️💬  console.log at /boom2/: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+🔥  pageerror at /audimix/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /boom2/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /audimix/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️💬  console.log at /boom2/: Unrecognized feature: 'clipboard-write'.
+💬  console.log at /boom2/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️💬  console.log at /boom2/: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+✅  crawled 47 out of 66 (/audimix/)
+🔥  pageerror at /capto/windows/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /capto/windows/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 48 out of 66 (/capto/windows/)
+✅  crawled 49 out of 66 (/boom2/)
+🔥  pageerror at /boomformobile/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /boomformobile/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /vizmato/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /vizmato/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 50 out of 66 (/boomformobile/)
+🔥  pageerror at /audion/: SyntaxError: Unexpected token '<'
+
+✅  crawled 51 out of 66 (/vizmato/)
+💬  console.log at /audion/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /business/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /business/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 52 out of 66 (/audion/)
+🔥  pageerror at /technology/audio: SyntaxError: Unexpected token '<'
+
+✅  crawled 53 out of 66 (/business/)
+🔥  pageerror at /technology/video: SyntaxError: Unexpected token '<'
+
+💬  console.log at /technology/video: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 54 out of 67 (/technology/audio)
+🔥  pageerror at /technology/camera: SyntaxError: Unexpected token '<'
+
+✅  crawled 55 out of 68 (/technology/video)
+🔥  pageerror at /technology/screen-capture: SyntaxError: Unexpected token '<'
+
+✅  crawled 56 out of 69 (/technology/camera)
+💬  console.log at /technology/screen-capture: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /about/: SyntaxError: Unexpected token '<'
+
+✅  crawled 57 out of 70 (/technology/screen-capture)
+💬  console.log at /about/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /faq/: SyntaxError: Unexpected token '<'
+
+✅  crawled 58 out of 70 (/about/)
+🔥  pageerror at /contact/: SyntaxError: Unexpected token '<'
+
+✅  crawled 59 out of 70 (/faq/)
+🔥  pageerror at /camerapluspro/: SyntaxError: Unexpected token '<'
+
+✅  crawled 60 out of 70 (/contact/)
+💬  console.log at /camerapluspro/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /cameraplus/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /cameraplus/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 61 out of 70 (/camerapluspro/)
+🔥  pageerror at /careers/: SyntaxError: Unexpected token '<'
+
+✅  crawled 62 out of 70 (/cameraplus/)
+💬  console.log at /careers/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /whatsnew/boom/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /whatsnew/boom/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 63 out of 70 (/careers/)
+🔥  pageerror at /whatsnew/capto/: SyntaxError: Unexpected token '<'
+
+✅  crawled 64 out of 70 (/whatsnew/boom/)
+💬  console.log at /whatsnew/capto/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /whatsnew/boom2/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /whatsnew/boom2/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 65 out of 70 (/whatsnew/capto/)
+✅  crawled 66 out of 70 (/whatsnew/boom2/)
+🔥  pageerror at /technology/audio/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /technology/video/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /technology/video/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 67 out of 70 (/technology/audio/)
+✅  crawled 68 out of 70 (/technology/video/)
+🔥  pageerror at /technology/camera/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /technology/screen-capture/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /technology/screen-capture/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 69 out of 70 (/technology/camera/)
+✅  crawled 70 out of 70 (/technology/screen-capture/)
+
+=== react-snap batch: es (21 routes) ===
+🔥  pageerror at /es/about: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /es: SyntaxError: Unexpected token '<'
+
+💬  console.log at /es/about: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /es: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 1 out of 30 (/es)
+✅  crawled 2 out of 30 (/es/about)
+🔥  pageerror at /404.html: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /es/business: SyntaxError: Unexpected token '<'
+
+💬  console.log at /es/business: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /404.html: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 3 out of 30 (/es/business)
+⚠️  warning: 404 page title does not contain "404" string
+✅  crawled 4 out of 38 (/404.html)
+🔥  pageerror at /es/technology/audio: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /es/technology/video: SyntaxError: Unexpected token '<'
+
+💬  console.log at /es/technology/audio: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /es/technology/video: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 5 out of 38 (/es/technology/video)
+✅  crawled 6 out of 38 (/es/technology/audio)
+🔥  pageerror at /es/technology/camera: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /es/technology/screen-capture: SyntaxError: Unexpected token '<'
+
+💬  console.log at /es/technology/camera: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /es/technology/screen-capture: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 7 out of 38 (/es/technology/camera)
+✅  crawled 8 out of 38 (/es/technology/screen-capture)
+🔥  pageerror at /es/faq: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /es/contact: SyntaxError: Unexpected token '<'
+
+💬  console.log at /es/faq: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /es/contact: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 9 out of 38 (/es/faq)
+✅  crawled 10 out of 38 (/es/contact)
+🔥  pageerror at /es/careers: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /es/boom: SyntaxError: Unexpected token '<'
+
+💬  console.log at /es/careers: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /es/boom: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 11 out of 38 (/es/careers)
+✅  crawled 12 out of 38 (/es/boom)
+🔥  pageerror at /es/boom2: SyntaxError: Unexpected token '<'
+
+️️️💬  console.log at /es/boom2: Unrecognized feature: 'clipboard-write'.
+️️️💬  console.log at /es/boom2: An <img> element was lazyloaded with loading=lazy, but had no dimensions specified. Specifying dimensions improves performance. See https://crbug.com/954323
+💬  console.log at /es/boom2: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️💬  console.log at /es/boom2: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+🔥  pageerror at /es/boom3D: SyntaxError: Unexpected token '<'
+
+💬  console.log at /es/boom3D: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 13 out of 39 (/es/boom3D)
+🔥  pageerror at /es/capto: SyntaxError: Unexpected token '<'
+
+💬  console.log at /es/capto: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️⚠️  warning at /es/capto: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /es/capto: Failed to load resource: the server responded with a status of 404 ()
+✅  crawled 14 out of 40 (/es/boom2)
+🔥  pageerror at /es/capto/windows: SyntaxError: Unexpected token '<'
+
+💬  console.log at /es/capto/windows: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 15 out of 41 (/es/capto)
+✅  crawled 16 out of 41 (/es/capto/windows)
+🔥  pageerror at /es/audion: SyntaxError: Unexpected token '<'
+
+💬  console.log at /es/audion: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /es/vizmato: SyntaxError: Unexpected token '<'
+
+💬  console.log at /es/vizmato: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 17 out of 41 (/es/audion)
+🔥  pageerror at /es/cameraplus: SyntaxError: Unexpected token '<'
+
+💬  console.log at /es/cameraplus: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 18 out of 41 (/es/vizmato)
+🔥  pageerror at /es/camerapluspro: SyntaxError: Unexpected token '<'
+
+💬  console.log at /es/camerapluspro: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 19 out of 41 (/es/cameraplus)
+✅  crawled 20 out of 41 (/es/camerapluspro)
+🔥  pageerror at /es/audimix: SyntaxError: Unexpected token '<'
+
+💬  console.log at /es/audimix: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /es/boomformobile: SyntaxError: Unexpected token '<'
+
+💬  console.log at /es/boomformobile: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 21 out of 41 (/es/audimix)
+✅  crawled 22 out of 41 (/es/boomformobile)
+🔥  pageerror at /boom3D: SyntaxError: Unexpected token '<'
+
+️️️💬  console.log at /boom2: Unrecognized feature: 'clipboard-write'.
+️️️💬  console.log at /boom2: An <img> element was lazyloaded with loading=lazy, but had no dimensions specified. Specifying dimensions improves performance. See https://crbug.com/954323
+💬  console.log at /boom3D: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️💬  console.log at /boom2: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+🔥  pageerror at /boom2: SyntaxError: Unexpected token '<'
+
+️️️💬  console.log at /boom2: Unrecognized feature: 'clipboard-write'.
+💬  console.log at /boom2: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️💬  console.log at /boom2: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+✅  crawled 23 out of 43 (/boom3D)
+️️️⚠️  warning at /capto/: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /capto: Failed to load resource: the server responded with a status of 404 ()
+🔥  pageerror at /capto: SyntaxError: Unexpected token '<'
+
+💬  console.log at /capto: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️⚠️  warning at /capto/: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /capto: Failed to load resource: the server responded with a status of 404 ()
+✅  crawled 24 out of 45 (/capto)
+🔥  pageerror at /audimix: SyntaxError: Unexpected token '<'
+
+✅  crawled 25 out of 47 (/boom2)
+💬  console.log at /audimix: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /capto/windows: SyntaxError: Unexpected token '<'
+
+💬  console.log at /capto/windows: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 26 out of 48 (/audimix)
+🔥  pageerror at /boomformobile: SyntaxError: Unexpected token '<'
+
+✅  crawled 27 out of 49 (/capto/windows)
+💬  console.log at /boomformobile: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /vizmato: SyntaxError: Unexpected token '<'
+
+💬  console.log at /vizmato: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 28 out of 50 (/boomformobile)
+✅  crawled 29 out of 51 (/vizmato)
+🔥  pageerror at /audion: SyntaxError: Unexpected token '<'
+
+💬  console.log at /audion: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /: SyntaxError: Unexpected token '<'
+
+💬  console.log at /: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 30 out of 52 (/audion)
+✅  crawled 31 out of 52 (/)
+🔥  pageerror at /about: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /business: SyntaxError: Unexpected token '<'
+
+💬  console.log at /about: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /business: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 32 out of 58 (/about)
+✅  crawled 33 out of 58 (/business)
+🔥  pageerror at /faq: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /contact: SyntaxError: Unexpected token '<'
+
+✅  crawled 34 out of 60 (/faq)
+✅  crawled 35 out of 60 (/contact)
+🔥  pageerror at /cameraplus: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /camerapluspro: SyntaxError: Unexpected token '<'
+
+💬  console.log at /camerapluspro: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /cameraplus: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 36 out of 62 (/camerapluspro)
+✅  crawled 37 out of 62 (/cameraplus)
+🔥  pageerror at /careers: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /es/whatsnew/boom: SyntaxError: Unexpected token '<'
+
+💬  console.log at /careers: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /es/whatsnew/boom: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 38 out of 63 (/careers)
+✅  crawled 39 out of 63 (/es/whatsnew/boom)
+🔥  pageerror at /es/whatsnew/boom2: SyntaxError: Unexpected token '<'
+
+💬  console.log at /es/whatsnew/boom2: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /es/whatsnew/capto: SyntaxError: Unexpected token '<'
+
+💬  console.log at /es/whatsnew/capto: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 40 out of 63 (/es/whatsnew/boom2)
+✅  crawled 41 out of 63 (/es/whatsnew/capto)
+🔥  pageerror at /whatsnew/boom: SyntaxError: Unexpected token '<'
+
+💬  console.log at /whatsnew/boom: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /boom3D/: SyntaxError: Unexpected token '<'
+
+✅  crawled 42 out of 64 (/whatsnew/boom)
+💬  console.log at /boom3D/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /whatsnew/capto: SyntaxError: Unexpected token '<'
+
+💬  console.log at /whatsnew/capto: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 43 out of 64 (/boom3D/)
+️️️⚠️  warning at /capto/: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /capto/: Failed to load resource: the server responded with a status of 404 ()
+🔥  pageerror at /capto/: SyntaxError: Unexpected token '<'
+
+✅  crawled 44 out of 65 (/whatsnew/capto)
+💬  console.log at /capto/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️⚠️  warning at /capto/: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /capto/: Failed to load resource: the server responded with a status of 404 ()
+🔥  pageerror at /whatsnew/boom2: SyntaxError: Unexpected token '<'
+
+💬  console.log at /whatsnew/boom2: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 45 out of 65 (/capto/)
+️️️💬  console.log at /boom2/: Unrecognized feature: 'clipboard-write'.
+️️️💬  console.log at /boom2/: An <img> element was lazyloaded with loading=lazy, but had no dimensions specified. Specifying dimensions improves performance. See https://crbug.com/954323
+✅  crawled 46 out of 66 (/whatsnew/boom2)
+️️️💬  console.log at /boom2/: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+🔥  pageerror at /boom2/: SyntaxError: Unexpected token '<'
+
+️️️💬  console.log at /boom2/: Unrecognized feature: 'clipboard-write'.
+🔥  pageerror at /audimix/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /boom2/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️💬  console.log at /boom2/: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+💬  console.log at /audimix/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 47 out of 66 (/audimix/)
+🔥  pageerror at /capto/windows/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /capto/windows/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 48 out of 66 (/capto/windows/)
+✅  crawled 49 out of 66 (/boom2/)
+🔥  pageerror at /boomformobile/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /vizmato/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /boomformobile/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /vizmato/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 50 out of 66 (/boomformobile/)
+✅  crawled 51 out of 66 (/vizmato/)
+🔥  pageerror at /audion/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /audion/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /about/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /about/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 52 out of 66 (/audion/)
+✅  crawled 53 out of 66 (/about/)
+🔥  pageerror at /business/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /business/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /technology/audio: SyntaxError: Unexpected token '<'
+
+✅  crawled 54 out of 66 (/business/)
+✅  crawled 55 out of 67 (/technology/audio)
+🔥  pageerror at /technology/video: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /technology/camera: SyntaxError: Unexpected token '<'
+
+💬  console.log at /technology/video: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 56 out of 69 (/technology/video)
+✅  crawled 57 out of 69 (/technology/camera)
+🔥  pageerror at /technology/screen-capture: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /faq/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /technology/screen-capture: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 58 out of 70 (/technology/screen-capture)
+✅  crawled 59 out of 70 (/faq/)
+🔥  pageerror at /contact/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /camerapluspro/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /camerapluspro/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 60 out of 70 (/contact/)
+✅  crawled 61 out of 70 (/camerapluspro/)
+🔥  pageerror at /cameraplus/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /careers/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /cameraplus/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /careers/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 62 out of 70 (/careers/)
+✅  crawled 63 out of 70 (/cameraplus/)
+🔥  pageerror at /whatsnew/capto/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /whatsnew/boom/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /whatsnew/capto/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /whatsnew/boom/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 64 out of 70 (/whatsnew/capto/)
+✅  crawled 65 out of 70 (/whatsnew/boom/)
+🔥  pageerror at /whatsnew/boom2/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /technology/audio/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /whatsnew/boom2/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 66 out of 70 (/whatsnew/boom2/)
+✅  crawled 67 out of 70 (/technology/audio/)
+🔥  pageerror at /technology/video/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /technology/camera/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /technology/video/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 68 out of 70 (/technology/camera/)
+✅  crawled 69 out of 70 (/technology/video/)
+🔥  pageerror at /technology/screen-capture/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /technology/screen-capture/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 70 out of 70 (/technology/screen-capture/)
+
+=== react-snap batch: zh (21 routes) ===
+🔥  pageerror at /zh/about: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /zh: SyntaxError: Unexpected token '<'
+
+💬  console.log at /zh: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /zh/about: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 1 out of 30 (/zh)
+✅  crawled 2 out of 30 (/zh/about)
+🔥  pageerror at /404.html: SyntaxError: Unexpected token '<'
+
+💬  console.log at /404.html: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /zh/business: SyntaxError: Unexpected token '<'
+
+💬  console.log at /zh/business: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+⚠️  warning: 404 page title does not contain "404" string
+✅  crawled 3 out of 38 (/404.html)
+🔥  pageerror at /zh/technology/audio: SyntaxError: Unexpected token '<'
+
+✅  crawled 4 out of 38 (/zh/business)
+💬  console.log at /zh/technology/audio: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /zh/technology/video: SyntaxError: Unexpected token '<'
+
+💬  console.log at /zh/technology/video: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 5 out of 38 (/zh/technology/audio)
+✅  crawled 6 out of 38 (/zh/technology/video)
+🔥  pageerror at /zh/technology/camera: SyntaxError: Unexpected token '<'
+
+💬  console.log at /zh/technology/camera: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /zh/technology/screen-capture: SyntaxError: Unexpected token '<'
+
+💬  console.log at /zh/technology/screen-capture: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 7 out of 38 (/zh/technology/camera)
+✅  crawled 8 out of 38 (/zh/technology/screen-capture)
+🔥  pageerror at /zh/faq: SyntaxError: Unexpected token '<'
+
+💬  console.log at /zh/faq: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /zh/contact: SyntaxError: Unexpected token '<'
+
+💬  console.log at /zh/contact: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 9 out of 38 (/zh/faq)
+✅  crawled 10 out of 38 (/zh/contact)
+🔥  pageerror at /zh/careers: SyntaxError: Unexpected token '<'
+
+💬  console.log at /zh/careers: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /zh/boom: SyntaxError: Unexpected token '<'
+
+✅  crawled 11 out of 38 (/zh/careers)
+💬  console.log at /zh/boom: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /zh/boom2: SyntaxError: Unexpected token '<'
+
+️️️💬  console.log at /zh/boom2: Unrecognized feature: 'clipboard-write'.
+️️️💬  console.log at /zh/boom2: An <img> element was lazyloaded with loading=lazy, but had no dimensions specified. Specifying dimensions improves performance. See https://crbug.com/954323
+✅  crawled 12 out of 38 (/zh/boom)
+💬  console.log at /zh/boom2: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️💬  console.log at /zh/boom2: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+🔥  pageerror at /zh/boom3D: SyntaxError: Unexpected token '<'
+
+💬  console.log at /zh/boom3D: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 13 out of 39 (/zh/boom3D)
+🔥  pageerror at /zh/capto: SyntaxError: Unexpected token '<'
+
+✅  crawled 14 out of 40 (/zh/boom2)
+💬  console.log at /zh/capto: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️⚠️  warning at /zh/capto: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /zh/capto: Failed to load resource: the server responded with a status of 404 ()
+🔥  pageerror at /zh/capto/windows: SyntaxError: Unexpected token '<'
+
+💬  console.log at /zh/capto/windows: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 15 out of 41 (/zh/capto)
+✅  crawled 16 out of 41 (/zh/capto/windows)
+🔥  pageerror at /zh/audion: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /zh/vizmato: SyntaxError: Unexpected token '<'
+
+💬  console.log at /zh/audion: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /zh/vizmato: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 17 out of 41 (/zh/audion)
+✅  crawled 18 out of 41 (/zh/vizmato)
+🔥  pageerror at /zh/cameraplus: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /zh/camerapluspro: SyntaxError: Unexpected token '<'
+
+💬  console.log at /zh/camerapluspro: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /zh/cameraplus: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 19 out of 41 (/zh/camerapluspro)
+✅  crawled 20 out of 41 (/zh/cameraplus)
+🔥  pageerror at /zh/audimix: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /zh/boomformobile: SyntaxError: Unexpected token '<'
+
+💬  console.log at /zh/audimix: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /zh/boomformobile: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 21 out of 41 (/zh/audimix)
+✅  crawled 22 out of 41 (/zh/boomformobile)
+️️️💬  console.log at /boom2: Unrecognized feature: 'clipboard-write'.
+️️️💬  console.log at /boom2: An <img> element was lazyloaded with loading=lazy, but had no dimensions specified. Specifying dimensions improves performance. See https://crbug.com/954323
+🔥  pageerror at /boom3D: SyntaxError: Unexpected token '<'
+
+💬  console.log at /boom3D: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️💬  console.log at /boom2: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+🔥  pageerror at /boom2: SyntaxError: Unexpected token '<'
+
+✅  crawled 23 out of 43 (/boom3D)
+️️️💬  console.log at /boom2: Unrecognized feature: 'clipboard-write'.
+💬  console.log at /boom2: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️⚠️  warning at /capto/: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /capto: Failed to load resource: the server responded with a status of 404 ()
+️️️💬  console.log at /boom2: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+🔥  pageerror at /capto: SyntaxError: Unexpected token '<'
+
+💬  console.log at /capto: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️⚠️  warning at /capto/: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /capto: Failed to load resource: the server responded with a status of 404 ()
+✅  crawled 24 out of 45 (/capto)
+🔥  pageerror at /audimix: SyntaxError: Unexpected token '<'
+
+💬  console.log at /audimix: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 25 out of 47 (/boom2)
+✅  crawled 26 out of 48 (/audimix)
+🔥  pageerror at /capto/windows: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /boomformobile: SyntaxError: Unexpected token '<'
+
+💬  console.log at /capto/windows: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /boomformobile: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 27 out of 49 (/capto/windows)
+✅  crawled 28 out of 50 (/boomformobile)
+🔥  pageerror at /vizmato: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /audion: SyntaxError: Unexpected token '<'
+
+💬  console.log at /vizmato: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /audion: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 29 out of 52 (/vizmato)
+✅  crawled 30 out of 52 (/audion)
+🔥  pageerror at /: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /about: SyntaxError: Unexpected token '<'
+
+💬  console.log at /about: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 31 out of 53 (/about)
+✅  crawled 32 out of 53 (/)
+🔥  pageerror at /business: SyntaxError: Unexpected token '<'
+
+💬  console.log at /business: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /faq: SyntaxError: Unexpected token '<'
+
+✅  crawled 33 out of 58 (/business)
+✅  crawled 34 out of 59 (/faq)
+🔥  pageerror at /contact: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /cameraplus: SyntaxError: Unexpected token '<'
+
+💬  console.log at /cameraplus: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 35 out of 60 (/contact)
+✅  crawled 36 out of 61 (/cameraplus)
+🔥  pageerror at /camerapluspro: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /careers: SyntaxError: Unexpected token '<'
+
+💬  console.log at /camerapluspro: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /careers: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 37 out of 62 (/camerapluspro)
+✅  crawled 38 out of 63 (/careers)
+🔥  pageerror at /zh/whatsnew/boom: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /zh/whatsnew/boom2: SyntaxError: Unexpected token '<'
+
+💬  console.log at /zh/whatsnew/boom: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /zh/whatsnew/boom2: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 39 out of 63 (/zh/whatsnew/boom)
+✅  crawled 40 out of 63 (/zh/whatsnew/boom2)
+🔥  pageerror at /zh/whatsnew/capto: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /whatsnew/boom: SyntaxError: Unexpected token '<'
+
+💬  console.log at /whatsnew/boom: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /zh/whatsnew/capto: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 41 out of 64 (/whatsnew/boom)
+✅  crawled 42 out of 64 (/zh/whatsnew/capto)
+🔥  pageerror at /whatsnew/capto: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /boom3D/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /whatsnew/capto: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /boom3D/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 43 out of 65 (/whatsnew/capto)
+✅  crawled 44 out of 65 (/boom3D/)
+️️️⚠️  warning at /capto/: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /capto/: Failed to load resource: the server responded with a status of 404 ()
+🔥  pageerror at /capto/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /whatsnew/boom2: SyntaxError: Unexpected token '<'
+
+💬  console.log at /capto/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️⚠️  warning at /capto/: got 404 HTTP code for https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg
+️️️💬  console.log at /capto/: Failed to load resource: the server responded with a status of 404 ()
+💬  console.log at /whatsnew/boom2: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 45 out of 66 (/capto/)
+✅  crawled 46 out of 66 (/whatsnew/boom2)
+️️️💬  console.log at /boom2/: Unrecognized feature: 'clipboard-write'.
+️️️💬  console.log at /boom2/: An <img> element was lazyloaded with loading=lazy, but had no dimensions specified. Specifying dimensions improves performance. See https://crbug.com/954323
+️️️💬  console.log at /boom2/: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+🔥  pageerror at /audimix/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /boom2/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /audimix/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️💬  console.log at /boom2/: Unrecognized feature: 'clipboard-write'.
+💬  console.log at /boom2/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+️️️💬  console.log at /boom2/: Unrecognized Content-Security-Policy directive 'require-trusted-types-for'.
+
+✅  crawled 47 out of 66 (/audimix/)
+🔥  pageerror at /capto/windows/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /capto/windows/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 48 out of 66 (/capto/windows/)
+✅  crawled 49 out of 66 (/boom2/)
+🔥  pageerror at /boomformobile/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /vizmato/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /boomformobile/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /vizmato/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 50 out of 66 (/boomformobile/)
+✅  crawled 51 out of 66 (/vizmato/)
+🔥  pageerror at /audion/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /audion/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /about/: SyntaxError: Unexpected token '<'
+
+✅  crawled 52 out of 66 (/audion/)
+💬  console.log at /about/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+🔥  pageerror at /business/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /business/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 53 out of 66 (/about/)
+✅  crawled 54 out of 66 (/business/)
+🔥  pageerror at /technology/audio: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /technology/video: SyntaxError: Unexpected token '<'
+
+💬  console.log at /technology/video: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 55 out of 68 (/technology/audio)
+✅  crawled 56 out of 68 (/technology/video)
+🔥  pageerror at /technology/camera: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /technology/screen-capture: SyntaxError: Unexpected token '<'
+
+💬  console.log at /technology/screen-capture: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 57 out of 70 (/technology/camera)
+✅  crawled 58 out of 70 (/technology/screen-capture)
+🔥  pageerror at /faq/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /contact/: SyntaxError: Unexpected token '<'
+
+✅  crawled 59 out of 70 (/faq/)
+✅  crawled 60 out of 70 (/contact/)
+🔥  pageerror at /camerapluspro/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /cameraplus/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /camerapluspro/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /cameraplus/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 61 out of 70 (/camerapluspro/)
+✅  crawled 62 out of 70 (/cameraplus/)
+🔥  pageerror at /careers/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /whatsnew/boom/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /whatsnew/boom/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /careers/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 63 out of 70 (/careers/)
+✅  crawled 64 out of 70 (/whatsnew/boom/)
+🔥  pageerror at /whatsnew/capto/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /whatsnew/boom2/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /whatsnew/boom2/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+💬  console.log at /whatsnew/capto/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 65 out of 70 (/whatsnew/boom2/)
+✅  crawled 66 out of 70 (/whatsnew/capto/)
+🔥  pageerror at /technology/video/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /technology/audio/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /technology/video/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 67 out of 70 (/technology/video/)
+✅  crawled 68 out of 70 (/technology/audio/)
+🔥  pageerror at /technology/camera/: SyntaxError: Unexpected token '<'
+
+🔥  pageerror at /technology/screen-capture/: SyntaxError: Unexpected token '<'
+
+💬  console.log at /technology/screen-capture/: Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+✅  crawled 69 out of 70 (/technology/camera/)
+✅  crawled 70 out of 70 (/technology/screen-capture/)
+ERROR: The process with PID 24108 (child process of PID 20736) could not be terminated.
+Reason: There is no running instance of the task.
+ERROR: The process with PID 12972 (child process of PID 20736) could not be terminated.
+Reason: There is no running instance of the task.
+ERROR: The process with PID 15712 (child process of PID 20736) could not be terminated.
+Reason: There is no running instance of the task.
+
+✅  All language batches prerendered successfully.
+✅  Moved Helmet-managed <head> tags to directly follow <title> in every prerendered page.
+✅  Removed 4566 duplicate <style>/<link rel="preconnect"> tags across 212 pages.
+EXIT_CODE:0
