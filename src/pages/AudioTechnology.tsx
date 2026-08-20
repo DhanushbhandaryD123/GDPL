@@ -387,15 +387,15 @@ export function AudioTechnology() {
                         <span className="text-gray-500 text-[11px] text-center lg:text-left leading-tight mt-1">{t('technology.audio.stat_immersive_desc')}</span>
                       </div>
                       <div className="flex flex-col items-center lg:items-start">
-                        <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center mb-2">
-                          <Target className="w-5 h-5 text-blue-500" />
+                        <div className="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center mb-2">
+                          <Target className="w-5 h-5 text-purple-500" />
                         </div>
                         <span className="font-bold text-gray-800 text-[13px]">{t('technology.audio.stat_spatial_title')}</span>
                         <span className="text-gray-500 text-[11px] text-center lg:text-left leading-tight mt-1">{t('technology.audio.stat_spatial_desc')}</span>
                       </div>
                       <div className="flex flex-col items-center lg:items-start">
-                        <div className="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center mb-2">
-                          <Wifi className="w-5 h-5 text-green-500" />
+                        <div className="w-10 h-10 rounded-full bg-pink-50 flex items-center justify-center mb-2">
+                          <Wifi className="w-5 h-5 text-pink-500" />
                         </div>
                         <span className="font-bold text-gray-800 text-[13px]">{t('technology.audio.stat_realistic_title')}</span>
                         <span className="text-gray-500 text-[11px] text-center lg:text-left leading-tight mt-1">{t('technology.audio.stat_realistic_desc')}</span>
@@ -472,7 +472,7 @@ export function AudioTechnology() {
                         </div>
                         {/* Enhancer */}
                         <div className="flex flex-col items-center gap-1.5">
-                          <div className="w-9 h-9 rounded-full flex items-center justify-center border border-green-100 bg-white text-green-500">
+                          <div className="w-9 h-9 rounded-full flex items-center justify-center border border-pink-100 bg-white text-pink-500">
                             <Headphones className="w-4 h-4" />
                           </div>
                           <span className="font-bold text-[10px] text-gray-800 text-center leading-tight">{t('technology.audio.toggle_enhancer')}<br/>&nbsp;</span>
@@ -483,11 +483,11 @@ export function AudioTechnology() {
                         </div>
                         {/* Intensity */}
                         <div className="flex flex-col items-center gap-1.5">
-                          <div className="w-9 h-9 rounded-full flex items-center justify-center border border-blue-100 bg-white text-blue-500">
+                          <div className="w-9 h-9 rounded-full flex items-center justify-center border border-purple-100 bg-white text-purple-500">
                             <Gauge className="w-4 h-4" />
                           </div>
                           <span className="font-bold text-[10px] text-gray-800 text-center leading-tight">{t('technology.audio.toggle_intensity')}<br/>&nbsp;</span>
-                          <span className="font-bold text-[9px] text-green-500">{t('technology.audio.on_label')}</span>
+                          <span className="font-bold text-[9px] text-red-500">{t('technology.audio.on_label')}</span>
                           <div className="w-7 h-3.5 bg-red-500 rounded-full p-[2px] cursor-pointer flex items-center">
                             <div className="w-2.5 h-2.5 bg-white rounded-full shadow-sm transform translate-x-3"></div>
                           </div>

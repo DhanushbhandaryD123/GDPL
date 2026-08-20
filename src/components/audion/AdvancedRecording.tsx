@@ -8,8 +8,8 @@ export function AdvancedRecording() {
   const features = [
     { title: t('audion.advanced_recording.f1_title'), description: t('audion.advanced_recording.f1_desc'), icon: Mic2, color: 'text-purple-500', bg: 'bg-purple-50' },
     { title: t('audion.advanced_recording.f2_title'), description: t('audion.advanced_recording.f2_desc'), icon: Settings2, color: 'text-pink-500', bg: 'bg-pink-50' },
-    { title: t('audion.advanced_recording.f3_title'), description: t('audion.advanced_recording.f3_desc'), icon: FastForward, color: 'text-blue-500', bg: 'bg-blue-50' },
-    { title: t('audion.advanced_recording.f4_title'), description: t('audion.advanced_recording.f4_desc'), icon: FileText, color: 'text-teal-500', bg: 'bg-teal-50' }
+    { title: t('audion.advanced_recording.f3_title'), description: t('audion.advanced_recording.f3_desc'), icon: FastForward, color: 'text-fuchsia-500', bg: 'bg-fuchsia-50' },
+    { title: t('audion.advanced_recording.f4_title'), description: t('audion.advanced_recording.f4_desc'), icon: FileText, color: 'text-violet-500', bg: 'bg-violet-50' }
   ];
 
   return (
