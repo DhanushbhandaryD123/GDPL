@@ -10,7 +10,7 @@ export function Hero() {
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden rounded-3xl md:rounded-[2.5rem] z-0 pointer-events-none">
         <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-purple-200/50 blur-[120px] opacity-70" />
         <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-pink-200/50 blur-[120px] opacity-70" />
-        <div className="absolute top-[20%] right-[15%] w-[35%] h-[35%] rounded-full bg-blue-200/40 blur-[120px] opacity-70" />
+        <div className="absolute top-[20%] right-[15%] w-[35%] h-[35%] rounded-full bg-fuchsia-200/40 blur-[120px] opacity-70" />
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">

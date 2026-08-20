@@ -6,9 +6,9 @@ export function EditingTranscription() {
   const { t } = useTranslation();
 
   const workflowSteps = [
-    { title: t('audion.transcription.editing_title'), description: t('audion.transcription.editing_desc'), icon: Scissors, color: 'text-blue-500', bg: 'bg-blue-50' },
-    { title: t('audion.transcription.markers_title'), description: t('audion.transcription.markers_desc'), icon: MapPin, color: 'text-green-500', bg: 'bg-green-50' },
-    { title: t('audion.transcription.transcription_title'), description: t('audion.transcription.transcription_desc'), icon: Type, color: 'text-orange-500', bg: 'bg-orange-50' }
+    { title: t('audion.transcription.editing_title'), description: t('audion.transcription.editing_desc'), icon: Scissors, color: 'text-purple-500', bg: 'bg-purple-50' },
+    { title: t('audion.transcription.markers_title'), description: t('audion.transcription.markers_desc'), icon: MapPin, color: 'text-pink-500', bg: 'bg-pink-50' },
+    { title: t('audion.transcription.transcription_title'), description: t('audion.transcription.transcription_desc'), icon: Type, color: 'text-fuchsia-500', bg: 'bg-fuchsia-50' }
   ];
 
   return (
