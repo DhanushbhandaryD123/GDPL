@@ -88,6 +88,29 @@ export function SEOHead() {
         })}
       </script>
 
+      {/* Product SoftwareApplication JSON-LD – for all product pages: boom/boom2/boom3D/capto(+windows)/cameraplus(+pro)/audion/audimix/vizmato/boomformobile */}
+      {seo.softwareApplication && (
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            name: seo.softwareApplication.name,
+            operatingSystem: seo.softwareApplication.operatingSystem,
+            applicationCategory: seo.softwareApplication.applicationCategory,
+            description: pageDescription,
+            image: resolveImage(seo.softwareApplication.image),
+            url: `${domain}${canonicalPath}`,
+            offers: seo.softwareApplication.price
+              ? {
+                  "@type": "Offer",
+                  price: seo.softwareApplication.price,
+                  priceCurrency: seo.softwareApplication.priceCurrency || "INR",
+                }
+              : undefined,
+          })}
+        </script>
+      )}
+
       {/* Page-connected Open Graph – url/image/content as in Home structure */}
       <meta property="og:title" content={pageOgTitle} />
       <meta property="og:description" content={pageOgDescription} />

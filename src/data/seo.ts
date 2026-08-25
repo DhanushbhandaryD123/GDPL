@@ -21,6 +21,15 @@ export interface SeoEntry {
   twitterDescription?: string;
   twitterImage?: string;
   canonicalPath?: string; // defaults to key
+  // Product JSON-LD – added for all product pages like boom/boom3D/capto/subpage/cameraplus etc
+  softwareApplication?: {
+    name: string;
+    operatingSystem: string;
+    applicationCategory: string;
+    price?: string;
+    priceCurrency?: string;
+    image: string; // root-relative
+  };
 }
 
 const CLOUD_OG = 'https://d3jbf8nvvpx3fh.cloudfront.net/Boom3D-Web/OGImages/Global-Delight.jpg';
@@ -173,6 +182,7 @@ export const SEO_DATA: Record<string, SeoEntry> = {
     keywords: 'Boom, volume booster, Mac audio equalizer, 3D surround sound, sound enhancer, bass booster, audio booster app, system-wide equalizer, Boom 2, Boom 3D, Boom for mobile, Global Delight Boom',
     ogImage: '/apps/Boom2-mac.jpeg',
     twitterImage: '/apps/Boom2-mac.jpeg',
+    softwareApplication: { name: 'Boom', operatingSystem: 'Mac, Windows, iOS, Android', applicationCategory: 'MultimediaApplication', image: '/apps/Boom2-mac.jpeg' },
   },
   '/boom2': {
     title: 'Boom 2 | Powerful Audio Enhancement for Mac',
@@ -180,6 +190,7 @@ export const SEO_DATA: Record<string, SeoEntry> = {
     keywords: 'Boom 2, Boom 2 Mac, 31 band equalizer, volume booster Mac, audio effects Mac, Boom Remote, Global Delight Boom 2',
     ogImage: '/apps/Boom2-mac.jpeg',
     twitterImage: '/apps/Boom2-mac.jpeg',
+    softwareApplication: { name: 'Boom 2', operatingSystem: 'Mac', applicationCategory: 'MultimediaApplication', image: '/apps/Boom2-mac.jpeg' },
   },
   '/boom3D': {
     title: 'Boom 3D | Magical 3D Surround Sound for Mac & Windows',
@@ -187,6 +198,7 @@ export const SEO_DATA: Record<string, SeoEntry> = {
     keywords: 'Boom 3D, Boom 3D Mac, Boom 3D Windows, 3D surround sound, volume booster, 31 band equalizer, Mac Windows audio enhancer, Global Delight Boom 3D',
     ogImage: '/apps/Boom3D-mac.jpeg',
     twitterImage: '/apps/Boom3D-mac.jpeg',
+    softwareApplication: { name: 'Boom 3D', operatingSystem: 'Mac, Windows', applicationCategory: 'MultimediaApplication', price: '925.37', priceCurrency: 'INR', image: '/apps/boom3d-window.png' },
   },
   '/capto': {
     title: 'Capto | Screenshots, Screen Recording & Video Editing for Mac',
@@ -194,6 +206,7 @@ export const SEO_DATA: Record<string, SeoEntry> = {
     keywords: 'Capto, Capto Mac, screen recorder Mac, screenshot Mac, video editor Mac, screen capture Mac, Global Delight Capto, Mac screen recording',
     ogImage: '/apps/Capto-mac.jpeg',
     twitterImage: '/apps/Capto-mac.jpeg',
+    softwareApplication: { name: 'Capto', operatingSystem: 'Mac', applicationCategory: 'MultimediaApplication', price: '749.50', priceCurrency: 'INR', image: '/apps/Capto-mac.jpeg' },
   },
   '/capto/windows': {
     title: 'Capto for Windows | All-in-One Screenshots & Screen Recording',
@@ -201,6 +214,7 @@ export const SEO_DATA: Record<string, SeoEntry> = {
     keywords: 'Capto Windows, screen recorder Windows, screenshot Windows, Windows 10 screen capture, 4K screen recording, Capto for Windows 10 11',
     ogImage: '/apps/Capto-window.jpeg',
     twitterImage: '/apps/Capto-window.jpeg',
+    softwareApplication: { name: 'Capto for Windows', operatingSystem: 'Windows', applicationCategory: 'MultimediaApplication', price: '749.50', priceCurrency: 'INR', image: '/apps/Capto-window.jpeg' },
   },
   '/audion': {
     title: 'AudiOn | Advanced Voice Recorder & Audio Editor for Mobile',
@@ -208,6 +222,7 @@ export const SEO_DATA: Record<string, SeoEntry> = {
     keywords: 'AudiOn, AudiOn app, voice recorder app, audio editor mobile, voice recorder iOS Android, transcription app, Global Delight AudiOn',
     ogImage: '/apps/AudiOn-ios.jpeg',
     twitterImage: '/apps/AudiOn-ios.jpeg',
+    softwareApplication: { name: 'AudiOn', operatingSystem: 'iOS, Android', applicationCategory: 'MultimediaApplication', image: '/apps/AudiOn-ios.jpeg' },
   },
   '/vizmato': {
     title: 'Vizmato | HD Video Editor with Instant FX for iOS & Android',
@@ -215,6 +230,7 @@ export const SEO_DATA: Record<string, SeoEntry> = {
     keywords: 'Vizmato, Vizmato app, mobile video editor, HD video recorder, Instant FX, video themes, Vizmato iOS Android, Global Delight Vizmato',
     ogImage: '/apps/Vizmato-ios.jpeg',
     twitterImage: '/apps/Vizmato-ios.jpeg',
+    softwareApplication: { name: 'Vizmato', operatingSystem: 'iOS, Android', applicationCategory: 'MultimediaApplication', image: '/apps/Vizmato-ios.jpeg' },
   },
   '/cameraplus': {
     title: 'Camera Plus | Pro Photography Camera for iPhone',
@@ -222,6 +238,7 @@ export const SEO_DATA: Record<string, SeoEntry> = {
     keywords: 'Camera Plus, iPhone camera app, photography app iOS, AirSnap, macro mode, Camera Plus iPhone, Global Delight Camera Plus',
     ogImage: '/website/GlobalDelight/icons/CameraPlus_SubheaderLogo.png',
     twitterImage: '/website/GlobalDelight/icons/CameraPlus_SubheaderLogo.png',
+    softwareApplication: { name: 'Camera Plus', operatingSystem: 'iOS', applicationCategory: 'PhotographyApplication', image: '/website/GlobalDelight/icons/CameraPlus_SubheaderLogo.png' },
   },
   '/camerapluspro': {
     title: 'Camera Plus Pro | DSLR-Like Photography for iPhone',
@@ -229,6 +246,7 @@ export const SEO_DATA: Record<string, SeoEntry> = {
     keywords: 'Camera Plus Pro, Camera Plus Pro iPhone, DSLR camera app, manual camera iOS, RAW photography, Global Delight Camera Plus Pro',
     ogImage: '/website/GlobalDelight/icons/CameraPlus_SubheaderLogo.png',
     twitterImage: '/website/GlobalDelight/icons/CameraPlus_SubheaderLogo.png',
+    softwareApplication: { name: 'Camera Plus Pro', operatingSystem: 'iOS', applicationCategory: 'PhotographyApplication', image: '/website/GlobalDelight/icons/CameraPlus_SubheaderLogo.png' },
   },
   '/audimix': {
     title: 'AuDimix | Music Separation & Vocal Remover for Windows',
@@ -236,6 +254,7 @@ export const SEO_DATA: Record<string, SeoEntry> = {
     keywords: 'AuDimix, vocal remover, stem splitter, karaoke maker, AuDimix Windows, music separation, remove vocals, Global Delight AuDimix',
     ogImage: '/apps/AuDimix-Window.jpeg',
     twitterImage: '/apps/AuDimix-Window.jpeg',
+    softwareApplication: { name: 'AuDimix', operatingSystem: 'Windows', applicationCategory: 'MultimediaApplication', image: '/apps/AuDimix-Window.jpeg' },
   },
   '/boomformobile': {
     title: 'Boom for Mobile | 3D Surround Sound Music Player for iOS & Android',
@@ -243,6 +262,7 @@ export const SEO_DATA: Record<string, SeoEntry> = {
     keywords: 'Boom mobile, Boom iOS, Boom Android, 3D surround music player, equalizer presets, radio podcasts, Tidal Boom, Global Delight Boom',
     ogImage: '/apps/Boom for iOS.jpeg',
     twitterImage: '/apps/Boom for iOS.jpeg',
+    softwareApplication: { name: 'Boom for Mobile', operatingSystem: 'iOS, Android', applicationCategory: 'MultimediaApplication', image: '/apps/Boom for iOS.jpeg' },
   },
   // WhatsNew – previously had only <title>, now full meta
   '/whatsnew/boom': {
