@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "node scripts/generate-sitemap.js && tsc -b && vite build",
     "postbuild": "node scripts/snap-batches.cjs && node scripts/reorder-head-tags.cjs && node scripts/dedupe-head-tags.cjs && node scripts/beautify-html.cjs",
-    "vercel-build": "echo 'Skipping Vercel build to use locally generated static files.'",
+    "vercel-build": "npm run build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
