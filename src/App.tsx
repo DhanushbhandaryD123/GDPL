@@ -34,6 +34,12 @@ import { AppCategory, AppItem } from './components/home/AppCategory';
 import { HonorsReviews } from './components/home/HonorsReviews';
 import { FeaturedWork } from './components/home/FeaturedWork';
 import { GetInspired } from './components/home/GetInspired';
+// Helper to emit real HTML comments that survive vite build + react-snap prerender
+// and are visible in Ctrl+U / View Source after deploy.
+function HtmlComment({ text }: { text: string }) {
+  return <div dangerouslySetInnerHTML={{ __html: `<!-- ${text} -->` }} style={{ display: 'contents' }} />;
+}
+
 import { FloatingSocials } from './components/layout/FloatingSocials';
 import { ScrollToTopButton } from './components/layout/ScrollToTopButton';
 import { PRODUCTS, getVariant, formatPrice } from './data/products';
@@ -126,30 +132,20 @@ function Home() {
         </script>
       </Helmet>
 
-      {/* =========================================
-          HEADER / NAVIGATION
-          Logo, primary nav links (About/Business/FAQ/Contact/Blog),
-          product search, and language switcher.
-          ========================================= */}
+      {/* HEADER - JSX comment (stripped in build) - real HTML comment below survives in View Source */}
+      <HtmlComment text="======================================================================== HEADER / NAVIGATION - Logo, Store, About/Business/FAQ/Contact/Blog, Search, Language" />
       <Navbar />
       <FloatingSocials />
       <ScrollToTopButton />
 
       <main>
-        {/* =========================================
-            HERO SECTION
-            Rotating banner carousel with per-slide app badge,
-            headline, subtitle, and store/CTA buttons.
-            ========================================= */}
+        <HtmlComment text="======================================================================== MAIN CONTENT START" />
+        <HtmlComment text="------------------------------------------------------------------------ HERO SECTION - Rotating banner carousel (5 slides) - Headline/Subtitle/CTA - See src/locales/en.json:home.hero_banner" />
         <Hero />
 
-        {/* =========================================
-            PRODUCTS SECTION
-            Four platform rows (Mac / Windows / iOS / Android), each a
-            flip-card carousel of that platform's apps sourced from
-            src/data/products.ts — name, icon, price, and route.
-            ========================================= */}
+        <HtmlComment text="------------------------------------------------------------------------ PRODUCTS SECTION - 4 platform rows sourced from src/data/products.ts - See src/App.tsx:45 macApps/windowsApps/iosApps/androidApps" />
         <div className="py-4">
+          <HtmlComment text="-- Mac App Row -- Device: MacBook (/devices/macbook.png) -- Products: Boom 3D, Boom 2, Capto" />
           <AppCategory
             title={t('home.categories.mac_app')}
             deviceImageAlt="MacBook"
@@ -157,6 +153,7 @@ function Home() {
             imageClassName="max-w-[350px] md:max-w-[450px]"
             apps={macApps}
           />
+          <HtmlComment text="-- Windows App Row -- Device: Windows Laptop (/devices/windows.png) -- Products: Boom 3D, AuDimix, Capto" />
           <AppCategory
             title={t('home.categories.windows_app')}
             deviceImageAlt="Windows Laptop"
@@ -165,6 +162,7 @@ function Home() {
             apps={windowsApps}
             reverse={false}
           />
+          <HtmlComment text="-- iOS App Row -- Device: iPhone (/devices/iphone.png) -- Products: Boom for iOS, Vizmato, AudiOn" />
           <AppCategory
             title={t('home.categories.ios_app')}
             deviceImageAlt="iPhone"
@@ -172,6 +170,7 @@ function Home() {
             imageClassName="max-w-[250px] md:max-w-[300px]"
             apps={iosApps}
           />
+          <HtmlComment text="-- Android App Row -- Device: Android Phone (/devices/Android.png) -- Products: Boom for Android, Vizmato, AudiOn" />
           <AppCategory
             title={t('home.categories.android_app')}
             deviceImageAlt="Android Phone"
@@ -182,33 +181,18 @@ function Home() {
           />
         </div>
 
-        {/* =========================================
-            GET INSPIRED
-            Four-card fan layout of user stories/photos (name + short
-            description per card), localized via home.get_inspired.people.
-            ========================================= */}
+        <HtmlComment text="------------------------------------------------------------------------ GET INSPIRED - Fan layout 4 cards - src/components/home/GetInspired.tsx:11 - Localized via home.get_inspired.people" />
         <GetInspired />
 
-        {/* =========================================
-            FEATURED PRODUCTS
-            Flagship-app showcase carousel (Boom 3D, Capto, Vizmato,
-            Camera Plus, AuDimix, AudiOn).
-            ========================================= */}
+        <HtmlComment text="------------------------------------------------------------------------ FEATURED PRODUCTS - Draggable fan carousel 6 flagship apps - src/components/home/FeaturedWork.tsx:8 cardsData" />
         <FeaturedWork />
 
-        {/* =========================================
-            AWARDS / HONORS & CUSTOMER REVIEWS
-            Press/award badge strip followed by review badge strip
-            (image-only; no extractable quote text in the source).
-            ========================================= */}
+        <HtmlComment text="------------------------------------------------------------------------ HONORS & REVIEWS - Press badges + customer review logos - src/components/home/HonorsReviews.tsx:10 honorLogos/reviewLogos" />
         <HonorsReviews />
+        <HtmlComment text="======================================================================== MAIN CONTENT END" />
       </main>
 
-      {/* =========================================
-          FOOTER
-          Product links, About/Store/Resources columns, social icons,
-          language selector, and copyright — shared across every page.
-          ========================================= */}
+      <HtmlComment text="======================================================================== FOOTER - 4 columns Products/About/Store/Resources + social + language + copyright - src/components/layout/Footer" />
       <Footer />
     </div>
   );
