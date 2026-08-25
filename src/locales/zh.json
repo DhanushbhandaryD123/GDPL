@@ -190,7 +190,17 @@
     "get_inspired": {
       "get": "获取",
       "inspired": "灵感",
-      "subtitle": "非凡的人物；意想不到的故事。认识世界各地使用 Global Delight 应用来提升日常生活的人们。"
+      "subtitle": "非凡的人物；意想不到的故事。认识世界各地使用 Global Delight 应用来提升日常生活的人们。",
+      "people": {
+        "p1_name": "M Ramachandra Acharya",
+        "p1_desc": "非凡的人物；意想不到的故事。认识世界各地使用 Global",
+        "p2_name": "Pradeep Udupi",
+        "p2_desc": "非凡的人物；意想不到的故事。认识世界各地使用 Global Delight 应用来提升日常生活的人们。",
+        "p3_name": "Deepa",
+        "p3_desc": "非凡的人物；意想不到的故事。认识世界各地使用 Global Delight 应用来提升日常生活的人们。Global Delight 应用，提升日常生活。",
+        "p4_name": "Sherwin Vaz",
+        "p4_desc": "非凡的人物；意想不到的故事。认识世界各地使用 Global Delight 应用来提升日常生活的人们。Global Delight 应用，提升日常生活。"
+      }
     },
     "featured_work": {
       "title": "特色产品",
@@ -353,6 +363,17 @@
       "subtitle": "加入数百万用户的行列，体验前所未有的音质。",
       "download": "立即下载",
       "available_macos": "支持 macOS"
+    },
+    "audio_amplify": {
+      "title": "放大单个音频文件",
+      "description": "永久提升 Mac 上任意音频文件的音量，可单独处理，也可批量处理。无论是音量过低的语音备忘录、音量不足的播客，还是录制效果不佳的歌曲，Boom 2 都能让你轻松导入音频文件并放大到理想音量。你可以一次性放大多个文件，既节省时间，又能确保所有媒体在任何设备上播放时都清晰响亮。"
+    },
+    "awards": {
+      "title": "奖项与荣誉",
+      "alt_2011": "2011年奖项",
+      "alt_2014": "2014年奖项",
+      "alt_2018": "2018年奖项",
+      "alt_macworld": "Macworld 奖项"
     }
   },
   "boom3d": {

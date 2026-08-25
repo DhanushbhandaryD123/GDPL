@@ -190,7 +190,17 @@
     "get_inspired": {
       "get": "Get",
       "inspired": "Inspired",
-      "subtitle": "Extraordinary individuals; unexpected stories. Meet the people around the world using Global Delight Apps to elevate everyday life."
+      "subtitle": "Extraordinary individuals; unexpected stories. Meet the people around the world using Global Delight Apps to elevate everyday life.",
+      "people": {
+        "p1_name": "M Ramachandra Acharya",
+        "p1_desc": "Extraordinary individuals; unexpected stories. Meet the people around the world using Global",
+        "p2_name": "Pradeep Udupi",
+        "p2_desc": "Extraordinary individuals; unexpected stories. Meet the people around the world using Global Delight Apps to elevate everyday life.",
+        "p3_name": "Deepa",
+        "p3_desc": "Extraordinary individuals; unexpected stories. Meet the people around the world using Global Delight Apps to elevate everyday life. Global Delight Apps to elevate everyday life.",
+        "p4_name": "Sherwin Vaz",
+        "p4_desc": "Extraordinary individuals; unexpected stories. Meet the people around the world using Global Delight Apps to elevate everyday life. Global Delight Apps to elevate everyday life."
+      }
     },
     "featured_work": {
       "title": "Featured Product",
@@ -353,6 +363,17 @@
       "subtitle": "Join millions of users and experience sound like never before.",
       "download": "Download Now",
       "available_macos": "Available for macOS"
+    },
+    "audio_amplify": {
+      "title": "Amplify individual audio files",
+      "description": "Permanently boost the sound levels in any audio files on your Mac. Individually, or in batches. Whether it's a quiet voice memo, a low-volume podcast, or a poorly recorded song, Boom 2 lets you easily drop in audio files and amplify them to your desired volume. You can boost multiple files at once, saving you time and ensuring all your media is loud and clear for playback on any device."
+    },
+    "awards": {
+      "title": "Awards & Recognitions",
+      "alt_2011": "Award 2011",
+      "alt_2014": "Award 2014",
+      "alt_2018": "Award 2018",
+      "alt_macworld": "Macworld Award"
     }
   },
   "boom3d": {

@@ -36,51 +36,75 @@ import { FeaturedWork } from './components/home/FeaturedWork';
 import { GetInspired } from './components/home/GetInspired';
 import { FloatingSocials } from './components/layout/FloatingSocials';
 import { ScrollToTopButton } from './components/layout/ScrollToTopButton';
+import { PRODUCTS, getVariant, formatPrice } from './data/products';
 
 function Home() {
   const domain = import.meta.env.VITE_SITE_URL || '';
   const { t } = useTranslation();
 
   const macApps: AppItem[] = [
-    { id: 'm1', name: 'Boom 3D', description: t('home.apps.boom3d_desc'), iconPath: '/apps/Boom3D-mac.jpeg', priceOriginal: 'INR 3700', priceDiscounted: 'INR 925.37', learnMoreUrl: '/boom3D' },
-    { id: 'm2', name: 'Boom 2', description: t('home.apps.boom2_desc'), iconPath: '/apps/Boom2-mac.jpeg', learnMoreUrl: '/boom2' },
-    { id: 'm3', name: 'Capto', description: t('home.apps.capto_desc'), iconPath: '/apps/Capto-mac.jpeg', priceOriginal: 'INR 1499', priceDiscounted: 'INR 749.5', learnMoreUrl: '/capto' },
+    { id: 'm1', name: PRODUCTS.boom3d.name, description: t('home.apps.boom3d_desc'), iconPath: getVariant(PRODUCTS.boom3d, 'mac').icon, priceOriginal: formatPrice(PRODUCTS.boom3d.pricing, 'original'), priceDiscounted: formatPrice(PRODUCTS.boom3d.pricing, 'discounted'), learnMoreUrl: getVariant(PRODUCTS.boom3d, 'mac').route },
+    { id: 'm2', name: PRODUCTS.boom2.name, description: t('home.apps.boom2_desc'), iconPath: getVariant(PRODUCTS.boom2, 'mac').icon, learnMoreUrl: getVariant(PRODUCTS.boom2, 'mac').route },
+    { id: 'm3', name: PRODUCTS.capto.name, description: t('home.apps.capto_desc'), iconPath: getVariant(PRODUCTS.capto, 'mac').icon, priceOriginal: formatPrice(PRODUCTS.capto.pricing, 'original'), priceDiscounted: formatPrice(PRODUCTS.capto.pricing, 'discounted'), learnMoreUrl: getVariant(PRODUCTS.capto, 'mac').route },
   ];
 
   const windowsApps: AppItem[] = [
-    { id: 'w1', name: 'Boom 3D', description: t('home.apps.boom3d_desc'), iconPath: '/apps/boom3d-window.png', priceOriginal: 'INR 3700', priceDiscounted: 'INR 925.37', learnMoreUrl: '/boom3D' },
-    { id: 'w2', name: 'AuDimix', description: t('home.apps.audimix_desc'), iconPath: '/apps/AuDimix-Window.jpeg', learnMoreUrl: '/audimix' },
-    { id: 'w3', name: 'Capto', description: t('home.apps.capto_desc'), iconPath: '/apps/Capto-window.jpeg', priceOriginal: 'INR 1499', priceDiscounted: 'INR 749.5', learnMoreUrl: '/capto/windows' },
+    { id: 'w1', name: PRODUCTS.boom3d.name, description: t('home.apps.boom3d_desc'), iconPath: getVariant(PRODUCTS.boom3d, 'windows').icon, priceOriginal: formatPrice(PRODUCTS.boom3d.pricing, 'original'), priceDiscounted: formatPrice(PRODUCTS.boom3d.pricing, 'discounted'), learnMoreUrl: getVariant(PRODUCTS.boom3d, 'windows').route },
+    { id: 'w2', name: PRODUCTS.audimix.name, description: t('home.apps.audimix_desc'), iconPath: getVariant(PRODUCTS.audimix, 'windows').icon, learnMoreUrl: getVariant(PRODUCTS.audimix, 'windows').route },
+    { id: 'w3', name: PRODUCTS.capto.name, description: t('home.apps.capto_desc'), iconPath: getVariant(PRODUCTS.capto, 'windows').icon, priceOriginal: formatPrice(PRODUCTS.capto.pricing, 'original'), priceDiscounted: formatPrice(PRODUCTS.capto.pricing, 'discounted'), learnMoreUrl: getVariant(PRODUCTS.capto, 'windows').route },
   ];
 
   const iosApps: AppItem[] = [
-    { id: 'i1', name: 'Boom for iOS', description: t('home.apps.boom_ios_desc'), iconPath: '/apps/Boom for iOS.jpeg', priceDiscounted: t('home.apps.free_with_iap'), learnMoreUrl: '/boomformobile' },
-    { id: 'i2', name: 'Vizmato', description: t('home.apps.vizmato_desc'), iconPath: '/apps/Vizmato-ios.jpeg', priceDiscounted: t('home.apps.free_with_iap'), learnMoreUrl: '/vizmato' },
-    { id: 'i3', name: 'AudiOn', description: t('home.apps.audion_desc'), iconPath: '/apps/AudiOn-ios.jpeg', priceDiscounted: t('home.apps.free_with_iap'), learnMoreUrl: '/audion' },
+    { id: 'i1', name: 'Boom for iOS', description: t('home.apps.boom_ios_desc'), iconPath: getVariant(PRODUCTS.boomMobile, 'ios').icon, priceDiscounted: t('home.apps.free_with_iap'), learnMoreUrl: getVariant(PRODUCTS.boomMobile, 'ios').route },
+    { id: 'i2', name: PRODUCTS.vizmato.name, description: t('home.apps.vizmato_desc'), iconPath: getVariant(PRODUCTS.vizmato, 'ios').icon, priceDiscounted: t('home.apps.free_with_iap'), learnMoreUrl: getVariant(PRODUCTS.vizmato, 'ios').route },
+    { id: 'i3', name: PRODUCTS.audion.name, description: t('home.apps.audion_desc'), iconPath: getVariant(PRODUCTS.audion, 'ios').icon, priceDiscounted: t('home.apps.free_with_iap'), learnMoreUrl: getVariant(PRODUCTS.audion, 'ios').route },
   ];
 
   const androidApps: AppItem[] = [
-    { id: 'a1', name: 'Boom for Android', description: t('home.apps.boom_ios_desc'), iconPath: '/apps/Boom for Android.jpeg', priceDiscounted: t('home.apps.free_with_iap'), learnMoreUrl: '/boomformobile' },
-    { id: 'a2', name: 'Vizmato', description: t('home.apps.vizmato_desc'), iconPath: '/apps/Vizmato-android.png', priceDiscounted: t('home.apps.free_with_iap'), learnMoreUrl: '/vizmato' },
-    { id: 'a3', name: 'AudiOn', description: t('home.apps.audion_android_desc'), iconPath: '/apps/AudiON-android.png', priceDiscounted: t('home.apps.free_with_iap'), learnMoreUrl: '/audion' },
+    { id: 'a1', name: 'Boom for Android', description: t('home.apps.boom_ios_desc'), iconPath: getVariant(PRODUCTS.boomMobile, 'android').icon, priceDiscounted: t('home.apps.free_with_iap'), learnMoreUrl: getVariant(PRODUCTS.boomMobile, 'android').route },
+    { id: 'a2', name: PRODUCTS.vizmato.name, description: t('home.apps.vizmato_desc'), iconPath: getVariant(PRODUCTS.vizmato, 'android').icon, priceDiscounted: t('home.apps.free_with_iap'), learnMoreUrl: getVariant(PRODUCTS.vizmato, 'android').route },
+    { id: 'a3', name: PRODUCTS.audion.name, description: t('home.apps.audion_android_desc'), iconPath: getVariant(PRODUCTS.audion, 'android').icon, priceDiscounted: t('home.apps.free_with_iap'), learnMoreUrl: getVariant(PRODUCTS.audion, 'android').route },
   ];
 
   return (
     <div className="min-h-screen bg-[#fff] text-gray-900 font-sans">
       <Helmet>
+        {/* =========================================
+            PRIMARY SEO METADATA
+            Homepage-specific <title>, description, keywords, subject.
+            hreflang for all 8 locales + x-default is injected globally
+            by SEOHead.tsx (mounted once in the router below), not here.
+            ========================================= */}
         <title>Global Delight | Boom 3D, Capto, Vizmato & Camera Plus Pro Apps</title>
         <meta name="description" content="Global Delight builds award-winning audio, video, and photography apps — Boom 3D volume booster & equalizer, Capto screen recorder, Vizmato video editor, and Camera Plus Pro for Mac, Windows, iOS & Android." />
         <meta name="keywords" content="Global Delight, Boom 3D, volume booster, Mac equalizer, 3D surround sound, Capto, screen recorder, screenshot tool, Vizmato, video editor app, Camera Plus Pro, iPhone camera app, AuDimix, vocal remover, AudiOn, voice recorder app, bass booster, speaker booster, amplifier" />
         <meta name="subject" content="Global Delight | Makers of Boom 3D, Capto, Vizmato & Camera Plus Pro" />
+
+        {/* =========================================
+            OPEN GRAPH METADATA
+            ========================================= */}
         <meta property="og:title" content="Global Delight | Makers of Boom 3D, Capto, Vizmato & Camera Plus Pro" />
         <meta property="og:description" content="Award-winning audio, video, and photography apps for Mac, Windows, iOS & Android — including Boom 3D, Capto, Vizmato, Camera Plus Pro, AuDimix, and AudiOn." />
-        <meta name="twitter:title" content="Global Delight | Makers of Boom 3D, Capto, Vizmato & Camera Plus Pro" />
-        <meta name="twitter:description" content="Award-winning audio, video, and photography apps for Mac, Windows, iOS & Android — including Boom 3D, Capto, Vizmato, Camera Plus Pro, AuDimix, and AudiOn." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${domain}/`} />
-        <meta name="twitter:url" content={`${domain}/`} />
         <meta property="og:locale" content="en_US" />
+
+        {/* =========================================
+            TWITTER CARD METADATA
+            ========================================= */}
+        <meta name="twitter:title" content="Global Delight | Makers of Boom 3D, Capto, Vizmato & Camera Plus Pro" />
+        <meta name="twitter:description" content="Award-winning audio, video, and photography apps for Mac, Windows, iOS & Android — including Boom 3D, Capto, Vizmato, Camera Plus Pro, AuDimix, and AudiOn." />
+        <meta name="twitter:url" content={`${domain}/`} />
+
+        {/* =========================================
+            CANONICAL URL
+            ========================================= */}
         <link rel="canonical" href={`${domain}/`} />
+
+        {/* =========================================
+            STRUCTURED DATA (JSON-LD)
+            Organization schema — name, logo, contact point, social profiles.
+            ========================================= */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -101,52 +125,90 @@ function Home() {
           })}
         </script>
       </Helmet>
-      
+
+      {/* =========================================
+          HEADER / NAVIGATION
+          Logo, primary nav links (About/Business/FAQ/Contact/Blog),
+          product search, and language switcher.
+          ========================================= */}
       <Navbar />
       <FloatingSocials />
       <ScrollToTopButton />
-      
+
       <main>
+        {/* =========================================
+            HERO SECTION
+            Rotating banner carousel with per-slide app badge,
+            headline, subtitle, and store/CTA buttons.
+            ========================================= */}
         <Hero />
-        
+
+        {/* =========================================
+            PRODUCTS SECTION
+            Four platform rows (Mac / Windows / iOS / Android), each a
+            flip-card carousel of that platform's apps sourced from
+            src/data/products.ts — name, icon, price, and route.
+            ========================================= */}
         <div className="py-4">
-          <AppCategory 
+          <AppCategory
             title={t('home.categories.mac_app')}
-            deviceImageAlt="MacBook" 
-            deviceImagePath="/devices/macbook.png" 
+            deviceImageAlt="MacBook"
+            deviceImagePath="/devices/macbook.png"
             imageClassName="max-w-[350px] md:max-w-[450px]"
-            apps={macApps} 
+            apps={macApps}
           />
-          <AppCategory 
+          <AppCategory
             title={t('home.categories.windows_app')}
-            deviceImageAlt="Windows Laptop" 
-            deviceImagePath="/devices/windows.png" 
+            deviceImageAlt="Windows Laptop"
+            deviceImagePath="/devices/windows.png"
             imageClassName="max-w-[350px] md:max-w-[450px]"
-            apps={windowsApps} 
-            reverse={false} 
+            apps={windowsApps}
+            reverse={false}
           />
-          <AppCategory 
+          <AppCategory
             title={t('home.categories.ios_app')}
-            deviceImageAlt="iPhone" 
-            deviceImagePath="/devices/iphone.png" 
+            deviceImageAlt="iPhone"
+            deviceImagePath="/devices/iphone.png"
             imageClassName="max-w-[250px] md:max-w-[300px]"
-            apps={iosApps} 
+            apps={iosApps}
           />
-          <AppCategory 
-            title={t('home.categories.android_app')} 
-            deviceImageAlt="Android Phone" 
-            deviceImagePath="/devices/Android.png" 
+          <AppCategory
+            title={t('home.categories.android_app')}
+            deviceImageAlt="Android Phone"
+            deviceImagePath="/devices/Android.png"
             imageClassName="max-w-[150px] md:max-w-[180px]"
-            apps={androidApps} 
-            reverse={false} 
+            apps={androidApps}
+            reverse={false}
           />
         </div>
 
+        {/* =========================================
+            GET INSPIRED
+            Four-card fan layout of user stories/photos (name + short
+            description per card), localized via home.get_inspired.people.
+            ========================================= */}
         <GetInspired />
+
+        {/* =========================================
+            FEATURED PRODUCTS
+            Flagship-app showcase carousel (Boom 3D, Capto, Vizmato,
+            Camera Plus, AuDimix, AudiOn).
+            ========================================= */}
         <FeaturedWork />
+
+        {/* =========================================
+            AWARDS / HONORS & CUSTOMER REVIEWS
+            Press/award badge strip followed by review badge strip
+            (image-only; no extractable quote text in the source).
+            ========================================= */}
         <HonorsReviews />
       </main>
 
+      {/* =========================================
+          FOOTER
+          Product links, About/Store/Resources columns, social icons,
+          language selector, and copyright — shared across every page.
+          ========================================= */}
       <Footer />
     </div>
   );

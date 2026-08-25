@@ -190,7 +190,17 @@
     "get_inspired": {
       "get": "Deixe-se",
       "inspired": "Inspirar",
-      "subtitle": "Pessoas extraordinárias; histórias inesperadas. Conheça pessoas ao redor do mundo que usam os aplicativos da Global Delight para elevar o dia a dia."
+      "subtitle": "Pessoas extraordinárias; histórias inesperadas. Conheça pessoas ao redor do mundo que usam os aplicativos da Global Delight para elevar o dia a dia.",
+      "people": {
+        "p1_name": "M Ramachandra Acharya",
+        "p1_desc": "Pessoas extraordinárias; histórias inesperadas. Conheça pessoas ao redor do mundo que usam os aplicativos da Global",
+        "p2_name": "Pradeep Udupi",
+        "p2_desc": "Pessoas extraordinárias; histórias inesperadas. Conheça pessoas ao redor do mundo que usam os aplicativos da Global Delight para elevar o dia a dia.",
+        "p3_name": "Deepa",
+        "p3_desc": "Pessoas extraordinárias; histórias inesperadas. Conheça pessoas ao redor do mundo que usam os aplicativos da Global Delight para elevar o dia a dia. Os aplicativos da Global Delight para elevar o dia a dia.",
+        "p4_name": "Sherwin Vaz",
+        "p4_desc": "Pessoas extraordinárias; histórias inesperadas. Conheça pessoas ao redor do mundo que usam os aplicativos da Global Delight para elevar o dia a dia. Os aplicativos da Global Delight para elevar o dia a dia."
+      }
     },
     "featured_work": {
       "title": "Produto em Destaque",
@@ -353,6 +363,17 @@
       "subtitle": "Junte-se a milhões de usuários e experimente o som como nunca antes.",
       "download": "Baixe Agora",
       "available_macos": "Disponível para macOS"
+    },
+    "audio_amplify": {
+      "title": "Amplifique arquivos de áudio individualmente",
+      "description": "Aumente permanentemente o volume de qualquer arquivo de áudio no seu Mac, individualmente ou em lote. Seja um memorando de voz baixo, um podcast com volume fraco ou uma música mal gravada, o Boom 2 permite que você arraste facilmente arquivos de áudio e os amplifique até o volume desejado. Você pode amplificar vários arquivos de uma só vez, economizando tempo e garantindo que todas as suas mídias fiquem altas e claras para reprodução em qualquer dispositivo."
+    },
+    "awards": {
+      "title": "Prêmios e Reconhecimentos",
+      "alt_2011": "Prêmio 2011",
+      "alt_2014": "Prêmio 2014",
+      "alt_2018": "Prêmio 2018",
+      "alt_macworld": "Prêmio Macworld"
     }
   },
   "boom3d": {

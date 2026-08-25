@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from './LocalizedLink';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { PRODUCTS, getVariant } from '@/data/products';
 
 interface FooterProps {
   logoUrl?: string;
@@ -62,17 +63,17 @@ export function Footer({ logoUrl }: FooterProps = {}) {
               </span>
             </h4>
             <ul className={`space-y-4 text-[13px] text-gray-400 pb-6 md:pb-0 ${openSection === 'products' ? 'block' : 'hidden md:block'}`}>
-              <li><Link to="/boom3D" className="hover:text-white transition">{t('footer.boom3d_mac')}</Link></li>
-              <li><Link to="/boom3D" className="hover:text-white transition">{t('footer.boom3d_windows')}</Link></li>
-              <li><Link to="/boom2" className="hover:text-white transition">{t('footer.boom2')}</Link></li>
-              <li><Link to="/boomformobile" className="hover:text-white transition">{t('footer.boom_mobile')}</Link></li>
-              <li><Link to="/capto" className="hover:text-white transition">{t('footer.capto_mac')}</Link></li>
-              <li><Link to="/capto/windows" className="hover:text-white transition">{t('footer.capto_windows')}</Link></li>
-              <li><Link to="/audimix" className="hover:text-white transition">{t('footer.audimix')}</Link></li>
-              <li><Link to="/audion" className="hover:text-white transition">{t('footer.audion')}</Link></li>
-              <li><Link to="/vizmato" className="hover:text-white transition">{t('footer.vizmato')}</Link></li>
-              <li><Link to="/cameraplus" className="hover:text-white transition">{t('footer.cameraplus')}</Link></li>
-              <li><Link to="/camerapluspro" className="hover:text-white transition">{t('footer.camerapluspro')}</Link></li>
+              <li><Link to={getVariant(PRODUCTS.boom3d, 'mac').route} className="hover:text-white transition">{t('footer.boom3d_mac')}</Link></li>
+              <li><Link to={getVariant(PRODUCTS.boom3d, 'windows').route} className="hover:text-white transition">{t('footer.boom3d_windows')}</Link></li>
+              <li><Link to={getVariant(PRODUCTS.boom2, 'mac').route} className="hover:text-white transition">{t('footer.boom2')}</Link></li>
+              <li><Link to={getVariant(PRODUCTS.boomMobile, 'ios').route} className="hover:text-white transition">{t('footer.boom_mobile')}</Link></li>
+              <li><Link to={getVariant(PRODUCTS.capto, 'mac').route} className="hover:text-white transition">{t('footer.capto_mac')}</Link></li>
+              <li><Link to={getVariant(PRODUCTS.capto, 'windows').route} className="hover:text-white transition">{t('footer.capto_windows')}</Link></li>
+              <li><Link to={getVariant(PRODUCTS.audimix, 'windows').route} className="hover:text-white transition">{t('footer.audimix')}</Link></li>
+              <li><Link to={getVariant(PRODUCTS.audion, 'ios').route} className="hover:text-white transition">{t('footer.audion')}</Link></li>
+              <li><Link to={getVariant(PRODUCTS.vizmato, 'ios').route} className="hover:text-white transition">{t('footer.vizmato')}</Link></li>
+              <li><Link to={getVariant(PRODUCTS.cameraplus, 'ios').route} className="hover:text-white transition">{t('footer.cameraplus')}</Link></li>
+              <li><Link to={getVariant(PRODUCTS.camerapluspro, 'ios').route} className="hover:text-white transition">{t('footer.camerapluspro')}</Link></li>
             </ul>
           </div>
 

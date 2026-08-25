@@ -21,7 +21,7 @@ export function Boom2Hero() {
 
         {/* Video Background */}
         <video
-          autoPlay
+          autoPlay={navigator.userAgent !== 'ReactSnap'}
           loop
           muted
           playsInline

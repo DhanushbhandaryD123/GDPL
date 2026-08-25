@@ -1,47 +1,20 @@
 import { motion } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 
-const inspiredPeople = [
-  {
-    name: 'M Ramachandra Acharya',
-    image: '/business/VT/c1.png',
-    description: 'Extraordinary individuals; unexpected stories. Meet the people around the world using Global',
-    rotation: -15,
-    yOffset: -30,
-    xOffset: -310,
-    zIndex: 10,
-  },
-  {
-    name: 'Pradeep Udupi',
-    image: '/business/VT/c1.png',
-    description: 'Extraordinary individuals; unexpected stories. Meet the people around the world using Global Delight Apps to elevate everyday life.',
-    rotation: -15,
-    yOffset: -30,
-    xOffset: -100,
-    zIndex: 20,
-  },
-  {
-    name: 'Deepa',
-    image: '/business/VT/c1.png',
-    description: 'Extraordinary individuals; unexpected stories. Meet the people around the world using Global Delight Apps to elevate everyday life. Global Delight Apps to elevate everyday life.',
-    rotation: -15,
-    yOffset: -5,
-    xOffset: 100,
-    zIndex: 30,
-  },
-  {
-    name: 'Sherwin Vaz',
-    image: '/business/VT/c1.png',
-    description: 'Extraordinary individuals; unexpected stories. Meet the people around the world using Global Delight Apps to elevate everyday life. Global Delight Apps to elevate everyday life.',
-    rotation: -15,
-    yOffset: 35,
-    xOffset: 310,
-    zIndex: 40,
-  },
-];
+const inspiredPeopleLayout = [
+  { key: 'p1', image: '/business/VT/c1.png', rotation: -15, yOffset: -30, xOffset: -310, zIndex: 10 },
+  { key: 'p2', image: '/business/VT/c1.png', rotation: -15, yOffset: -30, xOffset: -100, zIndex: 20 },
+  { key: 'p3', image: '/business/VT/c1.png', rotation: -15, yOffset: -5, xOffset: 100, zIndex: 30 },
+  { key: 'p4', image: '/business/VT/c1.png', rotation: -15, yOffset: 35, xOffset: 310, zIndex: 40 },
+] as const;
 
 export function GetInspired() {
   const { t } = useTranslation();
+  const inspiredPeople = inspiredPeopleLayout.map((slot) => ({
+    ...slot,
+    name: t(`home.get_inspired.people.${slot.key}_name`),
+    description: t(`home.get_inspired.people.${slot.key}_desc`),
+  }));
   return (
     <section className="w-full bg-white py-8 lg:py-12 px-3 md:px-6 flex flex-col items-center font-sans">
       {/* Boxed blue container */}

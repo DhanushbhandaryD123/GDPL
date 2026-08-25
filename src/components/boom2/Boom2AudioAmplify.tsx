@@ -1,6 +1,8 @@
 import { motion } from 'motion/react';
+import { useTranslation } from 'react-i18next';
 
 export function Boom2AudioAmplify() {
+  const { t } = useTranslation();
   return (
     <section className="py-16 md:py-24 px-4 max-w-[1200px] mx-auto flex flex-col items-center text-center">
       
@@ -13,11 +15,10 @@ export function Boom2AudioAmplify() {
         className="max-w-4xl mb-12"
       >
         <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold mb-6 text-[#0a0a0f] tracking-tight leading-tight">
-          Amplify individual audio files
+          {t('boom2.audio_amplify.title')}
         </h2>
         <p className="text-gray-600 text-lg md:text-xl leading-relaxed font-medium">
-          Permanently boost the sound levels in any audio files on your Mac. Individually, or in batches.
-          Whether it's a quiet voice memo, a low-volume podcast, or a poorly recorded song, Boom 2 lets you easily drop in audio files and amplify them to your desired volume. You can boost multiple files at once, saving you time and ensuring all your media is loud and clear for playback on any device.
+          {t('boom2.audio_amplify.description')}
         </p>
       </motion.div>
 
@@ -30,7 +31,7 @@ export function Boom2AudioAmplify() {
         className="w-full max-w-5xl relative rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-200 bg-white"
       >
         <video
-          autoPlay
+          autoPlay={navigator.userAgent !== 'ReactSnap'}
           loop
           muted
           playsInline

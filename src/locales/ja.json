@@ -190,7 +190,17 @@
     "get_inspired": {
       "get": "インスピレーションを",
       "inspired": "得よう",
-      "subtitle": "並外れた人々、予想外の物語。世界中でGlobal Delightのアプリを使って日常を高めている人々に出会いましょう。"
+      "subtitle": "並外れた人々、予想外の物語。世界中でGlobal Delightのアプリを使って日常を高めている人々に出会いましょう。",
+      "people": {
+        "p1_name": "M Ramachandra Acharya",
+        "p1_desc": "並外れた人々、予想外の物語。世界中でGlobal",
+        "p2_name": "Pradeep Udupi",
+        "p2_desc": "並外れた人々、予想外の物語。世界中でGlobal Delightのアプリを使って日常を高めている人々に出会いましょう。",
+        "p3_name": "Deepa",
+        "p3_desc": "並外れた人々、予想外の物語。世界中でGlobal Delightのアプリを使って日常を高めている人々に出会いましょう。Global Delightのアプリで日常をより豊かに。",
+        "p4_name": "Sherwin Vaz",
+        "p4_desc": "並外れた人々、予想外の物語。世界中でGlobal Delightのアプリを使って日常を高めている人々に出会いましょう。Global Delightのアプリで日常をより豊かに。"
+      }
     },
     "featured_work": {
       "title": "注目の製品",
@@ -353,6 +363,17 @@
       "subtitle": "何百万人ものユーザーに加わり、これまでにないサウンドを体験しましょう。",
       "download": "今すぐダウンロード",
       "available_macos": "macOS対応"
+    },
+    "audio_amplify": {
+      "title": "個々のオーディオファイルを増幅",
+      "description": "Macに保存されたオーディオファイルの音量を、1つずつでもまとめてでも、永久にブーストできます。音量の小さいボイスメモ、音の小さいポッドキャスト、録音状態の悪い曲でも、Boom 2ならオーディオファイルを簡単に取り込んで好みの音量まで増幅できます。複数のファイルを一度にブーストできるので、時間を節約しながら、どのデバイスで再生してもすべてのメディアがクリアで聴き取りやすくなります。"
+    },
+    "awards": {
+      "title": "受賞歴",
+      "alt_2011": "2011年受賞",
+      "alt_2014": "2014年受賞",
+      "alt_2018": "2018年受賞",
+      "alt_macworld": "Macworld受賞"
     }
   },
   "boom3d": {

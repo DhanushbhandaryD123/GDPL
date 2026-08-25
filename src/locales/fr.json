@@ -190,7 +190,17 @@
     "get_inspired": {
       "get": "Laissez-vous",
       "inspired": "Inspirer",
-      "subtitle": "Des personnes extraordinaires ; des histoires inattendues. Rencontrez des personnes du monde entier qui utilisent les applications Global Delight pour sublimer leur quotidien."
+      "subtitle": "Des personnes extraordinaires ; des histoires inattendues. Rencontrez des personnes du monde entier qui utilisent les applications Global Delight pour sublimer leur quotidien.",
+      "people": {
+        "p1_name": "M Ramachandra Acharya",
+        "p1_desc": "Des personnes extraordinaires ; des histoires inattendues. Rencontrez des personnes du monde entier qui utilisent les applications Global",
+        "p2_name": "Pradeep Udupi",
+        "p2_desc": "Des personnes extraordinaires ; des histoires inattendues. Rencontrez des personnes du monde entier qui utilisent les applications Global Delight pour sublimer leur quotidien.",
+        "p3_name": "Deepa",
+        "p3_desc": "Des personnes extraordinaires ; des histoires inattendues. Rencontrez des personnes du monde entier qui utilisent les applications Global Delight pour sublimer leur quotidien. Les applications Global Delight pour sublimer le quotidien.",
+        "p4_name": "Sherwin Vaz",
+        "p4_desc": "Des personnes extraordinaires ; des histoires inattendues. Rencontrez des personnes du monde entier qui utilisent les applications Global Delight pour sublimer leur quotidien. Les applications Global Delight pour sublimer le quotidien."
+      }
     },
     "featured_work": {
       "title": "Produit Phare",
@@ -353,6 +363,17 @@
       "subtitle": "Rejoignez des millions d'utilisateurs et vivez le son comme jamais auparavant.",
       "download": "Télécharger",
       "available_macos": "Disponible pour macOS"
+    },
+    "audio_amplify": {
+      "title": "Amplifiez des fichiers audio individuels",
+      "description": "Augmentez de façon permanente le niveau sonore de vos fichiers audio sur Mac, individuellement ou par lots. Qu'il s'agisse d'un mémo vocal trop faible, d'un podcast peu sonore ou d'une chanson mal enregistrée, Boom 2 vous permet de glisser facilement vos fichiers audio et de les amplifier jusqu'au volume souhaité. Vous pouvez amplifier plusieurs fichiers à la fois, ce qui vous fait gagner du temps et garantit que tous vos médias sont audibles et clairs sur n'importe quel appareil."
+    },
+    "awards": {
+      "title": "Prix & Distinctions",
+      "alt_2011": "Prix 2011",
+      "alt_2014": "Prix 2014",
+      "alt_2018": "Prix 2018",
+      "alt_macworld": "Prix Macworld"
     }
   },
   "boom3d": {

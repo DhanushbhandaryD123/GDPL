@@ -1,16 +1,19 @@
+import { useTranslation } from 'react-i18next';
+
 export function Boom2Awards() {
+  const { t } = useTranslation();
   const awards = [
-    { src: '/boom2/2011.png', alt: 'Award 2011' },
-    { src: '/boom2/2014.png', alt: 'Award 2014' },
-    { src: '/boom2/2018.png', alt: 'Award 2018' },
-    { src: '/boom2/Macworld.png', alt: 'Macworld Award' },
+    { src: '/boom2/2011.png', alt: t('boom2.awards.alt_2011') },
+    { src: '/boom2/2014.png', alt: t('boom2.awards.alt_2014') },
+    { src: '/boom2/2018.png', alt: t('boom2.awards.alt_2018') },
+    { src: '/boom2/Macworld.png', alt: t('boom2.awards.alt_macworld') },
   ];
 
   return (
     <section className="py-16 md:py-24 bg-[#060814] relative z-10 border-t border-white/5">
       <div className="max-w-[1400px] mx-auto px-4 text-center">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-16 tracking-tight">
-          Awards & Recognitions
+          {t('boom2.awards.title')}
         </h2>
         
         <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 lg:gap-32">

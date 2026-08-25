@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTranslation } from 'react-i18next';
+import { PRODUCTS, formatPrice } from '../../data/products';
 
 type OSMode = 'mac' | 'windows';
 
@@ -98,8 +99,8 @@ export function Boom3DOSSelector() {
                 {t('boom3d.os_selector.buy_now')}
               </button>
               <div className="mt-4 flex flex-col items-center">
-                <span className="text-[#111111] text-[15px] font-bold">INR 1850</span>
-                <span className="text-gray-400 text-sm line-through font-medium">INR 3700</span>
+                <span className="text-[#111111] text-[15px] font-bold">{formatPrice(PRODUCTS.boom3d.pricing, 'discounted')}</span>
+                <span className="text-gray-400 text-sm line-through font-medium">{formatPrice(PRODUCTS.boom3d.pricing, 'original')}</span>
               </div>
             </div>
           </motion.div>

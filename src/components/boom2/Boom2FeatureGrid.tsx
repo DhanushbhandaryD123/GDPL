@@ -19,7 +19,7 @@ export function Boom2FeatureGrid() {
           <div className="absolute inset-0 z-0">
             <video
               src="/boom2/boom2-efect.mp4"
-              autoPlay
+              autoPlay={navigator.userAgent !== 'ReactSnap'}
               loop
               muted
               playsInline
@@ -59,7 +59,7 @@ export function Boom2FeatureGrid() {
           <div className="absolute inset-0 z-0 bg-black">
             <video
               src="/boom2/Product_animation_with_audio_eff…_202608171653.mp4"
-              autoPlay
+              autoPlay={navigator.userAgent !== 'ReactSnap'}
               loop
               muted
               playsInline
@@ -99,7 +99,7 @@ export function Boom2FeatureGrid() {
           <div className="absolute inset-0 z-0 bg-black">
             <video
               src="/boom2/Volume_booster_video_generation_202608171710.mp4"
-              autoPlay
+              autoPlay={navigator.userAgent !== 'ReactSnap'}
               loop
               muted
               playsInline
@@ -139,7 +139,7 @@ export function Boom2FeatureGrid() {
           <div className="absolute inset-0 z-0 bg-black">
             <video
               src="/boom2/Generate_product_demonstration_v…_202608171719.mp4"
-              autoPlay
+              autoPlay={navigator.userAgent !== 'ReactSnap'}
               loop
               muted
               playsInline

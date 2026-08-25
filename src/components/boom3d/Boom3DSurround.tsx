@@ -77,12 +77,12 @@ export function Boom3DSurround() {
             transition={{ duration: 0.6, type: "spring" }}
             className="relative z-20 w-[300px] sm:w-[500px] md:w-[750px] lg:w-[950px] xl:w-[1050px] aspect-video bg-black rounded-2xl md:rounded-3xl shadow-[0_20px_50px_rgba(59,130,246,0.25)] border border-gray-100/50 overflow-hidden flex items-center justify-center"
           >
-            <video 
-              src="/boom3D/video3D.mp4" 
-              autoPlay 
-              loop 
-              muted 
-              playsInline 
+            <video
+              src="/boom3D/video3D.mp4"
+              autoPlay={navigator.userAgent !== 'ReactSnap'}
+              loop
+              muted
+              playsInline
               className="w-full h-full object-cover"
             />
           </motion.div>

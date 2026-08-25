@@ -41,7 +41,7 @@ export function HeroWithVideoBackground() {
       <section className="relative w-full rounded-3xl md:rounded-[2.5rem] shadow-2xl bg-[#09090b] overflow-hidden flex items-center justify-center min-h-[550px] sm:min-h-[600px] md:aspect-auto md:h-[85vh] md:max-h-[750px]">
       {/* Video Background */}
       <video
-        autoPlay
+        autoPlay={navigator.userAgent !== 'ReactSnap'}
         loop
         muted
         playsInline

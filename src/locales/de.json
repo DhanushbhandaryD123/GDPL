@@ -190,7 +190,17 @@
     "get_inspired": {
       "get": "Lass dich",
       "inspired": "inspirieren",
-      "subtitle": "Außergewöhnliche Menschen; unerwartete Geschichten. Lerne Menschen aus aller Welt kennen, die Global-Delight-Apps nutzen, um ihren Alltag zu bereichern."
+      "subtitle": "Außergewöhnliche Menschen; unerwartete Geschichten. Lerne Menschen aus aller Welt kennen, die Global-Delight-Apps nutzen, um ihren Alltag zu bereichern.",
+      "people": {
+        "p1_name": "M Ramachandra Acharya",
+        "p1_desc": "Außergewöhnliche Menschen; unerwartete Geschichten. Lerne Menschen aus aller Welt kennen, die Global",
+        "p2_name": "Pradeep Udupi",
+        "p2_desc": "Außergewöhnliche Menschen; unerwartete Geschichten. Lerne Menschen aus aller Welt kennen, die Global-Delight-Apps nutzen, um ihren Alltag zu bereichern.",
+        "p3_name": "Deepa",
+        "p3_desc": "Außergewöhnliche Menschen; unerwartete Geschichten. Lerne Menschen aus aller Welt kennen, die Global-Delight-Apps nutzen, um ihren Alltag zu bereichern. Global-Delight-Apps, um den Alltag zu bereichern.",
+        "p4_name": "Sherwin Vaz",
+        "p4_desc": "Außergewöhnliche Menschen; unerwartete Geschichten. Lerne Menschen aus aller Welt kennen, die Global-Delight-Apps nutzen, um ihren Alltag zu bereichern. Global-Delight-Apps, um den Alltag zu bereichern."
+      }
     },
     "featured_work": {
       "title": "Ausgewähltes Produkt",
@@ -353,6 +363,17 @@
       "subtitle": "Schließ dich Millionen von Nutzern an und erlebe Klang wie nie zuvor.",
       "download": "Jetzt herunterladen",
       "available_macos": "Verfügbar für macOS"
+    },
+    "audio_amplify": {
+      "title": "Einzelne Audiodateien verstärken",
+      "description": "Erhöhe dauerhaft die Lautstärke beliebiger Audiodateien auf deinem Mac – einzeln oder im Stapel. Ob leise Sprachnotiz, ein zu leiser Podcast oder ein schlecht aufgenommener Song: Mit Boom 2 kannst du Audiodateien einfach hineinziehen und auf die gewünschte Lautstärke verstärken. Du kannst mehrere Dateien gleichzeitig verstärken, sparst dadurch Zeit und stellst sicher, dass alle deine Medien auf jedem Gerät laut und klar wiedergegeben werden."
+    },
+    "awards": {
+      "title": "Auszeichnungen & Anerkennungen",
+      "alt_2011": "Auszeichnung 2011",
+      "alt_2014": "Auszeichnung 2014",
+      "alt_2018": "Auszeichnung 2018",
+      "alt_macworld": "Macworld-Auszeichnung"
     }
   },
   "boom3d": {

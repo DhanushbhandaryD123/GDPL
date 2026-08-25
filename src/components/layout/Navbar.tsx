@@ -4,6 +4,7 @@ import { Link } from './LocalizedLink';
 import { Search, ShoppingCart, Menu, X, Smile } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { rememberLanguage, SUPPORTED_LANGS } from '@/lib/languagePreference';
+import { PRODUCTS, getVariant } from '@/data/products';
 
 interface NavbarProps {
   logoUrl?: string;
@@ -61,17 +62,17 @@ export function Navbar({ logoUrl }: NavbarProps) {
   }, []);
 
   const searchProducts = [
-    { name: 'Boom 3D Mac', href: '/boom3D' },
-    { name: 'Boom 3D Windows', href: '/boom3D' },
-    { name: 'Boom 2', href: '/boom2' },
-    { name: 'Boom for Mobile', href: '/boomformobile' },
-    { name: 'Capto for Mac', href: '/capto' },
-    { name: 'Capto for Windows', href: '/capto/windows' },
-    { name: 'AuDimix', href: '/audimix' },
-    { name: 'AudiOn', href: '/audion' },
-    { name: 'Vizmato IOS and Android', href: '/vizmato' },
-    { name: 'Camera Plus', href: '/cameraplus' },
-    { name: 'Camera Plus Pro', href: '/camerapluspro' }
+    { name: 'Boom 3D Mac', href: getVariant(PRODUCTS.boom3d, 'mac').route },
+    { name: 'Boom 3D Windows', href: getVariant(PRODUCTS.boom3d, 'windows').route },
+    { name: 'Boom 2', href: getVariant(PRODUCTS.boom2, 'mac').route },
+    { name: 'Boom for Mobile', href: getVariant(PRODUCTS.boomMobile, 'ios').route },
+    { name: 'Capto for Mac', href: getVariant(PRODUCTS.capto, 'mac').route },
+    { name: 'Capto for Windows', href: getVariant(PRODUCTS.capto, 'windows').route },
+    { name: 'AuDimix', href: getVariant(PRODUCTS.audimix, 'windows').route },
+    { name: 'AudiOn', href: getVariant(PRODUCTS.audion, 'ios').route },
+    { name: 'Vizmato IOS and Android', href: getVariant(PRODUCTS.vizmato, 'ios').route },
+    { name: 'Camera Plus', href: getVariant(PRODUCTS.cameraplus, 'ios').route },
+    { name: 'Camera Plus Pro', href: getVariant(PRODUCTS.camerapluspro, 'ios').route }
   ];
 
   const filteredProducts = searchProducts.filter(product => 
