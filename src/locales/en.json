@@ -374,6 +374,18 @@
       "alt_2014": "Award 2014",
       "alt_2018": "Award 2018",
       "alt_macworld": "Macworld Award"
+    },
+    "more_features": {
+      "title": "More Ways to Shape Your Sound",
+      "subtitle": "Beyond the basics, Boom 2 gives you granular control over every detail of your audio.",
+      "equalizer_title": "31-Band Equalizer",
+      "equalizer_desc": "Fine-tune every frequency with studio-grade precision, or pick from expertly crafted presets for any genre.",
+      "sample_rate_title": "Sample Rate Control",
+      "sample_rate_desc": "Match your output sample rate to your source material or audio hardware for the cleanest possible playback.",
+      "balancer_title": "Audio Balancer (L-R)",
+      "balancer_desc": "Shift the balance between your left and right channels to compensate for room acoustics or hearing preference.",
+      "stereo_title": "Stereo Widening",
+      "stereo_desc": "Expand the stereo field for a wider, more spacious soundstage on any speakers or headphones."
     }
   },
   "boom3d": {
