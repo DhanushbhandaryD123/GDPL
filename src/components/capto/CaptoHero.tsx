@@ -1,11 +1,265 @@
-import { motion } from 'motion/react';
+import { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { ShoppingCart } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { onSplashComplete } from '@/lib/splashScreenSignal';
+
+// =========================================
+// 24-HOUR OFFER COUNTDOWN
+// Uses the user's local browser time.
+// Rolling 24-hour countdown beginning from the user's current local date/time.
+// Updates every second; handles hours, minutes, seconds correctly.
+// When expired, resets gracefully to next 24-hour period.
+// =========================================
+function use24HourCountdown() {
+  const [expiry, setExpiry] = useState(() => Date.now() + 24 * 60 * 60 * 1000);
+  const [now, setNow] = useState(() => Date.now());
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      const current = Date.now();
+      setNow(current);
+      // Gracefully handle expiry – rolling reset to next 24h
+      if (current >= expiry) {
+        setExpiry(current + 24 * 60 * 60 * 1000);
+      }
+    }, 1000);
+    return () => clearInterval(id);
+  }, [expiry]);
+
+  const diff = Math.max(0, expiry - now);
+  const isExpired = diff === 0;
+  const h = Math.floor(diff / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+
+  return {
+    hours: String(h).padStart(2, '0'),
+    minutes: String(m).padStart(2, '0'),
+    seconds: String(s).padStart(2, '0'),
+    isExpired,
+    expiry,
+  };
+}
+
+// =========================================
+// REDUCED MOTION SUPPORT
+// Respects prefers-reduced-motion.
+// =========================================
+function usePrefersReducedMotion() {
+  const [prefersReducedMotion] = useState(
+    () => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  );
+  return prefersReducedMotion;
+}
+
+interface TravelTarget {
+  x: number;
+  y: number;
+  scale: number;
+}
+
+// Small celebratory particles that burst outward from the centered text.
+// Fixed set (angle / distance / color / delay) computed once at module
+// load — deterministic, so it doesn't need to be recalculated per render.
+const CONFETTI_COLORS = ['#6554ff', '#2563eb', '#ffc145', '#22c1a5'];
+const CONFETTI_PARTICLES = Array.from({ length: 14 }, (_, i) => {
+  const angle = (i / 14) * Math.PI * 2;
+  const distance = 90 + (i % 3) * 40;
+  return {
+    id: i,
+    x: Math.cos(angle) * distance,
+    y: Math.sin(angle) * distance,
+    color: CONFETTI_COLORS[i % CONFETTI_COLORS.length],
+    size: 6 + (i % 3) * 3,
+    delay: (i % 5) * 0.03,
+  };
+});
 
 export function CaptoHero() {
   const { t } = useTranslation();
+  // =========================================
+  // 75% OFF PROMOTION
+  // Prominently communicated as fixed 75% OFF for the 24-hour rolling offer.
+  // =========================================
+  const { hours, minutes, seconds, isExpired } = use24HourCountdown();
+  const prefersReducedMotion = usePrefersReducedMotion();
+
+  // =========================================
+  // 75% OFF ENTRANCE ANIMATION
+  // Starts in the center of the viewport
+  // and transitions into the actual offer.
+  // =========================================
+  // `hasPlayedRef` guarantees the sequence is kindled exactly once per page
+  // load — React re-renders (countdown ticking every second, etc.) never
+  // re-trigger it because the effect below bails out immediately once it's
+  // already fired.
+  const hasPlayedRef = useRef(false);
+  const [entranceDone, setEntranceDone] = useState(prefersReducedMotion);
+  // Celebration window (background blur/dim + confetti burst + a shimmering
+  // color sweep on "75% OFF") — active only while the clone is held centered,
+  // i.e. the same span as the "hold" keyframe segment below (times 0.18–0.55
+  // of the 2.4s sequence ≈ 430ms–1320ms). Everything here clears itself
+  // before the clone starts travelling, so it never bleeds into the offer's
+  // permanent, plain design.
+  const CELEBRATION_END_MS = 1320;
+  const [celebrating, setCelebrating] = useState(false);
+
+  // =========================================
+  // OFFER DESTINATION POSITION
+  // Dynamically calculates the final position
+  // across different screen sizes.
+  // =========================================
+  // The "75% OFF" text inside the real offer banner is the landing spot the
+  // floating clone travels to. Measured live via getBoundingClientRect (no
+  // hardcoded coordinates), so it's correct at any viewport size.
+  const offerTextRef = useRef<HTMLSpanElement>(null);
+  const [travelTarget, setTravelTarget] = useState<TravelTarget | null>(null);
+
+  const measureTravelTarget = () => {
+    const el = offerTextRef.current;
+    if (!el) return null;
+    const rect = el.getBoundingClientRect();
+    const destCenterX = rect.left + rect.width / 2;
+    const destCenterY = rect.top + rect.height / 2;
+    // Shrink the large centered clone down toward the real text's size.
+    const scale = Math.min(1, Math.max(0.3, rect.height / 72));
+    return {
+      x: destCenterX - window.innerWidth / 2,
+      y: destCenterY - window.innerHeight / 2,
+      scale,
+    };
+  };
+
+  useEffect(() => {
+    if (hasPlayedRef.current) return; // never replay on re-render
+    hasPlayedRef.current = true;
+
+    if (prefersReducedMotion) {
+      // Skip the animated center-to-offer journey entirely; show it plainly.
+      setEntranceDone(true);
+      return;
+    }
+
+    // Wait for the intro SplashScreen to actually finish before starting.
+    // Without this, the entrance sequence would run on mount — while the
+    // splash's full-screen overlay is still covering the page — and be
+    // completely over by the time the splash clears, so the user would
+    // never actually see it. If the splash already finished (e.g. this
+    // page was reached via in-app navigation, not the first load), the
+    // callback below fires immediately.
+    let celebrationTimer: ReturnType<typeof setTimeout>;
+    const unsubscribe = onSplashComplete(() => {
+      // Measure once layout has settled, then kick off the travel animation.
+      const target = measureTravelTarget();
+      if (!target) {
+        setEntranceDone(true);
+        return;
+      }
+      setTravelTarget(target);
+      setCelebrating(true);
+      celebrationTimer = setTimeout(() => setCelebrating(false), CELEBRATION_END_MS);
+    });
+
+    return () => {
+      unsubscribe();
+      clearTimeout(celebrationTimer);
+    };
+  }, [prefersReducedMotion]);
+
+  // Recalculate the destination if the window is resized while the
+  // entrance sequence is still in flight, so the clone never lands off-target.
+  useEffect(() => {
+    if (entranceDone || !travelTarget) return;
+    const handleResize = () => {
+      const target = measureTravelTarget();
+      if (target) setTravelTarget(target);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [entranceDone, travelTarget]);
+
   return (
     <section className="relative px-4 pt-2 pb-8 md:px-0 md:pt-8 md:pb-16 overflow-hidden bg-[#ffffff]">
+      {/* =========================================
+          75% OFF ENTRANCE ANIMATION — celebration backdrop
+          A soft blur/dim over the hero banner behind the centered
+          text, active only for the ~1.3s the clone is held in the
+          center (never during travel, never permanent).
+          ========================================= */}
+      <AnimatePresence>
+        {celebrating && (
+          <motion.div
+            aria-hidden="true"
+            className="fixed inset-0 z-[9996] pointer-events-none bg-white/50 backdrop-blur-md"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4, ease: 'easeOut' }}
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Confetti burst, centered behind the entrance text */}
+      <AnimatePresence>
+        {celebrating && (
+          <div className="fixed top-1/2 left-1/2 z-[9997] pointer-events-none" style={{ transform: 'translate(-50%, -50%)' }}>
+            {CONFETTI_PARTICLES.map((p) => (
+              <motion.span
+                key={p.id}
+                className="absolute top-0 left-0 rounded-full"
+                style={{ width: p.size, height: p.size, backgroundColor: p.color }}
+                initial={{ opacity: 0, x: 0, y: 0, scale: 0 }}
+                animate={{ opacity: [0, 1, 0], x: p.x, y: p.y, scale: [0, 1, 0.6] }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1.1, delay: p.delay, ease: 'easeOut' }}
+              />
+            ))}
+          </div>
+        )}
+      </AnimatePresence>
+
+      {/* =========================================
+          75% OFF ENTRANCE ANIMATION (overlay)
+          Fixed positioning keeps this out of document
+          flow entirely, so it never causes a layout
+          shift in the page underneath it.
+          ========================================= */}
+      {travelTarget && !entranceDone && (
+        <motion.div
+          aria-hidden="true"
+          className="fixed top-1/2 left-1/2 z-[9998] pointer-events-none"
+          style={{ translateX: '-50%', translateY: '-50%' }}
+          initial={{ opacity: 0, scale: 0.85, x: 0, y: 0 }}
+          animate={{
+            opacity: [0, 1, 1, 0],
+            scale: [0.85, 1, 1, travelTarget.scale],
+            x: [0, 0, 0, travelTarget.x],
+            y: [0, 0, 0, travelTarget.y],
+          }}
+          transition={{
+            duration: 2.4,
+            times: [0, 0.18, 0.55, 1],
+            ease: ['easeOut', 'linear', [0.65, 0, 0.35, 1]],
+          }}
+          onAnimationComplete={() => setEntranceDone(true)}
+        >
+          <span className="font-black text-[#1c2331] text-[2.25rem] sm:text-[3.25rem] md:text-[4.25rem] tracking-tight whitespace-nowrap drop-shadow-[0_10px_40px_rgba(101,84,255,0.3)]">
+            Available{' '}
+            <motion.span
+              animate={
+                celebrating
+                  ? { color: ['#6554ff', '#2563eb', '#6554ff'] }
+                  : { color: '#6554ff' }
+              }
+              transition={{ duration: 1.1, repeat: celebrating ? Infinity : 0, ease: 'easeInOut' }}
+            >
+              75% OFF
+            </motion.span>
+          </span>
+        </motion.div>
+      )}
+
       {/* Background Decor (Grid & squiggles based on image) */}
       <div className="absolute top-[20%] left-[45%] opacity-30 pointer-events-none">
          {/* Dot grid */}
@@ -90,45 +344,54 @@ export function CaptoHero() {
           
         </div>
 
-        {/* Bottom Banner - Back to School */}
+        {/* Bottom Banner - Back to School – PREMIUM, INCREASED SIZE */}
         <motion.div
            initial={{ opacity: 0, y: 20 }}
            animate={{ opacity: 1, y: 0 }}
            transition={{ duration: 0.6, delay: 0.4 }}
-           className="mt-16 md:mt-24 w-full max-w-[1000px] mx-auto bg-[#f8f8fb] rounded-2xl border border-gray-100 flex flex-col md:flex-row items-center justify-between px-6 md:px-8 py-6 md:py-5 shadow-sm gap-6 md:gap-0"
+           className="mt-16 md:mt-24 w-full max-w-[1220px] mx-auto bg-white rounded-[24px] md:rounded-[28px] border border-gray-200/60 flex flex-col lg:flex-row items-center justify-between px-6 md:px-10 lg:px-12 py-8 md:py-9 lg:py-10 shadow-[0_8px_40px_rgba(0,0,0,0.06)] gap-8 lg:gap-6"
         >
-          <div className="flex items-center gap-4">
-            <div className="font-black text-[1.6rem] leading-none text-transparent bg-clip-text bg-gradient-to-br from-[#77a6f7] to-[#998ceb] transform -rotate-2 drop-shadow-sm text-center md:text-left">
-              {t('capto.hero.back')} <span className="text-sm align-top">{t('capto.hero.to')}</span><br/>{t('capto.hero.school')}
+          <div className="flex items-center gap-4 flex-shrink-0">
+            <div className="font-black text-[1.9rem] md:text-[2.2rem] lg:text-[2.6rem] leading-none text-[#1c2331] tracking-tight text-center md:text-left">
+              {t('capto.hero.back')} <span className="text-sm md:text-base align-top font-black text-[#1c2331]">{t('capto.hero.to')}</span><br/>{t('capto.hero.school')}
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-4">
-            <span className="font-bold text-gray-800 text-sm hidden sm:block">{t('capto.hero.only')}</span>
-            <div className="flex gap-2 text-center items-start">
-              <div>
-                <div className="bg-white rounded-md px-3 py-1.5 text-[#7c63ff] font-bold text-xl shadow-[0_2px_10px_rgba(0,0,0,0.05)] w-[46px] border border-gray-50">08</div>
-                <div className="text-[8px] text-gray-400 mt-1.5 font-bold tracking-wider">{t('capto.hero.hours')}</div>
+          <div className="flex flex-col sm:flex-row items-center gap-4 md:gap-6 flex-1 justify-center">
+            <span className="font-bold text-gray-800 text-sm md:text-base hidden sm:block tracking-wide">{t('capto.hero.only')}</span>
+            <div className="flex gap-2.5 md:gap-3 text-center items-start">
+              <div className="flex flex-col items-center">
+                <div className="bg-[#f8f8fb] rounded-xl md:rounded-xl px-4 md:px-5 py-3 md:py-3.5 text-[#1c2331] font-extrabold text-xl md:text-2xl lg:text-[1.7rem] shadow-[0_2px_10px_rgba(0,0,0,0.04)] w-[58px] md:w-[68px] lg:w-[72px] border border-gray-200/50 tabular-nums">{hours}</div>
+                <div className="text-[9px] md:text-[10px] text-gray-500 mt-2 font-bold tracking-[0.12em]">{t('capto.hero.hours')}</div>
               </div>
-              <span className="font-bold text-gray-300 mt-1.5">:</span>
-              <div>
-                <div className="bg-white rounded-md px-3 py-1.5 text-[#7c63ff] font-bold text-xl shadow-[0_2px_10px_rgba(0,0,0,0.05)] w-[46px] border border-gray-50">06</div>
-                <div className="text-[8px] text-gray-400 mt-1.5 font-bold tracking-wider">{t('capto.hero.minutes')}</div>
+              <span className="font-bold text-gray-300 mt-3 md:mt-4 text-lg md:text-xl">:</span>
+              <div className="flex flex-col items-center">
+                <div className="bg-[#f8f8fb] rounded-xl md:rounded-xl px-4 md:px-5 py-3 md:py-3.5 text-[#1c2331] font-extrabold text-xl md:text-2xl lg:text-[1.7rem] shadow-[0_2px_10px_rgba(0,0,0,0.04)] w-[58px] md:w-[68px] lg:w-[72px] border border-gray-200/50 tabular-nums">{minutes}</div>
+                <div className="text-[9px] md:text-[10px] text-gray-500 mt-2 font-bold tracking-[0.12em]">{t('capto.hero.minutes')}</div>
               </div>
-              <span className="font-bold text-gray-300 mt-1.5">:</span>
-              <div>
-                <div className="bg-white rounded-md px-3 py-1.5 text-[#7c63ff] font-bold text-xl shadow-[0_2px_10px_rgba(0,0,0,0.05)] w-[46px] border border-gray-50">49</div>
-                <div className="text-[8px] text-gray-400 mt-1.5 font-bold tracking-wider">{t('capto.hero.seconds')}</div>
+              <span className="font-bold text-gray-300 mt-3 md:mt-4 text-lg md:text-xl">:</span>
+              <div className="flex flex-col items-center">
+                <div className="bg-[#f8f8fb] rounded-xl md:rounded-xl px-4 md:px-5 py-3 md:py-3.5 text-[#1c2331] font-extrabold text-xl md:text-2xl lg:text-[1.7rem] shadow-[0_2px_10px_rgba(0,0,0,0.04)] w-[58px] md:w-[68px] lg:w-[72px] border border-gray-200/50 tabular-nums">{isExpired ? '00' : seconds}</div>
+                <div className="text-[9px] md:text-[10px] text-gray-500 mt-2 font-bold tracking-[0.12em]">{t('capto.hero.seconds')}</div>
               </div>
             </div>
-            <span className="font-bold text-gray-800 text-sm hidden sm:block">{t('capto.hero.left')}</span>
+            <span className="font-bold text-gray-800 text-sm md:text-base hidden sm:block tracking-wide">{t('capto.hero.left')}</span>
           </div>
 
-          <div className="text-center md:text-right">
-            <span className="font-extrabold text-[#1c2331] text-[1.1rem]">
-              {t('capto.hero.avail')} <span className="text-[#6554ff]">{t('capto.hero.off')}</span>
+          {/* This is the real, permanent home of the 75% OFF promotion —
+              it never moves. The floating clone above only ever travels
+              toward it and hands off here. */}
+          <motion.div
+            className="text-center lg:text-right flex flex-col items-center lg:items-end gap-1 flex-shrink-0"
+            initial={false}
+            animate={{ opacity: entranceDone ? 1 : 0 }}
+            transition={{ duration: 0.25, ease: 'easeOut' }}
+          >
+            <span className="font-black text-[#1c2331] text-[1.4rem] md:text-[1.6rem] lg:text-[1.75rem] tracking-tight">
+              {t('capto.hero.avail')} <span ref={offerTextRef} className="text-[#1c2331]">75% OFF</span>
             </span>
-          </div>
+            <span className="text-[11px] md:text-xs text-gray-500 font-medium mt-0.5">{isExpired ? 'Offer renewed – 24h left' : 'Limited time • Ends in 24 hours'}</span>
+          </motion.div>
         </motion.div>
       </div>
     </section>

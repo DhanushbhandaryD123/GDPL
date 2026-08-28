@@ -249,6 +249,7 @@ import { CaptoEducatorsPage } from './pages/CaptoEducatorsPage';
 
 import { LanguageSync } from './components/layout/LanguageSync';
 import { rememberLanguage } from './lib/languagePreference';
+import { markSplashComplete } from './lib/splashScreenSignal';
 import { SEOHead } from './components/layout/SEOHead';
 import { NotFound } from './pages/NotFound';
 import { Analytics } from '@vercel/analytics/react';
@@ -357,7 +358,14 @@ function App() {
     <>
       <SEOHead />
       <Analytics />
-      {!isAppReady && <SplashScreen onComplete={() => setIsAppReady(true)} />}
+      {!isAppReady && (
+        <SplashScreen
+          onComplete={() => {
+            setIsAppReady(true);
+            markSplashComplete();
+          }}
+        />
+      )}
       <ScrollToTop />
       <Routes>
         {appRoutes.map((route, i) => (
