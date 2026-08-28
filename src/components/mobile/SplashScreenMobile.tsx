@@ -6,15 +6,23 @@ interface SplashScreenMobileProps {
 }
 
 export function SplashScreenMobile({ onComplete }: SplashScreenMobileProps) {
-  const [isVisible, setIsVisible] = useState(true);
+  // See SplashScreenDesktop for why this starts hidden and is only shown
+  // from an effect (post-hydration, so it can't cause a mismatch) instead
+  // of starting visible.
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    if (navigator.userAgent === 'ReactSnap') {
+      onComplete();
+      return;
+    }
+    setIsVisible(true);
     const timer = setTimeout(() => {
       setIsVisible(false);
     }, 2800);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [onComplete]);
 
   return (
     <AnimatePresence onExitComplete={onComplete}>

@@ -1,6 +1,20 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
+function WireframeGlobe({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 200 200" className={className} fill="none" stroke="currentColor" strokeWidth="1">
+      <circle cx="100" cy="100" r="90" />
+      <ellipse cx="100" cy="100" rx="90" ry="35" />
+      <ellipse cx="100" cy="100" rx="90" ry="60" />
+      <ellipse cx="100" cy="100" rx="35" ry="90" />
+      <ellipse cx="100" cy="100" rx="60" ry="90" />
+      <line x1="10" y1="100" x2="190" y2="100" />
+      <line x1="100" y1="10" x2="100" y2="190" />
+    </svg>
+  );
+}
+
 export function CaptoFooterCTA() {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<'EDUCATION' | 'BUSINESS'>('EDUCATION');
@@ -70,12 +84,12 @@ export function CaptoFooterCTA() {
 
   return (
     <section className="py-16 md:py-20 relative overflow-hidden bg-white">
-      {/* Background Decor (Faint Wireframe Globes based on image) */}
+      {/* Background Decor (Faint Wireframe Globes, drawn inline so it never depends on an external host) */}
       <div className="absolute top-[40%] left-0 -translate-y-1/2 -translate-x-1/2 opacity-10 pointer-events-none">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg" className="w-[500px] h-[500px]" alt="Globe Decor Left" />
+        <WireframeGlobe className="w-[500px] h-[500px]" />
       </div>
       <div className="absolute top-[40%] right-0 -translate-y-1/2 translate-x-1/2 opacity-10 pointer-events-none">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Wireframe_globe.svg" className="w-[500px] h-[500px]" alt="Globe Decor Right" />
+        <WireframeGlobe className="w-[500px] h-[500px]" />
       </div>
 
       <div className="container mx-auto px-6 max-w-[1200px] relative z-10 text-center">

@@ -6,15 +6,29 @@ interface SplashScreenDesktopProps {
 }
 
 export function SplashScreenDesktop({ onComplete }: SplashScreenDesktopProps) {
-  const [isVisible, setIsVisible] = useState(true);
+  // Starts hidden so the very first render (both the react-snap prerender
+  // snapshot and a real visitor's initial hydration pass) always agrees:
+  // no splash markup. It's then shown from an effect, which runs after
+  // hydration and so can never cause a mismatch. Starting visible used to
+  // let a real client's first render disagree with whatever the static
+  // snapshot happened to capture — react-snap's per-page settle time varies,
+  // so on slower pages the 2800ms dismiss timer had already fired by
+  // snapshot time, baking a splash-less page that a fresh client mount
+  // would then contradict.
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    if (navigator.userAgent === 'ReactSnap') {
+      onComplete();
+      return;
+    }
+    setIsVisible(true);
     const timer = setTimeout(() => {
       setIsVisible(false);
     }, 2800);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [onComplete]);
 
   return (
     <AnimatePresence onExitComplete={onComplete}>
