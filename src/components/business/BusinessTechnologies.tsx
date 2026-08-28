@@ -14,7 +14,7 @@ export function BusinessTechnologies() {
   ];
 
   return (
-    <section className="w-full py-16 bg-[#fafbfc] overflow-hidden">
+    <section className="w-full py-16 bg-[#ffffff] overflow-hidden">
       <div className="container mx-auto px-6 lg:px-12">
         
         {/* Header */}

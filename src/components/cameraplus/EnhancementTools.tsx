@@ -12,7 +12,7 @@ export function EnhancementTools() {
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-[#F8FAFC]">
+    <section className="py-20 md:py-32 bg-[#ffffff]">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         
         {/* Header Area */}

@@ -32,7 +32,7 @@ export function Boom2FAQ() {
   };
 
   return (
-    <section className="relative py-20 md:py-28 bg-[#f5f5f7] overflow-hidden">
+    <section className="relative py-20 md:py-28 bg-[#ffffff] overflow-hidden">
       {/* Subtle background orbs */}
       <div
         className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full opacity-20"

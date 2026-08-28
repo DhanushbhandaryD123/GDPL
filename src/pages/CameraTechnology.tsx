@@ -157,7 +157,7 @@ export function CameraTechnology() {
         </section>
 
         {/* Contact CTA Section */}
-        <section className="w-full flex flex-col py-8 md:py-12 bg-[#f4f7f9]">
+        <section className="w-full flex flex-col py-8 md:py-12 bg-[#ffffff]">
           <div className="container mx-auto px-4 lg:px-6">
             <div className="relative w-full min-h-[300px] md:min-h-[350px] flex items-center justify-center rounded-2xl overflow-hidden shadow-2xl max-w-6xl mx-auto">
               <img

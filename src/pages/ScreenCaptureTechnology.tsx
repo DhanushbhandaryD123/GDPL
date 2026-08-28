@@ -141,7 +141,7 @@ export function ScreenCaptureTechnology() {
         </section>
 
         {/* Simple Steps Section */}
-        <section className="py-16 bg-[#fafbfc]">
+        <section className="py-16 bg-[#ffffff]">
           <div className="container mx-auto px-4 max-w-5xl">
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-[#1a202c]">
               {t('technology.screenCapture.steps_title')}

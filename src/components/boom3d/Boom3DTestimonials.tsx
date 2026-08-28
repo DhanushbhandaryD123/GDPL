@@ -251,7 +251,7 @@ export function Boom3DTestimonials() {
             <div
               className="relative rounded-[2rem] overflow-hidden min-h-[300px] md:min-h-[340px] flex items-center"
               style={{
-                background: 'linear-gradient(135deg, #f5f3ff 0%, #faf5ff 60%, #fdf2f8 100%)',
+                background: '#ffffff',
                 border: '1px solid rgba(124,58,237,0.12)',
                 boxShadow: '0 8px 40px rgba(124,58,237,0.08), 0 0 0 1px rgba(124,58,237,0.08)',
               }}
@@ -385,7 +385,7 @@ export function Boom3DTestimonials() {
               {/* Left: Store scores */}
               <div
                 className="flex flex-col gap-0 rounded-2xl overflow-hidden shrink-0 md:w-[200px]"
-                style={{ border: '1px solid rgba(124,58,237,0.12)', background: '#faf5ff' }}
+                style={{ border: '1px solid rgba(124,58,237,0.12)', background: '#ffffff' }}
               >
                 {storeRatings.map((s, i) => (
                   <div
@@ -421,7 +421,7 @@ export function Boom3DTestimonials() {
                       key={idx}
                       className="flex flex-col gap-4 p-6 rounded-2xl"
                       style={{
-                        background: '#faf5ff',
+                        background: '#ffffff',
                         border: '1px solid rgba(124,58,237,0.12)',
                       }}
                     >

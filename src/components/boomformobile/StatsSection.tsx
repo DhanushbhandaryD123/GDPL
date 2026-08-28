@@ -40,7 +40,7 @@ export function StatsSection() {
   });
 
   return (
-    <section className="py-20 md:py-32 bg-[#F8FAFC] relative overflow-hidden" ref={ref}>
+    <section className="py-20 md:py-32 bg-[#ffffff] relative overflow-hidden" ref={ref}>
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-purple-100 blur-[140px] rounded-full pointer-events-none" />
 
       <div className="container mx-auto px-6 md:px-10 relative z-10">

@@ -580,6 +580,64 @@
       "localized_note": "Capto is fully localized and can be used in Spanish, French, German, Japanese, Portuguese, and Simplified Chinese."
     }
   },
+  "capto_educators": {
+    "hero": {
+      "eyebrow": "For Educators",
+      "title_1": "Make teaching",
+      "title_2": "and learning",
+      "title_3": "easier with Capto.",
+      "subtitle": "Record your screen, add simple annotations, and turn any lesson into a tutorial your students actually want to watch — almost no learning curve required.",
+      "cta_primary": "Get Educational Pricing",
+      "cta_secondary": "Try Capto Free",
+      "callout": "Add a callout in one click",
+      "toolbar_chip": "Arrow · Spotlight · Text"
+    },
+    "benefits": {
+      "title": "Built for the classroom",
+      "subtitle": "Everything you need to teach, explain, and assess — without a video-editing degree.",
+      "tutorials_title": "Engaging Tutorials",
+      "tutorials_desc": "Record your screen and webcam together, then annotate with arrows, spotlights, and text to guide every student's attention.",
+      "elearning_title": "Easy E-Learning",
+      "elearning_desc": "Turn lecture notes and slides into shareable video lessons in minutes, no prior editing experience needed.",
+      "grading_title": "Instant Assignment Grading",
+      "grading_desc": "Record quick video feedback on student work instead of typing comments — clearer for you, clearer for them."
+    },
+    "showcase": {
+      "title": "From capture to classroom in five steps",
+      "subtitle": "Capto's annotation toolkit is built to keep a lesson moving.",
+      "step_label": "Step {{n}}",
+      "capture_title": "Capture",
+      "capture_desc": "Record your screen, a window, or your webcam in one click.",
+      "arrow_title": "Arrow",
+      "arrow_desc": "Point straight at what matters on screen.",
+      "spotlight_title": "Spotlight",
+      "spotlight_desc": "Dim everything except the one thing students should focus on.",
+      "text_title": "Text",
+      "text_desc": "Drop in captions or instructions right where they're needed.",
+      "share_title": "Share",
+      "share_desc": "Export or share the finished lesson straight to your class."
+    },
+    "signup": {
+      "title": "Bring Capto to your institution",
+      "subtitle": "Fill out the form below and we'll contact you about educational licensing.",
+      "institution_label": "School / College / University",
+      "institution_placeholder": "e.g. Stanford University",
+      "name_label": "Name",
+      "name_placeholder": "Your full name",
+      "job_title_label": "Job Title",
+      "job_title_placeholder": "e.g. Professor, IT Administrator",
+      "email_label": "Email",
+      "placeholder": "you@university.edu",
+      "country_label": "Country",
+      "country_placeholder": "e.g. United States",
+      "requirements_label": "Requirements",
+      "requirements_placeholder": "Tell us a bit about how you'd like to use Capto (optional)",
+      "required_note": "Indicates required question",
+      "submit": "Submit",
+      "success": "Thanks! We'll be in touch about educational pricing.",
+      "note": "We'll only use this to follow up about educational licensing."
+    }
+  },
   "captoWindows": {
     "hero": {
       "badge": "Available on Windows 10 & 11",

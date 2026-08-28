@@ -19,7 +19,7 @@ interface WhatsNewTemplateProps {
 
 export function WhatsNewTemplate({ productName, heroColor = "from-blue-600 to-indigo-700", releases }: WhatsNewTemplateProps) {
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900 font-sans">
+    <div className="min-h-screen bg-[#ffffff] text-gray-900 font-sans">
       <Helmet>
         <title>What's New in {productName} | Release Notes</title>
         <meta name="description" content={`Discover the latest features, improvements, and bug fixes in ${productName}.`} />

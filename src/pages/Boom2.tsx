@@ -76,7 +76,7 @@ export function Boom2() {
           <Boom2FeaturesBanner />
         </div>
         
-        <div className="bg-[#f5f5f7] text-gray-900 pb-16 pt-8 relative z-10 border-t border-gray-200">
+        <div className="bg-[#ffffff] text-gray-900 pb-16 pt-8 relative z-10 border-t border-gray-200">
           <Boom2PrecisionControl />
           <Boom2FeatureGrid />
           <Boom2RemoteControl />

@@ -56,7 +56,7 @@ export function VideoTechnology() {
 
       <main className="flex-grow">
         {/* Hero Banner */}
-        <section className="w-full bg-[#fbfbfe] relative">
+        <section className="w-full bg-[#ffffff] relative">
           <img
             src="/business/VT/VT-banner.png"
             alt="Video Technology Banner"
@@ -126,7 +126,7 @@ export function VideoTechnology() {
 
 
         {/* How it Works Section */}
-        <section className="pt-4 pb-8 bg-[#fbfbfe]">
+        <section className="pt-4 pb-8 bg-[#ffffff]">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="text-center mb-4 md:mb-6">
               <h2 className="text-3xl md:text-2xl font-bold text-[#2d3748]">{t('technology.video.process_title')}</h2>
@@ -251,7 +251,7 @@ export function VideoTechnology() {
         </section>
 
         {/* Contact CTA Section */}
-        <section className="w-full flex flex-col py-8 md:py-12 bg-[#f4f7f9]">
+        <section className="w-full flex flex-col py-8 md:py-12 bg-[#ffffff]">
           <div className="container mx-auto px-4 lg:px-6">
             <div className="relative w-full min-h-[300px] md:min-h-[350px] flex items-center justify-center rounded-2xl overflow-hidden shadow-2xl max-w-6xl mx-auto">
               <img

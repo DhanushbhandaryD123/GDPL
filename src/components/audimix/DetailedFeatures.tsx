@@ -20,8 +20,7 @@ export function DetailedFeatures() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-gray-900 mb-6"
-          >
+            className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
             {t('audimix.detailed_features.title_1')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">{t('audimix.detailed_features.title_2')}</span>
           </motion.h2>
         </div>

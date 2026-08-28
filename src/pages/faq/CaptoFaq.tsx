@@ -20,7 +20,7 @@ export function CaptoFaq() {
   );
 
   return (
-    <div className="min-h-screen bg-[#f4f7f6] text-gray-800 font-sans flex flex-col">
+    <div className="min-h-screen bg-[#ffffff] text-gray-800 font-sans flex flex-col">
       <Helmet><title>Capto FAQ | Global Delight</title></Helmet>
       <Navbar />
       <FloatingSocials />

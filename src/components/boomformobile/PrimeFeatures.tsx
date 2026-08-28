@@ -63,7 +63,7 @@ export function PrimeFeatures() {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="py-24 bg-[#F8FAFC] relative">
+    <section className="py-24 bg-[#ffffff] relative">
       <div className="container mx-auto px-6 md:px-10">
         <div className="text-center mb-16">
           <motion.h2

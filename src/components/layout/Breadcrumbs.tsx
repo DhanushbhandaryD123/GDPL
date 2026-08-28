@@ -12,7 +12,7 @@ interface BreadcrumbsProps {
 
 export function Breadcrumbs({ items }: BreadcrumbsProps) {
   return (
-    <nav aria-label="Breadcrumb" className="w-full flex px-4 md:px-8 py-3 bg-[#f8fafc] border-b border-gray-100 overflow-x-auto">
+    <nav aria-label="Breadcrumb" className="w-full flex px-4 md:px-8 py-3 bg-[#ffffff] border-b border-gray-100 overflow-x-auto">
       <div className="max-w-[1920px] mx-auto w-full">
         <ol className="flex items-center space-x-2 text-sm text-gray-500 min-w-max">
           <li>

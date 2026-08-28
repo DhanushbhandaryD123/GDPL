@@ -103,7 +103,7 @@ export function AudioTechnology() {
         </section>
 
         {/* Intro Text */}
-        <section className="w-full py-16 bg-[#fafbfc]">
+        <section className="w-full py-16 bg-[#ffffff]">
           <div className="container mx-auto px-6 lg:px-12 text-center">
             <p className="text-gray-500 max-w-2xl mx-auto">
               {t('technology.audio.intro')}

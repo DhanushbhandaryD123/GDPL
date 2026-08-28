@@ -40,7 +40,7 @@ export function ProShare() {
   }, []);
 
   return (
-    <section id="reviews" className="bg-gray-50 py-16 md:py-24 overflow-hidden">
+    <section id="reviews" className="bg-[#ffffff] py-16 md:py-24 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 md:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left — phone with floating icons */}

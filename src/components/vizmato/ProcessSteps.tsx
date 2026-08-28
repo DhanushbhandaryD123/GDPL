@@ -27,7 +27,7 @@ export function ProcessSteps() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-gray-50 relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-[#ffffff] relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <motion.h2

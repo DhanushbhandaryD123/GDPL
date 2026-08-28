@@ -27,7 +27,6 @@
     { "source": "/boom3D/pt", "destination": "/pt/boom3D", "permanent": true },
     { "source": "/boom3D/zh-cn", "destination": "/zh/boom3D", "permanent": true },
     { "source": "/boom3D/zh-tw", "destination": "/zh/boom3D", "permanent": true },
-    { "source": "/capto/educators", "destination": "/capto", "permanent": true },
     { "source": "/capto/features-comparison", "destination": "/capto", "permanent": true },
     { "source": "/capto/help-videos", "destination": "/capto", "permanent": true },
     { "source": "/capto/privacy-policy", "destination": "/capto", "permanent": true },

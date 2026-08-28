@@ -24,7 +24,7 @@ export function MacroFocus() {
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-[#FAFAFA] relative overflow-hidden">
+    <section className="py-20 md:py-32 bg-[#ffffff] relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl relative z-10">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center lg:items-stretch">
           

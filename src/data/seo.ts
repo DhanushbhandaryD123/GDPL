@@ -216,6 +216,14 @@ export const SEO_DATA: Record<string, SeoEntry> = {
     twitterImage: '/apps/Capto-window.jpeg',
     softwareApplication: { name: 'Capto for Windows', operatingSystem: 'Windows', applicationCategory: 'MultimediaApplication', price: '749.50', priceCurrency: 'INR', image: '/apps/Capto-window.jpeg' },
   },
+  '/capto/educators': {
+    title: 'Capto for Educators | Tutorial Video Making App for Education',
+    description: 'Capto helps teachers and institutions create engaging tutorials, power easy e-learning, and grade assignments faster — with screen recording and simple arrow, spotlight, and text annotations.',
+    keywords: 'Capto for educators, tutorial video maker, e-learning screen recorder, education screen capture, annotate video for teaching, Capto education pricing, Global Delight Capto',
+    ogImage: '/apps/Capto-mac.jpeg',
+    twitterImage: '/apps/Capto-mac.jpeg',
+    softwareApplication: { name: 'Capto for Educators', operatingSystem: 'Mac', applicationCategory: 'MultimediaApplication', image: '/apps/Capto-mac.jpeg' },
+  },
   '/audion': {
     title: 'AudiOn | Advanced Voice Recorder & Audio Editor for Mobile',
     description: 'AudiOn is the cutting-edge voice recorder for iPhone & Android — studio-quality WAV, 200% mic boost, noise removal, teleprompter, timestamp markers, and speech-to-text transcription.',

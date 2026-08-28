@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 export function CaptoHero() {
   const { t } = useTranslation();
   return (
-    <section className="relative px-4 pt-2 pb-8 md:px-0 md:pt-8 md:pb-16 overflow-hidden bg-[#fafbfe]">
+    <section className="relative px-4 pt-2 pb-8 md:px-0 md:pt-8 md:pb-16 overflow-hidden bg-[#ffffff]">
       {/* Background Decor (Grid & squiggles based on image) */}
       <div className="absolute top-[20%] left-[45%] opacity-30 pointer-events-none">
          {/* Dot grid */}

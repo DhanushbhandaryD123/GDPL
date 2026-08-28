@@ -12,7 +12,7 @@ export function FeaturesSection() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-gray-50 relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-[#ffffff] relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-black/5 to-transparent" />
       

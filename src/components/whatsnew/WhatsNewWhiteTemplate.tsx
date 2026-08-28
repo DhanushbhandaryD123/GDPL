@@ -35,7 +35,7 @@ export function WhatsNewWhiteTemplate({
   const activeNotes = platform === 'macOS' ? macOSNotes : windowsNotes;
 
   return (
-    <div className="min-h-screen bg-gray-50 font-sans flex flex-col">
+    <div className="min-h-screen bg-[#ffffff] font-sans flex flex-col">
       <Helmet>
         <title>What's New in {productName}</title>
       </Helmet>

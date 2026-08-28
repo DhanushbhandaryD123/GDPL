@@ -94,7 +94,7 @@ export function Faq() {
         </section>
 
         {/* Product Selector Section */}
-        <section className="w-full py-20 bg-[#f8fafc] relative z-20 overflow-hidden">
+        <section className="w-full py-20 bg-[#ffffff] relative z-20 overflow-hidden">
           <div className="container mx-auto px-4 max-w-6xl">
             {/* Heading */}
             <div className="flex flex-col items-center mb-16">

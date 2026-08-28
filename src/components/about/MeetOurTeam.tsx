@@ -44,7 +44,7 @@ export function MeetOurTeam() {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="w-full bg-[#f8fafc] py-20 px-6 lg:px-12" style={{ fontFamily: "'SF UI Text', 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" }}>
+    <section className="w-full bg-[#ffffff] py-20 px-6 lg:px-12" style={{ fontFamily: "'SF UI Text', 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" }}>
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         
         <motion.div

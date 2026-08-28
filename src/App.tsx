@@ -245,6 +245,7 @@ import { AudiOnPage } from './pages/AudiOnPage';
 import { VizmatoPage } from './pages/VizmatoPage';
 import { CameraPlusPage } from './pages/CameraPlusPage';
 import { CameraPlusProPage } from './pages/CameraPlusProPage';
+import { CaptoEducatorsPage } from './pages/CaptoEducatorsPage';
 
 import { LanguageSync } from './components/layout/LanguageSync';
 import { rememberLanguage } from './lib/languagePreference';
@@ -299,7 +300,6 @@ const appRoutes = [
   { path: "/boom3D/zh-tw", element: <LegacyLangAlias lang="zh" bareTo="/boom3D" /> },
 
   // Old Capto URLs
-  { path: "/capto/educators", element: <Redirect to="/capto" /> },
   { path: "/capto/features-comparison", element: <Redirect to="/capto" /> },
   { path: "/capto/help-videos", element: <Redirect to="/capto" /> },
   { path: "/capto/thankyou", element: <Redirect to="/capto" /> },
@@ -331,6 +331,7 @@ const appRoutes = [
   { path: "/boom3D", element: <Boom3D /> },
   { path: "/capto", element: <Capto /> },
   { path: "/capto/windows", element: <CaptoWindowsPage /> },
+  { path: "/capto/educators", element: <CaptoEducatorsPage /> },
   { path: "/audion", element: <AudiOnPage /> },
   { path: "/vizmato", element: <VizmatoPage /> },
   { path: "/cameraplus", element: <CameraPlusPage /> },

@@ -35,7 +35,7 @@ export function UserTestimonials() {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="py-20 md:py-32 bg-[#F8FAFC] relative overflow-hidden">
+    <section className="py-20 md:py-32 bg-[#ffffff] relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-100 blur-[120px] rounded-full pointer-events-none opacity-60" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-100 blur-[120px] rounded-full pointer-events-none opacity-60" />

@@ -237,7 +237,7 @@ export function Careers() {
       
       <Navbar />
       
-      <main className="bg-[#fbfcff]">
+      <main className="bg-[#ffffff]">
         {/* Full-width Hero Banner */}
         <section 
           className="relative w-full min-h-[300px] md:min-h-[400px] py-16 md:py-20 flex items-center bg-cover bg-center bg-no-repeat"
