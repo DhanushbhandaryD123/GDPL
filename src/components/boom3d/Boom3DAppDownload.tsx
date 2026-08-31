@@ -15,7 +15,7 @@ const WindowsIcon = ({ className }: { className?: string }) => (
 export function Boom3DAppDownload() {
   const { t } = useTranslation();
   return (
-    <section className="bg-white pt-16 pb-10 flex flex-col items-center justify-center relative z-20">
+    <section id="boom3d-download" className="bg-white pt-16 pb-10 flex flex-col items-center justify-center relative z-20">
       <div className="max-w-[1000px] mx-auto px-6 text-center w-full">
 
         <h2 className="text-3xl md:text-[2.5rem] lg:text-[2.75rem] font-medium tracking-tight text-[#111111] mb-6 leading-tight">

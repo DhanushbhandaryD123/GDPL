@@ -377,6 +377,23 @@
     }
   },
   "boom3d": {
+    "app_universe": {
+      "section_aria_label": "Boom 3D funciona en todo tu universo de aplicaciones",
+      "card_status_on": "ACTIVADO",
+      "preset_surround": "Surround 3D",
+      "preset_bass": "Refuerzo de Graves",
+      "preset_acoustic": "Acústico",
+      "preset_night": "Modo Nocturno",
+      "track_title": "Perdido en la Música",
+      "track_subtitle": "Vibraciones Electrónicas",
+      "card_movie_alt": "Reproducción cinematográfica mejorada por Boom 3D",
+      "card_gaming_alt": "Audio de juego inmersivo impulsado por Boom 3D"
+    },
+    "scroll_reveal": {
+      "line1": "Cada aplicación suena diferente. Cada reproductor, cada transmisión, cada juego.",
+      "line2": "Boom 3D hace que todos suenen extraordinarios, en todo el sistema, en un solo lugar.",
+      "learn_more": "Saber más"
+    },
     "hero": {
       "title_1": "Experimenta el Audio en",
       "title_2": "Mágico 3D",

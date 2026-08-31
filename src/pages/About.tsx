@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../components/layout/Navbar';
+import { Breadcrumbs } from '../components/layout/Breadcrumbs';
 import { Footer } from '../components/layout/Footer';
 import { FloatingSocials } from '../components/layout/FloatingSocials';
 import { AboutHero } from '../components/about/AboutHero';
@@ -28,8 +29,9 @@ export function About() {
       </Helmet>
       
       <Navbar />
+      <Breadcrumbs items={[{ name: 'About' }]} />
       <FloatingSocials />
-      
+
       <main>
         <AboutHero />
         <OurStory />

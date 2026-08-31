@@ -377,6 +377,23 @@
     }
   },
   "boom3d": {
+    "app_universe": {
+      "section_aria_label": "Boom 3D はすべてのアプリで動作します",
+      "card_status_on": "オン",
+      "preset_surround": "3Dサラウンド",
+      "preset_bass": "バスブースト",
+      "preset_acoustic": "アコースティック",
+      "preset_night": "ナイトモード",
+      "track_title": "ロスト・イン・ザ・ミュージック",
+      "track_subtitle": "エレクトロニック・バイブス",
+      "card_movie_alt": "Boom 3D で強化されたシネマティック再生",
+      "card_gaming_alt": "Boom 3D による没入型ゲーミングオーディオ"
+    },
+    "scroll_reveal": {
+      "line1": "アプリごとに音は違う。プレーヤーも、ストリームも、ゲームも。",
+      "line2": "Boom 3D はそのすべてを、システム全体でひとつにまとめ、極上の音に変える。",
+      "learn_more": "詳しく見る"
+    },
     "hero": {
       "title_1": "魔法のような3Dで",
       "title_2": "オーディオを体験",

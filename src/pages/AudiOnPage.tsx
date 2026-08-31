@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../components/layout/Navbar';
+import { Breadcrumbs } from '../components/layout/Breadcrumbs';
 import { Hero } from '../components/audion/Hero';
 import { AdvancedRecording } from '../components/audion/AdvancedRecording';
 import { AudioEnhancement } from '../components/audion/AudioEnhancement';
@@ -31,7 +32,8 @@ export function AudiOnPage() {
       </Helmet>
       
       <Navbar />
-      
+      <Breadcrumbs items={[{ name: 'AudiOn' }]} />
+
       <main>
         <Hero />
         <AdvancedRecording />

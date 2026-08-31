@@ -1,8 +1,10 @@
 import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../components/layout/Navbar';
+import { Breadcrumbs } from '../components/layout/Breadcrumbs';
 import { Footer } from '../components/layout/Footer';
 import { Boom3DHero } from '../components/boom3d/Boom3DHero';
 import { Boom3DOSSelector } from '../components/boom3d/Boom3DOSSelector';
+import { Boom3DScrollReveal } from '../components/boom3d/Boom3DScrollReveal';
 import { Boom3DSurround } from '../components/boom3d/Boom3DSurround';
 import { Boom3DEqualizer } from '../components/boom3d/Boom3DEqualizer';
 import { Boom3DVolumeBooster } from '../components/boom3d/Boom3DVolumeBooster';
@@ -16,7 +18,7 @@ export function Boom3D() {
   const domain = import.meta.env.VITE_SITE_URL || '';
   return (
     <div 
-      className="min-h-screen bg-white text-gray-900 overflow-x-hidden selection:bg-[#4F46E5] selection:text-white"
+      className="min-h-screen bg-white text-gray-900 selection:bg-[#4F46E5] selection:text-white"
       style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", sans-serif' }}
     >
       <Helmet>
@@ -64,10 +66,12 @@ export function Boom3D() {
       </Helmet>
       
       <Navbar />
-      
+      <Breadcrumbs items={[{ name: 'Boom 3D' }]} />
+
       <main className="relative">
         <Boom3DHero />
         <Boom3DOSSelector />
+        <Boom3DScrollReveal />
         <Boom3DSurround />
         <Boom3DEqualizer />
         <Boom3DVolumeBooster />

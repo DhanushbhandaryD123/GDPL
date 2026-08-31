@@ -5,6 +5,7 @@ import { Link } from '@/components/layout/LocalizedLink';
 import toast from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';
 import { Navbar } from '../components/layout/Navbar';
+import { Breadcrumbs } from '../components/layout/Breadcrumbs';
 import { Footer } from '../components/layout/Footer';
 
 export function Contact() {
@@ -48,6 +49,7 @@ export function Contact() {
       </Helmet>
       
       <Navbar />
+      <Breadcrumbs items={[{ name: 'Contact' }]} />
 
       {/* Map Section */}
       <div className="w-full h-[45vh] relative">

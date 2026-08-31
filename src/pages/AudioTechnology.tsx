@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { motion } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 import { Navbar } from '../components/layout/Navbar';
+import { Breadcrumbs } from '../components/layout/Breadcrumbs';
 import { Footer } from '../components/layout/Footer';
 import { FloatingSocials } from '../components/layout/FloatingSocials';
 import { BarChart3, Laptop, Volume2, SlidersHorizontal, Activity, Box, Headphones, Gauge, Target, Wifi, Star } from "lucide-react";
@@ -72,8 +73,9 @@ export function AudioTechnology() {
       </Helmet>
       
       <Navbar logoUrl="/logos/GDL_B2B_Logo.png" />
+      <Breadcrumbs items={[{ name: 'Audio Technology' }]} />
       <FloatingSocials />
-      
+
       <main>
         {/* Audio Technology Hero Banner */}
         <section className="relative w-full overflow-hidden bg-black font-sans h-[250px] md:h-[350px] lg:h-[500px]">

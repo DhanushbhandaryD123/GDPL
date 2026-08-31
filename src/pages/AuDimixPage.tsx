@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../components/layout/Navbar';
+import { Breadcrumbs } from '../components/layout/Breadcrumbs';
 import { Hero } from '../components/audimix/Hero';
 import { FeaturesOverview } from '../components/audimix/FeaturesOverview';
 import { UseCases } from '../components/audimix/UseCases';
@@ -32,7 +33,8 @@ export function AuDimixPage() {
       </Helmet>
       
       <Navbar />
-      
+      <Breadcrumbs items={[{ name: 'AuDimix' }]} />
+
       <main>
         <Hero />
         <FeaturesOverview />

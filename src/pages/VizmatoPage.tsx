@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../components/layout/Navbar';
+import { Breadcrumbs } from '../components/layout/Breadcrumbs';
 import { HeroWithVideoBackground } from '../components/vizmato/HeroWithVideoBackground';
 import { FeaturesSection } from '../components/vizmato/FeaturesSection';
 import { CreativeShowcase } from '../components/vizmato/CreativeShowcase';
@@ -34,7 +35,8 @@ export function VizmatoPage() {
       
       {/* Keeping global navbar, but normally a landing page like this might have a specialized header */}
       <Navbar />
-      
+      <Breadcrumbs items={[{ name: 'Vizmato' }]} />
+
       <main>
         <HeroWithVideoBackground />
         <FeaturesSection />

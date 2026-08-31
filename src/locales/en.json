@@ -389,6 +389,36 @@
     }
   },
   "boom3d": {
+    "app_universe": {
+      "eyebrow": "Powerful Audio Enhancer",
+      "title_1": "Boom",
+      "title_2": "3D",
+      "subtitle": "Feel Every Beat. Everywhere.",
+      "description": "Immersive 3D surround sound, powerful equalizer and system-wide audio control for your Mac and Windows.",
+      "feature_surround_title": "3D Surround Sound",
+      "feature_surround_desc": "Cinematic Experience",
+      "feature_eq_title": "31-Band Equalizer",
+      "feature_eq_desc": "Shape Your Sound",
+      "feature_volume_title": "Volume Booster",
+      "feature_volume_desc": "Up to 200% Louder",
+      "feature_system_title": "System Wide Control",
+      "feature_system_desc": "All Apps. One Experience",
+      "section_aria_label": "Boom 3D works across your entire app universe",
+      "card_status_on": "ON",
+      "preset_surround": "3D Surround",
+      "preset_bass": "Bass Boost",
+      "preset_acoustic": "Acoustic",
+      "preset_night": "Night Mode",
+      "track_title": "Lost in the Music",
+      "track_subtitle": "Electronic Vibes",
+      "card_movie_alt": "Cinematic playback enhanced by Boom 3D",
+      "card_gaming_alt": "Immersive gaming audio powered by Boom 3D"
+    },
+    "scroll_reveal": {
+      "line1": "Every app sounds different. Every player, every stream, every game.",
+      "line2": "Boom 3D makes them all sound extraordinary — system-wide, in one place.",
+      "learn_more": "Learn More"
+    },
     "hero": {
       "title_1": "Experience Audio in",
       "title_2": "Magical 3D",
@@ -406,6 +436,20 @@
       "free_trial": "Try it free for 15 days",
       "older_macos": "Using on older version of macOS?",
       "buy_now": "BUY NOW"
+    },
+    "universe": {
+      "title": "Enhance Audio Across Your Entire App Universe",
+      "subtitle": "Boom 3D acts system-wide, meaning it works beautifully with every player, game, browser, and streaming service.",
+      "apps": {
+        "spotify": "Elevate Spotify streams with rich bass presets and studio-grade 31-band EQ tuning.",
+        "netflix": "Experience immersive 3D virtual surround sound for cinema-level movie nights.",
+        "youtube": "Bring vocals and dialogue forward with pitch-perfect treble and vocal boosting.",
+        "discord": "Achieve absolute chat clarity and game-sound balance during intense voice calls.",
+        "steam": "Obtain critical spatial awareness and immersive ambient audio in any game.",
+        "vlc": "Safely boost video volume up to 200% without introducing speaker crackle.",
+        "twitch": "Immerse yourself fully in livestreams with enhanced audio rendering.",
+        "apple_music": "Boost and shape your Apple Music tracks with specialized audio presets."
+      }
     },
     "surround": {
       "title": "Magical 3D Surround Sound",

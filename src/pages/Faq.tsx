@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { Volume2, Camera, Wand2, Mail } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Navbar } from '../components/layout/Navbar';
+import { Breadcrumbs } from '../components/layout/Breadcrumbs';
 import { Footer } from '../components/layout/Footer';
 import { FloatingSocials } from '../components/layout/FloatingSocials';
 
@@ -47,6 +48,7 @@ export function Faq() {
       </Helmet>
 
       <Navbar />
+      <Breadcrumbs items={[{ name: 'FAQ' }]} />
       <FloatingSocials />
 
       <main className="flex-grow">

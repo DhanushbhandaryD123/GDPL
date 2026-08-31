@@ -377,6 +377,23 @@
     }
   },
   "boom3d": {
+    "app_universe": {
+      "section_aria_label": "Boom 3D 适用于您的整个应用生态",
+      "card_status_on": "开启",
+      "preset_surround": "3D 环绕声",
+      "preset_bass": "低音增强",
+      "preset_acoustic": "原声",
+      "preset_night": "夜间模式",
+      "track_title": "迷失在音乐中",
+      "track_subtitle": "电子氛围",
+      "card_movie_alt": "由 Boom 3D 增强的影院级播放效果",
+      "card_gaming_alt": "由 Boom 3D 驱动的沉浸式游戏音效"
+    },
+    "scroll_reveal": {
+      "line1": "每个应用听起来都不一样。每个播放器、每次串流、每款游戏。",
+      "line2": "Boom 3D 让它们全部脱颖而出——系统级音效，一站搞定。",
+      "learn_more": "了解更多"
+    },
     "hero": {
       "title_1": "在神奇的 3D 中",
       "title_2": "体验音频",

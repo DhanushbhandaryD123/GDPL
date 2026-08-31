@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../components/layout/Navbar';
+import { Breadcrumbs } from '../components/layout/Breadcrumbs';
 import { HeroBanner } from '../components/cameraplus/HeroBanner';
 import { QuickFeaturesBar } from '../components/cameraplus/QuickFeaturesBar';
 import { AirSnapFeature } from '../components/cameraplus/AirSnapFeature';
@@ -35,7 +36,8 @@ export function CameraPlusPage() {
       </Helmet>
       
       <Navbar />
-      
+      <Breadcrumbs items={[{ name: 'Camera Plus' }]} />
+
       <main>
         <HeroBanner />
         <QuickFeaturesBar />
