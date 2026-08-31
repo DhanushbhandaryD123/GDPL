@@ -34,7 +34,7 @@ export function BoomHero() {
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=1800&auto=format&fit=crop"
-            alt=""
+            alt="Boom equalizer app immersive 3D surround sound experience"
             className="w-full h-full object-cover object-[60%_45%] opacity-90"
           />
         </div>

@@ -10,7 +10,7 @@ const cardsData = [
     name: 'Boom 3D',
     category: 'Audio · Mac / Win',
     bgColor: '#9b66ff',
-    logo: '/hero/Boom3d.png',
+    logo: '/hero/Boom3d.webp',
     descriptionKey: 'home.featured_work.products.boom3d',
     link: '/boom3D'
   },
@@ -18,7 +18,7 @@ const cardsData = [
     name: 'Capto',
     category: 'Screen Record',
     bgColor: '#1de9b6',
-    logo: '/hero/capto2.png',
+    logo: '/hero/capto2.webp',
     descriptionKey: 'home.featured_work.products.capto',
     link: '/capto'
   },
@@ -26,7 +26,7 @@ const cardsData = [
     name: 'Vizmato',
     category: 'Video Editing',
     bgColor: '#ff7043',
-    logo: '/hero/vizmat3.png',
+    logo: '/hero/vizmat3.webp',
     descriptionKey: 'home.featured_work.products.vizmato',
     link: '/vizmato'
   },
@@ -34,7 +34,7 @@ const cardsData = [
     name: 'Camera Plus',
     category: 'Photography',
     bgColor: '#ffd740',
-    logo: '/hero/cameraplus.png',
+    logo: '/hero/cameraplus.webp',
     descriptionKey: 'home.featured_work.products.cameraplus',
     link: '/cameraplus'
   },
@@ -42,7 +42,7 @@ const cardsData = [
     name: 'AuDimix',
     category: 'Vocal Split - Win',
     bgColor: '#ff4b8b',
-    logo: '/hero/Audiomix.png',
+    logo: '/hero/Audiomix.webp',
     descriptionKey: 'home.featured_work.products.audimix',
     link: '/audimix'
   },
@@ -50,7 +50,7 @@ const cardsData = [
     name: 'AudiOn',
     category: 'Voice Record',
     bgColor: '#69f0ae',
-    logo: '/hero/audioon.png',
+    logo: '/hero/audioon.webp',
     descriptionKey: 'home.featured_work.products.audion',
     link: '/audion'
   },

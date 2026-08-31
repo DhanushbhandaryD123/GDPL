@@ -4,11 +4,11 @@ import { useTranslation } from 'react-i18next';
 import { Link } from '../layout/LocalizedLink';
 
 const heroImages = [
-  '/hero/hero-banner.png',
-  '/hero/hero-banner1.png',
-  '/hero/hero-banner2.png',
-  '/hero/hero-banner3.png',
-  '/hero/hero-banner4.png'
+  '/hero/hero-banner.webp',
+  '/hero/hero-banner1.webp',
+  '/hero/hero-banner2.webp',
+  '/hero/hero-banner3.webp',
+  '/hero/hero-banner4.webp'
 ];
 
 export function HeroMobile() {
@@ -35,7 +35,7 @@ export function HeroMobile() {
             exit={{ opacity: 0 }}
             transition={{ duration: 1 }}
             className={`absolute inset-0 bg-no-repeat bg-cover ${
-              heroImages[currentImageIndex] === '/hero/hero-banner.png' 
+              heroImages[currentImageIndex] === '/hero/hero-banner.webp' 
                 ? 'bg-[60%_center]' 
                 : 'bg-center'
             }`}
@@ -45,7 +45,7 @@ export function HeroMobile() {
 
         {/* Boom 3D Logo (Only for the first slide) */}
         <AnimatePresence>
-          {heroImages[currentImageIndex] === '/hero/hero-banner.png' && (
+          {heroImages[currentImageIndex] === '/hero/hero-banner.webp' && (
             <motion.img
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -60,7 +60,7 @@ export function HeroMobile() {
 
         {/* Audion Overlay (Only for the third slide: hero-banner2.png) */}
         <AnimatePresence>
-          {heroImages[currentImageIndex] === '/hero/hero-banner2.png' && (
+          {heroImages[currentImageIndex] === '/hero/hero-banner2.webp' && (
             <motion.div 
               key="audion-overlay"
               initial={{ opacity: 0 }}
@@ -113,7 +113,7 @@ export function HeroMobile() {
 
         {/* Vizmato Overlay (Only for the fourth slide: hero-banner3.png) */}
         <AnimatePresence>
-          {heroImages[currentImageIndex] === '/hero/hero-banner3.png' && (
+          {heroImages[currentImageIndex] === '/hero/hero-banner3.webp' && (
             <motion.div 
               key="vizmato-overlay"
               initial={{ opacity: 0 }}
@@ -165,7 +165,7 @@ export function HeroMobile() {
 
         {/* Boom 3D Overlay (Only for the fifth slide: hero-banner4.png) */}
         <AnimatePresence>
-          {heroImages[currentImageIndex] === '/hero/hero-banner4.png' && (
+          {heroImages[currentImageIndex] === '/hero/hero-banner4.webp' && (
             <motion.div 
               key="boom3d-overlay"
               initial={{ opacity: 0 }}
@@ -222,7 +222,7 @@ export function HeroMobile() {
         
         {/* Slide 1 and Slide 2 Text Overlays */}
         <AnimatePresence mode="wait">
-            {heroImages[currentImageIndex] === '/hero/hero-banner.png' && (
+            {heroImages[currentImageIndex] === '/hero/hero-banner.webp' && (
               <motion.div 
                 key="hero-text"
                 initial={{ opacity: 0, x: 30 }}
@@ -254,7 +254,7 @@ export function HeroMobile() {
               </motion.div>
             )}
 
-          {heroImages[currentImageIndex] === '/hero/hero-banner1.png' && (
+          {heroImages[currentImageIndex] === '/hero/hero-banner1.webp' && (
             <motion.div 
               key="hero-text-1"
               initial={{ opacity: 0, x: 30 }}

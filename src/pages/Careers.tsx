@@ -243,7 +243,7 @@ export function Careers() {
         {/* Full-width Hero Banner */}
         <section 
           className="relative w-full min-h-[300px] md:min-h-[400px] py-16 md:py-20 flex items-center bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/hero/career_banner.png')" }}
+          style={{ backgroundImage: "url('/hero/career_banner.webp')" }}
         >
           {/* Optional dark overlay if text needs contrast, though user didn't explicitly ask for it */}
           <div className="absolute inset-0 bg-white/30 md:bg-transparent pointer-events-none"></div>

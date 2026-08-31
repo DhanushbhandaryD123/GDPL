@@ -36,6 +36,25 @@ export function FaqTemplate({ title, description, keywords, logoSrc, logoAlt, fa
   // Default to the first category if categories exist
   const [activeCategory, setActiveCategory] = useState<string>(categories?.[0]?.id || '');
 
+  // Full FAQ set regardless of the active tab/search, so the structured data
+  // always describes everything on the page, not just what's visible right now.
+  const allFaqs: FaqItem[] = categories ? categories.flatMap((cat) => cat.faqs) : faqs || [];
+  const faqSchema =
+    allFaqs.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": allFaqs.map((faq) => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": faq.answer,
+            },
+          })),
+        }
+      : null;
+
   // Helper to render a single FAQ item
   const renderFaqItem = (faq: FaqItem, uniqueId: string) => {
     const isOpen = openIndex === uniqueId;
@@ -130,6 +149,9 @@ export function FaqTemplate({ title, description, keywords, logoSrc, logoAlt, fa
             ]
           })}
         </script>
+        {faqSchema && (
+          <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+        )}
       </Helmet>
       
       <Navbar />
