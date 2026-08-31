@@ -1,6 +1,5 @@
 import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../components/layout/Navbar';
-import { Breadcrumbs } from '../components/layout/Breadcrumbs';
 import { EducatorsHero } from '../components/captoeducators/EducatorsHero';
 import { EducatorsBenefits } from '../components/captoeducators/EducatorsBenefits';
 import { EducatorsShowcase } from '../components/captoeducators/EducatorsShowcase';
@@ -43,7 +42,6 @@ export function CaptoEducatorsPage() {
       </Helmet>
 
       <Navbar />
-      <Breadcrumbs items={[{ name: 'Capto', href: '/capto' }, { name: 'For Educators' }]} />
 
       <main className="relative">
         <EducatorsHero />

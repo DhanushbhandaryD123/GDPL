@@ -18,7 +18,6 @@ import {
 } from 'lucide-react';
 
 import { Navbar } from '../components/layout/Navbar';
-import { Breadcrumbs } from '../components/layout/Breadcrumbs';
 import { Footer } from '../components/layout/Footer';
 import { useTranslation } from 'react-i18next';
 
@@ -237,7 +236,6 @@ export function Careers() {
       </Helmet>
       
       <Navbar />
-      <Breadcrumbs items={[{ name: 'Careers' }]} />
 
       <main className="bg-[#ffffff]">
         {/* Full-width Hero Banner */}

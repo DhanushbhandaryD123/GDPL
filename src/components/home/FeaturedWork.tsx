@@ -244,7 +244,6 @@ export function FeaturedWork() {
                     src={card.logo} 
                     alt={card.name} 
                     className="w-full h-full object-cover pointer-events-none" 
-                    style={{ imageRendering: 'high-quality' as any }}
                   />
                 </div>
 

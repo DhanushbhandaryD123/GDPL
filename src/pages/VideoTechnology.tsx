@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { Navbar } from '../components/layout/Navbar';
-import { Breadcrumbs } from '../components/layout/Breadcrumbs';
 import { Footer } from '../components/layout/Footer';
 import { FloatingSocials } from '../components/layout/FloatingSocials';
 import { Download, PenTool, Code, CloudDownload, Rocket, Smartphone, LayoutGrid, Laptop, Globe, Terminal, Tv, Camera, Apple } from 'lucide-react';
@@ -53,7 +52,6 @@ export function VideoTechnology() {
         <link rel="canonical" href={`${domain}/technology/video`} />
       </Helmet>
       <Navbar />
-      <Breadcrumbs items={[{ name: 'Video Technology' }]} />
       <FloatingSocials />
 
       <main className="flex-grow">

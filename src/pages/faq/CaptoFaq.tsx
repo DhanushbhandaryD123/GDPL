@@ -1,6 +1,5 @@
 import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../../components/layout/Navbar';
-import { Breadcrumbs } from '../../components/layout/Breadcrumbs';
 import { Footer } from '../../components/layout/Footer';
 import { FloatingSocials } from '../../components/layout/FloatingSocials';
 import { ChevronDown, Search } from 'lucide-react';
@@ -24,7 +23,6 @@ export function CaptoFaq() {
     <div className="min-h-screen bg-[#ffffff] text-gray-800 font-sans flex flex-col">
       <Helmet><title>Capto FAQ | Global Delight</title></Helmet>
       <Navbar />
-      <Breadcrumbs items={[{ name: 'FAQ', href: '/faq' }, { name: 'Capto FAQ' }]} />
       <FloatingSocials />
 
       <main className="flex-grow container mx-auto px-6 py-24 max-w-5xl">

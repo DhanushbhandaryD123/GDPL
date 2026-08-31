@@ -18,7 +18,7 @@ export function BusinessHero() {
       setCurrentIndex((prev) => (prev + 1) % slides.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [slides.length]);
 
   return (
     <div className="w-full md:p-0 px-2 pt-1 pb-4">

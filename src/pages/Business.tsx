@@ -1,6 +1,5 @@
 import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../components/layout/Navbar';
-import { Breadcrumbs } from '../components/layout/Breadcrumbs';
 import { Footer } from '../components/layout/Footer';
 import { FloatingSocials } from '../components/layout/FloatingSocials';
 import { BusinessHero } from '../components/business/BusinessHero';
@@ -28,7 +27,6 @@ export function Business() {
       </Helmet>
       
       <Navbar logoUrl="/logos/GDL_B2B_Logo.png" />
-      <Breadcrumbs items={[{ name: 'Business' }]} />
       <FloatingSocials />
 
       <main>

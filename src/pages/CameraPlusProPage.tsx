@@ -1,6 +1,5 @@
 import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../components/layout/Navbar';
-import { Breadcrumbs } from '../components/layout/Breadcrumbs';
 import { Footer } from '../components/layout/Footer';
 import { ProMainHero } from '../components/camerapluspro/ProMainHero';
 import { ProFeatures } from '../components/camerapluspro/ProFeatures';
@@ -32,7 +31,6 @@ export function CameraPlusProPage() {
       </Helmet>
 
       <Navbar />
-      <Breadcrumbs items={[{ name: 'Camera Plus Pro' }]} />
 
       <main>
         <ProMainHero />

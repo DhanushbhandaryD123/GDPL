@@ -2,17 +2,29 @@ import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { Navbar } from '../components/layout/Navbar';
-import { Breadcrumbs } from '../components/layout/Breadcrumbs';
 import { Footer } from '../components/layout/Footer';
 import { FloatingSocials } from '../components/layout/FloatingSocials';
-import { Wand2, Zap, Layers } from 'lucide-react';
+import { Wand2, Zap, Layers, type LucideIcon } from 'lucide-react';
+
+interface TabFeature {
+  icon: LucideIcon;
+  label: string;
+}
+
+interface TabData {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  features?: TabFeature[];
+}
 
 export function CameraTechnology() {
   const { t } = useTranslation();
   const domain = import.meta.env.VITE_SITE_URL || '';
   const [activeTab, setActiveTab] = useState(0);
 
-  const tabsData: any[] = [
+  const tabsData: TabData[] = [
     {
       id: 'airsnap',
       title: t('technology.camera.tab1_title'),
@@ -63,7 +75,6 @@ export function CameraTechnology() {
       </Helmet>
 
       <Navbar />
-      <Breadcrumbs items={[{ name: 'Camera Technology' }]} />
       <FloatingSocials />
 
       <main className="flex-grow">
@@ -130,7 +141,7 @@ export function CameraTechnology() {
                   
                   {tabsData[activeTab].features && (
                     <div className="mt-8 flex items-stretch justify-center md:justify-start gap-4 md:gap-6 animate-fadeIn flex-wrap">
-                      {tabsData[activeTab].features.map((feat: any, idx: number) => {
+                      {tabsData[activeTab].features.map((feat, idx: number) => {
                         const Icon = feat.icon;
                         return (
                           <div key={idx} className="flex flex-col items-center text-center bg-white px-4 py-5 rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-100 w-[110px] md:w-[130px]">

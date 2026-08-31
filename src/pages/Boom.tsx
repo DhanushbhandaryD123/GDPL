@@ -1,6 +1,5 @@
 import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../components/layout/Navbar';
-import { Breadcrumbs } from '../components/layout/Breadcrumbs';
 import { Footer } from '../components/layout/Footer';
 import { BoomHero } from '../components/boom/BoomHero';
 import { BoomPlatforms } from '../components/boom/BoomPlatforms';
@@ -45,7 +44,6 @@ export function Boom() {
       </Helmet>
 
       <Navbar />
-      <Breadcrumbs items={[{ name: 'Boom' }]} />
 
       <main>
         <BoomHero />

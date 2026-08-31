@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { Navbar } from '../components/layout/Navbar';
-import { Breadcrumbs } from '../components/layout/Breadcrumbs';
 import { Footer } from '../components/layout/Footer';
 import { FloatingSocials } from '../components/layout/FloatingSocials';
 
@@ -63,7 +62,6 @@ export function ScreenCaptureTechnology() {
       </Helmet>
 
       <Navbar />
-      <Breadcrumbs items={[{ name: 'Screen Capture Technology' }]} />
       <FloatingSocials />
 
       <main className="flex-grow">

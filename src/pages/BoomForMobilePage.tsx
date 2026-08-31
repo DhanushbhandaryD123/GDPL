@@ -1,6 +1,5 @@
 import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../components/layout/Navbar';
-import { Breadcrumbs } from '../components/layout/Breadcrumbs';
 import { HeroCarousel } from '../components/boomformobile/HeroCarousel';
 import { BoomStory } from '../components/boomformobile/BoomStory';
 import { PrimeFeatures } from '../components/boomformobile/PrimeFeatures';
@@ -43,7 +42,6 @@ export function BoomForMobilePage() {
       </Helmet>
       
       <Navbar />
-      <Breadcrumbs items={[{ name: 'Boom for Mobile' }]} />
 
       <main>
         <HeroCarousel />
