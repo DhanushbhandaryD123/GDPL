@@ -412,6 +412,25 @@
       "older_macos": "Usi una versione precedente di macOS?",
       "buy_now": "ACQUISTA ORA"
     },
+    "key_features": {
+      "title": "Funzionalità che faranno esplodere il tuo mondo!",
+      "subtitle": "Personalizza l'audio del tuo sistema con le funzionalità di audio enhancement di livello mondiale di Boom",
+      "read_more": "Leggi di più",
+      "read_less": "Leggi meno",
+      "surround_title": "Surround 3D",
+      "surround_desc": "Vivi film, giochi e musica con la tecnologia 3D Surround che offre un sorprendente suono surround virtuale senza cuffie speciali o costosi booster per il suono surround.",
+      "eq_title": "Preset dell'equalizzatore",
+      "eq_desc": "Un equalizzatore avanzato a 31 bande per una regolazione audio precisa. Boom 3D per Mac e Windows offre anche una gamma di preset curati per adattarsi a generi diversi e ai gusti d'ascolto individuali.",
+      "booster_title": "Boom Volume Booster",
+      "booster_badge": "(Solo per la versione Mac)",
+      "booster_desc": "Boom 3D per Mac è un booster del volume a livello di sistema che aumenta in sicurezza il volume oltre i suoi limiti standard, offrendo un'esperienza audio intensa e ricca senza compromettere la qualità del suono.",
+      "apps_title": "Controller del volume delle app",
+      "apps_desc": "Boom 3D ti permette di gestire i livelli e i volumi audio delle singole applicazioni, garantendo un'esperienza ininterrotta durante film, giochi o musica.",
+      "player_title": "Lettore audio all'avanguardia",
+      "player_desc": "Riproduci i brani salvati localmente con gli inconfondibili effetti Boom grazie al nostro lettore audio completo, e crea playlist per organizzare la tua collezione musicale come nella tua app musicale personale.",
+      "radio_title": "Oltre 20.000 stazioni radio",
+      "radio_desc": "Unisciti a Boom per accedere gratuitamente a oltre 20.000 stazioni radio internet locali e internazionali in 120 paesi."
+    },
     "surround": {
       "title": "Magico Surround Sound 3D",
       "subtitle": "Vivi film, giochi e musica con la tecnologia Surround Sound 3D che offre un incredibile surround sound virtuale senza cuffie speciali o costosi booster surround sound.",

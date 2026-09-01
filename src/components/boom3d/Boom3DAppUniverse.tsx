@@ -302,10 +302,10 @@ function AtmosphereCard({ image, altKey }: { image: string; altKey: string }) {
 type Corner = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
 
 const CARDS: { key: string; corner: Corner; rotate: number; render: () => React.ReactNode }[] = [
-  { key: 'movie', corner: 'top-left', rotate: -6, render: () => <AtmosphereCard image="/boom3D/s5.png" altKey="boom3d.app_universe.card_movie_alt" /> },
+  { key: 'movie', corner: 'top-left', rotate: -6, render: () => <AtmosphereCard image="/boom3D/s5.webp" altKey="boom3d.app_universe.card_movie_alt" /> },
   { key: 'equalizer', corner: 'top-right', rotate: 5, render: () => <EqualizerCard /> },
   { key: 'music', corner: 'bottom-left', rotate: 5, render: () => <MusicPlayerCard /> },
-  { key: 'gaming', corner: 'bottom-right', rotate: -5, render: () => <AtmosphereCard image="/boom3D/g3.png" altKey="boom3d.app_universe.card_gaming_alt" /> },
+  { key: 'gaming', corner: 'bottom-right', rotate: -5, render: () => <AtmosphereCard image="/boom3D/g3.webp" altKey="boom3d.app_universe.card_gaming_alt" /> },
 ];
 
 const CARD_ENTRY_OFFSET: Record<Corner, { x: number; y: number }> = {

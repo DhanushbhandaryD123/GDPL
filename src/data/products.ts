@@ -40,7 +40,7 @@ export const PRODUCTS = {
     pricing: { currency: 'INR', original: '3700', discounted: '925.37' },
     variants: {
       mac: { icon: '/apps/Boom3D-mac.jpeg', route: '/boom3D' },
-      windows: { icon: '/apps/boom3d-window.png', route: '/boom3D' },
+      windows: { icon: '/apps/boom3d-window.webp', route: '/boom3D' },
     },
   },
   boom2: {

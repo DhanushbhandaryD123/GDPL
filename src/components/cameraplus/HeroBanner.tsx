@@ -68,7 +68,7 @@ export function HeroBanner() {
           >
             <div className="relative w-full max-w-[500px] lg:max-w-[700px] rounded-3xl md:rounded-[40px] flex items-center justify-center">
               <img 
-                src="/cameraplus/hero.png" 
+                src="/cameraplus/hero.webp" 
                 alt="Camera Plus App Interface" 
                 className="w-full h-auto object-contain mx-auto z-20"
               />    

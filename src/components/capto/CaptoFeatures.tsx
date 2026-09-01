@@ -6,15 +6,15 @@ export function CaptoFeatures() {
   const { t } = useTranslation();
 
   const features = [
-    { title: t('capto.features.f1_title'), description: t('capto.features.f1_desc'), icon: MonitorPlay, image: '/capto/s1.png' },
-    { title: t('capto.features.f2_title'), description: t('capto.features.f2_desc'), icon: Video, image: '/capto/s2.png' },
-    { title: t('capto.features.f3_title'), description: t('capto.features.f3_desc'), icon: Film, image: '/capto/s3.png' },
-    { title: t('capto.features.f4_title'), description: t('capto.features.f4_desc'), icon: MonitorSmartphone, image: '/capto/s4.png' },
-    { title: t('capto.features.f5_title'), description: t('capto.features.f5_desc'), icon: ImageIcon, image: '/capto/s5.png' },
-    { title: t('capto.features.f6_title'), description: t('capto.features.f6_desc'), icon: Mic, image: '/capto/s6.png' },
-    { title: t('capto.features.f7_title'), description: t('capto.features.f7_desc'), icon: Smartphone, image: '/capto/s7.png' },
-    { title: t('capto.features.f8_title'), description: t('capto.features.f8_desc'), icon: Folder, image: '/capto/s8.png' },
-    { title: t('capto.features.f9_title'), description: t('capto.features.f9_desc'), icon: Share2, image: '/capto/s9.png' }
+    { title: t('capto.features.f1_title'), description: t('capto.features.f1_desc'), icon: MonitorPlay, image: '/capto/s1.webp' },
+    { title: t('capto.features.f2_title'), description: t('capto.features.f2_desc'), icon: Video, image: '/capto/s2.webp' },
+    { title: t('capto.features.f3_title'), description: t('capto.features.f3_desc'), icon: Film, image: '/capto/s3.webp' },
+    { title: t('capto.features.f4_title'), description: t('capto.features.f4_desc'), icon: MonitorSmartphone, image: '/capto/s4.webp' },
+    { title: t('capto.features.f5_title'), description: t('capto.features.f5_desc'), icon: ImageIcon, image: '/capto/s5.webp' },
+    { title: t('capto.features.f6_title'), description: t('capto.features.f6_desc'), icon: Mic, image: '/capto/s6.webp' },
+    { title: t('capto.features.f7_title'), description: t('capto.features.f7_desc'), icon: Smartphone, image: '/capto/s7.webp' },
+    { title: t('capto.features.f8_title'), description: t('capto.features.f8_desc'), icon: Folder, image: '/capto/s8.webp' },
+    { title: t('capto.features.f9_title'), description: t('capto.features.f9_desc'), icon: Share2, image: '/capto/s9.webp' }
   ];
 
   return (

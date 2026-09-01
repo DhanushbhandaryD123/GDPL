@@ -15,13 +15,13 @@ export function ScreenCaptureTechnology() {
       id: 'capture',
       title: t('technology.screenCapture.tab1_title'),
       description: t('technology.screenCapture.tab1_desc'),
-      image: '/business/ST/S2.png'
+      image: '/business/ST/S2.webp'
     },
     {
       id: 'record-edit',
       title: t('technology.screenCapture.tab2_title'),
       description: t('technology.screenCapture.tab2_desc'),
-      image: '/business/ST/S1.png'
+      image: '/business/ST/S1.webp'
     }
   ];
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -69,7 +69,7 @@ export function ScreenCaptureTechnology() {
         <section className="w-full bg-[#fff] relative px-2 md:px-4 pt-2 md:pt-4 pb-0">
           <div className="relative w-full h-[250px] md:h-[350px] lg:h-[500px] xl:h-[450px] rounded-lg overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.05)]">
             <img
-              src="/business/ST/ST_banner.png"
+              src="/business/ST/ST_banner.webp"
               alt="Screen Capture Technology Banner"
               className="absolute inset-0 w-full h-full object-cover object-center"
             />

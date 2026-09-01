@@ -73,7 +73,7 @@ export function EducatorsHero() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.5)] border border-white/10">
               <img
-                src="/capto/s3.png"
+                src="/capto/s3.webp"
                 alt="Capto's timeline and annotation tools used to build a tutorial video"
                 className="w-full h-auto block"
               />

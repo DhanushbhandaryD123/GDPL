@@ -7,10 +7,10 @@ export function BusinessTechnologies() {
   const { t } = useTranslation();
 
   const technologies = [
-    { id: 'audio', title: t('business.technologies.audio_title'), description: t('business.technologies.audio_desc'), bgImage: '/business/Audio_Technology.png', icon: '/business/Boom_normal.png', path: '/technology/audio' },
-    { id: 'video', title: t('business.technologies.video_title'), description: t('business.technologies.video_desc'), bgImage: '/business/Video_Technology.png', icon: '/business/Vizmato_normal.png', path: '/technology/video' },
-    { id: 'photo', title: t('business.technologies.photo_title'), description: t('business.technologies.photo_desc'), bgImage: '/business/Camera_Technology.png', icon: '/business/CameraTechnology_Normal.png', path: '/technology/camera' },
-    { id: 'screen', title: t('business.technologies.screen_title'), description: t('business.technologies.screen_desc'), bgImage: '/business/Screen_Capture_Technology.png', icon: '/business/ScreenCapture_Normal.png', path: '/technology/screen-capture' }
+    { id: 'audio', title: t('business.technologies.audio_title'), description: t('business.technologies.audio_desc'), bgImage: '/business/Audio_Technology.webp', icon: '/business/Boom_normal.png', path: '/technology/audio' },
+    { id: 'video', title: t('business.technologies.video_title'), description: t('business.technologies.video_desc'), bgImage: '/business/Video_Technology.webp', icon: '/business/Vizmato_normal.png', path: '/technology/video' },
+    { id: 'photo', title: t('business.technologies.photo_title'), description: t('business.technologies.photo_desc'), bgImage: '/business/Camera_Technology.webp', icon: '/business/CameraTechnology_Normal.png', path: '/technology/camera' },
+    { id: 'screen', title: t('business.technologies.screen_title'), description: t('business.technologies.screen_desc'), bgImage: '/business/Screen_Capture_Technology.webp', icon: '/business/ScreenCapture_Normal.png', path: '/technology/screen-capture' }
   ];
 
   return (

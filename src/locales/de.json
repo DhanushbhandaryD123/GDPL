@@ -412,6 +412,25 @@
       "older_macos": "Nutzt du eine ältere macOS-Version?",
       "buy_now": "JETZT KAUFEN"
     },
+    "key_features": {
+      "title": "Features, die deine Welt zum Beben bringen!",
+      "subtitle": "Optimiere dein systemweites Audio mit Booms erstklassigen Audio-Verbesserungsfunktionen",
+      "read_more": "Mehr lesen",
+      "read_less": "Weniger anzeigen",
+      "surround_title": "3D Surround",
+      "surround_desc": "Erlebe Filme, Spiele und Musik mit 3D-Surround-Technologie, die einen beeindruckenden virtuellen Surround-Sound bietet – ganz ohne spezielle Kopfhörer oder teure Surround-Sound-Booster.",
+      "eq_title": "Equalizer-Presets",
+      "eq_desc": "Ein fortschrittlicher 31-Band-Equalizer für präzises Audio-Tuning. Boom 3D für Mac & Windows bietet außerdem eine Reihe sorgfältig abgestimmter Presets für verschiedene Genres und individuelle Hörgewohnheiten.",
+      "booster_title": "Boom Lautstärke-Booster",
+      "booster_badge": "(Nur für Mac-Version)",
+      "booster_desc": "Boom 3D für Mac ist ein systemweiter Lautstärke-Booster, der die Lautstärke sicher über die üblichen Grenzen hinaus erhöht – für ein intensives, klangvolles Hörerlebnis ohne Kompromisse bei der Audioqualität.",
+      "apps_title": "App-Lautstärkeregler",
+      "apps_desc": "Mit Boom 3D verwaltest du die Lautstärke einzelner Anwendungen individuell und genießt ein unterbrechungsfreies Film-, Spiel- oder Musikerlebnis.",
+      "player_title": "Hochmoderner Audio-Player",
+      "player_desc": "Spiele deine lokal gespeicherten Songs mit unschlagbaren Boom-Effekten über unseren vollwertigen Audio-Player ab und erstelle Playlists, um deine Musiksammlung wie in einer eigenen Musik-App zu organisieren.",
+      "radio_title": "20.000+ Radiosender",
+      "radio_desc": "Nutze mit Boom kostenlosen Zugang zu mehr als 20.000 lokalen und internationalen Internetradiosendern aus 120 Ländern."
+    },
     "surround": {
       "title": "Magischer 3D Surround Sound",
       "subtitle": "Erlebe Filme, Spiele und Musik mit 3D-Surround-Sound-Technologie, die einen beeindruckenden virtuellen Surround-Sound ohne spezielle Kopfhörer oder teure Surround-Sound-Booster bietet.",

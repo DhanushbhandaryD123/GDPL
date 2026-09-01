@@ -451,6 +451,25 @@
         "apple_music": "Boost and shape your Apple Music tracks with specialized audio presets."
       }
     },
+    "key_features": {
+      "title": "Features that make your world go BOOM!",
+      "subtitle": "Tweak your system-wide audio with Boom's world-class audio enhancement features",
+      "read_more": "Read more",
+      "read_less": "Read less",
+      "surround_title": "3D Surround",
+      "surround_desc": "Experience movies, games, and music with 3D Surround technology that offers a mind-blowing virtual surround sound without any special headphones or expensive surround sound boosters to turn up the volume.",
+      "eq_title": "Equalizer Presets",
+      "eq_desc": "An advanced 31-band equalizer for precise audio tuning. Boom 3D for Mac & Windows also provides a range of presets carefully handcrafted to match different genres and individual tastes of listening.",
+      "booster_title": "Boom Volume Booster",
+      "booster_badge": "(Only for Mac version)",
+      "booster_desc": "Boom 3D for Mac is a system-wide volume booster that safely increases the volume beyond its regular limits to deliver an intense and rich audio experience without any compromise on audio quality.",
+      "apps_title": "Apps Volume Controller",
+      "apps_desc": "Boom 3D allows you to manage individual application audio levels & volumes and seamlessly have an uninterrupted movie/game/music experience.",
+      "player_title": "State of the Art Audio Player",
+      "player_desc": "Play your locally stored songs with unbeatable Boom effects with our full-fledged audio player and create playlists to organize your music collections, just like your very own personal music player app.",
+      "radio_title": "20,000+ Radio Stations",
+      "radio_desc": "Join Boom to enjoy free access to more than 20k local and international internet radio stations across 120 countries."
+    },
     "surround": {
       "title": "Magical 3D Surround Sound",
       "subtitle": "Experience movies, games and music with 3D Surround Sound technology that offers a mind-blowing virtual surround sound without any special headphones or expensive surround sound boosters.",

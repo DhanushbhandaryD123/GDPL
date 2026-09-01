@@ -11,7 +11,7 @@ export function AboutHero() {
         {/* Background Image & Heavy Overlays */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="/team/GDPL-team.png" 
+            src="/team/GDPL-team.webp" 
             alt="Global Delight Team" 
             className="w-full h-full object-cover opacity-25 mix-blend-luminosity"
           />
@@ -96,7 +96,7 @@ export function AboutHero() {
               className="absolute z-10 flex justify-center items-center scale-[1.3] md:scale-[1.1] lg:scale-[1.2] xl:scale-[1.3] right-0 md:right-auto"
             >
               <img 
-                src="/team/global.png" 
+                src="/team/global.webp" 
                 alt="Global Delight Digital Globe"
                 className="w-full md:w-[500px] lg:w-[650px] xl:w-[750px] h-auto object-contain"
               />

@@ -17,12 +17,12 @@ const PRESET_WAVES: Record<string, number[]> = {
 export function Boom3DEqualizer() {
   const { t } = useTranslation();
   const presets = [
-    { name: t('boom3d.equalizer.preset_bass'), icon: Box, image: '/boom3D/s1.png', waveKey: 'bass' },
-    { name: t('boom3d.equalizer.preset_acoustic'), icon: Radio, image: '/boom3D/s3.png', waveKey: 'acoustic' },
-    { name: t('boom3d.equalizer.preset_pop'), icon: Music, image: '/boom3D/s4.png', waveKey: 'pop' },
-    { name: t('boom3d.equalizer.preset_electronic'), icon: Speaker, image: '/boom3D/s5.png', waveKey: 'electronic' },
-    { name: t('boom3d.equalizer.preset_classical'), icon: Activity, image: '/boom3D/s6.png', waveKey: 'classical' },
-    { name: t('boom3d.equalizer.preset_vocals'), icon: Mic2, image: '/boom3D/s7.png', waveKey: 'vocals' },
+    { name: t('boom3d.equalizer.preset_bass'), icon: Box, image: '/boom3D/s1.webp', waveKey: 'bass' },
+    { name: t('boom3d.equalizer.preset_acoustic'), icon: Radio, image: '/boom3D/s3.webp', waveKey: 'acoustic' },
+    { name: t('boom3d.equalizer.preset_pop'), icon: Music, image: '/boom3D/s4.webp', waveKey: 'pop' },
+    { name: t('boom3d.equalizer.preset_electronic'), icon: Speaker, image: '/boom3D/s5.webp', waveKey: 'electronic' },
+    { name: t('boom3d.equalizer.preset_classical'), icon: Activity, image: '/boom3D/s6.webp', waveKey: 'classical' },
+    { name: t('boom3d.equalizer.preset_vocals'), icon: Mic2, image: '/boom3D/s7.webp', waveKey: 'vocals' },
   ];
   const [activePreset, setActivePreset] = useState(presets[0]);
   const activeWave = PRESET_WAVES[activePreset.waveKey as string] || PRESET_WAVES.bass;

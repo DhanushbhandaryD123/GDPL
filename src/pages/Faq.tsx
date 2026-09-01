@@ -55,7 +55,7 @@ export function Faq() {
           {/* Banner Image */}
           <div className="relative w-full h-[350px] md:h-[450px] lg:h-[550px]">
             <img
-              src="/faq/Banner.png"
+              src="/faq/Banner.webp"
               alt="FAQ and Support Banner"
               className="absolute inset-0 w-full h-full object-cover object-center"
             />
@@ -117,7 +117,7 @@ export function Faq() {
                     <div className="bg-white rounded-[24px] p-6 lg:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col items-center text-center transition-all hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 relative overflow-hidden group">
                       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500"></div>
                       <div className="h-20 mb-4 flex items-center justify-center">
-                        <img src="/apps/boom3d-window.png" alt="Boom 3D" className="h-full object-contain" />
+                        <img src="/apps/boom3d-window.webp" alt="Boom 3D" className="h-full object-contain" />
                       </div>
                       <h3 className="text-xl font-bold text-gray-900 mb-3">{t('faq.boom3d_name')}</h3>
                       <p className="text-[13px] md:text-sm text-gray-500 mb-6 flex-grow leading-relaxed">{t('faq.boom3d_desc')}</p>

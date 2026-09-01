@@ -412,6 +412,25 @@
       "older_macos": "¿Usas una versión anterior de macOS?",
       "buy_now": "COMPRAR AHORA"
     },
+    "key_features": {
+      "title": "¡Funciones que harán vibrar tu mundo!",
+      "subtitle": "Personaliza el audio de todo tu sistema con las funciones de mejora de audio de clase mundial de Boom",
+      "read_more": "Leer más",
+      "read_less": "Leer menos",
+      "surround_title": "Surround 3D",
+      "surround_desc": "Vive películas, juegos y música con la tecnología Surround 3D, que ofrece un sonido envolvente virtual impresionante sin necesidad de auriculares especiales ni costosos potenciadores de sonido envolvente.",
+      "eq_title": "Preajustes del ecualizador",
+      "eq_desc": "Un ecualizador avanzado de 31 bandas para un ajuste de audio preciso. Boom 3D para Mac y Windows también ofrece una variedad de preajustes cuidadosamente diseñados para adaptarse a distintos géneros y gustos musicales.",
+      "booster_title": "Potenciador de volumen Boom",
+      "booster_badge": "(Solo para la versión Mac)",
+      "booster_desc": "Boom 3D para Mac es un potenciador de volumen a nivel de sistema que aumenta de forma segura el volumen más allá de sus límites habituales, ofreciendo una experiencia de audio intensa y rica sin comprometer la calidad del sonido.",
+      "apps_title": "Controlador de volumen por aplicación",
+      "apps_desc": "Boom 3D te permite gestionar de forma individual los niveles y volúmenes de audio de cada aplicación, para disfrutar de una experiencia ininterrumpida de películas, juegos o música.",
+      "player_title": "Reproductor de audio de vanguardia",
+      "player_desc": "Reproduce tus canciones almacenadas localmente con los inigualables efectos Boom gracias a nuestro reproductor de audio completo, y crea listas de reproducción para organizar tu colección musical, como en tu propia app de música.",
+      "radio_title": "Más de 20.000 emisoras de radio",
+      "radio_desc": "Únete a Boom y disfruta de acceso gratuito a más de 20.000 emisoras de radio por internet, locales e internacionales, en 120 países."
+    },
     "surround": {
       "title": "Mágico Sonido Envolvente 3D",
       "subtitle": "Experimenta películas, juegos y música con la tecnología de Sonido Envolvente 3D que ofrece un sonido envolvente virtual alucinante sin auriculares especiales ni potenciadores de sonido envolvente costosos.",

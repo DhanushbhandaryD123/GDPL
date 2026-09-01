@@ -12,21 +12,21 @@ export function Boom2RemoteControl() {
       icon: Smartphone,
       title: t('boom2.remote_control.remote_title'),
       description: t('boom2.remote_control.remote_desc'),
-      imagePath: '/boom2/remote.png'
+      imagePath: '/boom2/remote.webp'
     },
     {
       id: 'recorder',
       icon: Mic,
       title: t('boom2.remote_control.recorder_title'),
       description: t('boom2.remote_control.recorder_desc'),
-      imagePath: '/boom2/audio.png'
+      imagePath: '/boom2/audio.webp'
     },
     {
       id: 'output',
       icon: Headphones,
       title: t('boom2.remote_control.output_title'),
       description: t('boom2.remote_control.output_desc'),
-      imagePath: '/boom2/output.png'
+      imagePath: '/boom2/output.webp'
     }
   ];
 

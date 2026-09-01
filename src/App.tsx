@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Toaster } from 'react-hot-toast';
@@ -153,14 +153,14 @@ function Home() {
           <AppCategory
             title={t('home.categories.mac_app')}
             deviceImageAlt="MacBook"
-            deviceImagePath="/devices/macbook.png"
+            deviceImagePath="/devices/macbook.webp"
             imageClassName="max-w-[350px] md:max-w-[450px]"
             apps={macApps}
           />
           <AppCategory
             title={t('home.categories.windows_app')}
             deviceImageAlt="Windows Laptop"
-            deviceImagePath="/devices/windows.png"
+            deviceImagePath="/devices/windows.webp"
             imageClassName="max-w-[350px] md:max-w-[450px]"
             apps={windowsApps}
             reverse={false}
@@ -168,14 +168,14 @@ function Home() {
           <AppCategory
             title={t('home.categories.ios_app')}
             deviceImageAlt="iPhone"
-            deviceImagePath="/devices/iphone.png"
+            deviceImagePath="/devices/iphone.webp"
             imageClassName="max-w-[250px] md:max-w-[300px]"
             apps={iosApps}
           />
           <AppCategory
             title={t('home.categories.android_app')}
             deviceImageAlt="Android Phone"
-            deviceImagePath="/devices/Android.png"
+            deviceImagePath="/devices/Android.webp"
             imageClassName="max-w-[150px] md:max-w-[180px]"
             apps={androidApps}
             reverse={false}
@@ -214,38 +214,41 @@ function Home() {
   );
 }
 
-import { About } from './pages/About';
-import { Business } from './pages/Business';
-import { AudioTechnology } from './pages/AudioTechnology';
-import { VideoTechnology } from './pages/VideoTechnology';
-import { CameraTechnology } from './pages/CameraTechnology';
-import { ScreenCaptureTechnology } from './pages/ScreenCaptureTechnology';
-import { Faq } from './pages/Faq';
-import { Boom3DMacFaq } from './pages/faq/Boom3DMacFaq';
-import { Boom3DMasFaq } from './pages/faq/Boom3DMasFaq';
-import { Boom3DWinFaq } from './pages/faq/Boom3DWinFaq';
-import { AuDimixWinFaq } from './pages/faq/AuDimixWinFaq';
-import { Boom2Faq } from './pages/faq/Boom2Faq';
-import { BoomIosFaq } from './pages/faq/BoomIosFaq';
-import { VizmatoFaq } from './pages/faq/VizmatoFaq';
-import { CaptoMacFaq } from './pages/faq/CaptoMacFaq';
-import { CaptoWinFaq } from './pages/faq/CaptoWinFaq';
-import { AudionFaq } from './pages/faq/AudionFaq';
-import { Contact } from './pages/Contact';
-import { Careers } from './pages/Careers';
+// Every non-Home page is route-level code-split: a visitor to /boom2 should
+// not have to download every other page's JS too. Home and NotFound stay
+// eager since they're on the critical path for the most common navigations.
+const About = lazy(() => import('./pages/About').then(m => ({ default: m.About })));
+const Business = lazy(() => import('./pages/Business').then(m => ({ default: m.Business })));
+const AudioTechnology = lazy(() => import('./pages/AudioTechnology').then(m => ({ default: m.AudioTechnology })));
+const VideoTechnology = lazy(() => import('./pages/VideoTechnology').then(m => ({ default: m.VideoTechnology })));
+const CameraTechnology = lazy(() => import('./pages/CameraTechnology').then(m => ({ default: m.CameraTechnology })));
+const ScreenCaptureTechnology = lazy(() => import('./pages/ScreenCaptureTechnology').then(m => ({ default: m.ScreenCaptureTechnology })));
+const Faq = lazy(() => import('./pages/Faq').then(m => ({ default: m.Faq })));
+const Boom3DMacFaq = lazy(() => import('./pages/faq/Boom3DMacFaq').then(m => ({ default: m.Boom3DMacFaq })));
+const Boom3DMasFaq = lazy(() => import('./pages/faq/Boom3DMasFaq').then(m => ({ default: m.Boom3DMasFaq })));
+const Boom3DWinFaq = lazy(() => import('./pages/faq/Boom3DWinFaq').then(m => ({ default: m.Boom3DWinFaq })));
+const AuDimixWinFaq = lazy(() => import('./pages/faq/AuDimixWinFaq').then(m => ({ default: m.AuDimixWinFaq })));
+const Boom2Faq = lazy(() => import('./pages/faq/Boom2Faq').then(m => ({ default: m.Boom2Faq })));
+const BoomIosFaq = lazy(() => import('./pages/faq/BoomIosFaq').then(m => ({ default: m.BoomIosFaq })));
+const VizmatoFaq = lazy(() => import('./pages/faq/VizmatoFaq').then(m => ({ default: m.VizmatoFaq })));
+const CaptoMacFaq = lazy(() => import('./pages/faq/CaptoMacFaq').then(m => ({ default: m.CaptoMacFaq })));
+const CaptoWinFaq = lazy(() => import('./pages/faq/CaptoWinFaq').then(m => ({ default: m.CaptoWinFaq })));
+const AudionFaq = lazy(() => import('./pages/faq/AudionFaq').then(m => ({ default: m.AudionFaq })));
+const Contact = lazy(() => import('./pages/Contact').then(m => ({ default: m.Contact })));
+const Careers = lazy(() => import('./pages/Careers').then(m => ({ default: m.Careers })));
 import { ScrollToTop } from './components/layout/ScrollToTop';
-import { Boom } from './pages/Boom';
-import { Boom2 } from './pages/Boom2';
-import { Boom3D } from './pages/Boom3D';
-import { Capto } from './pages/Capto';
-import { AuDimixPage } from './pages/AuDimixPage';
-import { BoomForMobilePage } from './pages/BoomForMobilePage';
-import { CaptoWindowsPage } from './pages/CaptoWindowsPage';
-import { AudiOnPage } from './pages/AudiOnPage';
-import { VizmatoPage } from './pages/VizmatoPage';
-import { CameraPlusPage } from './pages/CameraPlusPage';
-import { CameraPlusProPage } from './pages/CameraPlusProPage';
-import { CaptoEducatorsPage } from './pages/CaptoEducatorsPage';
+const Boom = lazy(() => import('./pages/Boom').then(m => ({ default: m.Boom })));
+const Boom2 = lazy(() => import('./pages/Boom2').then(m => ({ default: m.Boom2 })));
+const Boom3D = lazy(() => import('./pages/Boom3D').then(m => ({ default: m.Boom3D })));
+const Capto = lazy(() => import('./pages/Capto').then(m => ({ default: m.Capto })));
+const AuDimixPage = lazy(() => import('./pages/AuDimixPage').then(m => ({ default: m.AuDimixPage })));
+const BoomForMobilePage = lazy(() => import('./pages/BoomForMobilePage').then(m => ({ default: m.BoomForMobilePage })));
+const CaptoWindowsPage = lazy(() => import('./pages/CaptoWindowsPage').then(m => ({ default: m.CaptoWindowsPage })));
+const AudiOnPage = lazy(() => import('./pages/AudiOnPage').then(m => ({ default: m.AudiOnPage })));
+const VizmatoPage = lazy(() => import('./pages/VizmatoPage').then(m => ({ default: m.VizmatoPage })));
+const CameraPlusPage = lazy(() => import('./pages/CameraPlusPage').then(m => ({ default: m.CameraPlusPage })));
+const CameraPlusProPage = lazy(() => import('./pages/CameraPlusProPage').then(m => ({ default: m.CameraPlusProPage })));
+const CaptoEducatorsPage = lazy(() => import('./pages/CaptoEducatorsPage').then(m => ({ default: m.CaptoEducatorsPage })));
 
 import { LanguageSync } from './components/layout/LanguageSync';
 import { rememberLanguage } from './lib/languagePreference';
@@ -253,13 +256,28 @@ import { markSplashComplete } from './lib/splashScreenSignal';
 import { SEOHead } from './components/layout/SEOHead';
 import { NotFound } from './pages/NotFound';
 import { Analytics } from '@vercel/analytics/react';
-import { PrivacyPolicy } from './pages/PrivacyPolicy';
-import { CaptoPrivacyPolicy } from './pages/CaptoPrivacyPolicy';
-import { WhatsNewBoom } from './pages/whatsnew/WhatsNewBoom';
-import { WhatsNewCapto } from './pages/whatsnew/WhatsNewCapto';
-import { WhatsNewBoom2 } from './pages/whatsnew/WhatsNewBoom2';
-import { WhatsNewAudion } from './pages/whatsnew/WhatsNewAudion';
-import { WhatsNewAudimix } from './pages/whatsnew/WhatsNewAudimix';
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy').then(m => ({ default: m.PrivacyPolicy })));
+const CaptoPrivacyPolicy = lazy(() => import('./pages/CaptoPrivacyPolicy').then(m => ({ default: m.CaptoPrivacyPolicy })));
+const WhatsNewBoom = lazy(() => import('./pages/whatsnew/WhatsNewBoom').then(m => ({ default: m.WhatsNewBoom })));
+const WhatsNewCapto = lazy(() => import('./pages/whatsnew/WhatsNewCapto').then(m => ({ default: m.WhatsNewCapto })));
+const WhatsNewBoom2 = lazy(() => import('./pages/whatsnew/WhatsNewBoom2').then(m => ({ default: m.WhatsNewBoom2 })));
+const WhatsNewAudion = lazy(() => import('./pages/whatsnew/WhatsNewAudion').then(m => ({ default: m.WhatsNewAudion })));
+const WhatsNewAudimix = lazy(() => import('./pages/whatsnew/WhatsNewAudimix').then(m => ({ default: m.WhatsNewAudimix })));
+
+function RouteFallback() {
+  return (
+    <div style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div
+        style={{
+          width: 32, height: 32, borderRadius: '50%',
+          border: '3px solid #E5E7EB', borderTopColor: '#4F46E5',
+          animation: 'route-fallback-spin 0.7s linear infinite',
+        }}
+      />
+      <style>{'@keyframes route-fallback-spin { to { transform: rotate(360deg); } }'}</style>
+    </div>
+  );
+}
 
 const appRoutes = [
   // Redirects and Aliases for Old Website URLs
@@ -367,26 +385,28 @@ function App() {
         />
       )}
       <ScrollToTop />
-      <Routes>
-        {appRoutes.map((route, i) => (
-          <Route key={`en-${i}`} path={route.path} element={
-            <>
-              <LanguageSync />
-              {route.element}
-            </>
-          } />
-        ))}
-        {appRoutes.map((route, i) => (
-          <Route key={`lang-${i}`} path={`/:lang${route.path === '/' ? '' : route.path}`} element={
-            <>
-              <LanguageSync />
-              {route.element}
-            </>
-          } />
-        ))}
-        {/* Catch-all 404 route */}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <Suspense fallback={<RouteFallback />}>
+        <Routes>
+          {appRoutes.map((route, i) => (
+            <Route key={`en-${i}`} path={route.path} element={
+              <>
+                <LanguageSync />
+                {route.element}
+              </>
+            } />
+          ))}
+          {appRoutes.map((route, i) => (
+            <Route key={`lang-${i}`} path={`/:lang${route.path === '/' ? '' : route.path}`} element={
+              <>
+                <LanguageSync />
+                {route.element}
+              </>
+            } />
+          ))}
+          {/* Catch-all 404 route */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
       <Toaster position="bottom-right" />
     </>
   );

@@ -11,7 +11,7 @@ export function OurValues() {
         className="w-full flex justify-center items-center"
       >
         <img 
-          src="/team/ourvalues.png" 
+          src="/team/ourvalues.webp" 
           alt="Global Delight Our Values" 
           className="w-full h-auto md:h-[400px] lg:h-[400px] object-contain md:object-cover object-center drop-shadow-2xl"
         />

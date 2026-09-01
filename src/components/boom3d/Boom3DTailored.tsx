@@ -9,19 +9,19 @@ export function Boom3DTailored() {
       title: t('boom3d.tailored.movies_title'),
       description: t('boom3d.tailored.movies_desc'),
       icon: <Film className="w-5 h-5 text-white" />,
-      image: '/boom3D/g1.png'
+      image: '/boom3D/g1.webp'
     },
     {
       title: t('boom3d.tailored.music_title'),
       description: t('boom3d.tailored.music_desc'),
       icon: <Music className="w-5 h-5 text-white" />,
-      image: '/boom3D/g2.png'
+      image: '/boom3D/g2.webp'
     },
     {
       title: t('boom3d.tailored.gaming_title'),
       description: t('boom3d.tailored.gaming_desc'),
       icon: <Gamepad2 className="w-5 h-5 text-white" />,
-      image: '/boom3D/g3.png'
+      image: '/boom3D/g3.webp'
     }
   ];
 

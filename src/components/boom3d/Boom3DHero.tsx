@@ -10,7 +10,7 @@ export function Boom3DHero() {
         {/* Background Image Layer with scale to crop out borders */}
         <div
           className="absolute inset-0 bg-no-repeat bg-cover bg-center scale-[1.08]"
-          style={{ backgroundImage: 'url("/boom3D/boom3d-hero.png")' }}
+          style={{ backgroundImage: 'url("/boom3D/boom3d-hero.webp")' }}
         />
 
         {/* Scrim so the headline stays legible regardless of what's behind it at any breakpoint */}

@@ -27,18 +27,18 @@ export function AudioTechnology() {
   const [activeTab, setActiveTab] = useState<'mac' | 'ios'>('mac');
 
   const boomFeatures = [
-    { id: 1, title: t('technology.audio.mac_f1_title'), icon: BarChart3, description: t('technology.audio.mac_f1_desc'), image: "/business/AT/E1.png" },
-    { id: 2, title: t('technology.audio.mac_f2_title'), icon: Laptop, description: t('technology.audio.mac_f2_desc'), image: "/business/AT/E2.png" },
-    { id: 3, title: t('technology.audio.mac_f3_title'), icon: Volume2, description: t('technology.audio.mac_f3_desc'), image: "/business/AT/E3.png" },
-    { id: 4, title: t('technology.audio.mac_f4_title'), icon: SlidersHorizontal, description: t('technology.audio.mac_f4_desc'), image: "/business/AT/E4.png" },
-    { id: 5, title: t('technology.audio.mac_f5_title'), icon: Activity, description: t('technology.audio.mac_f5_desc'), image: "/business/AT/E5.png" }
+    { id: 1, title: t('technology.audio.mac_f1_title'), icon: BarChart3, description: t('technology.audio.mac_f1_desc'), image: "/business/AT/E1.webp" },
+    { id: 2, title: t('technology.audio.mac_f2_title'), icon: Laptop, description: t('technology.audio.mac_f2_desc'), image: "/business/AT/E2.webp" },
+    { id: 3, title: t('technology.audio.mac_f3_title'), icon: Volume2, description: t('technology.audio.mac_f3_desc'), image: "/business/AT/E3.webp" },
+    { id: 4, title: t('technology.audio.mac_f4_title'), icon: SlidersHorizontal, description: t('technology.audio.mac_f4_desc'), image: "/business/AT/E4.webp" },
+    { id: 5, title: t('technology.audio.mac_f5_title'), icon: Activity, description: t('technology.audio.mac_f5_desc'), image: "/business/AT/E5.webp" }
   ];
 
   const iosFeatures = [
-    { id: 1, title: t('technology.audio.ios_f1_title'), subtitle: t('technology.audio.ios_f1_subtitle'), icon: Box, description: t('technology.audio.ios_f1_desc'), image: "/business/AT/E6.png" },
-    { id: 2, title: t('technology.audio.ios_f2_title'), subtitle: t('technology.audio.ios_f2_subtitle'), icon: SlidersHorizontal, description: t('technology.audio.ios_f2_desc'), image: "/business/AT/E7.png" },
-    { id: 3, title: t('technology.audio.ios_f3_title'), subtitle: t('technology.audio.ios_f3_subtitle'), icon: Gauge, description: t('technology.audio.ios_f3_desc'), image: "/business/AT/E8.png" },
-    { id: 4, title: t('technology.audio.ios_f4_title'), subtitle: t('technology.audio.ios_f4_subtitle'), icon: Headphones, description: t('technology.audio.ios_f4_desc'), image: "/business/AT/E9.png" }
+    { id: 1, title: t('technology.audio.ios_f1_title'), subtitle: t('technology.audio.ios_f1_subtitle'), icon: Box, description: t('technology.audio.ios_f1_desc'), image: "/business/AT/E6.webp" },
+    { id: 2, title: t('technology.audio.ios_f2_title'), subtitle: t('technology.audio.ios_f2_subtitle'), icon: SlidersHorizontal, description: t('technology.audio.ios_f2_desc'), image: "/business/AT/E7.webp" },
+    { id: 3, title: t('technology.audio.ios_f3_title'), subtitle: t('technology.audio.ios_f3_subtitle'), icon: Gauge, description: t('technology.audio.ios_f3_desc'), image: "/business/AT/E8.webp" },
+    { id: 4, title: t('technology.audio.ios_f4_title'), subtitle: t('technology.audio.ios_f4_subtitle'), icon: Headphones, description: t('technology.audio.ios_f4_desc'), image: "/business/AT/E9.webp" }
   ];
   const [activeMacId, setActiveMacId] = useState(1);
   const [activeIosId, setActiveIosId] = useState(1);
@@ -79,7 +79,7 @@ export function AudioTechnology() {
         <section className="relative w-full overflow-hidden bg-black font-sans h-[250px] md:h-[350px] lg:h-[500px]">
           <div className="absolute inset-0 z-0">
             <img 
-              src="/business/AT/Audio-Hbanner.png" 
+              src="/business/AT/Audio-Hbanner.webp" 
               alt="Audio Technology Background" 
               className="w-full h-full object-cover object-top"
             />
@@ -116,7 +116,7 @@ export function AudioTechnology() {
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <img 
-              src="/business/AT/Audio-technlogy-banner.png" 
+              src="/business/AT/Audio-technlogy-banner.webp" 
               alt="Studio Mixing Board" 
               className="w-full h-full object-cover object-center"
             />
@@ -154,7 +154,7 @@ export function AudioTechnology() {
                   {/* Your Application */}
                   <div className="flex flex-col items-center">
                     <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-xl sm:rounded-[1.5rem] flex items-center justify-center p-3 sm:p-4 mb-2 shadow-xl">
-                      <img src="/business/AT/s1.png" alt="Your Application" className="w-full h-full object-contain" />
+                      <img src="/business/AT/s1.webp" alt="Your Application" className="w-full h-full object-contain" />
                     </div>
                     <span className="text-xs sm:text-[13px] font-medium text-gray-200 drop-shadow-md">{t('technology.audio.your_app_label')}</span>
                   </div>
@@ -210,7 +210,7 @@ export function AudioTechnology() {
                   {/* Your Application */}
                   <div className="flex flex-col items-center">
                     <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-xl sm:rounded-[1.5rem] flex items-center justify-center p-3 sm:p-4 mb-2 shadow-xl">
-                      <img src="/business/AT/s1.png" alt="Your Application" className="w-full h-full object-contain" />
+                      <img src="/business/AT/s1.webp" alt="Your Application" className="w-full h-full object-contain" />
                     </div>
                     <span className="text-xs sm:text-[13px] font-medium text-gray-200 drop-shadow-md">{t('technology.audio.your_app_label')}</span>
                   </div>
@@ -254,12 +254,12 @@ export function AudioTechnology() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
               {/* Card 1 */}
               <div className="flex justify-center hover:-translate-y-2 transition-transform duration-300 drop-shadow-2xl">
-                <img src="/business/AT/s2.png" alt={t('technology.audio.card1_alt')} className="w-[90%] max-w-[360px] h-[100px] sm:h-[120px] object-cover object-center rounded-[24px]" />
+                <img src="/business/AT/s2.webp" alt={t('technology.audio.card1_alt')} className="w-[90%] max-w-[360px] h-[100px] sm:h-[120px] object-cover object-center rounded-[24px]" />
               </div>
 
               {/* Card 2 */}
               <div className="flex justify-center hover:-translate-y-2 transition-transform duration-300 drop-shadow-2xl">
-                <img src="/business/AT/s3.png" alt={t('technology.audio.card2_alt')} className="w-[90%] max-w-[360px] h-[100px] sm:h-[120px] object-cover object-center rounded-[24px]" />
+                <img src="/business/AT/s3.webp" alt={t('technology.audio.card2_alt')} className="w-[90%] max-w-[360px] h-[100px] sm:h-[120px] object-cover object-center rounded-[24px]" />
               </div>
             </div>
           </div>

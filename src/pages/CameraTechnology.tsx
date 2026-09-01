@@ -29,13 +29,13 @@ export function CameraTechnology() {
       id: 'airsnap',
       title: t('technology.camera.tab1_title'),
       description: t('technology.camera.tab1_desc'),
-      image: '/business/CT/C1.png'
+      image: '/business/CT/C1.webp'
     },
     {
       id: 'live-filters',
       title: t('technology.camera.tab2_title'),
       description: t('technology.camera.tab2_desc'),
-      image: '/business/CT/C2.png',
+      image: '/business/CT/C2.webp',
       features: [
         { icon: Wand2, label: t('technology.camera.tab2_feature1') },
         { icon: Zap, label: t('technology.camera.tab2_feature2') },
@@ -46,13 +46,13 @@ export function CameraTechnology() {
       id: 'editing',
       title: t('technology.camera.tab3_title'),
       description: t('technology.camera.tab3_desc'),
-      image: '/business/CT/C3.png'
+      image: '/business/CT/C3.webp'
     },
     {
       id: 'secure',
       title: t('technology.camera.tab4_title'),
       description: t('technology.camera.tab4_desc'),
-      image: '/business/CT/C4.png'
+      image: '/business/CT/C4.webp'
     }
   ];
 
@@ -82,7 +82,7 @@ export function CameraTechnology() {
         <section className="w-full bg-[#fff] relative px-2 md:px-4 pt-2 md:pt-4 pb-0">
           <div className="relative w-full h-[250px] md:h-[350px] lg:h-[500px] xl:h-[450px] rounded-lg overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.05)]">
             <img
-              src="/business/CT/CT-banner.png"
+              src="/business/CT/CT-banner.webp"
               alt="Camera Technology Banner"
               className="absolute inset-0 w-full h-full object-cover object-center"
             />
@@ -174,7 +174,7 @@ export function CameraTechnology() {
           <div className="container mx-auto px-4 lg:px-6">
             <div className="relative w-full min-h-[300px] md:min-h-[350px] flex items-center justify-center rounded-2xl overflow-hidden shadow-2xl max-w-6xl mx-auto">
               <img
-              src="/business/CT/CT_C.png"
+              src="/business/CT/CT_C.webp"
               alt="Contact Background"
               className="absolute inset-0 w-full h-full object-cover z-0"
             />

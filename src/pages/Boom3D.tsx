@@ -4,6 +4,7 @@ import { Footer } from '../components/layout/Footer';
 import { Boom3DHero } from '../components/boom3d/Boom3DHero';
 import { Boom3DOSSelector } from '../components/boom3d/Boom3DOSSelector';
 import { Boom3DScrollReveal } from '../components/boom3d/Boom3DScrollReveal';
+import { Boom3DKeyFeatures } from '../components/boom3d/Boom3DKeyFeatures';
 import { Boom3DSurround } from '../components/boom3d/Boom3DSurround';
 import { Boom3DEqualizer } from '../components/boom3d/Boom3DEqualizer';
 import { Boom3DVolumeBooster } from '../components/boom3d/Boom3DVolumeBooster';
@@ -43,7 +44,7 @@ export function Boom3D() {
               "priceCurrency": "INR"
             },
             "description": "System-wide volume booster and equalizer for Mac & Windows with immersive 3D surround sound.",
-            "image": `${domain}/apps/boom3d-window.png`
+            "image": `${domain}/apps/boom3d-window.webp`
           })}
         </script>
       
@@ -70,6 +71,7 @@ export function Boom3D() {
         <Boom3DHero />
         <Boom3DOSSelector />
         <Boom3DScrollReveal />
+        <Boom3DKeyFeatures />
         <Boom3DSurround />
         <Boom3DEqualizer />
         <Boom3DVolumeBooster />

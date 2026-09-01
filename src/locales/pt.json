@@ -412,6 +412,25 @@
       "older_macos": "Usando uma versão mais antiga do macOS?",
       "buy_now": "COMPRAR AGORA"
     },
+    "key_features": {
+      "title": "Recursos que fazem seu mundo explodir de som!",
+      "subtitle": "Personalize o áudio do seu sistema com os recursos de aprimoramento de áudio de classe mundial da Boom",
+      "read_more": "Leia mais",
+      "read_less": "Ler menos",
+      "surround_title": "Surround 3D",
+      "surround_desc": "Viva filmes, jogos e músicas com a tecnologia 3D Surround, que oferece um som surround virtual impressionante sem a necessidade de fones especiais ou caros amplificadores de som surround.",
+      "eq_title": "Predefinições de equalizador",
+      "eq_desc": "Um equalizador avançado de 31 bandas para ajuste de áudio preciso. O Boom 3D para Mac e Windows também oferece uma variedade de predefinições cuidadosamente criadas para combinar com diferentes gêneros e gostos musicais.",
+      "booster_title": "Boom Volume Booster",
+      "booster_badge": "(Somente para a versão Mac)",
+      "booster_desc": "O Boom 3D para Mac é um amplificador de volume em todo o sistema que aumenta o volume com segurança além dos limites normais, proporcionando uma experiência de áudio intensa e rica sem comprometer a qualidade do som.",
+      "apps_title": "Controlador de volume por aplicativo",
+      "apps_desc": "O Boom 3D permite gerenciar os níveis e volumes de áudio de cada aplicativo individualmente, garantindo uma experiência ininterrupta em filmes, jogos ou músicas.",
+      "player_title": "Player de áudio de última geração",
+      "player_desc": "Reproduza suas músicas armazenadas localmente com os inigualáveis efeitos Boom em nosso player de áudio completo, e crie playlists para organizar sua coleção musical, como em seu próprio aplicativo de música.",
+      "radio_title": "Mais de 20.000 estações de rádio",
+      "radio_desc": "Junte-se à Boom para desfrutar de acesso gratuito a mais de 20 mil estações de rádio pela internet, locais e internacionais, em 120 países."
+    },
     "surround": {
       "title": "Mágico Som Surround 3D",
       "subtitle": "Experimente filmes, jogos e músicas com a tecnologia de Som Surround 3D que oferece um surround sound virtual impressionante sem fones de ouvido especiais ou impulsionadores de som surround caros.",

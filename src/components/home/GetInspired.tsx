@@ -2,10 +2,10 @@ import { motion } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 
 const inspiredPeopleLayout = [
-  { key: 'p1', image: '/business/VT/c1.png', rotation: -15, yOffset: -30, xOffset: -310, zIndex: 10 },
-  { key: 'p2', image: '/business/VT/c1.png', rotation: -15, yOffset: -30, xOffset: -100, zIndex: 20 },
-  { key: 'p3', image: '/business/VT/c1.png', rotation: -15, yOffset: -5, xOffset: 100, zIndex: 30 },
-  { key: 'p4', image: '/business/VT/c1.png', rotation: -15, yOffset: 35, xOffset: 310, zIndex: 40 },
+  { key: 'p1', image: '/business/VT/c1.webp', rotation: -15, yOffset: -30, xOffset: -310, zIndex: 10 },
+  { key: 'p2', image: '/business/VT/c1.webp', rotation: -15, yOffset: -30, xOffset: -100, zIndex: 20 },
+  { key: 'p3', image: '/business/VT/c1.webp', rotation: -15, yOffset: -5, xOffset: 100, zIndex: 30 },
+  { key: 'p4', image: '/business/VT/c1.webp', rotation: -15, yOffset: 35, xOffset: 310, zIndex: 40 },
 ] as const;
 
 export function GetInspired() {

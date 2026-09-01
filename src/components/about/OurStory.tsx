@@ -62,7 +62,7 @@ export function OurStory() {
           className="w-full md:w-1/2 px-4 md:px-0"
         >
           <img 
-            src="/team/P1.png" 
+            src="/team/P1.webp" 
             alt="Global Delight Office and Team" 
             className="w-full h-auto rounded-2xl md:rounded-[2rem] object-cover shadow-xl"
           />

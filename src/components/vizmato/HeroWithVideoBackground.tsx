@@ -45,7 +45,7 @@ export function HeroWithVideoBackground() {
         loop
         muted
         playsInline
-        poster="/vizmato/hero.png"
+        poster="/vizmato/hero.webp"
         className="absolute inset-0 w-full h-full object-cover object-[15%_center] md:object-center opacity-80 md:opacity-100"
       >
         <source src="/vizmato/vizmato-hero.mp4" type="video/mp4" />

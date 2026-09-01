@@ -15,22 +15,22 @@ export function VideoTechnology() {
     {
       title: t('technology.video.tab1_title'),
       description: t('technology.video.tab1_desc'),
-      image: '/business/VT/V1.png'
+      image: '/business/VT/V1.webp'
     },
     {
       title: t('technology.video.tab2_title'),
       description: t('technology.video.tab2_desc'),
-      image: '/business/VT/V3.png'
+      image: '/business/VT/V3.webp'
     },
     {
       title: t('technology.video.tab3_title'),
       description: t('technology.video.tab3_desc'),
-      image: '/business/VT/V2.png'
+      image: '/business/VT/V2.webp'
     },
     {
       title: t('technology.video.tab4_title'),
       description: t('technology.video.tab4_desc'),
-      image: '/business/VT/V4.png'
+      image: '/business/VT/V4.webp'
     }
   ];
 
@@ -58,7 +58,7 @@ export function VideoTechnology() {
         {/* Hero Banner */}
         <section className="w-full bg-[#ffffff] relative">
           <img
-            src="/business/VT/VT-banner.png"
+            src="/business/VT/VT-banner.webp"
             alt="Video Technology Banner"
             className="w-full h-[250px] md:h-[350px] lg:h-[500px] xl:h-[450px] object-fill object-center"
           />

@@ -329,7 +329,7 @@ export function CaptoHero() {
           >
             <div className="relative rounded-3xl md:rounded-none aspect-[4/3] sm:aspect-[16/9] md:aspect-auto overflow-hidden md:overflow-visible bg-black md:bg-transparent w-full">
             <img 
-              src="/capto/c-hero.png" 
+              src="/capto/c-hero.webp" 
               alt="Capto Interface"
               className="w-full h-full md:h-auto absolute inset-0 md:static object-cover md:object-contain"
             />

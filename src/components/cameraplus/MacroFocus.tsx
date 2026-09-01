@@ -38,7 +38,7 @@ export function MacroFocus() {
             {/* Background Image (Cover to prevent mobile overflow/squishing) */}
             <div className="absolute inset-0 w-full h-full">
               <img 
-                src="/cameraplus/c1.png" 
+                src="/cameraplus/c1.webp" 
                 alt="Macro Photography Before/After"
                 className="w-full h-full object-cover opacity-80 transition-transform duration-[2s] group-hover:scale-110"
               />

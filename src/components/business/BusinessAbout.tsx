@@ -10,7 +10,7 @@ export function BusinessAbout() {
           {/* Image block on mobile, absolute background on desktop */}
           <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] md:absolute md:inset-0 md:z-0">
             <img 
-              src="/business/business5.png" 
+              src="/business/business5.webp" 
               alt="Business About" 
               className="w-full h-full object-cover object-left md:object-center" 
             />

@@ -16,7 +16,7 @@ export function MeetOurTeam() {
   ];
 
   const teamMembers = [
-    { name: 'Bifin Manohara', role: t('about.team.m1_role'), image: '/team/Bifin_Manohara.png', quote: t('about.team.m1_quote') },
+    { name: 'Bifin Manohara', role: t('about.team.m1_role'), image: '/team/Bifin_Manohara.webp', quote: t('about.team.m1_quote') },
     { name: 'Deepa Pai', role: t('about.team.m2_role'), image: '/team/deepa.png', quote: t('about.team.m2_quote') },
     { name: 'Kishan V Murthi', role: t('about.team.m3_role'), image: '/team/kishan.png', quote: t('about.team.m3_quote') },
     { name: 'Madhusudan N V', role: t('about.team.m4_role'), image: '/team/madhusudan.png', quote: t('about.team.m4_quote') },

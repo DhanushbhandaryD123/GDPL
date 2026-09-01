@@ -84,7 +84,7 @@ export function SplashScreenMobile({ onComplete }: SplashScreenMobileProps) {
                   className="w-full h-full"
                 >
                   <img 
-                    src="/logos/globaldelight-logo.png" 
+                    src="/logos/globaldelight-logo.webp" 
                     alt="Global Delight" 
                     className="w-full h-full object-contain relative z-10 brightness-0 invert"
                   />

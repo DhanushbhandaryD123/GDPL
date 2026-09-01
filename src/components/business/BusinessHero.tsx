@@ -6,9 +6,9 @@ export function BusinessHero() {
   const { t } = useTranslation();
 
   const slides = [
-    { image: "/business/business3.png", title: t('business.hero.s1_title'), description: t('business.hero.s1_desc') },
-    { image: "/business/business1.png", title: t('business.hero.s2_title'), description: t('business.hero.s2_desc') },
-    { image: "/business/business2.png", title: t('business.hero.s3_title'), description: t('business.hero.s3_desc') }
+    { image: "/business/business3.webp", title: t('business.hero.s1_title'), description: t('business.hero.s1_desc') },
+    { image: "/business/business1.webp", title: t('business.hero.s2_title'), description: t('business.hero.s2_desc') },
+    { image: "/business/business2.webp", title: t('business.hero.s3_title'), description: t('business.hero.s3_desc') }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
