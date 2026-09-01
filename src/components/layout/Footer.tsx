@@ -92,7 +92,7 @@ export function Footer({ logoUrl }: FooterProps = {}) {
               <li><Link to="/about" className="hover:text-white transition">{t('footer.about_us')}</Link></li>
               <li><a href="https://blog.globaldelight.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">{t('footer.blog')}</a></li>
               <li><Link to="/careers" className="hover:text-white transition">{t('footer.careers')}</Link></li>
-              <li><Link to="#" className="hover:text-white transition">{t('footer.media')}</Link></li>
+              <li><Link to="/press-info" className="hover:text-white transition">{t('footer.media')}</Link></li>
               <li><Link to="#" className="hover:text-white transition">{t('footer.become_affiliate')}</Link></li>
             </ul>
           </div>

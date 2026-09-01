@@ -243,6 +243,7 @@ const WhatsNewCapto = lazy(() => import('./pages/whatsnew/WhatsNewCapto').then(m
 const WhatsNewBoom2 = lazy(() => import('./pages/whatsnew/WhatsNewBoom2').then(m => ({ default: m.WhatsNewBoom2 })));
 const WhatsNewAudion = lazy(() => import('./pages/whatsnew/WhatsNewAudion').then(m => ({ default: m.WhatsNewAudion })));
 const WhatsNewAudimix = lazy(() => import('./pages/whatsnew/WhatsNewAudimix').then(m => ({ default: m.WhatsNewAudimix })));
+const PressInfo = lazy(() => import('./pages/PressInfo').then(m => ({ default: m.PressInfo })));
 
 function RouteFallback() {
   return (
@@ -297,6 +298,15 @@ const appRoutes = [
   { path: "/boom3D/pt", element: <LegacyLangAlias lang="pt" bareTo="/boom3D" /> },
   { path: "/boom3D/zh-cn", element: <LegacyLangAlias lang="zh" bareTo="/boom3D" /> },
   { path: "/boom3D/zh-tw", element: <LegacyLangAlias lang="zh" bareTo="/boom3D" /> },
+
+  // Press & Media Info
+  { path: "/press-info", element: <PressInfo /> },
+  { path: "/press_releases", element: <Redirect to="/press-info" /> },
+  { path: "/press", element: <Redirect to="/press-info" /> },
+
+  // Voila Discontinued Legacy Redirects
+  { path: "/voila", element: <Redirect to="/capto" /> },
+  { path: "/voila/*", element: <Redirect to="/capto" /> },
 
   // Old Capto URLs
   { path: "/capto/features-comparison", element: <Redirect to="/capto" /> },

@@ -57,6 +57,13 @@ export const SEO_DATA: Record<string, SeoEntry> = {
     ogImage: CLOUD_OG,
     twitterImage: CLOUD_OG,
   },
+  '/press-info': {
+    title: 'Press Releases & Media Kits | Global Delight',
+    description: "Explore Global Delight's official press releases archive and download press kits, reviewer guides, and high-res brand media for Boom 3D, Capto, AudiOn, and AuDimix.",
+    keywords: 'Global Delight press releases, Boom 3D press kit, Capto review guide, AudiOn press release, media inquiries, Global Delight news, media kit download',
+    ogImage: CLOUD_OG,
+    twitterImage: CLOUD_OG,
+  },
   '/technology/audio': {
     title: 'Audio Technology & Engine | Global Delight B2B',
     description: 'Discover Global Delight\'s patented audio engine, featuring 3D Surround Sound and advanced equalizer tech available for OEM integration, white-label licensing, and B2B partnerships.',

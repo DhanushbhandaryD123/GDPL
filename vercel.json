@@ -40,6 +40,10 @@
     { "source": "/capto/privacy-policy", "destination": "/capto", "permanent": true },
     { "source": "/capto/thankyou", "destination": "/capto", "permanent": true },
     { "source": "/capto/user-guide.php", "destination": "/capto", "permanent": true },
-    { "source": "/captoformac", "destination": "/capto", "permanent": true }
+    { "source": "/captoformac", "destination": "/capto", "permanent": true },
+    { "source": "/voila/:match*", "destination": "/capto", "permanent": true },
+    { "source": "/voila", "destination": "/capto", "permanent": true },
+    { "source": "/press_releases", "destination": "/press-info", "permanent": true },
+    { "source": "/press", "destination": "/press-info", "permanent": true }
   ]
 }

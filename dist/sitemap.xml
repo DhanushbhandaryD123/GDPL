@@ -193,6 +193,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://gdpl-six.vercel.app/press-info</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://gdpl-six.vercel.app/de</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
