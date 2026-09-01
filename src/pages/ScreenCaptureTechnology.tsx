@@ -57,7 +57,6 @@ export function ScreenCaptureTechnology() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${domain}/technology/screen-capture`} />
         <meta name="twitter:url" content={`${domain}/technology/screen-capture`} />
-        <meta property="og:locale" content="en_US" />
         <link rel="canonical" href={`${domain}/technology/screen-capture`} />
       </Helmet>
 

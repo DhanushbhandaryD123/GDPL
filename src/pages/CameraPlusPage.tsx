@@ -24,7 +24,6 @@ export function CameraPlusPage() {
         <meta property="og:description" content="Capture and enhance brilliant photos with Camera Plus." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${domain}/cameraplus`} />
-        <meta property="og:locale" content="en_US" />
         <link rel="canonical" href={`${domain}/cameraplus`} />
       
         <meta property="og:image" content={`${domain}/website/GlobalDelight/icons/CameraPlus_SubheaderLogo.png`} />

@@ -48,7 +48,6 @@ export function VideoTechnology() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${domain}/technology/video`} />
         <meta name="twitter:url" content={`${domain}/technology/video`} />
-        <meta property="og:locale" content="en_US" />
         <link rel="canonical" href={`${domain}/technology/video`} />
       </Helmet>
       <Navbar />

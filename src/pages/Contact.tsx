@@ -43,7 +43,6 @@ export function Contact() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${domain}/contact`} />
         <meta name="twitter:url" content={`${domain}/contact`} />
-        <meta property="og:locale" content="en_US" />
         <link rel="canonical" href={`${domain}/contact`} />
       </Helmet>
       

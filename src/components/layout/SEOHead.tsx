@@ -14,6 +14,27 @@ function removeStaticFallbackMetaTags() {
     .forEach((el) => el.remove());
 }
 
+// schema.org/OG expects full region-qualified locale tags, not the bare
+// i18next language codes this app routes on. Portuguese and Spanish don't
+// have a single "generic" OG locale, so these pick the standalone-country
+// form since the app doesn't distinguish regional variants of either.
+const OG_LOCALE_MAP: Record<string, string> = {
+  en: 'en_US',
+  de: 'de_DE',
+  it: 'it_IT',
+  ja: 'ja_JP',
+  fr: 'fr_FR',
+  pt: 'pt_PT',
+  es: 'es_ES',
+  zh: 'zh_CN',
+};
+
+// The Navbar's own logo (and the old Organization schema before this file
+// existed) both point at this CDN asset — it's the real, working brand
+// image, unlike the local "/logos/GDTPL_logo_.png" path that was referenced
+// here previously but never actually existed in public/.
+const BRAND_LOGO_URL = 'https://d3jbf8nvvpx3fh.cloudfront.net/home/_resource/_img/website/2015/GDTPL_logo_.png';
+
 export function SEOHead() {
   const location = useLocation();
   const supportedLangs = ['en', 'de', 'it', 'ja', 'fr', 'pt', 'es', 'zh'];
@@ -21,11 +42,12 @@ export function SEOHead() {
   useEffect(() => {
     removeStaticFallbackMetaTags();
   }, []);
-  
+
   // Extract the base path without the language prefix
   let currentPath = location.pathname;
   const pathParts = currentPath.split('/').filter(Boolean);
-  
+  const currentLang = pathParts.length > 0 && supportedLangs.includes(pathParts[0]) ? pathParts[0] : 'en';
+
   if (pathParts.length > 0 && supportedLangs.includes(pathParts[0])) {
     // Remove the language prefix
     pathParts.shift();
@@ -39,7 +61,7 @@ export function SEOHead() {
   const seo = getSeoForPath(currentPath) || SEO_DATA['/'];
   // Resolve image URL: allow root-relative ("/apps/...") or absolute; prefix domain if needed
   const resolveImage = (img: string) => {
-    if (!img) return `${domain}/logos/GDTPL_logo_.png`;
+    if (!img) return BRAND_LOGO_URL;
     if (img.startsWith('http')) return img;
     return `${domain}${img}`;
   };
@@ -74,7 +96,7 @@ export function SEOHead() {
           "@type": "Organization",
           "name": "Global Delight",
           "url": domain,
-          "logo": `${domain}/logos/GDTPL_logo_.png`,
+          "logo": BRAND_LOGO_URL,
           "contactPoint": {
             "@type": "ContactPoint",
             "contactType": "customer service",
@@ -85,6 +107,34 @@ export function SEOHead() {
             "https://twitter.com/GlobalDelight",
             "https://www.instagram.com/globaldelight"
           ]
+        })}
+      </script>
+
+      {/* WebSite JSON-LD — identifies the site as a single entity spanning
+          all locales (no per-page inLanguage here; that belongs on WebPage). */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Global Delight",
+          "url": domain,
+        })}
+      </script>
+
+      {/* WebPage JSON-LD — describes this specific page as part of the WebSite above. */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": pageTitle,
+          "description": pageDescription,
+          "url": `${domain}${canonicalPath}`,
+          "inLanguage": currentLang,
+          "isPartOf": {
+            "@type": "WebSite",
+            "name": "Global Delight",
+            "url": domain,
+          },
         })}
       </script>
 
@@ -118,7 +168,7 @@ export function SEOHead() {
       <meta property="og:url" content={`${domain}${canonicalPath}`} />
       <meta name="thumbnail" content={pageImage} />
       <meta property="og:type" content={seo.ogType || 'website'} />
-      <meta property="og:locale" content="en_US" />
+      <meta property="og:locale" content={OG_LOCALE_MAP[currentLang] || 'en_US'} />
       <meta property="og:site_name" content="Global Delight Technologies Pvt. Ltd." />
       
       {/* Page-connected Twitter Card */}

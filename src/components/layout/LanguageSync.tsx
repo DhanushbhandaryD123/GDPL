@@ -15,6 +15,9 @@ export function LanguageSync() {
         i18n.changeLanguage(lang);
       }
       rememberLanguage(lang);
+      // Keep the raw HTML's lang attribute honest for this locale — it also
+      // gets captured as-is by react-snap's prerendered static HTML.
+      document.documentElement.lang = lang;
       return;
     }
 
@@ -31,6 +34,7 @@ export function LanguageSync() {
     if (i18n.resolvedLanguage !== 'en') {
       i18n.changeLanguage('en');
     }
+    document.documentElement.lang = 'en';
   }, [lang, i18n, location.pathname, location.search, location.hash, navigate]);
 
   return null;

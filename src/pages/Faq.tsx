@@ -42,7 +42,6 @@ export function Faq() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${domain}/faq`} />
         <meta name="twitter:url" content={`${domain}/faq`} />
-        <meta property="og:locale" content="en_US" />
         <link rel="canonical" href={`${domain}/faq`} />
       </Helmet>
 

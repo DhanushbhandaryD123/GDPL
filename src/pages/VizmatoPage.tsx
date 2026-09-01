@@ -22,7 +22,6 @@ export function VizmatoPage() {
         <meta property="og:description" content="Create stunning videos instantly with FX, themes, and music on Vizmato." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${domain}/vizmato`} />
-        <meta property="og:locale" content="en_US" />
         <link rel="canonical" href={`${domain}/vizmato`} />
       
         <meta property="og:image" content={`${domain}/apps/Vizmato-ios.jpeg`} />

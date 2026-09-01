@@ -21,7 +21,6 @@ export function BoomForMobilePage() {
         <meta property="og:description" content="Transform your smartphone into an immersive sound system." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${domain}/boomformobile`} />
-        <meta property="og:locale" content="en_US" />
         <link rel="canonical" href={`${domain}/boomformobile`} />
       
         <meta property="og:image" content={`${domain}/apps/Boom%20for%20iOS.jpeg`} />

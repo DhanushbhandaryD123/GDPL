@@ -22,7 +22,6 @@ export function Business() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${domain}/business`} />
         <meta name="twitter:url" content={`${domain}/business`} />
-        <meta property="og:locale" content="en_US" />
         <link rel="canonical" href={`${domain}/business`} />
       </Helmet>
       

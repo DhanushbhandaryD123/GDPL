@@ -101,29 +101,9 @@ function Home() {
             ========================================= */}
         <link rel="canonical" href={`${domain}/`} />
 
-        {/* =========================================
-            STRUCTURED DATA (JSON-LD)
-            Organization schema ΓÇö name, logo, contact point, social profiles.
-            ========================================= */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Global Delight",
-            "url": `${domain}/`,
-            "logo": `${domain}/logos/GDTPL_logo_.png`,
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "contactType": "customer service",
-              "availableLanguage": ["English"]
-            },
-            "sameAs": [
-              "https://www.facebook.com/GlobalDelight",
-              "https://twitter.com/GlobalDelight",
-              "https://www.instagram.com/globaldelight"
-            ]
-          })}
-        </script>
+        {/* Organization JSON-LD lives once, globally, in SEOHead.tsx (mounted
+            on every route including this one) — a second copy here would
+            duplicate the schema in the page's <head>. */}
       </Helmet>
 
       {/* =========================================

@@ -23,7 +23,6 @@ export function Boom() {
         <meta property="og:description" content="Award-winning 3D surround sound and volume booster for your devices." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${domain}/boom`} />
-        <meta property="og:locale" content="en_US" />
         <link rel="canonical" href={`${domain}/boom`} />
       
         <meta property="og:image" content={`${domain}/apps/Boom2-mac.jpeg`} />

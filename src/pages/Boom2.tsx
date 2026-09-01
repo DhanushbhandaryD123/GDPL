@@ -25,7 +25,6 @@ export function Boom2() {
         <link rel="canonical" href={`${domain}/boom2/`} />
         
         {/* OG Tags */}
-        <meta property="og:locale" content="en-US" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Global Delight Technologies Pvt. Ltd." />
         <meta property="og:title" content="Boom 2 - Stereo Sound Enhancer for Mac" />

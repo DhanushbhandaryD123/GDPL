@@ -20,7 +20,6 @@ export function CameraPlusProPage() {
         <meta property="og:description" content="Professional photography tools and powerful editing suite for iPhone." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${domain}/camerapluspro`} />
-        <meta property="og:locale" content="en_US" />
         <link rel="canonical" href={`${domain}/camerapluspro`} />
       
         <meta property="og:image" content={`${domain}/website/GlobalDelight/icons/CameraPlus_SubheaderLogo.png`} />

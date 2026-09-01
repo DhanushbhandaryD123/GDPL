@@ -23,7 +23,6 @@ export function About() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${domain}/about`} />
         <meta name="twitter:url" content={`${domain}/about`} />
-        <meta property="og:locale" content="en_US" />
         <link rel="canonical" href={`${domain}/about`} />
       </Helmet>
       

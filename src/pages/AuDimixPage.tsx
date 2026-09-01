@@ -21,7 +21,6 @@ export function AuDimixPage() {
         <meta property="og:description" content="Isolate vocals and extract instruments instantly with AuDimix." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${domain}/audimix`} />
-        <meta property="og:locale" content="en_US" />
         <link rel="canonical" href={`${domain}/audimix`} />
       
         <meta property="og:image" content={`${domain}/apps/AuDimix-Window.jpeg`} />

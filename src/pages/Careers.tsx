@@ -231,7 +231,6 @@ export function Careers() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${domain}/careers`} />
         <meta name="twitter:url" content={`${domain}/careers`} />
-        <meta property="og:locale" content="en_US" />
         <link rel="canonical" href={`${domain}/careers`} />
       </Helmet>
       

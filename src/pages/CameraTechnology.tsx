@@ -70,7 +70,6 @@ export function CameraTechnology() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${domain}/technology/camera`} />
         <meta name="twitter:url" content={`${domain}/technology/camera`} />
-        <meta property="og:locale" content="en_US" />
         <link rel="canonical" href={`${domain}/technology/camera`} />
       </Helmet>
 

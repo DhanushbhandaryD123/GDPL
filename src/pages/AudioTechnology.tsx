@@ -61,7 +61,6 @@ export function AudioTechnology() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${domain}/technology/audio`} />
         <meta name="twitter:url" content={`${domain}/technology/audio`} />
-        <meta property="og:locale" content="en_US" />
         <link rel="canonical" href={`${domain}/technology/audio`} />
         <style>{`
           @keyframes soundWave {

@@ -70,21 +70,21 @@ function FeatureCard({ feature, index }: { feature: FeatureCardData; index: numb
     >
       <div className="relative flex items-center justify-center shrink-0" style={{ width: RING_SIZE, height: RING_SIZE }}>
         <DottedRing />
-        <Icon size={26} strokeWidth={1.5} className="relative text-[#d4d4d8]" />
+        <Icon size={26} strokeWidth={1.75} className="relative text-gray-800" />
       </div>
 
-      <h3 className="mt-6 text-lg font-bold text-white tracking-tight">{t(feature.titleKey)}</h3>
+      <h3 className="mt-6 text-lg font-bold text-gray-900 tracking-tight">{t(feature.titleKey)}</h3>
       {feature.badgeKey && (
-        <p className="mt-1 text-xs font-medium text-[#7a7a82]">{t(feature.badgeKey)}</p>
+        <p className="mt-1 text-xs font-medium text-gray-500">{t(feature.badgeKey)}</p>
       )}
-      <p className="mt-3 text-[0.95rem] leading-relaxed text-[#9a9aa2] max-w-[300px]">
+      <p className="mt-3 text-[0.95rem] leading-relaxed text-gray-600 max-w-[300px]">
         {expanded ? fullText : truncatedText}
       </p>
       {isTruncatable && (
         <button
           type="button"
           onClick={() => setExpanded((prev) => !prev)}
-          className="mt-3 text-sm font-semibold text-[#ec4899] underline underline-offset-4 decoration-[#ec4899]/50 hover:text-[#f472b6] transition-colors"
+          className="mt-3 text-sm font-semibold text-rose-600 underline underline-offset-4 decoration-rose-400 hover:text-rose-700 transition-colors"
         >
           {expanded ? t('boom3d.key_features.read_less') : t('boom3d.key_features.read_more')}
         </button>
@@ -97,7 +97,7 @@ export function Boom3DKeyFeatures() {
   const { t } = useTranslation();
 
   return (
-    <section className="relative py-20 md:py-28 overflow-hidden bg-[#0b0b0f]">
+    <section className="relative py-20 md:py-28 overflow-hidden bg-white">
       {/* Shared gradient definition for every icon ring */}
       <svg width="0" height="0" className="absolute">
         <defs>
@@ -110,15 +110,15 @@ export function Boom3DKeyFeatures() {
       </svg>
 
       {/* Ambient glow, matching the rest of the Boom 3D page's accent palette */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[400px] bg-purple-600/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[400px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-[500px] h-[400px] bg-purple-50 rounded-full blur-[140px] pointer-events-none opacity-60" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[400px] bg-blue-50 rounded-full blur-[140px] pointer-events-none opacity-60" />
 
       <div className="relative z-10 max-w-[1200px] mx-auto px-6">
         <div className="text-center mb-16 md:mb-20 space-y-4">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900">
             {t('boom3d.key_features.title')}
           </h2>
-          <p className="text-base md:text-lg text-[#9a9aa2] max-w-[640px] mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-gray-600 max-w-[640px] mx-auto leading-relaxed">
             {t('boom3d.key_features.subtitle')}
           </p>
         </div>

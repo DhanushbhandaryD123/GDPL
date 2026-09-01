@@ -20,7 +20,6 @@ export function AudiOnPage() {
         <meta property="og:description" content="Enhance your mobile audio recordings with noise removal and lossless quality." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${domain}/audion`} />
-        <meta property="og:locale" content="en_US" />
         <link rel="canonical" href={`${domain}/audion`} />
       
         <meta property="og:image" content={`${domain}/apps/AudiOn-ios.jpeg`} />

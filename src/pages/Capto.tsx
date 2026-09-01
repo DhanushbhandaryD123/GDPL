@@ -19,7 +19,6 @@ export function Capto() {
         <meta property="og:description" content="Record your screen, edit videos, and share instantly with Capto for Mac." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${domain}/capto`} />
-        <meta property="og:locale" content="en_US" />
         <link rel="canonical" href={`${domain}/capto`} />
         <script type="application/ld+json">
           {JSON.stringify({

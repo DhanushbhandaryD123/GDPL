@@ -20,7 +20,6 @@ export function CaptoEducatorsPage() {
         <meta property="og:description" content="Make teaching and learning easier with Capto — screen recording and annotation built for classrooms and institutions." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${domain}/capto/educators`} />
-        <meta property="og:locale" content="en_US" />
         <link rel="canonical" href={`${domain}/capto/educators`} />
         <script type="application/ld+json">
           {JSON.stringify({

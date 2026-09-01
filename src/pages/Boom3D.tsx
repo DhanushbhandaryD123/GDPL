@@ -29,7 +29,6 @@ export function Boom3D() {
         <meta property="og:description" content="Transform your computer into a cinematic sound stage with Boom 3D." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${domain}/boom3D`} />
-        <meta property="og:locale" content="en_US" />
         <link rel="canonical" href={`${domain}/boom3D`} />
         <script type="application/ld+json">
           {JSON.stringify({

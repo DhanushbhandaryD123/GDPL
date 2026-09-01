@@ -21,7 +21,6 @@ export function CaptoWindowsPage() {
         <meta property="og:description" content="Your all-in-one solution for screen recording and editing on Windows." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${domain}/capto/windows`} />
-        <meta property="og:locale" content="en_US" />
         <link rel="canonical" href={`${domain}/capto/windows`} />
       
         <meta property="og:image" content={`${domain}/apps/Capto-window.jpeg`} />
