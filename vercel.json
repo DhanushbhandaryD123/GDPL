@@ -44,6 +44,31 @@
     { "source": "/voila/:match*", "destination": "/capto", "permanent": true },
     { "source": "/voila", "destination": "/capto", "permanent": true },
     { "source": "/press_releases", "destination": "/press-info", "permanent": true },
-    { "source": "/press", "destination": "/press-info", "permanent": true }
+    { "source": "/press", "destination": "/press-info", "permanent": true },
+    { "source": "/press-pages/:match*", "destination": "/press-info", "permanent": true },
+    { "source": "/press/:match*", "destination": "/press-info", "permanent": true },
+
+    { "source": "/store/:match*", "destination": "/", "permanent": true },
+    { "source": "/lostlicense", "destination": "/contact", "permanent": true },
+    { "source": "/purchase/thank_you_purchase", "destination": "/", "permanent": true },
+    { "source": "/help/:match*", "destination": "/faq", "permanent": true },
+
+    { "source": "/faq/AuDimix", "destination": "/faq/audimixwin", "permanent": true },
+    { "source": "/faq/capto", "destination": "/faq/captomac", "permanent": true },
+    { "source": "/faq/boomforios", "destination": "/faq/boomios", "permanent": true },
+    { "source": "/faq/capto-for-windows", "destination": "/faq/captowin", "permanent": true },
+    { "source": "/faq/maccontactsupport", "destination": "/contact", "permanent": true },
+    { "source": "/faq/wincontactsupport", "destination": "/contact", "permanent": true },
+    { "source": "/faq/AuDimixcontactsupport", "destination": "/contact", "permanent": true },
+    { "source": "/faq/storewin", "destination": "/faq", "permanent": true },
+    { "source": "/faq/boom3d", "destination": "/faq/boom3dmac", "permanent": true },
+    { "source": "/faq/lib/contactsupport-mailer-app.php", "destination": "/contact", "permanent": true },
+
+    { "source": "/business/solutions", "destination": "/business", "permanent": true },
+    { "source": "/business/solutions/audio", "destination": "/technology/audio", "permanent": true },
+    { "source": "/business/solutions/video", "destination": "/technology/video", "permanent": true },
+    { "source": "/business/solutions/camera", "destination": "/technology/camera", "permanent": true },
+    { "source": "/business/solutions/screen-capture", "destination": "/technology/screen-capture", "permanent": true },
+    { "source": "/business/contact.html", "destination": "/contact", "permanent": true }
   ]
 }
