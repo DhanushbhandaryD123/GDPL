@@ -289,6 +289,19 @@
     }
   },
   "boom2": {
+    "thankyouDownload": {
+      "meta_title": "Grazie per aver scaricato Boom 2 | Global Delight",
+      "title": "Grazie per aver scaricato Boom 2!",
+      "subtitle": "Il download dovrebbe iniziare automaticamente tra pochi secondi. Se non parte, clicca qui sotto per riprovare.",
+      "download_again": "Scarica di nuovo",
+      "step1_title": "Personalizza il tuo suono",
+      "step1_desc": "Apri Boom 2 ed esplora l'equalizzatore a 31 bande per modellare l'audio esattamente come preferisci.",
+      "step2_title": "Scopri ogni funzione",
+      "step2_desc": "Dal potenziamento del volume agli effetti audio, scopri tutto ciò che Boom 2 può fare per il tuo Mac.",
+      "step3_title": "Hai bisogno di aiuto?",
+      "step3_desc": "Le nostre FAQ coprono l'installazione, la risoluzione dei problemi e molto altro.",
+      "need_help": "Hai bisogno di aiuto? Visita le FAQ di Boom 2"
+    },
     "hero": {
       "title_1": "Il Tuo Audio,",
       "title_2": "Reinventato.",
@@ -519,6 +532,15 @@
     }
   },
   "capto": {
+    "thankyou": {
+      "meta_title": "Grazie | Capto",
+      "title": "Grazie!",
+      "subtitle": "Ricevi tutorial, consigli e guide per Capto direttamente nella tua casella email.",
+      "email_placeholder": "Inserisci il tuo indirizzo email",
+      "submit": "Iscriviti",
+      "success": "Grazie per esserti iscritto! Controlla la tua casella email.",
+      "back_link": "Torna a Capto"
+    },
     "hero": {
       "title_1": "Screenshot, Registrazione",
       "title_2": "dello Schermo,",

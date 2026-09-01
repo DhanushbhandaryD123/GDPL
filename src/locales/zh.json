@@ -289,6 +289,19 @@
     }
   },
   "boom2": {
+    "thankyouDownload": {
+      "meta_title": "感谢您下载 Boom 2 | Global Delight",
+      "title": "感谢您下载 Boom 2!",
+      "subtitle": "您的下载将在几秒钟后自动开始。如果没有开始,请点击下方按钮重试。",
+      "download_again": "重新下载",
+      "step1_title": "调校您的音效",
+      "step1_desc": "打开 Boom 2,体验 31 段均衡器,打造专属于您的音效。",
+      "step2_title": "探索全部功能",
+      "step2_desc": "从音量增强到音频效果,了解 Boom 2 能为您的 Mac 带来的一切。",
+      "step3_title": "需要帮助?",
+      "step3_desc": "我们的常见问题涵盖安装、故障排除等各类内容。",
+      "need_help": "需要帮助?请访问 Boom 2 常见问题"
+    },
     "hero": {
       "title_1": "您的音频，",
       "title_2": "焕然一新。",
@@ -519,6 +532,15 @@
     }
   },
   "capto": {
+    "thankyou": {
+      "meta_title": "感谢您 | Capto",
+      "title": "感谢您!",
+      "subtitle": "通过邮件获取 Capto 的教程、技巧和使用指南。",
+      "email_placeholder": "输入您的电子邮箱",
+      "submit": "立即订阅",
+      "success": "感谢订阅!请留意您的收件箱。",
+      "back_link": "返回 Capto"
+    },
     "hero": {
       "title_1": "截图、屏幕",
       "title_2": "录制、",

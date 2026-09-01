@@ -229,6 +229,8 @@ const VizmatoPage = lazy(() => import('./pages/VizmatoPage').then(m => ({ defaul
 const CameraPlusPage = lazy(() => import('./pages/CameraPlusPage').then(m => ({ default: m.CameraPlusPage })));
 const CameraPlusProPage = lazy(() => import('./pages/CameraPlusProPage').then(m => ({ default: m.CameraPlusProPage })));
 const CaptoEducatorsPage = lazy(() => import('./pages/CaptoEducatorsPage').then(m => ({ default: m.CaptoEducatorsPage })));
+const CaptoThankYou = lazy(() => import('./pages/CaptoThankYou').then(m => ({ default: m.CaptoThankYou })));
+const Boom2ThankYouDownload = lazy(() => import('./pages/Boom2ThankYouDownload').then(m => ({ default: m.Boom2ThankYouDownload })));
 
 import { LanguageSync } from './components/layout/LanguageSync';
 import { rememberLanguage } from './lib/languagePreference';
@@ -311,7 +313,6 @@ const appRoutes = [
   // Old Capto URLs
   { path: "/capto/features-comparison", element: <Redirect to="/capto" /> },
   { path: "/capto/help-videos", element: <Redirect to="/capto" /> },
-  { path: "/capto/thankyou", element: <Redirect to="/capto" /> },
   { path: "/capto/user-guide.php", element: <Redirect to="/capto" /> },
   { path: "/captoformac", element: <Redirect to="/capto" /> },
 
@@ -341,6 +342,8 @@ const appRoutes = [
   { path: "/capto", element: <Capto /> },
   { path: "/capto/windows", element: <CaptoWindowsPage /> },
   { path: "/capto/educators", element: <CaptoEducatorsPage /> },
+  { path: "/capto/thankyou", element: <CaptoThankYou /> },
+  { path: "/boom2/thankyou/download", element: <Boom2ThankYouDownload /> },
   { path: "/audion", element: <AudiOnPage /> },
   { path: "/vizmato", element: <VizmatoPage /> },
   { path: "/cameraplus", element: <CameraPlusPage /> },

@@ -10,7 +10,12 @@ const sitemapPath = path.resolve(__dirname, '../public/sitemap.xml');
 
 // Read package.json
 const pkg = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
-const routes = (pkg.reactSnap?.include || []).filter(route => route !== '/404' && route !== '/__prerender/not-found');
+// Thank-you/confirmation pages are real, prerendered pages (useful to real
+// visitors and social shares) but deliberately noindex — they shouldn't be
+// offered to crawlers as a landing page, so they're excluded here same as
+// the internal 404-capture scratch route.
+const NOINDEX_ROUTES = ['/404', '/__prerender/not-found', '/capto/thankyou', '/boom2/thankyou/download'];
+const routes = (pkg.reactSnap?.include || []).filter(route => !NOINDEX_ROUTES.includes(route));
 let DOMAIN = 'http://localhost:5173';
 try {
   const envContent = fs.readFileSync(path.resolve(__dirname, '../.env'), 'utf8');

@@ -289,6 +289,19 @@
     }
   },
   "boom2": {
+    "thankyouDownload": {
+      "meta_title": "Boom 2 をダウンロードいただきありがとうございます | Global Delight",
+      "title": "Boom 2 をダウンロードいただきありがとうございます!",
+      "subtitle": "数秒後にダウンロードが自動的に始まります。開始しない場合は、下のボタンをクリックしてもう一度お試しください。",
+      "download_again": "再ダウンロード",
+      "step1_title": "サウンドを調整する",
+      "step1_desc": "Boom 2 を開いて31バンドイコライザーを試し、お好みの音を作り上げましょう。",
+      "step2_title": "すべての機能を試す",
+      "step2_desc": "音量ブーストからオーディオエフェクトまで、Boom 2 が Mac にもたらす機能をご覧ください。",
+      "step3_title": "お困りですか?",
+      "step3_desc": "セットアップやトラブルシューティングなど、FAQ で詳しくご案内しています。",
+      "need_help": "お困りの場合は Boom 2 の FAQ をご覧ください"
+    },
     "hero": {
       "title_1": "あなたのオーディオを、",
       "title_2": "再創造。",
@@ -519,6 +532,15 @@
     }
   },
   "capto": {
+    "thankyou": {
+      "meta_title": "ありがとうございます | Capto",
+      "title": "ありがとうございます!",
+      "subtitle": "Capto のチュートリアルやヒント、使い方のコツをメールでお届けします。",
+      "email_placeholder": "メールアドレスを入力",
+      "submit": "登録する",
+      "success": "ご登録ありがとうございます!受信箱をご確認ください。",
+      "back_link": "Capto に戻る"
+    },
     "hero": {
       "title_1": "スクリーンショット、画面",
       "title_2": "録画、",

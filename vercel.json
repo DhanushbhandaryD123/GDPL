@@ -38,7 +38,6 @@
     { "source": "/capto/features-comparison", "destination": "/capto", "permanent": true },
     { "source": "/capto/help-videos", "destination": "/capto", "permanent": true },
     { "source": "/capto/privacy-policy", "destination": "/capto", "permanent": true },
-    { "source": "/capto/thankyou", "destination": "/capto", "permanent": true },
     { "source": "/capto/user-guide.php", "destination": "/capto", "permanent": true },
     { "source": "/captoformac", "destination": "/capto", "permanent": true },
     { "source": "/voila/:match*", "destination": "/capto", "permanent": true },
@@ -100,7 +99,6 @@
     { "source": "/boom3d/manual/manual.php", "destination": "/boom3D", "permanent": true },
     { "source": "/boom3d/manual/manualwindows", "destination": "/boom3D", "permanent": true },
 
-    { "source": "/boom2/thankyou/download", "destination": "/boom2", "permanent": true },
     { "source": "/boom2/mas-content/uninstaller.php", "destination": "/boom2", "permanent": true },
     { "source": "/boom2/assets/Boom2-Manual/Boom-2-Manual.pdf", "destination": "/boom2", "permanent": true },
 
