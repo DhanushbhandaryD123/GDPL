@@ -99,12 +99,12 @@ export function Contact() {
               <div>
                 <h3 className="text-base font-bold text-white mb-4">{t('contact.follow_us')}</h3>
                 <div className="flex items-center gap-4 mb-10">
-                  <a href="https://www.facebook.com/GlobalDelight" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors"><Facebook className="w-5 h-5 fill-current" /></a>
-                  <a href="https://x.com/GlobalDelight" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors"><Twitter className="w-5 h-5 fill-current" /></a>
-                  <a href="https://www.instagram.com/globaldelight/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors"><Instagram className="w-5 h-5" /></a>
-                  <a href="https://www.linkedin.com/company/global-delight/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors"><Linkedin className="w-5 h-5 fill-current" /></a>
-                  <a href="https://www.youtube.com/channel/UCLjiPwteYQLEmIzDs4xmyTw" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors"><Youtube className="w-5 h-5 fill-current" /></a>
-                  <a href="#" className="text-gray-300 hover:text-white transition-colors font-bold text-lg leading-none font-serif">G+</a>
+                  <a href="https://www.facebook.com/GlobalDelight" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-gray-300 hover:text-white transition-colors"><Facebook className="w-5 h-5 fill-current" /></a>
+                  <a href="https://x.com/GlobalDelight" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className="text-gray-300 hover:text-white transition-colors"><Twitter className="w-5 h-5 fill-current" /></a>
+                  <a href="https://www.instagram.com/globaldelight/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-gray-300 hover:text-white transition-colors"><Instagram className="w-5 h-5" /></a>
+                  <a href="https://www.linkedin.com/company/global-delight/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-gray-300 hover:text-white transition-colors"><Linkedin className="w-5 h-5 fill-current" /></a>
+                  <a href="https://www.youtube.com/channel/UCLjiPwteYQLEmIzDs4xmyTw" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="text-gray-300 hover:text-white transition-colors"><Youtube className="w-5 h-5 fill-current" /></a>
+                  <a href="#" aria-label="Google+" className="text-gray-300 hover:text-white transition-colors font-bold text-lg leading-none font-serif">G+</a>
                 </div>
 
                 <Link to="/" className="inline-flex items-center gap-3 bg-transparent border border-[#E85D22] rounded-full pl-1 pr-5 py-1 hover:bg-[#E85D22]/10 transition-colors w-fit">

@@ -1,5 +1,7 @@
 {
   "nav": {
+    "search": "Search",
+    "toggle_menu": "Toggle menu",
     "home": "Home",
     "products": "Products",
     "store": "Store",
@@ -472,12 +474,15 @@
     },
     "surround": {
       "title": "Magical 3D Surround Sound",
-      "subtitle": "Experience movies, games and music with 3D Surround Sound technology that offers a mind-blowing virtual surround sound without any special headphones or expensive surround sound boosters.",
+      "subtitle": "Fortified with an innovative virtual 3D surround sound technology, Boom 3D redefines the way people listen to music, watch movies or play games on their computers with ANY headphones. 3D sound provides an option to check audio from each speaker of the virtual 3D surround audio system and also lets you adjust LFE (subwoofer) gain, and intensity of audio. Boom 3D completely upgrades the listening experience, by extracting every note and nuance from an ordinary stereo track or any compressed audio and playing it back to literally, \"Feel the Music\".",
       "extension_title": "Download the 5.1 Extension for Netflix",
       "for_chrome": "For Chrome",
       "for_safari": "For Safari",
       "extension_note": "*Use the 5.1 extension along with the Boom 3D desktop app for a lifelike audio experience like no other.",
-      "learn_more": "Learn More"
+      "learn_more": "Learn More",
+      "feature_music": "Listen to music the way it was intended to be heard - Vivid & Vibrant!",
+      "feature_movies": "Enjoy a theatre-like audio experience with a realistic surround sound atmosphere, made possible by our state-of-the-art sound staging algorithm!",
+      "feature_gaming": "Feel your favorite games spring to life with our patented 3D surround sound technology, for a truly immersive experience!"
     },
     "equalizer": {
       "title_1": "Precise control.",

@@ -1,5 +1,7 @@
 {
   "nav": {
+    "search": "Rechercher",
+    "toggle_menu": "Basculer le menu",
     "home": "Accueil",
     "products": "Produits",
     "store": "Boutique",

@@ -1,5 +1,7 @@
 {
   "nav": {
+    "search": "Suchen",
+    "toggle_menu": "Menü umschalten",
     "home": "Startseite",
     "products": "Produkte",
     "store": "Shop",

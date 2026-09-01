@@ -258,7 +258,7 @@ export function FeaturedWork() {
                     boxShadow: isOpen ? `inset 0 0 0 1px rgba(255,255,255,0.1)` : 'none'
                   }}
                 >
-                  <h4 className="text-lg md:text-xl font-bold text-white mb-2 md:mb-3 tracking-tight drop-shadow-md">{card.name}</h4>
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-2 md:mb-3 tracking-tight drop-shadow-md">{card.name}</h3>
                   <p className="text-white/90 text-[11px] md:text-[13px] leading-relaxed mb-4 drop-shadow-sm font-medium">
                     {t(card.descriptionKey)}
                   </p>

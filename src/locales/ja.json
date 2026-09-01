@@ -1,5 +1,7 @@
 {
   "nav": {
+    "search": "検索",
+    "toggle_menu": "メニューを切り替え",
     "home": "ホーム",
     "products": "製品",
     "store": "ストア",

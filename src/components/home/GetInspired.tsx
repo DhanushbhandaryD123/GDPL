@@ -88,9 +88,9 @@ export function GetInspired() {
                     <p className="text-[11.5px] text-gray-500 leading-[1.6] mb-5 font-normal">
                       {person.description}
                     </p>
-                    <h4 className="text-[12px] font-bold text-gray-900 mt-auto">
+                    <h3 className="text-[12px] font-bold text-gray-900 mt-auto">
                       {person.name}
-                    </h4>
+                    </h3>
                   </div>
                 </motion.div>
               ))}

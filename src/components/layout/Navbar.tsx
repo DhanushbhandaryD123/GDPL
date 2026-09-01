@@ -217,8 +217,9 @@ export function Navbar({ logoUrl }: NavbarProps) {
               </div>
             )}
             
-            <button 
+            <button
               onClick={() => setIsSearchOpen(true)}
+              aria-label={t('nav.search')}
               className="text-gray-700 hover:text-gray-900 transition-colors ml-2"
             >
               <Search className="w-4 h-4 md:w-5 md:h-5" />
@@ -261,8 +262,9 @@ export function Navbar({ logoUrl }: NavbarProps) {
 
           {/* Mobile Section (Right Side) */}
           <div className="md:hidden flex items-center gap-4">
-            <button 
+            <button
               onClick={() => setIsSearchOpen(true)}
+              aria-label={t('nav.search')}
               className="text-gray-700 hover:text-gray-900 transition-colors"
             >
               <Search className="w-5 h-5" />
@@ -303,8 +305,10 @@ export function Navbar({ logoUrl }: NavbarProps) {
             </div>
 
             {/* Mobile Menu Button */}
-            <button 
+            <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={t('nav.toggle_menu')}
+              aria-expanded={isMobileMenuOpen}
               className="text-gray-700 hover:text-gray-900 transition-colors"
             >
               {isMobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
