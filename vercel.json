@@ -69,6 +69,75 @@
     { "source": "/business/solutions/video", "destination": "/technology/video", "permanent": true },
     { "source": "/business/solutions/camera", "destination": "/technology/camera", "permanent": true },
     { "source": "/business/solutions/screen-capture", "destination": "/technology/screen-capture", "permanent": true },
-    { "source": "/business/contact.html", "destination": "/contact", "permanent": true }
+    { "source": "/business/contact.html", "destination": "/contact", "permanent": true },
+
+    { "source": "/boom/10th-anniversary", "destination": "/boom", "permanent": true },
+    { "source": "/boom/boom-audio-component.html", "destination": "/boom", "permanent": true },
+    { "source": "/boom/boom-ppc.php", "destination": "/boom", "permanent": true },
+    { "source": "/boom/boom2-vs-boom3d-compare-features", "destination": "/boom", "permanent": true },
+    { "source": "/boom/help/boom2mac", "destination": "/boom", "permanent": true },
+    { "source": "/boom/help/mac", "destination": "/boom", "permanent": true },
+    { "source": "/boom/help/mas", "destination": "/boom", "permanent": true },
+    { "source": "/boom/help/win", "destination": "/boom", "permanent": true },
+    { "source": "/boom/manual.php", "destination": "/boom", "permanent": true },
+    { "source": "/boom/mas-content/device-installer.php", "destination": "/boom", "permanent": true },
+    { "source": "/boom/mas-content/uninstall.php", "destination": "/boom", "permanent": true },
+    { "source": "/boom/pages/en/terms-conditions.html", "destination": "/boom", "permanent": true },
+    { "source": "/boom/lang/chn/boomforios.php", "destination": "/boom", "permanent": true },
+    { "source": "/boom/lang/jap/boomforios.php", "destination": "/boom", "permanent": true },
+    { "source": "/boom/lang/jap/features-comparison.php", "destination": "/boom", "permanent": true },
+    { "source": "/boom/lang/jap/index_files/saved_resource.html", "destination": "/boom", "permanent": true },
+    { "source": "/boom/thankyou-download-mac", "destination": "/boom", "permanent": true },
+    { "source": "/boom/thankyou-download-win", "destination": "/boom", "permanent": true },
+    { "source": "/boom/thankyou-Install-Extension", "destination": "/boom", "permanent": true },
+    { "source": "/boom/thankyou-install-windows.php", "destination": "/boom", "permanent": true },
+    { "source": "/boom/thankyou-win-web", "destination": "/boom", "permanent": true },
+    { "source": "/boom/privacy-policy.html", "destination": "/privacy-policy", "permanent": true },
+
+    { "source": "/boom3d/manual/resellerwindows.php", "destination": "/boom3D", "permanent": true },
+    { "source": "/boom3d/manual/resellermac.php", "destination": "/boom3D", "permanent": true },
+    { "source": "/boom3d/manual/storewindows.php", "destination": "/boom3D", "permanent": true },
+    { "source": "/boom3d/manual/manual.php", "destination": "/boom3D", "permanent": true },
+    { "source": "/boom3d/manual/manualwindows", "destination": "/boom3D", "permanent": true },
+
+    { "source": "/boom2/thankyou/download", "destination": "/boom2", "permanent": true },
+    { "source": "/boom2/mas-content/uninstaller.php", "destination": "/boom2", "permanent": true },
+    { "source": "/boom2/assets/Boom2-Manual/Boom-2-Manual.pdf", "destination": "/boom2", "permanent": true },
+
+    { "source": "/capto/capto-screen-recording/compare.php", "destination": "/capto", "permanent": true },
+    { "source": "/capto/capto-screen-recording/index.php", "destination": "/capto", "permanent": true },
+    { "source": "/capto/downloads/installers/install-capto-device.php", "destination": "/capto", "permanent": true },
+    { "source": "/capto/downloads/installers/uninstall-capto-device.php", "destination": "/capto", "permanent": true },
+
+    { "source": "/iphone/cameraplus", "destination": "/cameraplus", "permanent": true },
+    { "source": "/iphone/camerapluspro", "destination": "/camerapluspro", "permanent": true },
+    { "source": "/iphone/camerapluspro/cpp-effects", "destination": "/camerapluspro", "permanent": true },
+    { "source": "/iphone/camerapluspro/privacypolicy", "destination": "/privacy-policy", "permanent": true },
+
+    { "source": "/m/about", "destination": "/about", "permanent": true },
+    { "source": "/m/contact", "destination": "/contact", "permanent": true },
+
+    { "source": "/boomformobile/android/privacypolicy.php", "destination": "/privacy-policy", "permanent": true },
+    { "source": "/boomformobile/ios/privacypolicy.php", "destination": "/privacy-policy", "permanent": true },
+
+    { "source": "/pd/upgrade-capto", "destination": "/capto", "permanent": true },
+    { "source": "/pd/capto-store", "destination": "/capto", "permanent": true },
+
+    { "source": "/index.php", "destination": "/", "permanent": true },
+    { "source": "/career", "destination": "/careers", "permanent": true },
+    { "source": "/contact.php", "destination": "/contact", "permanent": true },
+    { "source": "/contactsupport", "destination": "/contact", "permanent": true },
+    { "source": "/lostlicenses.php", "destination": "/contact", "permanent": true },
+    { "source": "/privacypolicy", "destination": "/privacy-policy", "permanent": true },
+    { "source": "/refundpolicy.php", "destination": "/contact", "permanent": true },
+    { "source": "/faqs", "destination": "/faq", "permanent": true },
+    { "source": "/boomios/betaTesting", "destination": "/boomformobile", "permanent": true },
+    { "source": "/boom-qcy/offer.html", "destination": "/boom3D", "permanent": true },
+    { "source": "/whatsnew", "destination": "/whatsnew/boom", "permanent": true },
+
+    { "source": "/spinthewheel", "destination": "/", "permanent": true },
+    { "source": "/stpatrick", "destination": "/", "permanent": true },
+
+    { "source": "/store", "destination": "/", "permanent": true }
   ]
 }

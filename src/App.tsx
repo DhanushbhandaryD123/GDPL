@@ -262,7 +262,7 @@ function RouteFallback() {
 
 const appRoutes = [
   // Redirects and Aliases for Old Website URLs
-  { path: "/career", element: <Careers /> },
+  { path: "/career", element: <Redirect to="/careers" /> },
   { path: "/store/*", element: <Redirect to="/" /> },
   { path: "/lostlicense", element: <Redirect to="/contact" /> },
   { path: "/purchase/thank_you_purchase", element: <Redirect to="/" /> },
