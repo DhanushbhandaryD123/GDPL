@@ -25,12 +25,9 @@ export function CameraPlusPage() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${domain}/cameraplus`} />
         <link rel="canonical" href={`${domain}/cameraplus`} />
-      
-        <meta property="og:image" content={`${domain}/website/GlobalDelight/icons/CameraPlus_SubheaderLogo.png`} />
-        <meta name="thumbnail" content={`${domain}/website/GlobalDelight/icons/CameraPlus_SubheaderLogo.png`} />
+
         <meta name="twitter:title" content="Camera Plus | The Best Camera App for iPhone, iPad & Apple Watch" />
         <meta name="twitter:description" content="Capture brilliant photos and videos with Camera Plus. Take control with AirSnap, Macro Focus, Lumy, and seamless Apple Watch integration." />
-        <meta name="twitter:image" content={`${domain}/website/GlobalDelight/icons/CameraPlus_SubheaderLogo.png`} />
       </Helmet>
       
       <Navbar />
