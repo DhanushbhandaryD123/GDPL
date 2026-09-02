@@ -15,6 +15,7 @@
   "reactSnap": {
     "source": "dist",
     "minifyHtml": false,
+    "waitFor": 1800,
     "include": [
       "/",
       "/__prerender/not-found",
