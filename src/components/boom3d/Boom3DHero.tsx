@@ -31,7 +31,7 @@ export function Boom3DHero() {
               <img 
                 src="/boom3D/boomLogo3D.png" 
                 alt="Boom 3D Logo" 
-                className="w-48 lg:w-64 xl:w-72 object-contain"
+                className="w-48 lg:w-64 xl:w-72 object-contain" width={175} height={37} loading="eager"
               />
             </div>
 
@@ -53,7 +53,7 @@ export function Boom3DHero() {
                 rel="noopener noreferrer"
                 className="hover:scale-105 transition-transform"
               >
-                <img src="/button/DownloadonMacAppStore.png" alt="Download on Mac App Store" className="h-11 md:h-14 lg:h-16 object-contain drop-shadow-md" />
+                <img src="/button/DownloadonMacAppStore.png" alt="Download on Mac App Store" className="h-11 md:h-14 lg:h-16 object-contain drop-shadow-md" width={269} height={69} loading="eager" />
               </a>
               <a
                 href="https://apps.microsoft.com/detail/9pp81h1nczs1?cid=GD-Homepage-Banner&hl=en-US&gl=IN"
@@ -61,7 +61,7 @@ export function Boom3DHero() {
                 rel="noopener noreferrer"
                 className="hover:scale-105 transition-transform"
               >
-                <img src="/button/en-us dark.svg" alt="Get it from Microsoft Store" className="h-11 md:h-14 lg:h-16 object-contain drop-shadow-md" />
+                <img src="/button/en-us dark.svg" alt="Get it from Microsoft Store" className="h-11 md:h-14 lg:h-16 object-contain drop-shadow-md" width={161} height={44} loading="eager" />
               </a>
             </div>
           </motion.div>

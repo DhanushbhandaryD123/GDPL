@@ -79,7 +79,7 @@ export function GetInspired() {
                       className="w-full h-full object-cover opacity-95"
                       onError={(e) => {
                         (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(person.name)}&background=000&color=fff&size=256`;
-                      }}
+                      }} width={1536} height={1024} loading="lazy"
                     />
                   </div>
 

@@ -80,7 +80,7 @@ export function AirSnapFeature() {
               <img 
                 src="https://images.unsplash.com/photo-1517511620798-cec17d428bc0?q=80&w=600&auto=format&fit=crop" 
                 alt="Group Photo Capture"
-                className="w-full h-full object-cover opacity-90 scale-105"
+                className="w-full h-full object-cover opacity-90 scale-105" width={600} height={400} loading="lazy"
               />
               {/* Camera UI Overlay */}
               <div className="absolute inset-0 border-[1px] border-white/20 m-1 md:m-2 rounded-[1.2rem] md:rounded-[2rem] pointer-events-none" />

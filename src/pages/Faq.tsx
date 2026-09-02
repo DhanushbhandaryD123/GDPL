@@ -56,7 +56,7 @@ export function Faq() {
             <img
               src="/faq/Banner.webp"
               alt="FAQ and Support Banner"
-              className="absolute inset-0 w-full h-full object-cover object-center"
+              className="absolute inset-0 w-full h-full object-cover object-center" width={1822} height={863} loading="lazy"
             />
             
             {/* Text Overlay (Left Side) */}
@@ -116,7 +116,7 @@ export function Faq() {
                     <div className="bg-white rounded-[24px] p-6 lg:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col items-center text-center transition-all hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 relative overflow-hidden group">
                       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500"></div>
                       <div className="h-20 mb-4 flex items-center justify-center">
-                        <img src="/apps/boom3d-window.webp" alt="Boom 3D" className="h-full object-contain" />
+                        <img src="/apps/boom3d-window.webp" alt="Boom 3D" className="h-full object-contain" width={1028} height={1028} loading="lazy" />
                       </div>
                       <h3 className="text-xl font-bold text-gray-900 mb-3">{t('faq.boom3d_name')}</h3>
                       <p className="text-[13px] md:text-sm text-gray-500 mb-6 flex-grow leading-relaxed">{t('faq.boom3d_desc')}</p>
@@ -160,7 +160,7 @@ export function Faq() {
                     <a href="https://www.globaldelight.com/faq/boom2" target="_blank" rel="noopener noreferrer" className="bg-white rounded-[24px] p-6 lg:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col items-center text-center transition-all hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 relative overflow-hidden group block">
                       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-300 to-blue-500"></div>
                       <div className="h-20 mb-4 flex items-center justify-center">
-                        <img src="/faq/Boom2LogoFaq.png" alt="Boom 2" className="h-full object-contain" />
+                        <img src="/faq/Boom2LogoFaq.png" alt="Boom 2" className="h-full object-contain" width={142} height={134} loading="lazy" />
                       </div>
                       <p className="text-[13px] md:text-sm text-gray-500 mb-6 flex-grow leading-relaxed">{t('faq.boom2_desc')}</p>
                     </a>
@@ -171,7 +171,7 @@ export function Faq() {
                     <a href="https://www.globaldelight.com/faq/boomios" target="_blank" rel="noopener noreferrer" className="bg-white rounded-[24px] p-6 lg:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col items-center text-center transition-all hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 relative overflow-hidden group block">
                       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-400 to-blue-500"></div>
                       <div className="h-20 mb-4 flex items-center justify-center">
-                        <img src="/faq/iBoom.png" alt="Boom for iOS" className="h-full object-contain" />
+                        <img src="/faq/iBoom.png" alt="Boom for iOS" className="h-full object-contain" width={182} height={136} loading="lazy" />
                       </div>
                       <p className="text-[13px] md:text-sm text-gray-500 mb-6 flex-grow leading-relaxed">{t('faq.boomios_desc')}</p>
                     </a>
@@ -182,7 +182,7 @@ export function Faq() {
                     <div className="bg-white rounded-[24px] p-6 lg:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col items-center text-center transition-all hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 relative overflow-hidden group">
                       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gray-700 to-black"></div>
                       <div className="h-20 mb-4 flex items-center justify-center">
-                        <img src="/apps/AuDimix-Window.jpeg" alt="Audmike" className="h-full object-contain" />
+                        <img src="/apps/AuDimix-Window.jpeg" alt="Audmike" className="h-full object-contain" width={1028} height={1028} loading="lazy" />
                       </div>
                       <h3 className="text-xl font-bold text-gray-900 mb-3">{t('faq.audmike_name')}</h3>
                       <p className="text-[13px] md:text-sm text-gray-500 mb-6 flex-grow leading-relaxed">{t('faq.audmike_desc')}</p>
@@ -221,7 +221,7 @@ export function Faq() {
                   <a href="https://www.globaldelight.com/faq/vizmato" target="_blank" rel="noopener noreferrer" className="w-full max-w-[280px] bg-white rounded-[24px] p-6 lg:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col items-center text-center transition-all hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 relative overflow-hidden group block">
                     <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-400 to-red-600"></div>
                     <div className="h-20 mb-4 flex items-center justify-center">
-                      <img src="/faq/Vizmato.png" alt="Vizmato" className="h-full object-contain" />
+                      <img src="/faq/Vizmato.png" alt="Vizmato" className="h-full object-contain" width={231} height={58} loading="lazy" />
                     </div>
                     <p className="text-[13px] md:text-sm text-gray-500 mb-6 flex-grow leading-relaxed">{t('faq.vizmato_desc')}</p>
                   </a>
@@ -243,7 +243,7 @@ export function Faq() {
                     <div className="w-full sm:w-[280px] bg-white rounded-[24px] p-6 lg:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col items-center text-center transition-all hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 relative overflow-hidden group">
                       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-400 to-indigo-500"></div>
                       <div className="h-20 mb-4 flex items-center justify-center">
-                        <img src="/apps/Capto-mac.jpeg" alt="Capto" className="h-full object-contain" />
+                        <img src="/apps/Capto-mac.jpeg" alt="Capto" className="h-full object-contain" width={256} height={256} loading="lazy" />
                       </div>
                       <h3 className="text-xl font-bold text-gray-900 mb-3">{t('faq.capto_name')}</h3>
                       <p className="text-[13px] md:text-sm text-gray-500 mb-6 flex-grow leading-relaxed">{t('faq.capto_desc')}</p>
@@ -279,7 +279,7 @@ export function Faq() {
                     <a href="https://www.globaldelight.com/faq/audion" target="_blank" rel="noopener noreferrer" className="w-full sm:w-[280px] bg-white rounded-[24px] p-6 lg:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col items-center text-center transition-all hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 relative overflow-hidden group block">
                       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gray-700 to-black"></div>
                       <div className="h-20 mb-4 flex items-center justify-center">
-                        <img src="/faq/AudionFaqLogo.png" alt="Audio Recorder" className="h-full object-contain" />
+                        <img src="/faq/AudionFaqLogo.png" alt="Audio Recorder" className="h-full object-contain" width={169} height={57} loading="lazy" />
                       </div>
                       <p className="text-[13px] md:text-sm text-gray-500 mb-6 flex-grow leading-relaxed">{t('faq.audio_recorder_desc')}</p>
                     </a>

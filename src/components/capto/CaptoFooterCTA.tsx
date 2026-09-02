@@ -142,7 +142,7 @@ export function CaptoFooterCTA() {
                  onError={(e) => {
                    // Fallback for missing images until user uploads them
                    (e.target as HTMLImageElement).src = `https://placehold.co/120x60/f8f9fa/a0aec0?text=Logo+${i+1}`;
-                 }}
+                 }} loading="lazy"
                />
              </div>
            ))}
@@ -182,7 +182,7 @@ export function CaptoFooterCTA() {
             {t('capto.footer_cta.localized_note')}
           </p>
           <a href="#" className="shrink-0 hover:opacity-80 transition-opacity">
-             <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Download on the Mac App Store" className="h-[36px]" />
+             <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Download on the Mac App Store" className="h-[36px]" width={135} height={40} loading="lazy" />
           </a>
         </div>
 

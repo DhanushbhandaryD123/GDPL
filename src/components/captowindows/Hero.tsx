@@ -86,7 +86,7 @@ export function Hero() {
               <img
                 src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=2000&q=80&auto=format&fit=crop"
                 alt="Capto for Windows Dashboard"
-                className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
+                className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" width={2000} height={1125} loading="eager"
               />
               {/* Subtle Overlay */}
               <div className="absolute inset-0 bg-gradient-to-tr from-black/5 to-transparent pointer-events-none" />

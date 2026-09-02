@@ -63,7 +63,7 @@ export function HonorsReviews() {
                   onError={(e) => {
                     (e.target as HTMLImageElement).style.display = 'none';
                     (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden');
-                  }}
+                  }} width={237} height={229} loading="lazy"
                 />
                 <span className="hidden text-2xl font-bold text-gray-400">{logo.name}</span>
               </div>
@@ -91,7 +91,7 @@ export function HonorsReviews() {
                   onError={(e) => {
                     (e.target as HTMLImageElement).style.display = 'none';
                     (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden');
-                  }}
+                  }} width={237} height={229} loading="lazy"
                 />
                 <span className="hidden text-xl font-bold text-gray-400">{logo.name}</span>
               </div>

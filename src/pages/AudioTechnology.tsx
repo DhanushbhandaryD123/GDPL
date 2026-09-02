@@ -80,7 +80,7 @@ export function AudioTechnology() {
             <img 
               src="/business/AT/Audio-Hbanner.webp" 
               alt="Audio Technology Background" 
-              className="w-full h-full object-cover object-top"
+              className="w-full h-full object-cover object-top" width={1717} height={916} loading="lazy"
             />
             {/* Gradient overlay for text readability */}
             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent pointer-events-none" />
@@ -117,7 +117,7 @@ export function AudioTechnology() {
             <img 
               src="/business/AT/Audio-technlogy-banner.webp" 
               alt="Studio Mixing Board" 
-              className="w-full h-full object-cover object-center"
+              className="w-full h-full object-cover object-center" width={1920} height={768} loading="lazy"
             />
             {/* Gradient overlay to ensure text readability and blend edges */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80 pointer-events-none" />
@@ -142,7 +142,7 @@ export function AudioTechnology() {
                   <div className="flex flex-col items-center">
                     <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full flex items-center justify-center p-1 sm:p-[6px] mb-2 shadow-xl">
                       <div className="w-full h-full bg-black rounded-full flex items-center justify-center p-2 sm:p-3">
-                        <img src="/business/AT/Boom_normal.png" alt="Boom" className="w-full h-full object-contain" />
+                        <img src="/business/AT/Boom_normal.png" alt="Boom" className="w-full h-full object-contain" width={160} height={160} loading="lazy" />
                       </div>
                     </div>
                     <span className="text-xs sm:text-[13px] font-medium text-gray-200 drop-shadow-md">{t('technology.audio.boom_label')}</span>
@@ -153,7 +153,7 @@ export function AudioTechnology() {
                   {/* Your Application */}
                   <div className="flex flex-col items-center">
                     <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-xl sm:rounded-[1.5rem] flex items-center justify-center p-3 sm:p-4 mb-2 shadow-xl">
-                      <img src="/business/AT/s1.webp" alt="Your Application" className="w-full h-full object-contain" />
+                      <img src="/business/AT/s1.webp" alt="Your Application" className="w-full h-full object-contain" width={1024} height={1024} loading="lazy" />
                     </div>
                     <span className="text-xs sm:text-[13px] font-medium text-gray-200 drop-shadow-md">{t('technology.audio.your_app_label')}</span>
                   </div>
@@ -198,7 +198,7 @@ export function AudioTechnology() {
                   <div className="flex flex-col items-center">
                     <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full flex items-center justify-center p-1 sm:p-[6px] mb-2 shadow-xl">
                       <div className="w-full h-full bg-black rounded-full flex items-center justify-center p-2 sm:p-3">
-                        <img src="/business/AT/Boom_normal.png" alt="Boom" className="w-full h-full object-contain" />
+                        <img src="/business/AT/Boom_normal.png" alt="Boom" className="w-full h-full object-contain" width={160} height={160} loading="lazy" />
                       </div>
                     </div>
                     <span className="text-xs sm:text-[13px] font-medium text-gray-200 drop-shadow-md">{t('technology.audio.boom_label')}</span>
@@ -209,7 +209,7 @@ export function AudioTechnology() {
                   {/* Your Application */}
                   <div className="flex flex-col items-center">
                     <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-xl sm:rounded-[1.5rem] flex items-center justify-center p-3 sm:p-4 mb-2 shadow-xl">
-                      <img src="/business/AT/s1.webp" alt="Your Application" className="w-full h-full object-contain" />
+                      <img src="/business/AT/s1.webp" alt="Your Application" className="w-full h-full object-contain" width={1024} height={1024} loading="lazy" />
                     </div>
                     <span className="text-xs sm:text-[13px] font-medium text-gray-200 drop-shadow-md">{t('technology.audio.your_app_label')}</span>
                   </div>
@@ -253,12 +253,12 @@ export function AudioTechnology() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
               {/* Card 1 */}
               <div className="flex justify-center hover:-translate-y-2 transition-transform duration-300 drop-shadow-2xl">
-                <img src="/business/AT/s2.webp" alt={t('technology.audio.card1_alt')} className="w-[90%] max-w-[360px] h-[100px] sm:h-[120px] object-cover object-center rounded-[24px]" />
+                <img src="/business/AT/s2.webp" alt={t('technology.audio.card1_alt')} className="w-[90%] max-w-[360px] h-[100px] sm:h-[120px] object-cover object-center rounded-[24px]" width={1794} height={877} loading="lazy" />
               </div>
 
               {/* Card 2 */}
               <div className="flex justify-center hover:-translate-y-2 transition-transform duration-300 drop-shadow-2xl">
-                <img src="/business/AT/s3.webp" alt={t('technology.audio.card2_alt')} className="w-[90%] max-w-[360px] h-[100px] sm:h-[120px] object-cover object-center rounded-[24px]" />
+                <img src="/business/AT/s3.webp" alt={t('technology.audio.card2_alt')} className="w-[90%] max-w-[360px] h-[100px] sm:h-[120px] object-cover object-center rounded-[24px]" width={1774} height={887} loading="lazy" />
               </div>
             </div>
           </div>
@@ -520,7 +520,7 @@ export function AudioTechnology() {
                        key={activeFeature.image}
                        src={activeFeature.image} 
                        alt="Boom Engine Feature" 
-                       className="relative z-10 w-full h-auto object-contain transition-opacity duration-300" 
+                       className="relative z-10 w-full h-auto object-contain transition-opacity duration-300" width={1536} height={1024} loading="lazy" 
                      />
                   ) : (
                      <img 
@@ -530,7 +530,7 @@ export function AudioTechnology() {
                        className="relative z-10 w-[90%] sm:w-[80%] xl:w-full max-w-[420px] xl:-ml-8 h-auto object-contain transition-opacity duration-300 drop-shadow-2xl" 
                        onError={(e) => {
                          (e.target as HTMLImageElement).style.display = 'none';
-                       }}
+                       }} width={1536} height={1024} loading="lazy"
                      />
                   )}
                 </div>

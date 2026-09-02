@@ -48,7 +48,7 @@ export function EnhancementTools() {
                 <img 
                   src={tool.image} 
                   alt={tool.title}
-                  className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-110" width={800} height={534} loading="lazy"
                 />
               </div>
               

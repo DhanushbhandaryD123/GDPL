@@ -163,7 +163,7 @@ export function FaqTemplate({ title, description, keywords, logoSrc, logoAlt, fa
           {/* Side-by-Side Logo and Search */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-24 mb-16 pt-8">
             <div className="flex-shrink-0">
-              <img src={logoSrc} alt={logoAlt} className="h-20 md:h-28 w-auto object-contain" />
+              <img src={logoSrc} alt={logoAlt} className="h-20 md:h-28 w-auto object-contain" loading="lazy" />
             </div>
             
             <div className="relative w-full max-w-lg group">

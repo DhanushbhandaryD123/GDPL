@@ -85,7 +85,7 @@ export function Boom2RemoteControl() {
               key={options[activeIndex].imagePath}
               src={options[activeIndex].imagePath}
               alt={options[activeIndex].title}
-              className="w-full h-full object-contain drop-shadow-2xl transition-opacity duration-500 rounded-xl"
+              className="w-full h-full object-contain drop-shadow-2xl transition-opacity duration-500 rounded-xl" width={1536} height={1024} loading="lazy"
             />
           </div>
         </div>

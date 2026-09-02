@@ -41,7 +41,7 @@ export function Footer({ logoUrl }: FooterProps = {}) {
         
         {/* Mobile Header (Hidden on Desktop) */}
         <div className="md:hidden flex flex-col items-start gap-6 mb-10">
-          <img src={logoUrl || defaultLogo} alt="Global Delight Logo" className="h-8 w-auto brightness-0 invert opacity-90" />
+          <img src={logoUrl || defaultLogo} alt="Global Delight Logo" className="h-8 w-auto brightness-0 invert opacity-90" width={320} height={60} loading="lazy" />
           {socialLinks}
           <button className="flex items-center justify-between w-40 border border-gray-600 rounded-lg px-4 py-2 text-[14px] bg-[#18181b] text-gray-300">
             <span>{t('nav.language', 'English')}</span>
@@ -123,7 +123,7 @@ export function Footer({ logoUrl }: FooterProps = {}) {
                 <img 
                   src={logoUrl || defaultLogo} 
                   alt="Global Delight Logo" 
-                  className="h-10 w-auto brightness-0 invert opacity-100"
+                  className="h-10 w-auto brightness-0 invert opacity-100" width={320} height={60} loading="lazy"
                 />
               </div>
               <p className="text-[13px] font-bold text-white mb-4">{t('footer.delighting_world')}</p>

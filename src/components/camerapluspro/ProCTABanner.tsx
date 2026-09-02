@@ -17,7 +17,7 @@ export function ProCTABanner() {
             <img
               src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=900&q=80&auto=format&fit=crop"
               alt="Camera lens"
-              className="w-full h-full object-cover rounded-[3rem] shadow-2xl"
+              className="w-full h-full object-cover rounded-[3rem] shadow-2xl" width={900} height={1125} loading="lazy"
             />
           </div>
           <div className="absolute inset-0 bg-gradient-to-r from-gray-50 via-gray-50/90 to-transparent pointer-events-none" />

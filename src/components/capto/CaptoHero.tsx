@@ -282,7 +282,7 @@ export function CaptoHero() {
                 <img 
                   src="/capto/Logo_Web2x_1.png" 
                   alt="Capto Icon" 
-                  className="absolute top-0 left-0 h-16 md:h-20 w-auto max-w-none object-left object-cover drop-shadow-sm"
+                  className="absolute top-0 left-0 h-16 md:h-20 w-auto max-w-none object-left object-cover drop-shadow-sm" width={273} height={100} loading="eager"
                 />
               </div>
               <span className="text-[2.25rem] md:text-[3rem] font-bold tracking-tight text-[#1c2331]">Capto</span>
@@ -331,13 +331,13 @@ export function CaptoHero() {
             <img 
               src="/capto/c-hero.webp" 
               alt="Capto Interface"
-              className="w-full h-full md:h-auto absolute inset-0 md:static object-cover md:object-contain"
+              className="w-full h-full md:h-auto absolute inset-0 md:static object-cover md:object-contain" width={1672} height={941} loading="eager"
             />
             </div>
             
             <div className="mt-4 flex justify-center lg:ml-20">
               <a href="#" className="inline-block hover:opacity-80 transition-opacity bg-white px-2 py-1 rounded-lg border border-gray-100 shadow-sm">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Get_it_from_Microsoft_Badge.svg" alt="Get it from Microsoft Store" className="h-8" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Get_it_from_Microsoft_Badge.svg" alt="Get it from Microsoft Store" className="h-8" width={864} height={312} loading="eager" />
               </a>
             </div>
           </motion.div>

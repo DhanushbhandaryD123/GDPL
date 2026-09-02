@@ -20,7 +20,7 @@ export function BoomStory() {
               <img
                 src="https://images.unsplash.com/photo-1519638399535-1b036603ac77?q=80&w=1000&auto=format&fit=crop"
                 alt="Immersive audio engineering"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover" width={1000} height={563} loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
             </div>

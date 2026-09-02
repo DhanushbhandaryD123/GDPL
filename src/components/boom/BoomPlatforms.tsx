@@ -59,7 +59,7 @@ export function BoomPlatforms() {
                 <img
                   src={p.image}
                   alt={p.name}
-                  className="max-h-full max-w-[85%] object-contain drop-shadow-[0_20px_25px_rgba(0,0,0,0.12)] group-hover:scale-105 transition-transform duration-500"
+                  className="max-h-full max-w-[85%] object-contain drop-shadow-[0_20px_25px_rgba(0,0,0,0.12)] group-hover:scale-105 transition-transform duration-500" width={1536} height={1024} loading="lazy"
                 />
               </div>
 

@@ -27,7 +27,7 @@ export function Hero() {
               <img 
                 src="/Audio/audion-logo.png" 
                 alt="AudiOn Logo" 
-                className="h-14 md:h-20 w-auto object-contain drop-shadow-sm"
+                className="h-14 md:h-20 w-auto object-contain drop-shadow-sm" width={190} height={49} loading="eager"
               />
             </div>
             
@@ -50,7 +50,7 @@ export function Hero() {
                 <img
                   src="/Audio/storeCTA2.png"
                   alt="Download on the App Store"
-                  className="h-8 sm:h-10 md:h-[50px] w-auto"
+                  className="h-8 sm:h-10 md:h-[50px] w-auto" width={218} height={73} loading="eager"
                 />
               </a>
               <a
@@ -60,7 +60,7 @@ export function Hero() {
                 <img
                   src="/Audio/playstoreCTA.png"
                   alt="Get it on Google Play"
-                  className="h-8 sm:h-10 md:h-[50px] w-auto"
+                  className="h-8 sm:h-10 md:h-[50px] w-auto" width={218} height={73} loading="eager"
                 />
               </a>
             </div>

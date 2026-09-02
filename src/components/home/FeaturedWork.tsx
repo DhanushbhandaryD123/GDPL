@@ -243,7 +243,7 @@ export function FeaturedWork() {
                   <img 
                     src={card.logo} 
                     alt={card.name} 
-                    className="w-full h-full object-cover pointer-events-none" 
+                    className="w-full h-full object-cover pointer-events-none" width={1054} height={1492} loading="lazy" 
                   />
                 </div>
 

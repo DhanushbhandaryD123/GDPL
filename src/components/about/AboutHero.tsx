@@ -13,7 +13,7 @@ export function AboutHero() {
           <img 
             src="/team/GDPL-team.webp" 
             alt="Global Delight Team" 
-            className="w-full h-full object-cover opacity-25 mix-blend-luminosity"
+            className="w-full h-full object-cover opacity-25 mix-blend-luminosity" width={1717} height={916} loading="eager"
           />
           {/* Lighter shadow overlay */}
           <div className="absolute inset-0 bg-[#020617]/60 backdrop-blur-[1px]" />
@@ -98,7 +98,7 @@ export function AboutHero() {
               <img 
                 src="/team/global.webp" 
                 alt="Global Delight Digital Globe"
-                className="w-full md:w-[500px] lg:w-[650px] xl:w-[750px] h-auto object-contain"
+                className="w-full md:w-[500px] lg:w-[650px] xl:w-[750px] h-auto object-contain" width={1536} height={1024} loading="eager"
               />
             </motion.div>
 

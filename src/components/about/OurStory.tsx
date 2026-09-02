@@ -64,7 +64,7 @@ export function OurStory() {
           <img 
             src="/team/P1.webp" 
             alt="Global Delight Office and Team" 
-            className="w-full h-auto rounded-2xl md:rounded-[2rem] object-cover shadow-xl"
+            className="w-full h-auto rounded-2xl md:rounded-[2rem] object-cover shadow-xl" width={1672} height={941} loading="lazy"
           />
         </motion.div>
         

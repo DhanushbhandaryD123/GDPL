@@ -80,7 +80,7 @@ export function FeaturesOverview() {
               <img
                 src={step.image}
                 alt={step.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" width={1200} height={800} loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
 

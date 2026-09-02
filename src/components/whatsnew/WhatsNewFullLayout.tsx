@@ -89,13 +89,13 @@ export function WhatsNewFullLayout({
             {/* Mockup */}
             {heroMockupSrc && (
               <div className="flex justify-center md:justify-end">
-                <img src={heroMockupSrc} alt={`${productName} Mockup`} className="max-h-[250px] md:max-h-[350px] object-contain drop-shadow-2xl" />
+                <img src={heroMockupSrc} alt={`${productName} Mockup`} className="max-h-[250px] md:max-h-[350px] object-contain drop-shadow-2xl" loading="lazy" />
               </div>
             )}
             
             {/* Title */}
             <div className={`flex flex-col items-center text-center ${heroMockupSrc ? 'md:items-start md:text-left' : 'max-w-3xl mx-auto'}`}>
-              <img src={logoSrc} alt={productName} className="h-12 md:h-16 mb-6 object-contain" />
+              <img src={logoSrc} alt={productName} className="h-12 md:h-16 mb-6 object-contain" loading="lazy" />
               <h1 className="text-2xl md:text-4xl font-bold text-white leading-tight mb-8">
                 Here's everything you need to<br className="hidden md:block"/> 
                 know about the latest version of<br className="hidden md:block"/>
@@ -113,7 +113,7 @@ export function WhatsNewFullLayout({
         {/* SORT BAR */}
         <div className="border-b border-[#222]">
           <div className="max-w-[1200px] mx-auto px-6 py-4 flex items-center justify-between">
-            <img src={logoSrc} alt={productName} className="h-8 object-contain" />
+            <img src={logoSrc} alt={productName} className="h-8 object-contain" loading="lazy" />
             <div className="flex items-center gap-3 text-sm">
               <span className="text-gray-400">Sort by :</span>
               <select className="bg-[#1a1a1a] border border-[#333] text-white rounded-md px-3 py-1.5 outline-none focus:border-blue-500">

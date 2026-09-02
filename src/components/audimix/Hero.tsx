@@ -124,7 +124,7 @@ export function Hero() {
               <img
                 src="/faq/AudimixFaqLogo.png"
                 alt="AuDimix"
-                className="h-11 md:h-12 w-auto rounded-xl shadow-lg shadow-black/40"
+                className="h-11 md:h-12 w-auto rounded-xl shadow-lg shadow-black/40" width={160} height={140} loading="eager"
               />
               <span className="text-3xl font-bold tracking-tight text-white">Audimix</span>
               <SpectrumBars className="h-6 hidden sm:flex" />

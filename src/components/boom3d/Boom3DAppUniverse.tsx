@@ -16,7 +16,7 @@ import { useEffect, useState } from 'react';
         className="rounded-full overflow-hidden shrink-0 shadow-[0_14px_36px_rgba(79,70,229,0.3)]"
         style={{ width: size, height: size }}
       >
-        <img src={LOGO_SOURCE} alt="Boom 3D" className="w-full h-full object-cover" />
+        <img src={LOGO_SOURCE} alt="Boom 3D" className="w-full h-full object-cover" width={1028} height={1028} loading="lazy" />
       </div>
     );
   }
@@ -131,7 +131,7 @@ function OrbitIcon({
               className="bg-white rounded-2xl border border-gray-100 shadow-[0_8px_24px_rgba(30,20,60,0.08)] flex items-center justify-center transition-shadow duration-300 hover:shadow-[0_12px_32px_rgba(99,102,241,0.22)] hover:border-indigo-200"
               style={{ width: tile, height: tile }}
             >
-              <img src={app.iconUrl} alt={app.name} className="object-contain" style={{ width: tile * 0.64, height: tile * 0.64 }} loading="lazy" />
+              <img src={app.iconUrl} alt={app.name} className="object-contain" style={{ width: tile * 0.64, height: tile * 0.64 }} loading="lazy" width={24} height={24} />
             </div>
           </div>
         </motion.div>

@@ -45,7 +45,7 @@ export function Showcase() {
               <img
                 src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1400&q=80&auto=format&fit=crop"
                 alt="Creator workflow on Windows"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover" width={1400} height={932} loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
             </div>

@@ -79,7 +79,7 @@ export function CameraPlusLumySlider() {
                 src={lowLightImage} 
                 alt="Mountain landscape"
                 className="absolute inset-0 w-full h-full object-cover transition-all duration-75"
-                style={{ filter: `brightness(${brightness})` }}
+                style={{ filter: `brightness(${brightness})` }} width={1920} height={1281} loading="lazy"
               />
 
               {/* Camera App UI Overlay (Mock) */}

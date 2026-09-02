@@ -40,7 +40,7 @@ export function MacroFocus() {
               <img 
                 src="/cameraplus/c1.webp" 
                 alt="Macro Photography Before/After"
-                className="w-full h-full object-cover opacity-80 transition-transform duration-[2s] group-hover:scale-110"
+                className="w-full h-full object-cover opacity-80 transition-transform duration-[2s] group-hover:scale-110" width={1370} height={1148} loading="lazy"
               />
             </div>
             

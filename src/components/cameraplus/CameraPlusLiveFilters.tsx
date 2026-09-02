@@ -105,7 +105,7 @@ export function CameraPlusLiveFilters() {
                       <img 
                         src={filter.image} 
                         alt={filter.name}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover" width={1920} height={1280} loading="lazy"
                       />
                     </div>
                     <span className={`text-xs md:text-sm font-semibold tracking-wide transition-colors ${

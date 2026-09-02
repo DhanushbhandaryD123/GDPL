@@ -56,7 +56,7 @@ export function Boom3DTailored() {
                 <img 
                   src={card.image} 
                   alt={card.title} 
-                  className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105 opacity-90"
+                  className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105 opacity-90" width={1024} height={1536} loading="lazy"
                 />
                 {/* Gradient to fade image into black background */}
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#111111]/40 to-[#111111] translate-y-1" />

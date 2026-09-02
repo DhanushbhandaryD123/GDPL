@@ -165,7 +165,7 @@ export function Navbar({ logoUrl }: NavbarProps) {
               <img
                 src={logoUrl || defaultLogo}
                 alt="Global Delight Logo"
-                className={`h-8 md:h-10 w-auto object-contain drop-shadow-sm ${logoUrl ? '' : 'invert opacity-80'}`}
+                className={`h-8 md:h-10 w-auto object-contain drop-shadow-sm ${logoUrl ? '' : 'invert opacity-80'}`} width={320} height={60} loading="eager"
               />
             </Link>
 
@@ -231,7 +231,7 @@ export function Navbar({ logoUrl }: NavbarProps) {
                 onClick={() => setIsLanguageOpen(!isLanguageOpen)}
                 className="hover:opacity-80 transition-opacity focus:outline-none flex items-center gap-1.5"
               >
-                <img src="/button/LanguageIcon.png" alt="Language" className="w-5 h-5 md:w-6 md:h-6 object-contain brightness-0" />
+                <img src="/button/LanguageIcon.png" alt="Language" className="w-5 h-5 md:w-6 md:h-6 object-contain brightness-0" width={800} height={800} loading="eager" />
                 <span className="text-[13px] font-semibold text-gray-700 hidden lg:block">{currentLanguage.name}</span>
               </button>
               
@@ -249,7 +249,7 @@ export function Navbar({ logoUrl }: NavbarProps) {
                             isSelected ? 'font-bold text-[#003366]' : 'text-gray-700'
                           }`}
                         >
-                          <img src={lang.flagUrl} alt={lang.name} className="w-[22px] h-[16px] object-cover rounded-[2px] shadow-sm" />
+                          <img src={lang.flagUrl} alt={lang.name} className="w-[22px] h-[16px] object-cover rounded-[2px] shadow-sm" width={1200} height={600} loading="eager" />
                           <span className="text-[15px]">{lang.name}</span>
                         </RouterLink>
                       );
@@ -276,7 +276,7 @@ export function Navbar({ logoUrl }: NavbarProps) {
                 onClick={() => setIsLanguageOpen(!isLanguageOpen)}
                 className="hover:opacity-80 transition-opacity focus:outline-none flex items-center gap-1.5"
               >
-                <img src="/button/LanguageIcon.png" alt="Language" className="w-6 h-6 object-contain brightness-0" />
+                <img src="/button/LanguageIcon.png" alt="Language" className="w-6 h-6 object-contain brightness-0" width={800} height={800} loading="eager" />
                 <span className="text-[13px] font-semibold text-gray-700">{currentLanguage.code.toUpperCase()}</span>
               </button>
               
@@ -294,7 +294,7 @@ export function Navbar({ logoUrl }: NavbarProps) {
                             isSelected ? 'font-bold text-[#003366]' : 'text-gray-700'
                           }`}
                         >
-                          <img src={lang.flagUrl} alt={lang.name} className="w-[20px] h-[14px] object-cover rounded-[2px] shadow-sm" />
+                          <img src={lang.flagUrl} alt={lang.name} className="w-[20px] h-[14px] object-cover rounded-[2px] shadow-sm" width={1200} height={600} loading="eager" />
                           <span className="text-[14px]">{lang.name}</span>
                         </RouterLink>
                       );

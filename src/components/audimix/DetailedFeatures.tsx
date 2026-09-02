@@ -59,7 +59,7 @@ export function DetailedFeatures() {
                 <img
                   src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=1000&q=80&auto=format&fit=crop"
                   alt="Mixing console"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover" width={1000} height={667} loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-indigo-950/70 via-indigo-950/5 to-transparent" />
               </div>

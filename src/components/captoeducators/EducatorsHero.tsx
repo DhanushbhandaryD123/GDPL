@@ -75,7 +75,7 @@ export function EducatorsHero() {
               <img
                 src="/capto/s3.webp"
                 alt="Capto's timeline and annotation tools used to build a tutorial video"
-                className="w-full h-auto block"
+                className="w-full h-auto block" width={1536} height={1024} loading="eager"
               />
 
               {/* Animated spotlight ring */}

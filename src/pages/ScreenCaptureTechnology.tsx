@@ -70,7 +70,7 @@ export function ScreenCaptureTechnology() {
             <img
               src="/business/ST/ST_banner.webp"
               alt="Screen Capture Technology Banner"
-              className="absolute inset-0 w-full h-full object-cover object-center"
+              className="absolute inset-0 w-full h-full object-cover object-center" width={1920} height={769} loading="lazy"
             />
             
             {/* Text Overlay (Left Side) */}
@@ -131,7 +131,7 @@ export function ScreenCaptureTechnology() {
                   <img
                     src={tabsData[activeTab].image}
                     alt={tabsData[activeTab].title}
-                    className="w-full max-w-[280px] lg:max-w-[320px] h-auto max-h-[250px] lg:max-h-[280px] object-contain transition-opacity duration-500 animate-fadeIn"
+                    className="w-full max-w-[280px] lg:max-w-[320px] h-auto max-h-[250px] lg:max-h-[280px] object-contain transition-opacity duration-500 animate-fadeIn" width={1536} height={1024} loading="lazy"
                   />
                 </div>
               </div>

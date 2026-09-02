@@ -13,7 +13,7 @@ export function OurValues() {
         <img 
           src="/team/ourvalues.webp" 
           alt="Global Delight Our Values" 
-          className="w-full h-auto md:h-[400px] lg:h-[400px] object-contain md:object-cover object-center drop-shadow-2xl"
+          className="w-full h-auto md:h-[400px] lg:h-[400px] object-contain md:object-cover object-center drop-shadow-2xl" width={1717} height={916} loading="lazy"
         />
       </motion.div>
     </section>

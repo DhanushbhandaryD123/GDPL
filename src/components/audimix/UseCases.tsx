@@ -66,7 +66,7 @@ export function UseCases() {
                 <img
                   src={uc.image}
                   alt={uc.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" width={1200} height={800} loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/5 to-transparent" />
                 <div className="absolute top-5 left-5 w-11 h-11 rounded-xl bg-white/15 backdrop-blur-md border border-white/30 flex items-center justify-center">

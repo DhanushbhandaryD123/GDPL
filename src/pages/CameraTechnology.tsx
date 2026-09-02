@@ -83,7 +83,7 @@ export function CameraTechnology() {
             <img
               src="/business/CT/CT-banner.webp"
               alt="Camera Technology Banner"
-              className="absolute inset-0 w-full h-full object-cover object-center"
+              className="absolute inset-0 w-full h-full object-cover object-center" width={1774} height={887} loading="lazy"
             />
             
             {/* Text Overlay (Right Side) */}
@@ -160,7 +160,7 @@ export function CameraTechnology() {
                   <img
                     src={tabsData[activeTab].image}
                     alt={tabsData[activeTab].title}
-                    className="w-full max-w-[280px] lg:max-w-[320px] h-auto max-h-[250px] lg:max-h-[280px] object-contain transition-opacity duration-500 animate-fadeIn"
+                    className="w-full max-w-[280px] lg:max-w-[320px] h-auto max-h-[250px] lg:max-h-[280px] object-contain transition-opacity duration-500 animate-fadeIn" width={1024} height={1536} loading="lazy"
                   />
                 </div>
               </div>
@@ -175,7 +175,7 @@ export function CameraTechnology() {
               <img
               src="/business/CT/CT_C.webp"
               alt="Contact Background"
-              className="absolute inset-0 w-full h-full object-cover z-0"
+              className="absolute inset-0 w-full h-full object-cover z-0" width={1920} height={768} loading="lazy"
             />
             {/* Optional slight dark overlay for text readability */}
             <div className="absolute inset-0 bg-black/20 z-10"></div>

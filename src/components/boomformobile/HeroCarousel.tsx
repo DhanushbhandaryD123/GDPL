@@ -68,7 +68,7 @@ export function HeroCarousel() {
             <div key={slide.id} className="flex-[0_0_100%] min-w-0 relative h-full">
               {/* Full-bleed background photo */}
               <div className="absolute inset-0">
-                <img src={slide.image} alt={slide.title} className="w-full h-full object-cover" />
+                <img src={slide.image} alt={slide.title} className="w-full h-full object-cover" width={1600} height={1067} loading="eager" />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#05050A] via-[#05050A]/80 to-[#05050A]/20" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#05050A] via-transparent to-[#05050A]/40" />
               </div>

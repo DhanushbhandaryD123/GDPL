@@ -15,7 +15,7 @@ export function Boom3DCTA() {
             <img 
               src="/boom3D/u1.png" 
               alt="Boom 3D App on Laptop" 
-              className="w-full max-w-[500px] lg:max-w-none object-contain drop-shadow-2xl"
+              className="w-full max-w-[500px] lg:max-w-none object-contain drop-shadow-2xl" width={1000} height={628} loading="lazy"
             />
           </div>
 

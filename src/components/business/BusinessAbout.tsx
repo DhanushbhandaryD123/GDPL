@@ -12,7 +12,7 @@ export function BusinessAbout() {
             <img 
               src="/business/business5.webp" 
               alt="Business About" 
-              className="w-full h-full object-cover object-left md:object-center" 
+              className="w-full h-full object-cover object-left md:object-center" width={1907} height={825} loading="lazy" 
             />
             {/* Desktop gradient */}
             <div className="hidden md:block absolute inset-0 bg-gradient-to-l from-black/80 via-black/20 to-transparent pointer-events-none" />

@@ -82,7 +82,7 @@ export function MeetOurTeam() {
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(leader.name)}&background=f3f4f6&color=9ca3af&size=128`;
-                  }}
+                  }} width={200} height={200} loading="lazy"
                 />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-1">{leader.name}</h3>
@@ -115,7 +115,7 @@ export function MeetOurTeam() {
                       style={{ backgroundColor: '#0a122c' }}
                       onError={(e) => {
                         (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=0a122c&color=ffffff&size=256`;
-                      }}
+                      }} width={200} height={200} loading="lazy"
                     />
 
                     {/* Gradient Overlay for text readability */}

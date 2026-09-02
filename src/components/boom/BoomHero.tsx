@@ -35,7 +35,7 @@ export function BoomHero() {
           <img
             src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=1800&auto=format&fit=crop"
             alt="Boom equalizer app immersive 3D surround sound experience"
-            className="w-full h-full object-cover object-[60%_45%] opacity-90"
+            className="w-full h-full object-cover object-[60%_45%] opacity-90" width={1800} height={1200} loading="eager"
           />
         </div>
 
@@ -135,7 +135,7 @@ export function BoomHero() {
                   <img
                     src="https://images.unsplash.com/photo-1483412033650-1015ddeb83d1?q=80&w=300&auto=format&fit=crop"
                     alt="Now playing"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover" width={300} height={199} loading="eager"
                   />
                 </div>
                 <div className="min-w-0">

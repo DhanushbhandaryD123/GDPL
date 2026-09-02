@@ -63,7 +63,7 @@ export function WhatsNewWhiteTemplate({
               
               {/* Left side: Logo, Date, Version */}
               <div className="space-y-6">
-                <img src={logoSrc} alt={productName} className="h-10 md:h-12 w-auto object-contain" />
+                <img src={logoSrc} alt={productName} className="h-10 md:h-12 w-auto object-contain" loading="lazy" />
                 
                 {activeNotes ? (
                   <div className="space-y-2 text-lg">

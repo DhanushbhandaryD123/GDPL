@@ -95,7 +95,7 @@ export function HeroMobile() {
                     rel="noopener noreferrer" 
                     className="hover:scale-105 transition-transform"
                   >
-                    <img src="/button/GooglePlay.png" alt="Get it on Google Play" className="h-8 sm:h-10 object-contain drop-shadow-md" />
+                    <img src="/button/GooglePlay.png" alt="Get it on Google Play" className="h-8 sm:h-10 object-contain drop-shadow-md" width={307} height={92} loading="eager" />
                   </a>
                   <a 
                     href="https://apps.apple.com/us/app/audion-voice-recorder-memos/id1633228083" 
@@ -103,7 +103,7 @@ export function HeroMobile() {
                     rel="noopener noreferrer" 
                     className="hover:scale-105 transition-transform"
                   >
-                    <img src="/button/AppStore.png" alt="Download on App Store" className="h-8 sm:h-10 object-contain drop-shadow-md" />
+                    <img src="/button/AppStore.png" alt="Download on App Store" className="h-8 sm:h-10 object-contain drop-shadow-md" width={306} height={91} loading="eager" />
                   </a>
                 </div>
               </motion.div>
@@ -147,7 +147,7 @@ export function HeroMobile() {
                     rel="noopener noreferrer" 
                     className="hover:scale-105 transition-transform"
                   >
-                    <img src="/button/AppStore.png" alt="Download on App Store" className="h-8 sm:h-10 object-contain drop-shadow-md" />
+                    <img src="/button/AppStore.png" alt="Download on App Store" className="h-8 sm:h-10 object-contain drop-shadow-md" width={306} height={91} loading="eager" />
                   </a>
                   <a 
                     href="https://play.google.com/store/apps/details?id=com.globaldelight.vizmato&hl" 
@@ -155,7 +155,7 @@ export function HeroMobile() {
                     rel="noopener noreferrer" 
                     className="hover:scale-105 transition-transform"
                   >
-                    <img src="/button/GooglePlay.png" alt="Get it on Google Play" className="h-8 sm:h-10 object-contain drop-shadow-md" />
+                    <img src="/button/GooglePlay.png" alt="Get it on Google Play" className="h-8 sm:h-10 object-contain drop-shadow-md" width={307} height={92} loading="eager" />
                   </a>
                 </div>
               </motion.div>
@@ -200,7 +200,7 @@ export function HeroMobile() {
                     rel="noopener noreferrer" 
                     className="hover:scale-105 transition-transform"
                   >
-                    <img src="/button/DownloadonMacAppStore.png" alt="Download on Mac App Store" className="h-8 sm:h-10 object-contain drop-shadow-md" />
+                    <img src="/button/DownloadonMacAppStore.png" alt="Download on Mac App Store" className="h-8 sm:h-10 object-contain drop-shadow-md" width={269} height={69} loading="eager" />
                   </a>
                   <a 
                     href="https://apps.microsoft.com/detail/9pp81h1nczs1?cid=GD-Homepage-Banner&hl=en-US&gl=IN" 
@@ -208,7 +208,7 @@ export function HeroMobile() {
                     rel="noopener noreferrer" 
                     className="hover:scale-105 transition-transform"
                   >
-                    <img src="/button/en-us dark.svg" alt="Get it from Microsoft Store" className="h-8 sm:h-10 object-contain drop-shadow-md" />
+                    <img src="/button/en-us dark.svg" alt="Get it from Microsoft Store" className="h-8 sm:h-10 object-contain drop-shadow-md" width={161} height={44} loading="eager" />
                   </a>
                 </div>
 
@@ -245,7 +245,7 @@ export function HeroMobile() {
                     rel="noopener noreferrer"
                     className="hover:scale-105 transition-transform block shrink-0"
                   >
-                    <img src="/button/en-us dark.svg" alt="Get it from Microsoft Store" className="h-8 sm:h-10 object-contain drop-shadow-md" />
+                    <img src="/button/en-us dark.svg" alt="Get it from Microsoft Store" className="h-8 sm:h-10 object-contain drop-shadow-md" width={161} height={44} loading="eager" />
                   </a>
                   <Link to="/capto" className="bg-white/10 border border-white/80 text-white font-bold px-4 py-1.5 rounded text-[10px] sm:text-xs hover:bg-white/20 active:scale-95 transition shadow-lg whitespace-nowrap backdrop-blur-sm flex items-center justify-center">
                     {t('home.hero_banner.learn_more')}
@@ -263,7 +263,7 @@ export function HeroMobile() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="absolute top-1/2 -translate-y-1/2 right-3 w-[50%] flex flex-col items-center text-center space-y-3 z-10 pointer-events-auto pr-2"
             >
-              <img src="/button/Boom2-Logo.png" alt="Boom 2" className="w-24 sm:w-28 object-contain drop-shadow-2xl" />
+              <img src="/button/Boom2-Logo.png" alt="Boom 2" className="w-24 sm:w-28 object-contain drop-shadow-2xl" width={311} height={69} loading="eager" />
               
               <h2 className="text-xs sm:text-sm font-semibold tracking-tight leading-snug drop-shadow-lg text-white">
                 {t('home.hero_banner.boom2_tagline')}
@@ -276,7 +276,7 @@ export function HeroMobile() {
                   rel="noopener noreferrer" 
                   className="hover:scale-105 transition-transform block flex justify-center"
                 >
-                  <img src="/button/DownloadonMacAppStore.png" alt="Download on Mac App Store" className="h-8 sm:h-10 object-contain drop-shadow-md" />
+                  <img src="/button/DownloadonMacAppStore.png" alt="Download on Mac App Store" className="h-8 sm:h-10 object-contain drop-shadow-md" width={269} height={69} loading="eager" />
                 </a>
                   <Link
                     to="/boom2"

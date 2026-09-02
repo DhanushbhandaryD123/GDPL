@@ -207,7 +207,7 @@ export function Boom3DSurround() {
         <div className="w-full max-w-[1300px] mx-auto flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
           {/* Left: Extension Icon */}
           <div className="shrink-0 relative z-10 w-[140px] md:w-[160px]">
-            <img src="/boom3D/Extension-icon.png" alt="5.1 Extension" className="w-full h-auto object-contain" />
+            <img src="/boom3D/Extension-icon.png" alt="5.1 Extension" className="w-full h-auto object-contain" width={127} height={127} loading="lazy" />
           </div>
 
           {/* Right: Content */}
@@ -226,11 +226,11 @@ export function Boom3DSurround() {
             {/* Store Buttons (Centered under text) */}
             <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-4 mt-2">
               <a href="https://chromewebstore.google.com/detail/boom3d-51-surround-for-ne/ndjhebiohmanieefhnhcmlbflfljmhdn?hl=en&authuser=0" target="_blank" rel="noopener noreferrer" className="flex w-full sm:w-auto items-center justify-center gap-2 bg-[#2ab2da] hover:bg-[#2399bd] text-black font-bold px-6 py-2 rounded-full text-[14px] transition-colors border border-transparent shadow-md">
-                <img src="/boom3D/Chrome-icon.png" alt="Chrome" className="w-[32px] h-[32px]" />
+                <img src="/boom3D/Chrome-icon.png" alt="Chrome" className="w-[32px] h-[32px]" width={26} height={26} loading="lazy" />
                 {t('boom3d.surround.for_chrome')}
               </a>
               <a href="https://apps.apple.com/us/app/boom3d-5-1-audio-for-netflix/id6445882848?mt=12" target="_blank" rel="noopener noreferrer" className="flex w-full sm:w-auto items-center justify-center gap-2 bg-[#2ab2da] hover:bg-[#2399bd] text-black font-bold px-6 py-2 rounded-full text-[14px] transition-colors border border-transparent shadow-md">
-                <img src="/boom3D/Safari-icon.png" alt="Safari" className="w-[32px] h-[32px]" />
+                <img src="/boom3D/Safari-icon.png" alt="Safari" className="w-[32px] h-[32px]" width={27} height={27} loading="lazy" />
                 {t('boom3d.surround.for_safari')}
               </a>
             </div>

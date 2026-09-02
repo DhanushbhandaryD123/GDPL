@@ -26,7 +26,7 @@ export function Boom2Awards() {
                 src={award.src} 
                 alt={award.alt} 
                 className="w-full h-auto object-contain"
-                loading="lazy"
+                loading="lazy" width={324} height={300}
               />
             </div>
           ))}

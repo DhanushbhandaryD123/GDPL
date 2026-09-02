@@ -14,7 +14,7 @@ const AdjustScreen = () => {
       <img
         src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=600&q=80&auto=format&fit=crop"
         alt="Bridge — adjust preview"
-        className="w-full h-full object-cover opacity-90"
+        className="w-full h-full object-cover opacity-90" width={600} height={400} loading="lazy"
       />
       <div className="absolute inset-x-0 bottom-0 bg-black/85 backdrop-blur-sm px-4 py-4 space-y-3">
         <p className="text-white text-[10px] font-bold tracking-widest mb-2">{t('camera_plus_pro.editing_tools.adjust')}</p>
@@ -46,7 +46,7 @@ const EffectsScreen = () => {
             <img
               src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=200&q=60&auto=format&fit=crop"
               alt=""
-              className={`w-full h-full object-cover ${filter}`}
+              className={`w-full h-full object-cover ${filter}`} width={200} height={133} loading="lazy"
             />
           </div>
         ))}
@@ -109,7 +109,7 @@ export function ProEditingTools() {
                   <img
                     src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=800&q=80&auto=format&fit=crop"
                     alt="Bridge photo"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover" width={800} height={533} loading="lazy"
                   />
                 </PhoneFrame>
               </div>

@@ -46,7 +46,7 @@ export function ToolkitShowcase() {
               <img
                 src="https://images.unsplash.com/photo-1601506521937-0121a7fc2a6b?w=1400&q=80&auto=format&fit=crop"
                 alt="Vizmato editing in action"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover" width={1400} height={933} loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
             </div>

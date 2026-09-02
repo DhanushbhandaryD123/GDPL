@@ -86,7 +86,7 @@ export function SplashScreenMobile({ onComplete }: SplashScreenMobileProps) {
                   <img 
                     src="/logos/globaldelight-logo.webp" 
                     alt="Global Delight" 
-                    className="w-full h-full object-contain relative z-10 brightness-0 invert"
+                    className="w-full h-full object-contain relative z-10 brightness-0 invert" width={1536} height={1024} loading="eager"
                   />
                 </motion.div>
               </div>

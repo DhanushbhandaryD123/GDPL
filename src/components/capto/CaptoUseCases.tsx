@@ -154,7 +154,7 @@ export function CaptoUseCases() {
                       <img
                         src={activeUseCase.image}
                         alt={`Capto for ${activeUseCase.title}`}
-                        className="w-full h-auto object-cover object-top max-h-[340px]"
+                        className="w-full h-auto object-cover object-top max-h-[340px]" width={1536} height={1024} loading="lazy"
                       />
                     </div>
                   </div>

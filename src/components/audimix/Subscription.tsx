@@ -28,7 +28,7 @@ export function Subscription() {
           src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1920&q=80&auto=format&fit=crop"
           alt="AuDimix vocal splitting and audio remixing background"
           aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover opacity-60"
+          className="absolute inset-0 w-full h-full object-cover opacity-60" width={1920} height={1280} loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/50" />
         <div className="absolute top-[-10%] right-[10%] w-[40%] h-[60%] rounded-full bg-violet-500/20 blur-[120px] pointer-events-none" />

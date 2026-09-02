@@ -11,7 +11,7 @@ export function MacPromo() {
         src="https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?w=1920&q=80&auto=format&fit=crop"
         alt=""
         aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover opacity-15"
+        className="absolute inset-0 w-full h-full object-cover opacity-15" width={1920} height={1280} loading="lazy"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-[#0078D7] via-[#0078D7]/95 to-[#005a9e]/90" />
 

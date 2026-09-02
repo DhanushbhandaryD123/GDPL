@@ -62,7 +62,7 @@ export function CreativeShowcase() {
               <img
                 src={card.image}
                 alt={card.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" width={1200} height={801} loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
 

@@ -47,10 +47,10 @@ export function CaptoFeatures() {
               </span>
             </div>
             <a href="#" className="inline-block hover:opacity-80 transition-opacity">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Download on the Mac App Store" className="h-[52px]" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Download on the Mac App Store" className="h-[52px]" width={135} height={40} loading="lazy" />
             </a>
             <a href="#" className="inline-block hover:opacity-80 transition-opacity bg-white px-3 py-1.5 rounded-[14px] border border-gray-100 shadow-sm">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Get_it_from_Microsoft_Badge.svg" alt="Get it from Microsoft Store" className="h-[38px]" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Get_it_from_Microsoft_Badge.svg" alt="Get it from Microsoft Store" className="h-[38px]" width={864} height={312} loading="lazy" />
             </a>
           </motion.div>
         </div>
@@ -72,7 +72,7 @@ export function CaptoFeatures() {
                     src={feature.image}
                     alt={feature.title}
                     className="w-full h-full object-cover rounded-xl"
-                    style={{ WebkitFontSmoothing: 'antialiased' }}
+                    style={{ WebkitFontSmoothing: 'antialiased' }} width={1536} height={1024} loading="lazy"
                  />
                  <div className="absolute -bottom-6 left-6 w-14 h-14 bg-white rounded-[1rem] flex items-center justify-center shadow-lg border border-gray-100 text-[#616AD8] group-hover:scale-110 transition-transform duration-300 z-20">
                    <feature.icon size={26} strokeWidth={2.5} />

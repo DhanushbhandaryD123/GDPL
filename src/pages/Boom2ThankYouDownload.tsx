@@ -37,7 +37,7 @@ export function Boom2ThankYouDownload() {
             <img
               src="/apps/Boom2-mac.jpeg"
               alt="Boom 2"
-              className="w-16 h-16 rounded-2xl object-cover mx-auto mb-6 shadow-md"
+              className="w-16 h-16 rounded-2xl object-cover mx-auto mb-6 shadow-md" width={1028} height={1028} loading="lazy"
             />
 
             <div className="w-14 h-14 rounded-2xl bg-[#1390FB]/10 text-[#1390FB] flex items-center justify-center mx-auto mb-6">

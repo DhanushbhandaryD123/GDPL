@@ -44,7 +44,7 @@ function AppCardDesktop({ app, index }: { app: AppItem, index: number }) {
               onError={(e) => {
                 (e.target as HTMLImageElement).style.display = 'none';
                 (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden');
-              }}
+              }} loading="lazy"
             />
             {/* Fallback Placeholder */}
             <div className="hidden w-20 h-20 rounded-full shadow-lg flex items-center justify-center text-white bg-gradient-to-br from-gray-400 to-gray-600">
@@ -61,7 +61,7 @@ function AppCardDesktop({ app, index }: { app: AppItem, index: number }) {
         {/* Back */}
         <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-gray-100 p-6 flex flex-col items-center justify-center">
           <div className="w-28 h-28 flex justify-center items-center rounded-3xl mb-2">
-            <img src={app.iconPath} alt={app.name} className="w-20 h-20 drop-shadow-md object-contain" />
+            <img src={app.iconPath} alt={app.name} className="w-20 h-20 drop-shadow-md object-contain" loading="lazy" />
           </div>
           <h3 className="text-xl font-bold text-[#003057]">{app.name}</h3>
           
@@ -127,7 +127,7 @@ export function AppCategoryDesktop({ title, deviceImageAlt, deviceImagePath, ima
               onError={(e) => {
                 (e.target as HTMLImageElement).style.display = 'none';
                 (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden');
-              }}
+              }} loading="lazy"
             />
             {/* Fallback Placeholder */}
             <div className="hidden w-64 h-48 bg-gray-100 rounded-xl border flex items-center justify-center text-gray-400 text-sm shadow-sm relative overflow-hidden">

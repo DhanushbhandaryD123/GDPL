@@ -55,7 +55,7 @@ function AppCardMobile({ app, index }: { app: AppItem, index: number }) {
               onError={(e) => {
                 (e.target as HTMLImageElement).style.display = 'none';
                 (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden');
-              }}
+              }} loading="lazy"
             />
             {/* Fallback Placeholder */}
             <div className="hidden w-14 h-14 rounded-full shadow flex items-center justify-center text-white bg-gradient-to-br from-gray-400 to-gray-600">
@@ -73,7 +73,7 @@ function AppCardMobile({ app, index }: { app: AppItem, index: number }) {
 
         {/* Back */}
         <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-white rounded-2xl shadow-[0_4px_16px_rgb(0,0,0,0.12)] border border-gray-100 p-4 flex flex-col items-center justify-center gap-2 text-center">
-          <img src={app.iconPath} alt={app.name} className="w-12 h-12 drop-shadow-md object-contain mb-2" />
+          <img src={app.iconPath} alt={app.name} className="w-12 h-12 drop-shadow-md object-contain mb-2" loading="lazy" />
           
           <h3 className="text-sm font-bold text-[#003057] leading-tight">{app.name}</h3>
           
@@ -131,7 +131,7 @@ export function AppCategoryMobile({ title, deviceImageAlt, deviceImagePath, titl
               onError={(e) => {
                 (e.target as HTMLImageElement).style.display = 'none';
                 (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden');
-              }}
+              }} loading="lazy"
             />
             {/* Fallback Placeholder */}
             <div className="hidden w-24 h-24 bg-gray-100 rounded-lg border flex items-center justify-center text-gray-400 text-xs shadow-sm relative overflow-hidden">

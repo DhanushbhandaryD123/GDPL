@@ -42,7 +42,7 @@ export function CaptoThankYou() {
           <img
             src="/apps/Capto-mac.jpeg"
             alt="Capto"
-            className="w-16 h-16 rounded-2xl object-cover mx-auto mb-6 shadow-md"
+            className="w-16 h-16 rounded-2xl object-cover mx-auto mb-6 shadow-md" width={256} height={256} loading="lazy"
           />
 
           <div className="w-14 h-14 rounded-2xl bg-[#6554ff]/10 text-[#6554ff] flex items-center justify-center mx-auto mb-6">

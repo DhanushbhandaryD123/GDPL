@@ -24,7 +24,7 @@ export function HeroBanner() {
               <img 
                 src="/cameraplus/camera-plus-icon.png" 
                 alt="Camera Plus Icon" 
-                className="w-14 h-14 md:w-16 md:h-16 object-contain"
+                className="w-14 h-14 md:w-16 md:h-16 object-contain" width={192} height={192} loading="eager"
               />
               <span className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-800 tracking-tight">Camera Plus</span>
             </div>
@@ -46,14 +46,14 @@ export function HeroBanner() {
                 <img 
                   src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" 
                   alt="Download on the App Store" 
-                  className="h-10 sm:h-14 md:h-[60px] w-auto"
+                  className="h-10 sm:h-14 md:h-[60px] w-auto" width={120} height={40} loading="eager"
                 />
               </a>
               <a href="#" className="transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#00B4B4]/20 rounded-xl overflow-hidden flex justify-center">
                 <img 
                   src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" 
                   alt="Get it on Google Play" 
-                  className="h-10 sm:h-14 md:h-[60px] w-auto"
+                  className="h-10 sm:h-14 md:h-[60px] w-auto" width={180} height={53} loading="eager"
                 />
               </a>
             </div>
@@ -70,7 +70,7 @@ export function HeroBanner() {
               <img 
                 src="/cameraplus/hero.webp" 
                 alt="Camera Plus App Interface" 
-                className="w-full h-auto object-contain mx-auto z-20"
+                className="w-full h-auto object-contain mx-auto z-20" width={1024} height={1024} loading="eager"
               />    
             </div>
           </motion.div>

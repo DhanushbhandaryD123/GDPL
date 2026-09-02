@@ -59,7 +59,7 @@ export function VideoTechnology() {
           <img
             src="/business/VT/VT-banner.webp"
             alt="Video Technology Banner"
-            className="w-full h-[250px] md:h-[350px] lg:h-[500px] xl:h-[450px] object-fill object-center"
+            className="w-full h-[250px] md:h-[350px] lg:h-[500px] xl:h-[450px] object-fill object-center" width={1718} height={916} loading="lazy"
           />
 
           {/* Text Overlay on the Hero Banner */}
@@ -115,7 +115,7 @@ export function VideoTechnology() {
                       activeTab === 2 
                         ? 'max-w-[220px] lg:max-w-[280px] max-h-[220px] lg:max-h-[280px]' 
                         : 'max-w-[350px] lg:max-w-[480px] max-h-[320px] lg:max-h-[420px]'
-                    }`}
+                    }`} width={1024} height={1536} loading="lazy"
                   />
                 </div>
               </div>
@@ -256,7 +256,7 @@ export function VideoTechnology() {
               <img
               src="/business/VT/watermarkforcontact.jpg"
               alt="Contact Background"
-              className="absolute inset-0 w-full h-full object-cover z-0"
+              className="absolute inset-0 w-full h-full object-cover z-0" width={1922} height={471} loading="lazy"
             />
             {/* Optional slight dark gradient for text readability if the image is bright */}
             <div className="absolute inset-0 bg-black/10 z-10"></div>

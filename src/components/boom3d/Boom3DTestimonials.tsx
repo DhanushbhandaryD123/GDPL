@@ -299,7 +299,7 @@ export function Boom3DTestimonials() {
                       src={item.logoImg}
                       alt={item.publisher}
                       className="h-10 w-auto object-contain"
-                      style={{ filter: 'brightness(0)' }}
+                      style={{ filter: 'brightness(0)' }} width={202} height={204} loading="lazy"
                     />
                   ) : (
                     <span className={item.logoStyle.replace('text-white', 'text-[#1d1d1f]')}>{item.logoText}</span>

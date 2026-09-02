@@ -159,7 +159,7 @@ export function MediaTestimonials() {
                     {/* Logo Area */}
                     <div className="mt-auto pt-6 flex items-center justify-center h-[100px] w-full">
                       {'logoImg' in item && item.logoImg ? (
-                        <img src={item.logoImg} alt={item.logoAlt} className="max-h-full max-w-[180px] object-contain opacity-90" />
+                        <img src={item.logoImg} alt={item.logoAlt} className="max-h-full max-w-[180px] object-contain opacity-90" width={300} height={100} loading="lazy" />
                       ) : null}
                     </div>
                   </motion.div>

@@ -40,7 +40,7 @@ export function BusinessTechnologies() {
               
               {/* Top Image Section */}
               <div className="relative h-48 w-full bg-gray-900 overflow-hidden">
-                <img src={tech.bgImage} alt={tech.title} className="w-full h-full object-cover opacity-90" />
+                <img src={tech.bgImage} alt={tech.title} className="w-full h-full object-cover opacity-90" width={1381} height={1139} loading="lazy" />
                 {/* Wavy bottom edge - SVG divider */}
                 <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none translate-y-[1px]">
                   <svg viewBox="0 0 1440 120" preserveAspectRatio="none" className="w-full h-[35px] block">
@@ -52,7 +52,7 @@ export function BusinessTechnologies() {
               {/* Icon in Circle */}
               <div className="absolute top-[160px] left-6 z-10">
                 <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-md p-2 border border-gray-50">
-                  <img src={tech.icon} alt={`${tech.title} icon`} className="w-full h-full object-contain" />
+                  <img src={tech.icon} alt={`${tech.title} icon`} className="w-full h-full object-contain" width={160} height={160} loading="lazy" />
                 </div>
               </div>
 

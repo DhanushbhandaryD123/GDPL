@@ -27,7 +27,7 @@ export function ProMainHero() {
               <img 
                 src="/cameraplus/cpp-icon@2x.png" 
                 alt="Camera Plus Pro Icon" 
-                className="w-14 h-14 md:w-16 md:h-16 object-contain"
+                className="w-14 h-14 md:w-16 md:h-16 object-contain" width={247} height={244} loading="eager"
               />
               <span className="text-2xl md:text-3xl font-extrabold text-gray-800 tracking-tight">Camera Plus Pro</span>
             </motion.div>
@@ -75,7 +75,7 @@ export function ProMainHero() {
               <img 
                 src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1200&auto=format&fit=crop" 
                 alt="Professional Camera Lens" 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" width={1200} height={1500} loading="eager"
               />
               {/* Shine effect */}
               <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/20 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
