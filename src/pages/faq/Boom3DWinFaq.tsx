@@ -101,6 +101,7 @@ export function Boom3DWinFaq() {
       keywords="Boom 3D Windows FAQ, Boom 3D PC help, Windows surround sound questions, Boom 3D equalizer support, Boom 3D system requirements"
       logoSrc="/faq/Boom3D.png"
       logoAlt="Boom 3D Windows Logo"
+      breadcrumbLabel="Boom 3D for Windows"
       categories={categories}
     />
   );

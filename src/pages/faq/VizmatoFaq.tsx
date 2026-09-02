@@ -13,6 +13,7 @@ export function VizmatoFaq() {
       keywords="Vizmato FAQ, Vizmato help, video editor app questions, movie maker support, Vizmato subscription help, Vizmato export options"
       logoSrc="/faq/Vizmato.png"
       logoAlt="Vizmato Logo"
+      breadcrumbLabel="Vizmato"
       faqs={faqs}
     />
   );

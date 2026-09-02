@@ -13,6 +13,7 @@ export function AudionFaq() {
       keywords="AudiOn FAQ, AudiOn help, voice recorder app questions, audio editor support, noise removal help, AI transcription FAQ"
       logoSrc="/faq/AudionFaqLogo.png"
       logoAlt="AudiOn Logo"
+      breadcrumbLabel="AudiOn"
       faqs={faqs}
     />
   );

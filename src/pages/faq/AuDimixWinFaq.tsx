@@ -14,6 +14,7 @@ export function AuDimixWinFaq() {
       keywords="AuDimix FAQ, AuDimix Windows help, vocal remover questions, instrumental extractor support, karaoke track maker help, AuDimix troubleshooting"
       logoSrc="/faq/AudimixFaqLogo.png"
       logoAlt="AuDimix Faq Logo"
+      breadcrumbLabel="AuDimix for Windows"
       faqs={faqs}
     />
   );

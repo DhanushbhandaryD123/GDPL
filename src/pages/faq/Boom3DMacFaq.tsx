@@ -124,6 +124,7 @@ export function Boom3DMacFaq() {
       keywords="Boom 3D FAQ, Boom 3D Mac help, 3D surround sound questions, Boom 3D equalizer support, Boom 3D license help, Boom 3D troubleshooting"
       logoSrc="/faq/Boom3D.png"
       logoAlt="Boom 3D Logo"
+      breadcrumbLabel="Boom 3D for Mac"
       categories={categories}
     />
   );

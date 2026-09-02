@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
 import { FloatingSocials } from '../components/layout/FloatingSocials';
+import { Breadcrumbs } from '../components/layout/Breadcrumbs';
 import { Download, PenTool, Code, CloudDownload, Rocket, Smartphone, LayoutGrid, Laptop, Globe, Terminal, Tv, Camera, Apple } from 'lucide-react';
 
 export function VideoTechnology() {
@@ -52,6 +53,7 @@ export function VideoTechnology() {
       </Helmet>
       <Navbar />
       <FloatingSocials />
+      <Breadcrumbs items={[{ name: 'Business', href: '/business' }, { name: 'Video Technology' }]} />
 
       <main className="flex-grow">
         {/* Hero Banner */}

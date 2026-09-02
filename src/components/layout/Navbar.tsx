@@ -227,8 +227,10 @@ export function Navbar({ logoUrl }: NavbarProps) {
             
             {/* Desktop Language Dropdown */}
             <div className="relative ml-2" ref={languageRef}>
-              <button 
+              <button
                 onClick={() => setIsLanguageOpen(!isLanguageOpen)}
+                aria-label={t('nav.select_language')}
+                aria-expanded={isLanguageOpen}
                 className="hover:opacity-80 transition-opacity focus:outline-none flex items-center gap-1.5"
               >
                 <img src="/button/LanguageIcon.png" alt="Language" className="w-5 h-5 md:w-6 md:h-6 object-contain brightness-0" width={800} height={800} loading="eager" />
@@ -272,8 +274,10 @@ export function Navbar({ logoUrl }: NavbarProps) {
 
             {/* Mobile Language Dropdown */}
             <div className="relative flex items-center" ref={mobileLanguageRef}>
-              <button 
+              <button
                 onClick={() => setIsLanguageOpen(!isLanguageOpen)}
+                aria-label={t('nav.select_language')}
+                aria-expanded={isLanguageOpen}
                 className="hover:opacity-80 transition-opacity focus:outline-none flex items-center gap-1.5"
               >
                 <img src="/button/LanguageIcon.png" alt="Language" className="w-6 h-6 object-contain brightness-0" width={800} height={800} loading="eager" />

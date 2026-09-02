@@ -117,6 +117,7 @@ export function Boom3DMasFaq() {
       keywords="Boom 3D MAS FAQ, Boom 3D App Store help, Boom 3D Mac App Store questions, Boom 3D purchase support, Boom 3D refund policy"
       logoSrc="/faq/Boom3D.png"
       logoAlt="Boom 3D MAS Logo"
+      breadcrumbLabel="Boom 3D (Mac App Store)"
       categories={categories}
     />
   );

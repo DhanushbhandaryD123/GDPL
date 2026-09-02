@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../layout/Navbar';
+import { Breadcrumbs } from '../layout/Breadcrumbs';
 import { Footer } from '../layout/Footer';
 import { X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -41,6 +42,7 @@ export function WhatsNewWhiteTemplate({
       </Helmet>
       
       <Navbar />
+      <Breadcrumbs items={[{ name: "What's New", href: '/whatsnew/boom' }, { name: productName }]} />
 
       <main className="flex-1 flex items-center justify-center p-4 py-12 md:py-20">
         

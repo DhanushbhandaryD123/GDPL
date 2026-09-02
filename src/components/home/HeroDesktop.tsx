@@ -243,9 +243,9 @@ export function HeroDesktop() {
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="w-full lg:w-[45%] xl:w-[40%] space-y-6 text-center lg:text-left z-10 lg:pl-8 py-12"
               >
-                <h1 className="text-5xl md:text-6xl font-normal tracking-tight leading-tight drop-shadow-md">
+                <p className="text-5xl md:text-6xl font-normal tracking-tight leading-tight drop-shadow-md">
                   {t('home.hero_banner.capto_title_1')} <br className="hidden md:block" /> {t('home.hero_banner.capto_title_2')}
-                </h1>
+                </p>
                 <p className="text-lg md:text-xl text-white max-w-xl mx-auto lg:mx-0 drop-shadow-md font-medium">
                   {t('home.hero_banner.capto_subtitle')}
                 </p>

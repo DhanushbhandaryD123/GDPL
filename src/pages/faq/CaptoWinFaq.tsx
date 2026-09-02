@@ -13,6 +13,7 @@ export function CaptoWinFaq() {
       keywords="Capto Windows FAQ, Capto PC help, Windows screen recorder questions, screenshot tool support, Capto video editor help, Capto system requirements"
       logoSrc="/apps/Capto-window.jpeg"
       logoAlt="Capto Windows Logo"
+      breadcrumbLabel="Capto for Windows"
       faqs={faqs}
     />
   );

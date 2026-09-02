@@ -13,6 +13,7 @@ export function CaptoMacFaq() {
       keywords="Capto FAQ, Capto Mac help, screen recorder questions, screenshot tool support, Capto video export help, Capto license, Capto troubleshooting"
       logoSrc="/apps/Capto-mac.jpeg"
       logoAlt="Capto Mac Logo"
+      breadcrumbLabel="Capto for Mac"
       faqs={faqs}
     />
   );

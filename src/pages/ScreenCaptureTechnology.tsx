@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
 import { FloatingSocials } from '../components/layout/FloatingSocials';
+import { Breadcrumbs } from '../components/layout/Breadcrumbs';
 
 export function ScreenCaptureTechnology() {
   const { t } = useTranslation();
@@ -62,6 +63,7 @@ export function ScreenCaptureTechnology() {
 
       <Navbar />
       <FloatingSocials />
+      <Breadcrumbs items={[{ name: 'Business', href: '/business' }, { name: 'Screen Capture Technology' }]} />
 
       <main className="flex-grow">
         {/* Hero Banner */}

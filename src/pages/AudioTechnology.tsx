@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
 import { FloatingSocials } from '../components/layout/FloatingSocials';
+import { Breadcrumbs } from '../components/layout/Breadcrumbs';
 import { BarChart3, Laptop, Volume2, SlidersHorizontal, Activity, Box, Headphones, Gauge, Target, Wifi, Star } from "lucide-react";
 
 const SoundWave = () => (
@@ -72,6 +73,7 @@ export function AudioTechnology() {
       
       <Navbar logoUrl="/logos/GDL_B2B_Logo.png" />
       <FloatingSocials />
+      <Breadcrumbs items={[{ name: 'Business', href: '/business' }, { name: 'Audio Technology' }]} />
 
       <main>
         {/* Audio Technology Hero Banner */}

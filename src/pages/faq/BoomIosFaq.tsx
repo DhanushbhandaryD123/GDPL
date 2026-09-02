@@ -13,6 +13,7 @@ export function BoomIosFaq() {
       keywords="Boom iOS FAQ, Boom iPhone help, Boom app questions, iOS equalizer support, Boom subscription help, Boom app troubleshooting"
       logoSrc="/faq/iBoom.png"
       logoAlt="Boom iOS Logo"
+      breadcrumbLabel="Boom for iOS"
       faqs={faqs}
     />
   );

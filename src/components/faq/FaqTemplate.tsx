@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Navbar } from '../layout/Navbar';
 import { Footer } from '../layout/Footer';
 import { FloatingSocials } from '../layout/FloatingSocials';
+import { Breadcrumbs } from '../layout/Breadcrumbs';
 import { ChevronDown, Search } from 'lucide-react';
 import React, { useState } from 'react';
 
@@ -24,11 +25,12 @@ interface FaqTemplateProps {
   keywords?: string;
   logoSrc: string;
   logoAlt: string;
+  breadcrumbLabel?: string;
   faqs?: FaqItem[];
   categories?: FaqCategory[];
 }
 
-export function FaqTemplate({ title, description, keywords, logoSrc, logoAlt, faqs, categories }: FaqTemplateProps) {
+export function FaqTemplate({ title, description, keywords, logoSrc, logoAlt, breadcrumbLabel, faqs, categories }: FaqTemplateProps) {
   const { t } = useTranslation();
   const [openIndex, setOpenIndex] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
@@ -124,31 +126,6 @@ export function FaqTemplate({ title, description, keywords, logoSrc, logoAlt, fa
         <title>{title} | Global Delight</title>
         {description && <meta name="description" content={description} />}
         {keywords && <meta name="keywords" content={keywords} />}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://www.globaldelight.com/"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "FAQ",
-                "item": "https://www.globaldelight.com/faq"
-              },
-              {
-                "@type": "ListItem",
-                "position": 3,
-                "name": title
-              }
-            ]
-          })}
-        </script>
         {faqSchema && (
           <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         )}
@@ -156,6 +133,7 @@ export function FaqTemplate({ title, description, keywords, logoSrc, logoAlt, fa
       
       <Navbar />
       <FloatingSocials />
+      <Breadcrumbs items={[{ name: 'FAQ', href: '/faq' }, { name: breadcrumbLabel || title }]} />
 
       <main className="flex-grow pt-12 pb-24">
         <div className="container mx-auto px-6 max-w-5xl">

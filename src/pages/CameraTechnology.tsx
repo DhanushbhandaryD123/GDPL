@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
 import { FloatingSocials } from '../components/layout/FloatingSocials';
+import { Breadcrumbs } from '../components/layout/Breadcrumbs';
 import { Wand2, Zap, Layers, type LucideIcon } from 'lucide-react';
 
 interface TabFeature {
@@ -75,6 +76,7 @@ export function CameraTechnology() {
 
       <Navbar />
       <FloatingSocials />
+      <Breadcrumbs items={[{ name: 'Business', href: '/business' }, { name: 'Camera Technology' }]} />
 
       <main className="flex-grow">
         {/* Hero Banner */}

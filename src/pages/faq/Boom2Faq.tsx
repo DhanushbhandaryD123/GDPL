@@ -389,6 +389,7 @@ export function Boom2Faq() {
       keywords="Boom 2 FAQ, Boom 2 help, Mac volume booster questions, Boom 2 equalizer support, Boom app troubleshooting, Boom 2 compatibility"
       logoSrc="/faq/Boom2LogoFaq.png"
       logoAlt="Boom 2 Logo"
+      breadcrumbLabel="Boom 2"
       categories={categories}
     />
   );
