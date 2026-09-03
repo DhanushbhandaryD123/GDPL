@@ -499,6 +499,11 @@
       "feature_gaming": "Feel your favorite games spring to life with our patented 3D surround sound technology, for a truly immersive experience!"
     },
     "equalizer": {
+      "title": "31-Band Equalizer",
+      "description": "Boom 3D for Mac & Windows is outfitted with the most advanced equalizer that allows you to calibrate your audio with just a slide of your finger! It also comes with a range of finely handcrafted equalizer presets for different genres of music so that you can simply tweak the audio, to suit your every mood.",
+      "feature_sound_desc": "The power of sound sculpting at your fingertips, with complete control to fine-tune your favorite music.",
+      "feature_cinematic_desc": "A perfect undistorted cinematic experience with the most cutting-edge equalizer and sound staging algorithm.",
+      "feature_gaming_desc": "The ultimate gaming experience with noise filtering and precise directional audio.",
       "title_1": "Precise control.",
       "title_2": "Perfect sound.",
       "subtitle": "Equipped with an advanced 31-band equalizer for absolute audio tuning. Boom 3D also provides a vast array of presets carefully crafted to match different genres and individual tastes.",
