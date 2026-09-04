@@ -16,8 +16,8 @@ export function Boom2Hero() {
   const { t } = useTranslation();
   return (
     <div className="w-full bg-white">
-      <div className="w-full max-w-[1920px] mx-auto px-4 md:px-4 pt-2 md:pt-4 pb-8 md:pb-12">
-        <section className="relative w-full rounded-3xl md:rounded-[2.5rem] shadow-2xl py-8 md:pt-16 md:pb-32 flex items-center aspect-[4/3] sm:aspect-[16/9] md:aspect-auto md:min-h-[70vh] overflow-hidden">
+      <div className="w-full max-w-[1920px] mx-auto px-3 sm:px-4 md:px-4 pt-1 pb-4 md:pb-12">
+        <section className="relative w-full rounded-2xl sm:rounded-3xl md:rounded-[2.5rem] shadow-2xl py-8 md:pt-16 md:pb-32 flex items-center min-h-[350px] sm:min-h-[420px] md:min-h-[620px] lg:min-h-[660px] xl:min-h-[700px] overflow-hidden">
 
         {/* Video Background */}
         <video
@@ -25,13 +25,13 @@ export function Boom2Hero() {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover z-0"
+          className="absolute inset-0 w-full h-full object-cover z-0 object-[75%_center] md:object-center"
         >
           <source src="/boom2/boom2.mp4" type="video/mp4" />
         </video>
 
         {/* Text Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#060814]/90 via-[#060814]/30 to-transparent pointer-events-none z-0" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#060814]/95 via-[#060814]/60 md:via-[#060814]/30 to-transparent pointer-events-none z-0" />
 
         <div className="max-w-[1400px] mx-auto px-4 md:px-8 w-full relative z-10">
           <div className="max-w-xl">
@@ -40,16 +40,16 @@ export function Boom2Hero() {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-              className="flex items-center gap-3 mb-4 md:mb-8"
+              className="flex items-center gap-2.5 md:gap-3 mb-3 md:mb-8"
             >
               <motion.img
                 src="/boom2/Boom2-icon.png"
                 alt="Boom 2 Logo"
-                className="w-12 md:w-20 h-auto object-contain drop-shadow-lg"
+                className="w-10 md:w-20 h-auto object-contain drop-shadow-lg"
                 animate={{ y: [0, -12, 0] }}
                 transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
               />
-              <span className="text-white font-semibold text-lg md:text-xl tracking-wide drop-shadow-md">
+              <span className="text-white font-semibold text-base md:text-xl tracking-wide drop-shadow-md">
                 Boom 2
               </span>
             </motion.div>
@@ -58,7 +58,7 @@ export function Boom2Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-              className="text-base sm:text-xl md:text-6xl lg:text-7xl font-bold mb-3 md:mb-6 leading-tight drop-shadow-lg text-white"
+              className="text-xl sm:text-2xl md:text-6xl lg:text-7xl font-bold mb-2 md:mb-6 leading-tight drop-shadow-lg text-white"
             >
               {t('boom2.hero.title_1')} <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">{t('boom2.hero.title_2')}</span>
@@ -68,7 +68,7 @@ export function Boom2Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-              className="text-gray-300 text-[11px] sm:text-sm md:text-xl mb-6 md:mb-10 leading-relaxed max-w-lg drop-shadow-md"
+              className="text-gray-300 text-[11px] sm:text-sm md:text-xl mb-5 md:mb-10 leading-relaxed max-w-[260px] sm:max-w-md md:max-w-lg drop-shadow-md"
             >
               {t('boom2.hero.subtitle')}
             </motion.p>
@@ -77,14 +77,14 @@ export function Boom2Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7, ease: "easeOut" }}
-              className="flex flex-col sm:flex-row items-center gap-2 md:gap-4 w-full sm:w-auto"
+              className="flex flex-row items-center gap-2 md:gap-4 w-full sm:w-auto max-w-[320px] sm:max-w-none"
             >
-              <button className="flex items-center justify-center gap-2 bg-white text-black px-4 py-1.5 md:px-4 md:py-3.5 rounded-full md:rounded-xl font-bold transition-all hover:bg-[#1390FB] hover:text-white hover:scale-[1.02] w-full sm:w-[210px] text-[10px] sm:text-xs md:text-[15px] tracking-wide shadow-lg group">
+              <button className="flex-1 sm:flex-initial flex items-center justify-center gap-1.5 md:gap-2 bg-white text-black px-3.5 py-2 md:px-4 md:py-3.5 rounded-xl font-bold transition-all hover:bg-[#1390FB] hover:text-white hover:scale-[1.02] sm:w-[210px] text-xs md:text-[15px] tracking-wide shadow-lg group whitespace-nowrap">
                 <AppleLogo className="w-3.5 h-3.5 md:w-5 md:h-5 mb-0.5" />
                 {t('boom2.hero.download_trial')}
               </button>
 
-              <button className="flex items-center justify-center gap-2 bg-black/40 backdrop-blur-sm border border-white/40 text-white px-4 py-1.5 md:px-4 md:py-3.5 rounded-full md:rounded-xl font-bold transition-all hover:bg-[#1390FB] hover:border-[#1390FB] w-full sm:w-[210px] text-[10px] sm:text-xs md:text-[15px] tracking-wide shadow-lg group">
+              <button className="flex-1 sm:flex-initial flex items-center justify-center gap-1.5 md:gap-2 bg-black/50 backdrop-blur-md border border-white/50 text-white px-3.5 py-2 md:px-4 md:py-3.5 rounded-xl font-bold transition-all hover:bg-[#1390FB] hover:border-[#1390FB] sm:w-[210px] text-xs md:text-[15px] tracking-wide shadow-lg group whitespace-nowrap">
                 <AppleLogo className="w-3.5 h-3.5 md:w-5 md:h-5 mb-0.5" />
                 {t('boom2.hero.buy_now')}
               </button>

@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { motion } from 'motion/react';
-import { Download } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 export function HeroCarousel() {
@@ -61,32 +60,32 @@ export function HeroCarousel() {
   }, [emblaApi]);
 
   return (
-    <section className="relative min-h-[100dvh] md:h-[92vh] md:min-h-[640px] overflow-hidden bg-white">
-      <div className="overflow-hidden h-full" ref={emblaRef}>
-        <div className="flex h-full">
-          {slides.map((slide, index) => (
-            <div key={slide.id} className="flex-[0_0_100%] min-w-0 relative h-full">
-              {/* Full-bleed background photo */}
-              <div className="absolute inset-0">
-                <img src={slide.image} alt={slide.title} className="w-full h-full object-cover" width={1600} height={1067} loading="eager" />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#05050A] via-[#05050A]/80 to-[#05050A]/20" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#05050A] via-transparent to-[#05050A]/40" />
-              </div>
+    <div className="w-full max-w-[1920px] mx-auto px-3 sm:px-4 md:px-4 pt-1 pb-2 md:pb-12 bg-white">
+      <section className="relative w-full rounded-2xl sm:rounded-3xl md:rounded-[2.5rem] shadow-2xl bg-black overflow-hidden h-[320px] sm:h-[360px] md:h-[620px] lg:h-[660px] xl:h-[700px]">
+        <div className="overflow-hidden h-full" ref={emblaRef}>
+          <div className="flex h-full">
+            {slides.map((slide, index) => (
+              <div key={slide.id} className="flex-[0_0_100%] min-w-0 relative h-full">
+                {/* Full-bleed background photo */}
+                <div className="absolute inset-0">
+                  <img src={slide.image} alt={slide.title} className="w-full h-full object-cover" width={1600} height={1067} loading="eager" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#05050A]/95 via-[#05050A]/80 to-[#05050A]/25" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#05050A]/90 via-transparent to-[#05050A]/40" />
+                </div>
 
-              <div className="relative z-10 h-full flex items-center pt-24 pb-16 md:pt-0 md:pb-0">
-                <div className="container mx-auto px-6 md:px-10">
+                <div className="relative z-10 h-full flex items-center px-4 sm:px-8 md:px-12 lg:px-16 pb-4 sm:pb-0">
                   <div className="max-w-2xl">
                     {/* Animated equalizer bars accent */}
                     <motion.div
                       initial={{ opacity: 0 }}
                       animate={{ opacity: selectedIndex === index ? 1 : 0 }}
-                      transition={{ duration: 0.6 }}
-                      className="flex items-end gap-1 h-8 mb-6"
+                      transition={{ duration: 0.3 }}
+                      className="flex items-end gap-1 h-3.5 sm:h-5 md:h-8 mb-1.5 sm:mb-2 md:mb-6"
                     >
                       {[0.4, 0.9, 0.6, 1, 0.5, 0.8, 0.3].map((h, i) => (
                         <motion.span
                           key={i}
-                          className={`w-1.5 rounded-full bg-gradient-to-t ${slide.accent}`}
+                          className={`w-1 md:w-1.5 rounded-full bg-gradient-to-t ${slide.accent}`}
                           animate={{ height: selectedIndex === index ? [`${h * 40}%`, '100%', `${h * 40}%`] : `${h * 40}%` }}
                           transition={{ duration: 1.2, repeat: Infinity, delay: i * 0.08, ease: 'easeInOut' }}
                         />
@@ -94,10 +93,10 @@ export function HeroCarousel() {
                     </motion.div>
 
                     <motion.h1
-                      initial={{ opacity: 0, y: 30 }}
-                      animate={{ opacity: selectedIndex === index ? 1 : 0, y: selectedIndex === index ? 0 : 30 }}
-                      transition={{ duration: 0.6, ease: 'easeOut' }}
-                      className="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-6 tracking-tight text-white leading-[1.05]"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: selectedIndex === index ? 1 : 0, y: selectedIndex === index ? 0 : 20 }}
+                      transition={{ duration: 0.4, ease: 'easeOut' }}
+                      className="text-xl sm:text-2xl md:text-6xl lg:text-7xl font-extrabold mb-1.5 sm:mb-2.5 md:mb-6 tracking-tight text-white leading-[1.12] md:leading-[1.05]"
                     >
                       {slide.title} <br />
                       <span className={`text-transparent bg-clip-text bg-gradient-to-r ${slide.accent}`}>
@@ -106,48 +105,72 @@ export function HeroCarousel() {
                     </motion.h1>
 
                     <motion.p
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: selectedIndex === index ? 1 : 0, x: selectedIndex === index ? 0 : -20 }}
-                      transition={{ duration: 0.6, delay: 0.2 }}
-                      className="text-base sm:text-lg md:text-xl text-white/70 mb-10 max-w-lg leading-relaxed font-medium"
+                      initial={{ opacity: 0, x: -15 }}
+                      animate={{ opacity: selectedIndex === index ? 1 : 0, x: selectedIndex === index ? 0 : -15 }}
+                      transition={{ duration: 0.4, delay: 0.1 }}
+                      className="text-xs sm:text-sm md:text-xl text-white/80 mb-3.5 sm:mb-4 md:mb-10 max-w-[280px] sm:max-w-md md:max-w-lg leading-snug sm:leading-relaxed font-medium line-clamp-2 md:line-clamp-none"
                     >
                       {slide.description}
                     </motion.p>
 
                     <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: selectedIndex === index ? 1 : 0, y: selectedIndex === index ? 0 : 20 }}
-                      transition={{ duration: 0.6, delay: 0.4 }}
-                      className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
+                      initial={{ opacity: 0, y: 15 }}
+                      animate={{ opacity: selectedIndex === index ? 1 : 0, y: selectedIndex === index ? 0 : 15 }}
+                      transition={{ duration: 0.4, delay: 0.15 }}
+                      className="flex flex-row items-center gap-2.5 sm:gap-4 w-auto"
                     >
-                      <a href="#" className={`bg-gradient-to-r ${slide.accent} text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-bold flex items-center justify-center gap-2 transition-all shadow-xl shadow-black/40 hover:shadow-2xl w-full sm:w-auto text-sm md:text-base hover:-translate-y-1`}>
-                        <Download size={20} /> {t('boom_mobile.hero.app_store')}
+                      <a
+                        href="https://apps.apple.com/app/id948176063"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center transition-transform hover:scale-105 active:scale-95"
+                      >
+                        <img
+                          src="/button/en-us dark.svg"
+                          alt={t('boom_mobile.hero.app_store')}
+                          className="h-8 sm:h-9 md:h-12 lg:h-14 w-auto object-contain drop-shadow-md"
+                          width={161}
+                          height={44}
+                          loading="eager"
+                        />
                       </a>
-                      <a href="#" className="bg-white/5 backdrop-blur-md hover:bg-white/10 border border-white/20 text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-bold flex items-center justify-center gap-2 transition-all w-full sm:w-auto text-sm md:text-base hover:-translate-y-1">
-                        {t('boom_mobile.hero.google_play')}
+                      <a
+                        href="https://play.google.com/store/apps/details?id=com.globaldelight.boom"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center transition-transform hover:scale-105 active:scale-95"
+                      >
+                        <img
+                          src="/button/GooglePlay.png"
+                          alt={t('boom_mobile.hero.google_play')}
+                          className="h-8 sm:h-9 md:h-12 lg:h-14 w-auto object-contain drop-shadow-md"
+                          width={307}
+                          height={92}
+                          loading="eager"
+                        />
                       </a>
                     </motion.div>
                   </div>
                 </div>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Dots */}
+        <div className="absolute bottom-2.5 md:bottom-6 left-0 right-0 flex justify-center gap-2 md:gap-3 z-30">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => scrollTo(index)}
+              className={`h-1.5 md:h-2.5 rounded-full transition-all duration-300 ${
+                index === selectedIndex ? 'bg-white w-6 md:w-8' : 'bg-white/30 w-1.5 md:w-2.5 hover:bg-white/50'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
           ))}
         </div>
-      </div>
-
-      {/* Dots */}
-      <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-3 z-30">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => scrollTo(index)}
-            className={`h-2.5 rounded-full transition-all duration-300 ${
-              index === selectedIndex ? 'bg-white w-8' : 'bg-white/30 w-2.5 hover:bg-white/50'
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }

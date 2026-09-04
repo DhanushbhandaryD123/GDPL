@@ -53,20 +53,20 @@ export function StatsSection() {
           />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-100 max-w-5xl mx-auto border border-gray-100 rounded-[2.5rem] overflow-hidden bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+        <div className="grid grid-cols-3 divide-x divide-y-0 divide-gray-100 max-w-5xl mx-auto border border-gray-100 rounded-2xl sm:rounded-3xl md:rounded-[2.5rem] overflow-hidden bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.id}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: index * 0.15, type: 'spring', bounce: 0.3 }}
-              className="flex flex-col items-center text-center p-10 md:p-14 relative group"
+              className="flex flex-col items-center text-center p-3 sm:p-6 md:p-14 relative group"
             >
-              <div className={`p-4 rounded-2xl bg-gradient-to-br ${stat.accent} mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                <stat.icon className="text-white" size={32} />
+              <div className={`p-2 sm:p-3 md:p-4 rounded-xl sm:rounded-2xl bg-gradient-to-br ${stat.accent} mb-2 sm:mb-4 md:mb-6 shadow-md md:shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                <stat.icon className="text-white w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8" />
               </div>
 
-              <div className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-4 tracking-tighter">
+              <div className="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-1 sm:mb-2 md:mb-4 tracking-tight">
                 {inView ? (
                   <CountUp
                     end={stat.value}
@@ -75,9 +75,9 @@ export function StatsSection() {
                     separator=","
                   />
                 ) : '0'}
-                <span className={`text-3xl md:text-4xl text-transparent bg-clip-text bg-gradient-to-r ${stat.accent}`}>{stat.suffix}</span>
+                <span className={`text-xs sm:text-lg md:text-3xl lg:text-4xl text-transparent bg-clip-text bg-gradient-to-r ${stat.accent}`}>{stat.suffix}</span>
               </div>
-              <p className="text-xl text-gray-500 font-bold">{stat.label}</p>
+              <p className="text-[11px] sm:text-sm md:text-xl text-gray-500 font-bold leading-tight line-clamp-2">{stat.label}</p>
             </motion.div>
           ))}
         </div>

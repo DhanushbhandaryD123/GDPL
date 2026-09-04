@@ -135,7 +135,7 @@ export function Boom3DEqualizer() {
         <div className="flex flex-col lg:flex-row items-center w-full max-w-[1600px] mx-auto pt-4 md:pt-8 border-t border-gray-100">
           
           {/* Left Side: Card-Type Workflow – image changes as stacked cards (one-by-one) */}
-          <div className="w-full lg:w-1/2 relative lg:pr-16 xl:pr-24 flex justify-center">
+          <div className="order-2 lg:order-1 w-full lg:w-1/2 relative lg:pr-16 xl:pr-24 flex justify-center mt-12 lg:mt-0">
             <div className="relative w-[92%] max-w-[560px] aspect-[16/10] lg:aspect-[4/3]">
               {/* Card deck – each preset is a card, active card on top */}
               <div className="absolute inset-0" style={{ perspective: 1200 }}>
@@ -203,7 +203,7 @@ export function Boom3DEqualizer() {
           </div>
           
           {/* Right Side: Text Content & Pills */}
-          <div className="w-full lg:w-1/2 px-6 lg:px-12 xl:pr-32 mt-16 lg:mt-0">
+          <div className="order-1 lg:order-2 w-full lg:w-1/2 px-6 lg:px-12 xl:pr-32 mt-0">
             <motion.div 
               className="max-w-[600px]"
               initial="hidden"
@@ -271,15 +271,6 @@ export function Boom3DEqualizer() {
                 })}
               </motion.div>
 
-              {/* Condition-based hint */}
-              <motion.p
-                key={activePreset.waveKey}
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="mt-6 text-xs text-gray-400 font-medium"
-              >
-                ● Active: <span className="text-blue-600 font-semibold">{activePreset.name}</span> — {activePreset.waveKey === 'bass' ? 'Bass boosted fusion' : activePreset.waveKey === 'vocals' ? 'Vocal clarity fusion' : `${activePreset.waveKey} fusion`} • Try the next preset →
-              </motion.p>
             </motion.div>
           </div>
           

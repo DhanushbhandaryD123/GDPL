@@ -39,18 +39,40 @@ export function CaptoFeatures() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="flex flex-wrap justify-center items-center gap-6"
+            className="flex flex-wrap justify-center items-center gap-3 sm:gap-5"
           >
-            <div className="bg-white border border-gray-100 shadow-sm rounded-xl px-5 py-3 hover:shadow-md transition-shadow cursor-pointer flex items-center justify-center">
-              <span className="font-bold text-gray-800 text-lg flex items-center gap-2">
-                <span className="text-pink-500 font-black text-2xl">❖</span> Setapp
+            <div className="h-11 sm:h-12 px-5 bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md transition-shadow cursor-pointer flex items-center justify-center">
+              <span className="font-bold text-gray-800 text-base sm:text-lg flex items-center gap-2">
+                <span className="text-pink-500 font-black text-xl sm:text-2xl">❖</span> Setapp
               </span>
             </div>
-            <a href="#" className="inline-block hover:opacity-80 transition-opacity">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Download on the Mac App Store" className="h-[52px]" width={135} height={40} loading="lazy" />
+            <a
+              href="https://apps.apple.com/app/capto-screen-capture-record/id1073206334"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center transition-transform hover:scale-105 active:scale-95"
+            >
+              <img
+                src="/button/AppStore.png"
+                alt="Download on the Mac App Store"
+                className="h-11 sm:h-12 w-auto object-contain drop-shadow-md"
+                width={306}
+                height={91}
+                loading="lazy"
+              />
             </a>
-            <a href="#" className="inline-block hover:opacity-80 transition-opacity bg-white px-3 py-1.5 rounded-[14px] border border-gray-100 shadow-sm">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Get_it_from_Microsoft_Badge.svg" alt="Get it from Microsoft Store" className="h-[38px]" width={864} height={312} loading="lazy" />
+            <a
+              href="/capto/windows"
+              className="inline-flex items-center transition-transform hover:scale-105 active:scale-95"
+            >
+              <img
+                src="/button/en-us dark.svg"
+                alt="Get it from Microsoft Store"
+                className="h-11 sm:h-12 w-auto object-contain drop-shadow-md"
+                width={161}
+                height={44}
+                loading="lazy"
+              />
             </a>
           </motion.div>
         </div>

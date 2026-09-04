@@ -261,61 +261,71 @@ export function CaptoHero() {
       )}
 
       {/* Background Decor (Grid & squiggles based on image) */}
-      <div className="absolute top-[20%] left-[45%] opacity-30 pointer-events-none">
+      <div className="hidden lg:block absolute top-[20%] left-[45%] opacity-30 pointer-events-none">
          {/* Dot grid */}
          <div className="w-32 h-32" style={{ backgroundImage: 'radial-gradient(#6c5ce7 2px, transparent 2px)', backgroundSize: '16px 16px' }}></div>
       </div>
       
       <div className="container mx-auto px-6 relative z-10 max-w-[1300px]">
         
-        <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-4">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-6">
           
           {/* Left Column */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex-1 w-full max-w-[600px] text-center lg:text-left lg:pt-10"
+            className="flex-1 w-full max-w-[600px] text-center lg:text-left lg:pt-6"
           >
-            <div className="flex items-center gap-3 mb-6 mx-auto lg:mx-0 justify-center lg:justify-start">
-              <div className="relative w-16 h-16 md:w-20 md:h-20 overflow-hidden flex-shrink-0">
+            <div className="flex items-center gap-2.5 md:gap-3 mb-4 md:mb-6 mx-auto lg:mx-0 justify-center lg:justify-start">
+              <div className="relative w-14 h-14 md:w-20 md:h-20 overflow-hidden flex-shrink-0">
                 <img 
                   src="/capto/Logo_Web2x_1.png" 
                   alt="Capto Icon" 
-                  className="absolute top-0 left-0 h-16 md:h-20 w-auto max-w-none object-left object-cover drop-shadow-sm" width={273} height={100} loading="eager"
+                  className="absolute top-0 left-0 h-14 md:h-20 w-auto max-w-none object-left object-cover drop-shadow-sm" width={273} height={100} loading="eager"
                 />
               </div>
-              <span className="text-[2.25rem] md:text-[3rem] font-bold tracking-tight text-[#1c2331]">Capto</span>
+              <span className="text-[2rem] md:text-[3rem] font-bold tracking-tight text-[#1c2331]">Capto</span>
             </div>
-            <h1 className="text-[2rem] sm:text-[2.5rem] md:text-[2.75rem] lg:text-[3.25rem] font-bold tracking-tight leading-[1.15] mb-6 text-[#1c2331]">
+            <h1 className="text-[1.85rem] sm:text-[2.25rem] md:text-[2.75rem] lg:text-[3.25rem] font-bold tracking-tight leading-[1.15] mb-4 md:mb-6 text-[#1c2331]">
               <span className="text-[#6554ff]">{t('capto.hero.title_1')}</span><br />
               <span className="text-[#6554ff]">{t('capto.hero.title_2')}</span> {t('capto.hero.title_3')}<br />
               {t('capto.hero.title_4')}
             </h1>
 
-            <p className="text-[15px] sm:text-lg md:text-xl text-[#2d3748] font-bold mb-10">
+            <p className="text-[14px] sm:text-lg md:text-xl text-[#2d3748] font-bold mb-6 md:mb-8 max-w-[480px] mx-auto lg:mx-0">
               {t('capto.hero.subtitle')}
             </p>
 
-            <div className="flex flex-row items-center justify-center lg:justify-start gap-3 sm:gap-5 mb-5 w-full">
+            <div className="flex flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 mb-4 md:mb-5 w-full">
               <a
-                href="#"
-                className="flex-1 sm:flex-none sm:w-auto px-2 py-2.5 md:px-8 md:py-3.5 bg-[#6953ff] hover:bg-[#5b48df] text-white rounded-[2rem] font-bold text-[11px] sm:text-xs md:text-[15px] flex items-center justify-center gap-1.5 sm:gap-2.5 transition-all shadow-lg shadow-indigo-500/30"
+                href="https://apps.apple.com/app/capto-screen-capture-record/id1073206334"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center transition-transform hover:scale-105 active:scale-95 flex-shrink-0"
               >
-                <svg className="w-[14px] h-[14px] sm:w-[18px] sm:h-[18px] fill-current" viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-                {t('capto.hero.download_trial')}
+                <img
+                  src="/button/AppStore.png"
+                  alt="Download on the Mac App Store"
+                  className="h-10 sm:h-11 md:h-12 w-auto object-contain drop-shadow-md"
+                  width={306}
+                  height={91}
+                  loading="eager"
+                />
               </a>
               <a
-                href="#"
-                className="flex-1 sm:flex-none sm:w-auto px-2 py-2.5 md:px-8 md:py-3.5 bg-white border border-gray-200 hover:bg-gray-50 text-gray-800 rounded-[2rem] font-bold text-[11px] sm:text-xs md:text-[15px] flex items-center justify-center gap-1.5 sm:gap-2.5 transition-all shadow-sm"
+                href="https://www.globaldelight.com/capto/buy.php"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-10 sm:h-11 md:h-12 px-4 sm:px-6 md:px-7 bg-white hover:bg-gray-50 text-[#1c2331] border border-gray-300 hover:border-gray-400 rounded-lg font-bold text-xs sm:text-sm md:text-[15px] flex items-center justify-center gap-2 transition-all shadow-sm hover:shadow active:scale-95 flex-shrink-0"
               >
-                <ShoppingCart className="w-[14px] h-[14px] sm:w-[18px] sm:h-[18px]" strokeWidth={2.5} />
-                {t('capto.hero.buy_now')}
+                <ShoppingCart className="w-4 h-4 sm:w-[18px] sm:h-[18px] text-[#6554ff]" strokeWidth={2.5} />
+                <span>{t('capto.hero.buy_now')}</span>
               </a>
             </div>
 
-            <p className="text-[13px] text-gray-500 font-medium mb-3">{t('capto.hero.macos_req')}</p>
-            <p className="text-[12px] text-gray-400 font-medium leading-relaxed max-w-[420px] mx-auto lg:mx-0">
+            <p className="text-[12px] sm:text-[13px] text-gray-500 font-medium mb-1.5 sm:mb-2">{t('capto.hero.macos_req')}</p>
+            <p className="text-[11px] sm:text-[12px] text-gray-400 font-medium leading-relaxed max-w-[420px] mx-auto lg:mx-0 mb-8 lg:mb-0">
               {t('capto.hero.trial_note')}
             </p>
           </motion.div>
@@ -327,17 +337,31 @@ export function CaptoHero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="flex-1 w-full max-w-[700px] relative flex flex-col items-center"
           >
-            <div className="relative rounded-3xl md:rounded-none aspect-[4/3] sm:aspect-[16/9] md:aspect-auto overflow-hidden md:overflow-visible bg-black md:bg-transparent w-full">
-            <img 
-              src="/capto/c-hero.webp" 
-              alt="Capto Interface"
-              className="w-full h-full md:h-auto absolute inset-0 md:static object-cover md:object-contain" width={1672} height={941} loading="eager"
-            />
+            <div className="relative w-full flex justify-center">
+              <img 
+                src="/capto/c-hero.webp" 
+                alt="Capto Interface"
+                className="w-full max-w-[650px] h-auto object-contain drop-shadow-xl" 
+                width={1672} 
+                height={941} 
+                loading="eager"
+              />
             </div>
             
-            <div className="mt-4 flex justify-center lg:ml-20">
-              <a href="#" className="inline-block hover:opacity-80 transition-opacity bg-white px-2 py-1 rounded-lg border border-gray-100 shadow-sm">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Get_it_from_Microsoft_Badge.svg" alt="Get it from Microsoft Store" className="h-8" width={864} height={312} loading="eager" />
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-2.5">
+              <span className="text-xs text-gray-400 font-medium">Also available for Windows:</span>
+              <a 
+                href="/capto/windows" 
+                className="inline-flex items-center transition-transform hover:scale-105 active:scale-95"
+              >
+                <img 
+                  src="/button/en-us dark.svg" 
+                  alt="Get it from Microsoft Store" 
+                  className="h-8 md:h-10 w-auto object-contain drop-shadow-md" 
+                  width={161} 
+                  height={44} 
+                  loading="eager" 
+                />
               </a>
             </div>
           </motion.div>

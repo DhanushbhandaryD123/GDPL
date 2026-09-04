@@ -40,7 +40,17 @@ export function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-2xl text-center lg:text-left"
           >
-           
+            {/* App Icon */}
+            <div className="flex items-center justify-center lg:justify-start mb-6">
+              <img
+                src="/apps/Capto-window.jpeg"
+                alt="Capto for Windows"
+                className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl sm:rounded-3xl shadow-xl shadow-blue-500/10 border border-gray-100 object-cover"
+                width={80}
+                height={80}
+                loading="eager"
+              />
+            </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-gray-900 tracking-tight leading-[1.1] mb-6">
               {t('captoWindows.hero.title_1')} <br />

@@ -1,6 +1,5 @@
 import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../components/layout/Navbar';
-import { Breadcrumbs } from '../components/layout/Breadcrumbs';
 import { Hero } from '../components/captowindows/Hero';
 import { FeaturesGrid } from '../components/captowindows/FeaturesGrid';
 import { Showcase } from '../components/captowindows/Showcase';
@@ -32,7 +31,6 @@ export function CaptoWindowsPage() {
       </Helmet>
       
       <Navbar />
-      <Breadcrumbs items={[{ name: 'Capto', href: '/capto' }, { name: 'Windows' }]} />
 
       <main>
         <Hero />

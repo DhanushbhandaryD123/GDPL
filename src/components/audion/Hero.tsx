@@ -31,14 +31,14 @@ export function Hero() {
               />
             </div>
             
-            <h1 className="text-base sm:text-xl md:text-6xl font-extrabold text-gray-900 tracking-tight leading-[1.1] mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight leading-[1.12] mb-5">
               {t('audion.hero.title_1')}{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
+              <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-fuchsia-600 to-pink-600">
                 {t('audion.hero.title_2')}
               </span>
             </h1>
 
-            <p className="text-xs sm:text-sm md:text-xl text-gray-500 mb-10 max-w-xl leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 mb-8 max-w-xl leading-relaxed">
               {t('audion.hero.subtitle')}
             </p>
 

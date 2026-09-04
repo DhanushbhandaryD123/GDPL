@@ -15,6 +15,25 @@ function WireframeGlobe({ className }: { className?: string }) {
   );
 }
 
+function GlobeIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <circle cx="12" cy="12" r="10" />
+      <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+      <path d="M2 12h20" />
+    </svg>
+  );
+}
+
 export function CaptoFooterCTA() {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<'EDUCATION' | 'BUSINESS'>('EDUCATION');
@@ -176,14 +195,57 @@ export function CaptoFooterCTA() {
           </a>
         </div>
 
-        {/* Localized Footer Sub-bar */}
-        <div className="flex flex-col md:flex-row items-center justify-between text-left gap-6 border-t border-gray-100 pt-8 mt-8">
-          <p className="text-[10px] md:text-[11px] text-gray-500 max-w-[450px] leading-relaxed font-medium">
-            {t('capto.footer_cta.localized_note')}
-          </p>
-          <a href="#" className="shrink-0 hover:opacity-80 transition-opacity">
-             <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Download on the Mac App Store" className="h-[36px]" width={135} height={40} loading="lazy" />
-          </a>
+        {/* Localized Global Callout Card */}
+        <div className="w-full max-w-[1000px] mx-auto mt-6 p-5 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl bg-gradient-to-r from-gray-50/90 via-[#6554ff]/[0.03] to-indigo-50/60 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-left">
+            {/* Left: Capto Logo & Localized Languages Content */}
+            <div className="flex items-center sm:items-start gap-4 sm:gap-5 w-full md:w-auto">
+              <div className="relative w-12 h-12 sm:w-14 sm:h-14 shrink-0">
+                <img
+                  src="/apps/Capto-mac.jpeg"
+                  alt="Capto for Mac"
+                  className="w-full h-full rounded-2xl object-cover shadow-sm border border-gray-100/90"
+                  width={56}
+                  height={56}
+                  loading="lazy"
+                />
+              </div>
+              <div className="space-y-1.5 flex-1">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#6554ff] bg-[#6554ff]/10 px-2.5 py-0.5 rounded-full">
+                    <GlobeIcon className="w-3.5 h-3.5" />
+                    Global Localization
+                  </span>
+                  <span className="text-[11px] sm:text-xs text-gray-400 font-medium">
+                    6 Languages Supported
+                  </span>
+                </div>
+                <p className="text-xs sm:text-sm text-gray-600 font-medium leading-relaxed max-w-xl">
+                  {t('capto.footer_cta.localized_note')}
+                </p>
+              </div>
+            </div>
+
+            {/* Right: Mac App Store Button */}
+            <div className="shrink-0 w-full md:w-auto flex justify-center md:justify-end pt-2 md:pt-0">
+              <a
+                href="https://apps.apple.com/app/capto-screen-capture-record/id1073206334"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center transition-transform duration-200 hover:scale-105 active:scale-95 group"
+                aria-label="Download on the Mac App Store"
+              >
+                <img
+                  src="/button/DownloadonMacAppStore.png"
+                  alt="Download on the Mac App Store"
+                  className="h-10 sm:h-11 md:h-12 w-auto object-contain drop-shadow-sm group-hover:drop-shadow-md transition-all"
+                  width={269}
+                  height={69}
+                  loading="lazy"
+                />
+              </a>
+            </div>
+          </div>
         </div>
 
       </div>

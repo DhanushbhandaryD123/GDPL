@@ -83,8 +83,119 @@ export function CaptoUseCases() {
           </p>
         </div>
 
+        {/* Mobile View: Clean, standard interactive card with floating animations */}
+        <div className="lg:hidden flex flex-col gap-5">
+          {/* Persona selector pills - clean, scrollbar-free */}
+          <div className="flex items-center gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden px-1">
+            {useCases.map((uc) => {
+              const isActive = activeTab === uc.id;
+              return (
+                <button
+                  key={uc.id}
+                  onClick={() => setActiveTab(uc.id)}
+                  className={`flex items-center gap-2 px-3.5 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all duration-300 ${
+                    isActive
+                      ? 'bg-[#6554ff] text-white shadow-md shadow-indigo-500/25 scale-[1.03]'
+                      : 'bg-white text-gray-700 border border-gray-200/80 hover:bg-gray-50'
+                  }`}
+                >
+                  <uc.icon size={14} strokeWidth={2.5} />
+                  <span>{uc.title}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Active Persona Card with Floating Micro-Animations */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeUseCase.id}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.35, ease: 'easeOut' }}
+              className="relative rounded-3xl bg-white p-4 sm:p-6 shadow-xl border border-gray-100 overflow-hidden"
+            >
+              {/* Floating Image with Tag */}
+              <motion.div
+                animate={{ y: [0, -5, 0] }}
+                transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
+                className="relative rounded-2xl overflow-hidden border border-gray-100 shadow-sm mb-5 aspect-[16/10] bg-gray-50 flex items-center justify-center"
+              >
+                <img
+                  src={activeUseCase.image}
+                  alt={`Capto for ${activeUseCase.title}`}
+                  className="w-full h-full object-cover object-top"
+                  width={1536}
+                  height={1024}
+                  loading="lazy"
+                />
+                <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-[#6554ff] shadow-sm flex items-center gap-1.5 border border-white/60">
+                  <activeUseCase.icon size={13} strokeWidth={2.5} />
+                  <span>{activeUseCase.tag}</span>
+                </div>
+              </motion.div>
+
+              {/* Text content */}
+              <div className="flex items-center gap-2.5 mb-2">
+                <div className="p-2 rounded-lg bg-[#6554ff]/10 text-[#6554ff]">
+                  <activeUseCase.icon size={18} strokeWidth={2.5} />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-[#1c2331]">
+                  {t('capto.use_cases.for')} {activeUseCase.title}
+                </h3>
+              </div>
+
+              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 font-normal">
+                {activeUseCase.description}
+              </p>
+
+              {/* 3 checklist items */}
+              <div className="flex flex-col gap-2 mb-4">
+                {activeUseCase.features.map((feature, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center gap-2.5 text-xs sm:text-sm text-gray-700 bg-gray-50/80 rounded-xl p-2.5 border border-gray-100/90"
+                  >
+                    <div className="shrink-0 w-4 h-4 rounded-full bg-[#6554ff] flex items-center justify-center text-white text-[9px] font-bold">
+                      ✓
+                    </div>
+                    <span className="font-medium">{feature}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Bottom bar with CTA and dots */}
+              <div className="flex items-center justify-between pt-2 border-t border-gray-100/80">
+                <a
+                  href="#"
+                  className="inline-flex items-center gap-1 text-[#6554ff] font-bold text-xs sm:text-sm hover:gap-1.5 transition-all"
+                >
+                  {t('capto.use_cases.cta')}
+                  <ArrowUpRight size={14} strokeWidth={2.5} />
+                </a>
+
+                {/* Pagination Dots */}
+                <div className="flex items-center gap-1.5">
+                  {useCases.map((uc) => (
+                    <button
+                      key={uc.id}
+                      onClick={() => setActiveTab(uc.id)}
+                      className={`h-1.5 rounded-full transition-all duration-300 ${
+                        activeTab === uc.id ? 'w-5 bg-[#6554ff]' : 'w-1.5 bg-gray-200 hover:bg-gray-300'
+                      }`}
+                      aria-label={`Go to ${uc.title}`}
+                    />
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* Desktop View: 12-column interactive split grid */}
         <div
-          className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch"
+          className="hidden lg:grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >

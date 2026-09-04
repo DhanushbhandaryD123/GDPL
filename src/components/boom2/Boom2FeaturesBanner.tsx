@@ -17,8 +17,11 @@ export function Boom2FeaturesBanner() {
   ];
 
   return (
-    <div className="relative z-20 max-w-[1400px] mx-auto px-4 -mt-8 md:-mt-16">
-      <div className="bg-white/95 backdrop-blur-2xl border border-gray-200/60 rounded-[2.5rem] shadow-xl shadow-gray-200/50 py-6 px-6 md:px-12 flex overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] md:flex-wrap justify-start md:justify-between items-start md:items-center gap-8 md:gap-6 snap-x snap-mandatory">
+    <div className="relative z-20 max-w-[1400px] mx-auto px-4 mt-4 md:-mt-16">
+      <div 
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        className="bg-white/95 backdrop-blur-2xl border border-gray-200/60 rounded-2xl md:rounded-[2.5rem] shadow-xl shadow-gray-200/50 py-5 px-4 md:py-6 md:px-12 flex overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] md:flex-wrap justify-start md:justify-between items-start md:items-center gap-6 md:gap-6 snap-x snap-mandatory scroll-smooth"
+      >
         {features.map((feature, idx) => (
           <motion.div
             key={idx}
@@ -26,7 +29,7 @@ export function Boom2FeaturesBanner() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: idx * 0.1, ease: "easeOut" }}
-            className="flex flex-col items-center text-center shrink-0 w-20 md:w-auto md:flex-1 snap-start md:snap-align-none"
+            className="flex flex-col items-center text-center shrink-0 w-[76px] md:w-auto md:flex-1 snap-start md:snap-align-none"
           >
             {feature.icon}
             <span className="text-gray-800 font-bold text-[11px] md:text-sm whitespace-pre-line leading-snug">

@@ -129,7 +129,7 @@ function Home() {
             flip-card carousel of that platform's apps sourced from
             src/data/products.ts ΓÇö name, icon, price, and route.
             ========================================= */}
-        <div className="py-4">
+        <div className="pt-0 pb-4 md:py-4">
           <AppCategory
             title={t('home.categories.mac_app')}
             deviceImageAlt="MacBook"

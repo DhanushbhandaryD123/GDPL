@@ -22,7 +22,7 @@ export function AdvancedRecording() {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-bold text-gray-900 mb-6"
           >
-            {t('audion.advanced_recording.title_1')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">{t('audion.advanced_recording.title_2')}</span>
+            {t('audion.advanced_recording.title_1')} <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-fuchsia-600 to-pink-600">{t('audion.advanced_recording.title_2')}</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

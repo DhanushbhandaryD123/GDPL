@@ -25,7 +25,7 @@ export function HeroDesktop() {
 
   return (
     <div className="w-full max-w-[1920px] mx-auto px-2 md:px-4 pt-1 pb-12 bg-white">
-      <div className="w-full relative overflow-hidden text-white pt-12 pb-16 md:pt-20 md:pb-24 shadow-2xl bg-black rounded-3xl md:rounded-[2.5rem]">
+      <div className="w-full relative overflow-hidden text-white shadow-2xl bg-black rounded-3xl md:rounded-[2.5rem] h-[520px] sm:h-[560px] md:h-[620px] lg:h-[660px] xl:h-[700px] flex items-center">
         {/* Background Image Layer with scale to crop out white borders */}
         <AnimatePresence>
           <motion.div 
@@ -228,7 +228,7 @@ export function HeroDesktop() {
           )}
         </AnimatePresence>
         
-        <div className="w-full px-6 md:px-12 lg:px-16 flex flex-col lg:flex-row items-center h-full min-h-[400px] relative z-10">
+        <div className="w-full px-6 md:px-12 lg:px-16 flex flex-col lg:flex-row items-center justify-center h-full relative z-10">
           {/* Left side empty spacer to push text past the laptop in the background image */}
           <div className="hidden lg:block lg:w-[55%] xl:w-[60%]"></div>
 
@@ -241,25 +241,25 @@ export function HeroDesktop() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 50 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="w-full lg:w-[45%] xl:w-[40%] space-y-6 text-center lg:text-left z-10 lg:pl-8 py-12"
+                className="w-full lg:w-[45%] xl:w-[40%] space-y-6 lg:space-y-7 text-center lg:text-left z-10 lg:pl-8 py-4 lg:py-6"
               >
-                <p className="text-5xl md:text-6xl font-normal tracking-tight leading-tight drop-shadow-md">
+                <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.08] drop-shadow-xl text-white">
                   {t('home.hero_banner.capto_title_1')} <br className="hidden md:block" /> {t('home.hero_banner.capto_title_2')}
                 </p>
-                <p className="text-lg md:text-xl text-white max-w-xl mx-auto lg:mx-0 drop-shadow-md font-medium">
+                <p className="text-xl md:text-2xl text-white/95 max-w-xl mx-auto lg:mx-0 drop-shadow-lg font-medium leading-relaxed">
                   {t('home.hero_banner.capto_subtitle')}
                 </p>
 
-                <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start pt-4">
+                <div className="flex flex-col sm:flex-row items-center gap-4 lg:gap-5 justify-center lg:justify-start pt-4 lg:pt-6">
                   <a
                     href="https://apps.microsoft.com/detail/9pp81h1nczs1?cid=GD-Homepage-Banner&hl=en-US&gl=IN"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:scale-105 transition-transform"
+                    className="hover:scale-105 transition-transform shrink-0"
                   >
-                    <img src="/button/en-us dark.svg" alt="Get it from Microsoft Store" className="h-10 md:h-12 object-contain drop-shadow-md" width={161} height={44} loading="eager" />
+                    <img src="/button/en-us dark.svg" alt="Get it from Microsoft Store" className="h-12 md:h-14 lg:h-16 w-auto object-contain drop-shadow-xl" width={180} height={52} loading="eager" />
                   </a>
-                  <Link to="/capto" className="bg-transparent border border-white/80 text-white font-semibold px-6 py-3 rounded text-sm hover:bg-white/10 active:scale-95 transition shadow-lg w-full sm:w-auto whitespace-nowrap backdrop-blur-sm text-center">
+                  <Link to="/boom3D" className="h-12 md:h-14 lg:h-16 px-8 md:px-10 rounded-xl md:rounded-2xl text-base md:text-lg font-bold flex items-center justify-center border-2 border-white/90 text-white hover:bg-white hover:text-black hover:border-white transition-all duration-300 shadow-xl hover:scale-105 active:scale-95 w-full sm:w-auto whitespace-nowrap backdrop-blur-md text-center shrink-0">
                     {t('home.hero_banner.learn_more')}
                   </Link>
                 </div>
@@ -273,7 +273,7 @@ export function HeroDesktop() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 50 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="w-full lg:w-[45%] xl:w-[40%] flex flex-col items-center space-y-5 text-center z-10 lg:pl-8 py-12"
+                className="w-full lg:w-[45%] xl:w-[40%] flex flex-col items-center space-y-5 text-center z-10 lg:pl-8 py-4 lg:py-6"
               >
                 <img src="/button/Boom2-Logo.png" alt="Boom 2" className="w-48 md:w-56 object-contain drop-shadow-lg" width={311} height={69} loading="eager" />
                 
