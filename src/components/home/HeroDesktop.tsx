@@ -25,6 +25,21 @@ export function HeroDesktop() {
 
   return (
     <div className="w-full max-w-[1920px] mx-auto px-2 md:px-4 pt-1 pb-12 bg-white">
+      {/* Primary Semantic H1 for Homepage SEO & Accessibility */}
+      <h1 className="sr-only">Global Delight — Award-Winning Audio, Video & Photography Apps</h1>
+
+      {/* Semantic LCP Preload for Slide 1 */}
+      <img
+        src={heroImages[0]}
+        alt="Global Delight - Boom 3D Audio Enhancement"
+        className="sr-only"
+        width={1920}
+        height={700}
+        loading="eager"
+        // @ts-ignore
+        fetchpriority="high"
+      />
+
       <div className="w-full relative overflow-hidden text-white shadow-2xl bg-black rounded-3xl md:rounded-[2.5rem] h-[520px] sm:h-[560px] md:h-[620px] lg:h-[660px] xl:h-[700px] flex items-center">
         {/* Background Image Layer with scale to crop out white borders */}
         <AnimatePresence>

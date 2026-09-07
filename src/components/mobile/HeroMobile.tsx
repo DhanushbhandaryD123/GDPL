@@ -25,6 +25,21 @@ export function HeroMobile() {
 
   return (
     <div className="w-full mx-auto px-3 sm:px-4 pt-1 pb-1 bg-white">
+      {/* Primary Semantic H1 for Homepage SEO & Accessibility */}
+      <h1 className="sr-only">Global Delight — Award-Winning Audio, Video & Photography Apps</h1>
+
+      {/* Semantic LCP Preload for Mobile Slide 1 */}
+      <img
+        src={heroImages[0]}
+        alt="Global Delight - Boom 3D Audio Enhancement"
+        className="sr-only"
+        width={750}
+        height={500}
+        loading="eager"
+        // @ts-ignore
+        fetchpriority="high"
+      />
+
       <div className="w-full relative overflow-hidden text-white shadow-2xl bg-black rounded-2xl sm:rounded-3xl h-[290px] sm:h-[330px] flex flex-col justify-end">
         {/* Background Image Layer */}
         <AnimatePresence>
@@ -231,9 +246,9 @@ export function HeroMobile() {
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="absolute top-1/2 -translate-y-1/2 right-2.5 w-[52%] flex flex-col items-end text-right space-y-1.5 z-20 pointer-events-auto pr-1"
               >
-                <h1 className="text-sm sm:text-base font-bold tracking-tight leading-tight drop-shadow-lg text-white">
+                <h2 className="text-sm sm:text-base font-bold tracking-tight leading-tight drop-shadow-lg text-white">
                   {t('home.hero_banner.capto_title_1')} {t('home.hero_banner.capto_title_2')}
-                </h1>
+                </h2>
                 <p className="text-[11px] sm:text-xs text-white/90 drop-shadow-md font-medium leading-snug max-w-[170px]">
                   {t('home.hero_banner.capto_subtitle')}
                 </p>

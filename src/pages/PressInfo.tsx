@@ -880,7 +880,7 @@ export function PressInfo() {
           name="keywords"
           content="Global Delight press releases, Boom 3D press kit, Capto review guide, AudiOn press release, media inquiries, Global Delight news"
         />
-        <link rel="canonical" href="https://gdpl-six.vercel.app/press-info" />
+        <link rel="canonical" href={`${import.meta.env.VITE_SITE_URL || 'https://www.globaldelight.com'}/press-info`} />
       </Helmet>
 
       <Navbar />

@@ -2,8 +2,8 @@ const fs = require('fs');
 const path = require('path');
 
 const distDir = path.resolve(__dirname, '..', 'dist');
-const domain = 'https://gdpl-six.vercel.app'; // from .env
-const CLOUD_OG = 'https://d3jbf8nvvpx3fh.cloudfront.net/Boom3D-Web/OGImages/Global-Delight.jpg';
+const domain = 'https://www.globaldelight.com'; // from .env
+const CLOUD_OG = '/images/external/img_e76f765673cb.jpg';
 
 // Duplicate of src/data/seo.ts SEO_DATA (keep in sync)
 const SEO_DATA = {

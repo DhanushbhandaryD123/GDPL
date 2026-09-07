@@ -45,7 +45,7 @@ const EffectsScreen = () => {
           <div key={idx} className="relative overflow-hidden">
             <img
               src="/images/external/img_5c88fe4628bf.jpg"
-              alt=""
+              alt={`Camera Plus Pro photo filter: ${filter || 'original'}`}
               className={`w-full h-full object-cover ${filter}`} width={200} height={133} loading="lazy"
             />
           </div>

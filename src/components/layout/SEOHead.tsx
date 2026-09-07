@@ -116,79 +116,76 @@ export function SEOHead() {
       {/* Self-referencing Canonical URL – page-connected */}
       <link rel="canonical" href={`${domain}${canonicalPath}`} />
 
-      {/* Global Organization JSON-LD */}
+      {/* Unified Connected @graph Schema (Organization, WebSite, WebPage, and SoftwareApplication) */}
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "Global Delight",
-          "url": domain,
-          "logo": BRAND_LOGO_URL,
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "contactType": "customer service",
-            "availableLanguage": ["English"]
-          },
-          "sameAs": [
-            "https://www.facebook.com/GlobalDelight",
-            "https://twitter.com/GlobalDelight",
-            "https://www.linkedin.com/company/global-delight/",
-            "https://www.youtube.com/channel/UCLjiPwteYQLEmIzDs4xmyTw",
-            "https://www.instagram.com/globaldelight"
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": `${domain}/#organization`,
+              "name": "Global Delight",
+              "url": domain,
+              "logo": resolveImage(BRAND_LOGO_URL),
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "customer service",
+                "availableLanguage": ["English"]
+              },
+              "sameAs": [
+                "https://www.facebook.com/GlobalDelight",
+                "https://twitter.com/GlobalDelight",
+                "https://www.linkedin.com/company/global-delight/",
+                "https://www.youtube.com/channel/UCLjiPwteYQLEmIzDs4xmyTw",
+                "https://www.instagram.com/globaldelight"
+              ]
+            },
+            {
+              "@type": "WebSite",
+              "@id": `${domain}/#website`,
+              "name": "Global Delight",
+              "url": domain,
+              "publisher": {
+                "@id": `${domain}/#organization`
+              }
+            },
+            {
+              "@type": "WebPage",
+              "@id": `${domain}${canonicalPath}#webpage`,
+              "url": `${domain}${canonicalPath}`,
+              "name": pageTitle,
+              "description": pageDescription,
+              "inLanguage": currentLang,
+              "isPartOf": {
+                "@id": `${domain}/#website`
+              },
+              "about": {
+                "@id": `${domain}/#organization`
+              }
+            },
+            ...(seo.softwareApplication ? [{
+              "@type": "SoftwareApplication",
+              "@id": `${domain}${canonicalPath}#software`,
+              "name": seo.softwareApplication.name,
+              "operatingSystem": seo.softwareApplication.operatingSystem,
+              "applicationCategory": seo.softwareApplication.applicationCategory,
+              "description": pageDescription,
+              "image": resolveImage(seo.softwareApplication.image),
+              "url": `${domain}${canonicalPath}`,
+              "author": {
+                "@id": `${domain}/#organization`
+              },
+              ...(seo.softwareApplication.price ? {
+                "offers": {
+                  "@type": "Offer",
+                  "price": seo.softwareApplication.price,
+                  "priceCurrency": seo.softwareApplication.priceCurrency || "USD"
+                }
+              } : {})
+            }] : [])
           ]
         })}
       </script>
-
-      {/* WebSite JSON-LD — identifies the site as a single entity spanning
-          all locales (no per-page inLanguage here; that belongs on WebPage). */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          "name": "Global Delight",
-          "url": domain,
-        })}
-      </script>
-
-      {/* WebPage JSON-LD — describes this specific page as part of the WebSite above. */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "WebPage",
-          "name": pageTitle,
-          "description": pageDescription,
-          "url": `${domain}${canonicalPath}`,
-          "inLanguage": currentLang,
-          "isPartOf": {
-            "@type": "WebSite",
-            "name": "Global Delight",
-            "url": domain,
-          },
-        })}
-      </script>
-
-      {/* Product SoftwareApplication JSON-LD – for all product pages: boom/boom2/boom3D/capto(+windows)/cameraplus(+pro)/audion/audimix/vizmato/boomformobile */}
-      {seo.softwareApplication && (
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            name: seo.softwareApplication.name,
-            operatingSystem: seo.softwareApplication.operatingSystem,
-            applicationCategory: seo.softwareApplication.applicationCategory,
-            description: pageDescription,
-            image: resolveImage(seo.softwareApplication.image),
-            url: `${domain}${canonicalPath}`,
-            offers: seo.softwareApplication.price
-              ? {
-                  "@type": "Offer",
-                  price: seo.softwareApplication.price,
-                  priceCurrency: seo.softwareApplication.priceCurrency || "INR",
-                }
-              : undefined,
-          })}
-        </script>
-      )}
 
       {/* Page-connected Open Graph – url/image/content as in Home structure */}
       <meta property="og:title" content={pageOgTitle} />

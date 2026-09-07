@@ -46,6 +46,6 @@ console.log(`✅ Sitemap successfully generated at public/sitemap.xml with ${rou
 
 // Write robots.txt
 const robotsPath = path.resolve(__dirname, '../public/robots.txt');
-const robotsContent = `User-agent: *\nAllow: /\n\nSitemap: ${DOMAIN}/sitemap.xml\n`;
+const robotsContent = `User-agent: *\nAllow: /\nAllow: /assets/\nAllow: /images/\n\nSitemap: ${DOMAIN}/sitemap.xml\n`;
 fs.writeFileSync(robotsPath, robotsContent, 'utf8');
 console.log(`✅ robots.txt successfully generated at public/robots.txt with domain ${DOMAIN}`);

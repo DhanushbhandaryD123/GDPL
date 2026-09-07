@@ -108,7 +108,7 @@ export function AppCategoryDesktop({ title, deviceImageAlt, deviceImagePath, ima
   return (
     <section className="py-8 w-full max-w-[1920px] mx-auto px-4">
       {/* Title */}
-      <h2 className="text-3xl font-bold mb-4 text-gray-900 ml-12 hidden">{title}</h2>
+      <h2 className="text-3xl font-bold mb-4 text-gray-900 ml-12 sr-only">{title}</h2>
       
       <div className={`flex flex-row items-center justify-center gap-16 px-12 ${reverse ? 'flex-row-reverse' : ''}`}>
         {/* Device Image */}
