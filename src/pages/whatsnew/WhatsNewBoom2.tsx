@@ -110,7 +110,7 @@ export function WhatsNewBoom2() {
       productName="Boom 2"
       logoSrc="/boom2/Boom2-icon.png" 
       heroBgClass="bg-[#1A0B2E]"
-      heroBgUrl="https://images.unsplash.com/photo-1614149162883-504ce4d13909?auto=format&fit=crop&q=80&w=2000"
+      heroBgUrl="/images/external/img_ffa0cfbb0361.jpg"
       productId="boom2"
       activePlatform="macOS" // Boom 2 is Mac only
       macOSNotes={boom2MacNotes}

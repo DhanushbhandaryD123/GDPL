@@ -192,7 +192,7 @@ export function WhatsNewBoom() {
       productName="Boom 3D"
       logoSrc="/boom3D/boomLogo3D.png" 
       heroBgClass="bg-[#050B1B]"
-      heroBgUrl="https://images.unsplash.com/photo-1557672172-298e090bd0f1?auto=format&fit=crop&q=80&w=2000"
+      heroBgUrl="/images/external/img_1cb585d95ee2.jpg"
       productId="boom3d"
       activePlatform={platform}
       onPlatformChange={(newPlatform) => {

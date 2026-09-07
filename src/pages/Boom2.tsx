@@ -30,12 +30,12 @@ export function Boom2() {
         <meta property="og:title" content="Boom 2 - Stereo Sound Enhancer for Mac" />
         <meta property="og:description" content="Boom 2 is an award-winning stereo sound enhancer app for macOS that gives you precision control over your audio, with cutting-edge features for pristine sound." />
         <meta property="og:url" content={`${domain}/boom2/`} />
-        <meta property="og:image" content="https://d3jbf8nvvpx3fh.cloudfront.net/Boom2/web/images/OGImages/Boom2OGImage.png" />
+        <meta property="og:image" content="/images/external/img_0a22d737fce8.png" />
         <meta name="subject" content="Boom 2 - Stereo Sound Enhancer for Mac" />
         <meta name="author" content="Global Delight Technologies Pvt. Ltd." />
         <meta content="index, follow" name="robots" />
         <meta name="apple-itunes-app" content="id948176063" />
-        <meta name="thumbnail" content="https://d3jbf8nvvpx3fh.cloudfront.net/Boom2/web/images/OGImages/Boom2OGImage.png" />
+        <meta name="thumbnail" content="/images/external/img_0a22d737fce8.png" />
         
         <script type="application/ld+json">
           {JSON.stringify({
@@ -60,7 +60,7 @@ export function Boom2() {
         <meta name="twitter:creator" content="@boomapp" />
         <meta name="twitter:title" content="Boom 2 - Stereo Sound Enhancer for Mac" />
         <meta name="twitter:description" content="Boom 2 is an award-winning stereo sound enhancer app for macOS that gives you precision control over your audio, with cutting-edge features for pristine sound." />
-        <meta name="twitter:image" content="https://d3jbf8nvvpx3fh.cloudfront.net/Boom2/web/images/OGImages/Boom2OGImage.png" />
+        <meta name="twitter:image" content="/images/external/img_0a22d737fce8.png" />
         <meta name="twitter:url" content={`${domain}/boom2/`} />
         
         <meta property="fb:app_id" content="574953960066003" />

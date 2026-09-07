@@ -43,7 +43,7 @@ export function Showcase() {
 
             <div className="relative rounded-[2rem] overflow-hidden shadow-2xl shadow-blue-900/10 border border-gray-100 aspect-[4/3]">
               <img
-                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1400&q=80&auto=format&fit=crop"
+                src="/images/external/img_314b59f4b41f.jpg"
                 alt="Creator workflow on Windows"
                 className="w-full h-full object-cover" width={1400} height={932} loading="lazy"
               />

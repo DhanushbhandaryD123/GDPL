@@ -16,7 +16,7 @@ export function FeaturesOverview() {
       title: t('audimix.features_overview.step1'),
       description: t('audimix.features_overview.step1_desc'),
       icon: Upload,
-      image: 'https://images.unsplash.com/photo-1598653222000-6b7b7a552625?w=1200&q=80&auto=format&fit=crop',
+      image: '/images/external/img_9f71690c4388.jpg',
     },
     {
       id: 2,
@@ -24,7 +24,7 @@ export function FeaturesOverview() {
       title: t('audimix.features_overview.step2'),
       description: t('audimix.features_overview.step2_desc'),
       icon: SlidersHorizontal,
-      image: 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1200&q=80&auto=format&fit=crop',
+      image: '/images/external/img_1716621547fc.jpg',
     },
     {
       id: 3,
@@ -32,7 +32,7 @@ export function FeaturesOverview() {
       title: t('audimix.features_overview.step3'),
       description: t('audimix.features_overview.step3_desc'),
       icon: Download,
-      image: 'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?w=1200&q=80&auto=format&fit=crop',
+      image: '/images/external/img_75eca9ac3959.jpg',
     },
   ];
 
@@ -74,7 +74,7 @@ export function FeaturesOverview() {
       opacity: 1,
       scale: 1,
       transition: {
-        x: { type: 'spring', stiffness: 300, damping: 30 },
+        x: { type: 'spring' as const, stiffness: 300, damping: 30 },
         opacity: { duration: 0.4 },
         scale: { duration: 0.4 },
       },
@@ -84,7 +84,7 @@ export function FeaturesOverview() {
       opacity: 0,
       scale: 0.98,
       transition: {
-        x: { type: 'spring', stiffness: 300, damping: 30 },
+        x: { type: 'spring' as const, stiffness: 300, damping: 30 },
         opacity: { duration: 0.3 },
       },
     }),

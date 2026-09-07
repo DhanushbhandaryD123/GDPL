@@ -20,7 +20,7 @@ export function Navbar({ logoUrl }: NavbarProps) {
     { name: t('nav.blog'), href: 'https://blog.globaldelight.com/' },
   ];
 
-  const defaultLogo = "https://d3jbf8nvvpx3fh.cloudfront.net/home/_resource/_img/website/2015/GDTPL_logo_.png";
+  const defaultLogo = "/images/external/img_54825efe2640.png";
 
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -80,14 +80,14 @@ export function Navbar({ logoUrl }: NavbarProps) {
   );
 
   const languages = [
-    { code: 'en', name: 'English', flagUrl: 'https://flagcdn.com/gb.svg' },
-    { code: 'zh', name: 'Chinese (Simplified)', flagUrl: 'https://flagcdn.com/cn.svg' },
-    { code: 'fr', name: 'French', flagUrl: 'https://flagcdn.com/fr.svg' },
-    { code: 'de', name: 'German', flagUrl: 'https://flagcdn.com/de.svg' },
-    { code: 'it', name: 'Italian', flagUrl: 'https://flagcdn.com/it.svg' },
-    { code: 'ja', name: 'Japanese', flagUrl: 'https://flagcdn.com/jp.svg' },
-    { code: 'es', name: 'Spanish', flagUrl: 'https://flagcdn.com/es.svg' },
-    { code: 'pt', name: 'Portuguese', flagUrl: 'https://flagcdn.com/pt.svg' },
+    { code: 'en', name: 'English', flagUrl: '/images/external/img_0df8e14dcee9.svg' },
+    { code: 'zh', name: 'Chinese (Simplified)', flagUrl: '/images/external/img_72c6ed1af571.svg' },
+    { code: 'fr', name: 'French', flagUrl: '/images/external/img_092d699697be.svg' },
+    { code: 'de', name: 'German', flagUrl: '/images/external/img_69f2b2baa99b.svg' },
+    { code: 'it', name: 'Italian', flagUrl: '/images/external/img_d017cc2c2f5b.svg' },
+    { code: 'ja', name: 'Japanese', flagUrl: '/images/external/img_9f1ecd5b1905.svg' },
+    { code: 'es', name: 'Spanish', flagUrl: '/images/external/img_445a57d1b3e5.svg' },
+    { code: 'pt', name: 'Portuguese', flagUrl: '/images/external/img_bbf13d4dde0f.svg' },
   ];
 
   const currentLanguage = languages.find(l => i18n.language?.startsWith(l.code)) || languages[0];

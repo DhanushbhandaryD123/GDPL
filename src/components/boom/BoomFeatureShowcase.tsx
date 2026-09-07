@@ -11,7 +11,7 @@ export function BoomFeatureShowcase() {
       tag: t('boom.showcase.f1_tag'),
       title: t('boom.showcase.f1_title'),
       description: t('boom.showcase.f1_desc'),
-      image: 'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?q=80&w=1200&auto=format&fit=crop',
+      image: '/images/external/img_fd41c740b2d3.jpg',
       accent: 'from-indigo-500 to-purple-500',
     },
     {
@@ -19,7 +19,7 @@ export function BoomFeatureShowcase() {
       tag: t('boom.showcase.f2_tag'),
       title: t('boom.showcase.f2_title'),
       description: t('boom.showcase.f2_desc'),
-      image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=1200&auto=format&fit=crop',
+      image: '/images/external/img_652d7fd5c6a0.jpg',
       accent: 'from-fuchsia-500 to-pink-500',
     },
     {
@@ -27,7 +27,7 @@ export function BoomFeatureShowcase() {
       tag: t('boom.showcase.f3_tag'),
       title: t('boom.showcase.f3_title'),
       description: t('boom.showcase.f3_desc'),
-      image: 'https://images.unsplash.com/photo-1545454675-3531b543be5d?q=80&w=1200&auto=format&fit=crop',
+      image: '/images/external/img_27f125096875.jpg',
       accent: 'from-cyan-500 to-blue-500',
     },
     {
@@ -35,7 +35,7 @@ export function BoomFeatureShowcase() {
       tag: t('boom.showcase.f4_tag'),
       title: t('boom.showcase.f4_title'),
       description: t('boom.showcase.f4_desc'),
-      image: 'https://images.unsplash.com/photo-1614680376593-902f74cf0d41?q=80&w=1200&auto=format&fit=crop',
+      image: '/images/external/img_80c19d90ecff.jpg',
       accent: 'from-amber-500 to-orange-500',
     },
   ];

@@ -44,14 +44,14 @@ export function HeroBanner() {
             <div className="flex flex-row items-center gap-3 sm:gap-4 w-full justify-center lg:justify-start">
               <a href="#" className="transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#00B4B4]/20 rounded-xl overflow-hidden flex justify-center">
                 <img 
-                  src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" 
+                  src="/images/external/img_2112b5804bcd.svg" 
                   alt="Download on the App Store" 
                   className="h-10 sm:h-14 md:h-[60px] w-auto" width={120} height={40} loading="eager"
                 />
               </a>
               <a href="#" className="transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#00B4B4]/20 rounded-xl overflow-hidden flex justify-center">
                 <img 
-                  src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" 
+                  src="/images/external/img_71dd67821e25.svg" 
                   alt="Get it on Google Play" 
                   className="h-10 sm:h-14 md:h-[60px] w-auto" width={180} height={53} loading="eager"
                 />

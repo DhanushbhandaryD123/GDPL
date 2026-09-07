@@ -32,7 +32,7 @@ export interface SeoEntry {
   };
 }
 
-const CLOUD_OG = 'https://d3jbf8nvvpx3fh.cloudfront.net/Boom3D-Web/OGImages/Global-Delight.jpg';
+const CLOUD_OG = '/images/external/img_e76f765673cb.jpg';
 
 export const SEO_DATA: Record<string, SeoEntry> = {
   '/': {

@@ -33,13 +33,13 @@ const OG_LOCALE_MAP: Record<string, string> = {
 // existed) both point at this CDN asset — it's the real, working brand
 // image, unlike the local "/logos/GDTPL_logo_.png" path that was referenced
 // here previously but never actually existed in public/.
-const BRAND_LOGO_URL = 'https://d3jbf8nvvpx3fh.cloudfront.net/home/_resource/_img/website/2015/GDTPL_logo_.png';
+const BRAND_LOGO_URL = '/images/external/img_54825efe2640.png';
 
 // Real intrinsic dimensions for every image SEO_DATA uses as an og:image/twitter:image,
 // read once from the actual files — social crawlers use these to size the preview card
 // before the image itself loads, so a missing/wrong value produces a cropped or blank card.
 const OG_IMAGE_DIMENSIONS: Record<string, { width: number; height: number }> = {
-  'https://d3jbf8nvvpx3fh.cloudfront.net/Boom3D-Web/OGImages/Global-Delight.jpg': { width: 1200, height: 628 },
+  '/images/external/img_e76f765673cb.jpg': { width: 1200, height: 628 },
   '/apps/AuDimix-Window.jpeg': { width: 1028, height: 1028 },
   '/apps/AudiOn-ios.jpeg': { width: 300, height: 300 },
   '/apps/Boom for iOS.jpeg': { width: 1028, height: 1028 },

@@ -5,27 +5,27 @@ const filters = [
   { 
     id: 'original', 
     name: 'Original', 
-    image: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1920&auto=format&fit=crop' 
+    image: '/images/external/img_8d824f9c1326.jpg' 
   },
   { 
     id: 'vintage', 
     name: 'Vintage', 
-    image: 'https://images.unsplash.com/photo-1551316679-9c6ae9dec224?q=80&w=1920&auto=format&fit=crop' 
+    image: '/images/external/img_6e78e7331396.jpg' 
   },
   { 
     id: 'noir', 
     name: 'Noir', 
-    image: 'https://images.unsplash.com/photo-1505322022379-7c3353ee6291?q=80&w=1920&auto=format&fit=crop&monochrome=1' 
+    image: '/images/external/img_bf590d4dbf59.jpg' 
   },
   { 
     id: 'cinematic', 
     name: 'Cinematic', 
-    image: 'https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=1920&auto=format&fit=crop' 
+    image: '/images/external/img_cbfbe70fe26e.jpg' 
   },
   { 
     id: 'vivid', 
     name: 'Vivid', 
-    image: 'https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=1920&auto=format&fit=crop' 
+    image: '/images/external/img_fa0c41f81aa2.jpg' 
   }
 ];
 

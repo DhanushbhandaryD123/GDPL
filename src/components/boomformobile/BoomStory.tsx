@@ -18,7 +18,7 @@ export function BoomStory() {
           >
             <div className="relative aspect-square rounded-[2.5rem] overflow-hidden border border-gray-100 shadow-[0_30px_80px_rgba(0,0,0,0.12)]">
               <img
-                src="https://images.unsplash.com/photo-1519638399535-1b036603ac77?q=80&w=1000&auto=format&fit=crop"
+                src="/images/external/img_8730355e4cbe.jpg"
                 alt="Immersive audio engineering"
                 className="w-full h-full object-cover" width={1000} height={563} loading="lazy"
               />

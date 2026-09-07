@@ -73,7 +73,7 @@ export function Contact() {
       {/* Dark Content Section */}
       <div className="flex-1 relative w-full overflow-hidden flex items-center">
         {/* Decorative background representing the faint wind turbines */}
-        <div className="absolute right-0 bottom-0 w-1/2 h-full opacity-10 pointer-events-none bg-[url('https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center mix-blend-overlay"></div>
+        <div className="absolute right-0 bottom-0 w-1/2 h-full opacity-10 pointer-events-none bg-[url('/images/external/img_a743a7dc4cd9.jpg')] bg-cover bg-center mix-blend-overlay"></div>
 
         <div className="container mx-auto px-6 md:px-16 py-12 relative z-10">
           <div className="flex flex-col lg:flex-row gap-12 justify-between items-center">

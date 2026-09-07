@@ -11,21 +11,21 @@ export function UseCases() {
       title: t('audimix.use_cases.musicians_title'),
       icon: Mic2,
       description: t('audimix.use_cases.musicians_desc'),
-      image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=1200&q=80&auto=format&fit=crop',
+      image: '/images/external/img_aeb390807147.jpg',
     },
     {
       id: 'djs',
       title: t('audimix.use_cases.djs_title'),
       icon: Music,
       description: t('audimix.use_cases.djs_desc'),
-      image: 'https://images.unsplash.com/photo-1516873240891-4bf014598ab4?w=1200&q=80&auto=format&fit=crop',
+      image: '/images/external/img_0fe8eff374b3.jpg',
     },
     {
       id: 'producers',
       title: t('audimix.use_cases.producers_title'),
       icon: Headphones,
       description: t('audimix.use_cases.producers_desc'),
-      image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1200&q=80&auto=format&fit=crop',
+      image: '/images/external/img_88c01537437c.jpg',
     }
   ];
 

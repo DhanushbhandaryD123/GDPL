@@ -10,7 +10,7 @@ interface FooterProps {
 
 export function Footer({ logoUrl }: FooterProps = {}) {
   const { t } = useTranslation();
-  const defaultLogo = "https://d3jbf8nvvpx3fh.cloudfront.net/home/_resource/_img/website/2015/GDTPL_logo_.png";
+  const defaultLogo = "/images/external/img_54825efe2640.png";
   const [openSection, setOpenSection] = useState<string | null>(null);
 
   const toggleSection = (section: string) => {

@@ -11,8 +11,8 @@ const socialLinks = [
 ];
 
 const heroImages = [
-  'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1920&q=80&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1516873240891-4bf014598ab4?w=1920&q=80&auto=format&fit=crop',
+  '/images/external/img_13a0865af43b.jpg',
+  '/images/external/img_47911ab24172.jpg',
 ];
 
 // Spectrum palette pulled from the AuDimix logo's rainbow EQ bars

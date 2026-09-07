@@ -10,19 +10,19 @@ export function ProcessSteps() {
       title: t('vizmato.process.step1'),
       description: t('vizmato.process.step1_desc'),
       icon: Video,
-      image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=1200&q=80&auto=format&fit=crop',
+      image: '/images/external/img_71b67dd7debe.jpg',
     },
     {
       title: t('vizmato.process.step2'),
       description: t('vizmato.process.step2_desc'),
       icon: Sparkles,
-      image: 'https://images.unsplash.com/photo-1618172193622-ae2d025f4032?w=1200&q=80&auto=format&fit=crop',
+      image: '/images/external/img_a0d66c83d8c6.jpg',
     },
     {
       title: t('vizmato.process.step3'),
       description: t('vizmato.process.step3_desc'),
       icon: Send,
-      image: 'https://images.unsplash.com/photo-1611262588024-d12430b98920?w=1200&q=80&auto=format&fit=crop',
+      image: '/images/external/img_0139c0fcb1ab.jpg',
     },
   ];
 

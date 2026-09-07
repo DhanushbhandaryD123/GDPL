@@ -159,8 +159,8 @@ export function CaptoFooterCTA() {
                  alt={`Partner Logo ${i + 1}`} 
                  className="max-h-[60px] max-w-full object-contain transition-opacity duration-500"
                  onError={(e) => {
-                   // Fallback for missing images until user uploads them
-                   (e.target as HTMLImageElement).src = `https://placehold.co/120x60/f8f9fa/a0aec0?text=Logo+${i+1}`;
+                   // Fallback for missing images
+                   (e.target as HTMLImageElement).src = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="60" viewBox="0 0 120 60"><rect width="120" height="60" fill="%23f8f9fa" rx="6"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="%23a0aec0" font-family="sans-serif" font-size="12">Partner ${i + 1}</text></svg>`;
                  }} loading="lazy"
                />
              </div>

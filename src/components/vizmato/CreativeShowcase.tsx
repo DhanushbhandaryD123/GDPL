@@ -10,19 +10,19 @@ export function CreativeShowcase() {
       title: t('vizmato.showcase.c1_title'),
       description: t('vizmato.showcase.c1_desc'),
       icon: Compass,
-      image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200&q=80&auto=format&fit=crop',
+      image: '/images/external/img_90951560b3e2.jpg',
     },
     {
       title: t('vizmato.showcase.c2_title'),
       description: t('vizmato.showcase.c2_desc'),
       icon: Music2,
-      image: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1200&q=80&auto=format&fit=crop',
+      image: '/images/external/img_185a2f61040f.jpg',
     },
     {
       title: t('vizmato.showcase.c3_title'),
       description: t('vizmato.showcase.c3_desc'),
       icon: Smartphone,
-      image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=1200&q=80&auto=format&fit=crop',
+      image: '/images/external/img_0fab5b20386c.jpg',
     },
   ];
 

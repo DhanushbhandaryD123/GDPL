@@ -94,7 +94,7 @@ export function Hero() {
             {/* Main Mockup Container */}
             <div className="relative w-full aspect-video lg:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-gray-200 bg-white transform transition-transform duration-500 hover:rotate-y-0 group z-10">
               <img
-                src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=2000&q=80&auto=format&fit=crop"
+                src="/images/external/img_8ed863183aae.jpg"
                 alt="Capto for Windows Dashboard"
                 className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" width={2000} height={1125} loading="eager"
               />

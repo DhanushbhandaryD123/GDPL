@@ -4,11 +4,10 @@ import { ChevronRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const watchImages = [
-  "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=400&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=400&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=400&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1505322022379-7c3353ee6291?q=80&w=400&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1534360699709-3286f0d7e63f?q=80&w=400&auto=format&fit=crop"
+  "/images/external/img_9c2f29c77b3f.jpg",
+  "/images/external/img_ef2334bebc25.jpg",
+  "/images/external/img_6a1797d08df5.jpg",
+  "/images/external/img_3643aca188f0.jpg"
 ];
 
 export function AppleWatchIntegration() {

@@ -78,7 +78,7 @@ export function AirSnapFeature() {
             >
               <div className="absolute top-0 inset-x-0 h-4 md:h-8 bg-black z-10 flex justify-center rounded-b-xl md:rounded-b-3xl max-w-[50%] mx-auto" />
               <img 
-                src="https://images.unsplash.com/photo-1517511620798-cec17d428bc0?q=80&w=600&auto=format&fit=crop" 
+                src="/images/external/img_130fb76bb463.jpg" 
                 alt="Group Photo Capture"
                 className="w-full h-full object-cover opacity-90 scale-105" width={600} height={400} loading="lazy"
               />

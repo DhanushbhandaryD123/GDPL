@@ -9,7 +9,7 @@ const environments = [
     name: 'Noisy Café',
     icon: Coffee01Icon,
     description: 'Drown out the chatter and focus on your music with enhanced clarity.',
-    image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1920&auto=format&fit=crop',
+    image: '/images/external/img_3595d4213da1.jpg',
     audio: '/boom2/cafe.mp3'
   },
   {
@@ -17,7 +17,7 @@ const environments = [
     name: 'Airplane Cabin',
     icon: Airplane01Icon,
     description: 'Boost low-volume movies over the roar of the jet engine.',
-    image: 'https://images.unsplash.com/photo-1530521954074-e64f6810b32d?q=80&w=1920&auto=format&fit=crop',
+    image: '/images/external/img_c14b459c7824.jpg',
     audio: '/boom2/airplane.mp3'
   },
   {
@@ -25,7 +25,7 @@ const environments = [
     name: 'Living Room',
     icon: Home01Icon,
     description: 'Transform your room into a cinematic 3D surround sound theater.',
-    image: 'https://images.unsplash.com/photo-1593696140826-c58b021acf8b?q=80&w=1920&auto=format&fit=crop',
+    image: '/images/external/img_04ba70dbeaf7.jpg',
     audio: '/boom2/home.mp3'
   }
 ];

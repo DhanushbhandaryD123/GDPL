@@ -57,7 +57,7 @@ export function DetailedFeatures() {
               <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-indigo-200/50 to-violet-200/50 blur-2xl pointer-events-none" />
               <div className="relative rounded-[2rem] overflow-hidden border border-gray-100 shadow-2xl aspect-[4/5] md:h-[560px] md:aspect-auto">
                 <img
-                  src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=1000&q=80&auto=format&fit=crop"
+                  src="/images/external/img_34a0bfe686ec.jpg"
                   alt="Mixing console"
                   className="w-full h-full object-cover" width={1000} height={667} loading="lazy"
                 />

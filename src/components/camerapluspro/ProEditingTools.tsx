@@ -12,7 +12,7 @@ const AdjustScreen = () => {
   return (
     <div className="relative w-full h-full bg-black">
       <img
-        src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=600&q=80&auto=format&fit=crop"
+        src="/images/external/img_bf93d5c9f706.jpg"
         alt="Bridge — adjust preview"
         className="w-full h-full object-cover opacity-90" width={600} height={400} loading="lazy"
       />
@@ -44,7 +44,7 @@ const EffectsScreen = () => {
         {filters.map((filter, idx) => (
           <div key={idx} className="relative overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=200&q=60&auto=format&fit=crop"
+              src="/images/external/img_5c88fe4628bf.jpg"
               alt=""
               className={`w-full h-full object-cover ${filter}`} width={200} height={133} loading="lazy"
             />
@@ -107,7 +107,7 @@ export function ProEditingTools() {
               <div className="absolute inset-0 z-10 shadow-[0_25px_60px_rgba(0,0,0,0.25)] rounded-[2.5rem]">
                 <PhoneFrame>
                   <img
-                    src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=800&q=80&auto=format&fit=crop"
+                    src="/images/external/img_0b0a820afce7.jpg"
                     alt="Bridge photo"
                     className="w-full h-full object-cover" width={800} height={533} loading="lazy"
                   />

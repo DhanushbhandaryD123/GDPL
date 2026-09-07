@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { EarOff, SkipForward, Sliders, Sparkles, CheckCircle2, Volume2, ShieldCheck, Activity, FastForward } from 'lucide-react';
+import { EarOff, SkipForward, Sliders, CheckCircle2, Volume2, ShieldCheck, Activity, FastForward } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 export function AudioEnhancement() {

@@ -44,7 +44,7 @@ export function ToolkitShowcase() {
 
             <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 aspect-[4/3]">
               <img
-                src="https://images.unsplash.com/photo-1601506521937-0121a7fc2a6b?w=1400&q=80&auto=format&fit=crop"
+                src="/images/external/img_f14da96edd72.jpg"
                 alt="Vizmato editing in action"
                 className="w-full h-full object-cover" width={1400} height={933} loading="lazy"
               />

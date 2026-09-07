@@ -11,7 +11,7 @@ export function CameraPlusLumySlider() {
   // 100 is bright (brightness 1.8)
   const brightness = 0.4 + (exposure / 100) * 1.4;
 
-  const lowLightImage = "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1920&auto=format&fit=crop";
+  const lowLightImage = "/images/external/img_a2d40279a991.jpg";
 
   return (
     <section className="py-24 md:py-32 bg-white relative overflow-hidden">

@@ -6,9 +6,9 @@ export function EnhancementTools() {
   const { t } = useTranslation();
 
   const tools = [
-    { title: t('cameraplus.enhancement_tools.macro_title'), description: t('cameraplus.enhancement_tools.macro_desc'), icon: Flower2, image: 'https://images.unsplash.com/photo-1477346611705-65d1883cee1e?w=800&q=80&auto=format&fit=crop' },
-    { title: t('cameraplus.enhancement_tools.airsnap_title'), description: t('cameraplus.enhancement_tools.airsnap_desc'), icon: Camera, image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=800&auto=format&fit=crop' },
-    { title: t('cameraplus.enhancement_tools.video_title'), description: t('cameraplus.enhancement_tools.video_desc'), icon: Video, image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=800&auto=format&fit=crop' }
+    { title: t('cameraplus.enhancement_tools.macro_title'), description: t('cameraplus.enhancement_tools.macro_desc'), icon: Flower2, image: '/images/external/img_c9c06abc784b.jpg' },
+    { title: t('cameraplus.enhancement_tools.airsnap_title'), description: t('cameraplus.enhancement_tools.airsnap_desc'), icon: Camera, image: '/images/external/img_d3e3cc24643b.jpg' },
+    { title: t('cameraplus.enhancement_tools.video_title'), description: t('cameraplus.enhancement_tools.video_desc'), icon: Video, image: '/images/external/img_249780808a1b.jpg' }
   ];
 
   return (

@@ -33,7 +33,7 @@ export function BoomHero() {
         {/* Cinematic background photograph */}
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=1800&auto=format&fit=crop"
+            src="/images/external/img_c1cf1cbc1916.jpg"
             alt="Boom equalizer app immersive 3D surround sound experience"
             className="w-full h-full object-cover object-[60%_45%] opacity-90" width={1800} height={1200} loading="eager"
           />
@@ -133,7 +133,7 @@ export function BoomHero() {
               <div className="flex items-center gap-4">
                 <div className="relative w-16 h-16 md:w-[72px] md:h-[72px] rounded-xl overflow-hidden shrink-0 shadow-lg">
                   <img
-                    src="https://images.unsplash.com/photo-1483412033650-1015ddeb83d1?q=80&w=300&auto=format&fit=crop"
+                    src="/images/external/img_9fed2aad1f31.jpg"
                     alt="Now playing"
                     className="w-full h-full object-cover" width={300} height={199} loading="eager"
                   />

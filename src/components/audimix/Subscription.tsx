@@ -25,7 +25,7 @@ export function Subscription() {
     <div className="w-full max-w-[1920px] mx-auto px-2 md:px-4 pt-4 pb-8 md:pb-12 bg-white">
       <div className="relative w-full overflow-hidden rounded-3xl md:rounded-[2.5rem] bg-black text-white shadow-2xl min-h-[420px] flex items-center">
         <img
-          src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1920&q=80&auto=format&fit=crop"
+          src="/images/external/img_c1163eae0e44.jpg"
           alt="AuDimix vocal splitting and audio remixing background"
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover opacity-60" width={1920} height={1280} loading="lazy"

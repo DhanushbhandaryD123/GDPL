@@ -6,7 +6,7 @@ export function WhatsNewAudion() {
       productName="AudiOn"
       logoSrc="/apps/AudiON-android.png" 
       heroBgClass="bg-[#1A1A1A]"
-      heroBgUrl="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&q=80&w=2000"
+      heroBgUrl="/images/external/img_d46a296131a9.jpg"
       productId="audion"
       activePlatform="none"
       defaultNotes={[]}

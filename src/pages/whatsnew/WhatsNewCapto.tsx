@@ -118,7 +118,7 @@ export function WhatsNewCapto() {
       productName="Capto"
       logoSrc="/capto/Logo_Web2x_1.png" 
       heroBgClass="bg-[#0A1128]"
-      heroBgUrl="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=2000"
+      heroBgUrl="/images/external/img_1f76fafd9001.jpg"
       productId="capto"
       activePlatform={platform}
       onPlatformChange={(newPlatform) => {

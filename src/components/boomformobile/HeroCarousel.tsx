@@ -12,7 +12,7 @@ export function HeroCarousel() {
       title: t('boom_mobile.hero.s1_title'),
       highlight: t('boom_mobile.hero.s1_highlight'),
       description: t('boom_mobile.hero.s1_desc'),
-      image: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=1600&auto=format&fit=crop',
+      image: '/images/external/img_98438af44226.jpg',
       accent: 'from-pink-500 to-purple-600'
     },
     {
@@ -20,7 +20,7 @@ export function HeroCarousel() {
       title: t('boom_mobile.hero.s2_title'),
       highlight: t('boom_mobile.hero.s2_highlight'),
       description: t('boom_mobile.hero.s2_desc'),
-      image: 'https://images.unsplash.com/photo-1483412033650-1015ddeb83d1?q=80&w=1600&auto=format&fit=crop',
+      image: '/images/external/img_8b1e62927519.jpg',
       accent: 'from-cyan-400 to-blue-600'
     },
     {
@@ -28,7 +28,7 @@ export function HeroCarousel() {
       title: t('boom_mobile.hero.s3_title'),
       highlight: t('boom_mobile.hero.s3_highlight'),
       description: t('boom_mobile.hero.s3_desc'),
-      image: 'https://images.unsplash.com/photo-1526478806334-5fd488fcaabc?q=80&w=1600&auto=format&fit=crop',
+      image: '/images/external/img_b16b02524b1f.jpg',
       accent: 'from-fuchsia-500 to-indigo-600'
     }
   ];

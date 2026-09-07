@@ -13,35 +13,35 @@ export function PrimeFeatures() {
       title: t('boom_mobile.prime_features.f1_title'),
       description: t('boom_mobile.prime_features.f1_desc'),
       icon: Headphones,
-      image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1200&auto=format&fit=crop'
+      image: '/images/external/img_285caa08f682.jpg'
     },
     {
       id: 'equalizer',
       title: t('boom_mobile.prime_features.f2_title'),
       description: t('boom_mobile.prime_features.f2_desc'),
       icon: SlidersHorizontal,
-      image: 'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?q=80&w=1200&auto=format&fit=crop'
+      image: '/images/external/img_fd41c740b2d3.jpg'
     },
     {
       id: 'intensity',
       title: t('boom_mobile.prime_features.f3_title'),
       description: t('boom_mobile.prime_features.f3_desc'),
       icon: Settings2,
-      image: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=1200&auto=format&fit=crop'
+      image: '/images/external/img_b8cbf452f0b5.jpg'
     },
     {
       id: 'tidal',
       title: t('boom_mobile.prime_features.f4_title'),
       description: t('boom_mobile.prime_features.f4_desc'),
       icon: Music2,
-      image: 'https://images.unsplash.com/photo-1571330735066-03aaa9429d89?q=80&w=1200&auto=format&fit=crop'
+      image: '/images/external/img_3b329449a2a8.jpg'
     },
     {
       id: 'radio',
       title: t('boom_mobile.prime_features.f5_title'),
       description: t('boom_mobile.prime_features.f5_desc'),
       icon: Radio,
-      image: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?q=80&w=1200&auto=format&fit=crop'
+      image: '/images/external/img_1ae28e35e502.jpg'
     }
   ];
 

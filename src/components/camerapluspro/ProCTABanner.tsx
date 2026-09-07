@@ -15,7 +15,7 @@ export function ProCTABanner() {
           {/* Angled lens image bleeding off the right edge */}
           <div className="hidden md:block absolute -right-16 top-1/2 -translate-y-1/2 w-[420px] h-[420px] rotate-12 opacity-90">
             <img
-              src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=900&q=80&auto=format&fit=crop"
+              src="/images/external/img_004492d0b5a4.jpg"
               alt="Camera lens"
               className="w-full h-full object-cover rounded-[3rem] shadow-2xl" width={900} height={1125} loading="lazy"
             />

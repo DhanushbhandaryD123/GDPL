@@ -10,32 +10,32 @@ export function VideoTutorials() {
     {
       title: t('captoWindows.tutorials.t1'),
       url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', // Placeholder URLs
-      thumbnail: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800&auto=format&fit=crop',
+      thumbnail: '/images/external/img_98c91f503de5.jpg',
     },
     {
       title: t('captoWindows.tutorials.t2'),
       url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-      thumbnail: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop',
+      thumbnail: '/images/external/img_9241d14f55db.jpg',
     },
     {
       title: t('captoWindows.tutorials.t3'),
       url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-      thumbnail: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800&auto=format&fit=crop',
+      thumbnail: '/images/external/img_9f517c78ef42.jpg',
     },
     {
       title: t('captoWindows.tutorials.t4'),
       url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-      thumbnail: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=800&auto=format&fit=crop',
+      thumbnail: '/images/external/img_52712024c529.jpg',
     },
     {
       title: t('captoWindows.tutorials.t5'),
       url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-      thumbnail: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=800&auto=format&fit=crop',
+      thumbnail: '/images/external/img_529f1e2ad2ea.jpg',
     },
     {
       title: t('captoWindows.tutorials.t6'),
       url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-      thumbnail: 'https://images.unsplash.com/photo-1616469829581-73993eb86b02?q=80&w=800&auto=format&fit=crop',
+      thumbnail: '/images/external/img_4c0e8214600d.jpg',
     }
   ];
 
