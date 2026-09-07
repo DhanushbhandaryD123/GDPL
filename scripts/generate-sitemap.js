@@ -46,6 +46,70 @@ console.log(`✅ Sitemap successfully generated at public/sitemap.xml with ${rou
 
 // Write robots.txt
 const robotsPath = path.resolve(__dirname, '../public/robots.txt');
-const robotsContent = `User-agent: *\nAllow: /\nAllow: /assets/\nAllow: /images/\n\nSitemap: ${DOMAIN}/sitemap.xml\n`;
+const robotsContent = `# ================================
+# Global Delight Robots.txt
+# ================================
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-Agent: *
+
+Disallow: /m/boom/
+Disallow: /boom3d/campaign/
+Disallow: /mcfunctions/
+Disallow: /storefs/
+Disallow: /boom/boom-3d-ppc-generic/
+
+Disallow: /purchase/
+Disallow: /paddleapi
+
+Disallow: /*?from=
+Disallow: /*?utm_
+Disallow: /*&utm_
+Disallow: /*?gclid=
+Disallow: /*&gclid=
+Disallow: /*?fbclid=
+Disallow: /*&fbclid=
+Disallow: /*?reseller=
+Disallow: /*?lang
+Disallow: /*?lang=enJun
+Disallow: /*?ref=
+Disallow: /*&ref=
+Disallow: /*?wgu=
+Disallow: /*?promo=
+Disallow: /*&promo=
+Disallow: /*?c=Boom
+Disallow: /*?source_page
+Disallow: /*?source_page=
+Disallow: /*&source_page=
+Disallow: /*?cookie=true
+Disallow: /*?dv=
+Disallow: /*?item
+
+# XML Sitemap
+Allow: /
+Allow: /sitemap.xml
+Sitemap: ${DOMAIN}/sitemap.xml
+`;
 fs.writeFileSync(robotsPath, robotsContent, 'utf8');
 console.log(`✅ robots.txt successfully generated at public/robots.txt with domain ${DOMAIN}`);
+
