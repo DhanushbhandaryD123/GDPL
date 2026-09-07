@@ -16,35 +16,6 @@
     <meta name="twitter:card" content="summary_large_image" data-rh="true" />
     <meta name="robots" content="index, follow" data-rh="true" />
     <meta property="og:type" content="website" data-rh="true" />
-    <script type="application/ld+json" data-rh="true">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Global Delight",
-        "url": "https://www.globaldelight.com",
-        "logo": "/images/external/img_54825efe2640.png",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "customer service",
-          "availableLanguage": ["English"]
-        },
-        "sameAs": [
-          "https://www.facebook.com/GlobalDelight",
-          "https://twitter.com/GlobalDelight",
-          "https://www.linkedin.com/company/global-delight/",
-          "https://www.youtube.com/channel/UCLjiPwteYQLEmIzDs4xmyTw",
-          "https://www.instagram.com/globaldelight"
-        ]
-      }
-    </script>
-    <script type="application/ld+json" data-rh="true">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Global Delight",
-        "url": "https://www.globaldelight.com"
-      }
-    </script>
     <link rel="alternate" hreflang="en" href="https://www.globaldelight.com/boom2" data-rh="true" />
     <link rel="alternate" hreflang="de" href="https://www.globaldelight.com/de/boom2" data-rh="true" />
     <link rel="alternate" hreflang="it" href="https://www.globaldelight.com/it/boom2" data-rh="true" />
@@ -62,24 +33,55 @@
     <script type="application/ld+json" data-rh="true">
       {
         "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Boom 2 | Powerful Audio Enhancement for Mac",
-        "description": "Boom 2 is an award-winning pro audio enhancement app for macOS with 31-band equalizer, volume booster, audio effects, and Boom Remote — system-wide sound that fills every room.",
-        "url": "https://www.globaldelight.com/boom2",
-        "inLanguage": "es",
-        "isPartOf": { "@type": "WebSite", "name": "Global Delight", "url": "https://www.globaldelight.com" }
-      }
-    </script>
-    <script type="application/ld+json" data-rh="true">
-      {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Boom 2",
-        "operatingSystem": "Mac",
-        "applicationCategory": "MultimediaApplication",
-        "description": "Boom 2 is an award-winning pro audio enhancement app for macOS with 31-band equalizer, volume booster, audio effects, and Boom Remote — system-wide sound that fills every room.",
-        "image": "https://www.globaldelight.com/apps/Boom2-mac.jpeg",
-        "url": "https://www.globaldelight.com/boom2"
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.globaldelight.com/#organization",
+            "name": "Global Delight",
+            "url": "https://www.globaldelight.com",
+            "logo": "https://www.globaldelight.com/images/external/img_54825efe2640.png",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer service",
+              "availableLanguage": ["English"]
+            },
+            "sameAs": [
+              "https://www.facebook.com/GlobalDelight",
+              "https://twitter.com/GlobalDelight",
+              "https://www.linkedin.com/company/global-delight/",
+              "https://www.youtube.com/channel/UCLjiPwteYQLEmIzDs4xmyTw",
+              "https://www.instagram.com/globaldelight"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.globaldelight.com/#website",
+            "name": "Global Delight",
+            "url": "https://www.globaldelight.com",
+            "publisher": { "@id": "https://www.globaldelight.com/#organization" }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://www.globaldelight.com/boom2#webpage",
+            "url": "https://www.globaldelight.com/boom2",
+            "name": "Boom 2 | Powerful Audio Enhancement for Mac",
+            "description": "Boom 2 is an award-winning pro audio enhancement app for macOS with 31-band equalizer, volume booster, audio effects, and Boom Remote — system-wide sound that fills every room.",
+            "inLanguage": "es",
+            "isPartOf": { "@id": "https://www.globaldelight.com/#website" },
+            "about": { "@id": "https://www.globaldelight.com/#organization" }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://www.globaldelight.com/boom2#software",
+            "name": "Boom 2",
+            "operatingSystem": "Mac",
+            "applicationCategory": "MultimediaApplication",
+            "description": "Boom 2 is an award-winning pro audio enhancement app for macOS with 31-band equalizer, volume booster, audio effects, and Boom Remote — system-wide sound that fills every room.",
+            "image": "https://www.globaldelight.com/apps/Boom2-mac.jpeg",
+            "url": "https://www.globaldelight.com/boom2",
+            "author": { "@id": "https://www.globaldelight.com/#organization" }
+          }
+        ]
       }
     </script>
     <link rel="canonical" href="https://www.globaldelight.com/es/boom2" data-rh="true" />
@@ -151,9 +153,8 @@
     />
     <meta name="author" content="Global Delight Technologies Pvt. Ltd." />
 
-    <script type="module" crossorigin="" src="/assets/index-ff97gxSq.js"></script>
-    <link rel="stylesheet" crossorigin="" href="/assets/index-S-eCb034.css" />
-    <link rel="preconnect" href="https://fonts.cdnfonts.com" />
+    <script type="module" crossorigin="" src="/assets/index-CgcLEMq8.js"></script>
+    <link rel="stylesheet" crossorigin="" href="/assets/index-C-_bfekc.css" />
     <style id="_goober">
       @keyframes go2264125279 {
         from {
@@ -237,24 +238,23 @@
       }
     </style>
     <script src="/_vercel/insights/script.js" defer="" data-sdkn="@vercel/analytics/react" data-sdkv="1.6.1"></script>
-    <link rel="preconnect" href="https://d3jbf8nvvpx3fh.cloudfront.net" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/Boom2-ug9ByqCp.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/sliders-horizontal-C7muUFrs.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/sparkles-DIHOrVZG.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/monitor-C_ukhKWx.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/file-audio-1hxRyhoY.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/smartphone-D0sNAUp7.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/headphones-r7fs52sf.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/activity-Bx2QbM7V.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/sliders-vertical-CcGL3jLQ.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/mic-DNP8-LxZ.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/pause-BHIe3X5L.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/play-C41FlxxW.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/minus-B-PWJee7.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/plus-CUr2apzA.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/download-CHDP7HD4.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/apple-qYwKQMg5.js" />
-    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="preconnect" href="https://fonts.cdnfonts.com" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/Boom2-CsvLcLMT.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/sliders-horizontal-BV8ALUNo.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/sparkles-CNkDebkR.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/monitor-BfGLy9sY.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/file-audio-C7xcC8NI.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/smartphone-cuVrAUSa.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/headphones-CO_ZDvA1.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/activity-BOBWi_3J.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/sliders-vertical-DPBMRGtF.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/mic-BlFOCtLS.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/pause-VDnmxRdF.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/play-DMTWSdg6.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/minus-C217c0Re.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/plus-DEp9nCww.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/download-mVHxlBi_.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/apple-GePYXqpu.js" />
     <link rel="preconnect" href="https://www.youtube.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="preconnect" href="https://static.doubleclick.net" />
@@ -477,31 +477,35 @@
         </nav>
         <main>
           <div class="w-full bg-white">
-            <div class="w-full max-w-[1920px] mx-auto px-4 md:px-4 pt-2 md:pt-4 pb-8 md:pb-12">
+            <div class="w-full max-w-[1920px] mx-auto px-3 sm:px-4 md:px-4 pt-1 pb-4 md:pb-12">
               <section
-                class="relative w-full rounded-3xl md:rounded-[2.5rem] shadow-2xl py-8 md:pt-16 md:pb-32 flex items-center aspect-[4/3] sm:aspect-[16/9] md:aspect-auto md:min-h-[70vh] overflow-hidden"
+                class="relative w-full rounded-2xl sm:rounded-3xl md:rounded-[2.5rem] shadow-2xl py-8 md:pt-16 md:pb-32 flex items-center min-h-[350px] sm:min-h-[420px] md:min-h-[620px] lg:min-h-[660px] xl:min-h-[700px] overflow-hidden"
               >
-                <video loop="" playsinline="" class="absolute inset-0 w-full h-full object-cover z-0">
+                <video
+                  loop=""
+                  playsinline=""
+                  class="absolute inset-0 w-full h-full object-cover z-0 object-[75%_center] md:object-center"
+                >
                   <source src="/boom2/boom2.mp4" type="video/mp4" />
                 </video>
                 <div
-                  class="absolute inset-0 bg-gradient-to-r from-[#060814]/90 via-[#060814]/30 to-transparent pointer-events-none z-0"
+                  class="absolute inset-0 bg-gradient-to-r from-[#060814]/95 via-[#060814]/60 md:via-[#060814]/30 to-transparent pointer-events-none z-0"
                 ></div>
                 <div class="max-w-[1400px] mx-auto px-4 md:px-8 w-full relative z-10">
                   <div class="max-w-xl">
-                    <div class="flex items-center gap-3 mb-4 md:mb-8" style="opacity: 1; transform: none">
+                    <div class="flex items-center gap-2.5 md:gap-3 mb-3 md:mb-8" style="opacity: 1; transform: none">
                       <img
                         alt="Boom 2 Logo"
-                        class="w-12 md:w-20 h-auto object-contain drop-shadow-lg"
+                        class="w-10 md:w-20 h-auto object-contain drop-shadow-lg"
                         src="/boom2/Boom2-icon.png"
-                        style="transform: translateY(-8.45236px)"
+                        style="transform: translateY(-1.33873px)"
                       />
-                      <span class="text-white font-semibold text-lg md:text-xl tracking-wide drop-shadow-md">
+                      <span class="text-white font-semibold text-base md:text-xl tracking-wide drop-shadow-md">
                         Boom 2
                       </span>
                     </div>
                     <h1
-                      class="text-base sm:text-xl md:text-6xl lg:text-7xl font-bold mb-3 md:mb-6 leading-tight drop-shadow-lg text-white"
+                      class="text-xl sm:text-2xl md:text-6xl lg:text-7xl font-bold mb-2 md:mb-6 leading-tight drop-shadow-lg text-white"
                       style="opacity: 1; transform: none"
                     >
                       Tu Audio,
@@ -513,18 +517,18 @@
                       </span>
                     </h1>
                     <p
-                      class="text-gray-300 text-[11px] sm:text-sm md:text-xl mb-6 md:mb-10 leading-relaxed max-w-lg drop-shadow-md"
+                      class="text-gray-300 text-[11px] sm:text-sm md:text-xl mb-5 md:mb-10 leading-relaxed max-w-[260px] sm:max-w-md md:max-w-lg drop-shadow-md"
                       style="opacity: 1; transform: none"
                     >
                       Boom 2 es la aplicación definitiva de mejora de audio que da vida a tu música, películas y juegos
                       con potentes herramientas y un sonido 3D inmersivo.
                     </p>
                     <div
-                      class="flex flex-col sm:flex-row items-center gap-2 md:gap-4 w-full sm:w-auto"
+                      class="flex flex-row items-center gap-2 md:gap-4 w-full sm:w-auto max-w-[320px] sm:max-w-none"
                       style="opacity: 1; transform: none"
                     >
                       <button
-                        class="flex items-center justify-center gap-2 bg-white text-black px-4 py-1.5 md:px-4 md:py-3.5 rounded-full md:rounded-xl font-bold transition-all hover:bg-[#1390FB] hover:text-white hover:scale-[1.02] w-full sm:w-[210px] text-[10px] sm:text-xs md:text-[15px] tracking-wide shadow-lg group"
+                        class="flex-1 sm:flex-initial flex items-center justify-center gap-1.5 md:gap-2 bg-white text-black px-3.5 py-2 md:px-4 md:py-3.5 rounded-xl font-bold transition-all hover:bg-[#1390FB] hover:text-white hover:scale-[1.02] sm:w-[210px] text-xs md:text-[15px] tracking-wide shadow-lg group whitespace-nowrap"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -539,7 +543,7 @@
                         DESCARGAR PRUEBA
                       </button>
                       <button
-                        class="flex items-center justify-center gap-2 bg-black/40 backdrop-blur-sm border border-white/40 text-white px-4 py-1.5 md:px-4 md:py-3.5 rounded-full md:rounded-xl font-bold transition-all hover:bg-[#1390FB] hover:border-[#1390FB] w-full sm:w-[210px] text-[10px] sm:text-xs md:text-[15px] tracking-wide shadow-lg group"
+                        class="flex-1 sm:flex-initial flex items-center justify-center gap-1.5 md:gap-2 bg-black/50 backdrop-blur-md border border-white/50 text-white px-3.5 py-2 md:px-4 md:py-3.5 rounded-xl font-bold transition-all hover:bg-[#1390FB] hover:border-[#1390FB] sm:w-[210px] text-xs md:text-[15px] tracking-wide shadow-lg group whitespace-nowrap"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -560,12 +564,12 @@
             </div>
           </div>
           <div class="bg-white">
-            <div class="relative z-20 max-w-[1400px] mx-auto px-4 -mt-8 md:-mt-16">
+            <div class="relative z-20 max-w-[1400px] mx-auto px-4 mt-4 md:-mt-16">
               <div
-                class="bg-white/95 backdrop-blur-2xl border border-gray-200/60 rounded-[2.5rem] shadow-xl shadow-gray-200/50 py-6 px-6 md:px-12 flex overflow-x-auto [&amp;::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] md:flex-wrap justify-start md:justify-between items-start md:items-center gap-8 md:gap-6 snap-x snap-mandatory"
+                class="bg-white/95 backdrop-blur-2xl border border-gray-200/60 rounded-2xl md:rounded-[2.5rem] shadow-xl shadow-gray-200/50 py-5 px-4 md:py-6 md:px-12 flex overflow-x-auto [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden [-ms-overflow-style:none] md:flex-wrap justify-start md:justify-between items-start md:items-center gap-6 md:gap-6 snap-x snap-mandatory scroll-smooth"
               >
                 <div
-                  class="flex flex-col items-center text-center shrink-0 w-20 md:w-auto md:flex-1 snap-start md:snap-align-none"
+                  class="flex flex-col items-center text-center shrink-0 w-[76px] md:w-auto md:flex-1 snap-start md:snap-align-none"
                   style="opacity: 1; transform: none"
                 >
                   <svg
@@ -595,7 +599,7 @@
                   </span>
                 </div>
                 <div
-                  class="flex flex-col items-center text-center shrink-0 w-20 md:w-auto md:flex-1 snap-start md:snap-align-none"
+                  class="flex flex-col items-center text-center shrink-0 w-[76px] md:w-auto md:flex-1 snap-start md:snap-align-none"
                   style="opacity: 1; transform: none"
                 >
                   <svg
@@ -623,7 +627,7 @@
                   </span>
                 </div>
                 <div
-                  class="flex flex-col items-center text-center shrink-0 w-20 md:w-auto md:flex-1 snap-start md:snap-align-none"
+                  class="flex flex-col items-center text-center shrink-0 w-[76px] md:w-auto md:flex-1 snap-start md:snap-align-none"
                   style="opacity: 1; transform: none"
                 >
                   <svg
@@ -647,7 +651,7 @@
                   </span>
                 </div>
                 <div
-                  class="flex flex-col items-center text-center shrink-0 w-20 md:w-auto md:flex-1 snap-start md:snap-align-none"
+                  class="flex flex-col items-center text-center shrink-0 w-[76px] md:w-auto md:flex-1 snap-start md:snap-align-none"
                   style="opacity: 1; transform: none"
                 >
                   <svg
@@ -673,7 +677,7 @@
                   </span>
                 </div>
                 <div
-                  class="flex flex-col items-center text-center shrink-0 w-20 md:w-auto md:flex-1 snap-start md:snap-align-none"
+                  class="flex flex-col items-center text-center shrink-0 w-[76px] md:w-auto md:flex-1 snap-start md:snap-align-none"
                   style="opacity: 1; transform: none"
                 >
                   <svg
@@ -696,8 +700,8 @@
                   </span>
                 </div>
                 <div
-                  class="flex flex-col items-center text-center shrink-0 w-20 md:w-auto md:flex-1 snap-start md:snap-align-none"
-                  style="opacity: 1; transform: none"
+                  class="flex flex-col items-center text-center shrink-0 w-[76px] md:w-auto md:flex-1 snap-start md:snap-align-none"
+                  style="opacity: 0; transform: translateY(0.583177px)"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -720,8 +724,8 @@
                   </span>
                 </div>
                 <div
-                  class="flex flex-col items-center text-center shrink-0 w-20 md:w-auto md:flex-1 snap-start md:snap-align-none"
-                  style="opacity: 1; transform: none"
+                  class="flex flex-col items-center text-center shrink-0 w-[76px] md:w-auto md:flex-1 snap-start md:snap-align-none"
+                  style="opacity: 0; transform: translateY(5.79672px)"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -744,8 +748,8 @@
                   </span>
                 </div>
                 <div
-                  class="flex flex-col items-center text-center shrink-0 w-20 md:w-auto md:flex-1 snap-start md:snap-align-none"
-                  style="opacity: 1; transform: none"
+                  class="flex flex-col items-center text-center shrink-0 w-[76px] md:w-auto md:flex-1 snap-start md:snap-align-none"
+                  style="opacity: 0; transform: translateY(50px)"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -774,8 +778,8 @@
                   </span>
                 </div>
                 <div
-                  class="flex flex-col items-center text-center shrink-0 w-20 md:w-auto md:flex-1 snap-start md:snap-align-none"
-                  style="opacity: 1; transform: none"
+                  class="flex flex-col items-center text-center shrink-0 w-[76px] md:w-auto md:flex-1 snap-start md:snap-align-none"
+                  style="opacity: 0; transform: translateY(50px)"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -833,7 +837,7 @@
               <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div
                   class="rounded-3xl relative overflow-hidden group shadow-lg min-h-[400px]"
-                  style="opacity: 1; transform: none"
+                  style="opacity: 0; transform: translateY(100px)"
                 >
                   <div class="absolute inset-0 z-0">
                     <video
@@ -871,7 +875,7 @@
                 </div>
                 <div
                   class="rounded-3xl relative overflow-hidden group shadow-lg min-h-[400px]"
-                  style="opacity: 1; transform: none"
+                  style="opacity: 0; transform: translateY(100px)"
                 >
                   <div class="absolute inset-0 z-0 bg-black">
                     <video
@@ -909,7 +913,7 @@
                 </div>
                 <div
                   class="rounded-3xl relative overflow-hidden group shadow-lg min-h-[400px]"
-                  style="opacity: 1; transform: none"
+                  style="opacity: 0; transform: translateY(100px)"
                 >
                   <div class="absolute inset-0 z-0 bg-black">
                     <video
@@ -948,7 +952,7 @@
                 </div>
                 <div
                   class="rounded-3xl relative overflow-hidden group shadow-lg min-h-[400px]"
-                  style="opacity: 1; transform: none"
+                  style="opacity: 0; transform: translateY(100px)"
                 >
                   <div class="absolute inset-0 z-0 bg-black">
                     <video
@@ -1084,46 +1088,46 @@
                 <div class="lg:col-span-7 relative flex items-center justify-center">
                   <div class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
                     <div class="flex items-center gap-1 h-32">
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 35.697%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 84.0054%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 16.3232%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 10.7072%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 31.0351%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 63.4752%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 27.6704%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 86.7135%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 42.4263%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 81.2575%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 21.8504%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 62.4393%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 54.2798%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 14.3608%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 37.708%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 25.1122%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 22.1978%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 76.7624%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 36.4386%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 59.272%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 26.7195%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 64.7327%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 41.4338%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 43.7127%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 43.8843%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 26.4927%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 34.3171%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 60.8344%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 58.3933%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 10.9878%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 23.5435%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 63.8603%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 83.8183%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 81.2831%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 29.2389%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 22.8432%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 67.765%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 31.2815%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 44.5184%"></div>
-                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 17.2892%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 70.6277%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 26.0215%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 26.8533%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 33.5465%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 47.7807%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 54.9781%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 76.1559%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 89.2819%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 65.7256%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 17.5744%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 89.449%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 20.6176%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 12.6522%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 84.7064%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 72.3113%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 75.9124%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 86.8122%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 83.1908%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 27.8029%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 47.7125%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 51.0546%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 79.4738%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 57.5348%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 21.1052%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 56.7523%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 15.3216%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 74.1007%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 55.7323%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 70.637%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 52.8067%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 26.7943%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 34.6225%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 79.3885%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 15.9928%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 23.9202%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 42.6704%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 43.0308%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 23.879%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 19.9414%"></div>
+                      <div class="w-1.5 bg-[#4F46E5] rounded-full" style="height: 16.1539%"></div>
                     </div>
                   </div>
                   <div
@@ -1142,7 +1146,7 @@
               </div>
             </section>
             <section class="py-16 md:py-24 px-4 max-w-[1200px] mx-auto flex flex-col items-center text-center">
-              <div class="max-w-4xl mb-12" style="opacity: 1; transform: none">
+              <div class="max-w-4xl mb-12" style="opacity: 0; transform: translateY(30px)">
                 <h2
                   class="text-3xl md:text-4xl lg:text-[40px] font-bold mb-6 text-[#0a0a0f] tracking-tight leading-tight"
                 >
@@ -1158,7 +1162,7 @@
               </div>
               <div
                 class="w-full max-w-5xl relative rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-200 bg-white"
-                style="opacity: 1; transform: none"
+                style="opacity: 0; transform: translateY(40px)"
               >
                 <video loop="" playsinline="" class="w-full h-auto object-contain">
                   <source src="/boom2/AudioFileBoostBoom2.mp4" type="video/mp4" />
@@ -1179,7 +1183,7 @@
               <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div
                   class="rounded-3xl p-6 bg-[#F8F9FA] border border-gray-200 hover:border-[#4F46E5]/40 hover:shadow-lg transition-all duration-300"
-                  style="opacity: 1; transform: none"
+                  style="opacity: 0; transform: translateY(40px)"
                 >
                   <div
                     class="w-12 h-12 rounded-xl bg-[#4F46E5]/10 text-[#4F46E5] flex items-center justify-center mb-5"
@@ -1215,7 +1219,7 @@
                 </div>
                 <div
                   class="rounded-3xl p-6 bg-[#F8F9FA] border border-gray-200 hover:border-[#4F46E5]/40 hover:shadow-lg transition-all duration-300"
-                  style="opacity: 1; transform: none"
+                  style="opacity: 0; transform: translateY(40px)"
                 >
                   <div
                     class="w-12 h-12 rounded-xl bg-[#4F46E5]/10 text-[#4F46E5] flex items-center justify-center mb-5"
@@ -1245,7 +1249,7 @@
                 </div>
                 <div
                   class="rounded-3xl p-6 bg-[#F8F9FA] border border-gray-200 hover:border-[#4F46E5]/40 hover:shadow-lg transition-all duration-300"
-                  style="opacity: 1; transform: none"
+                  style="opacity: 0; transform: translateY(40px)"
                 >
                   <div
                     class="w-12 h-12 rounded-xl bg-[#4F46E5]/10 text-[#4F46E5] flex items-center justify-center mb-5"
@@ -1281,7 +1285,7 @@
                 </div>
                 <div
                   class="rounded-3xl p-6 bg-[#F8F9FA] border border-gray-200 hover:border-[#4F46E5]/40 hover:shadow-lg transition-all duration-300"
-                  style="opacity: 1; transform: none"
+                  style="opacity: 0; transform: translateY(40px)"
                 >
                   <div
                     class="w-12 h-12 rounded-xl bg-[#4F46E5]/10 text-[#4F46E5] flex items-center justify-center mb-5"
@@ -1318,13 +1322,13 @@
               <img
                 alt="Noisy Café"
                 class="absolute inset-0 w-full h-full object-cover"
-                src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&amp;w=1920&amp;auto=format&amp;fit=crop"
+                src="/images/external/img_3595d4213da1.jpg"
                 style="opacity: 0.8; transform: none"
               />
               <div class="absolute inset-0 bg-[#060814]/50"></div>
             </div>
             <div class="relative z-10 max-w-[1400px] mx-auto px-4 md:px-8 text-center flex flex-col items-center">
-              <div class="max-w-2xl mx-auto mb-10" style="opacity: 1; transform: none">
+              <div class="max-w-2xl mx-auto mb-10" style="opacity: 0; transform: translateY(30px)">
                 <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 tracking-tight">
                   Perfect Sound,
                   <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
@@ -1451,30 +1455,30 @@
                 </button>
               </div>
               <div class="mt-8 mb-4 h-12 flex items-end justify-center gap-1.5 z-20 relative">
-                <div class="w-1.5 rounded-full bg-gray-600" style="height: 5.31902px"></div>
-                <div class="w-1.5 rounded-full bg-gray-600" style="height: 0.00145993px"></div>
-                <div class="w-1.5 rounded-full bg-gray-600" style="height: 5.44763px"></div>
-                <div class="w-1.5 rounded-full bg-gray-600" style="height: 5.76938px"></div>
-                <div class="w-1.5 rounded-full bg-gray-600" style="height: 5.95642px"></div>
-                <div class="w-1.5 rounded-full bg-gray-600" style="height: 1.13384px"></div>
-                <div class="w-1.5 rounded-full bg-gray-600" style="height: 5.97676px"></div>
-                <div class="w-1.5 rounded-full bg-gray-600" style="height: 5.89649px"></div>
-                <div class="w-1.5 rounded-full bg-gray-600" style="height: 2.59461px"></div>
-                <div class="w-1.5 rounded-full bg-gray-600" style="height: 0.906384px"></div>
-                <div class="w-1.5 rounded-full bg-gray-600" style="height: 4.62536px"></div>
-                <div class="w-1.5 rounded-full bg-gray-600" style="height: 0.063824px"></div>
-                <div class="w-1.5 rounded-full bg-gray-600" style="height: 2.21926px"></div>
-                <div class="w-1.5 rounded-full bg-gray-600" style="height: 0.00534591px"></div>
-                <div class="w-1.5 rounded-full bg-gray-600" style="height: 5.94396px"></div>
-                <div class="w-1.5 rounded-full bg-gray-600" style="height: 5.53791px"></div>
-                <div class="w-1.5 rounded-full bg-gray-600" style="height: 2.75196px"></div>
-                <div class="w-1.5 rounded-full bg-gray-600" style="height: 0.512853px"></div>
-                <div class="w-1.5 rounded-full bg-gray-600" style="height: 0.0169468px"></div>
-                <div class="w-1.5 rounded-full bg-gray-600" style="height: 1.44287px"></div>
-                <div class="w-1.5 rounded-full bg-gray-600" style="height: 5.84944px"></div>
-                <div class="w-1.5 rounded-full bg-gray-600" style="height: 0.00116209px"></div>
-                <div class="w-1.5 rounded-full bg-gray-600" style="height: 4.36642px"></div>
-                <div class="w-1.5 rounded-full bg-gray-600" style="height: 0.374193px"></div>
+                <div class="w-1.5 rounded-full bg-gray-600" style="height: 2.76072px"></div>
+                <div class="w-1.5 rounded-full bg-gray-600" style="height: 3.54009px"></div>
+                <div class="w-1.5 rounded-full bg-gray-600" style="height: 3.2962px"></div>
+                <div class="w-1.5 rounded-full bg-gray-600" style="height: 0.332208px"></div>
+                <div class="w-1.5 rounded-full bg-gray-600" style="height: 0.432711px"></div>
+                <div class="w-1.5 rounded-full bg-gray-600" style="height: 3.24804px"></div>
+                <div class="w-1.5 rounded-full bg-gray-600" style="height: 1.39349px"></div>
+                <div class="w-1.5 rounded-full bg-gray-600" style="height: 5.99953px"></div>
+                <div class="w-1.5 rounded-full bg-gray-600" style="height: 0.462088px"></div>
+                <div class="w-1.5 rounded-full bg-gray-600" style="height: 4.33066px"></div>
+                <div class="w-1.5 rounded-full bg-gray-600" style="height: 0.975684px"></div>
+                <div class="w-1.5 rounded-full bg-gray-600" style="height: 3.38795px"></div>
+                <div class="w-1.5 rounded-full bg-gray-600" style="height: 2.00417px"></div>
+                <div class="w-1.5 rounded-full bg-gray-600" style="height: 0.109911px"></div>
+                <div class="w-1.5 rounded-full bg-gray-600" style="height: 1.29637px"></div>
+                <div class="w-1.5 rounded-full bg-gray-600" style="height: 0.0107646px"></div>
+                <div class="w-1.5 rounded-full bg-gray-600" style="height: 4.95316px"></div>
+                <div class="w-1.5 rounded-full bg-gray-600" style="height: 4.91866px"></div>
+                <div class="w-1.5 rounded-full bg-gray-600" style="height: 4.43728px"></div>
+                <div class="w-1.5 rounded-full bg-gray-600" style="height: 0.0116264px"></div>
+                <div class="w-1.5 rounded-full bg-gray-600" style="height: 5.10012px"></div>
+                <div class="w-1.5 rounded-full bg-gray-600" style="height: 5.6121px"></div>
+                <div class="w-1.5 rounded-full bg-gray-600" style="height: 0.0678987px"></div>
+                <div class="w-1.5 rounded-full bg-gray-600" style="height: 5.18301px"></div>
               </div>
               <div class="mt-4 min-h-[80px] md:min-h-[48px] z-20 relative px-4">
                 <p
@@ -1557,7 +1561,7 @@
                 <div
                   class="absolute top-0 bottom-0 right-0 w-16 md:w-32 bg-gradient-to-l from-[#060814] to-transparent z-10 pointer-events-none"
                 ></div>
-                <div class="flex gap-6 md:gap-8 min-w-max" style="transform: translateX(-9.22125%)">
+                <div class="flex gap-6 md:gap-8 min-w-max" style="transform: translateX(-4.70875%)">
                   <div
                     class="flex-shrink-0 w-[280px] md:w-[350px] flex flex-col bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 shadow-xl"
                   >

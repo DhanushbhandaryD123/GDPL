@@ -18,35 +18,6 @@
     <meta name="twitter:creator" content="@GlobalDelight" data-rh="true" />
     <meta name="robots" content="index, follow" data-rh="true" />
     <meta property="og:type" content="website" data-rh="true" />
-    <script type="application/ld+json" data-rh="true">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Global Delight",
-        "url": "https://www.globaldelight.com",
-        "logo": "/images/external/img_54825efe2640.png",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "customer service",
-          "availableLanguage": ["English"]
-        },
-        "sameAs": [
-          "https://www.facebook.com/GlobalDelight",
-          "https://twitter.com/GlobalDelight",
-          "https://www.linkedin.com/company/global-delight/",
-          "https://www.youtube.com/channel/UCLjiPwteYQLEmIzDs4xmyTw",
-          "https://www.instagram.com/globaldelight"
-        ]
-      }
-    </script>
-    <script type="application/ld+json" data-rh="true">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Global Delight",
-        "url": "https://www.globaldelight.com"
-      }
-    </script>
     <link rel="canonical" href="https://www.globaldelight.com/es/audion" data-rh="true" />
     <link rel="alternate" hreflang="en" href="https://www.globaldelight.com/audion" data-rh="true" />
     <link rel="alternate" hreflang="de" href="https://www.globaldelight.com/de/audion" data-rh="true" />
@@ -74,24 +45,55 @@
     <script type="application/ld+json" data-rh="true">
       {
         "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "AudiOn | Advanced Voice Recorder & Audio Editor for Mobile",
-        "description": "AudiOn is the cutting-edge voice recorder for iPhone & Android — studio-quality WAV, 200% mic boost, noise removal, teleprompter, timestamp markers, and speech-to-text transcription.",
-        "url": "https://www.globaldelight.com/audion",
-        "inLanguage": "es",
-        "isPartOf": { "@type": "WebSite", "name": "Global Delight", "url": "https://www.globaldelight.com" }
-      }
-    </script>
-    <script type="application/ld+json" data-rh="true">
-      {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "AudiOn",
-        "operatingSystem": "iOS, Android",
-        "applicationCategory": "MultimediaApplication",
-        "description": "AudiOn is the cutting-edge voice recorder for iPhone & Android — studio-quality WAV, 200% mic boost, noise removal, teleprompter, timestamp markers, and speech-to-text transcription.",
-        "image": "https://www.globaldelight.com/apps/AudiOn-ios.jpeg",
-        "url": "https://www.globaldelight.com/audion"
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.globaldelight.com/#organization",
+            "name": "Global Delight",
+            "url": "https://www.globaldelight.com",
+            "logo": "https://www.globaldelight.com/images/external/img_54825efe2640.png",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer service",
+              "availableLanguage": ["English"]
+            },
+            "sameAs": [
+              "https://www.facebook.com/GlobalDelight",
+              "https://twitter.com/GlobalDelight",
+              "https://www.linkedin.com/company/global-delight/",
+              "https://www.youtube.com/channel/UCLjiPwteYQLEmIzDs4xmyTw",
+              "https://www.instagram.com/globaldelight"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.globaldelight.com/#website",
+            "name": "Global Delight",
+            "url": "https://www.globaldelight.com",
+            "publisher": { "@id": "https://www.globaldelight.com/#organization" }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://www.globaldelight.com/audion#webpage",
+            "url": "https://www.globaldelight.com/audion",
+            "name": "AudiOn | Advanced Voice Recorder & Audio Editor for Mobile",
+            "description": "AudiOn is the cutting-edge voice recorder for iPhone & Android — studio-quality WAV, 200% mic boost, noise removal, teleprompter, timestamp markers, and speech-to-text transcription.",
+            "inLanguage": "es",
+            "isPartOf": { "@id": "https://www.globaldelight.com/#website" },
+            "about": { "@id": "https://www.globaldelight.com/#organization" }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://www.globaldelight.com/audion#software",
+            "name": "AudiOn",
+            "operatingSystem": "iOS, Android",
+            "applicationCategory": "MultimediaApplication",
+            "description": "AudiOn is the cutting-edge voice recorder for iPhone & Android — studio-quality WAV, 200% mic boost, noise removal, teleprompter, timestamp markers, and speech-to-text transcription.",
+            "image": "https://www.globaldelight.com/apps/AudiOn-ios.jpeg",
+            "url": "https://www.globaldelight.com/audion",
+            "author": { "@id": "https://www.globaldelight.com/#organization" }
+          }
+        ]
       }
     </script>
     <meta
@@ -137,9 +139,8 @@
     />
     <meta name="author" content="Global Delight Technologies Pvt. Ltd." />
 
-    <script type="module" crossorigin="" src="/assets/index-ff97gxSq.js"></script>
-    <link rel="stylesheet" crossorigin="" href="/assets/index-S-eCb034.css" />
-    <link rel="preconnect" href="https://fonts.cdnfonts.com" />
+    <script type="module" crossorigin="" src="/assets/index-CgcLEMq8.js"></script>
+    <link rel="stylesheet" crossorigin="" href="/assets/index-C-_bfekc.css" />
     <style id="_goober">
       @keyframes go2264125279 {
         from {
@@ -223,16 +224,19 @@
       }
     </style>
     <script src="/_vercel/insights/script.js" defer="" data-sdkn="@vercel/analytics/react" data-sdkv="1.6.1"></script>
-    <link rel="preconnect" href="https://d3jbf8nvvpx3fh.cloudfront.net" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/AudiOnPage-Dv3_VtSN.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/mic-vocal-Blqs1ZYD.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/settings-2-DJybA74l.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/skip-forward-eDAyZv_5.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/sliders-vertical-CcGL3jLQ.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/scissors-DR5lxQQF.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/map-pin-LriQiwIb.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/type-CQkT7xp1.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/send-CnoakP6H.js" />
+    <link rel="preconnect" href="https://fonts.cdnfonts.com" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/AudiOnPage-Bz3gs6MK.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/mic-vocal-B0VNwwnb.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/settings-2-ChMWND5c.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/skip-forward-BQkc7PFa.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/sliders-vertical-DPBMRGtF.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/circle-check-Bfr6DNSn.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/activity-BOBWi_3J.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/volume-2-CIXYcKEZ.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/scissors-BWzhnB69.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/map-pin-CMrBNCXh.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/type-DmaYoRWv.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/send-DqBsex-A.js" />
   </head>
   <body>
     <div id="root">
@@ -469,14 +473,16 @@
                       />
                     </div>
                     <h1
-                      class="text-base sm:text-xl md:text-6xl font-extrabold text-gray-900 tracking-tight leading-[1.1] mb-6"
+                      class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight leading-[1.12] mb-5"
                     >
                       Mejora tus grabaciones de audio con
-                      <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
+                      <span
+                        class="inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-fuchsia-600 to-pink-600"
+                      >
                         AudiOn
                       </span>
                     </h1>
-                    <p class="text-xs sm:text-sm md:text-xl text-gray-500 mb-10 max-w-xl leading-relaxed">
+                    <p class="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 mb-8 max-w-xl leading-relaxed">
                       La app de grabación de voz de vanguardia diseñada para profesionales, estudiantes y creadores.
                       Experimenta grabación, edición y transcripción de calidad de estudio directamente en tu bolsillo.
                     </p>
@@ -523,123 +529,123 @@
                         <div class="flex-1 w-full flex items-center justify-center gap-1">
                           <div
                             class="w-2 rounded-full bg-gradient-to-t from-purple-500 to-pink-500"
-                            style="height: 20.7861%"
+                            style="height: 76.1669%"
                           ></div>
                           <div
                             class="w-2 rounded-full bg-gradient-to-t from-purple-500 to-pink-500"
-                            style="height: 50.5493%"
+                            style="height: 68.0921%"
                           ></div>
                           <div
                             class="w-2 rounded-full bg-gradient-to-t from-purple-500 to-pink-500"
-                            style="height: 58.9517%"
+                            style="height: 20.0131%"
                           ></div>
                           <div
                             class="w-2 rounded-full bg-gradient-to-t from-purple-500 to-pink-500"
-                            style="height: 32.5597%"
+                            style="height: 22.9447%"
                           ></div>
                           <div
                             class="w-2 rounded-full bg-gradient-to-t from-purple-500 to-pink-500"
-                            style="height: 79.8655%"
+                            style="height: 21.6438%"
                           ></div>
                           <div
                             class="w-2 rounded-full bg-gradient-to-t from-purple-500 to-pink-500"
-                            style="height: 77.7665%"
+                            style="height: 24.0886%"
                           ></div>
                           <div
                             class="w-2 rounded-full bg-gradient-to-t from-purple-500 to-pink-500"
-                            style="height: 21.01%"
+                            style="height: 79.9765%"
                           ></div>
                           <div
                             class="w-2 rounded-full bg-gradient-to-t from-purple-500 to-pink-500"
-                            style="height: 30.4341%"
+                            style="height: 62.059%"
                           ></div>
                           <div
                             class="w-2 rounded-full bg-gradient-to-t from-purple-500 to-pink-500"
-                            style="height: 59.8748%"
+                            style="height: 20.0277%"
                           ></div>
                           <div
                             class="w-2 rounded-full bg-gradient-to-t from-purple-500 to-pink-500"
-                            style="height: 61.6516%"
+                            style="height: 53.0932%"
                           ></div>
                           <div
                             class="w-2 rounded-full bg-gradient-to-t from-purple-500 to-pink-500"
-                            style="height: 20.9125%"
+                            style="height: 55.4442%"
                           ></div>
                           <div
                             class="w-2 rounded-full bg-gradient-to-t from-purple-500 to-pink-500"
-                            style="height: 72.5071%"
+                            style="height: 22.9447%"
                           ></div>
                           <div
                             class="w-2 rounded-full bg-gradient-to-t from-purple-500 to-pink-500"
-                            style="height: 42.8332%"
+                            style="height: 78.6124%"
                           ></div>
                           <div
                             class="w-2 rounded-full bg-gradient-to-t from-purple-500 to-pink-500"
-                            style="height: 38.7581%"
+                            style="height: 24.9483%"
                           ></div>
                           <div
                             class="w-2 rounded-full bg-gradient-to-t from-purple-500 to-pink-500"
-                            style="height: 74.1788%"
+                            style="height: 21.5663%"
                           ></div>
                           <div
                             class="w-2 rounded-full bg-gradient-to-t from-purple-500 to-pink-500"
-                            style="height: 58.1477%"
+                            style="height: 63.1869%"
                           ></div>
                           <div
                             class="w-2 rounded-full bg-gradient-to-t from-purple-500 to-pink-500"
-                            style="height: 53.7049%"
+                            style="height: 78.8351%"
                           ></div>
                           <div
                             class="w-2 rounded-full bg-gradient-to-t from-purple-500 to-pink-500"
-                            style="height: 46.6007%"
+                            style="height: 25.8212%"
                           ></div>
                           <div
                             class="w-2 rounded-full bg-gradient-to-t from-purple-500 to-pink-500"
-                            style="height: 21.9537%"
+                            style="height: 27.8902%"
                           ></div>
                           <div
                             class="w-2 rounded-full bg-gradient-to-t from-purple-500 to-pink-500"
-                            style="height: 37.2137%"
+                            style="height: 20.1298%"
                           ></div>
                           <div
                             class="w-2 rounded-full bg-gradient-to-t from-purple-500 to-pink-500"
-                            style="height: 68.9776%"
+                            style="height: 73.8749%"
                           ></div>
                           <div
                             class="w-2 rounded-full bg-gradient-to-t from-purple-500 to-pink-500"
-                            style="height: 30.5371%"
+                            style="height: 79.695%"
                           ></div>
                           <div
                             class="w-2 rounded-full bg-gradient-to-t from-purple-500 to-pink-500"
-                            style="height: 79.3915%"
+                            style="height: 22.5685%"
                           ></div>
                           <div
                             class="w-2 rounded-full bg-gradient-to-t from-purple-500 to-pink-500"
-                            style="height: 22.9652%"
+                            style="height: 45.9897%"
                           ></div>
                           <div
                             class="w-2 rounded-full bg-gradient-to-t from-purple-500 to-pink-500"
-                            style="height: 73.3353%"
+                            style="height: 21.9877%"
                           ></div>
                           <div
                             class="w-2 rounded-full bg-gradient-to-t from-purple-500 to-pink-500"
-                            style="height: 75.697%"
+                            style="height: 79.5725%"
                           ></div>
                           <div
                             class="w-2 rounded-full bg-gradient-to-t from-purple-500 to-pink-500"
-                            style="height: 68.5201%"
+                            style="height: 73.9306%"
                           ></div>
                           <div
                             class="w-2 rounded-full bg-gradient-to-t from-purple-500 to-pink-500"
-                            style="height: 30.3314%"
+                            style="height: 26.1251%"
                           ></div>
                           <div
                             class="w-2 rounded-full bg-gradient-to-t from-purple-500 to-pink-500"
-                            style="height: 21.6126%"
+                            style="height: 24.7708%"
                           ></div>
                           <div
                             class="w-2 rounded-full bg-gradient-to-t from-purple-500 to-pink-500"
-                            style="height: 20.7972%"
+                            style="height: 33.9349%"
                           ></div>
                         </div>
                         <div
@@ -659,7 +665,9 @@
               <div class="text-center max-w-3xl mx-auto mb-16">
                 <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6" style="opacity: 1; transform: none">
                   Grabación
-                  <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
+                  <span
+                    class="inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-fuchsia-600 to-pink-600"
+                  >
                     Avanzada
                   </span>
                 </h2>
@@ -804,40 +812,55 @@
               </div>
             </div>
           </section>
-          <section class="py-16 md:py-24 bg-white overflow-hidden">
-            <div class="container mx-auto px-4 md:px-6">
-              <div class="flex flex-col lg:flex-row items-center gap-16">
-                <div class="w-full lg:w-1/2">
-                  <div
-                    class="relative aspect-square md:aspect-video lg:aspect-square rounded-[3rem] bg-gradient-to-br from-purple-500 via-[#1a1330] to-pink-600 border border-gray-100 shadow-2xl shadow-purple-200/60 overflow-hidden flex flex-col justify-center items-center p-8"
-                    style="opacity: 1; transform: none"
+          <section class="py-20 md:py-32 bg-white relative overflow-hidden border-t border-gray-100">
+            <div
+              class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-r from-purple-100/50 via-fuchsia-100/40 to-pink-100/40 rounded-full blur-[140px] pointer-events-none -z-10"
+            ></div>
+            <div class="container mx-auto px-4 sm:px-6 max-w-7xl">
+              <div class="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+                <h2
+                  class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight mb-4"
+                  style="opacity: 1; transform: none"
+                >
+                  Mejora de Audio
+                  <span
+                    class="inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-fuchsia-600 to-pink-600"
                   >
-                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                      <div
-                        class="w-[300px] h-[300px] rounded-full border border-white/20 animate-[spin_10s_linear_infinite]"
-                      ></div>
-                      <div
-                        class="absolute w-[400px] h-[400px] rounded-full border border-white/10 animate-[spin_15s_linear_infinite_reverse]"
-                      ></div>
-                    </div>
+                    Inteligente
+                  </span>
+                </h2>
+                <p
+                  class="text-base sm:text-lg text-gray-600 leading-relaxed font-normal"
+                  style="opacity: 1; transform: none"
+                >
+                  Limpia entornos ruidosos y pule tus grabaciones con herramientas de procesamiento inteligentes con un
+                  solo toque.
+                </p>
+              </div>
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center max-w-6xl mx-auto">
+                <div class="lg:col-span-5 flex flex-col gap-3.5 order-1 lg:order-1">
+                  <button
+                    class="w-full text-left p-5 sm:p-6 rounded-2xl md:rounded-3xl border transition-all duration-300 relative overflow-hidden group cursor-pointer bg-gradient-to-r from-purple-50/90 via-fuchsia-50/40 to-white border-purple-300/80 shadow-lg shadow-purple-100/70 ring-1 ring-purple-500/20"
+                  >
                     <div
-                      class="relative z-10 flex flex-col items-center text-center"
-                      style="opacity: 1; transform: none"
-                    >
+                      class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-600 to-pink-600 origin-left"
+                      style="transform: scaleX(0.87)"
+                    ></div>
+                    <div class="flex items-start gap-4">
                       <div
-                        class="w-24 h-24 rounded-full bg-white flex items-center justify-center mb-8 shadow-lg shadow-black/20"
+                        class="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 transition-colors shadow-sm bg-gradient-to-br from-purple-600 to-pink-600 text-white shadow-purple-200"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          width="48"
-                          height="48"
+                          width="22"
+                          height="22"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
-                          stroke-width="2"
+                          stroke-width="2.2"
                           stroke-linecap="round"
                           stroke-linejoin="round"
-                          class="lucide lucide-ear-off text-purple-600"
+                          class="lucide lucide-ear-off"
                         >
                           <path d="M6 18.5a3.5 3.5 0 1 0 7 0c0-1.57.92-2.52 2.04-3.46"></path>
                           <path d="M6 8.5c0-.75.13-1.47.36-2.14"></path>
@@ -846,93 +869,101 @@
                           <line x1="2" x2="22" y1="2" y2="22"></line>
                         </svg>
                       </div>
-                      <div class="w-64 h-2 bg-white/20 rounded-full overflow-hidden mb-6">
-                        <div class="h-full bg-white" style="width: 98.2112%"></div>
+                      <div class="flex-1 space-y-1">
+                        <div class="flex items-center justify-between">
+                          <span class="text-xs font-bold uppercase tracking-wider text-purple-600">
+                            Voice Isolation
+                          </span>
+                          <span
+                            class="text-[11px] font-medium text-purple-600 bg-purple-100/70 px-2 py-0.5 rounded-full"
+                          >
+                            Active
+                          </span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold transition-colors text-gray-900">
+                          Eliminación de Ruido y Aislamiento de Voz
+                        </h3>
+                        <p class="text-xs sm:text-sm text-gray-500 leading-relaxed font-normal">
+                          Elimina al instante el zumbido de fondo, el viento y las conversaciones para hacer que tu voz
+                          sea el punto focal.
+                        </p>
+                        <div
+                          class="pt-2 flex items-center gap-2 text-xs font-semibold text-purple-700"
+                          style="opacity: 1; transform: none"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="lucide lucide-circle-check text-purple-600 shrink-0"
+                          >
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="m9 12 2 2 4-4"></path>
+                          </svg>
+                          <span>Eliminates background chatter, AC hum, and traffic</span>
+                        </div>
                       </div>
-                      <p class="text-white/90 font-mono text-sm uppercase tracking-widest">Aislando perfil de voz...</p>
                     </div>
-                  </div>
-                </div>
-                <div class="w-full lg:w-1/2 flex flex-col gap-8">
-                  <div>
-                    <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6" style="opacity: 1; transform: none">
-                      Mejora de Audio
-                      <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
-                        Inteligente
-                      </span>
-                    </h2>
-                    <p class="text-lg text-gray-500 mb-8">
-                      Limpia entornos ruidosos y pule tus grabaciones con herramientas de procesamiento inteligentes con
-                      un solo toque.
-                    </p>
-                  </div>
-                  <div class="flex flex-col gap-4">
-                    <button
-                      class="flex flex-col text-left p-6 rounded-2xl border transition-all duration-300 bg-white border-purple-200 shadow-lg shadow-purple-100"
-                    >
-                      <h3 class="text-xl font-bold mb-2 flex items-center gap-3 text-gray-900">
+                  </button>
+                  <button
+                    class="w-full text-left p-5 sm:p-6 rounded-2xl md:rounded-3xl border transition-all duration-300 relative overflow-hidden group cursor-pointer bg-gray-50/70 hover:bg-gray-100/80 border-gray-200/70 text-gray-600"
+                  >
+                    <div class="flex items-start gap-4">
+                      <div
+                        class="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 transition-colors shadow-sm bg-white text-gray-500 border border-gray-200/80 group-hover:text-purple-600"
+                      >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
+                          width="22"
+                          height="22"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
-                          stroke-width="2"
+                          stroke-width="2.2"
                           stroke-linecap="round"
                           stroke-linejoin="round"
-                          class="lucide lucide-ear-off text-purple-500"
-                        >
-                          <path d="M6 18.5a3.5 3.5 0 1 0 7 0c0-1.57.92-2.52 2.04-3.46"></path>
-                          <path d="M6 8.5c0-.75.13-1.47.36-2.14"></path>
-                          <path d="M8.8 3.15A6.5 6.5 0 0 1 19 8.5c0 1.63-.44 2.81-1.09 3.76"></path>
-                          <path d="M12.5 6A2.5 2.5 0 0 1 15 8.5M10 13a2 2 0 0 0 1.82-1.18"></path>
-                          <line x1="2" x2="22" y1="2" y2="22"></line>
-                        </svg>
-                        Eliminación de Ruido y Aislamiento de Voz
-                      </h3>
-                      <p class="text-gray-500 mt-2 ml-9 leading-relaxed" style="opacity: 1; height: auto">
-                        Elimina al instante el zumbido de fondo, el viento y las conversaciones para hacer que tu voz
-                        sea el punto focal.
-                      </p>
-                    </button>
-                    <button
-                      class="flex flex-col text-left p-6 rounded-2xl border transition-all duration-300 bg-transparent border-gray-100 hover:border-gray-200 hover:bg-gray-50"
-                    >
-                      <h3 class="text-xl font-bold mb-2 flex items-center gap-3 text-gray-500">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          class="lucide lucide-skip-forward text-gray-400"
+                          class="lucide lucide-skip-forward"
                         >
                           <polygon points="5 4 15 12 5 20 5 4"></polygon>
                           <line x1="19" x2="19" y1="5" y2="19"></line>
                         </svg>
-                        Saltar Silencio
-                      </h3>
-                    </button>
-                    <button
-                      class="flex flex-col text-left p-6 rounded-2xl border transition-all duration-300 bg-transparent border-gray-100 hover:border-gray-200 hover:bg-gray-50"
-                    >
-                      <h3 class="text-xl font-bold mb-2 flex items-center gap-3 text-gray-500">
+                      </div>
+                      <div class="flex-1 space-y-1">
+                        <div class="flex items-center justify-between">
+                          <span class="text-xs font-bold uppercase tracking-wider text-gray-400">Smart Trim</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold transition-colors text-gray-700">Saltar Silencio</h3>
+                        <p class="text-xs sm:text-sm text-gray-500 leading-relaxed font-normal">
+                          Detecta y salta automáticamente las pausas silenciosas para ahorrar tiempo al revisar
+                          grabaciones largas.
+                        </p>
+                      </div>
+                    </div>
+                  </button>
+                  <button
+                    class="w-full text-left p-5 sm:p-6 rounded-2xl md:rounded-3xl border transition-all duration-300 relative overflow-hidden group cursor-pointer bg-gray-50/70 hover:bg-gray-100/80 border-gray-200/70 text-gray-600"
+                  >
+                    <div class="flex items-start gap-4">
+                      <div
+                        class="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 transition-colors shadow-sm bg-white text-gray-500 border border-gray-200/80 group-hover:text-purple-600"
+                      >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
+                          width="22"
+                          height="22"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
-                          stroke-width="2"
+                          stroke-width="2.2"
                           stroke-linecap="round"
                           stroke-linejoin="round"
-                          class="lucide lucide-sliders-vertical text-gray-400"
+                          class="lucide lucide-sliders-vertical"
                         >
                           <line x1="4" x2="4" y1="21" y2="14"></line>
                           <line x1="4" x2="4" y1="10" y2="3"></line>
@@ -944,9 +975,270 @@
                           <line x1="10" x2="14" y1="8" y2="8"></line>
                           <line x1="18" x2="22" y1="16" y2="16"></line>
                         </svg>
-                        Reverberación y EQ Profesional
-                      </h3>
-                    </button>
+                      </div>
+                      <div class="flex-1 space-y-1">
+                        <div class="flex items-center justify-between">
+                          <span class="text-xs font-bold uppercase tracking-wider text-gray-400">
+                            Studio EQ &amp; Reverb
+                          </span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold transition-colors text-gray-700">
+                          Reverberación y EQ Profesional
+                        </h3>
+                        <p class="text-xs sm:text-sm text-gray-500 leading-relaxed font-normal">
+                          Aplica efectos de reverberación de sala profesional y ajusta frecuencias usando nuestro
+                          ecualizador de 6 bandas.
+                        </p>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+                <div class="lg:col-span-7 order-2 lg:order-2">
+                  <div
+                    class="relative rounded-3xl md:rounded-[2.5rem] bg-gradient-to-b from-[#18122B] via-[#120D22] to-[#0A0716] border border-white/10 shadow-2xl shadow-purple-950/40 p-6 sm:p-8 md:p-10 text-white overflow-hidden"
+                  >
+                    <div
+                      class="absolute top-0 right-0 w-64 h-64 bg-purple-600/15 rounded-full blur-3xl pointer-events-none"
+                    ></div>
+                    <div
+                      class="absolute bottom-0 left-0 w-64 h-64 bg-pink-600/15 rounded-full blur-3xl pointer-events-none"
+                    ></div>
+                    <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-6 relative z-10">
+                      <div class="flex items-center gap-2.5">
+                        <div
+                          class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse shadow-sm shadow-emerald-400/50"
+                        ></div>
+                        <span class="text-xs font-mono uppercase tracking-widest text-gray-300">
+                          AudiOn DSP Engine v4.2
+                        </span>
+                      </div>
+                      <div
+                        class="px-3 py-1 rounded-full bg-white/10 border border-white/15 text-xs font-semibold text-purple-200 backdrop-blur-md"
+                      >
+                        -28 dB Ambient Noise
+                      </div>
+                    </div>
+                    <div class="space-y-6 relative z-10" style="opacity: 1; transform: none">
+                      <div class="p-4 rounded-2xl bg-white/[0.04] border border-white/5 space-y-2">
+                        <div class="flex items-center justify-between text-xs text-gray-400 font-medium">
+                          <span class="flex items-center gap-1.5">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="13"
+                              height="13"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              class="lucide lucide-activity text-amber-400"
+                            >
+                              <path
+                                d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"
+                              ></path>
+                            </svg>
+                            Raw Recording (Ambient Hum &amp; Chatter)
+                          </span>
+                          <span class="text-amber-400/90 font-mono">+6.2 dB Noise</span>
+                        </div>
+                        <div class="h-10 flex items-center justify-between gap-1 overflow-hidden">
+                          <span class="w-1 rounded-full bg-amber-400/40" style="height: 20.3243%"></span>
+                          <span class="w-1 rounded-full bg-amber-400/40" style="height: 60.8094%"></span>
+                          <span class="w-1 rounded-full bg-amber-400/40" style="height: 74.9393%"></span>
+                          <span class="w-1 rounded-full bg-amber-400/40" style="height: 13.6974%"></span>
+                          <span class="w-1 rounded-full bg-amber-400/40" style="height: 51.377%"></span>
+                          <span class="w-1 rounded-full bg-amber-400/40" style="height: 35.5675%"></span>
+                          <span class="w-1 rounded-full bg-amber-400/40" style="height: 42.0988%"></span>
+                          <span class="w-1 rounded-full bg-amber-400/40" style="height: 79.3475%"></span>
+                          <span class="w-1 rounded-full bg-amber-400/40" style="height: 36.5265%"></span>
+                          <span class="w-1 rounded-full bg-amber-400/40" style="height: 32.4487%"></span>
+                          <span class="w-1 rounded-full bg-amber-400/40" style="height: 48.2702%"></span>
+                          <span class="w-1 rounded-full bg-amber-400/40" style="height: 32.7435%"></span>
+                          <span class="w-1 rounded-full bg-amber-400/40" style="height: 66.1229%"></span>
+                          <span class="w-1 rounded-full bg-amber-400/40" style="height: 40.1792%"></span>
+                          <span class="w-1 rounded-full bg-amber-400/40" style="height: 29.7446%"></span>
+                          <span class="w-1 rounded-full bg-amber-400/40" style="height: 46.7459%"></span>
+                          <span class="w-1 rounded-full bg-amber-400/40" style="height: 37.4212%"></span>
+                          <span class="w-1 rounded-full bg-amber-400/40" style="height: 68.7678%"></span>
+                          <span class="w-1 rounded-full bg-amber-400/40" style="height: 41.0923%"></span>
+                          <span class="w-1 rounded-full bg-amber-400/40" style="height: 33.5303%"></span>
+                          <span class="w-1 rounded-full bg-amber-400/40" style="height: 43.1891%"></span>
+                          <span class="w-1 rounded-full bg-amber-400/40" style="height: 42.0988%"></span>
+                          <span class="w-1 rounded-full bg-amber-400/40" style="height: 61.7147%"></span>
+                          <span class="w-1 rounded-full bg-amber-400/40" style="height: 43.3753%"></span>
+                          <span class="w-1 rounded-full bg-amber-400/40" style="height: 32.4487%"></span>
+                          <span class="w-1 rounded-full bg-amber-400/40" style="height: 20.3243%"></span>
+                          <span class="w-1 rounded-full bg-amber-400/40" style="height: 79.52%"></span>
+                          <span class="w-1 rounded-full bg-amber-400/40" style="height: 66.1229%"></span>
+                          <span class="w-1 rounded-full bg-amber-400/40" style="height: 22.8291%"></span>
+                          <span class="w-1 rounded-full bg-amber-400/40" style="height: 48.673%"></span>
+                        </div>
+                      </div>
+                      <div
+                        class="p-5 rounded-2xl bg-gradient-to-r from-purple-900/30 via-fuchsia-900/20 to-pink-900/30 border border-purple-500/30 space-y-2.5 shadow-inner"
+                      >
+                        <div class="flex items-center justify-between text-xs text-purple-200 font-medium">
+                          <span class="flex items-center gap-1.5 text-white font-semibold">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="14"
+                              height="14"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              class="lucide lucide-shield-check text-emerald-400"
+                            >
+                              <path
+                                d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+                              ></path>
+                              <path d="m9 12 2 2 4-4"></path>
+                            </svg>
+                            Isolated Voice Output (Clean Vocal Profile)
+                          </span>
+                          <span class="text-emerald-400 font-mono font-bold">100% Speech Clarity</span>
+                        </div>
+                        <div class="h-14 flex items-center justify-between gap-1 overflow-hidden">
+                          <span
+                            class="w-1.5 rounded-full bg-gradient-to-t from-purple-500 via-fuchsia-400 to-pink-400 shadow-sm shadow-purple-500/50"
+                            style="height: 17.2382%"
+                          ></span>
+                          <span
+                            class="w-1.5 rounded-full bg-gradient-to-t from-purple-500 via-fuchsia-400 to-pink-400 shadow-sm shadow-purple-500/50"
+                            style="height: 16.4705%"
+                          ></span>
+                          <span
+                            class="w-1.5 rounded-full bg-gradient-to-t from-purple-500 via-fuchsia-400 to-pink-400 shadow-sm shadow-purple-500/50"
+                            style="height: 33.673%"
+                          ></span>
+                          <span
+                            class="w-1.5 rounded-full bg-gradient-to-t from-purple-500 via-fuchsia-400 to-pink-400 shadow-sm shadow-purple-500/50"
+                            style="height: 72.5744%"
+                          ></span>
+                          <span
+                            class="w-1.5 rounded-full bg-gradient-to-t from-purple-500 via-fuchsia-400 to-pink-400 shadow-sm shadow-purple-500/50"
+                            style="height: 78.685%"
+                          ></span>
+                          <span
+                            class="w-1.5 rounded-full bg-gradient-to-t from-purple-500 via-fuchsia-400 to-pink-400 shadow-sm shadow-purple-500/50"
+                            style="height: 48.0369%"
+                          ></span>
+                          <span
+                            class="w-1.5 rounded-full bg-gradient-to-t from-purple-500 via-fuchsia-400 to-pink-400 shadow-sm shadow-purple-500/50"
+                            style="height: 17.2382%"
+                          ></span>
+                          <span
+                            class="w-1.5 rounded-full bg-gradient-to-t from-purple-500 via-fuchsia-400 to-pink-400 shadow-sm shadow-purple-500/50"
+                            style="height: 3.66012%"
+                          ></span>
+                          <span
+                            class="w-1.5 rounded-full bg-gradient-to-t from-purple-500 via-fuchsia-400 to-pink-400 shadow-sm shadow-purple-500/50"
+                            style="height: 29.1833%"
+                          ></span>
+                          <span
+                            class="w-1.5 rounded-full bg-gradient-to-t from-purple-500 via-fuchsia-400 to-pink-400 shadow-sm shadow-purple-500/50"
+                            style="height: 68.7547%"
+                          ></span>
+                          <span
+                            class="w-1.5 rounded-full bg-gradient-to-t from-purple-500 via-fuchsia-400 to-pink-400 shadow-sm shadow-purple-500/50"
+                            style="height: 98.3562%"
+                          ></span>
+                          <span
+                            class="w-1.5 rounded-full bg-gradient-to-t from-purple-500 via-fuchsia-400 to-pink-400 shadow-sm shadow-purple-500/50"
+                            style="height: 81.6628%"
+                          ></span>
+                          <span
+                            class="w-1.5 rounded-full bg-gradient-to-t from-purple-500 via-fuchsia-400 to-pink-400 shadow-sm shadow-purple-500/50"
+                            style="height: 51.7147%"
+                          ></span>
+                          <span
+                            class="w-1.5 rounded-full bg-gradient-to-t from-purple-500 via-fuchsia-400 to-pink-400 shadow-sm shadow-purple-500/50"
+                            style="height: 9.1503%"
+                          ></span>
+                          <span
+                            class="w-1.5 rounded-full bg-gradient-to-t from-purple-500 via-fuchsia-400 to-pink-400 shadow-sm shadow-purple-500/50"
+                            style="height: 6.7346%"
+                          ></span>
+                          <span
+                            class="w-1.5 rounded-full bg-gradient-to-t from-purple-500 via-fuchsia-400 to-pink-400 shadow-sm shadow-purple-500/50"
+                            style="height: 53.4758%"
+                          ></span>
+                          <span
+                            class="w-1.5 rounded-full bg-gradient-to-t from-purple-500 via-fuchsia-400 to-pink-400 shadow-sm shadow-purple-500/50"
+                            style="height: 93.4384%"
+                          ></span>
+                          <span
+                            class="w-1.5 rounded-full bg-gradient-to-t from-purple-500 via-fuchsia-400 to-pink-400 shadow-sm shadow-purple-500/50"
+                            style="height: 81.6628%"
+                          ></span>
+                          <span
+                            class="w-1.5 rounded-full bg-gradient-to-t from-purple-500 via-fuchsia-400 to-pink-400 shadow-sm shadow-purple-500/50"
+                            style="height: 34.4765%"
+                          ></span>
+                          <span
+                            class="w-1.5 rounded-full bg-gradient-to-t from-purple-500 via-fuchsia-400 to-pink-400 shadow-sm shadow-purple-500/50"
+                            style="height: 5.49018%"
+                          ></span>
+                          <span
+                            class="w-1.5 rounded-full bg-gradient-to-t from-purple-500 via-fuchsia-400 to-pink-400 shadow-sm shadow-purple-500/50"
+                            style="height: 35.9179%"
+                          ></span>
+                          <span
+                            class="w-1.5 rounded-full bg-gradient-to-t from-purple-500 via-fuchsia-400 to-pink-400 shadow-sm shadow-purple-500/50"
+                            style="height: 76.3941%"
+                          ></span>
+                          <span
+                            class="w-1.5 rounded-full bg-gradient-to-t from-purple-500 via-fuchsia-400 to-pink-400 shadow-sm shadow-purple-500/50"
+                            style="height: 88.5206%"
+                          ></span>
+                          <span
+                            class="w-1.5 rounded-full bg-gradient-to-t from-purple-500 via-fuchsia-400 to-pink-400 shadow-sm shadow-purple-500/50"
+                            style="height: 62.448%"
+                          ></span>
+                          <span
+                            class="w-1.5 rounded-full bg-gradient-to-t from-purple-500 via-fuchsia-400 to-pink-400 shadow-sm shadow-purple-500/50"
+                            style="height: 25.8573%"
+                          ></span>
+                          <span
+                            class="w-1.5 rounded-full bg-gradient-to-t from-purple-500 via-fuchsia-400 to-pink-400 shadow-sm shadow-purple-500/50"
+                            style="height: 5.49018%"
+                          ></span>
+                          <span
+                            class="w-1.5 rounded-full bg-gradient-to-t from-purple-500 via-fuchsia-400 to-pink-400 shadow-sm shadow-purple-500/50"
+                            style="height: 26.9384%"
+                          ></span>
+                          <span
+                            class="w-1.5 rounded-full bg-gradient-to-t from-purple-500 via-fuchsia-400 to-pink-400 shadow-sm shadow-purple-500/50"
+                            style="height: 68.7547%"
+                          ></span>
+                          <span
+                            class="w-1.5 rounded-full bg-gradient-to-t from-purple-500 via-fuchsia-400 to-pink-400 shadow-sm shadow-purple-500/50"
+                            style="height: 73.7672%"
+                          ></span>
+                          <span
+                            class="w-1.5 rounded-full bg-gradient-to-t from-purple-500 via-fuchsia-400 to-pink-400 shadow-sm shadow-purple-500/50"
+                            style="height: 28.8222%"
+                          ></span>
+                        </div>
+                      </div>
+                      <div class="grid grid-cols-3 gap-3 text-center text-xs font-mono">
+                        <div class="p-2.5 rounded-xl bg-white/5 border border-white/10">
+                          <p class="text-gray-400">Noise Cut</p>
+                          <p class="font-bold text-white text-sm mt-0.5">-28.4 dB</p>
+                        </div>
+                        <div class="p-2.5 rounded-xl bg-white/5 border border-white/10">
+                          <p class="text-gray-400">Latency</p>
+                          <p class="font-bold text-emerald-400 text-sm mt-0.5">&lt; 1.2 ms</p>
+                        </div>
+                        <div class="p-2.5 rounded-xl bg-white/5 border border-white/10">
+                          <p class="text-gray-400">Voice Gate</p>
+                          <p class="font-bold text-purple-300 text-sm mt-0.5">Adaptive</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -964,9 +1256,14 @@
             ></div>
             <div class="container mx-auto px-4 md:px-6 relative z-10">
               <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6" style="opacity: 1; transform: none">
+                <h2
+                  class="text-3xl md:text-5xl font-bold text-gray-900 mb-6"
+                  style="opacity: 0; transform: translateY(20px)"
+                >
                   Potente Flujo de Trabajo
-                  <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
+                  <span
+                    class="inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-fuchsia-600 to-pink-600"
+                  >
                     Posterior a la Grabación
                   </span>
                 </h2>
@@ -978,7 +1275,7 @@
               <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 <div
                   class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
-                  style="opacity: 1; transform: none"
+                  style="opacity: 0; transform: translateY(30px)"
                 >
                   <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-8 bg-purple-50">
                     <svg
@@ -1008,7 +1305,7 @@
                 </div>
                 <div
                   class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
-                  style="opacity: 1; transform: none"
+                  style="opacity: 0; transform: translateY(30px)"
                 >
                   <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-8 bg-pink-50">
                     <svg
@@ -1037,7 +1334,7 @@
                 </div>
                 <div
                   class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
-                  style="opacity: 1; transform: none"
+                  style="opacity: 0; transform: translateY(30px)"
                 >
                   <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-8 bg-fuchsia-50">
                     <svg
@@ -1075,7 +1372,7 @@
             <div class="container mx-auto px-4 md:px-6 relative z-10">
               <div
                 class="max-w-2xl mx-auto bg-white/90 backdrop-blur-xl border border-gray-100 rounded-3xl p-8 md:p-12 text-center shadow-2xl shadow-purple-100"
-                style="opacity: 1; transform: none"
+                style="opacity: 0; transform: translateY(30px)"
               >
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                   Mantente

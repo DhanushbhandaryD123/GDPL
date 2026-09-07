@@ -45,54 +45,56 @@
     <script type="application/ld+json" data-rh="true">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Global Delight",
-        "url": "https://www.globaldelight.com",
-        "logo": "/images/external/img_54825efe2640.png",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "customer service",
-          "availableLanguage": ["English"]
-        },
-        "sameAs": [
-          "https://www.facebook.com/GlobalDelight",
-          "https://twitter.com/GlobalDelight",
-          "https://www.linkedin.com/company/global-delight/",
-          "https://www.youtube.com/channel/UCLjiPwteYQLEmIzDs4xmyTw",
-          "https://www.instagram.com/globaldelight"
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.globaldelight.com/#organization",
+            "name": "Global Delight",
+            "url": "https://www.globaldelight.com",
+            "logo": "https://www.globaldelight.com/images/external/img_54825efe2640.png",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer service",
+              "availableLanguage": ["English"]
+            },
+            "sameAs": [
+              "https://www.facebook.com/GlobalDelight",
+              "https://twitter.com/GlobalDelight",
+              "https://www.linkedin.com/company/global-delight/",
+              "https://www.youtube.com/channel/UCLjiPwteYQLEmIzDs4xmyTw",
+              "https://www.instagram.com/globaldelight"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.globaldelight.com/#website",
+            "name": "Global Delight",
+            "url": "https://www.globaldelight.com",
+            "publisher": { "@id": "https://www.globaldelight.com/#organization" }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://www.globaldelight.com/capto#webpage",
+            "url": "https://www.globaldelight.com/capto",
+            "name": "Capto | Screenshots, Screen Recording & Video Editing for Mac",
+            "description": "Capto makes visual storytelling effortless on Mac — capture fullscreen or selected areas, record at 60 FPS with dual audio, edit images/video, and share to YouTube, Dropbox, Evernote in one click.",
+            "inLanguage": "fr",
+            "isPartOf": { "@id": "https://www.globaldelight.com/#website" },
+            "about": { "@id": "https://www.globaldelight.com/#organization" }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://www.globaldelight.com/capto#software",
+            "name": "Capto",
+            "operatingSystem": "Mac",
+            "applicationCategory": "MultimediaApplication",
+            "description": "Capto makes visual storytelling effortless on Mac — capture fullscreen or selected areas, record at 60 FPS with dual audio, edit images/video, and share to YouTube, Dropbox, Evernote in one click.",
+            "image": "https://www.globaldelight.com/apps/Capto-mac.jpeg",
+            "url": "https://www.globaldelight.com/capto",
+            "author": { "@id": "https://www.globaldelight.com/#organization" },
+            "offers": { "@type": "Offer", "price": "749.50", "priceCurrency": "INR" }
+          }
         ]
-      }
-    </script>
-    <script type="application/ld+json" data-rh="true">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Global Delight",
-        "url": "https://www.globaldelight.com"
-      }
-    </script>
-    <script type="application/ld+json" data-rh="true">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Capto | Screenshots, Screen Recording & Video Editing for Mac",
-        "description": "Capto makes visual storytelling effortless on Mac — capture fullscreen or selected areas, record at 60 FPS with dual audio, edit images/video, and share to YouTube, Dropbox, Evernote in one click.",
-        "url": "https://www.globaldelight.com/capto",
-        "inLanguage": "fr",
-        "isPartOf": { "@type": "WebSite", "name": "Global Delight", "url": "https://www.globaldelight.com" }
-      }
-    </script>
-    <script type="application/ld+json" data-rh="true">
-      {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Capto",
-        "operatingSystem": "Mac",
-        "applicationCategory": "MultimediaApplication",
-        "description": "Capto makes visual storytelling effortless on Mac — capture fullscreen or selected areas, record at 60 FPS with dual audio, edit images/video, and share to YouTube, Dropbox, Evernote in one click.",
-        "image": "https://www.globaldelight.com/apps/Capto-mac.jpeg",
-        "url": "https://www.globaldelight.com/capto",
-        "offers": { "@type": "Offer", "price": "749.50", "priceCurrency": "INR" }
       }
     </script>
     <meta
@@ -150,90 +152,9 @@
     />
     <meta name="author" content="Global Delight Technologies Pvt. Ltd." />
 
-    <script type="module" crossorigin="" src="/assets/index-ff97gxSq.js"></script>
-    <link rel="stylesheet" crossorigin="" href="/assets/index-S-eCb034.css" />
-    <link rel="preconnect" href="https://fonts.cdnfonts.com" />
+    <script type="module" crossorigin="" src="/assets/index-CgcLEMq8.js"></script>
+    <link rel="stylesheet" crossorigin="" href="/assets/index-C-_bfekc.css" />
     <style id="_goober">
-      @keyframes go2264125279 {
-        from {
-          transform: scale(0) rotate(45deg);
-          opacity: 0;
-        }
-        to {
-          transform: scale(1) rotate(45deg);
-          opacity: 1;
-        }
-      }
-      @keyframes go3020080000 {
-        from {
-          transform: scale(0);
-          opacity: 0;
-        }
-        to {
-          transform: scale(1);
-          opacity: 1;
-        }
-      }
-      @keyframes go463499852 {
-        from {
-          transform: scale(0) rotate(90deg);
-          opacity: 0;
-        }
-        to {
-          transform: scale(1) rotate(90deg);
-          opacity: 1;
-        }
-      }
-      @keyframes go1268368563 {
-        from {
-          transform: rotate(0deg);
-        }
-        to {
-          transform: rotate(360deg);
-        }
-      }
-      @keyframes go1310225428 {
-        from {
-          transform: scale(0) rotate(45deg);
-          opacity: 0;
-        }
-        to {
-          transform: scale(1) rotate(45deg);
-          opacity: 1;
-        }
-      }
-      @keyframes go651618207 {
-        0% {
-          height: 0;
-          width: 0;
-          opacity: 0;
-        }
-        40% {
-          height: 0;
-          width: 6px;
-          opacity: 1;
-        }
-        100% {
-          opacity: 1;
-          height: 10px;
-        }
-      }
-      @keyframes go901347462 {
-        from {
-          transform: scale(0.6);
-          opacity: 0.4;
-        }
-        to {
-          transform: scale(1);
-          opacity: 1;
-        }
-      }
-      .go4109123758 {
-        z-index: 9999;
-      }
-      .go4109123758 > * {
-        pointer-events: auto;
-      }
       @keyframes go2264125279 {
         from {
           transform: scale(0) rotate(45deg);
@@ -316,19 +237,18 @@
       }
     </style>
     <script src="/_vercel/insights/script.js" defer="" data-sdkn="@vercel/analytics/react" data-sdkv="1.6.1"></script>
-    <link rel="preconnect" href="https://d3jbf8nvvpx3fh.cloudfront.net" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/Capto-CbSomxNh.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/monitor-play-D6KjlTpA.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/video-CzaRCcLT.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/film-gbSJOglL.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/image-pqC56eug.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/mic-DNP8-LxZ.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/smartphone-D0sNAUp7.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/share-2-wtXTZ1LD.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/CaptoFooterCTA-DdHZbU3-.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/palette-Ca12HBUm.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/arrow-up-right-C00wFXep.js" />
-    <link rel="preconnect" href="https://upload.wikimedia.org" />
+    <link rel="preconnect" href="https://fonts.cdnfonts.com" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/Capto-bC04H21x.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/monitor-play-CBuirlTh.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/video-M8WkJ0r4.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/film-adpADg0m.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/image-CJ7R-4Mh.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/mic-BlFOCtLS.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/smartphone-cuVrAUSa.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/share-2-CAhwYS8u.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/CaptoFooterCTA-J_DmpGqu.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/palette-DausvHJN.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/arrow-up-right-vGexsyz4.js" />
   </head>
   <body>
     <div id="root">
@@ -543,7 +463,7 @@
         </nav>
         <main class="relative">
           <section class="relative px-4 pt-2 pb-8 md:px-0 md:pt-8 md:pb-16 overflow-hidden bg-[#ffffff]">
-            <div class="absolute top-[20%] left-[45%] opacity-30 pointer-events-none">
+            <div class="hidden lg:block absolute top-[20%] left-[45%] opacity-30 pointer-events-none">
               <div
                 class="w-32 h-32"
                 style="
@@ -553,26 +473,28 @@
               ></div>
             </div>
             <div class="container mx-auto px-6 relative z-10 max-w-[1300px]">
-              <div class="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-4">
+              <div class="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-6">
                 <div
-                  class="flex-1 w-full max-w-[600px] text-center lg:text-left lg:pt-10"
+                  class="flex-1 w-full max-w-[600px] text-center lg:text-left lg:pt-6"
                   style="opacity: 1; transform: none"
                 >
-                  <div class="flex items-center gap-3 mb-6 mx-auto lg:mx-0 justify-center lg:justify-start">
-                    <div class="relative w-16 h-16 md:w-20 md:h-20 overflow-hidden flex-shrink-0">
+                  <div
+                    class="flex items-center gap-2.5 md:gap-3 mb-4 md:mb-6 mx-auto lg:mx-0 justify-center lg:justify-start"
+                  >
+                    <div class="relative w-14 h-14 md:w-20 md:h-20 overflow-hidden flex-shrink-0">
                       <img
                         alt="Capto Icon"
-                        class="absolute top-0 left-0 h-16 md:h-20 w-auto max-w-none object-left object-cover drop-shadow-sm"
+                        class="absolute top-0 left-0 h-14 md:h-20 w-auto max-w-none object-left object-cover drop-shadow-sm"
                         width="273"
                         height="100"
                         loading="eager"
                         src="/capto/Logo_Web2x_1.png"
                       />
                     </div>
-                    <span class="text-[2.25rem] md:text-[3rem] font-bold tracking-tight text-[#1c2331]">Capto</span>
+                    <span class="text-[2rem] md:text-[3rem] font-bold tracking-tight text-[#1c2331]">Capto</span>
                   </div>
                   <h1
-                    class="text-[2rem] sm:text-[2.5rem] md:text-[2.75rem] lg:text-[3.25rem] font-bold tracking-tight leading-[1.15] mb-6 text-[#1c2331]"
+                    class="text-[1.85rem] sm:text-[2.25rem] md:text-[2.75rem] lg:text-[3.25rem] font-bold tracking-tight leading-[1.15] mb-4 md:mb-6 text-[#1c2331]"
                   >
                     <span class="text-[#6554ff]">Captures d'Écran, Enregistrement</span>
                     <br />
@@ -581,24 +503,34 @@
                     <br />
                     Édition d'Images.
                   </h1>
-                  <p class="text-[15px] sm:text-lg md:text-xl text-[#2d3748] font-bold mb-10">
+                  <p
+                    class="text-[14px] sm:text-lg md:text-xl text-[#2d3748] font-bold mb-6 md:mb-8 max-w-[480px] mx-auto lg:mx-0"
+                  >
                     Capto Rend la Narration Visuelle Simple.
                   </p>
-                  <div class="flex flex-row items-center justify-center lg:justify-start gap-3 sm:gap-5 mb-5 w-full">
+                  <div
+                    class="flex flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 mb-4 md:mb-5 w-full"
+                  >
                     <a
-                      href="#"
-                      class="flex-1 sm:flex-none sm:w-auto px-2 py-2.5 md:px-8 md:py-3.5 bg-[#6953ff] hover:bg-[#5b48df] text-white rounded-[2rem] font-bold text-[11px] sm:text-xs md:text-[15px] flex items-center justify-center gap-1.5 sm:gap-2.5 transition-all shadow-lg shadow-indigo-500/30"
+                      href="https://apps.apple.com/app/capto-screen-capture-record/id1073206334"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center transition-transform hover:scale-105 active:scale-95 flex-shrink-0"
                     >
-                      <svg class="w-[14px] h-[14px] sm:w-[18px] sm:h-[18px] fill-current" viewBox="0 0 384 512">
-                        <path
-                          d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"
-                        ></path>
-                      </svg>
-                      Télécharger l'Essai
+                      <img
+                        alt="Download on the Mac App Store"
+                        class="h-10 sm:h-11 md:h-12 w-auto object-contain drop-shadow-md"
+                        width="306"
+                        height="91"
+                        loading="eager"
+                        src="/button/AppStore.png"
+                      />
                     </a>
                     <a
-                      href="#"
-                      class="flex-1 sm:flex-none sm:w-auto px-2 py-2.5 md:px-8 md:py-3.5 bg-white border border-gray-200 hover:bg-gray-50 text-gray-800 rounded-[2rem] font-bold text-[11px] sm:text-xs md:text-[15px] flex items-center justify-center gap-1.5 sm:gap-2.5 transition-all shadow-sm"
+                      href="https://www.globaldelight.com/capto/buy.php"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="h-10 sm:h-11 md:h-12 px-4 sm:px-6 md:px-7 bg-white hover:bg-gray-50 text-[#1c2331] border border-gray-300 hover:border-gray-400 rounded-lg font-bold text-xs sm:text-sm md:text-[15px] flex items-center justify-center gap-2 transition-all shadow-sm hover:shadow active:scale-95 flex-shrink-0"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -610,7 +542,7 @@
                         stroke-width="2.5"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        class="lucide lucide-shopping-cart w-[14px] h-[14px] sm:w-[18px] sm:h-[18px]"
+                        class="lucide lucide-shopping-cart w-4 h-4 sm:w-[18px] sm:h-[18px] text-[#6554ff]"
                       >
                         <circle cx="8" cy="21" r="1"></circle>
                         <circle cx="19" cy="21" r="1"></circle>
@@ -618,11 +550,15 @@
                           d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
                         ></path>
                       </svg>
-                      Acheter Maintenant
+                      <span>Acheter Maintenant</span>
                     </a>
                   </div>
-                  <p class="text-[13px] text-gray-500 font-medium mb-3">Pour macOS 10.14 et ultérieur</p>
-                  <p class="text-[12px] text-gray-400 font-medium leading-relaxed max-w-[420px] mx-auto lg:mx-0">
+                  <p class="text-[12px] sm:text-[13px] text-gray-500 font-medium mb-1.5 sm:mb-2">
+                    Pour macOS 10.14 et ultérieur
+                  </p>
+                  <p
+                    class="text-[11px] sm:text-[12px] text-gray-400 font-medium leading-relaxed max-w-[420px] mx-auto lg:mx-0 mb-8 lg:mb-0"
+                  >
                     *Pour continuer à utiliser Capto après l'essai de 15 jours, achetez la version premium sur notre
                     boutique.
                   </p>
@@ -631,30 +567,29 @@
                   class="flex-1 w-full max-w-[700px] relative flex flex-col items-center"
                   style="opacity: 1; transform: none"
                 >
-                  <div
-                    class="relative rounded-3xl md:rounded-none aspect-[4/3] sm:aspect-[16/9] md:aspect-auto overflow-hidden md:overflow-visible bg-black md:bg-transparent w-full"
-                  >
+                  <div class="relative w-full flex justify-center">
                     <img
                       alt="Capto Interface"
-                      class="w-full h-full md:h-auto absolute inset-0 md:static object-cover md:object-contain"
+                      class="w-full max-w-[650px] h-auto object-contain drop-shadow-xl"
                       width="1672"
                       height="941"
                       loading="eager"
                       src="/capto/c-hero.webp"
                     />
                   </div>
-                  <div class="mt-4 flex justify-center lg:ml-20">
+                  <div class="mt-4 flex flex-wrap items-center justify-center gap-2.5">
+                    <span class="text-xs text-gray-400 font-medium">Also available for Windows:</span>
                     <a
-                      href="#"
-                      class="inline-block hover:opacity-80 transition-opacity bg-white px-2 py-1 rounded-lg border border-gray-100 shadow-sm"
+                      href="/capto/windows"
+                      class="inline-flex items-center transition-transform hover:scale-105 active:scale-95"
                     >
                       <img
                         alt="Get it from Microsoft Store"
-                        class="h-8"
-                        width="864"
-                        height="312"
+                        class="h-8 md:h-10 w-auto object-contain drop-shadow-md"
+                        width="161"
+                        height="44"
                         loading="eager"
-                        src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Get_it_from_Microsoft_Badge.svg"
+                        src="/button/en-us dark.svg"
                       />
                     </a>
                   </div>
@@ -703,7 +638,7 @@
                       <div
                         class="bg-[#f8f8fb] rounded-xl md:rounded-xl px-4 md:px-5 py-3 md:py-3.5 text-[#1c2331] font-extrabold text-xl md:text-2xl lg:text-[1.7rem] shadow-[0_2px_10px_rgba(0,0,0,0.04)] w-[58px] md:w-[68px] lg:w-[72px] border border-gray-200/50 tabular-nums"
                       >
-                        46
+                        55
                       </div>
                       <div class="text-[9px] md:text-[10px] text-gray-500 mt-2 font-bold tracking-[0.12em]">
                         SECONDES
@@ -737,7 +672,7 @@
                 <div class="text-center max-w-3xl mx-auto mb-16">
                   <h2
                     class="text-3xl md:text-[2.5rem] font-bold text-white leading-tight mb-8"
-                    style="opacity: 1; transform: none"
+                    style="opacity: 0; transform: translateY(20px)"
                   >
                     Débloquez des
                     <span class="text-white drop-shadow-sm">fonctionnalités puissantes</span>
@@ -745,36 +680,44 @@
                     <br class="hidden md:block" />
                     une création de contenu fluide sur toutes les plateformes.
                   </h2>
-                  <div class="flex flex-wrap justify-center items-center gap-6" style="opacity: 1; transform: none">
+                  <div
+                    class="flex flex-wrap justify-center items-center gap-3 sm:gap-5"
+                    style="opacity: 0; transform: translateY(20px)"
+                  >
                     <div
-                      class="bg-white border border-gray-100 shadow-sm rounded-xl px-5 py-3 hover:shadow-md transition-shadow cursor-pointer flex items-center justify-center"
+                      class="h-11 sm:h-12 px-5 bg-white border border-gray-100 shadow-sm rounded-xl hover:shadow-md transition-shadow cursor-pointer flex items-center justify-center"
                     >
-                      <span class="font-bold text-gray-800 text-lg flex items-center gap-2">
-                        <span class="text-pink-500 font-black text-2xl">❖</span>
+                      <span class="font-bold text-gray-800 text-base sm:text-lg flex items-center gap-2">
+                        <span class="text-pink-500 font-black text-xl sm:text-2xl">❖</span>
                         Setapp
                       </span>
                     </div>
-                    <a href="#" class="inline-block hover:opacity-80 transition-opacity">
+                    <a
+                      href="https://apps.apple.com/app/capto-screen-capture-record/id1073206334"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center transition-transform hover:scale-105 active:scale-95"
+                    >
                       <img
                         alt="Download on the Mac App Store"
-                        class="h-[52px]"
-                        width="135"
-                        height="40"
+                        class="h-11 sm:h-12 w-auto object-contain drop-shadow-md"
+                        width="306"
+                        height="91"
                         loading="lazy"
-                        src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
+                        src="/button/AppStore.png"
                       />
                     </a>
                     <a
-                      href="#"
-                      class="inline-block hover:opacity-80 transition-opacity bg-white px-3 py-1.5 rounded-[14px] border border-gray-100 shadow-sm"
+                      href="/capto/windows"
+                      class="inline-flex items-center transition-transform hover:scale-105 active:scale-95"
                     >
                       <img
                         alt="Get it from Microsoft Store"
-                        class="h-[38px]"
-                        width="864"
-                        height="312"
+                        class="h-11 sm:h-12 w-auto object-contain drop-shadow-md"
+                        width="161"
+                        height="44"
                         loading="lazy"
-                        src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Get_it_from_Microsoft_Badge.svg"
+                        src="/button/en-us dark.svg"
                       />
                     </a>
                   </div>
@@ -782,7 +725,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
                   <div
                     class="flex flex-col group bg-white rounded-[2rem] p-6 pb-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
-                    style="opacity: 1; transform: none"
+                    style="opacity: 0; transform: translateY(20px)"
                   >
                     <div
                       class="relative mb-10 rounded-2xl flex items-center justify-center bg-gray-50 aspect-[1.3] w-full p-2 border border-gray-100"
@@ -829,7 +772,7 @@
                   </div>
                   <div
                     class="flex flex-col group bg-white rounded-[2rem] p-6 pb-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
-                    style="opacity: 1; transform: none"
+                    style="opacity: 0; transform: translateY(20px)"
                   >
                     <div
                       class="relative mb-10 rounded-2xl flex items-center justify-center bg-gray-50 aspect-[1.3] w-full p-2 border border-gray-100"
@@ -872,7 +815,7 @@
                   </div>
                   <div
                     class="flex flex-col group bg-white rounded-[2rem] p-6 pb-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
-                    style="opacity: 1; transform: none"
+                    style="opacity: 0; transform: translateY(20px)"
                   >
                     <div
                       class="relative mb-10 rounded-2xl flex items-center justify-center bg-gray-50 aspect-[1.3] w-full p-2 border border-gray-100"
@@ -921,7 +864,7 @@
                   </div>
                   <div
                     class="flex flex-col group bg-white rounded-[2rem] p-6 pb-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
-                    style="opacity: 1; transform: none"
+                    style="opacity: 0; transform: translateY(20px)"
                   >
                     <div
                       class="relative mb-10 rounded-2xl flex items-center justify-center bg-gray-50 aspect-[1.3] w-full p-2 border border-gray-100"
@@ -966,7 +909,7 @@
                   </div>
                   <div
                     class="flex flex-col group bg-white rounded-[2rem] p-6 pb-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
-                    style="opacity: 1; transform: none"
+                    style="opacity: 0; transform: translateY(20px)"
                   >
                     <div
                       class="relative mb-10 rounded-2xl flex items-center justify-center bg-gray-50 aspect-[1.3] w-full p-2 border border-gray-100"
@@ -1010,7 +953,7 @@
                   </div>
                   <div
                     class="flex flex-col group bg-white rounded-[2rem] p-6 pb-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
-                    style="opacity: 1; transform: none"
+                    style="opacity: 0; transform: translateY(20px)"
                   >
                     <div
                       class="relative mb-10 rounded-2xl flex items-center justify-center bg-gray-50 aspect-[1.3] w-full p-2 border border-gray-100"
@@ -1053,7 +996,7 @@
                   </div>
                   <div
                     class="flex flex-col group bg-white rounded-[2rem] p-6 pb-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
-                    style="opacity: 1; transform: none"
+                    style="opacity: 0; transform: translateY(20px)"
                   >
                     <div
                       class="relative mb-10 rounded-2xl flex items-center justify-center bg-gray-50 aspect-[1.3] w-full p-2 border border-gray-100"
@@ -1095,7 +1038,7 @@
                   </div>
                   <div
                     class="flex flex-col group bg-white rounded-[2rem] p-6 pb-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
-                    style="opacity: 1; transform: none"
+                    style="opacity: 0; transform: translateY(20px)"
                   >
                     <div
                       class="relative mb-10 rounded-2xl flex items-center justify-center bg-gray-50 aspect-[1.3] w-full p-2 border border-gray-100"
@@ -1140,7 +1083,7 @@
                   </div>
                   <div
                     class="flex flex-col group bg-white rounded-[2rem] p-6 pb-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
-                    style="opacity: 1; transform: none"
+                    style="opacity: 0; transform: translateY(20px)"
                   >
                     <div
                       class="relative mb-10 rounded-2xl flex items-center justify-center bg-gray-50 aspect-[1.3] w-full p-2 border border-gray-100"
@@ -1211,17 +1154,256 @@
                   Découvrez comment Capto transforme votre flux de travail quotidien, quoi que vous fassiez.
                 </p>
               </div>
-              <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+              <div class="lg:hidden flex flex-col gap-5">
+                <div
+                  class="flex items-center gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden px-1"
+                >
+                  <button
+                    class="flex items-center gap-2 px-3.5 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all duration-300 bg-[#6554ff] text-white shadow-md shadow-indigo-500/25 scale-[1.03]"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-graduation-cap"
+                    >
+                      <path
+                        d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"
+                      ></path>
+                      <path d="M22 10v6"></path>
+                      <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
+                    </svg>
+                    <span>Éducateurs</span>
+                  </button>
+                  <button
+                    class="flex items-center gap-2 px-3.5 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all duration-300 bg-white text-gray-700 border border-gray-200/80 hover:bg-gray-50"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-book-open"
+                    >
+                      <path d="M12 7v14"></path>
+                      <path
+                        d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"
+                      ></path>
+                    </svg>
+                    <span>Étudiants</span>
+                  </button>
+                  <button
+                    class="flex items-center gap-2 px-3.5 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all duration-300 bg-white text-gray-700 border border-gray-200/80 hover:bg-gray-50"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-palette"
+                    >
+                      <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
+                      <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
+                      <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
+                      <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
+                      <path
+                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"
+                      ></path>
+                    </svg>
+                    <span>Créatifs</span>
+                  </button>
+                  <button
+                    class="flex items-center gap-2 px-3.5 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all duration-300 bg-white text-gray-700 border border-gray-200/80 hover:bg-gray-50"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-share2"
+                    >
+                      <circle cx="18" cy="5" r="3"></circle>
+                      <circle cx="6" cy="12" r="3"></circle>
+                      <circle cx="18" cy="19" r="3"></circle>
+                      <line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line>
+                      <line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line>
+                    </svg>
+                    <span>Usage Quotidien</span>
+                  </button>
+                </div>
+                <div
+                  class="relative rounded-3xl bg-white p-4 sm:p-6 shadow-xl border border-gray-100 overflow-hidden"
+                  style="opacity: 1; transform: none"
+                >
+                  <div
+                    class="relative rounded-2xl overflow-hidden border border-gray-100 shadow-sm mb-5 aspect-[16/10] bg-gray-50 flex items-center justify-center"
+                    style="transform: translateY(-0.0664349px)"
+                  >
+                    <img
+                      alt="Capto for Éducateurs"
+                      class="w-full h-full object-cover object-top"
+                      width="1536"
+                      height="1024"
+                      loading="lazy"
+                      src="/capto/s2.webp"
+                    />
+                    <div
+                      class="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-[#6554ff] shadow-sm flex items-center gap-1.5 border border-white/60"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="13"
+                        height="13"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-graduation-cap"
+                      >
+                        <path
+                          d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"
+                        ></path>
+                        <path d="M22 10v6"></path>
+                        <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
+                      </svg>
+                      <span>Enseignement et Formation</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-2.5 mb-2">
+                    <div class="p-2 rounded-lg bg-[#6554ff]/10 text-[#6554ff]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-graduation-cap"
+                      >
+                        <path
+                          d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"
+                        ></path>
+                        <path d="M22 10v6"></path>
+                        <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
+                      </svg>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-[#1c2331]">Pour Éducateurs</h3>
+                  </div>
+                  <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 font-normal">
+                    Créez des tutoriels vidéo engageants et de haute qualité ainsi que des supports pédagogiques.
+                    Ajoutez des annotations, mettez en évidence les mouvements du curseur et enregistrez votre voix
+                    simultanément pour créer la leçon en ligne parfaite pour vos élèves.
+                  </p>
+                  <div class="flex flex-col gap-2 mb-4">
+                    <div
+                      class="flex items-center gap-2.5 text-xs sm:text-sm text-gray-700 bg-gray-50/80 rounded-xl p-2.5 border border-gray-100/90"
+                    >
+                      <div
+                        class="shrink-0 w-4 h-4 rounded-full bg-[#6554ff] flex items-center justify-center text-white text-[9px] font-bold"
+                      >
+                        ✓
+                      </div>
+                      <span class="font-medium">Enregistrez des leçons narrées en une seule prise</span>
+                    </div>
+                    <div
+                      class="flex items-center gap-2.5 text-xs sm:text-sm text-gray-700 bg-gray-50/80 rounded-xl p-2.5 border border-gray-100/90"
+                    >
+                      <div
+                        class="shrink-0 w-4 h-4 rounded-full bg-[#6554ff] flex items-center justify-center text-white text-[9px] font-bold"
+                      >
+                        ✓
+                      </div>
+                      <span class="font-medium">Insérez instantanément des légendes et sous-titres</span>
+                    </div>
+                    <div
+                      class="flex items-center gap-2.5 text-xs sm:text-sm text-gray-700 bg-gray-50/80 rounded-xl p-2.5 border border-gray-100/90"
+                    >
+                      <div
+                        class="shrink-0 w-4 h-4 rounded-full bg-[#6554ff] flex items-center justify-center text-white text-[9px] font-bold"
+                      >
+                        ✓
+                      </div>
+                      <span class="font-medium">Exportez directement vers votre LMS</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-between pt-2 border-t border-gray-100/80">
+                    <a
+                      href="#"
+                      class="inline-flex items-center gap-1 text-[#6554ff] font-bold text-xs sm:text-sm hover:gap-1.5 transition-all"
+                    >
+                      Découvrez ce que Capto peut faire d'autre
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-arrow-up-right"
+                      >
+                        <path d="M7 7h10v10"></path>
+                        <path d="M7 17 17 7"></path>
+                      </svg>
+                    </a>
+                    <div class="flex items-center gap-1.5">
+                      <button
+                        class="h-1.5 rounded-full transition-all duration-300 w-5 bg-[#6554ff]"
+                        aria-label="Go to Éducateurs"
+                      ></button>
+                      <button
+                        class="h-1.5 rounded-full transition-all duration-300 w-1.5 bg-gray-200 hover:bg-gray-300"
+                        aria-label="Go to Étudiants"
+                      ></button>
+                      <button
+                        class="h-1.5 rounded-full transition-all duration-300 w-1.5 bg-gray-200 hover:bg-gray-300"
+                        aria-label="Go to Créatifs"
+                      ></button>
+                      <button
+                        class="h-1.5 rounded-full transition-all duration-300 w-1.5 bg-gray-200 hover:bg-gray-300"
+                        aria-label="Go to Usage Quotidien"
+                      ></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="hidden lg:grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
                 <div
                   class="lg:col-span-4 flex lg:flex-col gap-3 overflow-x-auto lg:overflow-visible pb-2 lg:pb-0 -mx-4 px-4 lg:mx-0 lg:px-0"
                 >
                   <button
-                    class="relative shrink-0 w-[260px] lg:w-full text-left rounded-2xl p-5 transition-all duration-300 overflow-hidden group bg-white/60 border border-gray-100 hover:bg-white hover:shadow-md"
+                    class="relative shrink-0 w-[260px] lg:w-full text-left rounded-2xl p-5 transition-all duration-300 overflow-hidden group bg-white shadow-xl shadow-indigo-100 border border-transparent"
                   >
                     <div class="flex items-start gap-4">
-                      <div
-                        class="shrink-0 p-2.5 rounded-xl transition-colors duration-300 bg-gray-100 text-gray-500 group-hover:text-[#6554ff]"
-                      >
+                      <div class="shrink-0 p-2.5 rounded-xl transition-colors duration-300 bg-[#6554ff] text-white">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="20"
@@ -1242,9 +1424,12 @@
                         </svg>
                       </div>
                       <div class="min-w-0">
-                        <h3 class="font-bold text-[15px] mb-0.5 text-gray-600">Pour Éducateurs</h3>
-                        <p class="text-xs font-medium text-gray-400">Enseignement et Formation</p>
+                        <h3 class="font-bold text-[15px] mb-0.5 text-[#1c2331]">Pour Éducateurs</h3>
+                        <p class="text-xs font-medium text-[#6554ff]">Enseignement et Formation</p>
                       </div>
+                    </div>
+                    <div class="mt-4 h-[3px] w-full bg-gray-100 rounded-full overflow-hidden">
+                      <div class="h-full bg-[#6554ff] rounded-full" style="width: 69.4167%"></div>
                     </div>
                   </button>
                   <button
@@ -1279,10 +1464,12 @@
                     </div>
                   </button>
                   <button
-                    class="relative shrink-0 w-[260px] lg:w-full text-left rounded-2xl p-5 transition-all duration-300 overflow-hidden group bg-white shadow-xl shadow-indigo-100 border border-transparent"
+                    class="relative shrink-0 w-[260px] lg:w-full text-left rounded-2xl p-5 transition-all duration-300 overflow-hidden group bg-white/60 border border-gray-100 hover:bg-white hover:shadow-md"
                   >
                     <div class="flex items-start gap-4">
-                      <div class="shrink-0 p-2.5 rounded-xl transition-colors duration-300 bg-[#6554ff] text-white">
+                      <div
+                        class="shrink-0 p-2.5 rounded-xl transition-colors duration-300 bg-gray-100 text-gray-500 group-hover:text-[#6554ff]"
+                      >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="20"
@@ -1305,12 +1492,9 @@
                         </svg>
                       </div>
                       <div class="min-w-0">
-                        <h3 class="font-bold text-[15px] mb-0.5 text-[#1c2331]">Pour Créatifs</h3>
-                        <p class="text-xs font-medium text-[#6554ff]">Design et Production</p>
+                        <h3 class="font-bold text-[15px] mb-0.5 text-gray-600">Pour Créatifs</h3>
+                        <p class="text-xs font-medium text-gray-400">Design et Production</p>
                       </div>
-                    </div>
-                    <div class="mt-4 h-[3px] w-full bg-gray-100 rounded-full overflow-hidden">
-                      <div class="h-full bg-[#6554ff] rounded-full" style="width: 25.15%"></div>
                     </div>
                   </button>
                   <button
@@ -1354,12 +1538,12 @@
                       <div class="p-3 md:p-4 pb-0">
                         <div class="rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
                           <img
-                            alt="Capto for Créatifs"
+                            alt="Capto for Éducateurs"
                             class="w-full h-auto object-cover object-top max-h-[340px]"
                             width="1536"
                             height="1024"
                             loading="lazy"
-                            src="/capto/s5.webp"
+                            src="/capto/s2.webp"
                           />
                         </div>
                       </div>
@@ -1376,23 +1560,21 @@
                               stroke-width="2.5"
                               stroke-linecap="round"
                               stroke-linejoin="round"
-                              class="lucide lucide-palette"
+                              class="lucide lucide-graduation-cap"
                             >
-                              <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
-                              <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
-                              <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
-                              <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
                               <path
-                                d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"
+                                d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"
                               ></path>
+                              <path d="M22 10v6"></path>
+                              <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
                             </svg>
                           </div>
-                          <h3 class="text-2xl md:text-3xl font-bold text-[#1c2331]">Pour Créatifs</h3>
+                          <h3 class="text-2xl md:text-3xl font-bold text-[#1c2331]">Pour Éducateurs</h3>
                         </div>
                         <p class="text-gray-500 text-[15px] md:text-base leading-relaxed mb-7 max-w-2xl">
-                          Présentez vos designs, enregistrez votre processus créatif ou fournissez des retours visuels
-                          aux clients. Une capture au pixel près et une boîte à outils complète de correction des
-                          couleurs rendent la sortie professionnelle sans effort.
+                          Créez des tutoriels vidéo engageants et de haute qualité ainsi que des supports pédagogiques.
+                          Ajoutez des annotations, mettez en évidence les mouvements du curseur et enregistrez votre
+                          voix simultanément pour créer la leçon en ligne parfaite pour vos élèves.
                         </p>
                         <ul class="grid sm:grid-cols-3 gap-3">
                           <li
@@ -1403,7 +1585,7 @@
                             >
                               ✓
                             </div>
-                            Captures au pixel près, prêtes pour la Retina
+                            Enregistrez des leçons narrées en une seule prise
                           </li>
                           <li
                             class="flex items-start gap-2.5 text-gray-700 font-medium text-[13.5px] bg-gray-50 rounded-xl p-3 border border-gray-100"
@@ -1413,7 +1595,7 @@
                             >
                               ✓
                             </div>
-                            Correction des couleurs et effets intégrés
+                            Insérez instantanément des légendes et sous-titres
                           </li>
                           <li
                             class="flex items-start gap-2.5 text-gray-700 font-medium text-[13.5px] bg-gray-50 rounded-xl p-3 border border-gray-100"
@@ -1423,7 +1605,7 @@
                             >
                               ✓
                             </div>
-                            Exportez dans tous les formats dont vous avez besoin
+                            Exportez directement vers votre LMS
                           </li>
                         </ul>
                         <a
@@ -1507,7 +1689,7 @@
                     alt="Partner Logo 1"
                     class="max-h-[60px] max-w-full object-contain transition-opacity duration-500"
                     loading="lazy"
-                    src="/capto/education/AlFaisal.png"
+                    src="/capto/education/University-of-Denver.png"
                   />
                 </div>
                 <div class="w-[140px] flex items-center justify-center shrink-0">
@@ -1515,7 +1697,7 @@
                     alt="Partner Logo 2"
                     class="max-h-[60px] max-w-full object-contain transition-opacity duration-500"
                     loading="lazy"
-                    src="/capto/education/Cornell-University.png"
+                    src="/capto/education/University-of-Miami.png"
                   />
                 </div>
                 <div class="w-[140px] flex items-center justify-center shrink-0">
@@ -1523,7 +1705,7 @@
                     alt="Partner Logo 3"
                     class="max-h-[60px] max-w-full object-contain transition-opacity duration-500"
                     loading="lazy"
-                    src="/capto/education/DukeUniversity.png"
+                    src="/capto/education/University-of-Minnesota.png"
                   />
                 </div>
                 <div class="w-[140px] flex items-center justify-center shrink-0">
@@ -1531,7 +1713,7 @@
                     alt="Partner Logo 4"
                     class="max-h-[60px] max-w-full object-contain transition-opacity duration-500"
                     loading="lazy"
-                    src="/capto/education/Ecole-Polytechnique.png"
+                    src="/capto/education/University-of-New-Hampshire.png"
                   />
                 </div>
                 <div class="w-[140px] flex items-center justify-center shrink-0">
@@ -1539,7 +1721,7 @@
                     alt="Partner Logo 5"
                     class="max-h-[60px] max-w-full object-contain transition-opacity duration-500"
                     loading="lazy"
-                    src="/capto/education/Frankfurt.png"
+                    src="/capto/education/University-of-Pittsburgh.png"
                   />
                 </div>
                 <div class="w-[140px] flex items-center justify-center shrink-0">
@@ -1547,7 +1729,7 @@
                     alt="Partner Logo 6"
                     class="max-h-[60px] max-w-full object-contain transition-opacity duration-500"
                     loading="lazy"
-                    src="/capto/education/Harvard-Business-School.png"
+                    src="/capto/education/VERITAS.png"
                   />
                 </div>
                 <div class="w-[140px] flex items-center justify-center shrink-0">
@@ -1555,7 +1737,7 @@
                     alt="Partner Logo 7"
                     class="max-h-[60px] max-w-full object-contain transition-opacity duration-500"
                     loading="lazy"
-                    src="/capto/education/Harvard.png"
+                    src="/capto/education/Virginia-Military-Institute.png"
                   />
                 </div>
                 <div class="w-[140px] flex items-center justify-center shrink-0">
@@ -1563,36 +1745,20 @@
                     alt="Partner Logo 8"
                     class="max-h-[60px] max-w-full object-contain transition-opacity duration-500"
                     loading="lazy"
-                    src="/capto/education/LifeUniversity.png"
-                  />
-                </div>
-                <div class="w-[140px] flex items-center justify-center shrink-0">
-                  <img
-                    alt="Partner Logo 9"
-                    class="max-h-[60px] max-w-full object-contain transition-opacity duration-500"
-                    loading="lazy"
-                    src="/capto/education/Massachusetts-Institute-of-Technology.png"
-                  />
-                </div>
-                <div class="w-[140px] flex items-center justify-center shrink-0">
-                  <img
-                    alt="Partner Logo 10"
-                    class="max-h-[60px] max-w-full object-contain transition-opacity duration-500"
-                    loading="lazy"
-                    src="/capto/education/Michigan-State-University.png"
+                    src="/capto/education/_Ateneo-de-Manila-University.png"
                   />
                 </div>
               </div>
               <div class="flex justify-center gap-2 mb-16 min-h-[8px]">
-                <button class="w-2 h-2 rounded-full transition-colors bg-[#6554ff]" aria-label="Go to page 1"></button>
+                <button
+                  class="w-2 h-2 rounded-full transition-colors bg-gray-200 hover:bg-gray-300"
+                  aria-label="Go to page 1"
+                ></button>
                 <button
                   class="w-2 h-2 rounded-full transition-colors bg-gray-200 hover:bg-gray-300"
                   aria-label="Go to page 2"
                 ></button>
-                <button
-                  class="w-2 h-2 rounded-full transition-colors bg-gray-200 hover:bg-gray-300"
-                  aria-label="Go to page 3"
-                ></button>
+                <button class="w-2 h-2 rounded-full transition-colors bg-[#6554ff]" aria-label="Go to page 3"></button>
               </div>
               <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
                 <a
@@ -1609,22 +1775,68 @@
                 </a>
               </div>
               <div
-                class="flex flex-col md:flex-row items-center justify-between text-left gap-6 border-t border-gray-100 pt-8 mt-8"
+                class="w-full max-w-[1000px] mx-auto mt-6 p-5 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl bg-gradient-to-r from-gray-50/90 via-[#6554ff]/[0.03] to-indigo-50/60 border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow"
               >
-                <p class="text-[10px] md:text-[11px] text-gray-500 max-w-[450px] leading-relaxed font-medium">
-                  Capto est entièrement localisé et peut être utilisé en espagnol, français, allemand, japonais,
-                  portugais et chinois simplifié.
-                </p>
-                <a href="#" class="shrink-0 hover:opacity-80 transition-opacity">
-                  <img
-                    alt="Download on the Mac App Store"
-                    class="h-[36px]"
-                    width="135"
-                    height="40"
-                    loading="lazy"
-                    src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
-                  />
-                </a>
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-left">
+                  <div class="flex items-center sm:items-start gap-4 sm:gap-5 w-full md:w-auto">
+                    <div class="relative w-12 h-12 sm:w-14 sm:h-14 shrink-0">
+                      <img
+                        alt="Capto for Mac"
+                        class="w-full h-full rounded-2xl object-cover shadow-sm border border-gray-100/90"
+                        width="56"
+                        height="56"
+                        loading="lazy"
+                        src="/apps/Capto-mac.jpeg"
+                      />
+                    </div>
+                    <div class="space-y-1.5 flex-1">
+                      <div class="flex flex-wrap items-center gap-2">
+                        <span
+                          class="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#6554ff] bg-[#6554ff]/10 px-2.5 py-0.5 rounded-full"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="w-3.5 h-3.5"
+                          >
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                            <path d="M2 12h20"></path>
+                          </svg>
+                          Global Localization
+                        </span>
+                        <span class="text-[11px] sm:text-xs text-gray-400 font-medium">6 Languages Supported</span>
+                      </div>
+                      <p class="text-xs sm:text-sm text-gray-600 font-medium leading-relaxed max-w-xl">
+                        Capto est entièrement localisé et peut être utilisé en espagnol, français, allemand, japonais,
+                        portugais et chinois simplifié.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="shrink-0 w-full md:w-auto flex justify-center md:justify-end pt-2 md:pt-0">
+                    <a
+                      href="https://apps.apple.com/app/capto-screen-capture-record/id1073206334"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center transition-transform duration-200 hover:scale-105 active:scale-95 group"
+                      aria-label="Download on the Mac App Store"
+                    >
+                      <img
+                        alt="Download on the Mac App Store"
+                        class="h-10 sm:h-11 md:h-12 w-auto object-contain drop-shadow-sm group-hover:drop-shadow-md transition-all"
+                        width="269"
+                        height="69"
+                        loading="lazy"
+                        src="/button/DownloadonMacAppStore.png"
+                      />
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </section>

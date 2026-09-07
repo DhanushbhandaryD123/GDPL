@@ -35,35 +35,6 @@
     <meta name="twitter:creator" content="@GlobalDelight" data-rh="true" />
     <meta name="robots" content="index, follow" data-rh="true" />
     <meta property="og:type" content="website" data-rh="true" />
-    <script type="application/ld+json" data-rh="true">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Global Delight",
-        "url": "https://www.globaldelight.com",
-        "logo": "/images/external/img_54825efe2640.png",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "customer service",
-          "availableLanguage": ["English"]
-        },
-        "sameAs": [
-          "https://www.facebook.com/GlobalDelight",
-          "https://twitter.com/GlobalDelight",
-          "https://www.linkedin.com/company/global-delight/",
-          "https://www.youtube.com/channel/UCLjiPwteYQLEmIzDs4xmyTw",
-          "https://www.instagram.com/globaldelight"
-        ]
-      }
-    </script>
-    <script type="application/ld+json" data-rh="true">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Global Delight",
-        "url": "https://www.globaldelight.com"
-      }
-    </script>
     <link rel="canonical" href="https://www.globaldelight.com/es/contact" data-rh="true" />
     <link rel="alternate" hreflang="en" href="https://www.globaldelight.com/contact" data-rh="true" />
     <link rel="alternate" hreflang="de" href="https://www.globaldelight.com/de/contact" data-rh="true" />
@@ -86,12 +57,44 @@
     <script type="application/ld+json" data-rh="true">
       {
         "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Contact Global Delight | Support, Sales & Business Inquiries",
-        "description": "Contact Global Delight — get help for Boom, Capto, Vizmato & Camera Plus, request sales/licensing info, or reach business partnership team. We respond within 24 hours.",
-        "url": "https://www.globaldelight.com/contact",
-        "inLanguage": "es",
-        "isPartOf": { "@type": "WebSite", "name": "Global Delight", "url": "https://www.globaldelight.com" }
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.globaldelight.com/#organization",
+            "name": "Global Delight",
+            "url": "https://www.globaldelight.com",
+            "logo": "https://www.globaldelight.com/images/external/img_54825efe2640.png",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer service",
+              "availableLanguage": ["English"]
+            },
+            "sameAs": [
+              "https://www.facebook.com/GlobalDelight",
+              "https://twitter.com/GlobalDelight",
+              "https://www.linkedin.com/company/global-delight/",
+              "https://www.youtube.com/channel/UCLjiPwteYQLEmIzDs4xmyTw",
+              "https://www.instagram.com/globaldelight"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.globaldelight.com/#website",
+            "name": "Global Delight",
+            "url": "https://www.globaldelight.com",
+            "publisher": { "@id": "https://www.globaldelight.com/#organization" }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://www.globaldelight.com/contact#webpage",
+            "url": "https://www.globaldelight.com/contact",
+            "name": "Contact Global Delight | Support, Sales & Business Inquiries",
+            "description": "Contact Global Delight — get help for Boom, Capto, Vizmato & Camera Plus, request sales/licensing info, or reach business partnership team. We respond within 24 hours.",
+            "inLanguage": "es",
+            "isPartOf": { "@id": "https://www.globaldelight.com/#website" },
+            "about": { "@id": "https://www.globaldelight.com/#organization" }
+          }
+        ]
       }
     </script>
     <meta
@@ -137,9 +140,8 @@
     />
     <meta name="author" content="Global Delight Technologies Pvt. Ltd." />
 
-    <script type="module" crossorigin="" src="/assets/index-ff97gxSq.js"></script>
-    <link rel="stylesheet" crossorigin="" href="/assets/index-S-eCb034.css" />
-    <link rel="preconnect" href="https://fonts.cdnfonts.com" />
+    <script type="module" crossorigin="" src="/assets/index-CgcLEMq8.js"></script>
+    <link rel="stylesheet" crossorigin="" href="/assets/index-C-_bfekc.css" />
     <style id="_goober">
       @keyframes go2264125279 {
         from {
@@ -223,10 +225,10 @@
       }
     </style>
     <script src="/_vercel/insights/script.js" defer="" data-sdkn="@vercel/analytics/react" data-sdkv="1.6.1"></script>
-    <link rel="preconnect" href="https://d3jbf8nvvpx3fh.cloudfront.net" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/Contact-DVYXe_av.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/twitter-sV6RTfnK.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/arrow-left-BD_iJffl.js" />
+    <link rel="preconnect" href="https://fonts.cdnfonts.com" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/Contact-B1_WAWSc.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/twitter-BLCG4nTR.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/arrow-left--CQ0JNOK.js" />
   </head>
   <body>
     <div id="root">
@@ -432,7 +434,7 @@
         <div class="w-full h-1.5 bg-[#E85D22]"></div>
         <div class="flex-1 relative w-full overflow-hidden flex items-center">
           <div
-            class="absolute right-0 bottom-0 w-1/2 h-full opacity-10 pointer-events-none bg-[url('https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?q=80&amp;w=2070&amp;auto=format&amp;fit=crop')] bg-cover bg-center mix-blend-overlay"
+            class="absolute right-0 bottom-0 w-1/2 h-full opacity-10 pointer-events-none bg-[url('/images/external/img_a743a7dc4cd9.jpg')] bg-cover bg-center mix-blend-overlay"
           ></div>
           <div class="container mx-auto px-6 md:px-16 py-12 relative z-10">
             <div class="flex flex-col lg:flex-row gap-12 justify-between items-center">

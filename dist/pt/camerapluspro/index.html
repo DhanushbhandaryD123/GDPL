@@ -18,35 +18,6 @@
     <meta name="twitter:creator" content="@GlobalDelight" data-rh="true" />
     <meta name="robots" content="index, follow" data-rh="true" />
     <meta property="og:type" content="website" data-rh="true" />
-    <script type="application/ld+json" data-rh="true">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Global Delight",
-        "url": "https://www.globaldelight.com",
-        "logo": "/images/external/img_54825efe2640.png",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "customer service",
-          "availableLanguage": ["English"]
-        },
-        "sameAs": [
-          "https://www.facebook.com/GlobalDelight",
-          "https://twitter.com/GlobalDelight",
-          "https://www.linkedin.com/company/global-delight/",
-          "https://www.youtube.com/channel/UCLjiPwteYQLEmIzDs4xmyTw",
-          "https://www.instagram.com/globaldelight"
-        ]
-      }
-    </script>
-    <script type="application/ld+json" data-rh="true">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Global Delight",
-        "url": "https://www.globaldelight.com"
-      }
-    </script>
     <link rel="canonical" href="https://www.globaldelight.com/pt/camerapluspro" data-rh="true" />
     <link rel="alternate" hreflang="en" href="https://www.globaldelight.com/camerapluspro" data-rh="true" />
     <link rel="alternate" hreflang="de" href="https://www.globaldelight.com/de/camerapluspro" data-rh="true" />
@@ -70,24 +41,55 @@
     <script type="application/ld+json" data-rh="true">
       {
         "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Camera Plus Pro | DSLR-Like Photography for iPhone",
-        "description": "Camera Plus Pro brings DSLR-like control to iPhone — manual focus, exposure white balance, RAW, AirSnap remote, and smart retouch AI tools to enhance every detail.",
-        "url": "https://www.globaldelight.com/camerapluspro",
-        "inLanguage": "pt",
-        "isPartOf": { "@type": "WebSite", "name": "Global Delight", "url": "https://www.globaldelight.com" }
-      }
-    </script>
-    <script type="application/ld+json" data-rh="true">
-      {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Camera Plus Pro",
-        "operatingSystem": "iOS",
-        "applicationCategory": "PhotographyApplication",
-        "description": "Camera Plus Pro brings DSLR-like control to iPhone — manual focus, exposure white balance, RAW, AirSnap remote, and smart retouch AI tools to enhance every detail.",
-        "image": "https://www.globaldelight.com/hero/cameraplus.webp",
-        "url": "https://www.globaldelight.com/camerapluspro"
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.globaldelight.com/#organization",
+            "name": "Global Delight",
+            "url": "https://www.globaldelight.com",
+            "logo": "https://www.globaldelight.com/images/external/img_54825efe2640.png",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer service",
+              "availableLanguage": ["English"]
+            },
+            "sameAs": [
+              "https://www.facebook.com/GlobalDelight",
+              "https://twitter.com/GlobalDelight",
+              "https://www.linkedin.com/company/global-delight/",
+              "https://www.youtube.com/channel/UCLjiPwteYQLEmIzDs4xmyTw",
+              "https://www.instagram.com/globaldelight"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.globaldelight.com/#website",
+            "name": "Global Delight",
+            "url": "https://www.globaldelight.com",
+            "publisher": { "@id": "https://www.globaldelight.com/#organization" }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://www.globaldelight.com/camerapluspro#webpage",
+            "url": "https://www.globaldelight.com/camerapluspro",
+            "name": "Camera Plus Pro | DSLR-Like Photography for iPhone",
+            "description": "Camera Plus Pro brings DSLR-like control to iPhone — manual focus, exposure white balance, RAW, AirSnap remote, and smart retouch AI tools to enhance every detail.",
+            "inLanguage": "pt",
+            "isPartOf": { "@id": "https://www.globaldelight.com/#website" },
+            "about": { "@id": "https://www.globaldelight.com/#organization" }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://www.globaldelight.com/camerapluspro#software",
+            "name": "Camera Plus Pro",
+            "operatingSystem": "iOS",
+            "applicationCategory": "PhotographyApplication",
+            "description": "Camera Plus Pro brings DSLR-like control to iPhone — manual focus, exposure white balance, RAW, AirSnap remote, and smart retouch AI tools to enhance every detail.",
+            "image": "https://www.globaldelight.com/hero/cameraplus.webp",
+            "url": "https://www.globaldelight.com/camerapluspro",
+            "author": { "@id": "https://www.globaldelight.com/#organization" }
+          }
+        ]
       }
     </script>
     <meta
@@ -133,9 +135,8 @@
     />
     <meta name="author" content="Global Delight Technologies Pvt. Ltd." />
 
-    <script type="module" crossorigin="" src="/assets/index-ff97gxSq.js"></script>
-    <link rel="stylesheet" crossorigin="" href="/assets/index-S-eCb034.css" />
-    <link rel="preconnect" href="https://fonts.cdnfonts.com" />
+    <script type="module" crossorigin="" src="/assets/index-CgcLEMq8.js"></script>
+    <link rel="stylesheet" crossorigin="" href="/assets/index-C-_bfekc.css" />
     <style id="_goober">
       @keyframes go2264125279 {
         from {
@@ -219,17 +220,17 @@
       }
     </style>
     <script src="/_vercel/insights/script.js" defer="" data-sdkn="@vercel/analytics/react" data-sdkv="1.6.1"></script>
-    <link rel="preconnect" href="https://d3jbf8nvvpx3fh.cloudfront.net" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/CameraPlusProPage-BV0s482X.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/camera-DD_Y55DL.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/wand-sparkles-Cku1Rg80.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/sliders-horizontal-C7muUFrs.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/share-2-wtXTZ1LD.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/circle-check-BFtrWZzh.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/chevron-left-ORxI38pi.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/chevron-right-CBxj5oAe.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/twitter-sV6RTfnK.js" />
-    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="preconnect" href="https://fonts.cdnfonts.com" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/CameraPlusProPage-D3XL-OmM.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/camera-C7S8WrWS.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/wand-sparkles-DMlmjdGA.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/sliders-horizontal-BV8ALUNo.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/share-2-CAhwYS8u.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/circle-check-Bfr6DNSn.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/chevron-left-Dipjrvcq.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/chevron-right-CXjiUqH8.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/twitter-BLCG4nTR.js" />
+    <style></style>
   </head>
   <body>
     <div id="root">
@@ -511,7 +512,7 @@
                       width="1200"
                       height="1500"
                       loading="eager"
-                      src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&amp;w=1200&amp;auto=format&amp;fit=crop"
+                      src="/images/external/img_88ae38faa87d.jpg"
                     />
                     <div
                       class="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/20 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
@@ -771,7 +772,7 @@
                                 width="600"
                                 height="400"
                                 loading="lazy"
-                                src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=600&amp;q=80&amp;auto=format&amp;fit=crop"
+                                src="/images/external/img_bf93d5c9f706.jpg"
                               />
                               <div class="absolute inset-x-0 bottom-0 bg-black/85 backdrop-blur-sm px-4 py-4 space-y-3">
                                 <p class="text-white text-[10px] font-bold tracking-widest mb-2">AJUSTAR</p>
@@ -847,92 +848,92 @@
                               <div class="grid grid-cols-3 gap-0.5 flex-1">
                                 <div class="relative overflow-hidden">
                                   <img
-                                    alt="Global Delight App Feature"
+                                    alt="Camera Plus Pro photo filter: grayscale"
                                     class="w-full h-full object-cover grayscale"
                                     width="200"
                                     height="133"
                                     loading="lazy"
-                                    src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=200&amp;q=60&amp;auto=format&amp;fit=crop"
+                                    src="/images/external/img_5c88fe4628bf.jpg"
                                   />
                                 </div>
                                 <div class="relative overflow-hidden">
                                   <img
-                                    alt="Global Delight App Feature"
+                                    alt="Camera Plus Pro photo filter: sepia"
                                     class="w-full h-full object-cover sepia"
                                     width="200"
                                     height="133"
                                     loading="lazy"
-                                    src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=200&amp;q=60&amp;auto=format&amp;fit=crop"
+                                    src="/images/external/img_5c88fe4628bf.jpg"
                                   />
                                 </div>
                                 <div class="relative overflow-hidden">
                                   <img
-                                    alt="Global Delight App Feature"
+                                    alt="Camera Plus Pro photo filter: contrast-125"
                                     class="w-full h-full object-cover contrast-125"
                                     width="200"
                                     height="133"
                                     loading="lazy"
-                                    src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=200&amp;q=60&amp;auto=format&amp;fit=crop"
+                                    src="/images/external/img_5c88fe4628bf.jpg"
                                   />
                                 </div>
                                 <div class="relative overflow-hidden">
                                   <img
-                                    alt="Global Delight App Feature"
+                                    alt="Camera Plus Pro photo filter: saturate-150"
                                     class="w-full h-full object-cover saturate-150"
                                     width="200"
                                     height="133"
                                     loading="lazy"
-                                    src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=200&amp;q=60&amp;auto=format&amp;fit=crop"
+                                    src="/images/external/img_5c88fe4628bf.jpg"
                                   />
                                 </div>
                                 <div class="relative overflow-hidden">
                                   <img
-                                    alt="Global Delight App Feature"
+                                    alt="Camera Plus Pro photo filter: brightness-110"
                                     class="w-full h-full object-cover brightness-110"
                                     width="200"
                                     height="133"
                                     loading="lazy"
-                                    src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=200&amp;q=60&amp;auto=format&amp;fit=crop"
+                                    src="/images/external/img_5c88fe4628bf.jpg"
                                   />
                                 </div>
                                 <div class="relative overflow-hidden">
                                   <img
-                                    alt="Global Delight App Feature"
+                                    alt="Camera Plus Pro photo filter: hue-rotate-15"
                                     class="w-full h-full object-cover hue-rotate-15"
                                     width="200"
                                     height="133"
                                     loading="lazy"
-                                    src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=200&amp;q=60&amp;auto=format&amp;fit=crop"
+                                    src="/images/external/img_5c88fe4628bf.jpg"
                                   />
                                 </div>
                                 <div class="relative overflow-hidden">
                                   <img
-                                    alt="Global Delight App Feature"
+                                    alt="Camera Plus Pro photo filter: invert"
                                     class="w-full h-full object-cover invert"
                                     width="200"
                                     height="133"
                                     loading="lazy"
-                                    src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=200&amp;q=60&amp;auto=format&amp;fit=crop"
+                                    src="/images/external/img_5c88fe4628bf.jpg"
                                   />
                                 </div>
                                 <div class="relative overflow-hidden">
                                   <img
-                                    alt="Global Delight App Feature"
+                                    alt="Camera Plus Pro photo filter: contrast-75"
                                     class="w-full h-full object-cover contrast-75"
                                     width="200"
                                     height="133"
                                     loading="lazy"
-                                    src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=200&amp;q=60&amp;auto=format&amp;fit=crop"
+                                    src="/images/external/img_5c88fe4628bf.jpg"
                                   />
                                 </div>
                                 <div class="relative overflow-hidden">
                                   <img
-                                    alt="Global Delight App Feature"
+                                    alt="Camera Plus Pro photo filter: original"
                                     class="w-full h-full object-cover"
                                     width="200"
                                     height="133"
                                     loading="lazy"
-                                    src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=200&amp;q=60&amp;auto=format&amp;fit=crop"
+                                    src="/images/external/img_5c88fe4628bf.jpg"
                                   />
                                 </div>
                               </div>
@@ -981,7 +982,7 @@
                               width="800"
                               height="533"
                               loading="lazy"
-                              src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=800&amp;q=80&amp;auto=format&amp;fit=crop"
+                              src="/images/external/img_0b0a820afce7.jpg"
                             />
                           </div>
                           <div
@@ -1075,8 +1076,15 @@
                           <img
                             alt="Moments of life"
                             class="w-full h-full object-cover"
-                            src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
+                            src="/images/external/img_5959fb71b8d7.jpg"
                             style="opacity: 1"
+                            data-motion-pop-id="_r_3_"
+                          />
+                          <img
+                            alt="Moments of life"
+                            class="w-full h-full object-cover"
+                            src="/images/external/img_b8956b4efea3.jpg"
+                            style="opacity: 0"
                           />
                         </div>
                         <div
@@ -1266,7 +1274,7 @@
                     width="900"
                     height="1125"
                     loading="lazy"
-                    src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=900&amp;q=80&amp;auto=format&amp;fit=crop"
+                    src="/images/external/img_004492d0b5a4.jpg"
                   />
                 </div>
                 <div

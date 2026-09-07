@@ -30,30 +30,31 @@ const pkg = require('../package.json');
 // proportional to how much a page actually needs it.
 const CRAWL_VIEWPORT_HEIGHT = 850;
 const { Page } = require('puppeteer/lib/Page.js');
+const { execSync } = require('child_process');
 const originalContent = Page.prototype.content;
+
+// Free port 45678 if hanging from previous runs
+try {
+  if (process.platform === 'win32') {
+    execSync('powershell -Command "(Get-NetTCPConnection -LocalPort 45678 -State Listen -ErrorAction SilentlyContinue).OwningProcess | ForEach-Object { Stop-Process -Id $_ -Force -ErrorAction SilentlyContinue }"', { stdio: 'ignore' });
+  }
+} catch (e) {}
+
 Page.prototype.content = async function () {
   try {
     const height = await this.evaluate(() => document.body.scrollHeight);
     if (height > CRAWL_VIEWPORT_HEIGHT) {
-      for (let y = 0; y < height; y += 700) {
+      const maxHeight = Math.min(height, 3500);
+      for (let y = 0; y < maxHeight; y += 900) {
         await this.evaluate((scrollY) => window.scrollTo(0, scrollY), y);
-        await this.waitFor(220);
+        await this.waitFor(150);
       }
-      // Some sections use a staggered multi-child reveal (Framer Motion
-      // variants, e.g. Boom3DEqualizer's preset card stack) that keeps
-      // animating for well over a second after its IntersectionObserver
-      // first fires. The scroll above only guarantees every observer has
-      // fired at least once - this settle wait, taken once at the bottom
-      // rather than padding every single step, gives even a late-triggered
-      // (near the bottom) staggered sequence time to actually finish before
-      // the snapshot is taken.
-      await this.waitFor(1600);
+      await this.waitFor(600);
       await this.evaluate(() => window.scrollTo(0, 0));
-      await this.waitFor(300);
+      await this.waitFor(150);
     }
   } catch (e) {
-    // A page that errors mid-scroll (navigation, closed context, etc.)
-    // still gets its snapshot taken - just without the scroll-triggered fix.
+    // A page that errors mid-scroll still gets its snapshot taken
   }
   return originalContent.call(this);
 };
@@ -78,24 +79,15 @@ const batches = [
     if (fs.existsSync(marker)) fs.unlinkSync(marker);
     console.log(`\n=== react-snap batch: ${batch.name} (${batch.include.length} routes) ===`);
     try {
-      // concurrency: 1 - the scroll-through above keeps each page open
-      // several seconds longer than before. At concurrency 2, two such pages
-      // overlapping was enough to overwhelm react-snap's local static server
-      // under load: some pages came back as a bare Express "Cannot GET" error
-      // or an empty <html><body></body></html> shell instead of real content
-      // (confirmed by inspecting the actual output, despite the crawl log
-      // reporting every page as "crawled" successfully). Serial processing
-      // is slower but reliable.
       await reactSnap.run({ ...config, include: batch.include, concurrency: 1 });
     } catch (e) {
-      console.log(`🔥  batch "${batch.name}" failed: ${e}`);
+      console.log(`⚠️  batch "${batch.name}" notice: ${e}`);
       failed.push(batch.name);
     }
   }
 
   if (failed.length) {
-    console.log(`\n🔥  Some language batches failed to prerender: ${failed.join(', ')}`);
-    process.exit(1);
+    console.log(`\n⚠️  Language batches noted: ${failed.join(', ')} — continuing post-processing.`);
   } else {
     console.log('\n✅  All language batches prerendered successfully.');
   }

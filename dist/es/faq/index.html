@@ -35,35 +35,6 @@
     <meta name="twitter:creator" content="@GlobalDelight" data-rh="true" />
     <meta name="robots" content="index, follow" data-rh="true" />
     <meta property="og:type" content="website" data-rh="true" />
-    <script type="application/ld+json" data-rh="true">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Global Delight",
-        "url": "https://www.globaldelight.com",
-        "logo": "/images/external/img_54825efe2640.png",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "customer service",
-          "availableLanguage": ["English"]
-        },
-        "sameAs": [
-          "https://www.facebook.com/GlobalDelight",
-          "https://twitter.com/GlobalDelight",
-          "https://www.linkedin.com/company/global-delight/",
-          "https://www.youtube.com/channel/UCLjiPwteYQLEmIzDs4xmyTw",
-          "https://www.instagram.com/globaldelight"
-        ]
-      }
-    </script>
-    <script type="application/ld+json" data-rh="true">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Global Delight",
-        "url": "https://www.globaldelight.com"
-      }
-    </script>
     <link rel="canonical" href="https://www.globaldelight.com/es/faq" data-rh="true" />
     <link rel="alternate" hreflang="en" href="https://www.globaldelight.com/faq" data-rh="true" />
     <link rel="alternate" hreflang="de" href="https://www.globaldelight.com/de/faq" data-rh="true" />
@@ -82,12 +53,44 @@
     <script type="application/ld+json" data-rh="true">
       {
         "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "FAQs | Global Delight Help & Support",
-        "description": "Find answers to frequently asked questions about Boom 3D, Boom 2, Capto, Vizmato, AudiOn, AuDimix, and Camera Plus – installation, licensing, features, troubleshooting, and support contact.",
-        "url": "https://www.globaldelight.com/faq",
-        "inLanguage": "es",
-        "isPartOf": { "@type": "WebSite", "name": "Global Delight", "url": "https://www.globaldelight.com" }
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.globaldelight.com/#organization",
+            "name": "Global Delight",
+            "url": "https://www.globaldelight.com",
+            "logo": "https://www.globaldelight.com/images/external/img_54825efe2640.png",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer service",
+              "availableLanguage": ["English"]
+            },
+            "sameAs": [
+              "https://www.facebook.com/GlobalDelight",
+              "https://twitter.com/GlobalDelight",
+              "https://www.linkedin.com/company/global-delight/",
+              "https://www.youtube.com/channel/UCLjiPwteYQLEmIzDs4xmyTw",
+              "https://www.instagram.com/globaldelight"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.globaldelight.com/#website",
+            "name": "Global Delight",
+            "url": "https://www.globaldelight.com",
+            "publisher": { "@id": "https://www.globaldelight.com/#organization" }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://www.globaldelight.com/faq#webpage",
+            "url": "https://www.globaldelight.com/faq",
+            "name": "FAQs | Global Delight Help & Support",
+            "description": "Find answers to frequently asked questions about Boom 3D, Boom 2, Capto, Vizmato, AudiOn, AuDimix, and Camera Plus – installation, licensing, features, troubleshooting, and support contact.",
+            "inLanguage": "es",
+            "isPartOf": { "@id": "https://www.globaldelight.com/#website" },
+            "about": { "@id": "https://www.globaldelight.com/#organization" }
+          }
+        ]
       }
     </script>
     <meta
@@ -133,9 +136,8 @@
     />
     <meta name="author" content="Global Delight Technologies Pvt. Ltd." />
 
-    <script type="module" crossorigin="" src="/assets/index-ff97gxSq.js"></script>
-    <link rel="stylesheet" crossorigin="" href="/assets/index-S-eCb034.css" />
-    <link rel="preconnect" href="https://fonts.cdnfonts.com" />
+    <script type="module" crossorigin="" src="/assets/index-CgcLEMq8.js"></script>
+    <link rel="stylesheet" crossorigin="" href="/assets/index-C-_bfekc.css" />
     <style id="_goober">
       @keyframes go2264125279 {
         from {
@@ -219,12 +221,12 @@
       }
     </style>
     <script src="/_vercel/insights/script.js" defer="" data-sdkn="@vercel/analytics/react" data-sdkv="1.6.1"></script>
-    <link rel="preconnect" href="https://d3jbf8nvvpx3fh.cloudfront.net" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/Faq-bTfqQpp5.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/volume-2-rljPNDIA.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/camera-DD_Y55DL.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/wand-sparkles-Cku1Rg80.js" />
-    <link rel="modulepreload" as="script" crossorigin="" href="/assets/mail-BYq4ottb.js" />
+    <link rel="preconnect" href="https://fonts.cdnfonts.com" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/Faq-3nElN6C9.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/volume-2-CIXYcKEZ.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/camera-C7S8WrWS.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/wand-sparkles-DMlmjdGA.js" />
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/mail-Cqbrmr9v.js" />
   </head>
   <body>
     <div id="root">

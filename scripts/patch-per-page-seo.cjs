@@ -111,6 +111,33 @@ function patchFile(filePath) {
       html = html.replace('</title>', `</title>\n    <meta name="subject" content="${esc(seo.title)}" data-rh="true">`);
     }
   }
+  // 1. Purge any staging domain
+  if (html.includes('gdpl-six.vercel.app')) {
+    html = html.replaceAll('https://gdpl-six.vercel.app/', 'https://www.globaldelight.com/');
+    html = html.replaceAll('https://gdpl-six.vercel.app', 'https://www.globaldelight.com');
+    html = html.replaceAll('gdpl-six.vercel.app', 'www.globaldelight.com');
+  }
+  // 2. Replace CloudFront logo/images
+  if (html.includes('https://d3jbf8nvvpx3fh.cloudfront.net/home/_resource/_img/website/2015/GDTPL_logo_.png')) {
+    html = html.replaceAll('https://d3jbf8nvvpx3fh.cloudfront.net/home/_resource/_img/website/2015/GDTPL_logo_.png', '/images/external/img_54825efe2640.png');
+  }
+  if (html.includes('https://d3jbf8nvvpx3fh.cloudfront.net/Boom3D-Web/OGImages/Global-Delight.jpg')) {
+    html = html.replaceAll('https://d3jbf8nvvpx3fh.cloudfront.net/Boom3D-Web/OGImages/Global-Delight.jpg', '/images/external/img_e76f765673cb.jpg');
+  }
+  // 3. Inject H1 on homepages
+  const isHomepage = rel === 'index.html' || /^(de|it|ja|fr|pt|es|zh)\/index\.html$/.test(rel);
+  if (isHomepage && !html.includes('<h1')) {
+    html = html.replace(
+      /(<main[^>]*>)/i,
+      `$1<h1 class="sr-only">Global Delight — Award-Winning Audio, Video & Photography Apps</h1>`
+    );
+  }
+  // 4. Consolidate @graph schema on homepages
+  if (isHomepage && html.includes('"@type": "Organization"') && !html.includes('"@graph"')) {
+    const graphSchema = `<script type="application/ld+json" data-rh="true">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.globaldelight.com/#organization","name":"Global Delight","url":"https://www.globaldelight.com","logo":"https://www.globaldelight.com/images/external/img_54825efe2640.png","contactPoint":{"@type":"ContactPoint","contactType":"customer service","availableLanguage":["English"]},"sameAs":["https://www.facebook.com/GlobalDelight","https://twitter.com/GlobalDelight","https://www.linkedin.com/company/global-delight/","https://www.youtube.com/channel/UCLjiPwteYQLEmIzDs4xmyTw","https://www.instagram.com/globaldelight"]},{"@type":"WebSite","@id":"https://www.globaldelight.com/#website","name":"Global Delight","url":"https://www.globaldelight.com","publisher":{"@id":"https://www.globaldelight.com/#organization"}},{"@type":"WebPage","@id":"https://www.globaldelight.com/#webpage","url":"https://www.globaldelight.com/","name":"Global Delight | Boom 3D, Capto, Vizmato & Camera Plus Pro Apps","description":"Global Delight builds award-winning audio, video, and photography apps — Boom 3D volume booster & equalizer, Capto screen recorder, Vizmato video editor, and Camera Plus Pro for Mac, Windows, iOS & Android.","inLanguage":"en","isPartOf":{"@id":"https://www.globaldelight.com/#website"},"about":{"@id":"https://www.globaldelight.com/#organization"}}]}</script>`;
+    html = html.replace(/<script type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>\s*<script type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>\s*<script type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/i, graphSchema);
+  }
+
   if (html !== original) {
     fs.writeFileSync(filePath, html, 'utf8');
     return true;
@@ -138,4 +165,14 @@ function walkCount(dir) {
 }
 walk(distDir);
 walkCount(distDir);
+
+// Sync sitemap and robots into dist
+const pubSitemap = path.resolve(__dirname, '../public/sitemap.xml');
+const distSitemap = path.resolve(distDir, 'sitemap.xml');
+const pubRobots = path.resolve(__dirname, '../public/robots.txt');
+const distRobots = path.resolve(distDir, 'robots.txt');
+if (fs.existsSync(pubSitemap)) fs.copyFileSync(pubSitemap, distSitemap);
+if (fs.existsSync(pubRobots)) fs.copyFileSync(pubRobots, distRobots);
+
 console.log(`✅ Patched per-page SEO for ${count} HTML files (view source now page-connected).`);
+console.log(`✅ Synchronized sitemap.xml and robots.txt to dist/`);
