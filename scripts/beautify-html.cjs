@@ -19,19 +19,21 @@ function walk(dir) {
 }
 
 async function processFile(filePath) {
-  const html = fs.readFileSync(filePath, 'utf8');
-  // Prettier html parser will add proper newlines + 2-space indent for every tag
-  // so that even with Line Wrap OFF each tag appears on its own line.
-  const formatted = await prettier.format(html, {
-    parser: 'html',
-    printWidth: 120,
-    htmlWhitespaceSensitivity: 'ignore',
-    bracketSameLine: false,
-    singleAttributePerLine: false,
-  });
-  if (formatted !== html) {
-    fs.writeFileSync(filePath, formatted, 'utf8');
-    return true;
+  try {
+    const html = fs.readFileSync(filePath, 'utf8');
+    const formatted = await prettier.format(html, {
+      parser: 'html',
+      printWidth: 120,
+      htmlWhitespaceSensitivity: 'ignore',
+      bracketSameLine: false,
+      singleAttributePerLine: false,
+    });
+    if (formatted !== html) {
+      fs.writeFileSync(filePath, formatted, 'utf8');
+      return true;
+    }
+  } catch (err) {
+    // Keep unformatted file if prettier parser encounters a strict syntax edge case
   }
   return false;
 }

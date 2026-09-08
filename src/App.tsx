@@ -363,7 +363,14 @@ const appRoutes = [
 ];
 
 function App() {
-  const [isAppReady, setIsAppReady] = useState(false);
+  const isPrerender =
+    typeof window !== 'undefined' &&
+    (Boolean((window as any).__PRERENDER__) ||
+      navigator.userAgent.includes('ReactSnap') ||
+      navigator.userAgent.includes('Headless') ||
+      navigator.userAgent.includes('Puppeteer'));
+
+  const [isAppReady, setIsAppReady] = useState(isPrerender);
 
   return (
     <>

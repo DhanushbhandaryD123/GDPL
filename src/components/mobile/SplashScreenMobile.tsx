@@ -12,7 +12,12 @@ export function SplashScreenMobile({ onComplete }: SplashScreenMobileProps) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    if (navigator.userAgent === 'ReactSnap') {
+    if (
+      navigator.userAgent === 'ReactSnap' ||
+      navigator.userAgent.includes('Headless') ||
+      navigator.userAgent.includes('Puppeteer') ||
+      Boolean((window as any).__PRERENDER__)
+    ) {
       onComplete();
       return;
     }

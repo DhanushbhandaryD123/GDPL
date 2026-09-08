@@ -263,95 +263,69 @@ function patchFile(filePath) {
   const canonicalUrl = seo.canonicalUrl || (domain + route);
   const imgUrl = seo.ogImage ? (seo.ogImage.startsWith('http') ? seo.ogImage : domain + seo.ogImage) : CLOUD_OG;
 
-  // Title
-  html = html.replace(/<title>[\s\S]*?<\/title>/, `<title>${esc(seo.title)}</title>`);
+  const currentLang = parts[0] && langs.includes(parts[0]) ? parts[0] : 'en';
+  const OG_LOCALE_MAP = {
+    en: 'en_US',
+    de: 'de_DE',
+    it: 'it_IT',
+    ja: 'ja_JP',
+    fr: 'fr_FR',
+    pt: 'pt_BR',
+    es: 'es_ES',
+    zh: 'zh_CN',
+  };
+  const ogLocale = OG_LOCALE_MAP[currentLang] || 'en_US';
 
-  // Meta Description
-  if (html.includes('name="description"')) {
-    html = html.replace(/<meta[^>]*name="description"[^>]*>/, `<meta name="description" content="${esc(seo.description)}" data-rh="true">`);
-  } else {
-    html = html.replace('</title>', `</title>\n    <meta name="description" content="${esc(seo.description)}" data-rh="true">`);
-  }
-
-  // Robots
-  const robotsMeta = `<meta content="${seo.robots || 'index, follow'}" name="robots">`;
-  if (html.includes('name="robots"')) {
-    html = html.replace(/<meta[^>]*name="robots"[^>]*>/, robotsMeta);
-  } else {
-    html = html.replace('</title>', `</title>\n    ${robotsMeta}`);
-  }
-
-  // Canonical
-  const canonicalTag = `<link rel="canonical" href="${canonicalUrl}" data-rh="true">`;
-  if (html.includes('rel="canonical"')) {
-    html = html.replace(/<link[^>]*rel="canonical"[^>]*>/, canonicalTag);
-  } else {
-    html = html.replace('</title>', `</title>\n    ${canonicalTag}`);
-  }
-
-  // Hreflang Tags (Alternate language links)
+  // Build hreflangs block matching reference/audion.html
+  let hreflangBlock = '';
   if (seo.hreflangs && seo.hreflangs.length > 0) {
-    // Remove existing hreflang tags if any to prevent duplicates
-    html = html.replace(/<link[^>]*rel="alternate"[^>]*hreflang=[^>]*>\s*/gi, '');
-    const hreflangBlock = seo.hreflangs
-      .map((h) => `<link rel="alternate" href="${h.href}" hreflang="${h.hreflang}">`)
+    hreflangBlock = seo.hreflangs
+      .map((h) => `<link rel="alternate" hreflang="${h.hreflang}" href="${h.href}" data-rh="true">`)
       .join('\n    ');
-    html = html.replace('</title>', `</title>\n    ${hreflangBlock}`);
   }
 
-  // Keywords
-  if (seo.keywords) {
-    if (html.includes('name="keywords"')) {
-      html = html.replace(/<meta[^>]*name="keywords"[^>]*>/, `<meta name="keywords" content="${esc(seo.keywords)}" data-rh="true">`);
-    } else {
-      html = html.replace('</title>', `</title>\n    <meta name="keywords" content="${esc(seo.keywords)}" data-rh="true">`);
-    }
-  }
+  // Remove existing title, meta tags, and links to avoid duplication or disorder
+  html = html.replace(/<title>[\s\S]*?<\/title>/gi, '');
+  html = html.replace(/<meta[^>]*name=["'](title|description|keywords|robots|subject|thumbnail|twitter:[^"']*)["'][^>]*>\s*/gi, '');
+  html = html.replace(/<meta[^>]*property=["'](og:[^"']*)["'][^>]*>\s*/gi, '');
+  html = html.replace(/<link[^>]*rel=["']canonical["'][^>]*>\s*/gi, '');
+  html = html.replace(/<link[^>]*rel=["']alternate["'][^>]*hreflang=[^>]*>\s*/gi, '');
+  html = html.replace(/<script[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>\s*/gi, '');
 
-  // og:title
-  if (html.includes('property="og:title"')) {
-    html = html.replace(/<meta[^>]*property="og:title"[^>]*>/, `<meta property="og:title" content="${esc(seo.title)}" data-rh="true">`);
-  } else {
-    html = html.replace('</title>', `</title>\n    <meta property="og:title" content="${esc(seo.title)}" data-rh="true">`);
-  }
+  const orgSchema = `<script type="application/ld+json" data-rh="true">{"@context":"https://schema.org","@type":"Organization","name":"Global Delight","url":"${domain}","logo":"${domain}/images/external/img_54825efe2640.png","contactPoint":{"@type":"ContactPoint","contactType":"customer service","availableLanguage":["English"]},"sameAs":["https://www.facebook.com/GlobalDelight","https://twitter.com/GlobalDelight","https://www.instagram.com/globaldelight"]}</script>`;
 
-  // og:description
-  if (html.includes('property="og:description"')) {
-    html = html.replace(/<meta[^>]*property="og:description"[^>]*>/, `<meta property="og:description" content="${esc(seo.description)}" data-rh="true">`);
-  } else {
-    html = html.replace('</title>', `</title>\n    <meta property="og:description" content="${esc(seo.description)}" data-rh="true">`);
-  }
+  // Construct powerful, perfectly ordered SEO head block matching reference/audion.html exactly
+  const seoLines = [
+    `<title>${esc(seo.title)}</title>`,
+    `<link rel="canonical" href="${canonicalUrl}" data-rh="true">`,
+    `<meta name="robots" content="${seo.robots || 'index, follow'}" data-rh="true">`,
+    `<meta property="og:site_name" content="Global Delight Technologies Pvt. Ltd." data-rh="true">`,
+    `<meta name="twitter:card" content="summary_large_image" data-rh="true">`,
+    `<meta name="twitter:site" content="@GlobalDelight" data-rh="true">`,
+    `<meta name="twitter:creator" content="@GlobalDelight" data-rh="true">`,
+    `<meta name="description" content="${esc(seo.description)}" data-rh="true">`,
+    `<meta name="keywords" content="${esc(seo.keywords)}" data-rh="true">`,
+    `<meta name="subject" content="${esc(seo.subject || seo.title)}" data-rh="true">`,
+    `<meta property="og:title" content="${esc(seo.ogTitle || seo.title)}" data-rh="true">`,
+    `<meta property="og:description" content="${esc(seo.ogDescription || seo.description)}" data-rh="true">`,
+    `<meta property="og:type" content="${seo.ogType || 'website'}" data-rh="true">`,
+    `<meta property="og:url" content="${canonicalUrl}" data-rh="true">`,
+    `<meta property="og:locale" content="${ogLocale}" data-rh="true">`,
+    `<meta property="og:image" content="${imgUrl}" data-rh="true">`,
+    `<meta name="thumbnail" content="${imgUrl}" data-rh="true">`,
+    `<meta name="twitter:title" content="${esc(seo.twitterTitle || seo.title)}" data-rh="true">`,
+    `<meta name="twitter:description" content="${esc(seo.twitterDescription || seo.description)}" data-rh="true">`,
+    `<meta name="twitter:image" content="${imgUrl}" data-rh="true">`,
+    orgSchema,
+    hreflangBlock,
+  ].filter(Boolean);
 
-  // og:image
-  if (html.includes('property="og:image"')) {
-    html = html.replace(/<meta[^>]*property="og:image"[^>]*>/, `<meta property="og:image" content="${imgUrl}" data-rh="true">`);
-  } else {
-    html = html.replace('</title>', `</title>\n    <meta property="og:image" content="${imgUrl}" data-rh="true">`);
-  }
+  const seoBlock = seoLines.join('\n    ');
 
-  // og:url
-  if (html.includes('property="og:url"')) {
-    html = html.replace(/<meta[^>]*property="og:url"[^>]*>/, `<meta property="og:url" content="${canonicalUrl}" data-rh="true">`);
-  } else {
-    html = html.replace('</title>', `</title>\n    <meta property="og:url" content="${canonicalUrl}" data-rh="true">`);
-  }
-
-  // thumbnail
-  html = html.replace(/<meta[^>]*name="thumbnail"[^>]*>/, `<meta name="thumbnail" content="${imgUrl}" data-rh="true">`);
-
-  // twitter:title/description/image/url
-  html = html.replace(/<meta[^>]*name="twitter:title"[^>]*>/, `<meta name="twitter:title" content="${esc(seo.title)}" data-rh="true">`);
-  html = html.replace(/<meta[^>]*name="twitter:description"[^>]*>/, `<meta name="twitter:description" content="${esc(seo.description)}" data-rh="true">`);
-  html = html.replace(/<meta[^>]*name="twitter:image"[^>]*>/, `<meta name="twitter:image" content="${imgUrl}" data-rh="true">`);
-  html = html.replace(/<meta[^>]*name="twitter:url"[^>]*>/, `<meta name="twitter:url" content="${canonicalUrl}" data-rh="true">`);
-
-  // subject
-  if (seo.title) {
-    if (html.includes('name="subject"')) {
-      html = html.replace(/<meta[^>]*name="subject"[^>]*>/, `<meta name="subject" content="${esc(seo.title)}" data-rh="true">`);
-    } else {
-      html = html.replace('</title>', `</title>\n    <meta name="subject" content="${esc(seo.title)}" data-rh="true">`);
-    }
+  if (html.includes('<meta name="viewport"')) {
+    html = html.replace(/(<meta name="viewport"[^>]*>)/i, `$1\n    ${seoBlock}`);
+  } else if (html.includes('<head>')) {
+    html = html.replace('<head>', `<head>\n    ${seoBlock}`);
   }
   // 1. Purge any staging domain
   if (html.includes('gdpl-six.vercel.app')) {

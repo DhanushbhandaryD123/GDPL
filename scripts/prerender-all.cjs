@@ -129,8 +129,8 @@ async function prerender() {
 
   console.log(`📄 Prerendering ${allRoutes.length} routes...`);
 
-  // Use a pool of 3 concurrent worker pages
-  const CONCURRENCY = 3;
+  // Use a pool of 4 concurrent worker pages
+  const CONCURRENCY = 4;
   const queue = [...allRoutes];
   const total = allRoutes.length;
   let processed = 0;
@@ -139,6 +139,10 @@ async function prerender() {
   async function worker(workerId) {
     const page = await browser.newPage();
     await page.setViewport({ width: 1280, height: 800 });
+    await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 ReactSnap HeadlessChrome');
+    await page.evaluateOnNewDocument(() => {
+      window.__PRERENDER__ = true;
+    });
 
     while (queue.length > 0) {
       const route = queue.shift();
@@ -148,13 +152,14 @@ async function prerender() {
       const url = `http://127.0.0.1:${PORT}${route}`;
 
       try {
-        await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 15000 });
+        await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 10000 });
         
-        // Wait for React to render children into #root
         await page.waitForFunction(() => {
           const root = document.getElementById('root');
-          return root && root.children.length > 0 && root.innerText.trim().length > 30;
-        }, { timeout: 8000 });
+          if (!root) return false;
+          const text = root.innerText ? root.innerText.trim() : '';
+          return root.children.length > 0 && text.length > 30;
+        }, { timeout: 4000 });
 
         const rootHtml = await page.evaluate(() => {
           const root = document.getElementById('root');
@@ -196,7 +201,7 @@ async function prerender() {
           }
         }
       } catch (err) {
-        // Continue on timeout or error
+        console.log(`[Worker ${workerId}] ⚠️ Fallback on ${route} (${err.message})`);
       }
     }
 
