@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "patch-package",
     "dev": "vite",
-    "build": "node scripts/generate-sitemap.js && tsc -b && vite build",
+    "build": "node scripts/generate-sitemap.js && tsc -b && vite build && node scripts/generate-spa-fallbacks.cjs && node scripts/patch-per-page-seo.cjs",
     "postbuild": "node scripts/snap-batches.cjs && node scripts/fix-404.cjs && node scripts/reorder-head-tags.cjs && node scripts/dedupe-head-tags.cjs && node scripts/patch-per-page-seo.cjs && node scripts/beautify-html.cjs",
     "vercel-build": "echo 'Skipping Vercel build to use locally generated static files.'",
     "lint": "eslint .",

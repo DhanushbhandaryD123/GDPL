@@ -137,5 +137,25 @@
     { "source": "/stpatrick", "destination": "/", "permanent": true },
 
     { "source": "/store", "destination": "/", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/boom3D", "destination": "/boom3D/index.html" },
+    { "source": "/boom2", "destination": "/boom2/index.html" },
+    { "source": "/boom", "destination": "/boom/index.html" },
+    { "source": "/business", "destination": "/business/index.html" },
+    { "source": "/capto", "destination": "/capto/index.html" },
+    { "source": "/cameraplus", "destination": "/cameraplus/index.html" },
+    { "source": "/camerapluspro", "destination": "/camerapluspro/index.html" },
+    { "source": "/audion", "destination": "/audion/index.html" },
+    { "source": "/audimix", "destination": "/audimix/index.html" },
+    { "source": "/vizmato", "destination": "/vizmato/index.html" },
+    { "source": "/faq", "destination": "/faq/index.html" },
+    { "source": "/contact", "destination": "/contact/index.html" },
+    { "source": "/careers", "destination": "/careers/index.html" },
+    { "source": "/about", "destination": "/about/index.html" },
+    { "source": "/press-info", "destination": "/press-info/index.html" },
+    { "source": "/privacy-policy", "destination": "/privacy-policy/index.html" },
+    { "source": "/((?!assets/|Audio/|Audiomix/|boom2/.*\\..*|boom3D/.*\\..*|business/.*\\..*|button/|cameraplus/.*\\..*|capto/.*\\..*|devices/|faq/.*\\..*|hero/|images/|logos/|reviews/|team/|vizmato/.*\\..*|.*\\..*).*)", "destination": "/index.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
