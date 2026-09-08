@@ -1,399 +1,131 @@
-import { useState } from 'react';
 import { motion } from 'motion/react';
-import { SlidersVertical, Volume2, VolumeX, Gamepad2, Headphones, Laptop, Sparkles, Sliders, Mic, ShieldAlert, ArrowDownUp } from 'lucide-react';
+import { SlidersVertical, VolumeX, Shield, Sparkles } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-
-interface AppChannel {
-  id: string;
-  name: string;
-  category: string;
-  iconBg: string;
-  color: string;
-  defaultVol: number;
-  iconSvg?: () => JSX.Element;
-}
 
 export function Boom3DAppController() {
   const { t } = useTranslation();
 
-  const [channels, setChannels] = useState<{ [key: string]: number }>({
-    spotify: 80,
-    discord: 88,
-    youtube: 55,
-    game: 100,
-    zoom: 40,
-  });
-
-  const [muted, setMuted] = useState<{ [key: string]: boolean }>({
-    spotify: false,
-    discord: false,
-    youtube: false,
-    game: false,
-    zoom: false,
-  });
-
-  const [activeProfile, setActiveProfile] = useState<'custom' | 'gaming' | 'work' | 'music'>('gaming');
-
-  const appList: AppChannel[] = [
+  const controllerFeatures = [
     {
-      id: 'spotify',
-      name: 'Spotify',
-      category: 'Music & Podcasts',
-      iconBg: '#1db954',
-      color: '#10b981',
-      defaultVol: 80,
-      iconSvg: () => (
-        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current text-white">
-          <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.54.659.301 1.02zm1.44-3.3c-.301.42-.84.54-1.26.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15.001 10.62 18.66 12.9c.42.18.54.78.3 1.14zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
-        </svg>
-      )
+      icon: SlidersVertical,
+      badge: 'Individual Control',
+      title: 'Per-App Volume Precision',
+      desc: 'Individually adjust volumes for Spotify, Netflix, Discord, Chrome, and games so every sound source plays at your exact preferred level.',
+      color: 'from-blue-500 to-indigo-500',
+      shadow: 'shadow-blue-500/20'
     },
     {
-      id: 'discord',
-      name: 'Discord',
-      category: 'Voice Chat',
-      iconBg: '#5865f2',
-      color: '#6366f1',
-      defaultVol: 88,
-      iconSvg: () => (
-        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current text-white">
-          <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
-        </svg>
-      )
+      icon: VolumeX,
+      badge: 'One-Click Mute',
+      title: 'Selective Application Muting',
+      desc: 'Mute intrusive web advertisements, background chimes, or notifications with a single click without disturbing your music or movie playback.',
+      color: 'from-indigo-500 to-purple-500',
+      shadow: 'shadow-indigo-500/20'
     },
     {
-      id: 'youtube',
-      name: 'Google Chrome',
-      category: 'Browser & Video',
-      iconBg: '#ea4335',
-      color: '#ef4444',
-      defaultVol: 55,
-      iconSvg: () => (
-        <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-          <circle cx="12" cy="12" r="11" fill="#fbbc04"/>
-          <path d="M12 1a11 11 0 0 1 11 11h-6a5 5 0 0 0-8.66-2.5L12 1z" fill="#ea4335"/>
-          <path d="M23 12a11 11 0 0 1-16.5 9.53l3-5.2A5 5 0 0 0 17 12h6z" fill="#34a853"/>
-          <circle cx="12" cy="12" r="4.5" fill="#4285f4" stroke="white" strokeWidth="1.5"/>
-        </svg>
-      )
-    },
-    {
-      id: 'game',
-      name: 'Cyberpunk 2077',
-      category: 'Game Audio',
-      iconBg: '#0891b2',
-      color: '#06b6d4',
-      defaultVol: 100,
-      iconSvg: () => <Gamepad2 size={20} className="text-white" />
-    },
-    {
-      id: 'zoom',
-      name: 'Zoom / Slack',
-      category: 'Conference Calls',
-      iconBg: '#2563eb',
-      color: '#3b82f6',
-      defaultVol: 40,
-      iconSvg: () => <Laptop size={20} className="text-white" />
+      icon: Shield,
+      badge: 'Smart Memory',
+      title: 'Persistent Audio Profiles',
+      desc: 'Boom 3D automatically remembers your customized volume ratios for each application, restoring them smoothly on every session.',
+      color: 'from-purple-500 to-pink-500',
+      shadow: 'shadow-purple-500/20'
     }
   ];
 
-  const applyProfile = (profile: 'gaming' | 'work' | 'music') => {
-    setActiveProfile(profile);
-    if (profile === 'gaming') {
-      setChannels({ spotify: 25, discord: 85, youtube: 0, game: 100, zoom: 0 });
-      setMuted({ spotify: false, discord: false, youtube: true, game: false, zoom: true });
-    } else if (profile === 'work') {
-      setChannels({ spotify: 30, discord: 0, youtube: 0, game: 0, zoom: 95 });
-      setMuted({ spotify: false, discord: true, youtube: true, game: true, zoom: false });
-    } else if (profile === 'music') {
-      setChannels({ spotify: 100, discord: 0, youtube: 40, game: 0, zoom: 0 });
-      setMuted({ spotify: false, discord: true, youtube: false, game: true, zoom: true });
-    }
-  };
-
-  const handleVolumeChange = (id: string, val: number) => {
-    setChannels((prev) => ({ ...prev, [id]: val }));
-    setActiveProfile('custom');
-  };
-
-  const toggleMute = (id: string) => {
-    setMuted((prev) => ({ ...prev, [id]: !prev[id] }));
-  };
-
   return (
-    <section id="apps-volume-controller" className="relative py-20 lg:py-28 overflow-hidden bg-gradient-to-b from-white via-slate-50 to-white text-gray-900 scroll-mt-20 md:scroll-mt-24">
-      
-      {/* Background Soft Pastel Glows */}
-      <div className="absolute top-10 left-1/4 w-[600px] h-[350px] bg-indigo-100/60 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-10 right-1/4 w-[500px] h-[350px] bg-cyan-100/60 rounded-full blur-[140px] pointer-events-none" />
+    <section id="apps-volume-controller" className="relative py-20 lg:py-28 overflow-hidden bg-white text-gray-900 scroll-mt-20 md:scroll-mt-24 border-t border-gray-100">
+      {/* Subtle Background Glows */}
+      <div className="absolute top-0 right-1/4 w-[700px] h-[350px] bg-gradient-to-b from-blue-50/50 via-indigo-50/20 to-transparent rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-10 w-[500px] h-[350px] bg-purple-50/40 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-[1300px] mx-auto px-6 lg:px-12 relative z-10">
+      <div className="max-w-[1240px] mx-auto px-6 lg:px-12 relative z-10">
         
-        {/* Header */}
-        <div className="text-center max-w-[900px] mx-auto mb-14 md:mb-16 space-y-4">
+        {/* Section Header */}
+        <div className="text-center max-w-[920px] mx-auto mb-14 md:mb-18 space-y-4">
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-50 border border-indigo-200/60 text-xs font-semibold text-indigo-700 tracking-wide shadow-xs"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-xs font-semibold text-blue-700 tracking-wide"
           >
-            <SlidersVertical size={14} className="text-indigo-600" />
-            <span>Multi-Stream Precision</span>
+            <Sparkles size={14} className="text-blue-600" />
+            <span>{t('boom3d.key_features.apps_title') || 'APPLICATION VOLUME CONTROLLER'}</span>
           </motion.div>
 
-          <motion.h2
+          <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.08 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-gray-900 leading-tight"
+            className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 leading-tight"
           >
-            {t('boom3d.key_features.apps_title') || 'Apps Volume Controller'}
+            {t('boom3d.app_controller.title') || 'Control Volume of Individual Applications'}
           </motion.h2>
 
-          <motion.p
+          <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.16 }}
-            className="text-base md:text-lg text-gray-600 leading-relaxed max-w-[760px] mx-auto"
+            className="text-base md:text-lg text-gray-600 leading-relaxed max-w-[840px] mx-auto"
           >
-            {t('boom3d.key_features.apps_desc') ||
-              'Boom 3D allows you to manage individual application audio levels & volumes and seamlessly have an uninterrupted movie, game, or music experience.'}
+            {t('boom3d.key_features.apps_desc') || 'Do you want some apps to be muted and others with high volume? Boom 3D has an intelligent approach to application volume control. The app has been designed with an Application Volume Controller that lets you effortlessly manage individual application volumes, so you have an undisturbed movie, game, or call experience.'}
           </motion.p>
         </div>
 
-        {/* Profile Quick-Switch Pills */}
-        <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
-          <span className="text-xs uppercase font-bold tracking-widest text-gray-400 mr-2">Presets:</span>
-          <button
-            type="button"
-            onClick={() => applyProfile('gaming')}
-            className={`px-4 py-2 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all duration-200 cursor-pointer ${
-              activeProfile === 'gaming'
-                ? 'bg-indigo-600 text-white shadow-md shadow-indigo-200 font-bold'
-                : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
-            }`}
-          >
-            <Gamepad2 size={15} />
-            <span>Gaming Focus (Boost Game & Voice)</span>
-          </button>
-          
-          <button
-            type="button"
-            onClick={() => applyProfile('work')}
-            className={`px-4 py-2 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all duration-200 cursor-pointer ${
-              activeProfile === 'work'
-                ? 'bg-indigo-600 text-white shadow-md shadow-indigo-200 font-bold'
-                : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
-            }`}
-          >
-            <Laptop size={15} />
-            <span>Meeting & Work Mode</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => applyProfile('music')}
-            className={`px-4 py-2 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all duration-200 cursor-pointer ${
-              activeProfile === 'music'
-                ? 'bg-indigo-600 text-white shadow-md shadow-indigo-200 font-bold'
-                : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
-            }`}
-          >
-            <Headphones size={15} />
-            <span>Pure Music Immersion</span>
-          </button>
-        </div>
-
-        {/* Studio Mixer Rack Card (Light Theme) */}
+        {/* Real Product Image Centerpiece */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-white/95 backdrop-blur-2xl rounded-3xl p-6 md:p-10 border border-gray-200 shadow-[0_20px_60px_rgba(0,0,0,0.06)]"
+          className="relative max-w-[1020px] mx-auto mb-16 md:mb-20"
         >
-          {/* Top Status Bar */}
-          <div className="flex flex-wrap items-center justify-between pb-6 border-b border-gray-100 mb-8 gap-4">
-            <div className="flex items-center gap-3">
-              <div className="w-3 h-3 rounded-full bg-emerald-500 animate-ping" />
-              <span className="text-sm font-semibold text-gray-800">Virtual Audio Driver Active (5 Streams Managed)</span>
-            </div>
-            <div className="flex items-center gap-4 text-xs font-mono text-gray-500">
-              <span className="px-2.5 py-1 rounded bg-gray-100 border border-gray-200">Auto-Duck: Enabled</span>
-              <span className="px-2.5 py-1 rounded bg-gray-100 border border-gray-200">Latency: &lt; 1.2ms</span>
-            </div>
+          <div className="relative rounded-2xl md:rounded-3xl p-3 md:p-6 bg-gradient-to-b from-gray-50/80 to-white border border-gray-200/80 shadow-[0_20px_60px_rgba(0,0,0,0.06)] overflow-hidden group">
+            <img 
+              src="/boom3D/s5.webp" 
+              alt="Boom 3D Application Volume Controller" 
+              className="w-full h-auto object-contain rounded-xl md:rounded-2xl transition-transform duration-500 group-hover:scale-[1.01]" 
+              loading="lazy"
+            />
           </div>
-
-          {/* Mixer Channels Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
-            {appList.map((app) => {
-              const currentVol = muted[app.id] ? 0 : channels[app.id];
-              const isMuted = muted[app.id];
-
-              return (
-                <div 
-                  key={app.id} 
-                  className="bg-slate-50/90 rounded-2xl p-5 border border-gray-200/70 hover:border-indigo-300 hover:shadow-md transition-all duration-300 flex flex-col items-center group"
-                >
-                  {/* App Icon & Details */}
-                  <div 
-                    className="w-12 h-12 rounded-2xl flex items-center justify-center shadow-md mb-3 transition-transform group-hover:scale-105"
-                    style={{ backgroundColor: app.iconBg }}
-                  >
-                    {app.iconSvg && app.iconSvg()}
-                  </div>
-
-                  <h4 className="text-sm font-bold text-gray-900 tracking-wide text-center">{app.name}</h4>
-                  <p className="text-[11px] text-gray-500 text-center mb-5">{app.category}</p>
-
-                  {/* VU Level Meter */}
-                  <div className="w-full flex items-end justify-center gap-1 h-16 bg-gray-900 rounded-xl p-2 mb-5 shadow-inner">
-                    {[0.3, 0.6, 0.9, 0.5, 0.8, 0.4].map((multiplier, i) => (
-                      <motion.div
-                        key={i}
-                        animate={{
-                          height: isMuted ? '4px' : [`${Math.max(6, (currentVol * multiplier * 0.5))}%`, `${Math.max(8, (currentVol * multiplier * 0.95))}%`, `${Math.max(6, (currentVol * multiplier * 0.4))}%`]
-                        }}
-                        transition={{
-                          duration: 0.6 + i * 0.15,
-                          repeat: Infinity,
-                          ease: 'easeInOut'
-                        }}
-                        className="w-2 rounded-t transition-all duration-300"
-                        style={{
-                          backgroundColor: isMuted ? '#4b5563' : currentVol > 85 ? '#f43f5e' : currentVol > 60 ? app.color : '#38bdf8'
-                        }}
-                      />
-                    ))}
-                  </div>
-
-                  {/* Slider Control */}
-                  <div className="w-full space-y-2 mb-4">
-                    <div className="flex justify-between items-center text-xs font-mono">
-                      <span className="text-gray-500">Level</span>
-                      <span className={`font-bold ${isMuted ? 'text-gray-400 line-through' : 'text-gray-900'}`}>
-                        {currentVol}%
-                      </span>
-                    </div>
-                    <input
-                      type="range"
-                      min="0"
-                      max="100"
-                      value={channels[app.id]}
-                      onChange={(e) => handleVolumeChange(app.id, Number(e.target.value))}
-                      className="w-full h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
-                    />
-                  </div>
-
-                  {/* Mute Button */}
-                  <button
-                    type="button"
-                    onClick={() => toggleMute(app.id)}
-                    className={`w-full py-2 rounded-xl text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors cursor-pointer ${
-                      isMuted
-                        ? 'bg-rose-50 text-rose-600 border border-rose-200 hover:bg-rose-100'
-                        : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200 shadow-xs'
-                    }`}
-                  >
-                    {isMuted ? <VolumeX size={13} /> : <Volume2 size={13} />}
-                    <span>{isMuted ? 'Muted' : 'Active'}</span>
-                  </button>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Bottom Callout */}
-          <div className="mt-8 pt-6 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
-            <span className="flex items-center gap-2">
-              <Sparkles size={14} className="text-indigo-600" />
-              Adjust sliders anytime to isolate calls, dial in background music, or prioritize high-stakes game audio.
-            </span>
-            <span className="font-mono text-gray-400">Supports over 10,000+ native desktop applications</span>
-          </div>
-
         </motion.div>
 
-        {/* Asymmetric 2-Column Explanation Cards (Distinct Layout from other sections) */}
-        <div className="mt-16 grid lg:grid-cols-12 gap-8 items-stretch">
-          
-          {/* Left Large Card: Intelligent Voice Ducking */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="lg:col-span-7 bg-white p-8 rounded-3xl border border-gray-200/80 shadow-[0_15px_45px_rgba(0,0,0,0.04)] flex flex-col justify-between"
-          >
-            <div>
-              <div className="w-12 h-12 rounded-2xl bg-cyan-50 border border-cyan-200 flex items-center justify-center text-cyan-600 mb-5">
-                <ArrowDownUp size={22} />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                Intelligent Voice Ducking & Call Priority
-              </h3>
-              <p className="text-gray-600 leading-relaxed text-sm md:text-base">
-                Never get startled by a loud YouTube video or game explosion during an important Zoom or Discord meeting. Boom 3D automatically ducks background multimedia streams the moment voice communication is detected, then smoothly restores volume when the speaker pauses.
-              </p>
-            </div>
-
-            <div className="mt-8 p-4 rounded-2xl bg-slate-50 border border-gray-200/70 flex items-center justify-between gap-4">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center text-white">
-                  <Mic size={16} />
+        {/* 3 Clean Standard Feature Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-[1200px] mx-auto">
+          {controllerFeatures.map((feat, index) => {
+            const Icon = feat.icon;
+            return (
+              <motion.div
+                key={feat.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group relative rounded-3xl p-8 bg-white border border-gray-100 shadow-[0_10px_35px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_45px_rgba(99,102,241,0.08)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-center text-center overflow-hidden"
+              >
+                {/* Top Accent Line */}
+                <div className={`absolute top-0 inset-x-0 h-1 bg-gradient-to-r ${feat.color} opacity-80 group-hover:h-1.5 transition-all duration-300`} />
+                
+                {/* Icon */}
+                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-tr ${feat.color} text-white shadow-md ${feat.shadow} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <Icon size={24} />
                 </div>
-                <div>
-                  <p className="text-xs font-bold text-gray-800">Voice Threshold Active</p>
-                  <p className="text-[11px] text-gray-500">Auto-dim background tabs by -15 dB</p>
-                </div>
-              </div>
-              <span className="text-xs font-mono font-semibold px-2.5 py-1 rounded bg-white border border-gray-200 text-emerald-600">
-                Active Protection
-              </span>
-            </div>
-          </motion.div>
 
-          {/* Right Column Stack: 2 Feature Cards */}
-          <div className="lg:col-span-5 flex flex-col gap-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-white p-6 rounded-3xl border border-gray-200/80 shadow-[0_10px_30px_rgba(0,0,0,0.04)] flex-1 flex flex-col justify-center"
-            >
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-600">
-                  <Sliders size={20} />
-                </div>
-                <h4 className="text-lg font-bold text-gray-900">Per-App Equalizer Memory</h4>
-              </div>
-              <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
-                Assign Bass Boost specifically to Spotify, Vocal Clarity to Zoom, and 3D Surround to Netflix — Boom 3D remembers your favorite sonic settings per application automatically.
-              </p>
-            </motion.div>
+                <span className="text-[11px] font-semibold text-blue-600 bg-blue-50 px-2.5 py-0.5 rounded-full mb-3">
+                  {feat.badge}
+                </span>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-white p-6 rounded-3xl border border-gray-200/80 shadow-[0_10px_30px_rgba(0,0,0,0.04)] flex-1 flex flex-col justify-center"
-            >
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-600">
-                  <ShieldAlert size={20} />
-                </div>
-                <h4 className="text-lg font-bold text-gray-900">Instant Global Mute Hotkeys</h4>
-              </div>
-              <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
-                Mute individual background apps on the fly using customizable global keyboard shortcuts without minimizing your full-screen game or presentation.
-              </p>
-            </motion.div>
-          </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 tracking-tight">
+                  {feat.title}
+                </h3>
 
+                <p className="text-sm md:text-[15px] leading-relaxed text-gray-600">
+                  {feat.desc}
+                </p>
+              </motion.div>
+            );
+          })}
         </div>
 
       </div>

@@ -157,22 +157,12 @@ function FeatureCard({ feature, index }: { feature: FeatureCardData; index: numb
   );
 }
 
-function usePrefersReducedMotion() {
-  const [prefersReducedMotion] = useState(
-    () => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  );
-  return prefersReducedMotion;
-}
-
 export function Boom3DKeyFeatures() {
   const { t } = useTranslation();
-  const prefersReducedMotion = usePrefersReducedMotion();
 
   return (
     <section
-      className={`relative z-30 ${
-        prefersReducedMotion ? 'mt-0' : '-mt-[100vh]'
-      } min-h-screen rounded-t-[36px] md:rounded-t-[52px] bg-white pt-24 pb-28 px-6 shadow-[0_-30px_70px_rgba(0,0,0,0.14)] border-t border-gray-100/90 overflow-hidden`}
+      className="relative z-30 mt-0 min-h-screen rounded-t-[36px] md:rounded-t-[52px] bg-white pt-24 pb-28 px-6 shadow-[0_-15px_40px_rgba(0,0,0,0.05)] border-t border-gray-100 overflow-hidden"
     >
       {/* Shared gradient definition for every icon ring */}
       <svg width="0" height="0" className="absolute">

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { motion, useScroll, useTransform, useMotionValueEvent } from 'motion/react';
+import { useScroll, useTransform, useMotionValueEvent } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 import { Boom3DAppUniverseVisual, useResponsiveTier, getNaturalSize } from './Boom3DAppUniverse';
 
@@ -36,26 +36,21 @@ export function Boom3DScrollReveal() {
 
   const [phase, setPhase] = useState<Phase>('line1');
 
-  // 4-stage progression:
-  // 0.00 - 0.25: Line 1
-  // 0.25 - 0.50: Line 2
-  // 0.50 - 0.75: Universe Visual
-  // 0.75 - 1.00: KeyFeatures slides up like a presentation slide covering Universe
+  // 3-stage progression:
+  // 0.00 - 0.33: Line 1
+  // 0.33 - 0.66: Line 2
+  // 0.66 - 1.00: Universe Visual
   useMotionValueEvent(scrollYProgress, 'change', (v) => {
-    const nextPhase: Phase = v < 0.25 ? 'line1' : v < 0.50 ? 'line2' : 'universe';
+    const nextPhase: Phase = v < 0.33 ? 'line1' : v < 0.66 ? 'line2' : 'universe';
     setPhase((prev) => (prev !== nextPhase ? nextPhase : prev));
   });
 
   // Orbital rotation smoothly advances as user scrolls through Stage 3
   const scrollAngleDeg = useTransform(
     scrollYProgress,
-    [0.50, 0.85],
+    [0.66, 0.95],
     prefersReducedMotion ? [0, 0] : [0, 180]
   );
-
-  // Recessing depth as the next section slides over it like a PDF slide
-  const universeCoverScale = useTransform(scrollYProgress, [0.75, 1], [1, 0.94]);
-  const universeCoverOpacity = useTransform(scrollYProgress, [0.75, 0.98], [1, 0.4]);
 
   // =========================================
   // FIT SCALE — keeps every icon fully visible without clipping
@@ -108,7 +103,7 @@ export function Boom3DScrollReveal() {
   }
 
   return (
-    <section ref={sectionRef} className="relative bg-white" style={{ height: '400vh' }}>
+    <section ref={sectionRef} className="relative bg-white" style={{ height: '300vh' }}>
       <div
         ref={stickyRef}
         className="sticky top-0 h-screen w-full overflow-hidden"
@@ -157,13 +152,12 @@ export function Boom3DScrollReveal() {
           </div>
         </div>
 
-        {/* STAGE 3: App Universe Visual (Slides UP into view, gently recesses as next section slides over it like a PDF slide) */}
-        <motion.div
+        {/* STAGE 3: App Universe Visual */}
+        <div
           className="absolute inset-0 flex items-center justify-center pt-24 pb-8 px-6 transition-all duration-500 ease-out"
           style={{
-            opacity: phase === 'universe' ? universeCoverOpacity : 0,
-            scale: phase === 'universe' ? universeCoverScale : 0.95,
-            transform: phase === 'universe' ? 'translateY(0)' : 'translateY(56px)',
+            opacity: phase === 'universe' ? 1 : 0,
+            transform: phase === 'universe' ? 'translateY(0)' : 'translateY(40px)',
             pointerEvents: phase === 'universe' ? 'auto' : 'none',
             visibility: phase === 'universe' ? 'visible' : 'hidden',
           }}
@@ -174,7 +168,7 @@ export function Boom3DScrollReveal() {
             scale={fitScale}
             skipEntrance={true}
           />
-        </motion.div>
+        </div>
       </div>
     </section>
   );

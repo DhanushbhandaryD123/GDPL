@@ -7,6 +7,7 @@
  * Text/content + URL + image are all taken from each page's actual content so
  * Google sees page-connected meta as in Home.
  */
+import localizedSeoData from './localizedSeoData.json';
 
 export interface SeoEntry {
   title: string;
@@ -21,6 +22,9 @@ export interface SeoEntry {
   twitterDescription?: string;
   twitterImage?: string;
   canonicalPath?: string; // defaults to key
+  canonicalUrl?: string; // explicit canonical URL if provided
+  robots?: string;
+  hreflangs?: Array<{ hreflang: string; href: string }>;
   // Product JSON-LD – added for all product pages like boom/boom3D/capto/subpage/cameraplus etc
   softwareApplication?: {
     name: string;
@@ -351,11 +355,285 @@ export const SEO_DATA: Record<string, SeoEntry> = {
     ogImage: '/apps/Boom3D-mac.jpeg',
     twitterImage: '/apps/Boom3D-mac.jpeg',
   },
+
+  // ==========================================
+  // LOCALIZED BOOM 2 ENTRIES (Requested by User)
+  // ==========================================
+  '/de/boom2': {
+    title: 'Boom 2: Leistungsstarker Stereo-Sound-Verbesserer für Mac',
+    description: 'Boom 2 ist ein Lautstärke-Booster und Equalizer für den Mac. Genieße Filme, Musik und Spiele systemweit mit bestem Stereo-Sound über jeden Kopfhörer.',
+    canonicalUrl: 'https://www.globaldelight.com/boom/de/',
+    robots: 'index, follow',
+    keywords: 'Boom 2, Mac Stereo-Sound-Verbesserer, Lautstärke-Booster, Equalizer Mac',
+    ogImage: '/apps/Boom2-mac.jpeg',
+    twitterImage: '/apps/Boom2-mac.jpeg',
+    hreflangs: [
+      { hreflang: 'de', href: 'https://www.globaldelight.com/boom/de/' },
+      { hreflang: 'it', href: 'https://www.globaldelight.com/boom/it/' },
+      { hreflang: 'ja', href: 'https://www.globaldelight.com/boom/ja/' },
+      { hreflang: 'fr', href: 'https://www.globaldelight.com/boom/fr/' },
+      { hreflang: 'pt', href: 'https://www.globaldelight.com/boom/pt/' },
+      { hreflang: 'es', href: 'https://www.globaldelight.com/boom/es/' },
+      { hreflang: 'zh-cn', href: 'https://www.globaldelight.com/boom/zh-cn/' },
+      { hreflang: 'zh-tw', href: 'https://www.globaldelight.com/boom/zh-tw/' },
+    ],
+  },
+  '/it/boom2': {
+    title: 'Boom 2: Potenziatore del suono stereo per Mac',
+    description: "Boom 2 è un'app di equalizzazione e amplificazione audio di sistema per Mac. Goditi film, musica e giochi con il miglior suono stereo su QUALSIASI cuffia.",
+    canonicalUrl: 'https://www.globaldelight.com/boom/it/',
+    robots: 'index, follow',
+    keywords: 'Boom 2, potenziatore suono stereo Mac, equalizzazione audio, amplificazione',
+    ogImage: '/apps/Boom2-mac.jpeg',
+    twitterImage: '/apps/Boom2-mac.jpeg',
+    hreflangs: [
+      { hreflang: 'de', href: 'https://www.globaldelight.com/boom/de/' },
+      { hreflang: 'it', href: 'https://www.globaldelight.com/boom/it/' },
+      { hreflang: 'ja', href: 'https://www.globaldelight.com/boom/ja/' },
+      { hreflang: 'fr', href: 'https://www.globaldelight.com/boom/fr/' },
+      { hreflang: 'pt', href: 'https://www.globaldelight.com/boom/pt/' },
+      { hreflang: 'es', href: 'https://www.globaldelight.com/boom/es/' },
+      { hreflang: 'zh-cn', href: 'https://www.globaldelight.com/boom/zh-cn/' },
+      { hreflang: 'zh-tw', href: 'https://www.globaldelight.com/boom/zh-tw/' },
+    ],
+  },
+  '/ja/boom2': {
+    title: 'Boom 2：Macのサウンドを劇的に向上させるステレオ音質向上アプリ',
+    description: 'Boom 2はMac全体で使える音量増幅・イコライザーアプリです。どんなヘッドホンでも最高のステレオサウンドで、映画や音楽、ゲームを楽しめます。',
+    canonicalUrl: 'https://www.globaldelight.com/boom/ja/',
+    robots: 'index, follow',
+    keywords: 'Boom 2, Mac サウンド 音質向上, 音量増幅, イコライザーアプリ',
+    ogImage: '/apps/Boom2-mac.jpeg',
+    twitterImage: '/apps/Boom2-mac.jpeg',
+    hreflangs: [
+      { hreflang: 'de', href: 'https://www.globaldelight.com/boom/de/' },
+      { hreflang: 'it', href: 'https://www.globaldelight.com/boom/it/' },
+      { hreflang: 'ja', href: 'https://www.globaldelight.com/boom/ja/' },
+      { hreflang: 'fr', href: 'https://www.globaldelight.com/boom/fr/' },
+      { hreflang: 'pt', href: 'https://www.globaldelight.com/boom/pt/' },
+      { hreflang: 'es', href: 'https://www.globaldelight.com/boom/es/' },
+      { hreflang: 'zh-cn', href: 'https://www.globaldelight.com/boom/zh-cn/' },
+      { hreflang: 'zh-tw', href: 'https://www.globaldelight.com/boom/zh-tw/' },
+    ],
+  },
+  '/fr/boom2': {
+    title: 'Boom 2 : Améliorateur de son stéréophonique pour Mac',
+    description: "Boom 2 est un égaliseur et amplificateur de son global sur Mac. Profitez de vos films, musiques et jeux avec le meilleur son stéréo sur N'IMPORTE QUEL casque.",
+    canonicalUrl: 'https://www.globaldelight.com/boom/fr/',
+    robots: 'index, follow',
+    keywords: 'Boom 2, améliorateur de son stéréophonique Mac, égaliseur, amplificateur',
+    ogImage: '/apps/Boom2-mac.jpeg',
+    twitterImage: '/apps/Boom2-mac.jpeg',
+    hreflangs: [
+      { hreflang: 'de', href: 'https://www.globaldelight.com/boom/de/' },
+      { hreflang: 'it', href: 'https://www.globaldelight.com/boom/it/' },
+      { hreflang: 'ja', href: 'https://www.globaldelight.com/boom/ja/' },
+      { hreflang: 'fr', href: 'https://www.globaldelight.com/boom/fr/' },
+      { hreflang: 'pt', href: 'https://www.globaldelight.com/boom/pt/' },
+      { hreflang: 'es', href: 'https://www.globaldelight.com/boom/es/' },
+      { hreflang: 'zh-cn', href: 'https://www.globaldelight.com/boom/zh-cn/' },
+      { hreflang: 'zh-tw', href: 'https://www.globaldelight.com/boom/zh-tw/' },
+    ],
+  },
+  '/pt/boom2': {
+    title: 'Boom 2: Aprimorador de Som Estéreo para o seu Mac',
+    description: 'O Boom 2 é um app de equalização e aumento de volume para todo o Mac. Aproveite filmes, músicas e jogos com o melhor som estéreo em QUALQUER fone de ouvido.',
+    canonicalUrl: 'https://www.globaldelight.com/boom/pt/',
+    robots: 'index, follow',
+    keywords: 'Boom 2, aprimorador de som estéreo Mac, equalização, aumento de volume',
+    ogImage: '/apps/Boom2-mac.jpeg',
+    twitterImage: '/apps/Boom2-mac.jpeg',
+    hreflangs: [
+      { hreflang: 'de', href: 'https://www.globaldelight.com/boom/de/' },
+      { hreflang: 'it', href: 'https://www.globaldelight.com/boom/it/' },
+      { hreflang: 'ja', href: 'https://www.globaldelight.com/boom/ja/' },
+      { hreflang: 'fr', href: 'https://www.globaldelight.com/boom/fr/' },
+      { hreflang: 'pt', href: 'https://www.globaldelight.com/boom/pt/' },
+      { hreflang: 'es', href: 'https://www.globaldelight.com/boom/es/' },
+      { hreflang: 'zh-cn', href: 'https://www.globaldelight.com/boom/zh-cn/' },
+      { hreflang: 'zh-tw', href: 'https://www.globaldelight.com/boom/zh-tw/' },
+    ],
+  },
+  '/es/boom2': {
+    title: 'Boom 2: Potenciador de sonido estéreo para tu Mac',
+    description: 'Boom 2 es un ecualizador y amplificador de volumen para todo el sistema Mac. Disfruta películas, música y juegos con el mejor sonido estéreo en CUALQUIER auricular.',
+    canonicalUrl: 'https://www.globaldelight.com/boom/es/',
+    robots: 'index, follow',
+    keywords: 'Boom 2, potenciador de sonido estéreo Mac, ecualizador, amplificador volumen',
+    ogImage: '/apps/Boom2-mac.jpeg',
+    twitterImage: '/apps/Boom2-mac.jpeg',
+    hreflangs: [
+      { hreflang: 'de', href: 'https://www.globaldelight.com/boom/de/' },
+      { hreflang: 'it', href: 'https://www.globaldelight.com/boom/it/' },
+      { hreflang: 'ja', href: 'https://www.globaldelight.com/boom/ja/' },
+      { hreflang: 'fr', href: 'https://www.globaldelight.com/boom/fr/' },
+      { hreflang: 'pt', href: 'https://www.globaldelight.com/boom/pt/' },
+      { hreflang: 'es', href: 'https://www.globaldelight.com/boom/es/' },
+      { hreflang: 'zh-cn', href: 'https://www.globaldelight.com/boom/zh-cn/' },
+      { hreflang: 'zh-tw', href: 'https://www.globaldelight.com/boom/zh-tw/' },
+    ],
+  },
+  '/zh/boom2': {
+    title: 'Boom 2：适用于 Mac 的全系统立体声音效增强与音量放大工具',
+    description: 'Boom 2 是一款适用于 Mac 全系统的音量增强与均衡器应用。无论使用何种耳机，您都能在观看电影、聆听音乐和游玩游戏时，体验到极为出色的立体声音效，全面提升您的音频听觉享受。',
+    canonicalUrl: 'https://www.globaldelight.com/boom/zh-cn/',
+    robots: 'index, follow',
+    keywords: 'Boom 2, Mac 全系统立体声增强, 音量放大工具, 均衡器',
+    ogImage: '/apps/Boom2-mac.jpeg',
+    twitterImage: '/apps/Boom2-mac.jpeg',
+    hreflangs: [
+      { hreflang: 'de', href: 'https://www.globaldelight.com/boom/de/' },
+      { hreflang: 'it', href: 'https://www.globaldelight.com/boom/it/' },
+      { hreflang: 'ja', href: 'https://www.globaldelight.com/boom/ja/' },
+      { hreflang: 'fr', href: 'https://www.globaldelight.com/boom/fr/' },
+      { hreflang: 'pt', href: 'https://www.globaldelight.com/boom/pt/' },
+      { hreflang: 'es', href: 'https://www.globaldelight.com/boom/es/' },
+      { hreflang: 'zh-cn', href: 'https://www.globaldelight.com/boom/zh-cn/' },
+      { hreflang: 'zh-tw', href: 'https://www.globaldelight.com/boom/zh-tw/' },
+    ],
+  },
+
+  // ==========================================
+  // LOCALIZED BOOM 3D ENTRIES (Requested by User)
+  // ==========================================
+  '/de/boom3D': {
+    title: 'Beste Lautstärke-Booster- und Equalizer-App für Mac & Windows',
+    description: 'Steigern Sie Ihre Audioqualität mit Boom 3D, der leistungsstarken Lautstärkebooster- und Equalizer-App für Mac und Windows. Genießen Sie satten Klang.',
+    canonicalUrl: 'https://www.globaldelight.com/boom/de/',
+    robots: 'index, follow',
+    keywords: 'Boom 3D, Lautstärkebooster- und Equalizer-App Mac Windows, Audioqualität',
+    ogImage: '/apps/Boom3D-mac.jpeg',
+    twitterImage: '/apps/Boom3D-mac.jpeg',
+    hreflangs: [
+      { hreflang: 'de', href: 'https://www.globaldelight.com/boom/de/' },
+      { hreflang: 'it', href: 'https://www.globaldelight.com/boom/it/' },
+      { hreflang: 'ja', href: 'https://www.globaldelight.com/boom/ja/' },
+      { hreflang: 'fr', href: 'https://www.globaldelight.com/boom/fr/' },
+      { hreflang: 'pt', href: 'https://www.globaldelight.com/boom/pt/' },
+      { hreflang: 'es', href: 'https://www.globaldelight.com/boom/es/' },
+      { hreflang: 'zh-cn', href: 'https://www.globaldelight.com/boom/zh-cn/' },
+      { hreflang: 'zh-tw', href: 'https://www.globaldelight.com/boom/zh-tw/' },
+    ],
+  },
+  '/it/boom3D': {
+    title: 'Migliore booster volume ed equalizzatore per Mac e Windows',
+    description: 'Migliora l’audio con Boom 3D, la potente app per aumentare il volume e usare l’equalizzatore su Mac e Windows. Goditi un suono ricco e coinvolgente.',
+    canonicalUrl: 'https://www.globaldelight.com/boom/it/',
+    robots: 'index, follow',
+    keywords: 'Boom 3D, booster volume equalizzatore Mac Windows, suono ricco coinvolgente',
+    ogImage: '/apps/Boom3D-mac.jpeg',
+    twitterImage: '/apps/Boom3D-mac.jpeg',
+    hreflangs: [
+      { hreflang: 'de', href: 'https://www.globaldelight.com/boom/de/' },
+      { hreflang: 'it', href: 'https://www.globaldelight.com/boom/it/' },
+      { hreflang: 'ja', href: 'https://www.globaldelight.com/boom/ja/' },
+      { hreflang: 'fr', href: 'https://www.globaldelight.com/boom/fr/' },
+      { hreflang: 'pt', href: 'https://www.globaldelight.com/boom/pt/' },
+      { hreflang: 'es', href: 'https://www.globaldelight.com/boom/es/' },
+      { hreflang: 'zh-cn', href: 'https://www.globaldelight.com/boom/zh-cn/' },
+      { hreflang: 'zh-tw', href: 'https://www.globaldelight.com/boom/zh-tw/' },
+    ],
+  },
+  '/ja/boom3D': {
+    title: 'MacとWindows対応のおすすめ音量ブースター＆イコライザーアプリで音質を向上',
+    description: 'MacとWindows向けの強力な音量ブースター＆イコライザーアプリ、Boom 3Dでオーディオ品質をさらに高めましょう。音量を自在に調整し、豊かでクリア、臨場感あふれるサウンドをいつでも楽しめます。音楽、映画、ゲームなど、あらゆるコンテンツの音をよりパワフルに体験でき、毎日のリスニングがもっと楽しくなります。',
+    canonicalUrl: 'https://www.globaldelight.com/boom/ja/',
+    robots: 'index, follow',
+    keywords: 'Boom 3D, Mac Windows 音量ブースター イコライザーアプリ 音質向上, サラウンド',
+    ogImage: '/apps/Boom3D-mac.jpeg',
+    twitterImage: '/apps/Boom3D-mac.jpeg',
+    hreflangs: [
+      { hreflang: 'de', href: 'https://www.globaldelight.com/boom/de/' },
+      { hreflang: 'it', href: 'https://www.globaldelight.com/boom/it/' },
+      { hreflang: 'ja', href: 'https://www.globaldelight.com/boom/ja/' },
+      { hreflang: 'fr', href: 'https://www.globaldelight.com/boom/fr/' },
+      { hreflang: 'pt', href: 'https://www.globaldelight.com/boom/pt/' },
+      { hreflang: 'es', href: 'https://www.globaldelight.com/boom/es/' },
+      { hreflang: 'zh-cn', href: 'https://www.globaldelight.com/boom/zh-cn/' },
+      { hreflang: 'zh-tw', href: 'https://www.globaldelight.com/boom/zh-tw/' },
+    ],
+  },
+  '/fr/boom3D': {
+    title: 'Meilleur booster de volume et égaliseur pour Mac et PC',
+    description: 'Améliorez la qualité audio avec Boom 3D, l’app puissante d’amplification du volume et d’égalisation pour Mac et Windows. Profitez d’un son riche et immersif.',
+    canonicalUrl: 'https://www.globaldelight.com/boom/fr/',
+    robots: 'index, follow',
+    keywords: 'Boom 3D, meilleur booster de volume et égaliseur Mac PC, son immersif',
+    ogImage: '/apps/Boom3D-mac.jpeg',
+    twitterImage: '/apps/Boom3D-mac.jpeg',
+    hreflangs: [
+      { hreflang: 'de', href: 'https://www.globaldelight.com/boom/de/' },
+      { hreflang: 'it', href: 'https://www.globaldelight.com/boom/it/' },
+      { hreflang: 'ja', href: 'https://www.globaldelight.com/boom/ja/' },
+      { hreflang: 'fr', href: 'https://www.globaldelight.com/boom/fr/' },
+      { hreflang: 'pt', href: 'https://www.globaldelight.com/boom/pt/' },
+      { hreflang: 'es', href: 'https://www.globaldelight.com/boom/es/' },
+      { hreflang: 'zh-cn', href: 'https://www.globaldelight.com/boom/zh-cn/' },
+      { hreflang: 'zh-tw', href: 'https://www.globaldelight.com/boom/zh-tw/' },
+    ],
+  },
+  '/pt/boom3D': {
+    title: 'Melhor booster de volume e equalizador para Mac e PC',
+    description: 'Melhore sua qualidade de áudio com o Boom 3D, o potente app de aumento de volume e equalizador para Mac e Windows. Desfrute de um som rico e imersivo.',
+    canonicalUrl: 'https://www.globaldelight.com/boom/pt/',
+    robots: 'index, follow',
+    keywords: 'Boom 3D, booster de volume equalizador Mac PC, som rico imersivo',
+    ogImage: '/apps/Boom3D-mac.jpeg',
+    twitterImage: '/apps/Boom3D-mac.jpeg',
+    hreflangs: [
+      { hreflang: 'de', href: 'https://www.globaldelight.com/boom/de/' },
+      { hreflang: 'it', href: 'https://www.globaldelight.com/boom/it/' },
+      { hreflang: 'ja', href: 'https://www.globaldelight.com/boom/ja/' },
+      { hreflang: 'fr', href: 'https://www.globaldelight.com/boom/fr/' },
+      { hreflang: 'pt', href: 'https://www.globaldelight.com/boom/pt/' },
+      { hreflang: 'es', href: 'https://www.globaldelight.com/boom/es/' },
+      { hreflang: 'zh-cn', href: 'https://www.globaldelight.com/boom/zh-cn/' },
+      { hreflang: 'zh-tw', href: 'https://www.globaldelight.com/boom/zh-tw/' },
+    ],
+  },
+  '/es/boom3D': {
+    title: 'La mejor app de aumento de volumen y ecualizador para Mac y Windows',
+    description: 'Mejora la calidad de tu audio con Boom 3D, la potente app de amplificación de volumen y ecualizador para Mac y Windows. Disfruta un sonido rico e inmersivo.',
+    canonicalUrl: 'https://www.globaldelight.com/boom/es/',
+    robots: 'index, follow',
+    keywords: 'Boom 3D, app aumento de volumen ecualizador Mac Windows, sonido rico e inmersivo',
+    ogImage: '/apps/Boom3D-mac.jpeg',
+    twitterImage: '/apps/Boom3D-mac.jpeg',
+    hreflangs: [
+      { hreflang: 'de', href: 'https://www.globaldelight.com/boom/de/' },
+      { hreflang: 'it', href: 'https://www.globaldelight.com/boom/it/' },
+      { hreflang: 'ja', href: 'https://www.globaldelight.com/boom/ja/' },
+      { hreflang: 'fr', href: 'https://www.globaldelight.com/boom/fr/' },
+      { hreflang: 'pt', href: 'https://www.globaldelight.com/boom/pt/' },
+      { hreflang: 'es', href: 'https://www.globaldelight.com/boom/es/' },
+      { hreflang: 'zh-cn', href: 'https://www.globaldelight.com/boom/zh-cn/' },
+      { hreflang: 'zh-tw', href: 'https://www.globaldelight.com/boom/zh-tw/' },
+    ],
+  },
+  '/zh/boom3D': {
+    title: '适用于 Mac 和 Windows 的最佳音量增强器和均衡器应用',
+    description: '使用 Boom 3D 提升音频质量，这款强大的 Mac 和 Windows 音量增强器与均衡器应用，可让声音更丰富、更清晰、更具沉浸感，尽享震撼聆听体验。',
+    canonicalUrl: 'https://www.globaldelight.com/boom/zh-cn/',
+    robots: 'index, follow',
+    keywords: 'Boom 3D, Mac Windows 最佳音量增强器 均衡器应用, 震撼聆听体验',
+    ogImage: '/apps/Boom3D-mac.jpeg',
+    twitterImage: '/apps/Boom3D-mac.jpeg',
+    hreflangs: [
+      { hreflang: 'de', href: 'https://www.globaldelight.com/boom/de/' },
+      { hreflang: 'it', href: 'https://www.globaldelight.com/boom/it/' },
+      { hreflang: 'ja', href: 'https://www.globaldelight.com/boom/ja/' },
+      { hreflang: 'fr', href: 'https://www.globaldelight.com/boom/fr/' },
+      { hreflang: 'pt', href: 'https://www.globaldelight.com/boom/pt/' },
+      { hreflang: 'es', href: 'https://www.globaldelight.com/boom/es/' },
+      { hreflang: 'zh-cn', href: 'https://www.globaldelight.com/boom/zh-cn/' },
+      { hreflang: 'zh-tw', href: 'https://www.globaldelight.com/boom/zh-tw/' },
+    ],
+  },
 };
 
 export function getSeoForPath(path: string): SeoEntry | null {
-  // Exact match first, then fallback to "/" for unknown.
+  const localized = (localizedSeoData as Record<string, SeoEntry>)[path];
+  if (localized) return localized;
   if (SEO_DATA[path]) return SEO_DATA[path];
-  // For /:lang stripped paths already match; unknown paths return null to use generic defaults.
   return null;
 }

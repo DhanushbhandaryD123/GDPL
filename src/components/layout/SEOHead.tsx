@@ -70,21 +70,27 @@ export function SEOHead() {
   }, []);
 
   // Extract the base path without the language prefix
-  let currentPath = location.pathname;
+  const rawPath = location.pathname;
+  let currentPath = rawPath;
   const pathParts = currentPath.split('/').filter(Boolean);
   const currentLang = pathParts.length > 0 && supportedLangs.includes(pathParts[0]) ? pathParts[0] : 'en';
 
-  if (pathParts.length > 0 && supportedLangs.includes(pathParts[0])) {
-    // Remove the language prefix
-    pathParts.shift();
-    currentPath = '/' + pathParts.join('/');
+  // Check exact localized path first (e.g. /de/boom2 or /de/boom3D)
+  let seo = getSeoForPath(rawPath);
+
+  if (!seo) {
+    if (pathParts.length > 0 && supportedLangs.includes(pathParts[0])) {
+      // Remove the language prefix
+      pathParts.shift();
+      currentPath = '/' + pathParts.join('/');
+    }
+    seo = getSeoForPath(currentPath) || SEO_DATA['/'];
   }
 
   // Domain of the application
   const domain = import.meta.env.VITE_SITE_URL || '';
   
   // Per-page SEO: take all text/url/image/content for this route as in Home
-  const seo = getSeoForPath(currentPath) || SEO_DATA['/'];
   // Resolve image URL: allow root-relative ("/apps/...") or absolute; prefix domain if needed
   const resolveImage = (img: string) => {
     if (!img) return BRAND_LOGO_URL;
@@ -102,6 +108,7 @@ export function SEOHead() {
   const pageTwitterDescription = seo.twitterDescription || seo.description;
   const pageTwitterImage = seo.twitterImage ? resolveImage(seo.twitterImage) : pageImage;
   const canonicalPath = seo.canonicalPath || currentPath;
+  const canonicalHref = seo.canonicalUrl || `${domain}${canonicalPath}`;
   
   return (
     <Helmet>
@@ -110,11 +117,38 @@ export function SEOHead() {
       <meta name="title" content={pageTitle} />
       <meta name="description" content={pageDescription} />
       <meta name="keywords" content={pageKeywords} />
+      <meta name="robots" content={seo.robots || "index, follow"} />
       {seo.subject && <meta name="subject" content={seo.subject} />}
       <meta name="author" content="Global Delight Technologies Pvt. Ltd." />
 
-      {/* Self-referencing Canonical URL – page-connected */}
-      <link rel="canonical" href={`${domain}${canonicalPath}`} />
+      {/* Canonical URL */}
+      <link rel="canonical" href={canonicalHref} />
+
+      {/* Localized Alternate Hreflang Tags */}
+      {seo.hreflangs ? (
+        seo.hreflangs.map((hl) => (
+          <link key={hl.hreflang} rel="alternate" href={hl.href} hrefLang={hl.hreflang} />
+        ))
+      ) : (
+        <>
+          {supportedLangs.map((lang) => {
+            const langPath = lang === 'en' ? currentPath : `/${lang}${currentPath === '/' ? '' : currentPath}`;
+            return (
+              <link 
+                key={lang} 
+                rel="alternate" 
+                hrefLang={lang} 
+                href={`${domain}${langPath}`} 
+              />
+            );
+          })}
+          <link 
+            rel="alternate" 
+            hrefLang="x-default" 
+            href={`${domain}${currentPath}`} 
+          />
+        </>
+      )}
 
       {/* Unified Connected @graph Schema (Organization, WebSite, WebPage, and SoftwareApplication) */}
       <script type="application/ld+json">
@@ -151,8 +185,8 @@ export function SEOHead() {
             },
             {
               "@type": "WebPage",
-              "@id": `${domain}${canonicalPath}#webpage`,
-              "url": `${domain}${canonicalPath}`,
+              "@id": `${canonicalHref}#webpage`,
+              "url": canonicalHref,
               "name": pageTitle,
               "description": pageDescription,
               "inLanguage": currentLang,
@@ -165,13 +199,13 @@ export function SEOHead() {
             },
             ...(seo.softwareApplication ? [{
               "@type": "SoftwareApplication",
-              "@id": `${domain}${canonicalPath}#software`,
+              "@id": `${canonicalHref}#software`,
               "name": seo.softwareApplication.name,
               "operatingSystem": seo.softwareApplication.operatingSystem,
               "applicationCategory": seo.softwareApplication.applicationCategory,
               "description": pageDescription,
               "image": resolveImage(seo.softwareApplication.image),
-              "url": `${domain}${canonicalPath}`,
+              "url": canonicalHref,
               "author": {
                 "@id": `${domain}/#organization`
               },
@@ -194,7 +228,7 @@ export function SEOHead() {
       {pageImageDimensions && <meta property="og:image:width" content={String(pageImageDimensions.width)} />}
       {pageImageDimensions && <meta property="og:image:height" content={String(pageImageDimensions.height)} />}
       <meta property="og:image:alt" content={pageOgTitle} />
-      <meta property="og:url" content={`${domain}${canonicalPath}`} />
+      <meta property="og:url" content={canonicalHref} />
       <meta name="thumbnail" content={pageImage} />
       <meta property="og:type" content={seo.ogType || 'website'} />
       <meta property="og:locale" content={OG_LOCALE_MAP[currentLang] || 'en_US'} />
@@ -205,31 +239,9 @@ export function SEOHead() {
       <meta name="twitter:title" content={pageTwitterTitle} />
       <meta name="twitter:description" content={pageTwitterDescription} />
       <meta name="twitter:image" content={pageTwitterImage} />
-      <meta name="twitter:url" content={`${domain}${canonicalPath}`} />
+      <meta name="twitter:url" content={canonicalHref} />
       <meta name="twitter:site" content="@GlobalDelight" />
       <meta name="twitter:creator" content="@GlobalDelight" />
-
-      {/* Generic fallback robots – individual pages (Privacy/404) override via their own Helmet */}
-      <meta name="robots" content="index, follow" />
-
-      {/* Language Hreflang Tags */}
-      {supportedLangs.map((lang) => {
-        const langPath = lang === 'en' ? currentPath : `/${lang}${currentPath === '/' ? '' : currentPath}`;
-        return (
-          <link 
-            key={lang} 
-            rel="alternate" 
-            hrefLang={lang} 
-            href={`${domain}${langPath}`} 
-          />
-        );
-      })}
-      {/* x-default points to the English version */}
-      <link 
-        rel="alternate" 
-        hrefLang="x-default" 
-        href={`${domain}${currentPath}`} 
-      />
     </Helmet>
   );
 }
