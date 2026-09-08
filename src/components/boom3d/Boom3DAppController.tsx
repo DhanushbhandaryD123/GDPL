@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { SlidersVertical, Volume2, VolumeX, Gamepad2, Headphones, Laptop, Sparkles } from 'lucide-react';
+import { SlidersVertical, Volume2, VolumeX, Gamepad2, Headphones, Laptop, Sparkles, Sliders, Mic, ShieldAlert, ArrowDownUp } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 interface AppChannel {
@@ -40,7 +40,7 @@ export function Boom3DAppController() {
       name: 'Spotify',
       category: 'Music & Podcasts',
       iconBg: '#1db954',
-      color: '#1db954',
+      color: '#10b981',
       defaultVol: 80,
       iconSvg: () => (
         <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current text-white">
@@ -53,7 +53,7 @@ export function Boom3DAppController() {
       name: 'Discord',
       category: 'Voice Chat',
       iconBg: '#5865f2',
-      color: '#818cf8',
+      color: '#6366f1',
       defaultVol: 88,
       iconSvg: () => (
         <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current text-white">
@@ -66,7 +66,7 @@ export function Boom3DAppController() {
       name: 'Google Chrome',
       category: 'Browser & Video',
       iconBg: '#ea4335',
-      color: '#f87171',
+      color: '#ef4444',
       defaultVol: 55,
       iconSvg: () => (
         <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
@@ -81,8 +81,8 @@ export function Boom3DAppController() {
       id: 'game',
       name: 'Cyberpunk 2077',
       category: 'Game Audio',
-      iconBg: '#06b6d4',
-      color: '#22d3ee',
+      iconBg: '#0891b2',
+      color: '#06b6d4',
       defaultVol: 100,
       iconSvg: () => <Gamepad2 size={20} className="text-white" />
     },
@@ -91,7 +91,7 @@ export function Boom3DAppController() {
       name: 'Zoom / Slack',
       category: 'Conference Calls',
       iconBg: '#2563eb',
-      color: '#60a5fa',
+      color: '#3b82f6',
       defaultVol: 40,
       iconSvg: () => <Laptop size={20} className="text-white" />
     }
@@ -121,11 +121,11 @@ export function Boom3DAppController() {
   };
 
   return (
-    <section id="apps-volume-controller" className="relative py-20 lg:py-28 overflow-hidden bg-gradient-to-b from-[#0e0e15] to-[#14141f] text-white scroll-mt-20 md:scroll-mt-24">
+    <section id="apps-volume-controller" className="relative py-20 lg:py-28 overflow-hidden bg-gradient-to-b from-white via-slate-50 to-white text-gray-900 scroll-mt-20 md:scroll-mt-24">
       
-      {/* Background Studio Lights */}
-      <div className="absolute top-0 left-1/3 w-[600px] h-[350px] bg-indigo-500/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[350px] bg-purple-500/10 rounded-full blur-[140px] pointer-events-none" />
+      {/* Background Soft Pastel Glows */}
+      <div className="absolute top-10 left-1/4 w-[600px] h-[350px] bg-indigo-100/60 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-10 right-1/4 w-[500px] h-[350px] bg-cyan-100/60 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-[1300px] mx-auto px-6 lg:px-12 relative z-10">
         
@@ -135,9 +135,9 @@ export function Boom3DAppController() {
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs font-semibold text-cyan-300 tracking-wide"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-50 border border-indigo-200/60 text-xs font-semibold text-indigo-700 tracking-wide shadow-xs"
           >
-            <SlidersVertical size={14} className="text-cyan-400" />
+            <SlidersVertical size={14} className="text-indigo-600" />
             <span>Multi-Stream Precision</span>
           </motion.div>
 
@@ -146,7 +146,7 @@ export function Boom3DAppController() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.08 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-gray-900 leading-tight"
           >
             {t('boom3d.key_features.apps_title') || 'Apps Volume Controller'}
           </motion.h2>
@@ -156,7 +156,7 @@ export function Boom3DAppController() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.16 }}
-            className="text-base md:text-lg text-gray-400 leading-relaxed max-w-[760px] mx-auto"
+            className="text-base md:text-lg text-gray-600 leading-relaxed max-w-[760px] mx-auto"
           >
             {t('boom3d.key_features.apps_desc') ||
               'Boom 3D allows you to manage individual application audio levels & volumes and seamlessly have an uninterrupted movie, game, or music experience.'}
@@ -165,14 +165,14 @@ export function Boom3DAppController() {
 
         {/* Profile Quick-Switch Pills */}
         <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
-          <span className="text-xs uppercase font-bold tracking-widest text-gray-500 mr-2">Quick Scenarios:</span>
+          <span className="text-xs uppercase font-bold tracking-widest text-gray-400 mr-2">Presets:</span>
           <button
             type="button"
             onClick={() => applyProfile('gaming')}
             className={`px-4 py-2 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all duration-200 cursor-pointer ${
               activeProfile === 'gaming'
-                ? 'bg-cyan-500 text-black shadow-[0_0_20px_rgba(6,182,212,0.4)] font-bold'
-                : 'bg-white/5 text-gray-300 hover:bg-white/10 border border-white/5'
+                ? 'bg-indigo-600 text-white shadow-md shadow-indigo-200 font-bold'
+                : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
             }`}
           >
             <Gamepad2 size={15} />
@@ -184,8 +184,8 @@ export function Boom3DAppController() {
             onClick={() => applyProfile('work')}
             className={`px-4 py-2 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all duration-200 cursor-pointer ${
               activeProfile === 'work'
-                ? 'bg-indigo-500 text-white shadow-[0_0_20px_rgba(99,102,241,0.4)] font-bold'
-                : 'bg-white/5 text-gray-300 hover:bg-white/10 border border-white/5'
+                ? 'bg-indigo-600 text-white shadow-md shadow-indigo-200 font-bold'
+                : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
             }`}
           >
             <Laptop size={15} />
@@ -197,8 +197,8 @@ export function Boom3DAppController() {
             onClick={() => applyProfile('music')}
             className={`px-4 py-2 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all duration-200 cursor-pointer ${
               activeProfile === 'music'
-                ? 'bg-emerald-500 text-black shadow-[0_0_20px_rgba(16,185,129,0.4)] font-bold'
-                : 'bg-white/5 text-gray-300 hover:bg-white/10 border border-white/5'
+                ? 'bg-indigo-600 text-white shadow-md shadow-indigo-200 font-bold'
+                : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
             }`}
           >
             <Headphones size={15} />
@@ -206,23 +206,23 @@ export function Boom3DAppController() {
           </button>
         </div>
 
-        {/* Studio Mixer Rack Card */}
+        {/* Studio Mixer Rack Card (Light Theme) */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-[#12121a]/95 backdrop-blur-2xl rounded-3xl p-6 md:p-10 border border-white/[0.08] shadow-[0_30px_90px_rgba(0,0,0,0.6)]"
+          className="bg-white/95 backdrop-blur-2xl rounded-3xl p-6 md:p-10 border border-gray-200 shadow-[0_20px_60px_rgba(0,0,0,0.06)]"
         >
           {/* Top Status Bar */}
-          <div className="flex flex-wrap items-center justify-between pb-6 border-b border-white/[0.06] mb-8 gap-4">
+          <div className="flex flex-wrap items-center justify-between pb-6 border-b border-gray-100 mb-8 gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-3 h-3 rounded-full bg-emerald-400 animate-ping" />
-              <span className="text-sm font-semibold text-gray-200">Virtual Audio Driver Active (5 Streams Managed)</span>
+              <div className="w-3 h-3 rounded-full bg-emerald-500 animate-ping" />
+              <span className="text-sm font-semibold text-gray-800">Virtual Audio Driver Active (5 Streams Managed)</span>
             </div>
-            <div className="flex items-center gap-4 text-xs font-mono text-gray-400">
-              <span className="px-2.5 py-1 rounded bg-white/5 border border-white/5">Auto-Duck: Enabled</span>
-              <span className="px-2.5 py-1 rounded bg-white/5 border border-white/5">Latency: &lt; 1.2ms</span>
+            <div className="flex items-center gap-4 text-xs font-mono text-gray-500">
+              <span className="px-2.5 py-1 rounded bg-gray-100 border border-gray-200">Auto-Duck: Enabled</span>
+              <span className="px-2.5 py-1 rounded bg-gray-100 border border-gray-200">Latency: &lt; 1.2ms</span>
             </div>
           </div>
 
@@ -235,21 +235,21 @@ export function Boom3DAppController() {
               return (
                 <div 
                   key={app.id} 
-                  className="bg-[#181824]/70 rounded-2xl p-5 border border-white/[0.05] hover:border-white/15 transition-all duration-300 flex flex-col items-center group"
+                  className="bg-slate-50/90 rounded-2xl p-5 border border-gray-200/70 hover:border-indigo-300 hover:shadow-md transition-all duration-300 flex flex-col items-center group"
                 >
                   {/* App Icon & Details */}
                   <div 
-                    className="w-12 h-12 rounded-2xl flex items-center justify-center shadow-lg mb-3 transition-transform group-hover:scale-105"
+                    className="w-12 h-12 rounded-2xl flex items-center justify-center shadow-md mb-3 transition-transform group-hover:scale-105"
                     style={{ backgroundColor: app.iconBg }}
                   >
                     {app.iconSvg && app.iconSvg()}
                   </div>
 
-                  <h4 className="text-sm font-bold text-white tracking-wide text-center">{app.name}</h4>
-                  <p className="text-[11px] text-gray-400 text-center mb-5">{app.category}</p>
+                  <h4 className="text-sm font-bold text-gray-900 tracking-wide text-center">{app.name}</h4>
+                  <p className="text-[11px] text-gray-500 text-center mb-5">{app.category}</p>
 
-                  {/* VU Level Meter (Live Bouncing audio levels based on volume) */}
-                  <div className="w-full flex items-end justify-center gap-1 h-16 bg-[#0e0e15] rounded-xl p-2 mb-5 border border-white/[0.04]">
+                  {/* VU Level Meter */}
+                  <div className="w-full flex items-end justify-center gap-1 h-16 bg-gray-900 rounded-xl p-2 mb-5 shadow-inner">
                     {[0.3, 0.6, 0.9, 0.5, 0.8, 0.4].map((multiplier, i) => (
                       <motion.div
                         key={i}
@@ -263,7 +263,7 @@ export function Boom3DAppController() {
                         }}
                         className="w-2 rounded-t transition-all duration-300"
                         style={{
-                          backgroundColor: isMuted ? '#374151' : currentVol > 85 ? '#f43f5e' : currentVol > 60 ? app.color : '#60a5fa'
+                          backgroundColor: isMuted ? '#4b5563' : currentVol > 85 ? '#f43f5e' : currentVol > 60 ? app.color : '#38bdf8'
                         }}
                       />
                     ))}
@@ -272,8 +272,8 @@ export function Boom3DAppController() {
                   {/* Slider Control */}
                   <div className="w-full space-y-2 mb-4">
                     <div className="flex justify-between items-center text-xs font-mono">
-                      <span className="text-gray-400">Level</span>
-                      <span className={`font-bold ${isMuted ? 'text-gray-500 line-through' : 'text-white'}`}>
+                      <span className="text-gray-500">Level</span>
+                      <span className={`font-bold ${isMuted ? 'text-gray-400 line-through' : 'text-gray-900'}`}>
                         {currentVol}%
                       </span>
                     </div>
@@ -283,7 +283,7 @@ export function Boom3DAppController() {
                       max="100"
                       value={channels[app.id]}
                       onChange={(e) => handleVolumeChange(app.id, Number(e.target.value))}
-                      className="w-full h-1.5 bg-[#252535] rounded-lg appearance-none cursor-pointer accent-indigo-400"
+                      className="w-full h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                     />
                   </div>
 
@@ -293,8 +293,8 @@ export function Boom3DAppController() {
                     onClick={() => toggleMute(app.id)}
                     className={`w-full py-2 rounded-xl text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors cursor-pointer ${
                       isMuted
-                        ? 'bg-rose-500/20 text-rose-300 border border-rose-500/40 hover:bg-rose-500/30'
-                        : 'bg-white/5 text-gray-300 hover:bg-white/10 border border-white/5'
+                        ? 'bg-rose-50 text-rose-600 border border-rose-200 hover:bg-rose-100'
+                        : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200 shadow-xs'
                     }`}
                   >
                     {isMuted ? <VolumeX size={13} /> : <Volume2 size={13} />}
@@ -306,15 +306,95 @@ export function Boom3DAppController() {
           </div>
 
           {/* Bottom Callout */}
-          <div className="mt-8 pt-6 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
+          <div className="mt-8 pt-6 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
             <span className="flex items-center gap-2">
-              <Sparkles size={14} className="text-indigo-400" />
+              <Sparkles size={14} className="text-indigo-600" />
               Adjust sliders anytime to isolate calls, dial in background music, or prioritize high-stakes game audio.
             </span>
-            <span className="font-mono text-gray-500">Supports over 10,000+ native desktop applications</span>
+            <span className="font-mono text-gray-400">Supports over 10,000+ native desktop applications</span>
           </div>
 
         </motion.div>
+
+        {/* Asymmetric 2-Column Explanation Cards (Distinct Layout from other sections) */}
+        <div className="mt-16 grid lg:grid-cols-12 gap-8 items-stretch">
+          
+          {/* Left Large Card: Intelligent Voice Ducking */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="lg:col-span-7 bg-white p-8 rounded-3xl border border-gray-200/80 shadow-[0_15px_45px_rgba(0,0,0,0.04)] flex flex-col justify-between"
+          >
+            <div>
+              <div className="w-12 h-12 rounded-2xl bg-cyan-50 border border-cyan-200 flex items-center justify-center text-cyan-600 mb-5">
+                <ArrowDownUp size={22} />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                Intelligent Voice Ducking & Call Priority
+              </h3>
+              <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+                Never get startled by a loud YouTube video or game explosion during an important Zoom or Discord meeting. Boom 3D automatically ducks background multimedia streams the moment voice communication is detected, then smoothly restores volume when the speaker pauses.
+              </p>
+            </div>
+
+            <div className="mt-8 p-4 rounded-2xl bg-slate-50 border border-gray-200/70 flex items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center text-white">
+                  <Mic size={16} />
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-gray-800">Voice Threshold Active</p>
+                  <p className="text-[11px] text-gray-500">Auto-dim background tabs by -15 dB</p>
+                </div>
+              </div>
+              <span className="text-xs font-mono font-semibold px-2.5 py-1 rounded bg-white border border-gray-200 text-emerald-600">
+                Active Protection
+              </span>
+            </div>
+          </motion.div>
+
+          {/* Right Column Stack: 2 Feature Cards */}
+          <div className="lg:col-span-5 flex flex-col gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="bg-white p-6 rounded-3xl border border-gray-200/80 shadow-[0_10px_30px_rgba(0,0,0,0.04)] flex-1 flex flex-col justify-center"
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-600">
+                  <Sliders size={20} />
+                </div>
+                <h4 className="text-lg font-bold text-gray-900">Per-App Equalizer Memory</h4>
+              </div>
+              <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
+                Assign Bass Boost specifically to Spotify, Vocal Clarity to Zoom, and 3D Surround to Netflix — Boom 3D remembers your favorite sonic settings per application automatically.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="bg-white p-6 rounded-3xl border border-gray-200/80 shadow-[0_10px_30px_rgba(0,0,0,0.04)] flex-1 flex flex-col justify-center"
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-600">
+                  <ShieldAlert size={20} />
+                </div>
+                <h4 className="text-lg font-bold text-gray-900">Instant Global Mute Hotkeys</h4>
+              </div>
+              <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
+                Mute individual background apps on the fly using customizable global keyboard shortcuts without minimizing your full-screen game or presentation.
+              </p>
+            </motion.div>
+          </div>
+
+        </div>
 
       </div>
     </section>

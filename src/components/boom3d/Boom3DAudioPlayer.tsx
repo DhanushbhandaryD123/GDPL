@@ -342,6 +342,74 @@ export function Boom3DAudioPlayer() {
           </motion.div>
 
         </div>
+
+        {/* 4-Card Audio Engine Breakdown Strip (Unique layout) */}
+        <div className="mt-16 md:mt-24 pt-12 border-t border-white/[0.08] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="p-6 rounded-3xl bg-[#14141e]/70 border border-white/[0.06] hover:border-indigo-500/40 transition-all duration-300 group"
+          >
+            <span className="text-[11px] font-mono font-bold text-indigo-400 bg-indigo-500/10 px-2.5 py-1 rounded-full border border-indigo-500/20 mb-4 inline-block">
+              DAC Bit-Perfect
+            </span>
+            <h4 className="text-base font-bold text-white mb-2">High-Resolution Engine</h4>
+            <p className="text-xs text-gray-400 leading-relaxed">
+              Bypasses standard operating system audio degradation to feed raw, bit-perfect 24-bit 192kHz signals straight to your headphones or external DAC.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="p-6 rounded-3xl bg-[#14141e]/70 border border-white/[0.06] hover:border-purple-500/40 transition-all duration-300 group"
+          >
+            <span className="text-[11px] font-mono font-bold text-purple-400 bg-purple-500/10 px-2.5 py-1 rounded-full border border-purple-500/20 mb-4 inline-block">
+              Lossless Codecs
+            </span>
+            <h4 className="text-base font-bold text-white mb-2">Universal Codec Support</h4>
+            <p className="text-xs text-gray-400 leading-relaxed">
+              Native high-performance playback for FLAC, WAV, ALAC, AIFF, DSD, and OGG with zero audio conversion or downsampling quality loss.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="p-6 rounded-3xl bg-[#14141e]/70 border border-white/[0.06] hover:border-pink-500/40 transition-all duration-300 group"
+          >
+            <span className="text-[11px] font-mono font-bold text-pink-400 bg-pink-500/10 px-2.5 py-1 rounded-full border border-pink-500/20 mb-4 inline-block">
+              Smart Library
+            </span>
+            <h4 className="text-base font-bold text-white mb-2">Dynamic Playlist Manager</h4>
+            <p className="text-xs text-gray-400 leading-relaxed">
+              Drag-and-drop local audio folders with instant ID3 album artwork indexing, seamless playlist curation, and gapless audio playback transitions.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="p-6 rounded-3xl bg-[#14141e]/70 border border-white/[0.06] hover:border-cyan-500/40 transition-all duration-300 group"
+          >
+            <span className="text-[11px] font-mono font-bold text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded-full border border-cyan-500/20 mb-4 inline-block">
+              Multichannel 3D
+            </span>
+            <h4 className="text-base font-bold text-white mb-2">Spatial Stereo Upmix</h4>
+            <p className="text-xs text-gray-400 leading-relaxed">
+              Transforms standard 2-channel stereo tracks into an expansive soundstage with virtual height and room acoustics that feel like a live performance.
+            </p>
+          </motion.div>
+        </div>
+
       </div>
     </section>
   );

@@ -241,6 +241,58 @@ export function Boom3DVolumeBooster() {
           </motion.div>
 
         </div>
+
+        {/* Feature Explanation Cards (3-Column Grid) */}
+        <div className="mt-16 md:mt-24 pt-12 border-t border-white/[0.08] grid grid-cols-1 md:grid-cols-3 gap-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="p-6 rounded-2xl bg-[#13131c]/80 border border-white/[0.06] hover:border-indigo-500/30 transition-all duration-300 group"
+          >
+            <div className="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-4 group-hover:scale-110 transition-transform">
+              <Zap size={22} />
+            </div>
+            <h4 className="text-lg font-bold text-white mb-2">Patented Overdrive Algorithm</h4>
+            <p className="text-sm text-gray-400 leading-relaxed">
+              Pushes acoustic volume up to 300% beyond native operating system limits without causing harsh digital clipping or audio compression artifacts.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="p-6 rounded-2xl bg-[#13131c]/80 border border-white/[0.06] hover:border-purple-500/30 transition-all duration-300 group"
+          >
+            <div className="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-4 group-hover:scale-110 transition-transform">
+              <ShieldCheck size={22} />
+            </div>
+            <h4 className="text-lg font-bold text-white mb-2">Hardware Protection Limiter</h4>
+            <p className="text-sm text-gray-400 leading-relaxed">
+              Proprietary dynamic headroom monitoring ensures your MacBook, desktop monitors, or high-end headphones are shielded from speaker cone damage.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="p-6 rounded-2xl bg-[#13131c]/80 border border-white/[0.06] hover:border-pink-500/30 transition-all duration-300 group"
+          >
+            <div className="w-12 h-12 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400 mb-4 group-hover:scale-110 transition-transform">
+              <Sparkles size={22} />
+            </div>
+            <h4 className="text-lg font-bold text-white mb-2">Acoustic Bass Calibration</h4>
+            <p className="text-sm text-gray-400 leading-relaxed">
+              Harmonic sub-bass synthesis extracts the deepest lows from thin audio streams, delivering rich tactile warmth even at lower listening levels.
+            </p>
+          </motion.div>
+        </div>
+
       </div>
     </section>
   );
