@@ -268,6 +268,7 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.18",
     "globals": "^15.14.0",
+    "js-beautify": "^2.0.3",
     "patch-package": "^8.0.1",
     "prettier": "^3.9.6",
     "react-snap": "^1.23.0",
