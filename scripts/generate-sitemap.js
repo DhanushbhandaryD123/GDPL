@@ -8,19 +8,67 @@ const __dirname = path.dirname(__filename);
 const packageJsonPath = path.resolve(__dirname, '../package.json');
 const sitemapPath = path.resolve(__dirname, '../public/sitemap.xml');
 
-// Read package.json
-const pkg = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
-// Thank-you/confirmation pages are real, prerendered pages (useful to real
-// visitors and social shares) but deliberately noindex — they shouldn't be
-// offered to crawlers as a landing page, so they're excluded here same as
-// the internal 404-capture scratch route.
-const NOINDEX_ROUTES = ['/404', '/__prerender/not-found', '/capto/thankyou', '/boom2/thankyou/download'];
-const routes = (pkg.reactSnap?.include || []).filter(route => !NOINDEX_ROUTES.includes(route));
-let DOMAIN = 'http://localhost:5173';
+const baseRoutes = [
+  '/',
+  '/boom',
+  '/boom2',
+  '/boom3D',
+  '/capto',
+  '/capto/windows',
+  '/capto/educators',
+  '/audion',
+  '/audimix',
+  '/vizmato',
+  '/cameraplus',
+  '/camerapluspro',
+  '/boomformobile',
+  '/about',
+  '/business',
+  '/technology/audio',
+  '/technology/video',
+  '/technology/camera',
+  '/technology/screen-capture',
+  '/faq',
+  '/faq/boom3dmac',
+  '/faq/boom3dmas',
+  '/faq/boom3dwin',
+  '/faq/audimixwin',
+  '/faq/boom2',
+  '/faq/boomios',
+  '/faq/vizmato',
+  '/faq/captomac',
+  '/faq/captowin',
+  '/faq/audion',
+  '/contact',
+  '/careers',
+  '/press-info',
+  '/privacy-policy',
+  '/whatsnew/boom',
+  '/whatsnew/boom2',
+  '/whatsnew/capto',
+  '/whatsnew/audion',
+  '/whatsnew/audimix'
+];
+
+const langs = ['de', 'it', 'ja', 'fr', 'pt', 'es', 'zh'];
+
+// Build complete list of all 312 public indexable routes
+const routes = [...baseRoutes];
+for (const lang of langs) {
+  for (const r of baseRoutes) {
+    if (r === '/') {
+      routes.push(`/${lang}`);
+    } else {
+      routes.push(`/${lang}${r}`);
+    }
+  }
+}
+
+let DOMAIN = 'https://www.globaldelight.com';
 try {
   const envContent = fs.readFileSync(path.resolve(__dirname, '../.env'), 'utf8');
   const match = envContent.match(/VITE_SITE_URL=(.*)/);
-  if (match) DOMAIN = match[1].trim();
+  if (match && match[1].trim().startsWith('http')) DOMAIN = match[1].trim();
 } catch(e) {}
 
 // Generate sitemap content
@@ -30,11 +78,13 @@ sitemapContent += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" x
 const today = new Date().toISOString().split('T')[0];
 
 routes.forEach((route) => {
+  const isTopProduct = ['/boom3D', '/boom2', '/boom', '/capto', '/audion', '/audimix', '/vizmato'].includes(route);
+  const priority = route === '/' ? '1.0' : (isTopProduct ? '0.9' : '0.8');
   sitemapContent += `  <url>\n`;
   sitemapContent += `    <loc>${DOMAIN}${route}</loc>\n`;
   sitemapContent += `    <lastmod>${today}</lastmod>\n`;
   sitemapContent += `    <changefreq>weekly</changefreq>\n`;
-  sitemapContent += `    <priority>${route === '/' ? '1.0' : '0.8'}</priority>\n`;
+  sitemapContent += `    <priority>${priority}</priority>\n`;
   sitemapContent += `  </url>\n`;
 });
 

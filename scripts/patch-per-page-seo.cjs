@@ -44,7 +44,244 @@ const SEO_DATA = {
   '/whatsnew/capto': { title: "What's New in Capto | Latest Updates & Features", description: "Capto changelog — screen capture, recording, video editing, annotations, sharing, and performance improvements for Mac & Windows in the latest release.", keywords: 'Capto whats new, Capto updates, Capto changelog, Capto latest version, screen recorder updates', ogImage: '/apps/Capto-mac.jpeg' },
   '/whatsnew/audion': { title: "What's New in AudiOn | Latest Updates & Features", description: "AudiOn updates — lossless recording, noise isolation, Skip Silence, reverb & EQ, timestamp markers, and transcription improvements for iOS & Android.", keywords: 'AudiOn whats new, AudiOn updates, AudiOn changelog, voice recorder updates', ogImage: '/apps/AudiOn-ios.jpeg' },
   '/whatsnew/audimix': { title: "What's New in AuDimix | Latest Updates & Features", description: "AuDimix changelog — stem splitting accuracy, vocal remover, pitch/tempo control, export quality, and Windows performance updates.", keywords: 'AuDimix whats new, AuDimix updates, AuDimix changelog, vocal remover updates', ogImage: '/apps/AuDimix-Window.jpeg' },
+  '/boom2/thankyou/download': {
+    title: 'Thank You for Downloading Boom 2 | Global Delight',
+    description: 'Thank you for downloading Boom 2 for Mac. Enjoy premium audio enhancement on your Mac.',
+    keywords: 'Boom 2 download, thank you, Global Delight Boom 2',
+    robots: 'noindex, follow',
+    ogImage: '/apps/Boom2-mac.jpeg'
+  },
+  '/capto/thankyou': {
+    title: 'Thank You for Purchasing Capto | Global Delight',
+    description: 'Thank you for choosing Capto for Mac. Screen recording and video editing made effortless.',
+    keywords: 'Capto purchase, thank you, Global Delight Capto',
+    robots: 'noindex, follow',
+    ogImage: '/apps/Capto-mac.jpeg'
+  }
 };
+
+const PRODUCT_SCHEMAS = {
+  '/boom3D': {
+    name: 'Boom 3D',
+    operatingSystem: 'Mac, Windows',
+    applicationCategory: 'MultimediaApplication',
+    price: '925.37',
+    priceCurrency: 'INR',
+    description: 'System-wide volume booster and equalizer for Mac & Windows with immersive 3D surround sound.',
+    image: '/apps/Boom3D-mac.jpeg'
+  },
+  '/boom2': {
+    name: 'Boom 2',
+    operatingSystem: 'Mac',
+    applicationCategory: 'MultimediaApplication',
+    price: '1099.00',
+    priceCurrency: 'INR',
+    description: 'System-wide volume booster and equalizer designed exclusively for Mac.',
+    image: '/apps/Boom2-mac.jpeg'
+  },
+  '/capto': {
+    name: 'Capto',
+    operatingSystem: 'Mac',
+    applicationCategory: 'MultimediaApplication',
+    price: '749.50',
+    priceCurrency: 'INR',
+    description: 'Powerful screen recording, video editing, and image editing software for Mac.',
+    image: '/apps/Capto-mac.jpeg'
+  },
+  '/capto/windows': {
+    name: 'Capto for Windows',
+    operatingSystem: 'Windows',
+    applicationCategory: 'MultimediaApplication',
+    price: '749.50',
+    priceCurrency: 'INR',
+    description: 'All-in-one screen recording and screenshot software for Windows 10 & 11.',
+    image: '/apps/Capto-window.jpeg'
+  },
+  '/audion': {
+    name: 'AudiOn',
+    operatingSystem: 'iOS, Android',
+    applicationCategory: 'MultimediaApplication',
+    description: 'Advanced Voice Recorder & Audio Editor for Mobile with lossless WAV recording.',
+    image: '/apps/AudiOn-ios.jpeg'
+  },
+  '/vizmato': {
+    name: 'Vizmato',
+    operatingSystem: 'iOS, Android',
+    applicationCategory: 'MultimediaApplication',
+    description: 'HD Video Editor with Instant FX for iOS & Android.',
+    image: '/apps/Vizmato-ios.jpeg'
+  },
+  '/cameraplus': {
+    name: 'Camera Plus',
+    operatingSystem: 'iOS',
+    applicationCategory: 'PhotographyApplication',
+    description: 'Pro Photography Camera for iPhone with AirSnap and macro focus.',
+    image: '/hero/cameraplus.webp'
+  },
+  '/camerapluspro': {
+    name: 'Camera Plus Pro',
+    operatingSystem: 'iOS',
+    applicationCategory: 'PhotographyApplication',
+    description: 'DSLR-Like Photography for iPhone with manual controls and RAW capture.',
+    image: '/hero/cameraplus.webp'
+  },
+  '/audimix': {
+    name: 'AuDimix',
+    operatingSystem: 'Windows',
+    applicationCategory: 'MultimediaApplication',
+    description: 'Music Separation & Vocal Remover for Windows.',
+    image: '/apps/AuDimix-Window.jpeg'
+  },
+  '/boomformobile': {
+    name: 'Boom for Mobile',
+    operatingSystem: 'iOS, Android',
+    applicationCategory: 'MultimediaApplication',
+    description: '3D Surround Sound Music Player for iOS & Android.',
+    image: '/apps/Boom for iOS.jpeg'
+  },
+  '/boom': {
+    name: 'Boom',
+    operatingSystem: 'Mac, Windows, iOS, Android',
+    applicationCategory: 'MultimediaApplication',
+    description: 'Award-winning audio family for Mac, Windows, iOS and Android with 3D surround sound.',
+    image: '/apps/Boom2-mac.jpeg'
+  }
+};
+
+const FAQ_SCHEMAS = {
+  '/faq/boom3dmac': [
+    { q: 'What is Boom 3D for Mac?', a: 'Boom 3D is a system-wide volume booster and equalizer for macOS that delivers an immersive 3D surround sound experience.' },
+    { q: 'Which macOS versions are supported?', a: 'Boom 3D supports macOS 10.14 Mojave or later, including macOS Sonoma and Sequoia.' }
+  ],
+  '/faq/boom3dwin': [
+    { q: 'What is Boom 3D for Windows?', a: 'Boom 3D for Windows is an audio enhancement software that provides 3D Surround Sound and a 31-band equalizer on Windows 10 and 11.' },
+    { q: 'Which Windows versions are supported?', a: 'Boom 3D supports 64-bit versions of Windows 10 and Windows 11.' }
+  ],
+  '/faq/boom3dmas': [
+    { q: 'What is Boom 3D Mac App Store version?', a: 'Boom 3D on the Mac App Store is sandboxed and operates through an optional audio component to provide system-wide audio boosting.' }
+  ],
+  '/faq/boom2': [
+    { q: 'What is Boom 2?', a: 'Boom 2 is an audio enhancement tool exclusively for Mac featuring a 31-band equalizer and system-wide volume boosting.' }
+  ],
+  '/faq/boomios': [
+    { q: 'What is Boom for iOS?', a: 'Boom for iOS is an advanced mobile music player with 3D Surround Sound, equalizer presets, and streaming integration.' }
+  ],
+  '/faq/audion': [
+    { q: 'What is AudiOn?', a: 'AudiOn is a mobile voice recorder and editor featuring lossless WAV recording, microphone boost up to 200%, noise removal, and transcription.' }
+  ],
+  '/faq/audimixwin': [
+    { q: 'What is AuDimix for Windows?', a: 'AuDimix is an AI-powered stem separation tool for Windows that removes vocals and isolates instrumental tracks.' }
+  ],
+  '/faq/captomac': [
+    { q: 'What is Capto for Mac?', a: 'Capto is an all-in-one screen recording, video editing, and screenshot capture application for macOS.' }
+  ],
+  '/faq/captowin': [
+    { q: 'What is Capto for Windows?', a: 'Capto for Windows provides high-resolution 4K 60FPS screen capture, webcam recording, and image editing on Windows 10 and 11.' }
+  ],
+  '/faq/vizmato': [
+    { q: 'What is Vizmato?', a: 'Vizmato is a movie-making app for iOS and Android featuring HD recording, Live Instant FX, themes, and audio editing.' }
+  ],
+  '/faq': [
+    { q: 'How do I contact Global Delight support?', a: 'You can contact Global Delight support through the Contact page or email support@globaldelight.com.' },
+    { q: 'Where can I find license keys?', a: 'You can retrieve your license key via the Lost License retrieval tool on our website.' }
+  ]
+};
+
+function getSoftwareApplicationSchema(domain, lookup, currentLang, canonicalUrl) {
+  const prod = PRODUCT_SCHEMAS[lookup];
+  if (!prod) return null;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: prod.name,
+    operatingSystem: prod.operatingSystem,
+    applicationCategory: prod.applicationCategory,
+    description: prod.description,
+    image: prod.image ? (prod.image.startsWith('http') ? prod.image : domain + prod.image) : undefined,
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+    },
+    url: canonicalUrl
+  };
+}
+
+function getFaqSchema(lookup) {
+  const faqList = FAQ_SCHEMAS[lookup];
+  if (!faqList || faqList.length === 0) return null;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqList.map(item => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a
+      }
+    }))
+  };
+}
+
+function buildBreadcrumbSchema(domain, route, currentLang) {
+  const pureRoute = (currentLang && currentLang !== 'en' ? route.replace(new RegExp(`^/${currentLang}`), '') : route) || '/';
+  if (pureRoute === '/' || pureRoute === '') return null;
+  const langPrefix = currentLang && currentLang !== 'en' ? `/${currentLang}` : '';
+  const homeUrl = `${domain}${langPrefix}/`;
+  
+  const items = [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: homeUrl }
+  ];
+
+  const parts = pureRoute.split('/').filter(Boolean);
+
+  if (parts.length === 1) {
+    const name = parts[0] === 'boom3D' ? 'Boom 3D' : parts[0].charAt(0).toUpperCase() + parts[0].slice(1);
+    items.push({
+      '@type': 'ListItem',
+      position: 2,
+      name,
+      item: `${domain}${route}`
+    });
+  } else if (parts.length === 2) {
+    const parentName = parts[0] === 'faq' ? 'FAQ' : parts[0] === 'whatsnew' ? "What's New" : parts[0] === 'technology' ? 'Technology' : parts[0].charAt(0).toUpperCase() + parts[0].slice(1);
+    const parentUrl = `${domain}${langPrefix}/${parts[0]}`;
+    const childName = parts[1].replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+    items.push({
+      '@type': 'ListItem',
+      position: 2,
+      name: parentName,
+      item: parentUrl
+    });
+    items.push({
+      '@type': 'ListItem',
+      position: 3,
+      name: childName,
+      item: `${domain}${route}`
+    });
+  } else if (parts.length >= 3) {
+    items.push({
+      '@type': 'ListItem',
+      position: 2,
+      name: parts[0].toUpperCase(),
+      item: `${domain}${langPrefix}/${parts[0]}`
+    });
+    items.push({
+      '@type': 'ListItem',
+      position: 3,
+      name: parts[parts.length - 1].replace(/-/g, ' '),
+      item: `${domain}${route}`
+    });
+  }
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items
+  };
+}
+
 
 // =======================================================
 // EXACT USER-SPECIFIED LOCALIZED SEO, CANONICALS & HREFLANG
@@ -292,7 +529,26 @@ function patchFile(filePath) {
   html = html.replace(/<link[^>]*rel=["']alternate["'][^>]*hreflang=[^>]*>\s*/gi, '');
   html = html.replace(/<script[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>\s*/gi, '');
 
-  const orgSchema = `<script type="application/ld+json" data-rh="true">{"@context":"https://schema.org","@type":"Organization","name":"Global Delight","url":"${domain}","logo":"${domain}/images/external/img_54825efe2640.png","contactPoint":{"@type":"ContactPoint","contactType":"customer service","availableLanguage":["English"]},"sameAs":["https://www.facebook.com/GlobalDelight","https://twitter.com/GlobalDelight","https://www.instagram.com/globaldelight"]}</script>`;
+  // 3. Determine if homepage
+  const isHomepage = rel === 'index.html' || /^(de|it|ja|fr|pt|es|zh)\/index\.html$/.test(rel);
+
+  const orgSchema = isHomepage
+    ? `<script type="application/ld+json" data-rh="true">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.globaldelight.com/#organization","name":"Global Delight","url":"https://www.globaldelight.com","logo":"https://www.globaldelight.com/images/external/img_54825efe2640.png","contactPoint":{"@type":"ContactPoint","contactType":"customer service","availableLanguage":["English"]},"sameAs":["https://www.facebook.com/GlobalDelight","https://twitter.com/GlobalDelight","https://www.linkedin.com/company/global-delight/","https://www.youtube.com/channel/UCLjiPwteYQLEmIzDs4xmyTw","https://www.instagram.com/globaldelight"]},{"@type":"WebSite","@id":"https://www.globaldelight.com/#website","name":"Global Delight","url":"https://www.globaldelight.com","publisher":{"@id":"https://www.globaldelight.com/#organization"}},{"@type":"WebPage","@id":"https://www.globaldelight.com/#webpage","url":"https://www.globaldelight.com/","name":"Global Delight | Boom 3D, Capto, Vizmato & Camera Plus Pro Apps","description":"Global Delight builds award-winning audio, video, and photography apps — Boom 3D volume booster & equalizer, Capto screen recorder, Vizmato video editor, and Camera Plus Pro for Mac, Windows, iOS & Android.","inLanguage":"en","isPartOf":{"@id":"https://www.globaldelight.com/#website"},"about":{"@id":"https://www.globaldelight.com/#organization"}}]}</script>`
+    : `<script type="application/ld+json" data-rh="true">{"@context":"https://schema.org","@type":"Organization","name":"Global Delight","url":"${domain}","logo":"${domain}/images/external/img_54825efe2640.png","contactPoint":{"@type":"ContactPoint","contactType":"customer service","availableLanguage":["English"]},"sameAs":["https://www.facebook.com/GlobalDelight","https://twitter.com/GlobalDelight","https://www.instagram.com/globaldelight"]}</script>`;
+
+  const extraSchemas = [];
+  const softwareSchema = getSoftwareApplicationSchema(domain, lookup, currentLang, canonicalUrl);
+  if (softwareSchema) {
+    extraSchemas.push(`<script type="application/ld+json" data-rh="true">${JSON.stringify(softwareSchema)}</script>`);
+  }
+  const faqSchema = getFaqSchema(lookup);
+  if (faqSchema) {
+    extraSchemas.push(`<script type="application/ld+json" data-rh="true">${JSON.stringify(faqSchema)}</script>`);
+  }
+  const breadcrumbObj = buildBreadcrumbSchema(domain, route, currentLang);
+  if (breadcrumbObj) {
+    extraSchemas.push(`<script type="application/ld+json" data-rh="true">${JSON.stringify(breadcrumbObj)}</script>`);
+  }
 
   // Construct powerful, perfectly ordered SEO head block matching reference/audion.html exactly
   const seoLines = [
@@ -317,6 +573,7 @@ function patchFile(filePath) {
     `<meta name="twitter:description" content="${esc(seo.twitterDescription || seo.description)}" data-rh="true">`,
     `<meta name="twitter:image" content="${imgUrl}" data-rh="true">`,
     orgSchema,
+    ...extraSchemas,
     hreflangBlock,
   ].filter(Boolean);
 
@@ -341,17 +598,11 @@ function patchFile(filePath) {
     html = html.replaceAll('https://d3jbf8nvvpx3fh.cloudfront.net/Boom3D-Web/OGImages/Global-Delight.jpg', '/images/external/img_e76f765673cb.jpg');
   }
   // 3. Inject H1 on homepages
-  const isHomepage = rel === 'index.html' || /^(de|it|ja|fr|pt|es|zh)\/index\.html$/.test(rel);
   if (isHomepage && !html.includes('<h1')) {
     html = html.replace(
       /(<main[^>]*>)/i,
       `$1<h1 class="sr-only">Global Delight — Award-Winning Audio, Video & Photography Apps</h1>`
     );
-  }
-  // 4. Consolidate @graph schema on homepages
-  if (isHomepage && html.includes('"@type": "Organization"') && !html.includes('"@graph"')) {
-    const graphSchema = `<script type="application/ld+json" data-rh="true">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.globaldelight.com/#organization","name":"Global Delight","url":"https://www.globaldelight.com","logo":"https://www.globaldelight.com/images/external/img_54825efe2640.png","contactPoint":{"@type":"ContactPoint","contactType":"customer service","availableLanguage":["English"]},"sameAs":["https://www.facebook.com/GlobalDelight","https://twitter.com/GlobalDelight","https://www.linkedin.com/company/global-delight/","https://www.youtube.com/channel/UCLjiPwteYQLEmIzDs4xmyTw","https://www.instagram.com/globaldelight"]},{"@type":"WebSite","@id":"https://www.globaldelight.com/#website","name":"Global Delight","url":"https://www.globaldelight.com","publisher":{"@id":"https://www.globaldelight.com/#organization"}},{"@type":"WebPage","@id":"https://www.globaldelight.com/#webpage","url":"https://www.globaldelight.com/","name":"Global Delight | Boom 3D, Capto, Vizmato & Camera Plus Pro Apps","description":"Global Delight builds award-winning audio, video, and photography apps — Boom 3D volume booster & equalizer, Capto screen recorder, Vizmato video editor, and Camera Plus Pro for Mac, Windows, iOS & Android.","inLanguage":"en","isPartOf":{"@id":"https://www.globaldelight.com/#website"},"about":{"@id":"https://www.globaldelight.com/#organization"}}]}</script>`;
-    html = html.replace(/<script type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>\s*<script type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>\s*<script type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/i, graphSchema);
   }
 
   if (html !== original) {
