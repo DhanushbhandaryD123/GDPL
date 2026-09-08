@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Radio, Globe, Signal, Play, Pause, MapPin, Sparkles, Wifi, ShieldCheck, Headphones } from 'lucide-react';
+import { Radio, Globe, Signal, Play, Pause, MapPin, Sparkles, Wifi, Headphones } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 interface RadioStation {

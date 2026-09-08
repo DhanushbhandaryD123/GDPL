@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Disc3, Play, Pause, SkipForward, SkipBack, Shuffle, Repeat, Volume2, Music2, Sparkles, Radio } from 'lucide-react';
+import { Disc3, Play, Pause, SkipForward, SkipBack, Shuffle, Repeat, Volume2, Music2, Sparkles } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 interface Track {
@@ -26,7 +26,7 @@ export function Boom3DAudioPlayer() {
       duration: '03:48',
       format: '24-Bit / 192kHz FLAC',
       genre: 'Synthwave / Atmos',
-      vinylColor: 'from-indigo-500 to-purple-600',
+      vinylColor: 'from-indigo-600 to-purple-600',
     },
     {
       id: 2,
@@ -36,7 +36,7 @@ export function Boom3DAudioPlayer() {
       duration: '04:15',
       format: 'DSD 256 Lossless',
       genre: 'Classical Chamber',
-      vinylColor: 'from-amber-500 to-rose-600',
+      vinylColor: 'from-amber-600 to-rose-600',
     },
     {
       id: 3,
@@ -46,7 +46,7 @@ export function Boom3DAudioPlayer() {
       duration: '02:59',
       format: 'Hi-Res Spatial 3D',
       genre: 'Electronic Beats',
-      vinylColor: 'from-cyan-500 to-blue-600',
+      vinylColor: 'from-cyan-600 to-blue-600',
     },
   ];
 
@@ -66,10 +66,10 @@ export function Boom3DAudioPlayer() {
   };
 
   return (
-    <section id="state-of-the-art-audio-player" className="relative py-20 lg:py-28 overflow-hidden bg-[#0c0c12] text-white scroll-mt-20 md:scroll-mt-24">
-      {/* Background Ambient Lights */}
-      <div className="absolute top-1/4 -left-20 w-[550px] h-[550px] bg-purple-600/10 rounded-full blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-10 right-0 w-[550px] h-[550px] bg-indigo-600/10 rounded-full blur-[150px] pointer-events-none" />
+    <section id="state-of-the-art-audio-player" className="relative py-20 lg:py-28 overflow-hidden bg-gradient-to-b from-white via-slate-50 to-white text-gray-900 scroll-mt-20 md:scroll-mt-24">
+      {/* Background Soft Pastel Ambient Glows */}
+      <div className="absolute top-1/4 -left-20 w-[550px] h-[550px] bg-purple-100/50 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-10 right-0 w-[550px] h-[550px] bg-indigo-100/50 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="max-w-[1300px] mx-auto px-6 lg:px-12 relative z-10">
         
@@ -79,9 +79,9 @@ export function Boom3DAudioPlayer() {
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-xs font-semibold text-purple-300 tracking-wide"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-50 border border-purple-200 text-xs font-semibold text-purple-700 tracking-wide shadow-xs"
           >
-            <Disc3 size={14} className="text-purple-400" />
+            <Disc3 size={14} className="text-purple-600" />
             <span>Audiophile Hi-Fi Engine</span>
           </motion.div>
 
@@ -90,7 +90,7 @@ export function Boom3DAudioPlayer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.08 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-gray-900 leading-tight"
           >
             {t('boom3d.key_features.player_title') || 'State of the Art Audio Player'}
           </motion.h2>
@@ -100,7 +100,7 @@ export function Boom3DAudioPlayer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.16 }}
-            className="text-base md:text-lg text-gray-400 leading-relaxed max-w-[760px] mx-auto"
+            className="text-base md:text-lg text-gray-600 leading-relaxed max-w-[760px] mx-auto"
           >
             {t('boom3d.key_features.player_desc') ||
               'Play your locally stored songs with unbeatable Boom effects with our full-fledged audio player and create playlists to organize your music collections.'}
@@ -110,7 +110,7 @@ export function Boom3DAudioPlayer() {
         {/* Player Showcase Board */}
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          {/* Left: Spinning Holographic Vinyl Player */}
+          {/* Left: Spinning Vinyl Player in Polished Silver/Obsidian Enclosure */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -118,10 +118,10 @@ export function Boom3DAudioPlayer() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-6 flex flex-col items-center justify-center"
           >
-            <div className="relative w-[320px] h-[320px] sm:w-[400px] sm:h-[400px] rounded-3xl bg-[#14141e]/90 border border-white/[0.08] shadow-[0_25px_70px_rgba(0,0,0,0.8)] p-6 flex items-center justify-center overflow-hidden">
+            <div className="relative w-[320px] h-[320px] sm:w-[420px] sm:h-[420px] rounded-3xl bg-white border border-gray-200/80 shadow-[0_25px_70px_rgba(0,0,0,0.08)] p-6 flex items-center justify-center overflow-hidden">
               
               {/* Vinyl Turntable Base */}
-              <div className="relative w-full h-full rounded-full bg-[#101017] border-4 border-white/[0.04] shadow-inner flex items-center justify-center">
+              <div className="relative w-full h-full rounded-full bg-slate-900 border-4 border-gray-200 shadow-inner flex items-center justify-center">
                 
                 {/* Rotating Vinyl Record */}
                 <motion.div
@@ -131,34 +131,34 @@ export function Boom3DAudioPlayer() {
                     repeat: Infinity,
                     ease: 'linear',
                   }}
-                  className="relative w-[90%] h-[90%] rounded-full bg-gradient-to-tr from-[#15151c] via-[#09090d] to-[#1c1c24] border border-white/10 shadow-2xl flex items-center justify-center cursor-pointer"
+                  className="relative w-[92%] h-[92%] rounded-full bg-gradient-to-tr from-[#15151c] via-[#09090d] to-[#1c1c24] border border-white/10 shadow-2xl flex items-center justify-center cursor-pointer"
                   onClick={() => setIsPlaying(!isPlaying)}
                 >
                   {/* Vinyl Grooves (Concentric Circles) */}
                   {[...Array(6)].map((_, i) => (
                     <div
                       key={i}
-                      className="absolute rounded-full border border-white/[0.03] pointer-events-none"
+                      className="absolute rounded-full border border-white/[0.04] pointer-events-none"
                       style={{
-                        width: `${50 + i * 8}%`,
-                        height: `${50 + i * 8}%`,
+                        width: `${48 + i * 8}%`,
+                        height: `${48 + i * 8}%`,
                       }}
                     />
                   ))}
 
                   {/* Vinyl Center Label */}
-                  <div className={`w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-gradient-to-br ${currentTrack.vinylColor} p-1 shadow-lg flex flex-col items-center justify-center text-center relative z-10`}>
+                  <div className={`w-28 h-28 sm:w-34 sm:h-34 rounded-full bg-gradient-to-br ${currentTrack.vinylColor} p-1 shadow-lg flex flex-col items-center justify-center text-center relative z-10`}>
                     <div className="w-full h-full rounded-full bg-black/40 backdrop-blur-xs flex flex-col items-center justify-center p-2 text-white">
                       <Music2 size={18} className="mb-0.5 text-white/90" />
-                      <span className="text-[10px] font-bold uppercase tracking-wider leading-tight max-w-[80px] truncate">
+                      <span className="text-[10px] font-bold uppercase tracking-wider leading-tight max-w-[85px] truncate">
                         {currentTrack.artist}
                       </span>
-                      <span className="text-[8px] opacity-75 font-mono">BOOM 3D</span>
+                      <span className="text-[8px] opacity-80 font-mono">BOOM 3D</span>
                     </div>
                   </div>
 
                   {/* Spindle hole */}
-                  <div className="absolute w-3 h-3 rounded-full bg-gray-900 border border-white/40 z-20" />
+                  <div className="absolute w-3 h-3 rounded-full bg-gray-900 border border-white/50 z-20" />
                 </motion.div>
 
                 {/* Tonearm Simulation */}
@@ -169,20 +169,20 @@ export function Boom3DAudioPlayer() {
                 >
                   <div className="w-3.5 h-3.5 rounded-full bg-gray-300 border-2 border-gray-600 shadow-md ml-auto" />
                   <div className="w-1 h-24 bg-gradient-to-b from-gray-300 to-gray-500 rounded-full mx-auto -mt-1 shadow-sm" />
-                  <div className="w-4 h-6 bg-indigo-400 rounded -ml-1 mt-0 shadow-lg border border-indigo-200" />
+                  <div className="w-4 h-6 bg-indigo-500 rounded -ml-1 mt-0 shadow-lg border border-indigo-200" />
                 </motion.div>
 
               </div>
 
               {/* Lossless Quality Badge Overlay */}
-              <div className="absolute bottom-4 left-6 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/10 text-[11px] font-mono text-purple-300 flex items-center gap-1.5 shadow-md">
-                <Sparkles size={12} className="text-purple-400" />
+              <div className="absolute bottom-4 left-6 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-gray-200 text-[11px] font-mono font-bold text-purple-700 flex items-center gap-1.5 shadow-md">
+                <Sparkles size={12} className="text-purple-600" />
                 <span>{currentTrack.format}</span>
               </div>
             </div>
           </motion.div>
 
-          {/* Right: Interactive Player Deck & Equalized Wave Spectrum */}
+          {/* Right: Interactive Player Deck & Equalized Wave Spectrum (Light Theme) */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -190,27 +190,27 @@ export function Boom3DAudioPlayer() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-6 space-y-6"
           >
-            <div className="bg-[#14141e]/90 backdrop-blur-xl rounded-3xl p-6 sm:p-8 border border-white/[0.08] shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200/80 shadow-[0_20px_60px_rgba(0,0,0,0.06)]">
               
               {/* Currently Playing Track Info */}
               <div className="flex items-start justify-between mb-6">
                 <div>
-                  <span className="text-[11px] font-mono uppercase tracking-widest text-indigo-400 font-bold">
+                  <span className="text-[11px] font-mono uppercase tracking-widest text-indigo-600 font-bold">
                     Now Playing with 3D Spatial Audio
                   </span>
-                  <h3 className="text-xl sm:text-2xl font-black text-white mt-1 leading-snug">
+                  <h3 className="text-xl sm:text-2xl font-black text-gray-900 mt-1 leading-snug">
                     {currentTrack.title}
                   </h3>
-                  <p className="text-sm text-gray-400 mt-0.5">{currentTrack.artist} • {currentTrack.album}</p>
+                  <p className="text-sm text-gray-500 mt-0.5">{currentTrack.artist} • {currentTrack.album}</p>
                 </div>
-                <span className="text-xs px-2.5 py-1 rounded-full bg-white/10 font-mono text-gray-300 border border-white/10 shrink-0">
+                <span className="text-xs px-2.5 py-1 rounded-full bg-gray-100 font-mono text-gray-700 border border-gray-200 shrink-0">
                   {currentTrack.genre}
                 </span>
               </div>
 
               {/* 32-Band Live Frequency Audio Spectrum Analyzer */}
-              <div className="bg-[#0b0b10] rounded-2xl p-4 border border-white/[0.04] mb-6">
-                <div className="flex justify-between items-center text-[10px] uppercase font-mono text-gray-500 mb-2">
+              <div className="bg-gray-950 rounded-2xl p-4 border border-gray-800 mb-6 shadow-inner">
+                <div className="flex justify-between items-center text-[10px] uppercase font-mono text-gray-400 mb-2">
                   <span>32-Band Spectrum Analyzer</span>
                   <span className="text-indigo-400 font-semibold">{isPlaying ? 'Output: 192 kHz Lossless' : 'Paused'}</span>
                 </div>
@@ -231,7 +231,7 @@ export function Boom3DAudioPlayer() {
                       className="w-full rounded-t transition-all"
                       style={{
                         backgroundColor: i > 24 ? '#ec4899' : i > 12 ? '#8b5cf6' : '#3b82f6',
-                        opacity: isPlaying ? 0.9 : 0.25,
+                        opacity: isPlaying ? 0.95 : 0.3,
                       }}
                     />
                   ))}
@@ -247,10 +247,10 @@ export function Boom3DAudioPlayer() {
                     max="100"
                     value={progress}
                     onChange={(e) => setProgress(Number(e.target.value))}
-                    className="w-full h-1.5 bg-[#252535] rounded-lg appearance-none cursor-pointer accent-indigo-400"
+                    className="w-full h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                   />
                 </div>
-                <div className="flex justify-between text-[11px] font-mono text-gray-400">
+                <div className="flex justify-between text-[11px] font-mono text-gray-500">
                   <span>01:36</span>
                   <span>{currentTrack.duration}</span>
                 </div>
@@ -258,11 +258,11 @@ export function Boom3DAudioPlayer() {
 
               {/* Audio Controls */}
               <div className="flex items-center justify-between pt-2">
-                <div className="flex items-center gap-2 text-gray-400">
-                  <button type="button" className="p-2 hover:text-white transition-colors cursor-pointer">
+                <div className="flex items-center gap-2 text-gray-500">
+                  <button type="button" className="p-2 hover:text-gray-900 transition-colors cursor-pointer">
                     <Shuffle size={17} />
                   </button>
-                  <button type="button" className="p-2 hover:text-white transition-colors cursor-pointer">
+                  <button type="button" className="p-2 hover:text-gray-900 transition-colors cursor-pointer">
                     <Repeat size={17} />
                   </button>
                 </div>
@@ -271,7 +271,7 @@ export function Boom3DAudioPlayer() {
                   <button
                     type="button"
                     onClick={prevTrack}
-                    className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-white transition-colors cursor-pointer"
+                    className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-800 transition-colors cursor-pointer"
                   >
                     <SkipBack size={18} />
                   </button>
@@ -279,7 +279,7 @@ export function Boom3DAudioPlayer() {
                   <button
                     type="button"
                     onClick={() => setIsPlaying(!isPlaying)}
-                    className="w-14 h-14 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 flex items-center justify-center text-white shadow-[0_0_25px_rgba(99,102,241,0.5)] transition-transform hover:scale-105 cursor-pointer"
+                    className="w-14 h-14 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 flex items-center justify-center text-white shadow-lg shadow-indigo-200 transition-transform hover:scale-105 cursor-pointer"
                   >
                     {isPlaying ? <Pause size={22} fill="white" /> : <Play size={22} fill="white" className="ml-0.5" />}
                   </button>
@@ -287,14 +287,14 @@ export function Boom3DAudioPlayer() {
                   <button
                     type="button"
                     onClick={nextTrack}
-                    className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-white transition-colors cursor-pointer"
+                    className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-800 transition-colors cursor-pointer"
                   >
                     <SkipForward size={18} />
                   </button>
                 </div>
 
                 {/* Volume Slider Mini */}
-                <div className="flex items-center gap-2 text-gray-400">
+                <div className="flex items-center gap-2 text-gray-500">
                   <Volume2 size={16} />
                   <input
                     type="range"
@@ -302,14 +302,14 @@ export function Boom3DAudioPlayer() {
                     max="100"
                     value={volume}
                     onChange={(e) => setVolume(Number(e.target.value))}
-                    className="w-16 sm:w-20 h-1 bg-[#252535] rounded-lg appearance-none cursor-pointer accent-indigo-400"
+                    className="w-16 sm:w-20 h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                   />
                 </div>
               </div>
 
               {/* Playlist Tray */}
-              <div className="mt-8 pt-6 border-t border-white/[0.06] space-y-2">
-                <span className="text-xs uppercase font-mono tracking-widest text-gray-500 block mb-2 font-bold">
+              <div className="mt-8 pt-6 border-t border-gray-100 space-y-2">
+                <span className="text-xs uppercase font-mono tracking-widest text-gray-400 block mb-2 font-bold">
                   Quick Playlist Tracks:
                 </span>
                 {tracks.map((t, idx) => (
@@ -322,18 +322,18 @@ export function Boom3DAudioPlayer() {
                     }}
                     className={`w-full p-3 rounded-xl flex items-center justify-between text-left transition-colors cursor-pointer ${
                       currentTrackIndex === idx
-                        ? 'bg-indigo-500/15 border border-indigo-500/30 text-white'
-                        : 'bg-white/[0.02] border border-transparent hover:bg-white/[0.05] text-gray-400'
+                        ? 'bg-indigo-50 border border-indigo-200 text-indigo-900 font-semibold'
+                        : 'bg-slate-50 border border-gray-100 hover:bg-gray-100 text-gray-600'
                     }`}
                   >
                     <div className="flex items-center gap-3">
-                      <span className="text-xs font-mono font-bold text-gray-500">{idx + 1}</span>
+                      <span className="text-xs font-mono font-bold text-gray-400">{idx + 1}</span>
                       <div>
-                        <p className="text-xs font-bold text-gray-200">{t.title}</p>
-                        <p className="text-[10px] text-gray-400">{t.artist}</p>
+                        <p className="text-xs font-bold text-gray-900">{t.title}</p>
+                        <p className="text-[10px] text-gray-500">{t.artist}</p>
                       </div>
                     </div>
-                    <span className="text-xs font-mono text-gray-500">{t.duration}</span>
+                    <span className="text-xs font-mono text-gray-400">{t.duration}</span>
                   </button>
                 ))}
               </div>
@@ -343,20 +343,20 @@ export function Boom3DAudioPlayer() {
 
         </div>
 
-        {/* 4-Card Audio Engine Breakdown Strip (Unique layout) */}
-        <div className="mt-16 md:mt-24 pt-12 border-t border-white/[0.08] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* 4-Card Audio Engine Breakdown Strip (Light Theme) */}
+        <div className="mt-16 md:mt-24 pt-12 border-t border-gray-200/80 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="p-6 rounded-3xl bg-[#14141e]/70 border border-white/[0.06] hover:border-indigo-500/40 transition-all duration-300 group"
+            className="p-6 rounded-3xl bg-white border border-gray-200/80 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-md transition-shadow group"
           >
-            <span className="text-[11px] font-mono font-bold text-indigo-400 bg-indigo-500/10 px-2.5 py-1 rounded-full border border-indigo-500/20 mb-4 inline-block">
+            <span className="text-[11px] font-mono font-bold text-indigo-700 bg-indigo-50 px-2.5 py-1 rounded-full border border-indigo-200 mb-4 inline-block">
               DAC Bit-Perfect
             </span>
-            <h4 className="text-base font-bold text-white mb-2">High-Resolution Engine</h4>
-            <p className="text-xs text-gray-400 leading-relaxed">
+            <h4 className="text-base font-bold text-gray-900 mb-2">High-Resolution Engine</h4>
+            <p className="text-xs text-gray-600 leading-relaxed">
               Bypasses standard operating system audio degradation to feed raw, bit-perfect 24-bit 192kHz signals straight to your headphones or external DAC.
             </p>
           </motion.div>
@@ -366,13 +366,13 @@ export function Boom3DAudioPlayer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="p-6 rounded-3xl bg-[#14141e]/70 border border-white/[0.06] hover:border-purple-500/40 transition-all duration-300 group"
+            className="p-6 rounded-3xl bg-white border border-gray-200/80 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-md transition-shadow group"
           >
-            <span className="text-[11px] font-mono font-bold text-purple-400 bg-purple-500/10 px-2.5 py-1 rounded-full border border-purple-500/20 mb-4 inline-block">
+            <span className="text-[11px] font-mono font-bold text-purple-700 bg-purple-50 px-2.5 py-1 rounded-full border border-purple-200 mb-4 inline-block">
               Lossless Codecs
             </span>
-            <h4 className="text-base font-bold text-white mb-2">Universal Codec Support</h4>
-            <p className="text-xs text-gray-400 leading-relaxed">
+            <h4 className="text-base font-bold text-gray-900 mb-2">Universal Codec Support</h4>
+            <p className="text-xs text-gray-600 leading-relaxed">
               Native high-performance playback for FLAC, WAV, ALAC, AIFF, DSD, and OGG with zero audio conversion or downsampling quality loss.
             </p>
           </motion.div>
@@ -382,13 +382,13 @@ export function Boom3DAudioPlayer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="p-6 rounded-3xl bg-[#14141e]/70 border border-white/[0.06] hover:border-pink-500/40 transition-all duration-300 group"
+            className="p-6 rounded-3xl bg-white border border-gray-200/80 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-md transition-shadow group"
           >
-            <span className="text-[11px] font-mono font-bold text-pink-400 bg-pink-500/10 px-2.5 py-1 rounded-full border border-pink-500/20 mb-4 inline-block">
+            <span className="text-[11px] font-mono font-bold text-pink-700 bg-pink-50 px-2.5 py-1 rounded-full border border-pink-200 mb-4 inline-block">
               Smart Library
             </span>
-            <h4 className="text-base font-bold text-white mb-2">Dynamic Playlist Manager</h4>
-            <p className="text-xs text-gray-400 leading-relaxed">
+            <h4 className="text-base font-bold text-gray-900 mb-2">Dynamic Playlist Manager</h4>
+            <p className="text-xs text-gray-600 leading-relaxed">
               Drag-and-drop local audio folders with instant ID3 album artwork indexing, seamless playlist curation, and gapless audio playback transitions.
             </p>
           </motion.div>
@@ -398,13 +398,13 @@ export function Boom3DAudioPlayer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="p-6 rounded-3xl bg-[#14141e]/70 border border-white/[0.06] hover:border-cyan-500/40 transition-all duration-300 group"
+            className="p-6 rounded-3xl bg-white border border-gray-200/80 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-md transition-shadow group"
           >
-            <span className="text-[11px] font-mono font-bold text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded-full border border-cyan-500/20 mb-4 inline-block">
+            <span className="text-[11px] font-mono font-bold text-cyan-700 bg-cyan-50 px-2.5 py-1 rounded-full border border-cyan-200 mb-4 inline-block">
               Multichannel 3D
             </span>
-            <h4 className="text-base font-bold text-white mb-2">Spatial Stereo Upmix</h4>
-            <p className="text-xs text-gray-400 leading-relaxed">
+            <h4 className="text-base font-bold text-gray-900 mb-2">Spatial Stereo Upmix</h4>
+            <p className="text-xs text-gray-600 leading-relaxed">
               Transforms standard 2-channel stereo tracks into an expansive soundstage with virtual height and room acoustics that feel like a live performance.
             </p>
           </motion.div>

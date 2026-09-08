@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Box, Radio, Music, Speaker, Activity, Mic2 } from 'lucide-react';
+import { Box, Radio, Music, Speaker, Activity, Mic2, Sliders, Layers, Sparkles } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 // Sound Fusion inspired – each preset has its own wave DNA (heights for 5 bars)
@@ -28,7 +28,7 @@ export function Boom3DEqualizer() {
   const activeWave = PRESET_WAVES[activePreset.waveKey as string] || PRESET_WAVES.bass;
 
   return (
-    <section id="equalizer-presets" className="relative py-16 md:py-24 overflow-hidden bg-white scroll-mt-20 md:scroll-mt-24">
+    <section id="equalizer-presets" className="relative py-20 lg:py-28 overflow-hidden bg-gradient-to-b from-[#f9fafc] via-white to-[#f4f7fb] scroll-mt-20 md:scroll-mt-24">
       {/* Subtle Background Glows */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-b from-blue-50/50 via-purple-50/20 to-transparent rounded-full blur-3xl pointer-events-none" />
 
@@ -274,6 +274,57 @@ export function Boom3DEqualizer() {
             </motion.div>
           </div>
           
+        </div>
+
+        {/* 3 Precision EQ Breakdown Cards */}
+        <div className="mt-16 md:mt-24 pt-12 border-t border-gray-200/80 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="p-8 rounded-3xl bg-white border border-gray-200/80 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-md transition-shadow"
+          >
+            <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 mb-5">
+              <Sliders size={22} />
+            </div>
+            <h4 className="text-lg font-bold text-gray-900 mb-2">31 Discrete Frequency Bands</h4>
+            <p className="text-sm text-gray-600 leading-relaxed">
+              Fine-tune every audible octave from 20 Hz deep sub-bass to 20 kHz crystal treble air with surgical 0.1 dB gain precision.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="p-8 rounded-3xl bg-white border border-gray-200/80 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-md transition-shadow"
+          >
+            <div className="w-12 h-12 rounded-2xl bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-600 mb-5">
+              <Layers size={22} />
+            </div>
+            <h4 className="text-lg font-bold text-gray-900 mb-2">Handcrafted Genre Tunings</h4>
+            <p className="text-sm text-gray-600 leading-relaxed">
+              Expertly tuned sound curves designed specifically for Acoustic warmth, Heavy Metal punch, Jazz brass, and Hip-Hop low ends.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="p-8 rounded-3xl bg-white border border-gray-200/80 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-md transition-shadow"
+          >
+            <div className="w-12 h-12 rounded-2xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-600 mb-5">
+              <Sparkles size={22} />
+            </div>
+            <h4 className="text-lg font-bold text-gray-900 mb-2">Real-Time Parametric Curves</h4>
+            <p className="text-sm text-gray-600 leading-relaxed">
+              Zero-phase distortion algorithms ensure vocal clarity remains untouched while shaping deep lows and shimmering highs.
+            </p>
+          </motion.div>
         </div>
 
       </div>
