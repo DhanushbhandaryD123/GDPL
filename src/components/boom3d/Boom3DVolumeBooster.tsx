@@ -1,100 +1,248 @@
-import { Volume2, Sliders, MessageCircle } from 'lucide-react';
+import { useState } from 'react';
+import { motion } from 'motion/react';
+import { Volume2, Zap, ShieldCheck, Sparkles } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 export function Boom3DVolumeBooster() {
   const { t } = useTranslation();
+  const [boostLevel, setBoostLevel] = useState<number>(200); // 100, 150, 200, 300%
+  const [isHovered, setIsHovered] = useState(false);
+
+  const boostOptions = [
+    { level: 100, label: '100% Standard', db: '+0 dB', desc: 'Default OS level' },
+    { level: 150, label: '150% Dynamic', db: '+6 dB', desc: 'Rich acoustic depth' },
+    { level: 200, label: '200% Cinema', db: '+12 dB', desc: 'Immense immersion' },
+    { level: 300, label: '300% Max Boom', db: '+18 dB', desc: 'Maximum overdrive' },
+  ];
+
+  const scaleFactor = 1 + (boostLevel - 100) / 400; // 1.0 to 1.5
+
   return (
-    <section className="relative py-12 lg:py-16 overflow-hidden bg-[#0b0b0f]">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10 flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
-        
-        {/* Left Side: Text */}
-        <div className="lg:w-[35%] space-y-6">
-          <h2 className="text-4xl md:text-[2.75rem] font-bold tracking-tight text-white leading-tight">
+    <section id="boom-volume-booster" className="relative py-20 lg:py-28 overflow-hidden bg-[#0a0a0f] text-white scroll-mt-20 md:scroll-mt-24">
+      {/* Background Ambient Glows */}
+      <div 
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full blur-[160px] pointer-events-none transition-all duration-700"
+        style={{
+          background: boostLevel >= 300 
+            ? 'radial-gradient(circle, rgba(236,72,153,0.22) 0%, rgba(139,92,246,0.18) 50%, transparent 70%)'
+            : 'radial-gradient(circle, rgba(99,102,241,0.2) 0%, rgba(59,130,246,0.12) 50%, transparent 70%)'
+        }}
+      />
+
+      <div className="max-w-[1340px] mx-auto px-6 lg:px-12 relative z-10">
+        {/* Header */}
+        <div className="text-center max-w-[850px] mx-auto mb-16 md:mb-20 space-y-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-purple-500/10 to-indigo-500/10 border border-purple-500/20 text-xs font-semibold text-purple-300 tracking-wide"
+          >
+            <Sparkles size={14} className="text-purple-400" />
+            <span>{t('boom3d.volume_booster.system_wide_title') || 'Boom Volume Booster'}</span>
+          </motion.div>
+
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.08 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight"
+          >
             {t('boom3d.volume_booster.title')}
-          </h2>
-          <p className="text-[#a0a0a5] text-[1.05rem] leading-relaxed">
+          </motion.h2>
+
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.16 }}
+            className="text-base md:text-lg text-gray-400 leading-relaxed max-w-[760px] mx-auto"
+          >
             {t('boom3d.volume_booster.subtitle')}
-          </p>
+          </motion.p>
         </div>
 
-        {/* Right Side: Cards */}
-        <div className="lg:w-[65%] grid md:grid-cols-2 gap-6 w-full">
+        {/* Interactive Booster Stage */}
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          {/* Card 1: System-Wide Boost */}
-          <div className="bg-[#17171d] rounded-[2rem] p-8 border border-white/[0.03]">
-            <div className="w-12 h-12 bg-[#232329] rounded-[1rem] flex items-center justify-center mb-8">
-              <Volume2 size={20} className="text-[#c0c0c5]" />
-            </div>
-            
-            <h3 className="text-[1.35rem] font-bold mb-4 text-white tracking-wide">{t('boom3d.volume_booster.system_wide_title')}</h3>
-            <p className="text-[#808088] text-[0.95rem] leading-relaxed mb-12">
-              {t('boom3d.volume_booster.system_wide_desc')}
-            </p>
-
-            <div className="space-y-3 mt-auto">
-              <div className="relative h-1.5 w-full bg-[#2a2a30] rounded-full flex items-center">
-                <div className="h-full bg-gradient-to-r from-[#7c3aed] to-[#3b82f6] w-[100%] rounded-full relative" />
-                <div className="absolute right-0 w-3.5 h-3.5 bg-white rounded-full shadow-[0_0_10px_rgba(255,255,255,1)] translate-x-1/2" />
-              </div>
-              <div className="flex justify-between text-[10px] font-semibold tracking-wider text-[#606068]">
-                <span>{t('boom3d.volume_booster.standard')}</span>
-                <span>{t('boom3d.volume_booster.boom_volume')}</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 2: App Volume Controller */}
-          <div className="bg-[#17171d] rounded-[2rem] p-8 border border-white/[0.03] flex flex-col">
-            <div className="w-12 h-12 bg-[#232329] rounded-[1rem] flex items-center justify-center mb-8">
-              <Sliders size={20} className="text-[#c0c0c5]" />
-            </div>
-
-            <h3 className="text-[1.35rem] font-bold mb-4 text-white tracking-wide">{t('boom3d.volume_booster.app_controller_title')}</h3>
-            
-            {/* App Sliders */}
-            <div className="space-y-8 mt-6">
-              
-              {/* Spotify Icon */}
-              <div className="flex items-center gap-5">
-                <svg viewBox="0 0 24 24" className="w-7 h-7 text-[#1db954]" fill="currentColor">
-                  <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.54.659.301 1.02zm1.44-3.3c-.301.42-.84.54-1.26.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15.001 10.62 18.66 12.9c.42.18.54.78.3 1.14zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
-                </svg>
-                <div className="relative flex-1 h-1 bg-[#2a2a30] rounded-full flex items-center">
-                  <div className="h-full bg-gradient-to-r from-[#7c3aed] to-[#3b82f6] w-[65%] rounded-full" />
-                  <div className="absolute left-[65%] -translate-x-1/2 w-3.5 h-3.5 bg-white rounded-full shadow-[0_0_10px_rgba(255,255,255,1)]" />
+          {/* Left Column: Interactive Boost Levels & Tech Specs */}
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-6 space-y-6"
+          >
+            <div className="bg-[#13131a]/90 backdrop-blur-xl rounded-3xl p-8 border border-white/[0.06] shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-2xl bg-indigo-500/20 flex items-center justify-center border border-indigo-500/30">
+                    <Volume2 size={20} className="text-indigo-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-white">Amplification Level</h3>
+                    <p className="text-xs text-gray-400">Select desired volume boost headroom</p>
+                  </div>
                 </div>
-              </div>
-              
-              {/* Chrome Icon */}
-              <div className="flex items-center gap-5">
-                <svg viewBox="0 0 24 24" className="w-7 h-7" fill="none">
-                  <circle cx="12" cy="12" r="11" fill="#fbbc04"/>
-                  <path d="M12 1a11 11 0 0 1 11 11h-6a5 5 0 0 0-8.66-2.5L12 1z" fill="#ea4335"/>
-                  <path d="M23 12a11 11 0 0 1-16.5 9.53l3-5.2A5 5 0 0 0 17 12h6z" fill="#34a853"/>
-                  <circle cx="12" cy="12" r="4.5" fill="#4285f4" stroke="white" strokeWidth="1.5"/>
-                </svg>
-                <div className="relative flex-1 h-1 bg-[#2a2a30] rounded-full flex items-center">
-                  <div className="h-full bg-gradient-to-r from-[#7c3aed] to-[#3b82f6] w-[80%] rounded-full" />
-                  <div className="absolute left-[80%] -translate-x-1/2 w-3.5 h-3.5 bg-white rounded-full shadow-[0_0_10px_rgba(255,255,255,1)]" />
-                </div>
-              </div>
-              
-              {/* Purple App Icon */}
-              <div className="flex items-center gap-5">
-                <div className="w-7 h-7 rounded-lg bg-[#5865F2] flex items-center justify-center shadow-lg">
-                  <MessageCircle size={14} className="text-white fill-white" />
-                </div>
-                <div className="relative flex-1 h-1 bg-[#2a2a30] rounded-full flex items-center">
-                  <div className="h-full bg-gradient-to-r from-[#7c3aed] to-[#3b82f6] w-[90%] rounded-full" />
-                  <div className="absolute left-[90%] -translate-x-1/2 w-3.5 h-3.5 bg-white rounded-full shadow-[0_0_10px_rgba(255,255,255,1)]" />
-                </div>
+                <span className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400 font-mono">
+                  {boostLevel}%
+                </span>
               </div>
 
+              {/* Boost Buttons */}
+              <div className="grid grid-cols-2 gap-3 mb-6">
+                {boostOptions.map((opt) => (
+                  <button
+                    key={opt.level}
+                    type="button"
+                    onClick={() => setBoostLevel(opt.level)}
+                    className={`p-4 rounded-2xl border text-left transition-all duration-300 relative overflow-hidden group ${
+                      boostLevel === opt.level
+                        ? 'bg-gradient-to-b from-indigo-600/30 to-purple-600/20 border-indigo-400 shadow-[0_0_25px_rgba(99,102,241,0.35)]'
+                        : 'bg-[#1a1a24]/60 border-white/[0.05] hover:border-white/20 hover:bg-[#1f1f2c]'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between mb-1">
+                      <span className={`text-sm font-bold ${boostLevel === opt.level ? 'text-white' : 'text-gray-300'}`}>
+                        {opt.label}
+                      </span>
+                      <span className="text-[11px] font-mono px-2 py-0.5 rounded-full bg-white/10 text-gray-300 font-semibold">
+                        {opt.db}
+                      </span>
+                    </div>
+                    <p className="text-[12px] text-gray-400">{opt.desc}</p>
+                  </button>
+                ))}
+              </div>
+
+              {/* Live Audio Headroom Meter */}
+              <div className="space-y-2 pt-2 border-t border-white/[0.06]">
+                <div className="flex justify-between text-xs text-gray-400">
+                  <span className="flex items-center gap-1.5 font-medium">
+                    <Zap size={13} className="text-yellow-400" /> Dynamic Headroom Gain
+                  </span>
+                  <span className="font-mono text-gray-300 font-semibold">{boostLevel > 100 ? `+${(boostLevel - 100) / 10} dB` : 'Unity Gain'}</span>
+                </div>
+                
+                {/* Meter Bar */}
+                <div className="relative h-3 w-full bg-[#1e1e28] rounded-full overflow-hidden p-0.5 flex items-center">
+                  <motion.div 
+                    animate={{ width: `${(boostLevel / 300) * 100}%` }}
+                    transition={{ type: 'spring', damping: 20, stiffness: 200 }}
+                    className={`h-full rounded-full transition-colors duration-500 ${
+                      boostLevel >= 300 
+                        ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-[0_0_15px_rgba(236,72,153,0.8)]'
+                        : 'bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 shadow-[0_0_15px_rgba(99,102,241,0.6)]'
+                    }`}
+                  />
+                </div>
+                <div className="flex justify-between text-[10px] font-semibold text-gray-500 uppercase tracking-wider pt-1">
+                  <span>Standard 100%</span>
+                  <span>Enhanced 200%</span>
+                  <span className="text-pink-400">Max Boom 300%</span>
+                </div>
+              </div>
+
+              {/* Protection Badge */}
+              <div className="mt-6 flex items-center gap-3 p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs text-emerald-300">
+                <ShieldCheck size={18} className="shrink-0 text-emerald-400" />
+                <span>
+                  <strong className="font-semibold text-white">Smart Hardware Limiter:</strong> Safely elevates loudness without clipping, harmonic distortion, or damaging laptop speakers.
+                </span>
+              </div>
             </div>
-          </div>
+          </motion.div>
+
+          {/* Right Column: High-Tech Speaker Driver Animation */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-6 flex flex-col items-center justify-center relative"
+          >
+            {/* Speaker Enclosure */}
+            <div 
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              className="relative w-[340px] h-[340px] sm:w-[420px] sm:h-[420px] rounded-full bg-gradient-to-br from-[#1b1b26] via-[#101018] to-[#0a0a0f] border-4 border-white/[0.08] shadow-[0_30px_90px_rgba(0,0,0,0.8)] flex items-center justify-center"
+            >
+              {/* Outer Acoustic Shockwaves (Animated pulse rings) */}
+              {[1, 2, 3].map((ring) => (
+                <motion.div
+                  key={ring}
+                  animate={{
+                    scale: [1, 1.25 + ring * 0.12, 1],
+                    opacity: [0.35, 0, 0.35],
+                  }}
+                  transition={{
+                    duration: 2.2 / (boostLevel / 100),
+                    repeat: Infinity,
+                    delay: ring * 0.4,
+                    ease: 'easeInOut',
+                  }}
+                  className="absolute inset-0 rounded-full border border-purple-500/40 pointer-events-none"
+                  style={{
+                    boxShadow: boostLevel >= 300 
+                      ? '0 0 25px rgba(236,72,153,0.3)' 
+                      : '0 0 20px rgba(99,102,241,0.25)'
+                  }}
+                />
+              ))}
+
+              {/* Speaker Cone Suspension Ring */}
+              <div className="w-[82%] h-[82%] rounded-full bg-[#12121a] border-2 border-white/[0.05] flex items-center justify-center shadow-inner">
+                
+                {/* Moving Speaker Driver Cone (Vibrates with boost level) */}
+                <motion.div
+                  animate={{
+                    scale: [scaleFactor * 0.97, scaleFactor * 1.03, scaleFactor * 0.97],
+                  }}
+                  transition={{
+                    duration: isHovered ? 0.3 : 0.8 / (boostLevel / 100),
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
+                  className="w-[70%] h-[70%] rounded-full bg-gradient-to-tr from-[#1f1f2c] via-[#2a2a3e] to-[#151522] border border-white/10 shadow-[0_15px_40px_rgba(0,0,0,0.7)] flex items-center justify-center relative overflow-hidden"
+                >
+                  {/* Radial Carbon Weave Grooves */}
+                  <div className="absolute inset-0 opacity-40 bg-[radial-gradient(#383850_1px,transparent_1px)] [background-size:8px_8px]" />
+
+                  {/* Glowing Dust Cap (Center) */}
+                  <motion.div 
+                    animate={{
+                      scale: [1, 1.06, 1],
+                      boxShadow: boostLevel >= 300 
+                        ? ['0 0 20px rgba(236,72,153,0.6)', '0 0 45px rgba(236,72,153,0.9)', '0 0 20px rgba(236,72,153,0.6)']
+                        : ['0 0 20px rgba(99,102,241,0.4)', '0 0 35px rgba(99,102,241,0.7)', '0 0 20px rgba(99,102,241,0.4)'],
+                    }}
+                    transition={{
+                      duration: 0.8 / (boostLevel / 100),
+                      repeat: Infinity,
+                      ease: 'easeInOut',
+                    }}
+                    className="w-28 h-28 sm:w-36 sm:h-36 rounded-full bg-gradient-to-b from-[#313145] to-[#161622] border-2 border-indigo-400/50 flex flex-col items-center justify-center z-10"
+                  >
+                    <Volume2 size={32} className="text-white drop-shadow-[0_2px_10px_rgba(255,255,255,0.5)]" />
+                    <span className="mt-1 text-xs font-mono font-black text-indigo-200">
+                      {boostLevel}%
+                    </span>
+                  </motion.div>
+                </motion.div>
+              </div>
+
+              {/* Status Badge */}
+              <div className="absolute -bottom-4 px-4 py-1.5 rounded-full bg-[#181822] border border-white/10 shadow-xl flex items-center gap-2 text-xs font-semibold text-gray-200">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                <span>Boom System Engine Active</span>
+              </div>
+            </div>
+          </motion.div>
 
         </div>
       </div>
     </section>
   );
 }
+

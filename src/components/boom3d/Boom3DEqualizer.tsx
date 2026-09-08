@@ -28,7 +28,7 @@ export function Boom3DEqualizer() {
   const activeWave = PRESET_WAVES[activePreset.waveKey as string] || PRESET_WAVES.bass;
 
   return (
-    <section className="relative py-16 md:py-24 overflow-hidden bg-white">
+    <section id="equalizer-presets" className="relative py-16 md:py-24 overflow-hidden bg-white scroll-mt-20 md:scroll-mt-24">
       {/* Subtle Background Glows */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-b from-blue-50/50 via-purple-50/20 to-transparent rounded-full blur-3xl pointer-events-none" />
 

@@ -1,0 +1,348 @@
+import { useState } from 'react';
+import { motion } from 'motion/react';
+import { Disc3, Play, Pause, SkipForward, SkipBack, Shuffle, Repeat, Volume2, Music2, Sparkles, Radio } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+
+interface Track {
+  id: number;
+  title: string;
+  artist: string;
+  album: string;
+  duration: string;
+  format: string;
+  genre: string;
+  vinylColor: string;
+}
+
+export function Boom3DAudioPlayer() {
+  const { t } = useTranslation();
+
+  const tracks: Track[] = [
+    {
+      id: 1,
+      title: 'Midnight Odyssey (3D Spatial Master)',
+      artist: 'Kavinsky & Daft Sound',
+      album: 'Cinematic Dimensions',
+      duration: '03:48',
+      format: '24-Bit / 192kHz FLAC',
+      genre: 'Synthwave / Atmos',
+      vinylColor: 'from-indigo-500 to-purple-600',
+    },
+    {
+      id: 2,
+      title: 'Acoustic Horizon & Strings',
+      artist: 'The Nordic Philharmonic',
+      album: 'Pure Natural Acoustics',
+      duration: '04:15',
+      format: 'DSD 256 Lossless',
+      genre: 'Classical Chamber',
+      vinylColor: 'from-amber-500 to-rose-600',
+    },
+    {
+      id: 3,
+      title: 'Hyperdrive Sub-Bass Pulse',
+      artist: 'Neurotech Lab',
+      album: 'Low End Theories',
+      duration: '02:59',
+      format: 'Hi-Res Spatial 3D',
+      genre: 'Electronic Beats',
+      vinylColor: 'from-cyan-500 to-blue-600',
+    },
+  ];
+
+  const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [volume, setVolume] = useState(85);
+  const [progress, setProgress] = useState(42);
+
+  const currentTrack = tracks[currentTrackIndex];
+
+  const nextTrack = () => {
+    setCurrentTrackIndex((prev) => (prev + 1) % tracks.length);
+  };
+
+  const prevTrack = () => {
+    setCurrentTrackIndex((prev) => (prev - 1 + tracks.length) % tracks.length);
+  };
+
+  return (
+    <section id="state-of-the-art-audio-player" className="relative py-20 lg:py-28 overflow-hidden bg-[#0c0c12] text-white scroll-mt-20 md:scroll-mt-24">
+      {/* Background Ambient Lights */}
+      <div className="absolute top-1/4 -left-20 w-[550px] h-[550px] bg-purple-600/10 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-10 right-0 w-[550px] h-[550px] bg-indigo-600/10 rounded-full blur-[150px] pointer-events-none" />
+
+      <div className="max-w-[1300px] mx-auto px-6 lg:px-12 relative z-10">
+        
+        {/* Header */}
+        <div className="text-center max-w-[850px] mx-auto mb-16 md:mb-20 space-y-4">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-xs font-semibold text-purple-300 tracking-wide"
+          >
+            <Disc3 size={14} className="text-purple-400" />
+            <span>Audiophile Hi-Fi Engine</span>
+          </motion.div>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.08 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight"
+          >
+            {t('boom3d.key_features.player_title') || 'State of the Art Audio Player'}
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.16 }}
+            className="text-base md:text-lg text-gray-400 leading-relaxed max-w-[760px] mx-auto"
+          >
+            {t('boom3d.key_features.player_desc') ||
+              'Play your locally stored songs with unbeatable Boom effects with our full-fledged audio player and create playlists to organize your music collections.'}
+          </motion.p>
+        </div>
+
+        {/* Player Showcase Board */}
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          
+          {/* Left: Spinning Holographic Vinyl Player */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-6 flex flex-col items-center justify-center"
+          >
+            <div className="relative w-[320px] h-[320px] sm:w-[400px] sm:h-[400px] rounded-3xl bg-[#14141e]/90 border border-white/[0.08] shadow-[0_25px_70px_rgba(0,0,0,0.8)] p-6 flex items-center justify-center overflow-hidden">
+              
+              {/* Vinyl Turntable Base */}
+              <div className="relative w-full h-full rounded-full bg-[#101017] border-4 border-white/[0.04] shadow-inner flex items-center justify-center">
+                
+                {/* Rotating Vinyl Record */}
+                <motion.div
+                  animate={{ rotate: isPlaying ? 360 : 0 }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: 'linear',
+                  }}
+                  className="relative w-[90%] h-[90%] rounded-full bg-gradient-to-tr from-[#15151c] via-[#09090d] to-[#1c1c24] border border-white/10 shadow-2xl flex items-center justify-center cursor-pointer"
+                  onClick={() => setIsPlaying(!isPlaying)}
+                >
+                  {/* Vinyl Grooves (Concentric Circles) */}
+                  {[...Array(6)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="absolute rounded-full border border-white/[0.03] pointer-events-none"
+                      style={{
+                        width: `${50 + i * 8}%`,
+                        height: `${50 + i * 8}%`,
+                      }}
+                    />
+                  ))}
+
+                  {/* Vinyl Center Label */}
+                  <div className={`w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-gradient-to-br ${currentTrack.vinylColor} p-1 shadow-lg flex flex-col items-center justify-center text-center relative z-10`}>
+                    <div className="w-full h-full rounded-full bg-black/40 backdrop-blur-xs flex flex-col items-center justify-center p-2 text-white">
+                      <Music2 size={18} className="mb-0.5 text-white/90" />
+                      <span className="text-[10px] font-bold uppercase tracking-wider leading-tight max-w-[80px] truncate">
+                        {currentTrack.artist}
+                      </span>
+                      <span className="text-[8px] opacity-75 font-mono">BOOM 3D</span>
+                    </div>
+                  </div>
+
+                  {/* Spindle hole */}
+                  <div className="absolute w-3 h-3 rounded-full bg-gray-900 border border-white/40 z-20" />
+                </motion.div>
+
+                {/* Tonearm Simulation */}
+                <motion.div 
+                  animate={{ rotate: isPlaying ? 24 : 0 }}
+                  transition={{ duration: 0.5, ease: 'easeOut' }}
+                  className="absolute top-4 right-4 w-24 h-32 pointer-events-none origin-top-right z-30"
+                >
+                  <div className="w-3.5 h-3.5 rounded-full bg-gray-300 border-2 border-gray-600 shadow-md ml-auto" />
+                  <div className="w-1 h-24 bg-gradient-to-b from-gray-300 to-gray-500 rounded-full mx-auto -mt-1 shadow-sm" />
+                  <div className="w-4 h-6 bg-indigo-400 rounded -ml-1 mt-0 shadow-lg border border-indigo-200" />
+                </motion.div>
+
+              </div>
+
+              {/* Lossless Quality Badge Overlay */}
+              <div className="absolute bottom-4 left-6 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/10 text-[11px] font-mono text-purple-300 flex items-center gap-1.5 shadow-md">
+                <Sparkles size={12} className="text-purple-400" />
+                <span>{currentTrack.format}</span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right: Interactive Player Deck & Equalized Wave Spectrum */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-6 space-y-6"
+          >
+            <div className="bg-[#14141e]/90 backdrop-blur-xl rounded-3xl p-6 sm:p-8 border border-white/[0.08] shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+              
+              {/* Currently Playing Track Info */}
+              <div className="flex items-start justify-between mb-6">
+                <div>
+                  <span className="text-[11px] font-mono uppercase tracking-widest text-indigo-400 font-bold">
+                    Now Playing with 3D Spatial Audio
+                  </span>
+                  <h3 className="text-xl sm:text-2xl font-black text-white mt-1 leading-snug">
+                    {currentTrack.title}
+                  </h3>
+                  <p className="text-sm text-gray-400 mt-0.5">{currentTrack.artist} • {currentTrack.album}</p>
+                </div>
+                <span className="text-xs px-2.5 py-1 rounded-full bg-white/10 font-mono text-gray-300 border border-white/10 shrink-0">
+                  {currentTrack.genre}
+                </span>
+              </div>
+
+              {/* 32-Band Live Frequency Audio Spectrum Analyzer */}
+              <div className="bg-[#0b0b10] rounded-2xl p-4 border border-white/[0.04] mb-6">
+                <div className="flex justify-between items-center text-[10px] uppercase font-mono text-gray-500 mb-2">
+                  <span>32-Band Spectrum Analyzer</span>
+                  <span className="text-indigo-400 font-semibold">{isPlaying ? 'Output: 192 kHz Lossless' : 'Paused'}</span>
+                </div>
+                <div className="flex items-end justify-between gap-1 h-16 w-full pt-2">
+                  {[28, 45, 65, 80, 95, 82, 70, 55, 68, 88, 92, 74, 60, 48, 70, 85, 90, 75, 62, 50, 65, 82, 94, 76, 58, 45, 60, 75, 85, 70, 52, 40].map((baseHeight, i) => (
+                    <motion.div
+                      key={i}
+                      animate={{
+                        height: isPlaying 
+                          ? [`${Math.max(12, baseHeight * 0.4)}%`, `${Math.max(16, baseHeight * 0.95)}%`, `${Math.max(10, baseHeight * 0.5)}%`] 
+                          : '8%'
+                      }}
+                      transition={{
+                        duration: 0.5 + (i % 5) * 0.1,
+                        repeat: Infinity,
+                        ease: 'easeInOut',
+                      }}
+                      className="w-full rounded-t transition-all"
+                      style={{
+                        backgroundColor: i > 24 ? '#ec4899' : i > 12 ? '#8b5cf6' : '#3b82f6',
+                        opacity: isPlaying ? 0.9 : 0.25,
+                      }}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* Scrubbable Waveform & Timeline */}
+              <div className="space-y-1.5 mb-6">
+                <div className="relative w-full">
+                  <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value={progress}
+                    onChange={(e) => setProgress(Number(e.target.value))}
+                    className="w-full h-1.5 bg-[#252535] rounded-lg appearance-none cursor-pointer accent-indigo-400"
+                  />
+                </div>
+                <div className="flex justify-between text-[11px] font-mono text-gray-400">
+                  <span>01:36</span>
+                  <span>{currentTrack.duration}</span>
+                </div>
+              </div>
+
+              {/* Audio Controls */}
+              <div className="flex items-center justify-between pt-2">
+                <div className="flex items-center gap-2 text-gray-400">
+                  <button type="button" className="p-2 hover:text-white transition-colors cursor-pointer">
+                    <Shuffle size={17} />
+                  </button>
+                  <button type="button" className="p-2 hover:text-white transition-colors cursor-pointer">
+                    <Repeat size={17} />
+                  </button>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <button
+                    type="button"
+                    onClick={prevTrack}
+                    className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-white transition-colors cursor-pointer"
+                  >
+                    <SkipBack size={18} />
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setIsPlaying(!isPlaying)}
+                    className="w-14 h-14 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 flex items-center justify-center text-white shadow-[0_0_25px_rgba(99,102,241,0.5)] transition-transform hover:scale-105 cursor-pointer"
+                  >
+                    {isPlaying ? <Pause size={22} fill="white" /> : <Play size={22} fill="white" className="ml-0.5" />}
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={nextTrack}
+                    className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-white transition-colors cursor-pointer"
+                  >
+                    <SkipForward size={18} />
+                  </button>
+                </div>
+
+                {/* Volume Slider Mini */}
+                <div className="flex items-center gap-2 text-gray-400">
+                  <Volume2 size={16} />
+                  <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value={volume}
+                    onChange={(e) => setVolume(Number(e.target.value))}
+                    className="w-16 sm:w-20 h-1 bg-[#252535] rounded-lg appearance-none cursor-pointer accent-indigo-400"
+                  />
+                </div>
+              </div>
+
+              {/* Playlist Tray */}
+              <div className="mt-8 pt-6 border-t border-white/[0.06] space-y-2">
+                <span className="text-xs uppercase font-mono tracking-widest text-gray-500 block mb-2 font-bold">
+                  Quick Playlist Tracks:
+                </span>
+                {tracks.map((t, idx) => (
+                  <button
+                    key={t.id}
+                    type="button"
+                    onClick={() => {
+                      setCurrentTrackIndex(idx);
+                      setIsPlaying(true);
+                    }}
+                    className={`w-full p-3 rounded-xl flex items-center justify-between text-left transition-colors cursor-pointer ${
+                      currentTrackIndex === idx
+                        ? 'bg-indigo-500/15 border border-indigo-500/30 text-white'
+                        : 'bg-white/[0.02] border border-transparent hover:bg-white/[0.05] text-gray-400'
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="text-xs font-mono font-bold text-gray-500">{idx + 1}</span>
+                      <div>
+                        <p className="text-xs font-bold text-gray-200">{t.title}</p>
+                        <p className="text-[10px] text-gray-400">{t.artist}</p>
+                      </div>
+                    </div>
+                    <span className="text-xs font-mono text-gray-500">{t.duration}</span>
+                  </button>
+                ))}
+              </div>
+
+            </div>
+          </motion.div>
+
+        </div>
+      </div>
+    </section>
+  );
+}

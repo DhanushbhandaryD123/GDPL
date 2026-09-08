@@ -431,8 +431,9 @@
     "key_features": {
       "title": "Des fonctionnalités qui font vibrer votre monde !",
       "subtitle": "Personnalisez votre audio système avec les fonctionnalités d'amélioration audio de classe mondiale de Boom",
-      "read_more": "Lire la suite",
-      "read_less": "Réduire",
+      "read_more": "Lire plus",
+      "read_less": "Lire moins",
+      "explore": "Explorer",
       "surround_title": "Son Surround 3D",
       "surround_desc": "Vivez films, jeux et musique grâce à la technologie Surround 3D qui offre un son surround virtuel bluffant, sans casque spécial ni booster de son surround coûteux.",
       "eq_title": "Préréglages de l'égaliseur",

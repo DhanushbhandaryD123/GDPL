@@ -8,6 +8,9 @@ import { Boom3DKeyFeatures } from '../components/boom3d/Boom3DKeyFeatures';
 import { Boom3DSurround } from '../components/boom3d/Boom3DSurround';
 import { Boom3DEqualizer } from '../components/boom3d/Boom3DEqualizer';
 import { Boom3DVolumeBooster } from '../components/boom3d/Boom3DVolumeBooster';
+import { Boom3DAppController } from '../components/boom3d/Boom3DAppController';
+import { Boom3DAudioPlayer } from '../components/boom3d/Boom3DAudioPlayer';
+import { Boom3DRadioStations } from '../components/boom3d/Boom3DRadioStations';
 import { Boom3DTestimonials } from '../components/boom3d/Boom3DTestimonials';
 import { Boom3DCTA } from '../components/boom3d/Boom3DCTA';
 import { Boom3DAppDownload } from '../components/boom3d/Boom3DAppDownload';
@@ -74,6 +77,9 @@ export function Boom3D() {
         <Boom3DSurround />
         <Boom3DEqualizer />
         <Boom3DVolumeBooster />
+        <Boom3DAppController />
+        <Boom3DAudioPlayer />
+        <Boom3DRadioStations />
         <Boom3DAppDownload />
         <Boom3DTailored />
         <Boom3DTestimonials />

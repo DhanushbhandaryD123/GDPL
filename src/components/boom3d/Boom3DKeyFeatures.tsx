@@ -8,15 +8,47 @@ interface FeatureCardData {
   titleKey: string;
   descKey: string;
   badgeKey?: string;
+  exploreHref?: string;
 }
 
 const FEATURES: FeatureCardData[] = [
-  { icon: Orbit, titleKey: 'boom3d.key_features.surround_title', descKey: 'boom3d.key_features.surround_desc' },
-  { icon: SlidersHorizontal, titleKey: 'boom3d.key_features.eq_title', descKey: 'boom3d.key_features.eq_desc' },
-  { icon: Volume2, titleKey: 'boom3d.key_features.booster_title', descKey: 'boom3d.key_features.booster_desc', badgeKey: 'boom3d.key_features.booster_badge' },
-  { icon: SlidersVertical, titleKey: 'boom3d.key_features.apps_title', descKey: 'boom3d.key_features.apps_desc' },
-  { icon: Disc3, titleKey: 'boom3d.key_features.player_title', descKey: 'boom3d.key_features.player_desc' },
-  { icon: Radio, titleKey: 'boom3d.key_features.radio_title', descKey: 'boom3d.key_features.radio_desc' },
+  { 
+    icon: Orbit, 
+    titleKey: 'boom3d.key_features.surround_title', 
+    descKey: 'boom3d.key_features.surround_desc',
+    exploreHref: '#magical-3d-surround',
+  },
+  { 
+    icon: SlidersHorizontal, 
+    titleKey: 'boom3d.key_features.eq_title', 
+    descKey: 'boom3d.key_features.eq_desc',
+    exploreHref: '#equalizer-presets',
+  },
+  { 
+    icon: Volume2, 
+    titleKey: 'boom3d.key_features.booster_title', 
+    descKey: 'boom3d.key_features.booster_desc', 
+    badgeKey: 'boom3d.key_features.booster_badge',
+    exploreHref: '#boom-volume-booster',
+  },
+  { 
+    icon: SlidersVertical, 
+    titleKey: 'boom3d.key_features.apps_title', 
+    descKey: 'boom3d.key_features.apps_desc',
+    exploreHref: '#apps-volume-controller',
+  },
+  { 
+    icon: Disc3, 
+    titleKey: 'boom3d.key_features.player_title', 
+    descKey: 'boom3d.key_features.player_desc',
+    exploreHref: '#state-of-the-art-audio-player',
+  },
+  { 
+    icon: Radio, 
+    titleKey: 'boom3d.key_features.radio_title', 
+    descKey: 'boom3d.key_features.radio_desc',
+    exploreHref: '#radio-stations',
+  },
 ];
 
 const RING_SIZE = 80;
@@ -87,13 +119,39 @@ function FeatureCard({ feature, index }: { feature: FeatureCardData; index: numb
         {expanded ? fullText : truncatedText}
       </p>
       {isTruncatable && (
-        <button
-          type="button"
-          onClick={() => setExpanded((prev) => !prev)}
-          className="mt-4 text-sm font-semibold text-indigo-600 hover:text-indigo-800 underline underline-offset-4 decoration-indigo-300 hover:decoration-indigo-500 transition-colors"
-        >
-          {expanded ? t('boom3d.key_features.read_less') : t('boom3d.key_features.read_more')}
-        </button>
+        !expanded ? (
+          <button
+            type="button"
+            onClick={() => setExpanded(true)}
+            className="mt-4 text-sm font-semibold text-indigo-600 hover:text-indigo-800 underline underline-offset-4 decoration-indigo-300 hover:decoration-indigo-500 transition-colors"
+          >
+            {t('boom3d.key_features.read_more')}
+          </button>
+        ) : feature.exploreHref ? (
+          <a
+            href={feature.exploreHref}
+            onClick={(e) => {
+              e.preventDefault();
+              const target = document.querySelector(feature.exploreHref!);
+              if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+                window.history.pushState(null, '', feature.exploreHref!);
+              }
+            }}
+            className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-600 hover:text-indigo-800 transition-colors group/link cursor-pointer"
+          >
+            <span>{t('boom3d.key_features.explore') || 'Explore'}</span>
+            <span aria-hidden="true" className="group-hover/link:translate-x-1 transition-transform duration-200">→</span>
+          </a>
+        ) : (
+          <button
+            type="button"
+            onClick={() => setExpanded(false)}
+            className="mt-4 text-sm font-semibold text-indigo-600 hover:text-indigo-800 underline underline-offset-4 decoration-indigo-300 hover:decoration-indigo-500 transition-colors"
+          >
+            {t('boom3d.key_features.read_less')}
+          </button>
+        )
       )}
     </motion.div>
   );

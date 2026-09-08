@@ -14,7 +14,7 @@ const DottedWave = ({ className, color }: { className?: string, color: string })
 export function Boom3DSurround() {
   const { t } = useTranslation();
   return (
-    <section className="relative py-16 md:py-24 bg-white overflow-hidden">
+    <section id="magical-3d-surround" className="relative py-16 md:py-24 bg-white overflow-hidden scroll-mt-20 md:scroll-mt-24">
       
       {/* Decorative Background Elements (Animated Sound Waves) */}
       <motion.div 
