@@ -139,64 +139,64 @@ export function InteractiveAudioSection() {
   };
 
   // --------------------------------------------------------------------------
-  // 7. Pure GPU Transform Slots (Zero Layout Reflow = 60fps/120fps Smooth)
+  // 7. Pure GPU Transform Slots (Exact Same Spatial Layout Across Desktop & Mobile)
   // --------------------------------------------------------------------------
   const getSlotTransform = (slotIndex: number): SlotTransform => {
     if (isMobile) {
-      // Mobile: Identical workflow to desktop (Focus center, 5 orbiting satellites)
+      // Mobile: Exact same spatial workflow & positions as desktop, scaled cleanly to prevent collision
       switch (slotIndex) {
-        case 0: // FOCUS
+        case 0: // FOCUS (Center-left)
           return {
-            x: '0vw',
-            y: '-5vh',
+            x: '-10vw',
+            y: '0vh',
             scale: 1.0,
             opacity: 1.0,
             zIndex: 40,
-            rotateY: 0,
+            rotateY: -2,
           };
-        case 1: // Orbit Bottom Left
+        case 1: // Orbit 1 (Bottom Left)
           return {
             x: '-30vw',
-            y: '26vh',
-            scale: 0.44,
-            opacity: 0.9,
-            zIndex: 20,
-            rotateY: 4,
+            y: '22vh',
+            scale: 0.48,
+            opacity: 0.95,
+            zIndex: 25,
+            rotateY: 5,
           };
-        case 2: // Orbit Bottom Center
+        case 2: // Orbit 2 (Bottom Center-Right)
           return {
-            x: '0vw',
-            y: '26vh',
-            scale: 0.44,
-            opacity: 0.9,
-            zIndex: 20,
-            rotateY: 0,
-          };
-        case 3: // Orbit Bottom Right
-          return {
-            x: '30vw',
-            y: '26vh',
-            scale: 0.44,
-            opacity: 0.9,
-            zIndex: 20,
+            x: '16vw',
+            y: '22vh',
+            scale: 0.48,
+            opacity: 0.95,
+            zIndex: 25,
             rotateY: -4,
           };
-        case 4: // Orbit Top Right
+        case 3: // Orbit 3 (Mid-Right)
           return {
-            x: '26vw',
-            y: '-27vh',
-            scale: 0.36,
-            opacity: 0.75,
+            x: '32vw',
+            y: '0vh',
+            scale: 0.44,
+            opacity: 0.88,
+            zIndex: 20,
+            rotateY: -6,
+          };
+        case 4: // Orbit 4 (Top-Right)
+          return {
+            x: '18vw',
+            y: '-22vh',
+            scale: 0.4,
+            opacity: 0.8,
             zIndex: 15,
             rotateY: -3,
           };
-        case 5: // Orbit Top Left
+        case 5: // Orbit 5 (Top-Left)
         default:
           return {
-            x: '-26vw',
-            y: '-27vh',
-            scale: 0.36,
-            opacity: 0.75,
+            x: '-30vw',
+            y: '-22vh',
+            scale: 0.4,
+            opacity: 0.8,
             zIndex: 15,
             rotateY: 3,
           };
@@ -320,7 +320,7 @@ export function InteractiveAudioSection() {
             <div
               className={`relative overflow-hidden transition-shadow duration-300 ${
                 isMobile
-                  ? 'w-[64vw] max-w-[340px] aspect-[16/10]'
+                  ? 'w-[44vw] max-w-[220px] aspect-[16/10]'
                   : 'w-[32vw] max-w-[460px] aspect-[16/10]'
               }`}
             >
@@ -335,7 +335,7 @@ export function InteractiveAudioSection() {
 
             {/* Stylish Name Text on the Right Side of the Image */}
             <div
-              className={`pl-2 sm:pl-3 pointer-events-none select-none transition-opacity duration-300 ${
+              className={`pl-1.5 sm:pl-3 pointer-events-none select-none transition-opacity duration-300 ${
                 isFocus ? 'opacity-100' : 'opacity-70'
               }`}
             >
@@ -345,10 +345,10 @@ export function InteractiveAudioSection() {
                   fontFamily: "'Playfair Display', 'Sora', Georgia, serif",
                   fontSize: isFocus
                     ? isMobile
-                      ? '1.1rem'
+                      ? '0.95rem'
                       : 'clamp(1rem, 1.6vw, 1.8rem)'
                     : isMobile
-                      ? '0.7rem'
+                      ? '0.6rem'
                       : 'clamp(0.7rem, 0.9vw, 0.9rem)',
                   letterSpacing: '0.14em',
                 }}
