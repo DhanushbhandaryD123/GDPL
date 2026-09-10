@@ -6,7 +6,7 @@ export function Hero() {
   const { t } = useTranslation();
 
   return (
-    <section className="relative px-4 pt-12 pb-8 md:px-8 md:pt-20 md:pb-12 overflow-hidden bg-white flex items-center">
+    <section className="relative px-4 pt-8 pb-6 md:px-8 md:pt-14 md:pb-10 overflow-hidden bg-white flex items-center">
       {/* Dynamic Mesh Gradient Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <motion.div
@@ -31,52 +31,52 @@ export function Hero() {
       </div>
 
       <div className="container mx-auto max-w-[1400px] relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center">
 
           {/* Left Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="max-w-2xl text-center lg:text-left"
+            className="max-w-xl text-center lg:text-left"
           >
             {/* App Icon */}
-            <div className="flex items-center justify-center lg:justify-start mb-6">
+            <div className="flex items-center justify-center lg:justify-start mb-4">
               <img
                 src="/apps/Capto-window.jpeg"
                 alt="Capto for Windows"
-                className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl sm:rounded-3xl shadow-xl shadow-blue-500/10 border border-gray-100 object-cover"
-                width={80}
-                height={80}
+                className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl shadow-md shadow-blue-500/10 border border-gray-100 object-cover"
+                width={56}
+                height={56}
                 loading="eager"
               />
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-gray-900 tracking-tight leading-[1.1] mb-6">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-gray-900 tracking-tight leading-[1.15] mb-4">
               {t('captoWindows.hero.title_1')} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">
                 {t('captoWindows.hero.title_2')}
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-10 leading-relaxed font-light">
+            <p className="text-xs sm:text-sm md:text-base text-gray-600 mb-6 leading-relaxed max-w-lg">
               {t('captoWindows.hero.subtitle')}
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3">
               <a
                 href="#"
-                className="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold text-base flex items-center justify-center gap-3 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 group"
+                className="w-full sm:w-auto px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 group"
               >
-                <Download size={22} className="group-hover:animate-bounce" />
+                <Download size={16} className="group-hover:animate-bounce" />
                 {t('captoWindows.hero.download')}
               </a>
 
               <a
                 href="#"
-                className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-gray-50 text-gray-900 border border-gray-200 rounded-2xl font-bold text-base flex items-center justify-center gap-3 transition-all shadow-sm hover:-translate-y-1"
+                className="w-full sm:w-auto px-6 py-2.5 bg-white hover:bg-gray-50 text-gray-800 border border-gray-200 rounded-xl font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-xs hover:-translate-y-0.5"
               >
-                <Monitor size={22} />
+                <Monitor size={16} />
                 Learn More
               </a>
             </div>

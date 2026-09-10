@@ -1,9 +1,10 @@
 import { useState, useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
 import { FloatingSocials } from '../components/layout/FloatingSocials';
-import { Search, Download, ExternalLink, Calendar, Newspaper, FolderArchive, Mail, Sparkles, Filter } from 'lucide-react';
+import { Search, Download, ExternalLink, Calendar, Newspaper, FolderArchive, Mail, Sparkles, Filter, ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface PressRelease {
@@ -107,8 +108,8 @@ const PRESS_RELEASES: PressRelease[] = [
     id: 'pr-2022-1',
     year: 2022,
     date: '09/12/2022',
-    title: 'Global Delight Unveils 5.1 support in Boom 3D Mac; The ultimate audio experience with 5.1 surround sound for Mac',
-    url: 'https://www.globaldelight.com/press-pages/2022/The-ultimate-audio-experience-with-5-1-surround-sound-for-Mac.php',
+    title: 'Boom 3D Introduces 5.1 Audio on Mac',
+    url: '/press-pages/2022/The-ultimate-audio-experience-with-5-1-surround-sound-for-Mac',
     category: 'Boom',
   },
   {
@@ -313,8 +314,8 @@ const PRESS_RELEASES: PressRelease[] = [
     id: 'pr-2013-4',
     year: 2013,
     date: '08/05/2013',
-    title: 'Global Delight announces "Back to School": upto 50% off on Boom & Voila',
-    url: 'https://www.globaldelight.com/press-pages/2013/global-delight-announces-back-to-school-half-off-sale',
+    title: 'Global Delight Back to School Sale: Boom & Voila 50% Off',
+    url: '/press-pages/2013/global-delight-announces-back-to-school-half-off-sale',
     category: 'Company',
   },
   {
@@ -511,8 +512,8 @@ const PRESS_RELEASES: PressRelease[] = [
     id: 'pr-2010-1',
     year: 2010,
     date: '21/12/2010',
-    title: 'Camera Plus Pro – A Perfect Gift For Your iPhone Camera',
-    url: 'https://www.globaldelight.com/press-pages/2010/Camera-Plus-Pro-A-Perfect-Gift-For-Your-iPhone-Camera',
+    title: 'Camera Plus Pro 3.0 Released for iPhone | Global Delight',
+    url: '/press-pages/2010/Camera-Plus-Pro-A-Perfect-Gift-For-Your-iPhone-Camera',
     category: 'Camera Plus',
   },
   {
@@ -535,8 +536,8 @@ const PRESS_RELEASES: PressRelease[] = [
     id: 'pr-2010-4',
     year: 2010,
     date: '27/10/2010',
-    title: 'Global Delight releases Camera Plus Pro v2.6 with iPod touch compatibility and announces a Halloween Contest',
-    url: 'https://www.globaldelight.com/press-pages/2010/Camera-Plus-Prov2pt6-and-Halloween-Contest',
+    title: 'Camera Plus Pro 2.6 Released with iPod Touch Support',
+    url: '/press-pages/2010/Camera-Plus-Prov2pt6-and-Halloween-Contest',
     category: 'Camera Plus',
   },
   {
@@ -575,8 +576,8 @@ const PRESS_RELEASES: PressRelease[] = [
     id: 'pr-2010-9',
     year: 2010,
     date: '12/02/2010',
-    title: 'Global Delight confirms Video-Recording feature in the next version of Camera Plus Pro',
-    url: 'https://www.globaldelight.com/press-pages/2010/camera-plus-pro-video-recording',
+    title: 'Camera Plus Pro Adds Video Recording | Global Delight',
+    url: '/press-pages/2010/camera-plus-pro-video-recording',
     category: 'Camera Plus',
   },
 
@@ -625,8 +626,8 @@ const PRESS_RELEASES: PressRelease[] = [
     id: 'pr-2009-6',
     year: 2009,
     date: '12/06/2009',
-    title: 'Voila from Global Delight makes into the 2009 Macworld Awards finals',
-    url: 'https://www.globaldelight.com/press-pages/2009/voila-macworld-award-finalists',
+    title: 'Voila Named Finalist in 2009 Macworld Awards | Global Delight',
+    url: '/press-pages/2009/voila-macworld-award-finalists',
     category: 'Voila',
   },
   {
@@ -683,16 +684,16 @@ const PRESS_RELEASES: PressRelease[] = [
     id: 'pr-2008-3',
     year: 2008,
     date: '02/09/2008',
-    title: 'Web2 Delight 1.5 released with 25 New features',
-    url: 'https://www.globaldelight.com/press-pages/2008/w2d-1pt5-released',
+    title: 'Web2 Delight 1.5 Released with 25+ New Features',
+    url: '/press-pages/2008/w2d-1pt5-released',
     category: 'Other',
   },
   {
     id: 'pr-2008-4',
     year: 2008,
     date: '12/05/2008',
-    title: 'Web2 Delight 1.1 Released',
-    url: 'https://www.globaldelight.com/press-pages/2008/w2d-1pt1-released',
+    title: 'Web2 Delight 1.1 Released | Global Delight',
+    url: '/press-pages/2008/w2d-1pt1-released',
     category: 'Other',
   },
   {
@@ -1034,40 +1035,68 @@ export function PressInfo() {
 
                       {/* Release Cards Grid */}
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                        {releases.map((pr) => (
-                          <motion.a
-                            key={pr.id}
-                            href={pr.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            initial={{ opacity: 0, y: 15 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.3 }}
-                            className="group relative rounded-2xl p-6 bg-white border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_35px_rgba(59,130,246,0.1)] hover:border-indigo-200 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
-                          >
-                            <div>
-                              <div className="flex items-center justify-between gap-3 mb-3.5">
-                                <div className="flex items-center gap-2 text-xs font-semibold text-gray-500">
-                                  <Calendar className="w-3.5 h-3.5 text-indigo-500" />
-                                  <span>{pr.date}</span>
+                        {releases.map((pr) => {
+                          const isInternal = pr.url.startsWith('/');
+                          const CardContent = (
+                            <>
+                              <div>
+                                <div className="flex items-center justify-between gap-3 mb-3.5">
+                                  <div className="flex items-center gap-2 text-xs font-semibold text-gray-500">
+                                    <Calendar className="w-3.5 h-3.5 text-indigo-500" />
+                                    <span>{pr.date}</span>
+                                  </div>
+                                  <div className="flex items-center gap-1.5">
+                                    {isInternal && (
+                                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-purple-50 text-purple-700 border border-purple-200">
+                                        Full Article
+                                      </span>
+                                    )}
+                                    <span className="text-[11px] font-bold px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-600 border border-indigo-100">
+                                      {pr.category}
+                                    </span>
+                                  </div>
                                 </div>
-                                <span className="text-[11px] font-bold px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-600 border border-indigo-100">
-                                  {pr.category}
-                                </span>
+
+                                <h3 className="text-base md:text-lg font-bold text-gray-900 group-hover:text-indigo-600 transition-colors leading-snug">
+                                  {pr.title}
+                                </h3>
                               </div>
 
-                              <h3 className="text-base md:text-lg font-bold text-gray-900 group-hover:text-indigo-600 transition-colors leading-snug">
-                                {pr.title}
-                              </h3>
-                            </div>
+                              <div className="mt-5 pt-4 border-t border-gray-100 flex items-center justify-between text-xs font-semibold text-gray-500 group-hover:text-indigo-600">
+                                <span>{isInternal ? 'Read full release' : 'View press release'}</span>
+                                {isInternal ? (
+                                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-indigo-600" />
+                                ) : (
+                                  <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                                )}
+                              </div>
+                            </>
+                          );
 
-                            <div className="mt-5 pt-4 border-t border-gray-100 flex items-center justify-between text-xs font-semibold text-gray-500 group-hover:text-indigo-600">
-                              <span>Read full press release</span>
-                              <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                            </div>
-                          </motion.a>
-                        ))}
+                          return isInternal ? (
+                            <Link
+                              key={pr.id}
+                              to={pr.url}
+                              className="group relative rounded-2xl p-6 bg-white border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_35px_rgba(59,130,246,0.1)] hover:border-indigo-200 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+                            >
+                              {CardContent}
+                            </Link>
+                          ) : (
+                            <motion.a
+                              key={pr.id}
+                              href={pr.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              initial={{ opacity: 0, y: 15 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              viewport={{ once: true }}
+                              transition={{ duration: 0.3 }}
+                              className="group relative rounded-2xl p-6 bg-white border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_35px_rgba(59,130,246,0.1)] hover:border-indigo-200 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+                            >
+                              {CardContent}
+                            </motion.a>
+                          );
+                        })}
                       </div>
                     </div>
                   ))}

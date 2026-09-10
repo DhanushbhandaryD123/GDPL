@@ -231,6 +231,7 @@ const CameraPlusProPage = lazy(() => import('./pages/CameraPlusProPage').then(m 
 const CaptoEducatorsPage = lazy(() => import('./pages/CaptoEducatorsPage').then(m => ({ default: m.CaptoEducatorsPage })));
 const CaptoThankYou = lazy(() => import('./pages/CaptoThankYou').then(m => ({ default: m.CaptoThankYou })));
 const Boom2ThankYouDownload = lazy(() => import('./pages/Boom2ThankYouDownload').then(m => ({ default: m.Boom2ThankYouDownload })));
+const BoomComparePage = lazy(() => import('./pages/BoomComparePage').then(m => ({ default: m.BoomComparePage })));
 
 import { LanguageSync } from './components/layout/LanguageSync';
 import { rememberLanguage } from './lib/languagePreference';
@@ -246,6 +247,7 @@ const WhatsNewBoom2 = lazy(() => import('./pages/whatsnew/WhatsNewBoom2').then(m
 const WhatsNewAudion = lazy(() => import('./pages/whatsnew/WhatsNewAudion').then(m => ({ default: m.WhatsNewAudion })));
 const WhatsNewAudimix = lazy(() => import('./pages/whatsnew/WhatsNewAudimix').then(m => ({ default: m.WhatsNewAudimix })));
 const PressInfo = lazy(() => import('./pages/PressInfo').then(m => ({ default: m.PressInfo })));
+const PressArticlePage = lazy(() => import('./pages/PressArticlePage').then(m => ({ default: m.PressArticlePage })));
 
 function RouteFallback() {
   return (
@@ -303,6 +305,7 @@ const appRoutes = [
 
   // Press & Media Info
   { path: "/press-info", element: <PressInfo /> },
+  { path: "/press-pages/:year/:slug", element: <PressArticlePage /> },
   { path: "/press_releases", element: <Redirect to="/press-info" /> },
   { path: "/press", element: <Redirect to="/press-info" /> },
 
@@ -339,6 +342,7 @@ const appRoutes = [
   { path: "/boom", element: <Boom /> },
   { path: "/boom2", element: <Boom2 /> },
   { path: "/boom3D", element: <Boom3D /> },
+  { path: "/boom/boom2-vs-boom3d-compare-features", element: <BoomComparePage /> },
   { path: "/capto", element: <Capto /> },
   { path: "/capto/windows", element: <CaptoWindowsPage /> },
   { path: "/capto/educators", element: <CaptoEducatorsPage /> },

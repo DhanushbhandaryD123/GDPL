@@ -33,57 +33,57 @@ export function MacPromo() {
   const { t } = useTranslation();
 
   return (
-    <section className="py-12 md:py-16 bg-gradient-to-br from-[#0078D7] via-[#0063B1] to-[#004e8c] text-white relative overflow-hidden">
+    <section className="py-8 md:py-12 bg-gradient-to-br from-[#0078D7] via-[#0063B1] to-[#004e8c] text-white relative overflow-hidden">
       {/* Ambient background glow & effects */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-white/10 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-0 left-10 w-80 h-80 bg-indigo-400/15 rounded-full blur-[90px] pointer-events-none" />
 
-      <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-6xl">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-5xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="relative bg-white/[0.12] hover:bg-white/[0.14] backdrop-blur-xl border border-white/25 rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl shadow-blue-950/25 overflow-hidden transition-all"
+          transition={{ duration: 0.5 }}
+          className="relative bg-white/[0.12] hover:bg-white/[0.14] backdrop-blur-xl border border-white/20 rounded-2xl p-5 sm:p-6 md:p-7 shadow-xl shadow-blue-950/20 overflow-hidden transition-all"
         >
           {/* Subtle inner corner highlight */}
-          <div className="absolute top-0 right-0 -mr-16 -mt-16 w-48 h-48 bg-white/10 rounded-full blur-2xl pointer-events-none" />
+          <div className="absolute top-0 right-0 -mr-16 -mt-16 w-40 h-40 bg-white/10 rounded-full blur-2xl pointer-events-none" />
 
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-6 relative z-10">
             {/* Left: Apple Icon & Text Content */}
-            <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-5 sm:gap-6 flex-1">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 sm:gap-5 flex-1">
               {/* Apple Icon Badge */}
-              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl sm:rounded-3xl bg-white text-gray-900 flex items-center justify-center shadow-xl shadow-black/15 shrink-0 border border-white/80 transition-transform duration-300 hover:scale-105">
-                <AppleIcon className="w-9 h-9 sm:w-11 sm:h-11 text-gray-900" />
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-white text-gray-900 flex items-center justify-center shadow-md shadow-black/10 shrink-0 border border-white/80 transition-transform duration-300 hover:scale-105">
+                <AppleIcon className="w-7 h-7 sm:w-8 sm:h-8 text-gray-900" />
               </div>
 
               {/* Text Info */}
-              <div className="space-y-2">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/15 text-white text-xs font-semibold uppercase tracking-wider backdrop-blur-sm border border-white/20">
-                  <AppleIcon className="w-3.5 h-3.5" />
+              <div className="space-y-1.5">
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/15 text-white text-[11px] font-semibold uppercase tracking-wider backdrop-blur-sm border border-white/20">
+                  <AppleIcon className="w-3 h-3" />
                   <span>macOS Edition</span>
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-tight">
+                <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug">
                   {t('captoWindows.mac_promo.title')}
                 </h3>
 
-                <p className="text-blue-100/90 text-sm sm:text-base font-normal max-w-xl leading-relaxed">
+                <p className="text-blue-100/90 text-xs sm:text-sm font-normal max-w-lg leading-relaxed">
                   {t('captoWindows.mac_promo.subtitle')}
                 </p>
               </div>
             </div>
 
             {/* Right: Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full lg:w-auto shrink-0">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full lg:w-auto shrink-0">
               {/* Primary: Explore Mac Version */}
               <Link
                 to="/capto"
-                className="px-7 py-3.5 bg-white hover:bg-gray-50 text-gray-900 font-bold rounded-2xl text-sm sm:text-base inline-flex items-center justify-center gap-2.5 shadow-xl shadow-black/10 hover:shadow-2xl transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-95 group"
+                className="px-5 py-2.5 bg-white hover:bg-gray-50 text-gray-900 font-semibold rounded-xl text-xs sm:text-sm inline-flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 active:scale-95 group"
               >
-                <AppleIcon className="w-4 h-4 text-gray-900" />
+                <AppleIcon className="w-3.5 h-3.5 text-gray-900" />
                 <span>{t('captoWindows.mac_promo.explore')}</span>
-                <ArrowRightIcon className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRightIcon className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
               </Link>
 
               {/* Secondary: Available on Setapp */}
@@ -91,9 +91,9 @@ export function MacPromo() {
                 href="https://go.setapp.com/stp344?ref=globaldelight&utm_medium=referral&utm_campaign=globaldelight-website-capto"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3.5 bg-white/15 hover:bg-white/25 text-white border border-white/30 hover:border-white/50 font-semibold rounded-2xl text-sm sm:text-base inline-flex items-center justify-center gap-2 backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-95 shadow-md"
+                className="px-4 py-2.5 bg-white/15 hover:bg-white/25 text-white border border-white/30 hover:border-white/50 font-semibold rounded-xl text-xs sm:text-sm inline-flex items-center justify-center gap-1.5 backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 active:scale-95 shadow-sm"
               >
-                <span className="text-pink-300 font-bold text-base leading-none">❖</span>
+                <span className="text-pink-300 font-bold text-sm leading-none">❖</span>
                 <span>{t('captoWindows.mac_promo.setapp')}</span>
               </a>
             </div>
