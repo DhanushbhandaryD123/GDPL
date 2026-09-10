@@ -1,359 +1,365 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
-import { Globe, Signal, Play, Pause, MapPin, Wifi, Headphones } from 'lucide-react';
+import {
+  Play,
+  Pause,
+  MapPin,
+} from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 interface RadioStation {
   id: string;
   name: string;
-  location: string;
+  city: string;
+  country: string;
   frequency: number;
   genre: string;
-  category: 'chill' | 'electronic' | 'jazz' | 'pop';
   flag: string;
-  accentColor: string;
   bitrate: string;
+  badgeColor: string;
+  topPct: string;
+  leftPct: string;
 }
 
 export function Boom3DRadioStations() {
   const { t } = useTranslation();
 
-  const stations: RadioStation[] = [
-    {
-      id: 'bbc1',
-      name: 'BBC Radio 1 London',
-      location: 'London, United Kingdom',
-      frequency: 98.8,
-      genre: 'Global Hits & Indie',
-      category: 'pop',
-      flag: '🇬🇧',
-      accentColor: '#ec4899',
-      bitrate: '320 kbps HQ',
-    },
-    {
-      id: 'shibuya',
-      name: 'Shibuya Night Lo-Fi',
-      location: 'Tokyo, Japan',
-      frequency: 81.3,
-      genre: 'Chillhop & Neo-Tokyo',
-      category: 'chill',
-      flag: '🇯🇵',
-      accentColor: '#8b5cf6',
-      bitrate: '256 kbps Crystal',
-    },
-    {
-      id: 'jazz24',
-      name: 'Jazz24 Pacific NW',
-      location: 'Seattle, United States',
-      frequency: 88.5,
-      genre: 'Classic Jazz & Blues',
-      category: 'jazz',
-      flag: '🇺🇸',
-      accentColor: '#f59e0b',
-      bitrate: '320 kbps Lossless',
-    },
-    {
-      id: 'ibiza',
-      name: 'Ibiza Sonica Beach',
-      location: 'Ibiza, Spain',
-      frequency: 95.2,
-      genre: 'Deep House & Sunset Lounge',
-      category: 'electronic',
-      flag: '🇪🇸',
-      accentColor: '#06b6d4',
-      bitrate: '320 kbps Club Master',
-    },
-    {
-      id: 'berlin',
-      name: 'Berlin Pulse Radio',
-      location: 'Berlin, Germany',
-      frequency: 104.1,
-      genre: 'Underground Techno',
-      category: 'electronic',
-      flag: '🇩🇪',
-      accentColor: '#10b981',
-      bitrate: '320 kbps Master',
-    },
-    {
-      id: 'paris',
-      name: 'Paris Café Lounge',
-      location: 'Paris, France',
-      frequency: 91.7,
-      genre: 'Acoustic & Nu-Chanson',
-      category: 'chill',
-      flag: '🇫🇷',
-      accentColor: '#3b82f6',
-      bitrate: '256 kbps Stereo',
-    },
-  ];
+  const stations: RadioStation[] = useMemo(
+    () => [
+      {
+        id: 'london',
+        name: 'BBC Radio 1',
+        city: 'London',
+        country: 'United Kingdom',
+        frequency: 98.8,
+        genre: 'Global Hits & Indie',
+        flag: '🇬🇧',
+        bitrate: '320 kbps HQ',
+        badgeColor: '#ec4899',
+        topPct: '18%',
+        leftPct: '42%',
+      },
+      {
+        id: 'tokyo',
+        name: 'Shibuya Lo-Fi Radio',
+        city: 'Tokyo',
+        country: 'Japan',
+        frequency: 81.3,
+        genre: 'Chillhop & Ambient',
+        flag: '🇯🇵',
+        bitrate: '256 kbps Crystal',
+        badgeColor: '#8b5cf6',
+        topPct: '32%',
+        leftPct: '78%',
+      },
+      {
+        id: 'ny',
+        name: 'New York Jazz FM',
+        city: 'New York',
+        country: 'United States',
+        frequency: 88.5,
+        genre: 'Classic Jazz & Blues',
+        flag: '🇺🇸',
+        bitrate: '320 kbps Lossless',
+        badgeColor: '#f59e0b',
+        topPct: '30%',
+        leftPct: '16%',
+      },
+      {
+        id: 'paris',
+        name: 'Paris Café Lounge',
+        city: 'Paris',
+        country: 'France',
+        frequency: 91.7,
+        genre: 'Acoustic & Nu-Chanson',
+        flag: '🇫🇷',
+        bitrate: '256 kbps Stereo',
+        badgeColor: '#3b82f6',
+        topPct: '22%',
+        leftPct: '54%',
+      },
+      {
+        id: 'ibiza',
+        name: 'Ibiza Sonica Beach',
+        city: 'Ibiza',
+        country: 'Spain',
+        frequency: 95.2,
+        genre: 'Deep House & Sunset',
+        flag: '🇪🇸',
+        bitrate: '320 kbps Club',
+        badgeColor: '#06b6d4',
+        topPct: '48%',
+        leftPct: '46%',
+      },
+      {
+        id: 'berlin',
+        name: 'Berlin Pulse Radio',
+        city: 'Berlin',
+        country: 'Germany',
+        frequency: 104.1,
+        genre: 'Underground Techno',
+        flag: '🇩🇪',
+        bitrate: '320 kbps Master',
+        badgeColor: '#10b981',
+        topPct: '14%',
+        leftPct: '60%',
+      },
+    ],
+    []
+  );
 
-  const [activeCategory, setActiveCategory] = useState<'all' | 'chill' | 'electronic' | 'jazz' | 'pop'>('all');
-  const [activeStation, setActiveStation] = useState<RadioStation>(stations[0]);
+  const [activeStationIndex, setActiveStationIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
 
-  const filteredStations = activeCategory === 'all'
-    ? stations
-    : stations.filter((s) => s.category === activeCategory);
-
-  const minFreq = 80.0;
-  const maxFreq = 108.0;
-  const tunerPercentage = ((activeStation.frequency - minFreq) / (maxFreq - minFreq)) * 100;
+  const activeStation = stations[activeStationIndex];
 
   return (
-    <section id="radio-stations" className="relative py-20 lg:py-28 overflow-hidden bg-gradient-to-b from-white via-slate-50 to-white text-gray-900 scroll-mt-20 md:scroll-mt-24">
-      
-      {/* Background Radar Waves in soft pastel color */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[850px] pointer-events-none opacity-25">
-        {[1, 2, 3, 4].map((ring) => (
-          <motion.div
-            key={ring}
-            animate={{
-              scale: [0.8, 1.4, 0.8],
-              opacity: [0.2, 0.6, 0.2],
-            }}
-            transition={{
-              duration: 8 + ring * 2,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-            className="absolute inset-0 rounded-full border border-emerald-300"
-            style={{ margin: `${ring * 60}px` }}
-          />
-        ))}
-      </div>
+    <section
+      id="radio-stations"
+      className="relative py-20 lg:py-28 overflow-hidden bg-white text-gray-900 scroll-mt-20 md:scroll-mt-24 select-none border-b border-gray-100"
+    >
+      {/* Subtle Ambient Light Gradients on Pure White */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-gradient-to-r from-emerald-100/40 via-cyan-100/30 to-blue-100/30 rounded-full blur-[130px] pointer-events-none" />
 
-      <div className="max-w-[1300px] mx-auto px-6 lg:px-12 relative z-10">
+      <div className="max-w-[1250px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Header */}
-        <div className="text-center max-w-[850px] mx-auto mb-14 md:mb-18 space-y-4">
-         
+        {/* Minimal Header: High Impact, Less Text */}
+        <div className="text-center max-w-2xl mx-auto mb-10 md:mb-14">
+          
 
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.08 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-gray-900 leading-tight"
+            transition={{ delay: 0.05 }}
+            className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 leading-tight"
           >
-            {t('boom3d.key_features.radio_title') || '20,000+ Radio Stations'}
+            {t('boom3d.key_features.radio_title', '20,000+ Radio Stations')}
           </motion.h2>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.16 }}
-            className="text-base md:text-lg text-gray-600 leading-relaxed max-w-[760px] mx-auto"
+            transition={{ delay: 0.1 }}
+            className="mt-3 text-sm sm:text-base text-gray-500 font-medium max-w-xl mx-auto"
           >
-            {t('boom3d.key_features.radio_desc') ||
-              'Join Boom to enjoy free access to more than 20k local and international internet radio stations across 120 countries.'}
+            {t(
+              'boom3d.key_features.radio_desc',
+              'Stream over 20,000 local and international radio stations across 120 countries in crystal-clear 3D audio.'
+            )}
           </motion.p>
         </div>
 
-        {/* Radio Broadcast Tuning Console (Clean Light Theme) */}
+        {/* Global Object Centerpiece: 3D Holographic Radio Globe */}
+        <div className="relative max-w-4xl mx-auto mb-10 md:mb-12">
+          
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative flex items-center justify-center"
+          >
+            {/* The Photorealistic 3D Globe Render */}
+            <img
+              src="/boom3D/radio-globe-white.jpg"
+              alt="Boom 3D Global Radio Stations Holographic Globe"
+              className="w-full h-auto max-h-[500px] object-contain drop-shadow-[0_20px_45px_rgba(0,0,0,0.08)] rounded-3xl"
+              width={1792}
+              height={1024}
+              loading="lazy"
+            />
+
+            {/* Hotspot Floating City Badge: London */}
+            <div className="absolute top-[18%] left-[8%] sm:left-[14%] hidden sm:block">
+              <button
+                type="button"
+                onClick={() => {
+                  setActiveStationIndex(0);
+                  setIsPlaying(true);
+                }}
+                className={`px-3 py-1.5 rounded-full backdrop-blur-md border text-xs font-semibold flex items-center gap-1.5 shadow-md transition-all cursor-pointer ${
+                  activeStationIndex === 0
+                    ? 'bg-emerald-600 text-white border-emerald-400 scale-105 shadow-emerald-200'
+                    : 'bg-white/95 text-gray-800 border-gray-200 hover:scale-105'
+                }`}
+              >
+                <span>🇬🇧 London</span>
+                <span className="font-mono text-[10px] opacity-80">98.8 MHz</span>
+              </button>
+            </div>
+
+            {/* Hotspot Floating City Badge: Tokyo */}
+            <div className="absolute top-[28%] right-[6%] sm:right-[12%] hidden sm:block">
+              <button
+                type="button"
+                onClick={() => {
+                  setActiveStationIndex(1);
+                  setIsPlaying(true);
+                }}
+                className={`px-3 py-1.5 rounded-full backdrop-blur-md border text-xs font-semibold flex items-center gap-1.5 shadow-md transition-all cursor-pointer ${
+                  activeStationIndex === 1
+                    ? 'bg-purple-600 text-white border-purple-400 scale-105 shadow-purple-200'
+                    : 'bg-white/95 text-gray-800 border-gray-200 hover:scale-105'
+                }`}
+              >
+                <span>🇯🇵 Tokyo</span>
+                <span className="font-mono text-[10px] opacity-80">81.3 MHz</span>
+              </button>
+            </div>
+
+            {/* Hotspot Floating City Badge: New York */}
+            <div className="absolute bottom-[28%] left-[6%] sm:left-[12%] hidden sm:block">
+              <button
+                type="button"
+                onClick={() => {
+                  setActiveStationIndex(2);
+                  setIsPlaying(true);
+                }}
+                className={`px-3 py-1.5 rounded-full backdrop-blur-md border text-xs font-semibold flex items-center gap-1.5 shadow-md transition-all cursor-pointer ${
+                  activeStationIndex === 2
+                    ? 'bg-amber-600 text-white border-amber-400 scale-105 shadow-amber-200'
+                    : 'bg-white/95 text-gray-800 border-gray-200 hover:scale-105'
+                }`}
+              >
+                <span>🇺🇸 New York</span>
+                <span className="font-mono text-[10px] opacity-80">88.5 MHz</span>
+              </button>
+            </div>
+
+            {/* Hotspot Floating City Badge: Paris */}
+            <div className="absolute bottom-[24%] right-[8%] sm:right-[16%] hidden sm:block">
+              <button
+                type="button"
+                onClick={() => {
+                  setActiveStationIndex(3);
+                  setIsPlaying(true);
+                }}
+                className={`px-3 py-1.5 rounded-full backdrop-blur-md border text-xs font-semibold flex items-center gap-1.5 shadow-md transition-all cursor-pointer ${
+                  activeStationIndex === 3
+                    ? 'bg-blue-600 text-white border-blue-400 scale-105 shadow-blue-200'
+                    : 'bg-white/95 text-gray-800 border-gray-200 hover:scale-105'
+                }`}
+              >
+                <span>🇫🇷 Paris</span>
+                <span className="font-mono text-[10px] opacity-80">91.7 MHz</span>
+              </button>
+            </div>
+
+          </motion.div>
+
+        </div>
+
+        {/* Interactive Global Radio Tuner Console Dock */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="bg-white rounded-3xl p-6 sm:p-10 border border-gray-200/80 shadow-[0_25px_70px_rgba(0,0,0,0.06)] mb-12"
+          transition={{ duration: 0.5 }}
+          className="relative bg-white/95 backdrop-blur-xl rounded-3xl border border-gray-200/80 shadow-[0_15px_45px_-10px_rgba(0,0,0,0.06)] p-5 sm:p-7 max-w-4xl mx-auto space-y-5"
         >
-          {/* Active Station Display & On-Air Badge */}
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-gray-100">
+          {/* Top Row: Active Station & Live Broadcast Status */}
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-gray-100">
             
-            <div className="flex items-center gap-5">
-              {/* Flag Badge */}
-              <div 
-                className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl shadow-sm border border-gray-200/80 shrink-0 bg-slate-50"
-              >
-                <span>{activeStation.flag}</span>
+            {/* Station Brand */}
+            <div className="flex items-center gap-3.5 min-w-[240px]">
+              <div className="w-12 h-12 rounded-2xl bg-slate-100 border border-slate-200 flex items-center justify-center text-2xl shadow-xs shrink-0">
+                {activeStation.flag}
               </div>
-
               <div>
-                <div className="flex items-center gap-2.5">
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-rose-50 border border-rose-200 text-[11px] font-bold text-rose-600 uppercase tracking-wider">
-                    <span className="w-2 h-2 rounded-full bg-rose-500 animate-ping" />
-                    Live ON AIR
-                  </span>
-                  <span className="text-xs font-mono text-gray-500">Stream: {activeStation.bitrate}</span>
+                <div className="flex items-center gap-2">
+                  <h3 className="text-base sm:text-lg font-bold text-gray-900 tracking-tight leading-snug">
+                    {activeStation.name}
+                  </h3>
+                  
                 </div>
-
-                <h3 className="text-2xl sm:text-3xl font-black text-gray-900 mt-1">
-                  {activeStation.name}
-                </h3>
-                
-                <p className="text-xs text-gray-500 flex items-center gap-1.5 mt-0.5">
-                  <MapPin size={12} className="text-gray-400" />
-                  {activeStation.location} • <strong className="text-indigo-600 font-semibold">{activeStation.genre}</strong>
+                <p className="text-xs text-gray-500 font-medium mt-0.5 flex items-center gap-1">
+                  <MapPin size={11} className="text-gray-400" />
+                  {activeStation.city}, {activeStation.country} • <span className="font-semibold text-emerald-600">{activeStation.genre}</span>
                 </p>
               </div>
             </div>
 
-            {/* Play/Pause Stream Toggle */}
-            <div className="flex items-center gap-4">
+            {/* Live Radio Frequency & Signal Meter */}
+            <div className="flex items-center gap-3 self-end md:self-center">
+              
+              {/* Signal Bars */}
+              <div className="flex items-center gap-1 h-6 px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-xl">
+                {[0.4, 0.9, 0.6, 1.0, 0.7, 0.5, 0.8].map((scale, i) => (
+                  <motion.span
+                    key={i}
+                    animate={{
+                      height: isPlaying ? `${Math.max(4, scale * 16)}px` : '3px',
+                    }}
+                    transition={{
+                      duration: 0.35 + (i % 3) * 0.1,
+                      repeat: Infinity,
+                      repeatType: 'reverse',
+                      ease: 'easeInOut',
+                    }}
+                    className="w-1 rounded-full transition-colors"
+                    style={{
+                      backgroundColor: isPlaying ? '#10b981' : '#cbd5e1',
+                    }}
+                  />
+                ))}
+                <span className="ml-1.5 text-[11px] font-mono font-bold text-emerald-600">
+                  {activeStation.frequency.toFixed(1)} MHz
+                </span>
+              </div>
+
+              {/* Glowing Play/Pause */}
               <button
                 type="button"
                 onClick={() => setIsPlaying(!isPlaying)}
-                className="px-6 py-3 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold text-sm flex items-center gap-2 shadow-lg shadow-emerald-200 transition-all cursor-pointer"
+                title={isPlaying ? 'Pause broadcast' : 'Tune in'}
+                className="w-11 h-11 rounded-full p-[2px] bg-gradient-to-tr from-[#ec4899] via-[#8b5cf6] to-[#00f0ff] shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:scale-105 transition-all cursor-pointer shrink-0"
               >
-                {isPlaying ? <Pause size={17} fill="white" /> : <Play size={17} fill="white" />}
-                <span>{isPlaying ? 'Streaming Live' : 'Tune In'}</span>
+                <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center text-white">
+                  {isPlaying ? <Pause size={16} fill="white" /> : <Play size={16} fill="white" className="ml-0.5" />}
+                </div>
               </button>
+
             </div>
 
           </div>
 
-          {/* Analog/Digital Frequency Dial (Distinct Dark Console Inside Light Card) */}
-          <div className="py-8 border-b border-gray-100">
-            <div className="flex items-center justify-between text-xs font-mono text-gray-500 mb-3">
-              <span className="flex items-center gap-1.5 uppercase tracking-wider font-semibold text-gray-700">
-                <Signal size={14} className="text-emerald-600" /> FM Frequency Band
-              </span>
-              <span className="text-xl font-bold font-mono text-emerald-600">
-                {activeStation.frequency.toFixed(1)} <span className="text-xs text-gray-400">MHz</span>
-              </span>
-            </div>
-
-            {/* Frequency Ruler Scale */}
-            <div className="relative h-14 bg-gray-950 rounded-2xl border border-gray-800 p-3 flex items-center overflow-hidden shadow-inner">
-              
-              {/* Tick Marks (80MHz to 108MHz) */}
-              <div className="w-full flex justify-between items-center px-4 pointer-events-none opacity-40">
-                {[80, 85, 90, 95, 100, 105, 108].map((f) => (
-                  <div key={f} className="flex flex-col items-center gap-1">
-                    <span className="text-[10px] font-mono text-gray-400">{f}</span>
-                    <div className="w-0.5 h-3 bg-gray-500" />
-                  </div>
-                ))}
-              </div>
-
-              {/* Glowing Tuner Needle */}
-              <motion.div
-                animate={{ left: `${Math.min(95, Math.max(5, tunerPercentage))}%` }}
-                transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-                className="absolute top-0 bottom-0 w-1 bg-gradient-to-b from-emerald-400 via-teal-300 to-cyan-400 shadow-[0_0_15px_rgba(52,211,153,0.9)] z-20"
-              >
-                <div className="absolute top-0 -left-1.5 w-4 h-2 bg-emerald-400 rounded-b-sm shadow-md" />
-                <div className="absolute bottom-0 -left-1.5 w-4 h-2 bg-teal-400 rounded-t-sm shadow-md" />
-              </motion.div>
-            </div>
-          </div>
-
-          {/* Genre Category Filters */}
-          <div className="pt-6 flex flex-wrap items-center gap-2 mb-6">
-            <span className="text-xs uppercase font-bold tracking-wider text-gray-400 mr-2">Genres:</span>
-            {[
-              { id: 'all', label: 'All World Stations' },
-              { id: 'chill', label: 'Chill & Ambient' },
-              { id: 'electronic', label: 'Electronic / Dance' },
-              { id: 'jazz', label: 'Jazz & Acoustic' },
-              { id: 'pop', label: 'Pop & Radio Hits' },
-            ].map((cat) => (
-              <button
-                key={cat.id}
-                type="button"
-                onClick={() => setActiveCategory(cat.id as any)}
-                className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-colors cursor-pointer ${
-                  activeCategory === cat.id
-                    ? 'bg-emerald-600 text-white font-bold shadow-sm shadow-emerald-200'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200 border border-gray-200'
-                }`}
-              >
-                {cat.label}
-              </button>
-            ))}
-          </div>
-
-          {/* World Station Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {filteredStations.map((station) => {
-              const isSelected = activeStation.id === station.id;
-
-              return (
-                <button
-                  key={station.id}
-                  type="button"
-                  onClick={() => {
-                    setActiveStation(station);
-                    setIsPlaying(true);
-                  }}
-                  className={`p-4 rounded-2xl text-left border transition-all duration-200 cursor-pointer flex items-center justify-between ${
-                    isSelected
-                      ? 'bg-emerald-50/80 border-emerald-300 shadow-sm'
-                      : 'bg-slate-50/60 border-gray-200/60 hover:bg-white hover:border-gray-300 hover:shadow-xs'
-                  }`}
-                >
-                  <div className="flex items-center gap-3">
-                    <span className="text-2xl">{station.flag}</span>
-                    <div>
-                      <h4 className="text-sm font-bold text-gray-900 leading-tight">{station.name}</h4>
-                      <p className="text-[11px] text-gray-500 mt-0.5">{station.genre}</p>
-                    </div>
-                  </div>
-
-                  <div className="text-right">
-                    <span className="text-xs font-mono font-bold text-emerald-600 block">
-                      {station.frequency} MHz
+          {/* Quick World Station Switcher Pills */}
+          <div className="flex flex-wrap items-center justify-between gap-2 pt-1">
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-gray-400">
+              Quick Tuner:
+            </span>
+            <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+              {stations.map((st, idx) => {
+                const isSelected = activeStationIndex === idx;
+                return (
+                  <button
+                    key={st.id}
+                    type="button"
+                    onClick={() => {
+                      setActiveStationIndex(idx);
+                      setIsPlaying(true);
+                    }}
+                    className={`px-3 py-1.5 rounded-xl text-xs font-medium transition cursor-pointer flex items-center gap-1.5 border ${
+                      isSelected
+                        ? 'bg-gray-900 text-white border-gray-900 shadow-xs'
+                        : 'bg-slate-50 text-gray-600 border-slate-200/80 hover:bg-slate-100 hover:text-gray-900'
+                    }`}
+                  >
+                    <span>{st.flag}</span>
+                    <span className="font-semibold">{st.city}</span>
+                    <span className="font-mono text-[10px] opacity-70">
+                      {st.frequency}M
                     </span>
-                    <span className="text-[10px] text-gray-400 font-mono">{station.bitrate}</span>
-                  </div>
-                </button>
-              );
-            })}
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
         </motion.div>
 
-        {/* 3 Comparative Spotlight Cards (Unique layout in light theme) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="p-8 rounded-3xl bg-white border border-gray-200/80 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-md transition-shadow"
-          >
-            <div className="w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 mb-5">
-              <Wifi size={22} />
-            </div>
-            <h4 className="text-lg font-bold text-gray-900 mb-2">Zero-Buffer Global CDN</h4>
-            <p className="text-sm text-gray-600 leading-relaxed">
-              Connects directly to localized edge relays across Europe, Asia, and the Americas, eliminating stream stuttering and buffering delay even on slower network connections.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="p-8 rounded-3xl bg-white border border-gray-200/80 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-md transition-shadow"
-          >
-            <div className="w-12 h-12 rounded-2xl bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-600 mb-5">
-              <Headphones size={22} />
-            </div>
-            <h4 className="text-lg font-bold text-gray-900 mb-2">3D Spatial Broadcast Upmix</h4>
-            <p className="text-sm text-gray-600 leading-relaxed">
-              Real-time spatial acoustics convert compressed mono and stereo broadcast radio frequencies into wide, immersive 3D surround sound with crisp vocal clarity.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="p-8 rounded-3xl bg-white border border-gray-200/80 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-md transition-shadow"
-          >
-            <div className="w-12 h-12 rounded-2xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-600 mb-5">
-              <Globe size={22} />
-            </div>
-            <h4 className="text-lg font-bold text-gray-900 mb-2">120+ Countries & Heritage</h4>
-            <p className="text-sm text-gray-600 leading-relaxed">
-              Explore authentic regional broadcasts, national talk shows, indie college radio, and live electronic festival streams with smart mood and genre sorting.
-            </p>
-          </motion.div>
-        </div>
 
       </div>
     </section>

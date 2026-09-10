@@ -7,12 +7,10 @@ import {
   SkipBack,
   Volume2,
   VolumeX,
-  Sparkles,
   Zap,
   Radio,
   Sliders,
   Headphones,
-  FileAudio,
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
@@ -133,15 +131,7 @@ export function Boom3DAudioPlayer() {
         
         {/* Minimal Header: High Impact, Less Text */}
         <div className="text-center max-w-2xl mx-auto mb-10 md:mb-14">
-          <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200/80 text-slate-700 text-xs font-semibold tracking-wide uppercase mb-3 shadow-xs"
-          >
-            <Headphones size={13} className="text-indigo-600" />
-            <span>{t('boom3d.key_features.player_badge', 'High-Resolution Music Engine')}</span>
-          </motion.div>
+          
 
           <motion.h2
             initial={{ opacity: 0, y: 16 }}
@@ -187,29 +177,9 @@ export function Boom3DAudioPlayer() {
               loading="lazy"
             />
 
-            {/* Floating Hotspot Badge: 24-Bit Direct Stream */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="absolute top-4 left-4 sm:top-8 sm:left-6 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-gray-200 shadow-md text-xs font-semibold text-gray-800 flex items-center gap-2 hidden sm:flex"
-            >
-              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-              <span>24-Bit / 192 kHz FLAC Direct</span>
-            </motion.div>
+           
 
-            {/* Floating Hotspot Badge: Patented 3D Spatial Audio */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-              className="absolute top-4 right-4 sm:top-8 sm:right-6 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-gray-200 shadow-md text-xs font-semibold text-gray-800 flex items-center gap-2 hidden sm:flex"
-            >
-              <Radio size={13} className="text-pink-500" />
-              <span>Patented 3D Spatial Audio</span>
-            </motion.div>
+           
           </motion.div>
         </div>
 
@@ -428,21 +398,7 @@ export function Boom3DAudioPlayer() {
 
         </motion.div>
 
-        {/* Minimal Format Support Pills: Clean, Icon-First */}
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs text-gray-600 font-mono font-medium">
-          <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200/70">
-            <FileAudio size={13} className="text-indigo-600" /> FLAC Lossless
-          </span>
-          <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200/70">
-            <Sparkles size={13} className="text-cyan-600" /> Apple ALAC
-          </span>
-          <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200/70">
-            <Zap size={13} className="text-pink-600" /> DSD 256
-          </span>
-          <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200/70">
-            <Radio size={13} className="text-purple-600" /> Studio WAV 32-Bit
-          </span>
-        </div>
+        
 
       </div>
     </section>
