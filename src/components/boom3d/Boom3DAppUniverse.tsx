@@ -210,14 +210,14 @@ interface AppNode {
 }
 
 const APPS: AppNode[] = [
-  { name: 'Apple Music', iconUrl: 'https://cdn.simpleicons.org/applemusic', angleDeg: 0, floatDuration: 5.2 },
-  { name: 'Netflix', iconUrl: 'https://cdn.simpleicons.org/netflix', angleDeg: 45, floatDuration: 4.6 },
-  { name: 'Discord', iconUrl: 'https://cdn.simpleicons.org/discord', angleDeg: 90, floatDuration: 5.6 },
-  { name: 'Twitch', iconUrl: 'https://cdn.simpleicons.org/twitch', angleDeg: 135, floatDuration: 4.9 },
-  { name: 'Steam', iconUrl: 'https://cdn.simpleicons.org/steam', angleDeg: 180, floatDuration: 5.4 },
-  { name: 'VLC', iconUrl: 'https://cdn.simpleicons.org/vlcmediaplayer', angleDeg: 225, floatDuration: 4.7 },
-  { name: 'YouTube', iconUrl: 'https://cdn.simpleicons.org/youtube', angleDeg: 270, floatDuration: 5.0 },
-  { name: 'Spotify', iconUrl: 'https://cdn.simpleicons.org/spotify', angleDeg: 315, floatDuration: 4.4 },
+  { name: 'Apple Music', iconUrl: '/boom3D/icons/applemusic.svg', angleDeg: 0, floatDuration: 5.2 },
+  { name: 'Netflix', iconUrl: '/boom3D/icons/netflix.svg', angleDeg: 45, floatDuration: 4.6 },
+  { name: 'Discord', iconUrl: '/boom3D/icons/discord.svg', angleDeg: 90, floatDuration: 5.6 },
+  { name: 'Twitch', iconUrl: '/boom3D/icons/twitch.svg', angleDeg: 135, floatDuration: 4.9 },
+  { name: 'Steam', iconUrl: '/boom3D/icons/steam.svg', angleDeg: 180, floatDuration: 5.4 },
+  { name: 'VLC', iconUrl: '/boom3D/icons/vlcmediaplayer.svg', angleDeg: 225, floatDuration: 4.7 },
+  { name: 'YouTube', iconUrl: '/boom3D/icons/youtube.svg', angleDeg: 270, floatDuration: 5.0 },
+  { name: 'Spotify', iconUrl: '/boom3D/icons/spotify.svg', angleDeg: 315, floatDuration: 4.4 },
 ];
 
 // =========================================
