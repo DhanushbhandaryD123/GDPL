@@ -53,7 +53,16 @@ const routes = [
   '/whatsnew/boom2',
   '/whatsnew/capto',
   '/whatsnew/audion',
-  '/whatsnew/audimix'
+  '/whatsnew/audimix',
+  '/boom/10th-anniversary',
+  '/boom/boom-audio-component',
+  '/boom/boom-ppc',
+  '/capto/capto-screen-recording/compare',
+  '/capto/capto-screen-recording',
+  '/capto/downloads/installers/install-capto-device',
+  '/capto/downloads/installers/uninstall-capto-device',
+  '/capto/help-videos',
+  '/capto/privacy-policy'
 ];
 
 // Add language prefixes as well

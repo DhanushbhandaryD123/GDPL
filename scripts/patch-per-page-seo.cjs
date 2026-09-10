@@ -57,6 +57,60 @@ const SEO_DATA = {
     keywords: 'Capto purchase, thank you, Global Delight Capto',
     robots: 'noindex, follow',
     ogImage: '/apps/Capto-mac.jpeg'
+  },
+  '/boom/10th-anniversary': {
+    title: 'Celebrating 10 Years of Boom | Global Delight',
+    description: 'Join us in celebrating 10 incredible years of Boom! Over 20 million users worldwide, shaping the future of 3D surround sound and audio enhancement.',
+    keywords: 'Boom 10th anniversary, 10 years of boom, global delight, 3D surround sound, boom 3d, boom 2',
+    ogImage: '/apps/Boom3D-mac.jpeg'
+  },
+  '/boom/boom-audio-component': {
+    title: 'Audio Component for Boom Volume Booster App | Global Delight',
+    description: 'Download the official Boom audio component to boost your Mac volume beyond 10 and equalize system-wide audio.',
+    keywords: 'Boom, boost, volume, boost volume of mac, equalize system audio, boom audio component, global delight',
+    ogImage: '/apps/Boom2-mac.jpeg'
+  },
+  '/boom/boom-ppc': {
+    title: 'Boom 3D - Best Volume Booster and Audio Enhancement App | Global Delight',
+    description: 'Boom 3D brings an immersive 3D audio experience to your movies, music, games, and more, along with a Volume Booster and an Advanced Equalizer for macOS & Windows 10/11.',
+    keywords: 'Volume Booster, Bass Booster, 3D Audio, Equalizer, Sound Enhancer, Bass Booster App, Windows Equalizer, Boom 3D, Global Delight',
+    ogImage: '/apps/Boom3D-mac.jpeg'
+  },
+  '/capto/capto-screen-recording/compare': {
+    title: 'Capto vs Voila Feature Comparison | Global Delight',
+    description: 'Compare Capto and Voila features. Capto is re-engineered with 50+ new features, 1.5x faster performance, 4K recording, and full video editing.',
+    keywords: 'Capto vs Voila, screen recording comparison, Mac screen capture, video editing, screen recorder, global delight',
+    ogImage: '/apps/Capto-mac.jpeg'
+  },
+  '/capto/capto-screen-recording': {
+    title: 'A Capto-vating Screen Recording and Capturing Experience | Global Delight',
+    description: 'Effortless screen recording, one-click screen capture, and an intuitive video editing suite. Capto is the ultimate all-in-one Mac screen capture app.',
+    keywords: 'Capto screen recording, screen capture mac, video editor mac, scrolling screenshot, screen recorder, global delight',
+    ogImage: '/apps/Capto-mac.jpeg'
+  },
+  '/capto/downloads/installers/install-capto-device': {
+    title: 'Capto Audio Component - Installer | Global Delight',
+    description: 'Download and install the Capto Audio Component to enable computer audio recording in Capto on your Mac.',
+    keywords: 'Capto audio component installer, Capto device driver, mac audio capture, screen recording audio, global delight',
+    ogImage: '/apps/Capto-mac.jpeg'
+  },
+  '/capto/downloads/installers/uninstall-capto-device': {
+    title: 'Capto Audio Component - Uninstaller | Global Delight',
+    description: 'Download the official Capto Audio Component uninstaller to safely remove the device component from your Mac.',
+    keywords: 'Capto audio uninstaller, uninstall capto device, mac audio driver removal, global delight',
+    ogImage: '/apps/Capto-mac.jpeg'
+  },
+  '/capto/help-videos': {
+    title: 'Capto Video Tutorials | How To Videos & Guides | Global Delight',
+    description: 'Get started with Capto through step-by-step video tutorials explaining screen recording, audio adjustment, video editing, and annotations.',
+    keywords: 'Capto tutorials, how to use capto, mac screen recording tutorial, video editing guide, global delight',
+    ogImage: '/apps/Capto-mac.jpeg'
+  },
+  '/capto/privacy-policy': {
+    title: 'Capto - Privacy Policy | Global Delight',
+    description: 'This Privacy Policy defines how Global Delight collects, uses, and shares personal and non-personal information of Capto customers.',
+    keywords: 'Capto privacy policy, terms of service, global delight legal, user data protection',
+    ogImage: '/apps/Capto-mac.jpeg'
   }
 };
 
