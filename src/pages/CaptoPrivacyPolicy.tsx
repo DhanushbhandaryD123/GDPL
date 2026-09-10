@@ -24,8 +24,17 @@ export function CaptoPrivacyPolicy() {
   return (
     <div className="min-h-screen bg-white text-gray-800 font-sans pt-28 pb-20">
       <Helmet>
-        <title>Legal & Privacy - Capto | Global Delight</title>
-        <meta name="robots" content="noindex, follow" />
+        <title>Capto - Privacy Policy | Global Delight</title>
+        <meta
+          name="description"
+          content="This Privacy Policy defines how Global Delight collects, uses, and shares personal and non-personal information of Capto customers."
+        />
+        <link rel="canonical" href="https://www.globaldelight.com/capto/privacy-policy" />
+        <meta property="og:title" content="Capto - Privacy Policy | Global Delight" />
+        <meta
+          property="og:description"
+          content="This Privacy Policy defines how Global Delight collects, uses, and shares personal and non-personal information of Capto customers."
+        />
       </Helmet>
       
       <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row gap-12 lg:gap-24">

@@ -75,13 +75,44 @@ export function CaptoThankYou() {
             </button>
           </form>
 
-          <Link
-            to="/capto"
-            className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#6554ff] hover:text-[#5746df] transition-colors"
-          >
-            <ArrowLeft size={14} strokeWidth={2.5} />
-            {t('capto.thankyou.back_link')}
-          </Link>
+          <div className="mt-8 pt-8 border-t border-gray-100">
+            <h2 className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-4">
+              More Apps by Global Delight
+            </h2>
+            <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-semibold text-gray-700">
+              <Link
+                to="/boom3D"
+                className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-gray-200 hover:border-purple-300 hover:text-purple-600 transition-colors shadow-sm"
+              >
+                <img src="/apps/Boom-3D-mac.jpeg" alt="Boom 3D" className="w-5 h-5 rounded-md object-cover" />
+                <span>Boom 3D</span>
+              </Link>
+              <Link
+                to="/boomformobile"
+                className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-gray-200 hover:border-purple-300 hover:text-purple-600 transition-colors shadow-sm"
+              >
+                <img src="/apps/Boom-iOS.jpeg" alt="Boom for iOS" className="w-5 h-5 rounded-md object-cover" />
+                <span>Boom Mobile</span>
+              </Link>
+              <Link
+                to="/vizmato"
+                className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-gray-200 hover:border-purple-300 hover:text-purple-600 transition-colors shadow-sm"
+              >
+                <img src="/apps/Vizmato-iOS.jpeg" alt="Vizmato" className="w-5 h-5 rounded-md object-cover" />
+                <span>Vizmato</span>
+              </Link>
+            </div>
+          </div>
+
+          <div className="mt-8">
+            <Link
+              to="/capto"
+              className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#6554ff] hover:text-[#5746df] transition-colors"
+            >
+              <ArrowLeft size={14} strokeWidth={2.5} />
+              {t('capto.thankyou.back_link')}
+            </Link>
+          </div>
         </motion.div>
       </main>
 

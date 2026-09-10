@@ -232,6 +232,14 @@ const CaptoEducatorsPage = lazy(() => import('./pages/CaptoEducatorsPage').then(
 const CaptoThankYou = lazy(() => import('./pages/CaptoThankYou').then(m => ({ default: m.CaptoThankYou })));
 const Boom2ThankYouDownload = lazy(() => import('./pages/Boom2ThankYouDownload').then(m => ({ default: m.Boom2ThankYouDownload })));
 const BoomComparePage = lazy(() => import('./pages/BoomComparePage').then(m => ({ default: m.BoomComparePage })));
+const BoomAnniversaryPage = lazy(() => import('./pages/BoomAnniversaryPage').then(m => ({ default: m.BoomAnniversaryPage })));
+const BoomAudioComponentPage = lazy(() => import('./pages/BoomAudioComponentPage').then(m => ({ default: m.BoomAudioComponentPage })));
+const BoomPpcPage = lazy(() => import('./pages/BoomPpcPage').then(m => ({ default: m.BoomPpcPage })));
+const CaptoVoilaComparePage = lazy(() => import('./pages/CaptoVoilaComparePage').then(m => ({ default: m.CaptoVoilaComparePage })));
+const CaptoScreenRecordingPage = lazy(() => import('./pages/CaptoScreenRecordingPage').then(m => ({ default: m.CaptoScreenRecordingPage })));
+const CaptoInstallDevicePage = lazy(() => import('./pages/CaptoInstallDevicePage').then(m => ({ default: m.CaptoInstallDevicePage })));
+const CaptoUninstallDevicePage = lazy(() => import('./pages/CaptoUninstallDevicePage').then(m => ({ default: m.CaptoUninstallDevicePage })));
+const CaptoHelpVideosPage = lazy(() => import('./pages/CaptoHelpVideosPage').then(m => ({ default: m.CaptoHelpVideosPage })));
 
 import { LanguageSync } from './components/layout/LanguageSync';
 import { rememberLanguage } from './lib/languagePreference';
@@ -313,9 +321,14 @@ const appRoutes = [
   { path: "/voila", element: <Redirect to="/capto" /> },
   { path: "/voila/*", element: <Redirect to="/capto" /> },
 
-  // Old Capto URLs
-  { path: "/capto/features-comparison", element: <Redirect to="/capto" /> },
-  { path: "/capto/help-videos", element: <Redirect to="/capto" /> },
+  // Legacy URL Aliases & Redirects
+  { path: "/boom/boom-audio-component.html", element: <Redirect to="/boom/boom-audio-component" /> },
+  { path: "/boom/boom-ppc.php", element: <Redirect to="/boom/boom-ppc" /> },
+  { path: "/capto/features-comparison", element: <Redirect to="/capto/capto-screen-recording/compare" /> },
+  { path: "/capto/capto-screen-recording/compare.php", element: <Redirect to="/capto/capto-screen-recording/compare" /> },
+  { path: "/capto/capto-screen-recording/index.php", element: <Redirect to="/capto/capto-screen-recording" /> },
+  { path: "/capto/downloads/installers/install-capto-device.php", element: <Redirect to="/capto/downloads/installers/install-capto-device" /> },
+  { path: "/capto/downloads/installers/uninstall-capto-device.php", element: <Redirect to="/capto/downloads/installers/uninstall-capto-device" /> },
   { path: "/capto/user-guide.php", element: <Redirect to="/capto" /> },
   { path: "/captoformac", element: <Redirect to="/capto" /> },
 
@@ -343,10 +356,19 @@ const appRoutes = [
   { path: "/boom2", element: <Boom2 /> },
   { path: "/boom3D", element: <Boom3D /> },
   { path: "/boom/boom2-vs-boom3d-compare-features", element: <BoomComparePage /> },
+  { path: "/boom/10th-anniversary", element: <BoomAnniversaryPage /> },
+  { path: "/boom/boom-audio-component", element: <BoomAudioComponentPage /> },
+  { path: "/boom/boom-ppc", element: <BoomPpcPage /> },
   { path: "/capto", element: <Capto /> },
   { path: "/capto/windows", element: <CaptoWindowsPage /> },
   { path: "/capto/educators", element: <CaptoEducatorsPage /> },
   { path: "/capto/thankyou", element: <CaptoThankYou /> },
+  { path: "/capto/capto-screen-recording/compare", element: <CaptoVoilaComparePage /> },
+  { path: "/capto/compare", element: <CaptoVoilaComparePage /> },
+  { path: "/capto/capto-screen-recording", element: <CaptoScreenRecordingPage /> },
+  { path: "/capto/downloads/installers/install-capto-device", element: <CaptoInstallDevicePage /> },
+  { path: "/capto/downloads/installers/uninstall-capto-device", element: <CaptoUninstallDevicePage /> },
+  { path: "/capto/help-videos", element: <CaptoHelpVideosPage /> },
   { path: "/boom2/thankyou/download", element: <Boom2ThankYouDownload /> },
   { path: "/audion", element: <AudiOnPage /> },
   { path: "/vizmato", element: <VizmatoPage /> },
