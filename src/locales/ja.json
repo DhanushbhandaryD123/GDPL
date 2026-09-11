@@ -396,9 +396,61 @@
       "preset_electronic": "エレクトロニック",
       "genre_electronic": "重低音サブベース＆ヘッドホン"
     },
+    "audio_effects_object": {
+      "title": "オーディオエフェクトで細部まで音を彫刻",
+      "subtitle": "インタラクティブDSPオーディオプロセッサー",
+      "live_processing": "リアルタイムDSP処理",
+      "intensity": "エフェクト強度",
+      "ambience": "アンビエンス",
+      "ambience_desc": "コンサートホールの残響空間",
+      "fidelity": "フィデリティ",
+      "fidelity_desc": "ボーカルの明瞭度と倍音再生",
+      "spatial": "スペーシャル3D",
+      "spatial_desc": "広大で立体的なステレオ音場",
+      "night_mode": "ナイトモード",
+      "night_mode_desc": "知的なダイナミックレベラー",
+      "pitch": "ピッチシフト",
+      "pitch_desc": "正確な音程・キートーン調整"
+    },
+    "system_wide_control": {
+      "badge": "システム全体のオーディオ制御",
+      "title": "Mac向けシステム全体のオーディオコントロール",
+      "subtitle": "耳にするすべての音を高音質化する統合オーディオエンジン。Mac上のあらゆるアプリで、音量ブースト、周波数調整、多彩なエフェクト適用をシームレスに実現します。",
+      "feature_1_title": "あらゆるアプリと自動連携",
+      "feature_1_desc": "面倒な設定なしでSpotify、YouTube、Netflix、Apple Music、Safari、Zoom、FaceTime、ゲームのサウンドを自動的に向上させます。",
+      "feature_2_title": "メニューバーから素早く操作",
+      "feature_2_desc": "macOSのメニューバーから、制限を超えたマスター音量調整、プリセットの切り替え、イコライザーの微調整が瞬時に行えます。",
+      "feature_3_title": "歪みのない安心の音量増幅",
+      "feature_3_desc": "スピーカーを保護し音割れ・歪みを防ぐ高精度リミッターアルゴリズムにより、システム音量を最大200%まで安全に増幅します。",
+      "feature_4_title": "知的なダイナミックレベリング",
+      "feature_4_desc": "映画、音楽、通話の間でばらつきがちな音量レベルを均一化し、一日中快適なリスニング体験を提供します。"
+    },
+    "boom_remote": {
+      "title": "Boom Remoteによるワイヤレスオーディオ制御",
+      "subtitle": "iPhoneやiPadを使って、部屋のどこからでもMac上のBoom 2をワイヤレス操作。Macに触れることなく、音量増幅、EQプリセット切り替え、メディア操作が可能です。",
+      "feature_1_title": "シームレスなWi-Fiワイヤレス接続",
+      "feature_1_desc": "ローカルWi-Fiを介してiOS端末とMacを即座に接続。設定不要で超低遅延な快適操作を実現します。",
+      "feature_2_title": "音量調整とプリセット切り替え",
+      "feature_2_desc": "ソファでくつろぎながら音量を最大200%まで上げ、31バンドEQプリセットを切り替え、オーディオエフェクトを自在に操作できます。",
+      "feature_3_title": "スムーズなメディア再生操作",
+      "feature_3_desc": "Spotify、Apple Music、Netflix、iTunesの再生、一時停止、トラック送り/戻しを手元のリモートからダイレクトに操作。",
+      "app_store_cta": "App Storeで入手"
+    },
     "audio_amplify": {
       "title": "個々のオーディオファイルを増幅",
       "description": "Macに保存されたオーディオファイルの音量を、1つずつでもまとめてでも、永久にブーストできます。音量の小さいボイスメモ、音の小さいポッドキャスト、録音状態の悪い曲でも、Boom 2ならオーディオファイルを簡単に取り込んで好みの音量まで増幅できます。複数のファイルを一度にブーストできるので、時間を節約しながら、どのデバイスで再生してもすべてのメディアがクリアで聴き取りやすくなります。"
+    },
+    "output_compatibility": {
+      "title": "あらゆるオーディオ出力機器に最適化",
+      "description": "Boom 2は、あらゆるオーディオ機器のサウンドを最大限に引き出します。AirPodsやイヤホン、オーバーイヤーヘッドフォン、スピーカー（有線/ワイヤレス）など多彩に対応！",
+      "headphones": "オーバーイヤーヘッドフォン",
+      "headphones_desc": "広がりのあるステレオ音場と深みのある低音レスポンスに最適化された周波数カーブ。",
+      "earbuds": "AirPods & インイヤーイヤホン",
+      "earbuds_desc": "ポータブルなリスニング向けに調整されたクリアなボーカルと音響レベリング。",
+      "speakers": "外部スピーカー & モニタースピーカー",
+      "speakers_desc": "有線・Bluetoothスピーカーに合わせて空間を満たす迫力の音量と豊かなハーモニクス。",
+      "mac_speakers": "Mac内蔵スピーカー",
+      "mac_speakers_desc": "ハードウェアを保護しながら、歪みなく迫力ある最大音量を安全に引き出す専用リミッター。"
     },
     "awards": {
       "title": "受賞歴",

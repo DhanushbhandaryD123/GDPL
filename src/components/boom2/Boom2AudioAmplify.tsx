@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 export function Boom2AudioAmplify() {
   const { t } = useTranslation();
   return (
-    <section className="py-16 md:py-24 px-4 max-w-[1200px] mx-auto flex flex-col items-center text-center">
+    <section id="boom2-audio-amplify" className="py-16 md:py-24 px-4 max-w-[1200px] mx-auto flex flex-col items-center text-center">
       
       {/* Top Content (Text) */}
       <motion.div 

@@ -4,9 +4,12 @@ import { Boom2Hero } from '../components/boom2/Boom2Hero';
 import { Boom2PrecisionControl } from '../components/boom2/Boom2PrecisionControl';
 import { Boom2CoreFeatures } from '../components/boom2/Boom2CoreFeatures';
 import { Boom2FeatureGrid } from '../components/boom2/Boom2FeatureGrid';
-import { Boom2RemoteControl } from '../components/boom2/Boom2RemoteControl';
 import { Boom2EqualizerPresetFlow } from '../components/boom2/Boom2EqualizerPresetFlow';
+import { Boom2AudioEffectsObject } from '../components/boom2/Boom2AudioEffectsObject';
+import { Boom2SystemWideControl } from '../components/boom2/Boom2SystemWideControl';
+import { Boom2BoomRemote } from '../components/boom2/Boom2BoomRemote';
 import { Boom2AudioAmplify } from '../components/boom2/Boom2AudioAmplify';
+import { Boom2OutputCompatibility } from '../components/boom2/Boom2OutputCompatibility';
 import { Boom2EnvironmentSim } from '../components/boom2/Boom2EnvironmentSim';
 import { Boom2Awards } from '../components/boom2/Boom2Awards';
 import { Boom2Testimonials } from '../components/boom2/Boom2Testimonials';
@@ -76,9 +79,12 @@ export function Boom2() {
           <Boom2PrecisionControl />
           <Boom2CoreFeatures />
           <Boom2FeatureGrid />
-          <Boom2RemoteControl />
           <Boom2EqualizerPresetFlow />
+          <Boom2AudioEffectsObject />
+          <Boom2SystemWideControl />
+          <Boom2BoomRemote />
           <Boom2AudioAmplify />
+          <Boom2OutputCompatibility />
         </div>
 
         <Boom2EnvironmentSim />

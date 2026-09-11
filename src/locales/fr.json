@@ -396,9 +396,61 @@
       "preset_electronic": "Électronique",
       "genre_electronic": "Sub-basses & casques"
     },
+    "audio_effects_object": {
+      "title": "Sculptez chaque détail grâce aux effets audio",
+      "subtitle": "Processeur audio DSP interactif",
+      "live_processing": "TRAITEMENT DSP EN DIRECT",
+      "intensity": "Intensité de l'effet",
+      "ambience": "Ambience",
+      "ambience_desc": "Réverbération de salle de concert",
+      "fidelity": "Fidelity",
+      "fidelity_desc": "Clarté vocale & harmoniques",
+      "spatial": "Spatial 3D",
+      "spatial_desc": "Champ stéréo immersif",
+      "night_mode": "Night Mode",
+      "night_mode_desc": "Égalisateur dynamique intelligent",
+      "pitch": "Pitch Shift",
+      "pitch_desc": "Accordage tonal musical"
+    },
+    "system_wide_control": {
+      "badge": "CONTRÔLE SYSTÈME INTÉGRAL",
+      "title": "Contrôle audio sur tout le système pour Mac",
+      "subtitle": "Un moteur audio unifié qui sublime tout ce que vous écoutez. Augmentez le volume, calibrez les fréquences et appliquez des effets riches en toute fluidité sur chaque application de votre Mac.",
+      "feature_1_title": "Intégration universelle des applications",
+      "feature_1_desc": "Améliore automatiquement Spotify, YouTube, Netflix, Apple Music, Safari, Zoom, FaceTime et les jeux sans aucune configuration manuelle.",
+      "feature_2_title": "Barre de menus et accès rapide",
+      "feature_2_desc": "Ajustez instantanément le volume principal au-delà des limites, changez de préréglages et affinez les égaliseurs directement depuis la barre de menus macOS.",
+      "feature_3_title": "Amplification de volume sans distorsion",
+      "feature_3_desc": "Amplifiez le son du système en toute sécurité jusqu'à 200 % grâce à des algorithmes intelligents qui préviennent la distorsion et protègent vos haut-parleurs.",
+      "feature_4_title": "Nivellement dynamique intelligent",
+      "feature_4_desc": "Équilibre les variations de volume entre films, musiques et appels pour un confort d'écoute optimal tout au long de la journée."
+    },
+    "boom_remote": {
+      "title": "Contrôle audio sans fil avec Boom Remote",
+      "subtitle": "Contrôlez Boom 2 sur votre Mac sans fil depuis n'importe où dans la pièce grâce à votre iPhone ou iPad. Ajustez le volume au-delà des limites, changez les préréglages d'égalisation et gérez votre musique sans toucher à votre Mac.",
+      "feature_1_title": "Connectivité Wi-Fi sans fil",
+      "feature_1_desc": "Connectez facilement votre appareil iOS à votre Mac via le réseau Wi-Fi local pour un contrôle instantané et ultra-réactif.",
+      "feature_2_title": "Réglage complet du volume et des préréglages",
+      "feature_2_desc": "Montez le volume jusqu'à 200 %, basculez entre les préréglages d'égaliseur 31 bandes et activez des effets audio soignés depuis votre canapé.",
+      "feature_3_title": "Lecture multimédia fluide",
+      "feature_3_desc": "Lisez, mettez en pause, passez des pistes et contrôlez la lecture de Spotify, Apple Music, Netflix et iTunes directement depuis la télécommande.",
+      "app_store_cta": "Disponible sur l'App Store"
+    },
     "audio_amplify": {
       "title": "Amplifiez des fichiers audio individuels",
       "description": "Augmentez de façon permanente le niveau sonore de vos fichiers audio sur Mac, individuellement ou par lots. Qu'il s'agisse d'un mémo vocal trop faible, d'un podcast peu sonore ou d'une chanson mal enregistrée, Boom 2 vous permet de glisser facilement vos fichiers audio et de les amplifier jusqu'au volume souhaité. Vous pouvez amplifier plusieurs fichiers à la fois, ce qui vous fait gagner du temps et garantit que tous vos médias sont audibles et clairs sur n'importe quel appareil."
+    },
+    "output_compatibility": {
+      "title": "Parfait pour tous les périphériques de sortie",
+      "description": "Boom 2 est conçu pour offrir un contrôle supérieur sur tous les types de périphériques audio : AirPods et casques (intra / circum-auriculaires), enceintes (filaires / sans fil) et bien plus encore !",
+      "headphones": "Casques circum-auriculaires",
+      "headphones_desc": "Courbe de fréquence optimisée avec scène sonore stéréo élargie et basses profondes.",
+      "earbuds": "AirPods & Écouteurs intra-auriculaires",
+      "earbuds_desc": "Clarté vocale cristalline et égalisation acoustique sur mesure pour une écoute nomade.",
+      "speakers": "Enceintes externes & de studio",
+      "speakers_desc": "Volume enveloppant et fidélité harmonique calibrés pour moniteurs filaires ou Bluetooth.",
+      "mac_speakers": "Haut-parleurs intégrés Mac",
+      "mac_speakers_desc": "Algorithmes limiteurs protégeant le matériel pour obtenir un son puissant et sans distorsion."
     },
     "awards": {
       "title": "Prix & Distinctions",

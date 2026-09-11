@@ -396,9 +396,61 @@
       "preset_electronic": "电子乐",
       "genre_electronic": "超重低音与耳机"
     },
+    "audio_effects_object": {
+      "title": "通过音频特效精雕细琢每个声音细节",
+      "subtitle": "交互式 DSP 音频处理核心",
+      "live_processing": "实时 DSP 音频渲染",
+      "intensity": "特效强度",
+      "ambience": "Ambience",
+      "ambience_desc": "音乐厅现场空间混响",
+      "fidelity": "Fidelity",
+      "fidelity_desc": "人声清晰度与谐波增强",
+      "spatial": "Spatial 3D",
+      "spatial_desc": "广阔全景立体声声场",
+      "night_mode": "Night Mode",
+      "night_mode_desc": "智能动态范围均衡器",
+      "pitch": "Pitch Shift",
+      "pitch_desc": "高精度音乐音高微调"
+    },
+    "system_wide_control": {
+      "badge": "系统全局音频控制",
+      "title": "适用于 Mac 的系统全局音频控制",
+      "subtitle": "统一的音频引擎，全面升级您的听觉体验。在 Mac 上的所有应用程序中无缝放大音量、校准声音频率并应用丰富的专业音效。",
+      "feature_1_title": "全局应用程序智能适配",
+      "feature_1_desc": "无需手动配置，自动增强 Spotify、YouTube、Netflix、Apple Music、Safari、Zoom、FaceTime 以及各类游戏的音频表现。",
+      "feature_2_title": "菜单栏便捷快速控制",
+      "feature_2_desc": "直接从 macOS 菜单栏轻松突破系统极限调节主音量、切换音效预设以及微调均衡器。",
+      "feature_3_title": "无失真安全音量增强",
+      "feature_3_desc": "利用智能峰值限制算法将系统音频安全提升至最高 200%，在彻底防止破音失真的同时周全保护扬声器硬件。",
+      "feature_4_title": "智能动态音量平衡",
+      "feature_4_desc": "自动平衡电影、音乐与语音通话之间不一致的响度水平，提供全天候舒适自然的聆听体验。"
+    },
+    "boom_remote": {
+      "title": "通过 Boom Remote 实现无线音频控制",
+      "subtitle": "使用 iPhone 或 iPad 在房间的任何角落无线控制 Mac 上的 Boom 2。无需触碰 Mac，即可突破极限调节音量、切换均衡器预设并轻松管理音乐播放。",
+      "feature_1_title": "极速无线 Wi-Fi 连接",
+      "feature_1_desc": "通过局域网 Wi-Fi 将 iOS 设备与 Mac 轻松互联，零配置即可享受即时、超低延迟的便捷遥控。",
+      "feature_2_title": "全面的音量与预设调节",
+      "feature_2_desc": "舒适躺在沙发上，即可将音量调节至 200%、自由切换 31 段均衡器预设并开启精心调校的音频特效。",
+      "feature_3_title": "流畅无缝的媒体播放操控",
+      "feature_3_desc": "直接通过遥控端播放、暂停、跳过曲目，并控制 Spotify、Apple Music、Netflix 和 iTunes 的媒体播放。",
+      "app_store_cta": "前往 App Store 下载"
+    },
     "audio_amplify": {
       "title": "放大单个音频文件",
       "description": "永久提升 Mac 上任意音频文件的音量，可单独处理，也可批量处理。无论是音量过低的语音备忘录、音量不足的播客，还是录制效果不佳的歌曲，Boom 2 都能让你轻松导入音频文件并放大到理想音量。你可以一次性放大多个文件，既节省时间，又能确保所有媒体在任何设备上播放时都清晰响亮。"
+    },
+    "output_compatibility": {
+      "title": "完美适配所有音频输出设备",
+      "description": "Boom 2 旨在为所有类型的音频设备提供出色的控制体验：AirPods 和各类耳机（入耳式/头戴式）、扬声器音响（有线/无线）等！",
+      "headphones": "头戴式耳机",
+      "headphones_desc": "优化的频率响应曲线，带来开阔立体的声场空间和澎湃深沉的低音表现。",
+      "earbuds": "AirPods 与入耳式耳塞",
+      "earbuds_desc": "清晰清透的人声细节与量身定制的声学平衡，满足随身便携聆听需求。",
+      "speakers": "外置音响与监听扬声器",
+      "speakers_desc": "沉浸充沛的音量提升与饱满谐波表现，专为有线或蓝牙监听音响调校。",
+      "mac_speakers": "Mac 内置扬声器",
+      "mac_speakers_desc": "硬件级安全限制算法，在无失真的前提下充分释放内置扬声器的最大声能潜力。"
     },
     "awards": {
       "title": "奖项与荣誉",

@@ -396,9 +396,61 @@
       "preset_electronic": "Elektronisch",
       "genre_electronic": "Sub-Bass & Kopfhörer"
     },
+    "audio_effects_object": {
+      "title": "Jedes Detail formen mit Audioeffekten",
+      "subtitle": "Interaktiver DSP-Audioprozessor",
+      "live_processing": "LIVE-DSP-VERARBEITUNG",
+      "intensity": "Effektintensität",
+      "ambience": "Ambience",
+      "ambience_desc": "Konzertsaal-Reverb",
+      "fidelity": "Fidelity",
+      "fidelity_desc": "Klare Stimmen & Obertöne",
+      "spatial": "Spatial 3D",
+      "spatial_desc": "Erweitertes Stereofeld",
+      "night_mode": "Night Mode",
+      "night_mode_desc": "Intelligenter Dynamik-Pegler",
+      "pitch": "Pitch",
+      "pitch_desc": "Musikalische Tonhöhenstimmung"
+    },
+    "system_wide_control": {
+      "badge": "SYSTEMWEITE STEUERUNG",
+      "title": "Systemweite Audiosteuerung für Mac",
+      "subtitle": "Eine einheitliche Audio-Engine, die alles verbessert, was du hörst. Verstärke die Lautstärke, kalibriere Frequenzen und wende brillante Effekte nahtlos über alle Anwendungen auf deinem Mac an.",
+      "feature_1_title": "Universelle App-Integration",
+      "feature_1_desc": "Verbessert automatisch Spotify, YouTube, Netflix, Apple Music, Safari, Zoom, FaceTime und Spiele ohne manuelle Konfiguration.",
+      "feature_2_title": "Menüleiste & Schnellzugriff",
+      "feature_2_desc": "Passe die Gesamtlautstärke schnell über die Grenzen hinaus an, wechsle Presets und optimiere Equalizer direkt aus der macOS-Menüleiste.",
+      "feature_3_title": "Verzerrungsfreie Lautstärkeverstärkung",
+      "feature_3_desc": "Verstärkt Systemaudio sicher auf bis zu 200% mit intelligenten Peak-Limiter-Algorithmen, die Verzerrungen verhindern und Lautsprecher schützen.",
+      "feature_4_title": "Intelligenter Dynamik-Pegler",
+      "feature_4_desc": "Gleicht ungleichmäßige Lautstärken zwischen Filmen, Musik und Anrufen für entspannten Hörgenuss den ganzen Tag aus."
+    },
+    "boom_remote": {
+      "title": "Kabellose Audiosteuerung mit Boom Remote",
+      "subtitle": "Steuere Boom 2 auf deinem Mac kabellos von überall im Raum mit deinem iPhone oder iPad. Passe die Lautstärke über Grenzen hinaus an, wechsle EQ-Presets und steuere deine Musik ohne deinen Mac zu berühren.",
+      "feature_1_title": "Kabellose WLAN-Verbindung",
+      "feature_1_desc": "Verbinde dein iOS-Gerät mühelos über lokales WLAN mit deinem Mac für sofortige Steuerung mit extrem geringer Latenz.",
+      "feature_2_title": "Volle Lautstärke- & Preset-Abstimmung",
+      "feature_2_desc": "Drehe die Lautstärke auf bis zu 200% auf, wechsle 31-Band-EQ-Presets und schalte handgefertigte Audioeffekte direkt von der Couch aus ein.",
+      "feature_3_title": "Nahtlose Medienwiedergabe",
+      "feature_3_desc": "Spiele ab, pausiere, überspringe Titel und passe die Wiedergabe für Spotify, Apple Music, Netflix und iTunes direkt von der Fernbedienung an.",
+      "app_store_cta": "Im App Store erhältlich"
+    },
     "audio_amplify": {
       "title": "Einzelne Audiodateien verstärken",
       "description": "Erhöhe dauerhaft die Lautstärke beliebiger Audiodateien auf deinem Mac – einzeln oder im Stapel. Ob leise Sprachnotiz, ein zu leiser Podcast oder ein schlecht aufgenommener Song: Mit Boom 2 kannst du Audiodateien einfach hineinziehen und auf die gewünschte Lautstärke verstärken. Du kannst mehrere Dateien gleichzeitig verstärken, sparst dadurch Zeit und stellst sicher, dass alle deine Medien auf jedem Gerät laut und klar wiedergegeben werden."
+    },
+    "output_compatibility": {
+      "title": "Perfekt für alle Ausgabegeräte",
+      "description": "Boom 2 bietet herausragende Kontrolle für alle Arten von Audiogeräten. AirPods und Kopfhörer (In-Ear / Over-Ear), Lautsprecher (kabelgebunden / kabellos) und mehr!",
+      "headphones": "Over-Ear-Kopfhörer",
+      "headphones_desc": "Optimierte Frequenzkurve mit erweitertem Stereoklangfeld und tiefem Bass.",
+      "earbuds": "AirPods & In-Ear-Kopfhörer",
+      "earbuds_desc": "Kristallklare Stimmpräsenz mit maßgeschneiderter Pegelanpassung für mobiles Hören.",
+      "speakers": "Externe & Studio-Lautsprecher",
+      "speakers_desc": "Raumfüllende Lautstärkeverstärkung und harmonische Klangtreue für kabelgebundene oder Bluetooth-Monitore.",
+      "mac_speakers": "Integrierte Mac-Lautsprecher",
+      "mac_speakers_desc": "Hardware-schonende Limiter-Algorithmen für maximale saubere Lautstärke ohne Verzerrung."
     },
     "awards": {
       "title": "Auszeichnungen & Anerkennungen",

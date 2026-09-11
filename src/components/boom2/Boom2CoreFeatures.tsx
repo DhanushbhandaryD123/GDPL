@@ -245,8 +245,17 @@ export function Boom2CoreFeatures() {
 
   const handleFeatureClick = (id: string) => {
     setActiveId(id);
-    if (id === 'eq') {
-      const el = document.getElementById('boom2-equalizer-presets');
+    const sectionMap: Record<string, string> = {
+      eq: 'boom2-equalizer-presets',
+      effects: 'boom2-audio-effects-object',
+      system_wide: 'boom2-system-wide-control',
+      remote: 'boom2-remote-control',
+      output: 'boom2-output-compatibility',
+      file_boost: 'boom2-audio-amplify',
+    };
+    const targetId = sectionMap[id];
+    if (targetId) {
+      const el = document.getElementById(targetId);
       if (el) {
         el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }

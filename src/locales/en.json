@@ -396,9 +396,61 @@
       "preset_electronic": "Electronic",
       "genre_electronic": "Sub-Bass & Headphones"
     },
+    "audio_effects_object": {
+      "title": "Sculpt Every Detail with Audio Effects",
+      "subtitle": "Interactive DSP Audio Processor",
+      "live_processing": "LIVE DSP PROCESSING",
+      "intensity": "Effect Intensity",
+      "ambience": "Ambience",
+      "ambience_desc": "Concert Hall Reverb",
+      "fidelity": "Fidelity",
+      "fidelity_desc": "Vocal Clarity & Harmonics",
+      "spatial": "Spatial",
+      "spatial_desc": "Expansive Stereo Field",
+      "night_mode": "Night Mode",
+      "night_mode_desc": "Intelligent Dynamic Leveler",
+      "pitch": "Pitch",
+      "pitch_desc": "Musical Key Tuning"
+    },
+    "system_wide_control": {
+      "badge": "SYSTEM-WIDE CONTROL",
+      "title": "System-wide Audio Control for Mac",
+      "subtitle": "One unified audio engine that elevates everything you hear. Boost volume, calibrate frequencies, and apply rich effects seamlessly across every single application on your Mac.",
+      "feature_1_title": "Universal App Integration",
+      "feature_1_desc": "Automatically enhances Spotify, YouTube, Netflix, Apple Music, Safari, Zoom, FaceTime, and games without manual setup.",
+      "feature_2_title": "Menu Bar & Quick Access",
+      "feature_2_desc": "Quickly adjust master volume beyond limits, toggle presets, and fine-tune equalizers directly from the macOS menu bar.",
+      "feature_3_title": "Distortion-Free Volume Boost",
+      "feature_3_desc": "Safely amplifies system audio up to 200% with intelligent peak-limiting algorithms that prevent distortion and protect speakers.",
+      "feature_4_title": "Intelligent Dynamic Leveling",
+      "feature_4_desc": "Balances inconsistent volume levels between movies, music, and calls for effortless listening comfort all day."
+    },
+    "boom_remote": {
+      "title": "Wireless Audio Control with Boom Remote",
+      "subtitle": "Control Boom 2 on your Mac wirelessly from anywhere in the room using your iPhone or iPad. Adjust volume beyond limits, switch EQ presets, and manage your music without touching your Mac.",
+      "feature_1_title": "Wireless Wi-Fi Connectivity",
+      "feature_1_desc": "Effortlessly link your iOS device to your Mac over local Wi-Fi for instant, low-latency control with zero setup.",
+      "feature_2_title": "Full Volume & Preset Tuning",
+      "feature_2_desc": "Dial volume up to 200%, switch 31-band EQ presets, and toggle handcrafted audio effects directly from your couch.",
+      "feature_3_title": "Seamless Media Playback",
+      "feature_3_desc": "Play, pause, skip tracks, and adjust playback for Spotify, Apple Music, Netflix, and iTunes right from the remote.",
+      "app_store_cta": "Available on the App Store"
+    },
     "audio_amplify": {
       "title": "Amplify individual audio files",
       "description": "Permanently boost the sound levels in any audio files on your Mac. Individually, or in batches. Whether it's a quiet voice memo, a low-volume podcast, or a poorly recorded song, Boom 2 lets you easily drop in audio files and amplify them to your desired volume. You can boost multiple files at once, saving you time and ensuring all your media is loud and clear for playback on any device."
+    },
+    "output_compatibility": {
+      "title": "Perfect for all output devices",
+      "description": "Boom 2 is built to provide superior control to all types of audio devices. AirPods and headphones (In / over-ear), speakers (wired / wireless), and more!",
+      "headphones": "Over-Ear Headphones",
+      "headphones_desc": "Optimized frequency curve with expanded stereo soundstage and deep bass response.",
+      "earbuds": "AirPods & Earbuds",
+      "earbuds_desc": "Crisp vocal presence with tailored acoustic leveling for portable in-ear listening.",
+      "speakers": "External & Studio Speakers",
+      "speakers_desc": "Room-filling volume boost and harmonic fidelity tailored for wired or Bluetooth monitors.",
+      "mac_speakers": "Built-in Mac Speakers",
+      "mac_speakers_desc": "Hardware-safe limiter algorithms to safely extract maximum punch without distortion."
     },
     "awards": {
       "title": "Awards & Recognitions",
