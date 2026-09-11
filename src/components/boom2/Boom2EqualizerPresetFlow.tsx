@@ -223,17 +223,6 @@ export function Boom2EqualizerPresetFlow() {
           SECTION HEADER
           ===================================================== */}
       <div className="relative z-10 mx-auto mb-2 max-w-3xl px-6 text-center md:mb-3">
-        <div
-          className="mb-3 inline-flex items-center gap-2 rounded-full border px-4 py-1 text-xs font-semibold uppercase tracking-[0.16em] transition-all duration-500 backdrop-blur-md"
-          style={{
-            color: activePulseColor,
-            borderColor: `${activePulseColor}45`,
-            backgroundColor: `${activePulseColor}10`,
-          }}
-        >
-          <Sliders className="h-3.5 w-3.5" />
-          <span>31-Band Equalizer</span>
-        </div>
 
         <h2 className="text-3xl font-bold tracking-[-0.04em] text-slate-950 sm:text-4xl md:text-5xl">
           Control it all, down to the last decibel.
