@@ -1,13 +1,13 @@
 import { useState, useEffect, type ComponentType } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
+import { useTranslation } from 'react-i18next';
 import {
   Music2,
   AudioLines,
   Piano,
   Guitar,
-  Headphones,
   Mic,
-  Sliders,
+  Headphones,
   Sparkles,
 } from 'lucide-react';
 
@@ -175,6 +175,7 @@ const OUTBOUND_STRANDS = Array.from({ length: 28 }, (_, i) => {
 });
 
 export function Boom2EqualizerPresetFlow() {
+  const { t } = useTranslation();
   const prefersReducedMotion = useReducedMotion();
   const [activePulseColor, setActivePulseColor] = useState<string>('#16A34A');
   const [pulseTrigger, setPulseTrigger] = useState<number>(0);
@@ -225,11 +226,14 @@ export function Boom2EqualizerPresetFlow() {
       <div className="relative z-10 mx-auto mb-2 max-w-3xl px-6 text-center md:mb-3">
 
         <h2 className="text-3xl font-bold tracking-[-0.04em] text-slate-950 sm:text-4xl md:text-5xl">
-          Control it all, down to the last decibel.
+          {t('boom2.equalizer_flow.title', { defaultValue: 'Control it all, down to the last decibel.' })}
         </h2>
 
         <p className="mx-auto mt-2.5 max-w-2xl text-base leading-relaxed text-slate-500 md:text-lg">
-          A 31-Band Equalizer with 20 dB range lets you adjust individual frequencies of your sound for the best, and most realistic audio experience, that’s suited to you.
+          {t('boom2.equalizer_flow.description', {
+            defaultValue:
+              'A 31-Band Equalizer with 20 dB range lets you adjust individual frequencies of your sound for the best, and most realistic audio experience, that’s suited to you.',
+          })}
         </p>
       </div>
 
@@ -402,7 +406,7 @@ export function Boom2EqualizerPresetFlow() {
                       className="mt-1.5 rounded-full border border-slate-200 bg-white/95 px-2.5 py-0.5 text-[10px] font-bold text-slate-800 shadow-sm backdrop-blur-sm"
                       style={{ borderColor: `${preset.color}50` }}
                     >
-                      {preset.name}
+                      {t(`boom2.equalizer_flow.preset_${preset.id}`, { defaultValue: preset.name })}
                     </span>
                   </div>
                 </motion.div>
@@ -521,10 +525,10 @@ export function Boom2EqualizerPresetFlow() {
                     </div>
                     <div className="text-left">
                       <div className="text-xs font-semibold text-slate-800">
-                        {preset.name}
+                        {t(`boom2.equalizer_flow.preset_${preset.id}`, { defaultValue: preset.name })}
                       </div>
                       <div className="text-[10px] text-slate-400">
-                        {preset.genre}
+                        {t(`boom2.equalizer_flow.genre_${preset.id}`, { defaultValue: preset.genre })}
                       </div>
                     </div>
                   </div>

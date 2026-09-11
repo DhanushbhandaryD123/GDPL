@@ -380,6 +380,22 @@
       "download": "Télécharger",
       "available_macos": "Disponible pour macOS"
     },
+    "equalizer_flow": {
+      "title": "Contrôlez tout, jusqu'au moindre décibel.",
+      "description": "Un égaliseur 31 bandes avec une plage de 20 dB vous permet d'ajuster chaque fréquence de votre son pour l'expérience audio la plus réaliste et personnalisée.",
+      "preset_classical": "Classique",
+      "genre_classical": "Piano à queue et symphonique",
+      "preset_rock": "Rock",
+      "genre_rock": "Guitares électriques percutantes",
+      "preset_pop": "Pop",
+      "genre_pop": "Synthétiseurs et rythmes dynamiques",
+      "preset_jazz": "Jazz",
+      "genre_jazz": "Saxophone et cuivres éclatants",
+      "preset_acoustic": "Acoustique",
+      "genre_acoustic": "Voix intimistes de studio",
+      "preset_electronic": "Électronique",
+      "genre_electronic": "Sub-basses & casques"
+    },
     "audio_amplify": {
       "title": "Amplifiez des fichiers audio individuels",
       "description": "Augmentez de façon permanente le niveau sonore de vos fichiers audio sur Mac, individuellement ou par lots. Qu'il s'agisse d'un mémo vocal trop faible, d'un podcast peu sonore ou d'une chanson mal enregistrée, Boom 2 vous permet de glisser facilement vos fichiers audio et de les amplifier jusqu'au volume souhaité. Vous pouvez amplifier plusieurs fichiers à la fois, ce qui vous fait gagner du temps et garantit que tous vos médias sont audibles et clairs sur n'importe quel appareil."

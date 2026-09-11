@@ -380,6 +380,22 @@
       "download": "立即下载",
       "available_macos": "支持 macOS"
     },
+    "equalizer_flow": {
+      "title": "掌控一切，精确到每一个分贝。",
+      "description": "具有 20 dB 动态范围的 31 段均衡器，让您可以微调声音的每个频率，为您带来最贴合、最真实的美妙音频体验。",
+      "preset_classical": "古典",
+      "genre_classical": "大三角钢琴与交响乐",
+      "preset_rock": "摇滚",
+      "genre_rock": "震撼电吉他原声",
+      "preset_pop": "流行",
+      "genre_pop": "动感合成器与节拍",
+      "preset_jazz": "爵士",
+      "genre_jazz": "萨克斯管与铜管乐",
+      "preset_acoustic": "原声",
+      "genre_acoustic": "细腻工作室人声",
+      "preset_electronic": "电子乐",
+      "genre_electronic": "超重低音与耳机"
+    },
     "audio_amplify": {
       "title": "放大单个音频文件",
       "description": "永久提升 Mac 上任意音频文件的音量，可单独处理，也可批量处理。无论是音量过低的语音备忘录、音量不足的播客，还是录制效果不佳的歌曲，Boom 2 都能让你轻松导入音频文件并放大到理想音量。你可以一次性放大多个文件，既节省时间，又能确保所有媒体在任何设备上播放时都清晰响亮。"
