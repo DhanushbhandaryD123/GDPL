@@ -144,6 +144,60 @@ async function prerender() {
   const total = allRoutes.length;
   let processed = 0;
   let successCount = 0;
+  const failedRoutes = [];
+
+  async function renderRoute(page, route, workerId, isRetry = false) {
+    const url = `http://127.0.0.1:${PORT}${route}`;
+    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 15000 });
+    
+    await page.waitForFunction(() => {
+      const root = document.getElementById('root');
+      if (!root) return false;
+      const text = root.innerText ? root.innerText.trim() : '';
+      return root.children.length > 0 && text.length > 30;
+    }, { timeout: 12000 });
+
+    const rootHtml = await page.evaluate(() => {
+      const root = document.getElementById('root');
+      return root ? root.innerHTML : '';
+    });
+
+    if (rootHtml && rootHtml.length > 30) {
+      if (route === '/__prerender/not-found') {
+        const patch404Html = (file) => {
+          if (fs.existsSync(file)) {
+            let html = fs.readFileSync(file, 'utf8');
+            html = html.replace(/<div id="root">[\s\S]*?<\/div>/, `<div id="root">${rootHtml}</div>`);
+            html = html.replace(/<title>[\s\S]*?<\/title>/, '<title>404: Page Not Found | Global Delight</title>');
+            if (!html.includes('name="robots"')) {
+              html = html.replace('</title>', '</title>\n    <meta name="robots" content="noindex, follow">');
+            } else {
+              html = html.replace(/<meta[^>]*name="robots"[^>]*>/, '<meta name="robots" content="noindex, follow">');
+            }
+            fs.writeFileSync(file, html, 'utf8');
+          }
+        };
+        patch404Html(path.join(distDir, '404.html'));
+        patch404Html(path.join(distDir, '404', 'index.html'));
+        console.log(`[Worker ${workerId}] ✅ Prerendered 404 page (${rootHtml.length} bytes)`);
+      } else {
+        const relPath = route === '/' ? 'index.html' : path.join(route.slice(1), 'index.html');
+        const targetPath = path.join(distDir, relPath);
+
+        if (fs.existsSync(targetPath)) {
+          let html = fs.readFileSync(targetPath, 'utf8');
+          html = html.replace(/<div id="root">[\s\S]*?<\/div>/, `<div id="root">${rootHtml}</div>`);
+          fs.writeFileSync(targetPath, html, 'utf8');
+          successCount++;
+          if (processed % 10 === 0 || processed === total || isRetry) {
+            console.log(`[Worker ${workerId}] (${processed}/${total}) Prerendered: ${route} (${rootHtml.length} bytes)${isRetry ? ' [RETRY]' : ''}`);
+          }
+        }
+      }
+      return true;
+    }
+    return false;
+  }
 
   async function worker(workerId) {
     const page = await browser.newPage();
@@ -153,64 +207,28 @@ async function prerender() {
       window.__PRERENDER__ = true;
     });
 
+    // Warm-up the browser page
+    try {
+      await page.goto(`http://127.0.0.1:${PORT}/`, { waitUntil: 'domcontentloaded', timeout: 15000 });
+      await page.waitForFunction(() => {
+        const root = document.getElementById('root');
+        return root && root.children.length > 0;
+      }, { timeout: 12000 });
+    } catch (_) {}
+
     while (queue.length > 0) {
       const route = queue.shift();
       if (!route) break;
       processed++;
-      const currentIdx = processed;
-      const url = `http://127.0.0.1:${PORT}${route}`;
 
       try {
-        await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 10000 });
-        
-        await page.waitForFunction(() => {
-          const root = document.getElementById('root');
-          if (!root) return false;
-          const text = root.innerText ? root.innerText.trim() : '';
-          return root.children.length > 0 && text.length > 30;
-        }, { timeout: 4000 });
-
-        const rootHtml = await page.evaluate(() => {
-          const root = document.getElementById('root');
-          return root ? root.innerHTML : '';
-        });
-
-        if (rootHtml && rootHtml.length > 30) {
-          if (route === '/__prerender/not-found') {
-            // Write 404 pages
-            const patch404Html = (file) => {
-              if (fs.existsSync(file)) {
-                let html = fs.readFileSync(file, 'utf8');
-                html = html.replace(/<div id="root">[\s\S]*?<\/div>/, `<div id="root">${rootHtml}</div>`);
-                html = html.replace(/<title>[\s\S]*?<\/title>/, '<title>404: Page Not Found | Global Delight</title>');
-                if (!html.includes('name="robots"')) {
-                  html = html.replace('</title>', '</title>\n    <meta name="robots" content="noindex, follow">');
-                } else {
-                  html = html.replace(/<meta[^>]*name="robots"[^>]*>/, '<meta name="robots" content="noindex, follow">');
-                }
-                fs.writeFileSync(file, html, 'utf8');
-              }
-            };
-            patch404Html(path.join(distDir, '404.html'));
-            patch404Html(path.join(distDir, '404', 'index.html'));
-            console.log(`[Worker ${workerId}] ✅ Prerendered 404 page (${rootHtml.length} bytes)`);
-          } else {
-            const relPath = route === '/' ? 'index.html' : path.join(route.slice(1), 'index.html');
-            const targetPath = path.join(distDir, relPath);
-
-            if (fs.existsSync(targetPath)) {
-              let html = fs.readFileSync(targetPath, 'utf8');
-              html = html.replace(/<div id="root">[\s\S]*?<\/div>/, `<div id="root">${rootHtml}</div>`);
-              fs.writeFileSync(targetPath, html, 'utf8');
-              successCount++;
-              if (currentIdx % 10 === 0 || currentIdx === total) {
-                console.log(`[Worker ${workerId}] (${currentIdx}/${total}) Prerendered: ${route} (${rootHtml.length} bytes)`);
-              }
-            }
-          }
+        const ok = await renderRoute(page, route, workerId, false);
+        if (!ok) {
+          failedRoutes.push(route);
         }
       } catch (err) {
-        console.log(`[Worker ${workerId}] ⚠️ Fallback on ${route} (${err.message})`);
+        failedRoutes.push(route);
+        console.log(`[Worker ${workerId}] ⚠️ Queued for retry: ${route} (${err.message})`);
       }
     }
 
@@ -223,6 +241,27 @@ async function prerender() {
   }
 
   await Promise.all(workers);
+
+  // Retry any routes that failed during initial parallel run
+  if (failedRoutes.length > 0) {
+    console.log(`🔄 Retrying ${failedRoutes.length} failed routes sequentially...`);
+    const retryPage = await browser.newPage();
+    await retryPage.setViewport({ width: 1280, height: 800 });
+    await retryPage.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 ReactSnap HeadlessChrome');
+    await retryPage.evaluateOnNewDocument(() => {
+      window.__PRERENDER__ = true;
+    });
+
+    for (const route of failedRoutes) {
+      try {
+        await renderRoute(retryPage, route, 'Retry', true);
+      } catch (err) {
+        console.error(`❌ Final failure on ${route}: ${err.message}`);
+      }
+    }
+    await retryPage.close().catch(() => {});
+  }
+
   await browser.close().catch(() => {});
   server.close();
 
