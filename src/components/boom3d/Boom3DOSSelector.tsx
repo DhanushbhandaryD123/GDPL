@@ -22,7 +22,7 @@ export function Boom3DOSSelector() {
   const [os, setOS] = useState<OSMode>('mac');
 
   return (
-    <section className="bg-white py-10 lg:py-12 flex flex-col items-center justify-center relative z-20 overflow-hidden">
+    <section id="os-selector" className="bg-white py-10 lg:py-12 flex flex-col items-center justify-center relative z-20 overflow-hidden">
       <div className="max-w-[900px] mx-auto px-6 w-full flex flex-col items-center">
 
         {/* Text Content */}

@@ -1,10 +1,12 @@
 import { useState, useRef, useEffect } from 'react';
 import { useLocation, Link as RouterLink } from 'react-router-dom';
+import { motion, AnimatePresence } from 'motion/react';
 import { Link } from './LocalizedLink';
 import { Search, ShoppingCart, Menu, X, Smile } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { rememberLanguage, SUPPORTED_LANGS } from '@/lib/languagePreference';
 import { PRODUCTS, getVariant } from '@/data/products';
+import { getProductNavbarConfig } from '@/data/productNavbarConfig';
 
 interface NavbarProps {
   logoUrl?: string;
@@ -102,12 +104,54 @@ export function Navbar({ logoUrl }: NavbarProps) {
 
   const whatsNewLink = getWhatsNewLink();
 
+  const productConfig = getProductNavbarConfig(location.pathname, SUPPORTED_LANGS);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    if (!productConfig) {
+      setIsScrolled(false);
+      return;
+    }
+
+    const handleScroll = () => {
+      const scrolled = window.scrollY > 120;
+      setIsScrolled((prev) => {
+        if (prev !== scrolled) {
+          if (scrolled) setIsMobileMenuOpen(false);
+          return scrolled;
+        }
+        return prev;
+      });
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [productConfig, location.pathname]);
+
+  const showProductScrolled = Boolean(productConfig && isScrolled && !isSearchOpen);
+
   return (
-    <nav className={`sticky top-0 z-50 w-full transition-colors duration-300 border-b ${isSearchOpen ? 'bg-[#0a0a0f] border-gray-800' : 'bg-white border-gray-100'}`}>
-      
-      {isSearchOpen ? (
+    <nav 
+      className={`sticky top-0 z-50 w-full transition-all duration-300 border-b ${
+        isSearchOpen 
+          ? 'bg-[#0a0a0f] border-gray-800' 
+          : showProductScrolled 
+            ? 'bg-white/95 backdrop-blur-md border-gray-200/80 shadow-sm' 
+            : 'bg-white border-gray-100'
+      }`}
+    >
+      <AnimatePresence mode="wait">
+        {isSearchOpen ? (
         // Global Search Mode
-        <div className="w-full max-w-[1200px] mx-auto px-4 md:px-6 lg:px-8 h-20 flex flex-col justify-center">
+        <motion.div 
+          key="search-mode"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
+          className="w-full max-w-[1200px] mx-auto px-4 md:px-6 lg:px-8 h-20 flex flex-col justify-center"
+        >
           <div className="flex items-center gap-4 w-full">
             <Search className="w-6 h-6 text-gray-400 shrink-0" />
             <input
@@ -156,10 +200,78 @@ export function Navbar({ logoUrl }: NavbarProps) {
               )}
             </div>
           </div>
-        </div>
+        </motion.div>
+      ) : showProductScrolled && productConfig ? (
+        // Product Page Scrolled Mode (Apple-style: Left product logo, Right Get Trial button)
+        <motion.div
+          key={`product-scrolled-${productConfig.id}`}
+          initial={{ opacity: 0, y: -6 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -6 }}
+          transition={{ duration: 0.22, ease: "easeOut" }}
+          className="w-full max-w-[1920px] mx-auto px-4 md:px-6 lg:px-8 h-16 md:h-20 flex items-center justify-between"
+        >
+          {/* Left: Product Logo & Title (Click to scroll smoothly to top) */}
+          <button
+            type="button"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="flex items-center gap-2.5 sm:gap-3.5 cursor-pointer group focus:outline-none select-none text-left"
+            aria-label={`${productConfig.name} - Back to top`}
+          >
+            <img
+              src={productConfig.logo}
+              alt={productConfig.logoAlt}
+              className={`h-8 sm:h-9 md:h-10 ${productConfig.showNameWithLogo ? 'w-8 sm:w-9 md:w-10 rounded-xl object-cover shadow-sm' : 'w-auto object-contain drop-shadow-sm'} transition-transform duration-200 group-hover:scale-105`}
+              loading="eager"
+            />
+            {productConfig.showNameWithLogo && (
+              <span className="font-bold text-lg sm:text-xl md:text-2xl text-gray-900 tracking-tight transition-colors group-hover:text-[#1390FB]">
+                {productConfig.name}
+              </span>
+            )}
+          </button>
+
+          {/* Right: Only the Call-to-Action button */}
+          <div className="flex items-center">
+            <button
+              type="button"
+              onClick={() => {
+                if (productConfig.ctaType === 'scroll') {
+                  const targetElement = document.querySelector(productConfig.ctaTarget);
+                  if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  } else {
+                    window.location.href = productConfig.ctaTarget;
+                  }
+                } else if (productConfig.ctaType === 'link') {
+                  if (productConfig.ctaTarget.startsWith('http')) {
+                    window.open(productConfig.ctaTarget, '_blank', 'noopener,noreferrer');
+                  } else {
+                    window.location.href = productConfig.ctaTarget;
+                  }
+                }
+              }}
+              className="px-5 sm:px-7 md:px-8 py-2 md:py-2.5 rounded-full font-bold text-xs sm:text-sm md:text-[15px] text-white shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-2 cursor-pointer select-none"
+              style={{
+                backgroundColor: productConfig.accentColor || '#0099ff',
+                backgroundImage: `linear-gradient(135deg, ${productConfig.accentColor || '#0099ff'}, #1390FB)`,
+              }}
+              aria-label={t(productConfig.ctaTextKey, { defaultValue: productConfig.ctaDefaultText })}
+            >
+              <span>{t(productConfig.ctaTextKey, { defaultValue: productConfig.ctaDefaultText })}</span>
+            </button>
+          </div>
+        </motion.div>
       ) : (
         // Normal Navbar Mode
-        <div className="w-full max-w-[1920px] mx-auto px-4 md:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <motion.div
+          key="normal-nav"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
+          className="w-full max-w-[1920px] mx-auto px-4 md:px-6 lg:px-8 h-20 flex items-center justify-between"
+        >
           <div className="flex items-center gap-8 lg:gap-12">
             <Link to="/" className="flex items-center">
               <img
@@ -318,11 +430,12 @@ export function Navbar({ logoUrl }: NavbarProps) {
               {isMobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
             </button>
           </div>
-        </div>
+        </motion.div>
       )}
+      </AnimatePresence>
 
       {/* Mobile Menu Dropdown */}
-      {!isSearchOpen && isMobileMenuOpen && (
+      {!isSearchOpen && !showProductScrolled && isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-xl border-t border-gray-100 max-h-[calc(100vh-80px)] overflow-y-auto">
           <div className="flex flex-col py-4 px-6 gap-4">
             <a 

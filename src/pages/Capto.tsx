@@ -9,7 +9,7 @@ import { Footer } from '../components/layout/Footer';
 export function Capto() {
   const domain = import.meta.env.VITE_SITE_URL || '';
   return (
-    <div className="min-h-screen bg-white text-gray-900 font-sans overflow-x-hidden selection:bg-[#4F46E5] selection:text-white">
+    <div className="min-h-screen bg-white text-gray-900 font-sans selection:bg-[#4F46E5] selection:text-white">
       <Helmet>
         <title>Capto | Screen Capture and Video Editing Software for Mac</title>
         <meta name="description" content="Capto is a powerful screen recording, video editing, and image editing software for Mac. It's the ultimate tool to turn your captures into creations — record tutorials, annotate screenshots, and share instantly." />
@@ -46,7 +46,7 @@ export function Capto() {
       
       <Navbar />
 
-      <main className="relative">
+      <main className="relative overflow-x-clip">
         <CaptoHero />
         <CaptoFeatures />
         <CaptoUseCases />

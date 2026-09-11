@@ -12,7 +12,7 @@ import { Footer } from '../components/layout/Footer';
 export function BoomForMobilePage() {
   const domain = import.meta.env.VITE_SITE_URL || '';
   return (
-    <div className="min-h-screen bg-white text-gray-900 font-sans overflow-x-hidden selection:bg-pink-500/30 selection:text-white">
+    <div className="min-h-screen bg-white text-gray-900 font-sans selection:bg-pink-500/30 selection:text-white">
       <Helmet>
         <title>Boom for Mobile | 3D Surround Sound & Equalizer App</title>
         <meta name="description" content="Feel your music on the go. Boom for iOS and Android features incredible 3D surround sound, custom equalizer presets, and a powerful audio intensity slider for headphones and speakers." />
@@ -42,7 +42,7 @@ export function BoomForMobilePage() {
       
       <Navbar />
 
-      <main>
+      <main className="overflow-x-clip">
         <HeroCarousel />
         <BoomStory />
         <PrimeFeatures />

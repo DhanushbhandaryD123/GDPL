@@ -20,7 +20,7 @@ import { Footer } from '../components/layout/Footer';
 export function Boom2() {
   const domain = import.meta.env.VITE_SITE_URL || '';
   return (
-    <div className="min-h-screen bg-white text-gray-900 font-sans overflow-x-hidden selection:bg-[#4F46E5] selection:text-white">
+    <div className="min-h-screen bg-white text-gray-900 font-sans selection:bg-[#4F46E5] selection:text-white">
       <Helmet>
         <title>Boom 2 - Stereo Sound Enhancer for Mac</title>
         <meta name="description" content="Boom 2 is an award-winning stereo sound enhancer app for macOS that gives you precision control over your audio, with cutting-edge features for pristine sound." />
@@ -72,7 +72,7 @@ export function Boom2() {
       
       <Navbar />
 
-      <main>
+      <main className="overflow-x-clip">
         <Boom2Hero />
         
         <div className="bg-[#ffffff] text-gray-900 pb-16 pt-6 relative z-10">

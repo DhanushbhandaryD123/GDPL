@@ -11,7 +11,7 @@ import { Footer } from '../components/layout/Footer';
 export function AuDimixPage() {
   const domain = import.meta.env.VITE_SITE_URL || '';
   return (
-    <div className="min-h-screen bg-white text-gray-900 font-sans overflow-x-hidden selection:bg-purple-200">
+    <div className="min-h-screen bg-white text-gray-900 font-sans selection:bg-purple-200">
       <Helmet>
         <title>AuDimix | Vocal Extractor & Music Separation Software</title>
         <meta name="description" content="AuDimix is a powerful vocal isolation and extraction tool. Isolate vocals, extract instruments, remove background music, and create your own remixes or karaoke tracks with ease." />
@@ -32,7 +32,7 @@ export function AuDimixPage() {
       
       <Navbar />
 
-      <main>
+      <main className="overflow-x-clip">
         <Hero />
         <FeaturesOverview />
         <UseCases />

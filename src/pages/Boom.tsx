@@ -12,7 +12,7 @@ export function Boom() {
   const domain = import.meta.env.VITE_SITE_URL || '';
   return (
     <div
-      className="min-h-screen bg-white text-gray-900 overflow-x-hidden selection:bg-indigo-500 selection:text-white"
+      className="min-h-screen bg-white text-gray-900 selection:bg-indigo-500 selection:text-white"
       style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", sans-serif' }}
     >
       <Helmet>
@@ -44,7 +44,7 @@ export function Boom() {
 
       <Navbar />
 
-      <main>
+      <main className="overflow-x-clip">
         <BoomHero />
         <BoomPlatforms />
         <BoomFeatureShowcase />

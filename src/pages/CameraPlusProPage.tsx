@@ -10,7 +10,7 @@ import { ProCTABanner } from '../components/camerapluspro/ProCTABanner';
 export function CameraPlusProPage() {
   const domain = import.meta.env.VITE_SITE_URL || '';
   return (
-    <div className="min-h-screen bg-white text-gray-900 font-sans overflow-x-hidden selection:bg-blue-500 selection:text-white">
+    <div className="min-h-screen bg-white text-gray-900 font-sans selection:bg-blue-500 selection:text-white">
       <Helmet>
         <title>Camera Plus Pro | Professional Camera & Editing App for iPhone</title>
         <meta name="description" content="Experience professional photography tools for iPhone. Capture, edit, and share stunning photos with Camera Plus Pro's advanced filters, manual controls, and editing suite." />
@@ -28,7 +28,7 @@ export function CameraPlusProPage() {
 
       <Navbar />
 
-      <main>
+      <main className="overflow-x-clip">
         <ProMainHero />
         <ProFeatures />
         <ProEditingTools />

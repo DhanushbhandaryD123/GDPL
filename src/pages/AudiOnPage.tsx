@@ -10,7 +10,7 @@ import { Footer } from '../components/layout/Footer';
 export function AudiOnPage() {
   const domain = import.meta.env.VITE_SITE_URL || '';
   return (
-    <div className="min-h-screen bg-white text-gray-900 font-sans overflow-x-hidden selection:bg-purple-200">
+    <div className="min-h-screen bg-white text-gray-900 font-sans selection:bg-purple-200">
       <Helmet>
         <title>AudiOn | Pro Voice Recorder & Audio Editor for iOS & Android</title>
         <meta name="description" content="AudiOn is the cutting-edge voice recorder app for mobile. Experience lossless recording, powerful noise removal, audio enhancement, and AI transcription for interviews, lectures, and podcasts." />
@@ -31,7 +31,7 @@ export function AudiOnPage() {
       
       <Navbar />
 
-      <main>
+      <main className="overflow-x-clip">
         <Hero />
         <AdvancedRecording />
         <AudioEnhancement />
