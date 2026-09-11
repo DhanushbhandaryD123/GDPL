@@ -1,12 +1,12 @@
 import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../components/layout/Navbar';
 import { Boom2Hero } from '../components/boom2/Boom2Hero';
-import { Boom2FeaturesBanner } from '../components/boom2/Boom2FeaturesBanner';
 import { Boom2PrecisionControl } from '../components/boom2/Boom2PrecisionControl';
+import { Boom2CoreFeatures } from '../components/boom2/Boom2CoreFeatures';
 import { Boom2FeatureGrid } from '../components/boom2/Boom2FeatureGrid';
 import { Boom2RemoteControl } from '../components/boom2/Boom2RemoteControl';
+import { Boom2EqualizerPresetFlow } from '../components/boom2/Boom2EqualizerPresetFlow';
 import { Boom2AudioAmplify } from '../components/boom2/Boom2AudioAmplify';
-import { Boom2MoreFeatures } from '../components/boom2/Boom2MoreFeatures';
 import { Boom2EnvironmentSim } from '../components/boom2/Boom2EnvironmentSim';
 import { Boom2Awards } from '../components/boom2/Boom2Awards';
 import { Boom2Testimonials } from '../components/boom2/Boom2Testimonials';
@@ -71,16 +71,14 @@ export function Boom2() {
 
       <main>
         <Boom2Hero />
-        <div className="bg-white">
-          <Boom2FeaturesBanner />
-        </div>
         
-        <div className="bg-[#ffffff] text-gray-900 pb-16 pt-8 relative z-10 border-t border-gray-200">
+        <div className="bg-[#ffffff] text-gray-900 pb-16 pt-6 relative z-10">
           <Boom2PrecisionControl />
+          <Boom2CoreFeatures />
           <Boom2FeatureGrid />
           <Boom2RemoteControl />
+          <Boom2EqualizerPresetFlow />
           <Boom2AudioAmplify />
-          <Boom2MoreFeatures />
         </div>
 
         <Boom2EnvironmentSim />
