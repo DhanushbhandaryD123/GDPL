@@ -29,20 +29,23 @@ export function Boom2BoomRemote() {
         </p>
       </motion.div>
 
-      {/* Main Showcase Image (No Boxes, Pure Natural Device Display) */}
+      {/* Main Showcase Video */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-        className="w-full max-w-5xl flex items-center justify-center"
+        className="w-full max-w-5xl relative rounded-2xl md:rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-200 bg-black"
       >
-        <img
-          src="/boom2/remote.webp"
-          alt="Boom Remote controlling Boom 2 on Mac"
-          className="w-full max-w-4xl h-auto object-contain drop-shadow-2xl pointer-events-none"
-          loading="lazy"
-        />
+        <video
+          autoPlay={navigator.userAgent !== 'ReactSnap'}
+          loop
+          muted
+          playsInline
+          className="w-full h-auto object-contain"
+        >
+          <source src="/boom2/audio_equalizer.mp4" type="video/mp4" />
+        </video>
       </motion.div>
     </section>
   );
