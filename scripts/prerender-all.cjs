@@ -159,7 +159,24 @@ async function prerender() {
 
     const rootHtml = await page.evaluate(() => {
       const root = document.getElementById('root');
-      return root ? root.innerHTML : '';
+      if (!root) return '';
+
+      // Normalize any elements left hidden (opacity: 0) by initial animation state
+      // so the prerendered static HTML is 100% visible when JavaScript is disabled
+      const elementsWithStyle = root.querySelectorAll('*[style]');
+      elementsWithStyle.forEach((el) => {
+        if (el.style.opacity === '0' || el.style.opacity === '0.0' || parseFloat(el.style.opacity) === 0) {
+          el.style.opacity = '1';
+        }
+        if (el.style.transform && /translate|matrix|scale\(0\./.test(el.style.transform)) {
+          el.style.transform = 'none';
+        }
+        if (el.style.visibility === 'hidden') {
+          el.style.visibility = 'visible';
+        }
+      });
+
+      return root.innerHTML;
     });
 
     if (rootHtml && rootHtml.length > 30) {
