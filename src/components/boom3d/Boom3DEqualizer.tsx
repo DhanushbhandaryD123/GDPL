@@ -7,7 +7,7 @@ export function Boom3DEqualizer() {
   const { t } = useTranslation();
 
   return (
-    <section id="equalizer-presets" className="relative py-12 lg:py-16 overflow-hidden bg-gradient-to-b from-[#f9fafc] via-white to-[#f4f7fb] scroll-mt-20 md:scroll-mt-24">
+    <section id="equalizer-presets" className="relative pt-12 pb-16 sm:pb-20 lg:py-16 overflow-hidden bg-gradient-to-b from-[#f9fafc] via-white to-[#f4f7fb] scroll-mt-20 md:scroll-mt-24">
       {/* Subtle Background Glows */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-b from-blue-50/50 via-purple-50/20 to-transparent rounded-full blur-3xl pointer-events-none" />
 
@@ -116,13 +116,13 @@ export function Boom3DEqualizer() {
       <div className="max-w-[1300px] mx-auto px-6 lg:px-12 relative z-10">
 
         {/* 3 Precision EQ Breakdown Cards */}
-        <div className="mt-6 md:mt-8 pt-6 border-t border-gray-200/80 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="mt-6 md:mt-8 pt-6 border-t border-gray-200/80 grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="p-8 rounded-3xl bg-white border border-gray-200/80 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-md transition-shadow"
+            className="p-5 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl bg-white border border-gray-200/80 shadow-[0_8px_24px_rgba(0,0,0,0.03)] hover:shadow-md transition-shadow"
           >
             <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 mb-5">
               <Sliders size={22} />
@@ -138,7 +138,7 @@ export function Boom3DEqualizer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="p-8 rounded-3xl bg-white border border-gray-200/80 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-md transition-shadow"
+            className="p-5 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl bg-white border border-gray-200/80 shadow-[0_8px_24px_rgba(0,0,0,0.03)] hover:shadow-md transition-shadow"
           >
             <div className="w-12 h-12 rounded-2xl bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-600 mb-5">
               <Layers size={22} />
@@ -154,7 +154,7 @@ export function Boom3DEqualizer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="p-8 rounded-3xl bg-white border border-gray-200/80 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-md transition-shadow"
+            className="p-5 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl bg-white border border-gray-200/80 shadow-[0_8px_24px_rgba(0,0,0,0.03)] hover:shadow-md transition-shadow"
           >
             <div className="w-12 h-12 rounded-2xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-600 mb-5">
               <Sparkles size={22} />

@@ -62,7 +62,7 @@ export function Boom3DVolumeBooster() {
   return (
     <section
       id="boom-volume-booster"
-      className="relative py-16 lg:py-24 overflow-hidden bg-white text-gray-900 scroll-mt-20 md:scroll-mt-24 select-none"
+      className="relative py-12 sm:py-16 lg:py-24 overflow-hidden bg-white text-gray-900 scroll-mt-20 md:scroll-mt-24 select-none"
     >
       {/* Background Soft Studio Glows */}
       <div
@@ -106,33 +106,34 @@ export function Boom3DVolumeBooster() {
         {/* ================================================================== */}
         {/* MAIN VISUALIZATION STAGE: NO OVERFLOW, NO CUTOFF, BALANCED SIZES    */}
         {/* ================================================================== */}
-        <div className="relative w-full py-4 sm:py-6 md:py-12 flex flex-row items-center justify-between gap-0.5 sm:gap-2 md:gap-4 overflow-visible">
+        <div className="relative w-full py-4 sm:py-6 md:py-12 flex flex-row items-center justify-between gap-1 xs:gap-2 sm:gap-3 md:gap-4 overflow-hidden">
           
           {/* ---------------------------------------------------------------- */}
           {/* 1. LEFT: PHOTOREALISTIC MODERN OPEN LAPTOP (100% TRANSPARENT)     */}
           {/* ---------------------------------------------------------------- */}
-          <div className="flex flex-col items-center justify-center shrink-0 w-[64px] xs:w-[82px] sm:w-[150px] md:w-[200px] lg:w-[260px] relative z-20">
+          <div className="flex flex-col items-center justify-center shrink-0 w-[68px] xs:w-[84px] sm:w-[150px] md:w-[200px] lg:w-[260px] relative z-20">
             <div className="relative w-full aspect-[4/3] flex items-center justify-center">
               {/* Clean Transparent Laptop */}
               <img
                 src="/boom3D/macbook-transparent.png"
                 alt="Realistic modern open laptop with metallic unibody"
-                className="w-full h-full object-contain pointer-events-none drop-shadow-[0_15px_30px_rgba(0,0,0,0.12)]"
+                className="w-full h-full object-contain pointer-events-none drop-shadow-[0_10px_25px_rgba(0,0,0,0.12)]"
               />
             </div>
+            <span className="hidden xs:block text-[8px] sm:text-xs font-semibold text-gray-500 mt-1 tracking-tight">Source</span>
           </div>
 
           {/* ---------------------------------------------------------------- */}
           {/* 2. BETWEEN LEFT & CENTER: DYNAMIC VOLUME-RESPONSIVE WAVEFORM     */}
           {/* ---------------------------------------------------------------- */}
-          <div className="flex-1 items-center justify-center min-w-0 relative flex -ml-4 xs:-ml-6 sm:-ml-20 md:-ml-28 lg:-ml-36 -mr-1.5 xs:-mr-2 sm:-mr-5 md:-mr-8 z-10 pointer-events-none">
+          <div className="flex-1 items-center justify-center min-w-0 relative flex mx-0.5 sm:-ml-12 md:-ml-20 lg:-ml-28 sm:-mr-3 md:-mr-6 z-10 pointer-events-none overflow-hidden">
             <FlowingAudioWaveform
               progress={progress}
               variant="left-segment"
               viewBoxWidth={280}
               viewBoxHeight={120}
-              barCount={30}
-              className="h-14 xs:h-18 sm:h-28 md:h-32"
+              barCount={22}
+              className="h-10 xs:h-14 sm:h-28 md:h-32 w-full"
             />
           </div>
 
@@ -141,7 +142,7 @@ export function Boom3DVolumeBooster() {
           {/* ---------------------------------------------------------------- */}
           <div className="flex flex-col items-center justify-center relative shrink-0 z-20">
             {/* Curved Directional Adjustment Arc Above Knob */}
-            <div className="relative mb-0.5 sm:mb-2 flex items-center justify-center scale-75 xs:scale-85 sm:scale-100 origin-bottom">
+            <div className="relative mb-0.5 sm:mb-2 flex items-center justify-center scale-[0.6] xs:scale-[0.72] sm:scale-100 origin-bottom">
               <svg width="190" height="28" viewBox="0 0 200 28" className="overflow-visible pointer-events-none">
                 <path
                   d="M 22,25 Q 100,2 178,25"
@@ -177,7 +178,7 @@ export function Boom3DVolumeBooster() {
               onPointerUp={handlePointerUp}
               onPointerCancel={handlePointerUp}
               onWheel={handleWheel}
-              className="relative w-[96px] h-[96px] xs:w-[118px] xs:h-[118px] sm:w-[170px] sm:h-[170px] md:w-[210px] md:h-[210px] lg:w-[225px] lg:h-[225px] flex items-center justify-center cursor-grab active:cursor-grabbing touch-none select-none group"
+              className="relative w-[108px] h-[108px] xs:w-[124px] xs:h-[124px] sm:w-[170px] sm:h-[170px] md:w-[210px] md:h-[210px] lg:w-[225px] lg:h-[225px] flex items-center justify-center cursor-grab active:cursor-grabbing touch-none select-none group"
               title="Drag around the dial or use mouse wheel to modulate volume"
             >
               {/* Outer Circular SVG Progress Gauge */}
@@ -249,7 +250,7 @@ export function Boom3DVolumeBooster() {
 
               {/* Glowing Halo on Interaction */}
               <div
-                className="absolute w-[86px] h-[86px] xs:w-[104px] xs:h-[104px] sm:w-[150px] sm:h-[150px] md:w-[185px] md:h-[185px] rounded-full blur-xl pointer-events-none transition-all duration-300"
+                className="absolute w-[94px] h-[94px] xs:w-[110px] xs:h-[110px] sm:w-[150px] sm:h-[150px] md:w-[185px] md:h-[185px] rounded-full blur-xl pointer-events-none transition-all duration-300"
                 style={{
                   background:
                     volume >= 250
@@ -260,7 +261,7 @@ export function Boom3DVolumeBooster() {
               />
 
               {/* Dark Navy Outer Bezel Ring */}
-              <div className="w-[82px] h-[82px] xs:w-[102px] xs:h-[102px] sm:w-[145px] sm:h-[145px] md:w-[175px] md:h-[175px] rounded-full bg-gradient-to-br from-[#1e293b] via-[#0f172a] to-[#020617] p-1.5 xs:p-2 sm:p-2.5 shadow-[0_16px_35px_rgba(15,23,42,0.35)] flex items-center justify-center border border-slate-700/60 relative">
+              <div className="w-[90px] h-[90px] xs:w-[106px] xs:h-[106px] sm:w-[145px] sm:h-[145px] md:w-[175px] md:h-[175px] rounded-full bg-gradient-to-br from-[#1e293b] via-[#0f172a] to-[#020617] p-1.5 xs:p-2 sm:p-2.5 shadow-[0_16px_35px_rgba(15,23,42,0.35)] flex items-center justify-center border border-slate-700/60 relative">
                 {/* Glowing LED Ring */}
                 <div
                   className="w-full h-full rounded-full p-1.5 xs:p-2 flex items-center justify-center transition-all duration-300 relative"
@@ -283,7 +284,7 @@ export function Boom3DVolumeBooster() {
                   >
                     {/* Rotating Indicator Notch */}
                     <div
-                      className="absolute top-1 left-1/2 -translate-x-1/2 w-1.5 xs:w-2 h-3.5 xs:h-4 sm:h-5 rounded-full shadow-md"
+                      className="absolute top-1 left-1/2 -translate-x-1/2 w-1.5 xs:w-2 h-3 xs:h-3.5 sm:h-5 rounded-full shadow-md"
                       style={{
                         backgroundColor: volume >= 250 ? '#ec4899' : '#06b6d4',
                         boxShadow:
@@ -295,12 +296,12 @@ export function Boom3DVolumeBooster() {
                   </div>
 
                   {/* STATIC NON-ROTATING METALLIC CENTER CAP WITH PERFECT UPRIGHT TEXT */}
-                  <div className="absolute inset-0 m-auto w-8 h-8 xs:w-10 xs:h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-tr from-[#cbd5e1] via-[#f1f5f9] to-[#ffffff] border border-gray-300 shadow-md flex flex-col items-center justify-center pointer-events-none z-10">
-                    <span className="text-[10px] xs:text-xs sm:text-sm md:text-base font-black text-gray-900 tracking-tight leading-none">
+                  <div className="absolute inset-0 m-auto w-10 h-10 xs:w-12 xs:h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-tr from-[#cbd5e1] via-[#f1f5f9] to-[#ffffff] border border-gray-300 shadow-md flex flex-col items-center justify-center pointer-events-none z-10">
+                    <span className="text-[11px] xs:text-xs sm:text-sm md:text-base font-black text-gray-900 tracking-tight leading-none">
                       {volume}%
                     </span>
                     <span
-                      className="text-[6px] xs:text-[7px] sm:text-[9px] md:text-[10px] font-mono font-bold mt-0.5"
+                      className="text-[7px] xs:text-[8px] sm:text-[9px] md:text-[10px] font-mono font-bold mt-0.5"
                       style={{ color: volume >= 250 ? '#ec4899' : '#2563eb' }}
                     >
                       {volume >= 250 ? '+18 dB' : volume >= 200 ? '+12 dB' : volume >= 150 ? '+6 dB' : '+0 dB'}
@@ -315,21 +316,21 @@ export function Boom3DVolumeBooster() {
           {/* ---------------------------------------------------------------- */}
           {/* 4. BETWEEN CENTER & RIGHT: DYNAMIC VOLUME-RESPONSIVE WAVEFORM    */}
           {/* ---------------------------------------------------------------- */}
-          <div className="flex-1 items-center justify-center min-w-0 relative flex -ml-1.5 xs:-ml-2 sm:-ml-5 md:-ml-8 -mr-4 xs:-mr-6 sm:-mr-16 md:-mr-24 lg:-mr-28 z-10 pointer-events-none">
+          <div className="flex-1 items-center justify-center min-w-0 relative flex mx-0.5 sm:-ml-3 md:-mr-6 sm:-mr-10 md:-mr-16 lg:-mr-24 z-10 pointer-events-none overflow-hidden">
             <FlowingAudioWaveform
               progress={progress}
               variant="right-segment"
-              viewBoxWidth={320}
+              viewBoxWidth={300}
               viewBoxHeight={120}
-              barCount={36}
-              className="h-14 xs:h-18 sm:h-28 md:h-32"
+              barCount={24}
+              className="h-10 xs:h-14 sm:h-28 md:h-32 w-full"
             />
           </div>
 
           {/* ---------------------------------------------------------------- */}
           {/* 5. RIGHT: TWO LARGE STUDIO SPEAKERS (FULLY VISIBLE & VIBRATING)  */}
           {/* ---------------------------------------------------------------- */}
-          <div className="flex flex-col items-center justify-center shrink-0 w-[54px] xs:w-[70px] sm:w-[115px] md:w-[155px] lg:w-[195px] relative z-20">
+          <div className="flex flex-col items-center justify-center shrink-0 w-[58px] xs:w-[72px] sm:w-[115px] md:w-[155px] lg:w-[195px] relative z-20">
             {/* Vibrating Speaker Cabinet & Woofer Base */}
             <motion.div
               animate={
@@ -358,9 +359,10 @@ export function Boom3DVolumeBooster() {
               <img
                 src="/boom3D/speakers-transparent.png"
                 alt="Two professional studio monitor speakers stacked vertically with vibrating metallic blue cones"
-                className="w-full h-full object-contain pointer-events-none drop-shadow-[0_15px_30px_rgba(0,0,0,0.14)]"
+                className="w-full h-full object-contain pointer-events-none drop-shadow-[0_10px_25px_rgba(0,0,0,0.14)]"
               />
             </motion.div>
+            <span className="hidden xs:block text-[8px] sm:text-xs font-semibold text-gray-500 mt-1 tracking-tight">Output</span>
           </div>
 
         </div>
