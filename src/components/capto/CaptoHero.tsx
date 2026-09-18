@@ -418,7 +418,6 @@ export function CaptoHero() {
             <span className="font-black text-[#1c2331] text-[1.4rem] md:text-[1.6rem] lg:text-[1.75rem] tracking-tight">
               {t('capto.hero.avail')} <span ref={offerTextRef} className="text-[#1c2331]">75% OFF</span>
             </span>
-            <span className="text-[11px] md:text-xs text-gray-500 font-medium mt-0.5">{isExpired ? 'Offer renewed – Ends at 12:00 AM' : 'Limited time • Ends tonight at 12:00 AM'}</span>
           </motion.div>
         </motion.div>
       </div>
