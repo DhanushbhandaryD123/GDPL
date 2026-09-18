@@ -70,8 +70,14 @@ export function Boom3DScrollReveal() {
   }, []);
 
   const natural = getNaturalSize(tier);
+  const padX = tier === 'mobile' ? 8 : 48;
+  const padY = tier === 'mobile' ? 56 : 128;
   const fitScale = availableSize
-    ? Math.min(1, availableSize.width / natural.width, availableSize.height / natural.height)
+    ? Math.min(
+        1,
+        Math.max(0.4, (availableSize.width - padX) / natural.width),
+        Math.max(0.4, (availableSize.height - padY) / natural.height)
+      )
     : 1;
 
   if (prefersReducedMotion) {
@@ -154,7 +160,7 @@ export function Boom3DScrollReveal() {
 
         {/* STAGE 3: App Universe Visual */}
         <div
-          className="absolute inset-0 flex items-center justify-center pt-24 pb-8 px-6 transition-all duration-500 ease-out"
+          className="absolute inset-0 flex items-center justify-center pt-14 sm:pt-24 pb-2 sm:pb-8 px-2 sm:px-6 transition-all duration-500 ease-out"
           style={{
             opacity: phase === 'universe' ? 1 : 0,
             transform: phase === 'universe' ? 'translateY(0)' : 'translateY(40px)',

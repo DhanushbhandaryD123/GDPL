@@ -187,7 +187,7 @@ const ORBIT: Record<'tablet' | 'desktop', OrbitConfig> = {
   desktop: { radiusX: 320, radiusY: 320, logo: 100, tile: 76, textMaxW: 400, cardW: 250, cardH: 170 },
 };
 
-const MOBILE_ORBIT = { radius: 118, logo: 58, tile: 42 };
+const MOBILE_ORBIT = { radius: 156, logo: 96, tile: 50 };
 
 // Card gap beyond the icon ring's outer edge, and how far below/above
 // center the two card rows sit — kept as named constants (not magic
@@ -317,9 +317,9 @@ const CARD_ENTRY_OFFSET: Record<Corner, { x: number; y: number }> = {
 
 // Mobile's card grid is `max-w-[380px]`; the ring alone (~318px) is
 // narrower than that, so the grid — not the ring — sets the natural width.
-const MOBILE_CARD_GRID_MAX_W = 380;
-const MOBILE_CARD_GRID_GAP = 12;
-const MOBILE_RING_TO_CARDS_GAP = 40; // mt-10
+const MOBILE_CARD_GRID_MAX_W = 360;
+const MOBILE_CARD_GRID_GAP = 10;
+const MOBILE_RING_TO_CARDS_GAP = 16; // mt-4
 
 // =========================================
 // NATURAL (UNSCALED) FOOTPRINT
@@ -332,9 +332,9 @@ const MOBILE_RING_TO_CARDS_GAP = 40; // mt-10
 // =========================================
 export function getNaturalSize(tier: Tier): { width: number; height: number } {
   if (tier === 'mobile') {
-    const ringD = (MOBILE_ORBIT.radius + MOBILE_ORBIT.tile / 2 + 20) * 2;
+    const ringD = (MOBILE_ORBIT.radius + MOBILE_ORBIT.tile / 2 + 12) * 2;
     const cardW = (MOBILE_CARD_GRID_MAX_W - MOBILE_CARD_GRID_GAP) / 2;
-    const cardsGridH = cardW * (2 / 3) * 2 + MOBILE_CARD_GRID_GAP;
+    const cardsGridH = cardW * (10 / 16) * 2 + MOBILE_CARD_GRID_GAP;
     return {
       width: Math.max(ringD, MOBILE_CARD_GRID_MAX_W),
       height: ringD + MOBILE_RING_TO_CARDS_GAP + cardsGridH,
@@ -390,25 +390,25 @@ export function Boom3DAppUniverseVisual({
         // Compact text stacked above a small, text-free icon ring —
         // a genuinely different layout, not the desktop one shrunk down.
         // =========================================
-        <div className="flex flex-col items-center px-4">
-          <div className="relative" style={{ width: (MOBILE_ORBIT.radius + MOBILE_ORBIT.tile / 2 + 20) * 2, height: (MOBILE_ORBIT.radius + MOBILE_ORBIT.tile / 2 + 20) * 2 }}>
+        <div className="flex flex-col items-center px-2">
+          <div className="relative" style={{ width: (MOBILE_ORBIT.radius + MOBILE_ORBIT.tile / 2 + 12) * 2, height: (MOBILE_ORBIT.radius + MOBILE_ORBIT.tile / 2 + 12) * 2 }}>
             <motion.svg
               className="absolute inset-0 pointer-events-none"
               width="100%"
               height="100%"
-              viewBox={`0 0 ${(MOBILE_ORBIT.radius + MOBILE_ORBIT.tile / 2 + 20) * 2} ${(MOBILE_ORBIT.radius + MOBILE_ORBIT.tile / 2 + 20) * 2}`}
+              viewBox={`0 0 ${(MOBILE_ORBIT.radius + MOBILE_ORBIT.tile / 2 + 12) * 2} ${(MOBILE_ORBIT.radius + MOBILE_ORBIT.tile / 2 + 12) * 2}`}
               initial={skipEntrance ? false : { opacity: 0 }}
               animate={play ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: prefersReducedMotion ? 0.3 : 0.8, delay: skipEntrance ? 0 : RINGS_DELAY, ease: 'easeOut' }}
             >
               <defs>
                 <linearGradient id="boom3d-ring-gradient-m" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#6366f1" stopOpacity="0.4" />
-                  <stop offset="100%" stopColor="#38bdf8" stopOpacity="0.3" />
+                  <stop offset="0%" stopColor="#6366f1" stopOpacity="0.45" />
+                  <stop offset="100%" stopColor="#38bdf8" stopOpacity="0.35" />
                 </linearGradient>
               </defs>
-              <circle cx="50%" cy="50%" r={MOBILE_ORBIT.radius * 0.95} fill="none" stroke="url(#boom3d-ring-gradient-m)" strokeWidth="1" />
-              <circle cx="50%" cy="50%" r={MOBILE_ORBIT.radius * 0.6} fill="none" stroke="#94a3b8" strokeOpacity="0.18" strokeWidth="1" />
+              <circle cx="50%" cy="50%" r={MOBILE_ORBIT.radius} fill="none" stroke="url(#boom3d-ring-gradient-m)" strokeWidth="1.5" />
+              <circle cx="50%" cy="50%" r={MOBILE_ORBIT.radius * 0.62} fill="none" stroke="#94a3b8" strokeOpacity="0.22" strokeWidth="1" />
             </motion.svg>
 
             <SoundWavePulse radiusX={MOBILE_ORBIT.radius} radiusY={MOBILE_ORBIT.radius} prefersReducedMotion={prefersReducedMotion} />
@@ -419,7 +419,7 @@ export function Boom3DAppUniverseVisual({
                 animate={play ? { opacity: 1, scale: 1, y: 0, filter: 'blur(0px)' } : { opacity: 0, scale: 0.65, y: 12, filter: 'blur(6px)' }}
                 transition={{ duration: prefersReducedMotion ? 0.3 : 0.85, delay: skipEntrance ? 0 : LOGO_DELAY, ease: EASE_PREMIUM }}
               >
-                <Boom3DLogoBadge size={76} />
+                <Boom3DLogoBadge size={MOBILE_ORBIT.logo} />
               </motion.div>
             </div>
 
@@ -446,13 +446,13 @@ export function Boom3DAppUniverseVisual({
               of floating corners — there's no room to float them clear
               of the icon ring on a narrow viewport.
               ========================================= */}
-          <div className="mt-10 w-full max-w-[380px] grid grid-cols-2 gap-3">
+          <div className="mt-4 w-full max-w-[360px] grid grid-cols-2 gap-2.5">
             {CARDS.map((card, i) => (
               <motion.div
                 key={card.key}
-                className="aspect-[3/2] rounded-2xl shadow-[0_14px_30px_rgba(30,20,60,0.14)] overflow-hidden"
-                initial={skipEntrance ? false : { opacity: 0, y: 24, scale: 0.92 }}
-                animate={play ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 24, scale: 0.92 }}
+                className="aspect-[16/10] rounded-2xl shadow-[0_10px_25px_rgba(30,20,60,0.12)] overflow-hidden"
+                initial={skipEntrance ? false : { opacity: 0, y: 20, scale: 0.94 }}
+                animate={play ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 20, scale: 0.94 }}
                 transition={{ duration: prefersReducedMotion ? 0.3 : 0.7, delay: skipEntrance ? 0 : CARDS_START + i * CARD_STAGGER, ease: EASE_PREMIUM }}
               >
                 {card.render()}
