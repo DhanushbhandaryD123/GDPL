@@ -5,23 +5,27 @@ import { useTranslation } from 'react-i18next';
 import { onSplashComplete } from '@/lib/splashScreenSignal';
 
 // =========================================
-// 24-HOUR OFFER COUNTDOWN
-// Uses the user's local browser time.
-// Rolling 24-hour countdown beginning from the user's current local date/time.
-// Updates every second; handles hours, minutes, seconds correctly.
-// When expired, resets gracefully to next 24-hour period.
+// MIDNIGHT 12:00 AM OFFER COUNTDOWN
+// Starts every day and counts down until night 12:00 AM (midnight).
+// Automatically rolls over to the next 24-hour cycle every night at 12:00 AM.
 // =========================================
+function getNextMidnight() {
+  const d = new Date();
+  d.setHours(24, 0, 0, 0); // Next 12:00 AM midnight
+  return d.getTime();
+}
+
 function use24HourCountdown() {
-  const [expiry, setExpiry] = useState(() => Date.now() + 24 * 60 * 60 * 1000);
+  const [expiry, setExpiry] = useState(getNextMidnight);
   const [now, setNow] = useState(() => Date.now());
 
   useEffect(() => {
     const id = setInterval(() => {
       const current = Date.now();
       setNow(current);
-      // Gracefully handle expiry – rolling reset to next 24h
+      // When it crosses night 12:00 AM (midnight), roll over to the next midnight
       if (current >= expiry) {
-        setExpiry(current + 24 * 60 * 60 * 1000);
+        setExpiry(getNextMidnight());
       }
     }, 1000);
     return () => clearInterval(id);
@@ -414,7 +418,7 @@ export function CaptoHero() {
             <span className="font-black text-[#1c2331] text-[1.4rem] md:text-[1.6rem] lg:text-[1.75rem] tracking-tight">
               {t('capto.hero.avail')} <span ref={offerTextRef} className="text-[#1c2331]">75% OFF</span>
             </span>
-            <span className="text-[11px] md:text-xs text-gray-500 font-medium mt-0.5">{isExpired ? 'Offer renewed – 24h left' : 'Limited time • Ends in 24 hours'}</span>
+            <span className="text-[11px] md:text-xs text-gray-500 font-medium mt-0.5">{isExpired ? 'Offer renewed – Ends at 12:00 AM' : 'Limited time • Ends tonight at 12:00 AM'}</span>
           </motion.div>
         </motion.div>
       </div>
