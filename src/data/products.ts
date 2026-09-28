@@ -33,7 +33,11 @@ export interface Product {
   variants: Partial<Record<Platform, ProductPlatformVariant>>;
 }
 
-export const PRODUCTS = {
+export type KnownProductKey = 'boom3d' | 'boom2' | 'capto' | 'audimix' | 'boomMobile' | 'vizmato' | 'audion' | 'cameraplus' | 'camerapluspro';
+
+export type ProductCatalog = Record<KnownProductKey, Product> & Record<string, Product>;
+
+export const PRODUCTS: ProductCatalog = {
   boom3d: {
     id: 'boom3d',
     name: 'Boom 3D',

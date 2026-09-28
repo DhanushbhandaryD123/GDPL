@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const faqs = [
   {
@@ -80,6 +81,7 @@ const faqs = [
 ];
 
 export function Boom3DFAQ() {
+  const { t } = useTranslation();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggle = (idx: number) => {
@@ -102,7 +104,7 @@ export function Boom3DFAQ() {
         {/* Header */}
         <div className="text-center mb-14">
           <p className="text-4xl md:text-5xl font-bold tracking-widest uppercase text-[#000000] mb-3">
-            FAQ
+            {t('nav.faq', 'FAQ')}
           </p>
         </div>
 

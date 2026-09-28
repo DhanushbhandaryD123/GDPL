@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTranslation } from 'react-i18next';
-import { PRODUCTS, formatPrice } from '../../data/products';
+import { formatPrice } from '../../data/products';
+import { useProduct } from '../../hooks/useProducts';
 
 type OSMode = 'mac' | 'windows';
 
@@ -20,6 +21,7 @@ const WindowsIcon = ({ className }: { className?: string }) => (
 export function Boom3DOSSelector() {
   const { t } = useTranslation();
   const [os, setOS] = useState<OSMode>('mac');
+  const boom3d = useProduct('boom3d');
 
   return (
     <section id="os-selector" className="bg-white py-10 lg:py-12 flex flex-col items-center justify-center relative z-20 overflow-hidden">
@@ -99,8 +101,8 @@ export function Boom3DOSSelector() {
                 {t('boom3d.os_selector.buy_now')}
               </button>
               <div className="mt-4 flex flex-col items-center">
-                <span className="text-[#111111] text-[15px] font-bold">{formatPrice(PRODUCTS.boom3d.pricing, 'discounted')}</span>
-                <span className="text-gray-400 text-sm line-through font-medium">{formatPrice(PRODUCTS.boom3d.pricing, 'original')}</span>
+                <span className="text-[#111111] text-[15px] font-bold">{formatPrice(boom3d?.pricing, 'discounted')}</span>
+                <span className="text-gray-400 text-sm line-through font-medium">{formatPrice(boom3d?.pricing, 'original')}</span>
               </div>
             </div>
           </motion.div>

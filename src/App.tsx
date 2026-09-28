@@ -36,34 +36,36 @@ import { FeaturedWork } from './components/home/FeaturedWork';
 import { GetInspired } from './components/home/GetInspired';
 import { FloatingSocials } from './components/layout/FloatingSocials';
 import { ScrollToTopButton } from './components/layout/ScrollToTopButton';
-import { PRODUCTS, getVariant, formatPrice } from './data/products';
+import { getVariant, formatPrice } from './data/products';
+import { useProducts } from './hooks/useProducts';
 
 function Home() {
   const domain = import.meta.env.VITE_SITE_URL || '';
   const { t } = useTranslation();
+  const { products } = useProducts();
 
   const macApps: AppItem[] = [
-    { id: 'm1', name: PRODUCTS.boom3d.name, description: t('home.apps.boom3d_desc'), iconPath: getVariant(PRODUCTS.boom3d, 'mac').icon, priceOriginal: formatPrice(PRODUCTS.boom3d.pricing, 'original'), priceDiscounted: formatPrice(PRODUCTS.boom3d.pricing, 'discounted'), learnMoreUrl: getVariant(PRODUCTS.boom3d, 'mac').route },
-    { id: 'm2', name: PRODUCTS.boom2.name, description: t('home.apps.boom2_desc'), iconPath: getVariant(PRODUCTS.boom2, 'mac').icon, learnMoreUrl: getVariant(PRODUCTS.boom2, 'mac').route },
-    { id: 'm3', name: PRODUCTS.capto.name, description: t('home.apps.capto_desc'), iconPath: getVariant(PRODUCTS.capto, 'mac').icon, priceOriginal: formatPrice(PRODUCTS.capto.pricing, 'original'), priceDiscounted: formatPrice(PRODUCTS.capto.pricing, 'discounted'), learnMoreUrl: getVariant(PRODUCTS.capto, 'mac').route },
+    { id: 'm1', name: products.boom3d.name, description: t('home.apps.boom3d_desc'), iconPath: getVariant(products.boom3d, 'mac').icon, priceOriginal: formatPrice(products.boom3d.pricing, 'original'), priceDiscounted: formatPrice(products.boom3d.pricing, 'discounted'), learnMoreUrl: getVariant(products.boom3d, 'mac').route },
+    { id: 'm2', name: products.boom2.name, description: t('home.apps.boom2_desc'), iconPath: getVariant(products.boom2, 'mac').icon, learnMoreUrl: getVariant(products.boom2, 'mac').route },
+    { id: 'm3', name: products.capto.name, description: t('home.apps.capto_desc'), iconPath: getVariant(products.capto, 'mac').icon, priceOriginal: formatPrice(products.capto.pricing, 'original'), priceDiscounted: formatPrice(products.capto.pricing, 'discounted'), learnMoreUrl: getVariant(products.capto, 'mac').route },
   ];
 
   const windowsApps: AppItem[] = [
-    { id: 'w1', name: PRODUCTS.boom3d.name, description: t('home.apps.boom3d_desc'), iconPath: getVariant(PRODUCTS.boom3d, 'windows').icon, priceOriginal: formatPrice(PRODUCTS.boom3d.pricing, 'original'), priceDiscounted: formatPrice(PRODUCTS.boom3d.pricing, 'discounted'), learnMoreUrl: getVariant(PRODUCTS.boom3d, 'windows').route },
-    { id: 'w2', name: PRODUCTS.audimix.name, description: t('home.apps.audimix_desc'), iconPath: getVariant(PRODUCTS.audimix, 'windows').icon, learnMoreUrl: getVariant(PRODUCTS.audimix, 'windows').route },
-    { id: 'w3', name: PRODUCTS.capto.name, description: t('home.apps.capto_desc'), iconPath: getVariant(PRODUCTS.capto, 'windows').icon, priceOriginal: formatPrice(PRODUCTS.capto.pricing, 'original'), priceDiscounted: formatPrice(PRODUCTS.capto.pricing, 'discounted'), learnMoreUrl: getVariant(PRODUCTS.capto, 'windows').route },
+    { id: 'w1', name: products.boom3d.name, description: t('home.apps.boom3d_desc'), iconPath: getVariant(products.boom3d, 'windows').icon, priceOriginal: formatPrice(products.boom3d.pricing, 'original'), priceDiscounted: formatPrice(products.boom3d.pricing, 'discounted'), learnMoreUrl: getVariant(products.boom3d, 'windows').route },
+    { id: 'w2', name: products.audimix.name, description: t('home.apps.audimix_desc'), iconPath: getVariant(products.audimix, 'windows').icon, learnMoreUrl: getVariant(products.audimix, 'windows').route },
+    { id: 'w3', name: products.capto.name, description: t('home.apps.capto_desc'), iconPath: getVariant(products.capto, 'windows').icon, priceOriginal: formatPrice(products.capto.pricing, 'original'), priceDiscounted: formatPrice(products.capto.pricing, 'discounted'), learnMoreUrl: getVariant(products.capto, 'windows').route },
   ];
 
   const iosApps: AppItem[] = [
-    { id: 'i1', name: 'Boom for iOS', description: t('home.apps.boom_ios_desc'), iconPath: getVariant(PRODUCTS.boomMobile, 'ios').icon, priceDiscounted: t('home.apps.free_with_iap'), learnMoreUrl: getVariant(PRODUCTS.boomMobile, 'ios').route },
-    { id: 'i2', name: PRODUCTS.vizmato.name, description: t('home.apps.vizmato_desc'), iconPath: getVariant(PRODUCTS.vizmato, 'ios').icon, priceDiscounted: t('home.apps.free_with_iap'), learnMoreUrl: getVariant(PRODUCTS.vizmato, 'ios').route },
-    { id: 'i3', name: PRODUCTS.audion.name, description: t('home.apps.audion_desc'), iconPath: getVariant(PRODUCTS.audion, 'ios').icon, priceDiscounted: t('home.apps.free_with_iap'), learnMoreUrl: getVariant(PRODUCTS.audion, 'ios').route },
+    { id: 'i1', name: 'Boom for iOS', description: t('home.apps.boom_ios_desc'), iconPath: getVariant(products.boomMobile, 'ios').icon, priceDiscounted: t('home.apps.free_with_iap'), learnMoreUrl: getVariant(products.boomMobile, 'ios').route },
+    { id: 'i2', name: products.vizmato.name, description: t('home.apps.vizmato_desc'), iconPath: getVariant(products.vizmato, 'ios').icon, priceDiscounted: t('home.apps.free_with_iap'), learnMoreUrl: getVariant(products.vizmato, 'ios').route },
+    { id: 'i3', name: products.audion.name, description: t('home.apps.audion_desc'), iconPath: getVariant(products.audion, 'ios').icon, priceDiscounted: t('home.apps.free_with_iap'), learnMoreUrl: getVariant(products.audion, 'ios').route },
   ];
 
   const androidApps: AppItem[] = [
-    { id: 'a1', name: 'Boom for Android', description: t('home.apps.boom_ios_desc'), iconPath: getVariant(PRODUCTS.boomMobile, 'android').icon, priceDiscounted: t('home.apps.free_with_iap'), learnMoreUrl: getVariant(PRODUCTS.boomMobile, 'android').route },
-    { id: 'a2', name: PRODUCTS.vizmato.name, description: t('home.apps.vizmato_desc'), iconPath: getVariant(PRODUCTS.vizmato, 'android').icon, priceDiscounted: t('home.apps.free_with_iap'), learnMoreUrl: getVariant(PRODUCTS.vizmato, 'android').route },
-    { id: 'a3', name: PRODUCTS.audion.name, description: t('home.apps.audion_android_desc'), iconPath: getVariant(PRODUCTS.audion, 'android').icon, priceDiscounted: t('home.apps.free_with_iap'), learnMoreUrl: getVariant(PRODUCTS.audion, 'android').route },
+    { id: 'a1', name: 'Boom for Android', description: t('home.apps.boom_ios_desc'), iconPath: getVariant(products.boomMobile, 'android').icon, priceDiscounted: t('home.apps.free_with_iap'), learnMoreUrl: getVariant(products.boomMobile, 'android').route },
+    { id: 'a2', name: products.vizmato.name, description: t('home.apps.vizmato_desc'), iconPath: getVariant(products.vizmato, 'android').icon, priceDiscounted: t('home.apps.free_with_iap'), learnMoreUrl: getVariant(products.vizmato, 'android').route },
+    { id: 'a3', name: products.audion.name, description: t('home.apps.audion_android_desc'), iconPath: getVariant(products.audion, 'android').icon, priceDiscounted: t('home.apps.free_with_iap'), learnMoreUrl: getVariant(products.audion, 'android').route },
   ];
 
   return (

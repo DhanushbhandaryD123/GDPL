@@ -10,6 +10,7 @@
     "postbuild": "echo 'Build pipeline complete.'",
     "vercel-build": "echo 'Skipping Vercel build to use locally generated static files.'",
     "lint": "eslint .",
+    "test:api": "node scripts/test-products-api.cjs",
     "preview": "vite preview"
   },
   "reactSnap": {

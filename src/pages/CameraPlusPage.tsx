@@ -32,7 +32,7 @@ export function CameraPlusPage() {
       
       <Navbar />
 
-      <main>
+      <main> 
         <HeroBanner />
         <QuickFeaturesBar />
         <CameraPlusLumySlider />

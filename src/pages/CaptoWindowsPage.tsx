@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../components/layout/Navbar';
 import { Hero } from '../components/captowindows/Hero';
+import { MetricsBar } from '../components/captowindows/MetricsBar';
 import { FeaturesGrid } from '../components/captowindows/FeaturesGrid';
 import { Showcase } from '../components/captowindows/Showcase';
 import { VideoTutorials } from '../components/captowindows/VideoTutorials';
@@ -34,6 +35,7 @@ export function CaptoWindowsPage() {
 
       <main className="overflow-x-clip">
         <Hero />
+        <MetricsBar />
         <FeaturesGrid />
         <Showcase />
         <VideoTutorials />

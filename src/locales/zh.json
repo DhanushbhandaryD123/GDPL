@@ -1342,5 +1342,11 @@
     "found_results_prefix": "找到",
     "found_results_suffix": "条相关结果：",
     "no_results": "未找到相关结果。"
+  },
+  "notFound": {
+    "pageTitle": "404 - 页面未找到 | Global Delight",
+    "title": "页面未找到",
+    "description": "您查找的页面可能已被删除、更名或暂时无法访问。",
+    "returnHome": "返回首页"
   }
 }

@@ -1342,5 +1342,11 @@
     "found_results_prefix": "Encontrados",
     "found_results_suffix": "resultados para",
     "no_results": "Nenhum resultado encontrado."
+  },
+  "notFound": {
+    "pageTitle": "404 - Página não encontrada | Global Delight",
+    "title": "Página não encontrada",
+    "description": "A página que você está procurando pode ter sido removida, ter seu nome alterado ou estar temporariamente indisponível.",
+    "returnHome": "Voltar ao início"
   }
 }

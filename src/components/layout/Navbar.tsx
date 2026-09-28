@@ -215,24 +215,23 @@ export function Navbar({ logoUrl }: NavbarProps) {
           <button
             type="button"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="flex items-center gap-2.5 sm:gap-3.5 cursor-pointer group focus:outline-none select-none text-left"
-            aria-label={`${productConfig.name} - Back to top`}
+            className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none cursor-pointer"
+            aria-label={`Scroll to top of ${productConfig.name}`}
           >
             <img
               src={productConfig.logo}
               alt={productConfig.logoAlt}
-              className={`h-8 sm:h-9 md:h-10 ${productConfig.showNameWithLogo ? 'w-8 sm:w-9 md:w-10 rounded-xl object-cover shadow-sm' : 'w-auto object-contain drop-shadow-sm'} transition-transform duration-200 group-hover:scale-105`}
-              loading="eager"
+              className="h-7 sm:h-8 md:h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
             {productConfig.showNameWithLogo && (
-              <span className="font-bold text-lg sm:text-xl md:text-2xl text-gray-900 tracking-tight transition-colors group-hover:text-[#1390FB]">
+              <span className="font-bold text-base sm:text-lg md:text-xl text-gray-900 tracking-tight">
                 {productConfig.name}
               </span>
             )}
           </button>
 
-          {/* Right: Only the Call-to-Action button */}
-          <div className="flex items-center">
+          {/* Right: CTA Button */}
+          <div className="flex items-center gap-3">
             <button
               type="button"
               onClick={() => {
