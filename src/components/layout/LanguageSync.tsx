@@ -3,11 +3,14 @@ import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { SUPPORTED_LANGS, rememberLanguage, getRememberedLanguage } from '@/lib/languagePreference';
 
-export function LanguageSync() {
-  const { lang } = useParams<{ lang?: string }>();
+export function LanguageSync({ routeLang }: { routeLang?: string } = {}) {
+  const { lang: paramLang } = useParams<{ lang?: string }>();
   const { i18n } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
+
+  const pathPrefix = location.pathname.split('/')[1];
+  const lang = routeLang || (paramLang && SUPPORTED_LANGS.includes(paramLang) ? paramLang : (SUPPORTED_LANGS.includes(pathPrefix) ? pathPrefix : undefined));
 
   useEffect(() => {
     if (lang && SUPPORTED_LANGS.includes(lang)) {
@@ -26,9 +29,11 @@ export function LanguageSync() {
     // back to English on every refresh/new page.
     const remembered = getRememberedLanguage();
     if (remembered && remembered !== 'en' && SUPPORTED_LANGS.includes(remembered)) {
-      const target = location.pathname === '/' ? `/${remembered}` : `/${remembered}${location.pathname}`;
-      navigate(`${target}${location.search}${location.hash}`, { replace: true });
-      return;
+      if (location.pathname !== '/404' && !location.pathname.endsWith('/404')) {
+        const target = location.pathname === '/' ? `/${remembered}` : `/${remembered}${location.pathname}`;
+        navigate(`${target}${location.search}${location.hash}`, { replace: true });
+        return;
+      }
     }
 
     if (i18n.resolvedLanguage !== 'en') {

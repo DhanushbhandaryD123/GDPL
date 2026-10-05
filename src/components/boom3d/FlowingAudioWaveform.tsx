@@ -178,9 +178,9 @@ export const FlowingAudioWaveform: React.FC<FlowingAudioWaveformProps> = ({
         <motion.path
           animate={{
             d: [
-              `M 0,${centerY} C ${width * 0.15},${centerY - curveAmp} ${width * 0.3},${centerY + curveAmp} ${width * 0.45},${centerY - curveAmp} C ${width * 0.6},${centerY + curveAmp} ${width * 0.75},${centerY - curveAmp} ${width * 0.9},${centerY + curveAmp * 0.7} ${width},${centerY}`,
-              `M 0,${centerY} C ${width * 0.15},${centerY + curveAmp} ${width * 0.3},${centerY - curveAmp} ${width * 0.45},${centerY + curveAmp} C ${width * 0.6},${centerY - curveAmp} ${width * 0.75},${centerY + curveAmp} ${width * 0.9},${centerY - curveAmp * 0.7} ${width},${centerY}`,
-              `M 0,${centerY} C ${width * 0.15},${centerY - curveAmp} ${width * 0.3},${centerY + curveAmp} ${width * 0.45},${centerY - curveAmp} C ${width * 0.6},${centerY + curveAmp} ${width * 0.75},${centerY - curveAmp} ${width * 0.9},${centerY + curveAmp * 0.7} ${width},${centerY}`,
+              `M 0,${centerY} C ${width * 0.12},${centerY - curveAmp} ${width * 0.22},${centerY + curveAmp} ${width * 0.34},${centerY} C ${width * 0.46},${centerY - curveAmp} ${width * 0.58},${centerY + curveAmp} ${width * 0.70},${centerY} C ${width * 0.80},${centerY - curveAmp * 0.7} ${width * 0.90},${centerY + curveAmp * 0.7} ${width},${centerY}`,
+              `M 0,${centerY} C ${width * 0.12},${centerY + curveAmp} ${width * 0.22},${centerY - curveAmp} ${width * 0.34},${centerY} C ${width * 0.46},${centerY + curveAmp} ${width * 0.58},${centerY - curveAmp} ${width * 0.70},${centerY} C ${width * 0.80},${centerY + curveAmp * 0.7} ${width * 0.90},${centerY - curveAmp * 0.7} ${width},${centerY}`,
+              `M 0,${centerY} C ${width * 0.12},${centerY - curveAmp} ${width * 0.22},${centerY + curveAmp} ${width * 0.34},${centerY} C ${width * 0.46},${centerY - curveAmp} ${width * 0.58},${centerY + curveAmp} ${width * 0.70},${centerY} C ${width * 0.80},${centerY - curveAmp * 0.7} ${width * 0.90},${centerY + curveAmp * 0.7} ${width},${centerY}`,
             ],
           }}
           transition={{
@@ -203,9 +203,9 @@ export const FlowingAudioWaveform: React.FC<FlowingAudioWaveformProps> = ({
         <motion.path
           animate={{
             d: [
-              `M 0,${centerY} C ${width * 0.18},${centerY + curveAmp * 0.85} ${width * 0.35},${centerY - curveAmp * 0.85} ${width * 0.52},${centerY + curveAmp * 0.85} C ${width * 0.68},${centerY - curveAmp * 0.85} ${width * 0.82},${centerY + curveAmp * 0.85} ${width * 0.93},${centerY - curveAmp * 0.4} ${width},${centerY}`,
-              `M 0,${centerY} C ${width * 0.18},${centerY - curveAmp * 0.85} ${width * 0.35},${centerY + curveAmp * 0.85} ${width * 0.52},${centerY - curveAmp * 0.85} C ${width * 0.68},${centerY + curveAmp * 0.85} ${width * 0.82},${centerY - curveAmp * 0.85} ${width * 0.93},${centerY + curveAmp * 0.4} ${width},${centerY}`,
-              `M 0,${centerY} C ${width * 0.18},${centerY + curveAmp * 0.85} ${width * 0.35},${centerY - curveAmp * 0.85} ${width * 0.52},${centerY + curveAmp * 0.85} C ${width * 0.68},${centerY - curveAmp * 0.85} ${width * 0.82},${centerY + curveAmp * 0.85} ${width * 0.93},${centerY - curveAmp * 0.4} ${width},${centerY}`,
+              `M 0,${centerY} C ${width * 0.14},${centerY + curveAmp * 0.85} ${width * 0.25},${centerY - curveAmp * 0.85} ${width * 0.38},${centerY} C ${width * 0.50},${centerY + curveAmp * 0.85} ${width * 0.62},${centerY - curveAmp * 0.85} ${width * 0.74},${centerY} C ${width * 0.83},${centerY + curveAmp * 0.6} ${width * 0.92},${centerY - curveAmp * 0.4} ${width},${centerY}`,
+              `M 0,${centerY} C ${width * 0.14},${centerY - curveAmp * 0.85} ${width * 0.25},${centerY + curveAmp * 0.85} ${width * 0.38},${centerY} C ${width * 0.50},${centerY - curveAmp * 0.85} ${width * 0.62},${centerY + curveAmp * 0.85} ${width * 0.74},${centerY} C ${width * 0.83},${centerY - curveAmp * 0.6} ${width * 0.92},${centerY + curveAmp * 0.4} ${width},${centerY}`,
+              `M 0,${centerY} C ${width * 0.14},${centerY + curveAmp * 0.85} ${width * 0.25},${centerY - curveAmp * 0.85} ${width * 0.38},${centerY} C ${width * 0.50},${centerY + curveAmp * 0.85} ${width * 0.62},${centerY - curveAmp * 0.85} ${width * 0.74},${centerY} C ${width * 0.83},${centerY + curveAmp * 0.6} ${width * 0.92},${centerY - curveAmp * 0.4} ${width},${centerY}`,
             ],
           }}
           transition={{
@@ -230,9 +230,9 @@ export const FlowingAudioWaveform: React.FC<FlowingAudioWaveformProps> = ({
         <motion.path
           animate={{
             d: [
-              `M 0,${centerY} C ${width * 0.14},${centerY - curveAmp * 0.65} ${width * 0.32},${centerY + curveAmp * 0.65} ${width * 0.5},${centerY - curveAmp * 0.65} C ${width * 0.66},${centerY + curveAmp * 0.65} ${width * 0.8},${centerY - curveAmp * 0.55} ${width * 0.92},${centerY + curveAmp * 0.25} ${width},${centerY}`,
-              `M 0,${centerY} C ${width * 0.14},${centerY + curveAmp * 0.65} ${width * 0.32},${centerY - curveAmp * 0.65} ${width * 0.5},${centerY + curveAmp * 0.65} C ${width * 0.66},${centerY - curveAmp * 0.65} ${width * 0.8},${centerY + curveAmp * 0.55} ${width * 0.92},${centerY - curveAmp * 0.25} ${width},${centerY}`,
-              `M 0,${centerY} C ${width * 0.14},${centerY - curveAmp * 0.65} ${width * 0.32},${centerY + curveAmp * 0.65} ${width * 0.5},${centerY - curveAmp * 0.65} C ${width * 0.66},${centerY + curveAmp * 0.65} ${width * 0.8},${centerY - curveAmp * 0.55} ${width * 0.92},${centerY + curveAmp * 0.25} ${width},${centerY}`,
+              `M 0,${centerY} C ${width * 0.11},${centerY - curveAmp * 0.65} ${width * 0.23},${centerY + curveAmp * 0.65} ${width * 0.36},${centerY} C ${width * 0.48},${centerY - curveAmp * 0.65} ${width * 0.60},${centerY + curveAmp * 0.65} ${width * 0.72},${centerY} C ${width * 0.82},${centerY - curveAmp * 0.55} ${width * 0.92},${centerY + curveAmp * 0.3} ${width},${centerY}`,
+              `M 0,${centerY} C ${width * 0.11},${centerY + curveAmp * 0.65} ${width * 0.23},${centerY - curveAmp * 0.65} ${width * 0.36},${centerY} C ${width * 0.48},${centerY + curveAmp * 0.65} ${width * 0.60},${centerY - curveAmp * 0.65} ${width * 0.72},${centerY} C ${width * 0.82},${centerY + curveAmp * 0.55} ${width * 0.92},${centerY - curveAmp * 0.3} ${width},${centerY}`,
+              `M 0,${centerY} C ${width * 0.11},${centerY - curveAmp * 0.65} ${width * 0.23},${centerY + curveAmp * 0.65} ${width * 0.36},${centerY} C ${width * 0.48},${centerY - curveAmp * 0.65} ${width * 0.60},${centerY + curveAmp * 0.65} ${width * 0.72},${centerY} C ${width * 0.82},${centerY - curveAmp * 0.55} ${width * 0.92},${centerY + curveAmp * 0.3} ${width},${centerY}`,
             ],
           }}
           transition={{

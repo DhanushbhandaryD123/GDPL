@@ -244,7 +244,8 @@ const CaptoUninstallDevicePage = lazy(() => import('./pages/CaptoUninstallDevice
 const CaptoHelpVideosPage = lazy(() => import('./pages/CaptoHelpVideosPage').then(m => ({ default: m.CaptoHelpVideosPage })));
 
 import { LanguageSync } from './components/layout/LanguageSync';
-import { rememberLanguage } from './lib/languagePreference';
+import { rememberLanguage, SUPPORTED_LANGS } from './lib/languagePreference';
+const NON_EN_LANGS = SUPPORTED_LANGS.filter(l => l !== 'en');
 import { markSplashComplete } from './lib/splashScreenSignal';
 import { SEOHead } from './components/layout/SEOHead';
 import { NotFound } from './pages/NotFound';
@@ -423,15 +424,23 @@ function App() {
               </>
             } />
           ))}
-          {appRoutes.map((route, i) => (
-            <Route key={`lang-${i}`} path={`/:lang${route.path === '/' ? '' : route.path}`} element={
-              <>
-                <LanguageSync />
-                {route.element}
-              </>
-            } />
+          {/* Supported non-English localized routes */}
+          {NON_EN_LANGS.map(lang =>
+            appRoutes.map((route, i) => (
+              <Route key={`lang-${lang}-${i}`} path={`/${lang}${route.path === '/' ? '' : route.path}`} element={
+                <>
+                  <LanguageSync routeLang={lang} />
+                  {route.element}
+                </>
+              } />
+            ))
+          )}
+          {/* Explicit 404 routes */}
+          <Route path="/404" element={<NotFound />} />
+          {NON_EN_LANGS.map(lang => (
+            <Route key={`404-${lang}`} path={`/${lang}/404`} element={<NotFound />} />
           ))}
-          {/* Catch-all 404 route */}
+          {/* Catch-all 404 route for unmatched paths */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
