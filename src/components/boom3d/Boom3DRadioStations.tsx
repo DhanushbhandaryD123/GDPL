@@ -163,12 +163,13 @@ export function Boom3DRadioStations() {
           >
             {/* The Photorealistic 3D Globe Render */}
             <img
-              src="/boom3D/radio-globe-white.jpg"
+              src="/boom3D/radio-globe-white.webp"
               alt="Boom 3D Global Radio Stations Holographic Globe"
               className="w-full h-auto max-h-[500px] object-contain drop-shadow-[0_20px_45px_rgba(0,0,0,0.08)] rounded-3xl"
               width={1792}
               height={1024}
               loading="lazy"
+              decoding="async"
             />
 
             {/* Hotspot Floating City Badge: London */}

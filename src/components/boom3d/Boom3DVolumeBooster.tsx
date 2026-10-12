@@ -115,8 +115,12 @@ export function Boom3DVolumeBooster() {
             <div className="relative w-full aspect-[4/3] flex items-center justify-center">
               {/* Clean Transparent Laptop */}
               <img
-                src="/boom3D/macbook-transparent.png"
+                src="/boom3D/macbook-transparent.webp"
                 alt="Realistic modern open laptop with metallic unibody"
+                loading="lazy"
+                decoding="async"
+                width={260}
+                height={195}
                 className="w-full h-full object-contain pointer-events-none drop-shadow-[0_10px_25px_rgba(0,0,0,0.12)]"
               />
             </div>
@@ -355,10 +359,14 @@ export function Boom3DVolumeBooster() {
               }}
               className="relative w-full aspect-[3/4] flex items-center justify-center"
             >
-              {/* Photorealistic Stacked Studio Monitors Render (100% Transparent PNG) */}
+              {/* Photorealistic Stacked Studio Monitors Render (100% Transparent WebP) */}
               <img
-                src="/boom3D/speakers-transparent.png"
+                src="/boom3D/speakers-transparent.webp"
                 alt="Two professional studio monitor speakers stacked vertically with vibrating metallic blue cones"
+                loading="lazy"
+                decoding="async"
+                width={260}
+                height={347}
                 className="w-full h-full object-contain pointer-events-none drop-shadow-[0_10px_25px_rgba(0,0,0,0.14)]"
               />
             </motion.div>

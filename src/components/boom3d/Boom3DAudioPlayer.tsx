@@ -77,6 +77,9 @@ export function Boom3DAudioPlayer() {
       audioRef.current.pause();
       setIsPlaying(false);
     } else {
+      if (!audioRef.current.src || !audioRef.current.src.endsWith(currentTrack.src)) {
+        audioRef.current.src = currentTrack.src;
+      }
       audioRef.current
         .play()
         .then(() => setIsPlaying(true))
@@ -85,13 +88,23 @@ export function Boom3DAudioPlayer() {
   };
 
   const handleNext = () => {
-    setCurrentTrackIndex((prev) => (prev + 1) % tracks.length);
+    const nextIndex = (currentTrackIndex + 1) % tracks.length;
+    setCurrentTrackIndex(nextIndex);
     setProgress(0);
+    if (audioRef.current && isPlaying) {
+      audioRef.current.src = tracks[nextIndex].src;
+      audioRef.current.play().catch(() => {});
+    }
   };
 
   const handlePrev = () => {
-    setCurrentTrackIndex((prev) => (prev - 1 + tracks.length) % tracks.length);
+    const prevIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
+    setCurrentTrackIndex(prevIndex);
     setProgress(0);
+    if (audioRef.current && isPlaying) {
+      audioRef.current.src = tracks[prevIndex].src;
+      audioRef.current.play().catch(() => {});
+    }
   };
 
   useEffect(() => {
@@ -105,7 +118,7 @@ export function Boom3DAudioPlayer() {
       audioRef.current.src = currentTrack.src;
       audioRef.current.play().catch(() => {});
     }
-  }, [currentTrackIndex]);
+  }, [currentTrackIndex, isPlaying]);
 
   return (
     <section
@@ -115,7 +128,7 @@ export function Boom3DAudioPlayer() {
       {/* Hidden native audio element */}
       <audio
         ref={audioRef}
-        src={currentTrack.src}
+        preload="none"
         onTimeUpdate={() => {
           if (audioRef.current && audioRef.current.duration) {
             setProgress((audioRef.current.currentTime / audioRef.current.duration) * 100);
@@ -169,12 +182,13 @@ export function Boom3DAudioPlayer() {
             className="relative flex items-center justify-center"
           >
             <img
-              src="/boom3D/state-of-the-art-player.jpg"
+              src="/boom3D/state-of-the-art-player.webp"
               alt="Boom 3D State of the Art Audio Player and Studio Headphones"
               className="w-full h-auto max-h-[520px] object-contain drop-shadow-[0_20px_45px_rgba(0,0,0,0.12)] rounded-3xl"
               width={1792}
               height={1024}
               loading="lazy"
+              decoding="async"
             />
 
            

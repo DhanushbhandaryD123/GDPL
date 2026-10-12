@@ -84,6 +84,7 @@ export function Boom3DSurround() {
           >
             <video
               src="/boom3D/video3D.mp4"
+              preload="none"
               autoPlay={navigator.userAgent !== 'ReactSnap'}
               loop
               muted
