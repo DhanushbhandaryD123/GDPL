@@ -269,7 +269,7 @@ export function FeaturedWork() {
                       className="w-full text-center py-2 bg-white hover:bg-gray-100 text-gray-900 text-[11px] md:text-xs font-bold rounded-full transition-all cursor-pointer pointer-events-auto shadow-[0_4px_10px_rgba(0,0,0,0.15)] hover:scale-105 active:scale-95"
                       onClick={(e) => e.stopPropagation()}
                     >
-                      {t('home.featured_work.learn_more')}
+                      Explore {card.name}
                     </Link>
                     <button
                       onClick={(e) => {

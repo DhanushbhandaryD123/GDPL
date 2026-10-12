@@ -241,7 +241,7 @@ export function HeroDesktop() {
                 </div>
 
                 <Link to="/boom3D" aria-label="Explore Boom 3D" className="bg-[#00e5ff] text-black font-semibold px-8 py-2.5 rounded-full text-[15px] hover:bg-[#00ccdd] hover:scale-105 active:scale-95 transition shadow-[0_0_20px_rgba(0,229,255,0.4)] mt-4 pointer-events-auto">
-                  {t('home.hero_banner.learn_more')}
+                  Explore Boom 3D
                 </Link>
               </motion.div>
             </motion.div>
@@ -280,7 +280,7 @@ export function HeroDesktop() {
                     <img src="/button/en-us dark.svg" alt="Get it from Microsoft Store" className="h-12 md:h-14 lg:h-16 w-auto object-contain drop-shadow-xl" width={180} height={52} loading="eager" />
                   </a>
                   <Link to="/boom3D" aria-label="Explore Boom 3D" className="h-12 md:h-14 lg:h-16 px-8 md:px-10 rounded-xl md:rounded-2xl text-base md:text-lg font-bold flex items-center justify-center border-2 border-white/90 text-white hover:bg-white hover:text-black hover:border-white transition-all duration-300 shadow-xl hover:scale-105 active:scale-95 w-full sm:w-auto whitespace-nowrap backdrop-blur-md text-center shrink-0">
-                    {t('home.hero_banner.learn_more')}
+                    Explore Boom 3D
                   </Link>
                 </div>
               </motion.div>
@@ -315,7 +315,7 @@ export function HeroDesktop() {
                     aria-label="Explore Boom 2"
                     className="bg-[#00e5ff] text-black font-semibold px-8 py-2.5 rounded-full text-[15px] hover:bg-[#00ccdd] hover:scale-105 active:scale-95 transition shadow-[0_0_20px_rgba(0,229,255,0.4)] block text-center"
                   >
-                    {t('home.hero_banner.learn_more')}
+                    Explore Boom 2
                   </Link>
                 </div>
               </motion.div>
