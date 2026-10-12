@@ -51,6 +51,8 @@ function AppCardMobile({ app, index }: { app: AppItem, index: number }) {
             <img 
               src={app.iconPath} 
               alt={app.name} 
+              width={56}
+              height={56}
               className="w-14 h-14 drop-shadow-md object-contain"
               onError={(e) => {
                 (e.target as HTMLImageElement).style.display = 'none';
@@ -73,29 +75,29 @@ function AppCardMobile({ app, index }: { app: AppItem, index: number }) {
 
         {/* Back */}
         <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-white rounded-2xl shadow-[0_4px_16px_rgb(0,0,0,0.12)] border border-gray-100 p-4 flex flex-col items-center justify-center gap-2 text-center">
-          <img src={app.iconPath} alt={app.name} className="w-12 h-12 drop-shadow-md object-contain mb-2" loading="lazy" />
+          <img src={app.iconPath} alt={app.name} width={48} height={48} className="w-12 h-12 drop-shadow-md object-contain mb-2" loading="lazy" />
           
           <h3 className="text-sm font-bold text-[#003057] leading-tight">{app.name}</h3>
           
           <div className="mt-2 flex flex-col items-center justify-center gap-1">
             {app.priceOriginal && app.priceDiscounted ? (
               <div className="flex flex-col items-center gap-0.5">
-                <span className="text-[#3b82f6] line-through font-medium text-xs opacity-80">
+                <span className="text-[#1d4ed8] line-through font-semibold text-xs">
                   {app.priceOriginal}
                 </span>
-                <span className="text-[#3b82f6] font-bold text-sm">
+                <span className="text-[#1e40af] font-bold text-sm">
                   {app.priceDiscounted}
                 </span>
               </div>
             ) : app.priceDiscounted ? (
               <div className="mb-1">
-                <span className="text-[#3b82f6] font-bold text-sm">
+                <span className="text-[#1e40af] font-bold text-sm">
                   {app.priceDiscounted}
                 </span>
               </div>
             ) : null}
             <span className="bg-[#003057] text-white px-4 py-2 rounded-full text-xs font-bold group-hover/link:bg-blue-600 transition-colors block mt-3 shadow-md">
-              {t('home.categories.learn_more')} →
+              {t('home.categories.learn_more')}<span className="sr-only"> about {app.name}</span> →
             </span>
           </div>
         </div>
@@ -106,8 +108,11 @@ function AppCardMobile({ app, index }: { app: AppItem, index: number }) {
 }
 
 export function AppCategoryMobile({ title, deviceImageAlt, deviceImagePath, titleClassName, apps }: AppCategoryMobileProps) {
+  const devWidth = title.includes('iOS') ? 160 : title.includes('Android') ? 130 : 180;
+  const devHeight = title.includes('iOS') ? 220 : title.includes('Android') ? 170 : 140;
+
   return (
-    <section className="py-6 w-full px-2 overflow-hidden border-b border-gray-100 last:border-0">
+    <section className="py-6 w-full px-2 overflow-hidden border-b border-gray-100 last:border-0 [content-visibility:auto] [contain-intrinsic-size:1px_380px]">
       <div className="flex flex-col items-center justify-center gap-6 w-full">
         {/* Device Image (Top Center) */}
         <motion.div 
@@ -121,6 +126,8 @@ export function AppCategoryMobile({ title, deviceImageAlt, deviceImagePath, titl
             <img 
               src={deviceImagePath} 
               alt={deviceImageAlt} 
+              width={devWidth}
+              height={devHeight}
               className={`w-full object-contain drop-shadow-xl mx-auto transition-transform hover:scale-105 ${
                 title.includes('iOS') 
                   ? 'max-w-[160px] max-h-[220px]' 

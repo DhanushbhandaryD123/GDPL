@@ -40,6 +40,8 @@ function AppCardDesktop({ app, index }: { app: AppItem, index: number }) {
             <img 
               src={app.iconPath} 
               alt={app.name} 
+              width={80}
+              height={80}
               className="w-20 h-20 drop-shadow-md object-contain"
               onError={(e) => {
                 (e.target as HTMLImageElement).style.display = 'none';
@@ -61,7 +63,7 @@ function AppCardDesktop({ app, index }: { app: AppItem, index: number }) {
         {/* Back */}
         <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-gray-100 p-6 flex flex-col items-center justify-center">
           <div className="w-28 h-28 flex justify-center items-center rounded-3xl mb-2">
-            <img src={app.iconPath} alt={app.name} className="w-20 h-20 drop-shadow-md object-contain" loading="lazy" />
+            <img src={app.iconPath} alt={app.name} width={80} height={80} className="w-20 h-20 drop-shadow-md object-contain" loading="lazy" />
           </div>
           <h3 className="text-xl font-bold text-[#003057]">{app.name}</h3>
           
@@ -69,31 +71,31 @@ function AppCardDesktop({ app, index }: { app: AppItem, index: number }) {
             {app.priceOriginal && app.priceDiscounted ? (
               <>
                 <div className="flex items-center justify-center gap-2 mb-2">
-                  <span className="text-[#3b82f6] line-through font-bold text-[15px]">
+                  <span className="text-[#1d4ed8] line-through font-bold text-[15px]">
                     {app.priceOriginal}
                   </span>
-                  <span className="text-[#3b82f6] font-bold text-lg">
+                  <span className="text-[#1e40af] font-bold text-lg">
                     {app.priceDiscounted}
                   </span>
                 </div>
                 <span className="text-[#d95d39] text-base font-semibold group-hover/link:text-orange-700 transition-colors">
-                  {t('home.categories.learn_more')}
+                  {t('home.categories.learn_more')}<span className="sr-only"> about {app.name}</span>
                 </span>
               </>
             ) : app.priceDiscounted ? (
               <>
                 <div className="mb-1">
-                  <span className="text-[#3b82f6] font-bold text-[14px]">
+                  <span className="text-[#1e40af] font-bold text-[14px]">
                     {app.priceDiscounted}
                   </span>
                 </div>
                 <span className="text-[#d95d39] text-base font-semibold group-hover/link:text-orange-700 transition-colors">
-                  {t('home.categories.learn_more')}
+                  {t('home.categories.learn_more')}<span className="sr-only"> about {app.name}</span>
                 </span>
               </>
             ) : (
               <span className="mt-2 text-[#d95d39] text-base font-semibold group-hover/link:text-orange-700 transition-colors">
-                Learn More
+                Learn More<span className="sr-only"> about {app.name}</span>
               </span>
             )}
           </div>
@@ -106,7 +108,7 @@ function AppCardDesktop({ app, index }: { app: AppItem, index: number }) {
 
 export function AppCategoryDesktop({ title, deviceImageAlt, deviceImagePath, imageClassName, titleClassName, apps, reverse = false }: AppCategoryDesktopProps) {
   return (
-    <section className="py-8 w-full max-w-[1920px] mx-auto px-4">
+    <section className="py-8 w-full max-w-[1920px] mx-auto px-4 [content-visibility:auto] [contain-intrinsic-size:1px_450px]">
       {/* Title */}
       <h2 className="text-3xl font-bold mb-4 text-gray-900 ml-12 sr-only">{title}</h2>
       
@@ -123,6 +125,8 @@ export function AppCategoryDesktop({ title, deviceImageAlt, deviceImagePath, ima
             <img 
               src={deviceImagePath} 
               alt={deviceImageAlt} 
+              width={450}
+              height={300}
               className={`w-full object-contain drop-shadow-xl mx-auto ${imageClassName || 'max-w-[220px] max-h-[350px]'}`}
               onError={(e) => {
                 (e.target as HTMLImageElement).style.display = 'none';

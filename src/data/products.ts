@@ -43,7 +43,7 @@ export const PRODUCTS: ProductCatalog = {
     name: 'Boom 3D',
     pricing: { currency: 'INR', original: '3700', discounted: '925.37' },
     variants: {
-      mac: { icon: '/apps/Boom3D-mac.jpeg', route: '/boom3D' },
+      mac: { icon: '/apps/Boom3D-mac.webp', route: '/boom3D' },
       windows: { icon: '/apps/boom3d-window.webp', route: '/boom3D' },
     },
   },
@@ -51,7 +51,7 @@ export const PRODUCTS: ProductCatalog = {
     id: 'boom2',
     name: 'Boom 2',
     variants: {
-      mac: { icon: '/apps/Boom2-mac.jpeg', route: '/boom2' },
+      mac: { icon: '/apps/Boom2-mac.webp', route: '/boom2' },
     },
   },
   capto: {
@@ -59,39 +59,39 @@ export const PRODUCTS: ProductCatalog = {
     name: 'Capto',
     pricing: { currency: 'INR', original: '1499', discounted: '749.5' },
     variants: {
-      mac: { icon: '/apps/Capto-mac.jpeg', route: '/capto' },
-      windows: { icon: '/apps/Capto-window.jpeg', route: '/capto/windows' },
+      mac: { icon: '/apps/Capto-mac.webp', route: '/capto' },
+      windows: { icon: '/apps/Capto-window.webp', route: '/capto/windows' },
     },
   },
   audimix: {
     id: 'audimix',
     name: 'AuDimix',
     variants: {
-      windows: { icon: '/apps/AuDimix-Window.jpeg', route: '/audimix' },
+      windows: { icon: '/apps/AuDimix-Window.webp', route: '/audimix' },
     },
   },
   boomMobile: {
     id: 'boomMobile',
     name: 'Boom for Mobile',
     variants: {
-      ios: { icon: '/apps/Boom for iOS.jpeg', route: '/boomformobile' },
-      android: { icon: '/apps/Boom for Android.jpeg', route: '/boomformobile' },
+      ios: { icon: '/apps/Boom for iOS.webp', route: '/boomformobile' },
+      android: { icon: '/apps/Boom for Android.webp', route: '/boomformobile' },
     },
   },
   vizmato: {
     id: 'vizmato',
     name: 'Vizmato',
     variants: {
-      ios: { icon: '/apps/Vizmato-ios.jpeg', route: '/vizmato' },
-      android: { icon: '/apps/Vizmato-android.png', route: '/vizmato' },
+      ios: { icon: '/apps/Vizmato-ios.webp', route: '/vizmato' },
+      android: { icon: '/apps/Vizmato-android.webp', route: '/vizmato' },
     },
   },
   audion: {
     id: 'audion',
     name: 'AudiOn',
     variants: {
-      ios: { icon: '/apps/AudiOn-ios.jpeg', route: '/audion' },
-      android: { icon: '/apps/AudiON-android.png', route: '/audion' },
+      ios: { icon: '/apps/AudiOn-ios.webp', route: '/audion' },
+      android: { icon: '/apps/AudiON-android.webp', route: '/audion' },
     },
   },
   cameraplus: {

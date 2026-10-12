@@ -31,22 +31,35 @@ export function HeroMobile() {
 
 
       <div className="w-full relative overflow-hidden text-white shadow-2xl bg-black rounded-2xl sm:rounded-3xl h-[290px] sm:h-[330px] flex flex-col justify-end">
-        {/* Background Image Layer */}
-        <AnimatePresence>
-          <motion.div 
-            key={currentImageIndex}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}
-            className={`absolute inset-0 bg-no-repeat bg-cover ${
-              heroImages[currentImageIndex] === '/hero/hero-banner-mobile.webp' 
-                ? 'bg-[65%_center]' 
-                : 'bg-center'
-            }`}
-            style={{ backgroundImage: `url('${heroImages[currentImageIndex]}')` }}
-          />
-        </AnimatePresence>
+        {/* Static Base Image Layer for Instant LCP Discovery & 0ms Render Delay */}
+        <img
+          src={heroImages[0]}
+          alt="Global Delight Hero"
+          fetchPriority="high"
+          decoding="async"
+          width={768}
+          height={330}
+          className="absolute inset-0 w-full h-full object-cover object-[65%_center] z-0"
+        />
+
+        {/* Carousel Transition for subsequent slides */}
+        {currentImageIndex > 0 && (
+          <AnimatePresence>
+            <motion.div 
+              key={currentImageIndex}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.8 }}
+              className={`absolute inset-0 z-10 bg-no-repeat bg-cover ${
+                heroImages[currentImageIndex] === '/hero/hero-banner-mobile.webp' 
+                  ? 'bg-[65%_center]' 
+                  : 'bg-center'
+              }`}
+              style={{ backgroundImage: `url('${heroImages[currentImageIndex]}')` }}
+            />
+          </AnimatePresence>
+        )}
 
         {/* Boom 3D Logo (Only for the first slide) */}
         <AnimatePresence>
@@ -56,8 +69,10 @@ export function HeroMobile() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.8 }}
-              src="/hero/Hlogo/Bom3D-logo.png"
+              src="/hero/Hlogo/Bom3D-logo.webp"
               alt="Boom 3D"
+              width={80}
+              height={30}
               className="absolute top-3 left-3 w-16 sm:w-20 object-contain z-30 pointer-events-none drop-shadow-xl"
             />
           )}
@@ -294,19 +309,23 @@ export function HeroMobile() {
           )}
         </AnimatePresence>
 
-        {/* Pagination Dots - small, thin and elegant */}
-        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-30">
+        {/* Pagination Dots - with accessible 36px touch targets while visually identical */}
+        <div className="absolute bottom-1 left-1/2 -translate-x-1/2 flex items-center gap-1 z-30">
           {heroImages.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentImageIndex(index)}
-              className={`transition-all duration-300 rounded-full ${
-                currentImageIndex === index 
-                  ? 'w-3.5 h-[2.5px] bg-white' 
-                  : 'w-1.5 h-[2.5px] bg-white/40 hover:bg-white/70'
-              }`}
+              className="p-2 flex items-center justify-center cursor-pointer"
               aria-label={`Go to slide ${index + 1}`}
-            />
+            >
+              <span
+                className={`block transition-all duration-300 rounded-full ${
+                  currentImageIndex === index 
+                    ? 'w-3.5 h-[2.5px] bg-white' 
+                    : 'w-1.5 h-[2.5px] bg-white/40 hover:bg-white/70'
+                }`}
+              />
+            </button>
           ))}
         </div>
       </div>

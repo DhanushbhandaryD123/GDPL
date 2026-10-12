@@ -170,7 +170,7 @@ export function Footer({ logoUrl }: FooterProps = {}) {
           </div>
 
           {/* Copyright */}
-          <p className="text-[11px] text-gray-500 font-medium leading-loose">
+          <p className="text-[11px] text-gray-400 font-medium leading-loose">
             {t('footer.copyright')}
           </p>
         </div>

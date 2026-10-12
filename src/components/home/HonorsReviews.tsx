@@ -8,25 +8,25 @@ export function HonorsReviews() {
   const [isTrophyClicked, setIsTrophyClicked] = useState(false);
 
   const honorLogos = [
-    { name: 'Honor', file: '/reviews/honor.png' },
-    { name: 'Honor 1', file: '/reviews/honor1.png' },
-    { name: 'Honor 2', file: '/reviews/honor2.png' },
-    { name: 'Honor 3', file: '/reviews/honor3.png' },
-    { name: 'Honor 4', file: '/reviews/honor4.png' }
+    { name: 'Honor', file: '/reviews/honor.webp' },
+    { name: 'Honor 1', file: '/reviews/honor1.webp' },
+    { name: 'Honor 2', file: '/reviews/honor2.webp' },
+    { name: 'Honor 3', file: '/reviews/honor3.webp' },
+    { name: 'Honor 4', file: '/reviews/honor4.webp' }
   ];
 
   const reviewLogos = [
-    { name: 'Review 1', file: '/reviews/review1.png' },
-    { name: 'Review 2', file: '/reviews/review2.png' },
-    { name: 'Review 3', file: '/reviews/review3.png' },
-    { name: 'Review 4', file: '/reviews/review4.png' },
-    { name: 'Review 5', file: '/reviews/review5.png' },
-    { name: 'Review 6', file: '/reviews/review6.png' },
-    { name: 'Review 7', file: '/reviews/review7.png' }
+    { name: 'Review 1', file: '/reviews/review1.webp' },
+    { name: 'Review 2', file: '/reviews/review2.webp' },
+    { name: 'Review 3', file: '/reviews/review3.webp' },
+    { name: 'Review 4', file: '/reviews/review4.webp' },
+    { name: 'Review 5', file: '/reviews/review5.webp' },
+    { name: 'Review 6', file: '/reviews/review6.webp' },
+    { name: 'Review 7', file: '/reviews/review7.webp' }
   ];
 
   return (
-    <section className="py-20 bg-white relative">
+    <section className="py-20 bg-white relative [content-visibility:auto] [contain-intrinsic-size:1px_600px]">
       {/* SVG Definitions for Icon Gradients */}
       <svg width="0" height="0" className="absolute">
         <defs>
@@ -63,7 +63,7 @@ export function HonorsReviews() {
                   onError={(e) => {
                     (e.target as HTMLImageElement).style.display = 'none';
                     (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden');
-                  }} width={237} height={229} loading="lazy"
+                  }} width={96} height={96} loading="lazy"
                 />
                 <span className="hidden text-2xl font-bold text-gray-400">{logo.name}</span>
               </div>
@@ -91,7 +91,7 @@ export function HonorsReviews() {
                   onError={(e) => {
                     (e.target as HTMLImageElement).style.display = 'none';
                     (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden');
-                  }} width={237} height={229} loading="lazy"
+                  }} width={64} height={48} loading="lazy"
                 />
                 <span className="hidden text-xl font-bold text-gray-400">{logo.name}</span>
               </div>

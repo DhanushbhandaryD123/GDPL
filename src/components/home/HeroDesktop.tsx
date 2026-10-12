@@ -31,22 +31,35 @@ export function HeroDesktop() {
 
 
       <div className="w-full relative overflow-hidden text-white shadow-2xl bg-black rounded-3xl md:rounded-[2.5rem] h-[520px] sm:h-[560px] md:h-[620px] lg:h-[660px] xl:h-[700px] flex items-center">
-        {/* Background Image Layer with scale to crop out white borders */}
-        <AnimatePresence>
-          <motion.div 
-            key={currentImageIndex}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}
-            className={`absolute inset-0 bg-no-repeat ${
-              heroImages[currentImageIndex] === '/hero/hero-banner.webp'
-                ? 'bg-cover bg-center scale-[1.08]'
-                : 'bg-[length:100%_100%]'
-            }`}
-            style={{ backgroundImage: `url('${heroImages[currentImageIndex]}')` }}
-          />
-        </AnimatePresence>
+        {/* Static Base Image Layer for Instant Desktop LCP Discovery & 0ms Render Delay */}
+        <img
+          src={heroImages[0]}
+          alt="Global Delight Desktop Hero"
+          fetchPriority="high"
+          decoding="async"
+          width={1920}
+          height={700}
+          className="absolute inset-0 w-full h-full object-cover object-center scale-[1.08] z-0"
+        />
+
+        {/* Carousel Transition for subsequent slides */}
+        {currentImageIndex > 0 && (
+          <AnimatePresence>
+            <motion.div 
+              key={currentImageIndex}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.8 }}
+              className={`absolute inset-0 z-10 bg-no-repeat ${
+                heroImages[currentImageIndex] === '/hero/hero-banner.webp'
+                  ? 'bg-cover bg-center scale-[1.08]'
+                  : 'bg-[length:100%_100%]'
+              }`}
+              style={{ backgroundImage: `url('${heroImages[currentImageIndex]}')` }}
+            />
+          </AnimatePresence>
+        )}
 
         {/* Boom 3D Logo (Only for the first slide) */}
         <AnimatePresence>
@@ -57,8 +70,10 @@ export function HeroDesktop() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              src="/hero/Hlogo/Bom3D-logo.png"
+              src="/hero/Hlogo/Bom3D-logo.webp"
               alt="Boom 3D"
+              width={288}
+              height={70}
               className="absolute hidden lg:block top-8 xl:top-12 left-[25%] xl:left-[28%] -translate-x-1/2 w-48 lg:w-64 xl:w-72 object-contain z-20 pointer-events-none"
             />
           )}
@@ -307,19 +322,23 @@ export function HeroDesktop() {
           </AnimatePresence>
         </div>
 
-        {/* Pagination Dots */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 z-20">
+        {/* Pagination Dots - with accessible touch target */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-1 z-20">
           {heroImages.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentImageIndex(index)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                currentImageIndex === index 
-                  ? 'bg-white border-2 border-white scale-110' 
-                  : 'bg-transparent border-2 border-white/80 hover:border-white'
-              }`}
+              className="p-2 flex items-center justify-center cursor-pointer"
               aria-label={`Go to slide ${index + 1}`}
-            />
+            >
+              <span
+                className={`block w-2 h-2 rounded-full transition-all duration-300 ${
+                  currentImageIndex === index 
+                    ? 'bg-white border-2 border-white scale-110' 
+                    : 'bg-transparent border-2 border-white/80 hover:border-white'
+                }`}
+              />
+            </button>
           ))}
         </div>
       </div>

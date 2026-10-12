@@ -149,7 +149,7 @@ async function prerender() {
   async function renderRoute(page, route, workerId, isRetry = false) {
     const url = `http://127.0.0.1:${PORT}${route}`;
     await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 15000 });
-    
+   
     await page.waitForFunction(() => {
       const root = document.getElementById('root');
       if (!root) return false;

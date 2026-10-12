@@ -16,7 +16,7 @@ export function GetInspired() {
     description: t(`home.get_inspired.people.${slot.key}_desc`),
   }));
   return (
-    <section className="w-full bg-white py-8 lg:py-12 px-3 md:px-6 flex flex-col items-center font-sans">
+    <section className="w-full bg-white py-8 lg:py-12 px-3 md:px-6 flex flex-col items-center font-sans [content-visibility:auto] [contain-intrinsic-size:1px_500px]">
       {/* Boxed blue container */}
       <div className="w-full max-w-[1400px] bg-[#cceaff] rounded-[32px] md:rounded-[48px] py-12 lg:py-20 overflow-hidden flex flex-col items-center relative">
         <div className="w-full flex flex-col items-center text-center px-4">
@@ -79,7 +79,7 @@ export function GetInspired() {
                       className="w-full h-full object-cover opacity-95"
                       onError={(e) => {
                         (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(person.name)}&background=000&color=fff&size=256`;
-                      }} width={1536} height={1024} loading="lazy"
+                      }} width={250} height={178} loading="lazy"
                     />
                   </div>
 

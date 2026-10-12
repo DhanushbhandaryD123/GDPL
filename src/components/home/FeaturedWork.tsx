@@ -186,7 +186,7 @@ export function FeaturedWork() {
   };
 
   return (
-    <section ref={ref} className="bg-white pt-12 md:pt-16 pb-20 md:pb-24 overflow-hidden relative min-h-[550px] md:min-h-[650px] flex flex-col font-sans">
+    <section ref={ref} className="bg-white pt-12 md:pt-16 pb-20 md:pb-24 overflow-hidden relative min-h-[550px] md:min-h-[650px] flex flex-col font-sans [content-visibility:auto] [contain-intrinsic-size:1px_650px]">
       {/* Radial gradient glow near the top - lightened for white background */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-400/10 blur-[120px] rounded-full pointer-events-none" />
 
@@ -243,7 +243,7 @@ export function FeaturedWork() {
                   <img 
                     src={card.logo} 
                     alt={card.name} 
-                    className="w-full h-full object-cover pointer-events-none" width={1054} height={1492} loading="lazy" 
+                    className="w-full h-full object-cover pointer-events-none" width={220} height={320} loading="lazy" 
                   />
                 </div>
 
@@ -268,7 +268,7 @@ export function FeaturedWork() {
                       className="w-full text-center py-2 bg-white hover:bg-gray-100 text-gray-900 text-[11px] md:text-xs font-bold rounded-full transition-all cursor-pointer pointer-events-auto shadow-[0_4px_10px_rgba(0,0,0,0.15)] hover:scale-105 active:scale-95"
                       onClick={(e) => e.stopPropagation()}
                     >
-                      {t('home.featured_work.learn_more')}
+                      {t('home.featured_work.learn_more')}<span className="sr-only"> about {card.name}</span>
                     </Link>
                     <button
                       onClick={(e) => {
