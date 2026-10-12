@@ -27,25 +27,49 @@ function walk(dir) {
 }
 
 function processFile(filePath) {
-  const html = fs.readFileSync(filePath, 'utf8');
+  let html = fs.readFileSync(filePath, 'utf8');
   const titleMatch = html.match(/<title>[\s\S]*?<\/title>/);
   if (!titleMatch) return;
 
   const tags = html.match(TAG_RE);
-  if (!tags || tags.length === 0) return;
-
-  let result = html;
-  for (const tag of tags) {
-    result = result.replace(tag, '');
+  if (tags && tags.length > 0) {
+    for (const tag of tags) {
+      html = html.replace(tag, '');
+    }
+    const insertAfter = titleMatch[0];
+    const formattedTags = tags.map((tag) => `\n    ${tag}`).join('');
+    html = html.replace(insertAfter, insertAfter + formattedTags + '\n');
   }
 
-  const insertAfter = titleMatch[0];
-  const formattedTags = tags.map((tag) => `\n    ${tag}`).join('');
-  result = result.replace(insertAfter, insertAfter + formattedTags + '\n');
+  // Find module scripts and modulepreloads in <head>
+  const scriptMatch = html.match(/<script type="module"[^>]*src="\/assets\/index-[^"]+\.js"><\/script>/);
+  const modulePreloads = html.match(/<link rel="modulepreload"[^>]*\/?>/g) || [];
 
-  if (result !== html) {
-    fs.writeFileSync(filePath, result, 'utf8');
+  if (scriptMatch) {
+    // Remove script tag and modulepreloads from <head>
+    html = html.replace(scriptMatch[0], '');
+    for (const mp of modulePreloads) {
+      html = html.replace(mp, '');
+    }
+
+    // Insert module script at the very end of <body> for 0ms render-blocking FCP
+    const closingBody = '</body>';
+    if (html.includes(closingBody)) {
+      html = html.replace(closingBody, `  ${scriptMatch[0]}\n${closingBody}`);
+    }
   }
+
+  // Ensure stylesheet is high in <head> for fastest CSS discovery
+  const cssMatch = html.match(/<link rel="stylesheet"[^>]*href="\/assets\/index-[^"]+\.css"[^>]*\/?>/);
+  if (cssMatch) {
+    html = html.replace(cssMatch[0], '');
+    const headEnd = '</head>';
+    if (html.includes(headEnd)) {
+      html = html.replace(headEnd, `  ${cssMatch[0]}\n${headEnd}`);
+    }
+  }
+
+  fs.writeFileSync(filePath, html, 'utf8');
 }
 
 walk(distDir);
