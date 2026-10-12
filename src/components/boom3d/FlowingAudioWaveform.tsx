@@ -1,5 +1,5 @@
-import React, { useMemo } from 'react';
-import { motion } from 'motion/react';
+import React, { useMemo, useRef } from 'react';
+import { motion, useInView } from 'motion/react';
 
 export interface FlowingAudioWaveformProps {
   /**
@@ -99,9 +99,11 @@ export const FlowingAudioWaveform: React.FC<FlowingAudioWaveformProps> = ({
 
   // Unique ID prefix for gradients to prevent collisions
   const uid = useMemo(() => `flow-wave-${Math.random().toString(36).substr(2, 6)}`, []);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { margin: '150px' });
 
   return (
-    <div className={`relative w-full h-full flex items-center justify-center pointer-events-none select-none ${className}`}>
+    <div ref={containerRef} className={`relative w-full h-full flex items-center justify-center pointer-events-none select-none ${className}`}>
       <svg
         viewBox={`0 0 ${width} ${viewBoxHeight}`}
         preserveAspectRatio="none"
@@ -152,15 +154,26 @@ export const FlowingAudioWaveform: React.FC<FlowingAudioWaveformProps> = ({
               key={i}
               x1={x}
               x2={x}
-              animate={{
-                y1: [centerY - (h - delta) / 2, centerY - (h + delta) / 2, centerY - (h - delta) / 2],
-                y2: [centerY + (h - delta) / 2, centerY + (h + delta) / 2, centerY + (h - delta) / 2],
-              }}
-              transition={{
-                duration: 0.35 + (i % 5) * 0.06,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
+              animate={
+                isInView
+                  ? {
+                      y1: [centerY - (h - delta) / 2, centerY - (h + delta) / 2, centerY - (h - delta) / 2],
+                      y2: [centerY + (h - delta) / 2, centerY + (h + delta) / 2, centerY + (h - delta) / 2],
+                    }
+                  : {
+                      y1: centerY - h / 2,
+                      y2: centerY + h / 2,
+                    }
+              }
+              transition={
+                isInView
+                  ? {
+                      duration: 0.35 + (i % 5) * 0.06,
+                      repeat: Infinity,
+                      ease: 'easeInOut',
+                    }
+                  : undefined
+              }
               stroke="#f43f85"
               strokeWidth={2.4 + progress * 0.6}
               strokeLinecap="round"
@@ -176,18 +189,28 @@ export const FlowingAudioWaveform: React.FC<FlowingAudioWaveformProps> = ({
         {/* 2. SINE CURVE 1: SMOOTH FLOWING CYAN LINE                        */}
         {/* ================================================================ */}
         <motion.path
-          animate={{
-            d: [
-              `M 0,${centerY} C ${width * 0.12},${centerY - curveAmp} ${width * 0.22},${centerY + curveAmp} ${width * 0.34},${centerY} C ${width * 0.46},${centerY - curveAmp} ${width * 0.58},${centerY + curveAmp} ${width * 0.70},${centerY} C ${width * 0.80},${centerY - curveAmp * 0.7} ${width * 0.90},${centerY + curveAmp * 0.7} ${width},${centerY}`,
-              `M 0,${centerY} C ${width * 0.12},${centerY + curveAmp} ${width * 0.22},${centerY - curveAmp} ${width * 0.34},${centerY} C ${width * 0.46},${centerY + curveAmp} ${width * 0.58},${centerY - curveAmp} ${width * 0.70},${centerY} C ${width * 0.80},${centerY + curveAmp * 0.7} ${width * 0.90},${centerY - curveAmp * 0.7} ${width},${centerY}`,
-              `M 0,${centerY} C ${width * 0.12},${centerY - curveAmp} ${width * 0.22},${centerY + curveAmp} ${width * 0.34},${centerY} C ${width * 0.46},${centerY - curveAmp} ${width * 0.58},${centerY + curveAmp} ${width * 0.70},${centerY} C ${width * 0.80},${centerY - curveAmp * 0.7} ${width * 0.90},${centerY + curveAmp * 0.7} ${width},${centerY}`,
-            ],
-          }}
-          transition={{
-            duration: 1.6 / waveSpeed,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
+          animate={
+            isInView
+              ? {
+                  d: [
+                    `M 0,${centerY} C ${width * 0.12},${centerY - curveAmp} ${width * 0.22},${centerY + curveAmp} ${width * 0.34},${centerY} C ${width * 0.46},${centerY - curveAmp} ${width * 0.58},${centerY + curveAmp} ${width * 0.70},${centerY} C ${width * 0.80},${centerY - curveAmp * 0.7} ${width * 0.90},${centerY + curveAmp * 0.7} ${width},${centerY}`,
+                    `M 0,${centerY} C ${width * 0.12},${centerY + curveAmp} ${width * 0.22},${centerY - curveAmp} ${width * 0.34},${centerY} C ${width * 0.46},${centerY + curveAmp} ${width * 0.58},${centerY - curveAmp} ${width * 0.70},${centerY} C ${width * 0.80},${centerY + curveAmp * 0.7} ${width * 0.90},${centerY - curveAmp * 0.7} ${width},${centerY}`,
+                    `M 0,${centerY} C ${width * 0.12},${centerY - curveAmp} ${width * 0.22},${centerY + curveAmp} ${width * 0.34},${centerY} C ${width * 0.46},${centerY - curveAmp} ${width * 0.58},${centerY + curveAmp} ${width * 0.70},${centerY} C ${width * 0.80},${centerY - curveAmp * 0.7} ${width * 0.90},${centerY + curveAmp * 0.7} ${width},${centerY}`,
+                  ],
+                }
+              : {
+                  d: `M 0,${centerY} C ${width * 0.12},${centerY - curveAmp} ${width * 0.22},${centerY + curveAmp} ${width * 0.34},${centerY} C ${width * 0.46},${centerY - curveAmp} ${width * 0.58},${centerY + curveAmp} ${width * 0.70},${centerY} C ${width * 0.80},${centerY - curveAmp * 0.7} ${width * 0.90},${centerY + curveAmp * 0.7} ${width},${centerY}`,
+                }
+          }
+          transition={
+            isInView
+              ? {
+                  duration: 1.6 / waveSpeed,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                }
+              : undefined
+          }
           fill="none"
           stroke={`url(#${uid}-cyan)`}
           strokeWidth={1.8 + progress * 0.7}
@@ -201,19 +224,29 @@ export const FlowingAudioWaveform: React.FC<FlowingAudioWaveformProps> = ({
         {/* 3. SINE CURVE 2: SMOOTH FLOWING PURPLE / VIOLET LINE              */}
         {/* ================================================================ */}
         <motion.path
-          animate={{
-            d: [
-              `M 0,${centerY} C ${width * 0.14},${centerY + curveAmp * 0.85} ${width * 0.25},${centerY - curveAmp * 0.85} ${width * 0.38},${centerY} C ${width * 0.50},${centerY + curveAmp * 0.85} ${width * 0.62},${centerY - curveAmp * 0.85} ${width * 0.74},${centerY} C ${width * 0.83},${centerY + curveAmp * 0.6} ${width * 0.92},${centerY - curveAmp * 0.4} ${width},${centerY}`,
-              `M 0,${centerY} C ${width * 0.14},${centerY - curveAmp * 0.85} ${width * 0.25},${centerY + curveAmp * 0.85} ${width * 0.38},${centerY} C ${width * 0.50},${centerY - curveAmp * 0.85} ${width * 0.62},${centerY + curveAmp * 0.85} ${width * 0.74},${centerY} C ${width * 0.83},${centerY - curveAmp * 0.6} ${width * 0.92},${centerY + curveAmp * 0.4} ${width},${centerY}`,
-              `M 0,${centerY} C ${width * 0.14},${centerY + curveAmp * 0.85} ${width * 0.25},${centerY - curveAmp * 0.85} ${width * 0.38},${centerY} C ${width * 0.50},${centerY + curveAmp * 0.85} ${width * 0.62},${centerY - curveAmp * 0.85} ${width * 0.74},${centerY} C ${width * 0.83},${centerY + curveAmp * 0.6} ${width * 0.92},${centerY - curveAmp * 0.4} ${width},${centerY}`,
-            ],
-          }}
-          transition={{
-            duration: 2.0 / waveSpeed,
-            repeat: Infinity,
-            delay: 0.15,
-            ease: 'easeInOut',
-          }}
+          animate={
+            isInView
+              ? {
+                  d: [
+                    `M 0,${centerY} C ${width * 0.14},${centerY + curveAmp * 0.85} ${width * 0.25},${centerY - curveAmp * 0.85} ${width * 0.38},${centerY} C ${width * 0.50},${centerY + curveAmp * 0.85} ${width * 0.62},${centerY - curveAmp * 0.85} ${width * 0.74},${centerY} C ${width * 0.83},${centerY + curveAmp * 0.6} ${width * 0.92},${centerY - curveAmp * 0.4} ${width},${centerY}`,
+                    `M 0,${centerY} C ${width * 0.14},${centerY - curveAmp * 0.85} ${width * 0.25},${centerY + curveAmp * 0.85} ${width * 0.38},${centerY} C ${width * 0.50},${centerY - curveAmp * 0.85} ${width * 0.62},${centerY + curveAmp * 0.85} ${width * 0.74},${centerY} C ${width * 0.83},${centerY - curveAmp * 0.6} ${width * 0.92},${centerY + curveAmp * 0.4} ${width},${centerY}`,
+                    `M 0,${centerY} C ${width * 0.14},${centerY + curveAmp * 0.85} ${width * 0.25},${centerY - curveAmp * 0.85} ${width * 0.38},${centerY} C ${width * 0.50},${centerY + curveAmp * 0.85} ${width * 0.62},${centerY - curveAmp * 0.85} ${width * 0.74},${centerY} C ${width * 0.83},${centerY + curveAmp * 0.6} ${width * 0.92},${centerY - curveAmp * 0.4} ${width},${centerY}`,
+                  ],
+                }
+              : {
+                  d: `M 0,${centerY} C ${width * 0.14},${centerY + curveAmp * 0.85} ${width * 0.25},${centerY - curveAmp * 0.85} ${width * 0.38},${centerY} C ${width * 0.50},${centerY + curveAmp * 0.85} ${width * 0.62},${centerY - curveAmp * 0.85} ${width * 0.74},${centerY} C ${width * 0.83},${centerY + curveAmp * 0.6} ${width * 0.92},${centerY - curveAmp * 0.4} ${width},${centerY}`,
+                }
+          }
+          transition={
+            isInView
+              ? {
+                  duration: 2.0 / waveSpeed,
+                  repeat: Infinity,
+                  delay: 0.15,
+                  ease: 'easeInOut',
+                }
+              : undefined
+          }
           fill="none"
           stroke={`url(#${uid}-purple)`}
           strokeWidth={1.6 + progress * 0.6}
@@ -228,19 +261,29 @@ export const FlowingAudioWaveform: React.FC<FlowingAudioWaveformProps> = ({
         {/* 4. SINE CURVE 3: SMOOTH FLOWING MAGENTA LINE                      */}
         {/* ================================================================ */}
         <motion.path
-          animate={{
-            d: [
-              `M 0,${centerY} C ${width * 0.11},${centerY - curveAmp * 0.65} ${width * 0.23},${centerY + curveAmp * 0.65} ${width * 0.36},${centerY} C ${width * 0.48},${centerY - curveAmp * 0.65} ${width * 0.60},${centerY + curveAmp * 0.65} ${width * 0.72},${centerY} C ${width * 0.82},${centerY - curveAmp * 0.55} ${width * 0.92},${centerY + curveAmp * 0.3} ${width},${centerY}`,
-              `M 0,${centerY} C ${width * 0.11},${centerY + curveAmp * 0.65} ${width * 0.23},${centerY - curveAmp * 0.65} ${width * 0.36},${centerY} C ${width * 0.48},${centerY + curveAmp * 0.65} ${width * 0.60},${centerY - curveAmp * 0.65} ${width * 0.72},${centerY} C ${width * 0.82},${centerY + curveAmp * 0.55} ${width * 0.92},${centerY - curveAmp * 0.3} ${width},${centerY}`,
-              `M 0,${centerY} C ${width * 0.11},${centerY - curveAmp * 0.65} ${width * 0.23},${centerY + curveAmp * 0.65} ${width * 0.36},${centerY} C ${width * 0.48},${centerY - curveAmp * 0.65} ${width * 0.60},${centerY + curveAmp * 0.65} ${width * 0.72},${centerY} C ${width * 0.82},${centerY - curveAmp * 0.55} ${width * 0.92},${centerY + curveAmp * 0.3} ${width},${centerY}`,
-            ],
-          }}
-          transition={{
-            duration: 1.8 / waveSpeed,
-            repeat: Infinity,
-            delay: 0.25,
-            ease: 'easeInOut',
-          }}
+          animate={
+            isInView
+              ? {
+                  d: [
+                    `M 0,${centerY} C ${width * 0.11},${centerY - curveAmp * 0.65} ${width * 0.23},${centerY + curveAmp * 0.65} ${width * 0.36},${centerY} C ${width * 0.48},${centerY - curveAmp * 0.65} ${width * 0.60},${centerY + curveAmp * 0.65} ${width * 0.72},${centerY} C ${width * 0.82},${centerY - curveAmp * 0.55} ${width * 0.92},${centerY + curveAmp * 0.3} ${width},${centerY}`,
+                    `M 0,${centerY} C ${width * 0.11},${centerY + curveAmp * 0.65} ${width * 0.23},${centerY - curveAmp * 0.65} ${width * 0.36},${centerY} C ${width * 0.48},${centerY + curveAmp * 0.65} ${width * 0.60},${centerY - curveAmp * 0.65} ${width * 0.72},${centerY} C ${width * 0.82},${centerY - curveAmp * 0.55} ${width * 0.92},${centerY - curveAmp * 0.3} ${width},${centerY}`,
+                    `M 0,${centerY} C ${width * 0.11},${centerY - curveAmp * 0.65} ${width * 0.23},${centerY + curveAmp * 0.65} ${width * 0.36},${centerY} C ${width * 0.48},${centerY - curveAmp * 0.65} ${width * 0.60},${centerY + curveAmp * 0.65} ${width * 0.72},${centerY} C ${width * 0.82},${centerY - curveAmp * 0.55} ${width * 0.92},${centerY + curveAmp * 0.3} ${width},${centerY}`,
+                  ],
+                }
+              : {
+                  d: `M 0,${centerY} C ${width * 0.11},${centerY - curveAmp * 0.65} ${width * 0.23},${centerY + curveAmp * 0.65} ${width * 0.36},${centerY} C ${width * 0.48},${centerY - curveAmp * 0.65} ${width * 0.60},${centerY + curveAmp * 0.65} ${width * 0.72},${centerY} C ${width * 0.82},${centerY - curveAmp * 0.55} ${width * 0.92},${centerY + curveAmp * 0.3} ${width},${centerY}`,
+                }
+          }
+          transition={
+            isInView
+              ? {
+                  duration: 1.8 / waveSpeed,
+                  repeat: Infinity,
+                  delay: 0.25,
+                  ease: 'easeInOut',
+                }
+              : undefined
+          }
           fill="none"
           stroke={`url(#${uid}-magenta)`}
           strokeWidth={1.4 + progress * 0.5}

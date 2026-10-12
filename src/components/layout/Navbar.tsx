@@ -276,7 +276,11 @@ export function Navbar({ logoUrl }: NavbarProps) {
               <img
                 src={logoUrl || defaultLogo}
                 alt="Global Delight Logo"
-                className={`h-8 md:h-10 w-auto object-contain drop-shadow-sm ${logoUrl ? '' : 'invert opacity-80'}`} width={320} height={60} loading="eager"
+                className={`h-8 md:h-10 w-auto object-contain drop-shadow-sm ${logoUrl ? '' : 'invert opacity-80'}`}
+                width={213}
+                height={40}
+                loading="eager"
+                decoding="async"
               />
             </Link>
 
@@ -344,7 +348,7 @@ export function Navbar({ logoUrl }: NavbarProps) {
                 aria-expanded={isLanguageOpen}
                 className="hover:opacity-80 transition-opacity focus:outline-none flex items-center gap-1.5"
               >
-                <img src="/button/LanguageIcon.png" alt="Language" className="w-5 h-5 md:w-6 md:h-6 object-contain brightness-0" width={800} height={800} loading="eager" />
+                <img src="/button/LanguageIcon.webp" alt="Language" className="w-5 h-5 md:w-6 md:h-6 object-contain brightness-0" width={24} height={24} loading="eager" decoding="async" />
                 <span className="text-[13px] font-semibold text-gray-700 hidden lg:block">{currentLanguage.name}</span>
               </button>
               
@@ -391,7 +395,7 @@ export function Navbar({ logoUrl }: NavbarProps) {
                 aria-expanded={isLanguageOpen}
                 className="hover:opacity-80 transition-opacity focus:outline-none flex items-center gap-1.5"
               >
-                <img src="/button/LanguageIcon.png" alt="Language" className="w-6 h-6 object-contain brightness-0" width={800} height={800} loading="eager" />
+                <img src="/button/LanguageIcon.webp" alt="Language" className="w-6 h-6 object-contain brightness-0" width={24} height={24} loading="eager" decoding="async" />
                 <span className="text-[13px] font-semibold text-gray-700">{currentLanguage.code.toUpperCase()}</span>
               </button>
               

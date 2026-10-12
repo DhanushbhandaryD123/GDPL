@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { motion } from 'motion/react';
+import { motion, useInView } from 'motion/react';
 
 interface PhotoItem {
   id: string;
@@ -33,6 +33,8 @@ export function InteractiveAudioSection() {
   const touchStartX = useRef<number>(0);
   const touchStartY = useRef<number>(0);
   const isNavigatingRef = useRef<boolean>(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  const isInView = useInView(sectionRef, { margin: '200px' });
 
   // --------------------------------------------------------------------------
   // 1. Responsive Screen Detection (<640px)
@@ -63,9 +65,10 @@ export function InteractiveAudioSection() {
   }, [isMobile]);
 
   // --------------------------------------------------------------------------
-  // 3. Auto-play: 3s idle cycles next image every 3.2s
+  // 3. Auto-play: 3s idle cycles next image every 3.2s (active only when in viewport)
   // --------------------------------------------------------------------------
   useEffect(() => {
+    if (!isInView) return;
     const interval = setInterval(() => {
       const now = Date.now();
       if (now - lastInteractionRef.current > 3000) {
@@ -74,7 +77,7 @@ export function InteractiveAudioSection() {
     }, 3200);
 
     return () => clearInterval(interval);
-  }, [navigate]);
+  }, [navigate, isInView]);
 
   // --------------------------------------------------------------------------
   // 4. Mouse Wheel Navigation
@@ -265,6 +268,7 @@ export function InteractiveAudioSection() {
 
   return (
     <section
+      ref={sectionRef}
       id="3d-carousel-gallery"
       onWheel={handleWheel}
       onTouchStart={handleTouchStart}
