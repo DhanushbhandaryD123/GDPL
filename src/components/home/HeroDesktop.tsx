@@ -31,11 +31,12 @@ export function HeroDesktop() {
 
 
       <div className="w-full relative overflow-hidden text-white shadow-2xl bg-black rounded-3xl md:rounded-[2.5rem] h-[520px] sm:h-[560px] md:h-[620px] lg:h-[660px] xl:h-[700px] flex items-center">
-        {/* Static Base Image Layer for Instant Desktop LCP Discovery & 0ms Render Delay */}
+        {/* Static Base Image Layer for Instant Desktop LCP Discovery */}
         <img
           src={heroImages[0]}
           alt="Global Delight Desktop Hero"
-          fetchPriority="high"
+          fetchPriority="auto"
+          loading="lazy"
           decoding="async"
           width={1920}
           height={700}

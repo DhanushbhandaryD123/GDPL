@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { SUPPORTED_LANGS, rememberLanguage, getRememberedLanguage } from '@/lib/languagePreference';
+import { ensureLanguageLoaded } from '@/i18n';
 
 export function LanguageSync({ routeLang }: { routeLang?: string } = {}) {
   const { lang: paramLang } = useParams<{ lang?: string }>();
@@ -14,9 +15,11 @@ export function LanguageSync({ routeLang }: { routeLang?: string } = {}) {
 
   useEffect(() => {
     if (lang && SUPPORTED_LANGS.includes(lang)) {
-      if (i18n.resolvedLanguage !== lang) {
-        i18n.changeLanguage(lang);
-      }
+      ensureLanguageLoaded(lang).then(() => {
+        if (i18n.resolvedLanguage !== lang) {
+          i18n.changeLanguage(lang);
+        }
+      });
       rememberLanguage(lang);
       // Keep the raw HTML's lang attribute honest for this locale — it also
       // gets captured as-is by react-snap's prerendered static HTML.

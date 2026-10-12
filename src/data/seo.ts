@@ -7,7 +7,15 @@
  * Text/content + URL + image are all taken from each page's actual content so
  * Google sees page-connected meta as in Home.
  */
-import localizedSeoData from './localizedSeoData.json';
+// Dynamic lazy cache for localized subpage SEO to prevent 287KB from blocking Homepage FCP
+let localizedSeoDataMap: Record<string, SeoEntry> | null = null;
+
+export async function preloadLocalizedSeo(): Promise<void> {
+  if (!localizedSeoDataMap) {
+    const mod = await import('./localizedSeoData.json');
+    localizedSeoDataMap = mod.default as Record<string, SeoEntry>;
+  }
+}
 
 export interface SeoEntry {
   title: string;
@@ -688,8 +696,9 @@ export const SEO_DATA: Record<string, SeoEntry> = {
 };
 
 export function getSeoForPath(path: string): SeoEntry | null {
-  const localized = (localizedSeoData as Record<string, SeoEntry>)[path];
-  if (localized) return localized;
+  if (localizedSeoDataMap && localizedSeoDataMap[path]) {
+    return localizedSeoDataMap[path];
+  }
   if (SEO_DATA[path]) return SEO_DATA[path];
   return null;
 }

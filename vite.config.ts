@@ -38,8 +38,11 @@ export default defineConfig({
           if (id.includes('localizedSeoData.json')) {
             return 'seo-data';
           }
+          if (id.includes('src/locales/en.json')) {
+            return 'locale-en';
+          }
           if (id.includes('src/locales/')) {
-            return 'locales-data';
+            return 'locales-other';
           }
         },
       },

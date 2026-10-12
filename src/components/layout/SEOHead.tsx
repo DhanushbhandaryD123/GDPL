@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
-import { SEO_DATA, getSeoForPath } from '../../data/seo';
+import { SEO_DATA, getSeoForPath, preloadLocalizedSeo } from '../../data/seo';
 
 // index.html ships static fallback <meta name="description"/"keywords"> tags so
 // raw page source always shows something even before React/Helmet mounts (e.g. in
@@ -64,6 +64,7 @@ const OG_IMAGE_DIMENSIONS: Record<string, { width: number; height: number }> = {
 export function SEOHead() {
   const location = useLocation();
   const supportedLangs = ['en', 'de', 'it', 'ja', 'fr', 'pt', 'es', 'zh'];
+  const [, setLocalizedLoaded] = useState(false);
 
   useEffect(() => {
     removeStaticFallbackMetaTags();
@@ -74,6 +75,12 @@ export function SEOHead() {
   let currentPath = rawPath;
   const pathParts = currentPath.split('/').filter(Boolean);
   const currentLang = pathParts.length > 0 && supportedLangs.includes(pathParts[0]) ? pathParts[0] : 'en';
+
+  useEffect(() => {
+    if (currentLang !== 'en') {
+      preloadLocalizedSeo().then(() => setLocalizedLoaded(true));
+    }
+  }, [currentLang]);
 
   // Check exact localized path first (e.g. /de/boom2 or /de/boom3D)
   let seo = getSeoForPath(rawPath);
