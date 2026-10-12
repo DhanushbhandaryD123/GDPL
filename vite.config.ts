@@ -13,5 +13,28 @@ export default defineConfig({
   },
   build: {
     target: 'es2015',
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('scheduler') || id.includes('motion')) {
+              return 'vendor-framework';
+            }
+            if (id.includes('i18next')) {
+              return 'vendor-i18n';
+            }
+            if (id.includes('lucide-react')) {
+              return 'vendor-icons';
+            }
+          }
+          if (id.includes('localizedSeoData.json')) {
+            return 'seo-data';
+          }
+          if (id.includes('src/locales/')) {
+            return 'locales-data';
+          }
+        },
+      },
+    },
   },
 });
