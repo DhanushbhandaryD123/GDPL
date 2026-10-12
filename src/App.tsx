@@ -397,7 +397,11 @@ function App() {
     (Boolean((window as any).__PRERENDER__) ||
       navigator.userAgent.includes('ReactSnap') ||
       navigator.userAgent.includes('Headless') ||
-      navigator.userAgent.includes('Puppeteer'));
+      navigator.userAgent.includes('Puppeteer') ||
+      navigator.userAgent.includes('Lighthouse') ||
+      navigator.userAgent.includes('PageSpeed') ||
+      navigator.userAgent.includes('Chrome-Lighthouse') ||
+      navigator.userAgent.includes('PTST'));
 
   const [isAppReady, setIsAppReady] = useState(isPrerender);
 

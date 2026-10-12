@@ -33,6 +33,7 @@ export function Boom3D() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${domain}/boom3D`} />
         <link rel="canonical" href={`${domain}/boom3D`} />
+        <link rel="preload" as="image" href="/boom3D/boom3d-hero.webp" type="image/webp" fetchPriority="high" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",

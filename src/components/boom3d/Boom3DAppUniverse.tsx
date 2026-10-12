@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
   // (boomLogo3D.png is a 175x37 wordmark; the hero poster needed a manual
   // crop to isolate just the icon disc). This one just drops in directly.
   // Image only, no label — the icon stands on its own.
-  const LOGO_SOURCE = '/apps/Boom3D-mac.jpeg';
+  const LOGO_SOURCE = '/apps/Boom3D-mac-badge.webp';
 
   function Boom3DLogoBadge({ size }: { size: number }) {
     return (
@@ -16,7 +16,7 @@ import { useEffect, useState } from 'react';
         className="rounded-full overflow-hidden shrink-0 shadow-[0_14px_36px_rgba(79,70,229,0.3)]"
         style={{ width: size, height: size }}
       >
-        <img src={LOGO_SOURCE} alt="Boom 3D" className="w-full h-full object-cover" width={1028} height={1028} loading="lazy" />
+        <img src={LOGO_SOURCE} alt="Boom 3D" className="w-full h-full object-cover" width={96} height={96} loading="lazy" />
       </div>
     );
   }

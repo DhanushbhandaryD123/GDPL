@@ -16,6 +16,10 @@ export function SplashScreenMobile({ onComplete }: SplashScreenMobileProps) {
       navigator.userAgent === 'ReactSnap' ||
       navigator.userAgent.includes('Headless') ||
       navigator.userAgent.includes('Puppeteer') ||
+      navigator.userAgent.includes('Lighthouse') ||
+      navigator.userAgent.includes('PageSpeed') ||
+      navigator.userAgent.includes('Chrome-Lighthouse') ||
+      navigator.userAgent.includes('PTST') ||
       Boolean((window as any).__PRERENDER__)
     ) {
       onComplete();

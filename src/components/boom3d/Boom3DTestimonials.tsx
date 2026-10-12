@@ -60,7 +60,7 @@ const mediaItems = [
   },
   {
     publisher: 'Cult of Mac',
-    logoImg: '/boom3D/cultofmac.png',
+    logoImg: '/boom3D/cultofmac.webp',
     logoText: 'Cult of Mac',
     logoStyle: 'font-bold text-white text-xl',
     quote:

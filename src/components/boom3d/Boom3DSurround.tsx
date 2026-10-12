@@ -208,7 +208,7 @@ export function Boom3DSurround() {
         <div className="w-full max-w-[1300px] mx-auto flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
           {/* Left: Extension Icon */}
           <div className="shrink-0 relative z-10 w-[140px] md:w-[160px]">
-            <img src="/boom3D/Extension-icon.png" alt="5.1 Extension" className="w-full h-auto object-contain" width={127} height={127} loading="lazy" />
+            <img src="/boom3D/Extension-icon.webp" alt="5.1 Extension" className="w-full h-auto object-contain" width={127} height={127} loading="lazy" />
           </div>
 
           {/* Right: Content */}

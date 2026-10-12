@@ -29,7 +29,7 @@ export function Boom3DHero() {
             {/* Boom 3D Logo */}
             <div className="flex justify-center lg:justify-start">
               <img 
-                src="/boom3D/boomLogo3D.png" 
+                src="/boom3D/boomLogo3D.webp" 
                 alt="Boom 3D Logo" 
                 className="w-48 lg:w-64 xl:w-72 object-contain" width={175} height={37} loading="eager"
               />

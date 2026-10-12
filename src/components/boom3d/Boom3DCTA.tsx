@@ -13,7 +13,7 @@ export function Boom3DCTA() {
           {/* Left: Laptop Image */}
           <div className="w-full lg:w-[45%] flex justify-center lg:justify-start relative z-10">
             <img 
-              src="/boom3D/u1.png" 
+              src="/boom3D/u1.webp" 
               alt="Boom 3D App on Laptop" 
               className="w-full max-w-[500px] lg:max-w-none object-contain drop-shadow-2xl" width={1000} height={628} loading="lazy"
             />
