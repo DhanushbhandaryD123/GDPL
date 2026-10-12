@@ -31,9 +31,10 @@ import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { Hero } from './components/home/Hero';
 import { AppCategory, AppItem } from './components/home/AppCategory';
-import { HonorsReviews } from './components/home/HonorsReviews';
-import { FeaturedWork } from './components/home/FeaturedWork';
-import { GetInspired } from './components/home/GetInspired';
+
+const HonorsReviews = lazy(() => import('./components/home/HonorsReviews').then(m => ({ default: m.HonorsReviews })));
+const FeaturedWork = lazy(() => import('./components/home/FeaturedWork').then(m => ({ default: m.FeaturedWork })));
+const GetInspired = lazy(() => import('./components/home/GetInspired').then(m => ({ default: m.GetInspired })));
 import { FloatingSocials } from './components/layout/FloatingSocials';
 import { ScrollToTopButton } from './components/layout/ScrollToTopButton';
 import { getVariant, formatPrice } from './data/products';
@@ -168,24 +169,24 @@ function Home() {
 
         {/* =========================================
             GET INSPIRED
-            Four-card fan layout of user stories/photos (name + short
-            description per card), localized via home.get_inspired.people.
             ========================================= */}
-        <GetInspired />
+        <Suspense fallback={null}>
+          <GetInspired />
+        </Suspense>
 
         {/* =========================================
             FEATURED PRODUCTS
-            Flagship-app showcase carousel (Boom 3D, Capto, Vizmato,
-            Camera Plus, AuDimix, AudiOn).
             ========================================= */}
-        <FeaturedWork />
+        <Suspense fallback={null}>
+          <FeaturedWork />
+        </Suspense>
 
         {/* =========================================
             AWARDS / HONORS & CUSTOMER REVIEWS
-            Press/award badge strip followed by review badge strip
-            (image-only; no extractable quote text in the source).
             ========================================= */}
-        <HonorsReviews />
+        <Suspense fallback={null}>
+          <HonorsReviews />
+        </Suspense>
       </main>
 
       {/* =========================================
