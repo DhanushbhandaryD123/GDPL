@@ -13,6 +13,14 @@ export default defineConfig({
   },
   build: {
     target: 'es2015',
+    modulePreload: {
+      polyfill: false,
+      resolveDependencies(_filename, deps) {
+        return deps.filter(
+          (dep) => !dep.includes('locales-data') && !dep.includes('seo-data')
+        );
+      },
+    },
     rollupOptions: {
       output: {
         manualChunks(id) {
