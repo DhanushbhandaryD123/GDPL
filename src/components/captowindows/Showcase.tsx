@@ -44,7 +44,7 @@ export function Showcase() {
       icon: MonitorPlay,
       badge: 'DirectX 12 Accelerated',
       description: 'Record your full display, application window, or selected region at a buttery smooth 60 FPS with dual-channel system audio and microphone capture.',
-      image: '/capto/windows/hero-app.jpg',
+      image: '/capto/windows/hero-app.webp',
       bullets: [
         'Hardware-accelerated 4K 60FPS recording with ultra-low CPU load (<3%)',
         'Simultaneous webcam overlay with customizable shape and position',
@@ -62,7 +62,7 @@ export function Showcase() {
       icon: Scissors,
       badge: 'Frame-Accurate Cuts',
       description: 'Transform raw screen recordings into professional video tutorials. Cut, splice, trim, and balance multitrack audio directly on the visual timeline without complex external software.',
-      image: '/capto/windows/editor-app.jpg',
+      image: '/capto/windows/editor-app.webp',
       bullets: [
         'Dedicated multitrack timeline for video footage, speech, and background music',
         'Fast ripple edits, trimming, and frame-by-frame precision cuts',
@@ -80,7 +80,7 @@ export function Showcase() {
       icon: Highlighter,
       badge: 'Professional Clarity',
       description: 'Make documentation and bug reports effortless. Annotate captures with numbered sequential steps, directional callout arrows, spotlight highlights, and privacy blur tools.',
-      image: '/capto/windows/annotate-app.jpg',
+      image: '/capto/windows/annotate-app.webp',
       bullets: [
         'Numbered step badges (1, 2, 3) to guide users step-by-step through workflows',
         'Smart blur and redaction tools to protect confidential customer data and passwords',
@@ -98,7 +98,7 @@ export function Showcase() {
       icon: Share2,
       badge: 'Zero Compression Loss',
       description: 'Find any recording instantly using smart tags and folders. Export your projects to 4K MP4, animated GIFs, or high-res PNG, or upload directly to YouTube, Google Drive, and Dropbox.',
-      image: '/capto/windows/export-app.jpg',
+      image: '/capto/windows/export-app.webp',
       bullets: [
         'Smart folders automatically catalog your screen recordings and screenshots',
         'Multiple export formats: 4K MP4, lightweight animated GIF, and PNG screenshots',

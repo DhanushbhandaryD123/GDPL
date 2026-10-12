@@ -141,7 +141,7 @@ export function FeaturesGrid() {
                 <div className="relative">
                   <div className="w-9 h-9 rounded-full bg-slate-200 overflow-hidden border border-white shadow-xs">
                     <img
-                      src="/capto/windows/hero-app.jpg"
+                      src="/capto/windows/hero-app.webp"
                       alt="Webcam preview"
                       className="w-full h-full object-cover"
                     />

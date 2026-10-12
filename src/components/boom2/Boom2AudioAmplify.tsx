@@ -31,6 +31,7 @@ export function Boom2AudioAmplify() {
         className="w-full max-w-5xl relative rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-200 bg-white"
       >
         <video
+          preload="none"
           autoPlay={navigator.userAgent !== 'ReactSnap'}
           loop
           muted

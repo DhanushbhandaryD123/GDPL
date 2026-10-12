@@ -26,7 +26,7 @@ export function VideoTutorials() {
       title: t('captoWindows.tutorials.t1', 'How to Capture Screen'),
       duration: '2:45 min',
       difficulty: 'Beginner',
-      thumbnail: '/capto/windows/tut-record.jpg',
+      thumbnail: '/capto/windows/tut-record.webp',
       description: 'Learn how to set up full display, selected window, or custom region recording with DirectX hardware acceleration.',
       videoId: 'dQw4w9WgXcQ'
     },
@@ -36,7 +36,7 @@ export function VideoTutorials() {
       title: t('captoWindows.tutorials.t2', 'How to Record Window'),
       duration: '3:15 min',
       difficulty: 'Intermediate',
-      thumbnail: '/capto/windows/tut-edit.jpg',
+      thumbnail: '/capto/windows/tut-edit.webp',
       description: 'Master the trim, cut, split, and audio waveform balancing tools directly inside Capto.',
       videoId: 'dQw4w9WgXcQ'
     },
@@ -46,7 +46,7 @@ export function VideoTutorials() {
       title: t('captoWindows.tutorials.t3', 'How to copy text from images?'),
       duration: '2:10 min',
       difficulty: 'Quick Guide',
-      thumbnail: '/capto/windows/annotate-app.jpg',
+      thumbnail: '/capto/windows/annotate-app.webp',
       description: 'Create crystal-clear tutorials by placing numbered step badges and redacting sensitive customer passwords.',
       videoId: 'dQw4w9WgXcQ'
     },
@@ -56,7 +56,7 @@ export function VideoTutorials() {
       title: t('captoWindows.tutorials.t4', 'How to Edit Video'),
       duration: '1:55 min',
       difficulty: 'Beginner',
-      thumbnail: '/capto/windows/hero-app.jpg',
+      thumbnail: '/capto/windows/hero-app.webp',
       description: 'Overlay your webcam with custom circular or rectangular frames and calibrate microphone levels.',
       videoId: 'dQw4w9WgXcQ'
     },
@@ -66,7 +66,7 @@ export function VideoTutorials() {
       title: t('captoWindows.tutorials.t5', 'How to Add Annotations'),
       duration: '1:30 min',
       difficulty: 'Pro Tip',
-      thumbnail: '/capto/windows/annotate-app.jpg',
+      thumbnail: '/capto/windows/annotate-app.webp',
       description: 'Use Capto OCR technology to grab text instantly from images, error dialogues, and scanned PDFs.',
       videoId: 'dQw4w9WgXcQ'
     },
@@ -76,7 +76,7 @@ export function VideoTutorials() {
       title: t('captoWindows.tutorials.t6', 'How to Export and Share'),
       duration: '2:05 min',
       difficulty: 'Quick Guide',
-      thumbnail: '/capto/windows/export-app.jpg',
+      thumbnail: '/capto/windows/export-app.webp',
       description: 'Configure quality settings, render lightweight animated GIFs, or upload directly to YouTube and Drive.',
       videoId: 'dQw4w9WgXcQ'
     }

@@ -173,7 +173,7 @@ export function Hero() {
               {/* Main Screenshot Canvas */}
               <div className="relative aspect-[16/10] bg-slate-900 overflow-hidden group">
                 <img
-                  src="/capto/windows/hero-app.jpg"
+                  src="/capto/windows/hero-app.webp"
                   alt="Capto for Windows Application Interface"
                   className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.01]"
                   width={1920}
