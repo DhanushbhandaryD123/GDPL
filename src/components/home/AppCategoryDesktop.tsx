@@ -32,7 +32,7 @@ function AppCardDesktop({ app, index }: { app: AppItem, index: number }) {
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="group [perspective:1000px] w-full"
     >
-      <Link to={app.learnMoreUrl || '#'} className="relative block w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] cursor-pointer group/link">
+      <Link to={app.learnMoreUrl || '#'} aria-label={`Explore ${app.name}`} className="relative block w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] cursor-pointer group/link">
         
         {/* Front */}
         <div className="w-full [backface-visibility:hidden] bg-white rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.08)] border border-gray-100 p-6 flex flex-col items-center transition-all h-full group-hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
@@ -79,7 +79,7 @@ function AppCardDesktop({ app, index }: { app: AppItem, index: number }) {
                   </span>
                 </div>
                 <span className="text-[#d95d39] text-base font-semibold group-hover/link:text-orange-700 transition-colors">
-                  {t('home.categories.learn_more')}<span className="sr-only"> about {app.name}</span>
+                  {t('home.categories.learn_more')}
                 </span>
               </>
             ) : app.priceDiscounted ? (
@@ -90,12 +90,12 @@ function AppCardDesktop({ app, index }: { app: AppItem, index: number }) {
                   </span>
                 </div>
                 <span className="text-[#d95d39] text-base font-semibold group-hover/link:text-orange-700 transition-colors">
-                  {t('home.categories.learn_more')}<span className="sr-only"> about {app.name}</span>
+                  {t('home.categories.learn_more')}
                 </span>
               </>
             ) : (
               <span className="mt-2 text-[#d95d39] text-base font-semibold group-hover/link:text-orange-700 transition-colors">
-                Learn More<span className="sr-only"> about {app.name}</span>
+                Learn More
               </span>
             )}
           </div>

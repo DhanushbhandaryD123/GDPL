@@ -546,6 +546,7 @@ export function BoomAnniversaryPage() {
                   ) : (
                     <Link
                       to={prod.route}
+                      aria-label={`Explore ${prod.name}`}
                       className="inline-flex items-center gap-1 text-xs font-bold text-[#2AF5FE] hover:underline"
                     >
                       Learn More &rarr;

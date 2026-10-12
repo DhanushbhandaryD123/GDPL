@@ -232,7 +232,7 @@ export function HeroMobile() {
                   </a>
                 </div>
 
-                <Link to="/boom3D" className="bg-[#00e5ff] text-black font-bold h-6 px-3.5 rounded-full text-[10px] sm:text-xs flex items-center justify-center hover:bg-[#00ccdd] active:scale-95 transition shadow-[0_0_10px_rgba(0,229,255,0.4)] mt-1 pointer-events-auto">
+                <Link to="/boom3D" aria-label="Explore Boom 3D" className="bg-[#00e5ff] text-black font-bold h-6 px-3.5 rounded-full text-[10px] sm:text-xs flex items-center justify-center hover:bg-[#00ccdd] active:scale-95 transition shadow-[0_0_10px_rgba(0,229,255,0.4)] mt-1 pointer-events-auto">
                   {t('home.hero_banner.learn_more')}
                 </Link>
               </motion.div>
@@ -267,7 +267,7 @@ export function HeroMobile() {
                   >
                     <img src="/button/en-us dark.svg" alt="Get it from Microsoft Store" className="h-6 sm:h-7 w-auto object-contain drop-shadow-md" width={161} height={44} loading="eager" />
                   </a>
-                  <Link to="/boom3D" className="h-6 sm:h-7 px-3.5 rounded-lg border border-white/80 bg-white/15 text-white font-bold text-[10px] sm:text-xs hover:bg-white hover:text-black active:scale-95 transition shadow-md whitespace-nowrap backdrop-blur-sm flex items-center justify-center">
+                  <Link to="/boom3D" aria-label="Explore Boom 3D" className="h-6 sm:h-7 px-3.5 rounded-lg border border-white/80 bg-white/15 text-white font-bold text-[10px] sm:text-xs hover:bg-white hover:text-black active:scale-95 transition shadow-md whitespace-nowrap backdrop-blur-sm flex items-center justify-center">
                     {t('home.hero_banner.learn_more')}
                   </Link>
                 </div>
@@ -300,6 +300,7 @@ export function HeroMobile() {
                 </a>
                 <Link
                   to="/boom2"
+                  aria-label="Explore Boom 2"
                   className="bg-[#00e5ff] text-black font-bold h-6 px-3.5 rounded-full text-[10px] sm:text-xs hover:bg-[#00ccdd] active:scale-95 transition shadow-[0_0_10px_rgba(0,229,255,0.4)] flex items-center justify-center text-center block"
                 >
                   {t('home.hero_banner.learn_more')}

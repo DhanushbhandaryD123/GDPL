@@ -182,13 +182,15 @@ export function CaptoFooterCTA() {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
           <a
-            href="#"
+            href="/capto"
+            aria-label="Explore Capto features"
             className="w-full sm:w-auto px-12 py-3 rounded-full text-[#6554ff] border border-[#6554ff] font-bold text-[14px] hover:bg-indigo-50 transition-colors"
           >
             {t('capto.footer_cta.learn_more')}
           </a>
           <a
-            href="#"
+            href="/capto"
+            aria-label="Download Capto free trial"
             className="w-full sm:w-auto px-12 py-3 rounded-full bg-[#6554ff] text-white font-bold text-[14px] hover:bg-[#5746df] transition-colors shadow-lg shadow-indigo-200"
           >
             {t('capto.footer_cta.download_trial')}

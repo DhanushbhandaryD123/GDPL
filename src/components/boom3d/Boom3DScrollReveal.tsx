@@ -94,6 +94,7 @@ export function Boom3DScrollReveal() {
             </p>
             <a
               href="#boom3d-download"
+              aria-label="Explore Boom 3D features"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#111111] text-white font-bold text-sm hover:bg-black/80 transition-colors"
             >
               {t('boom3d.scroll_reveal.learn_more')}
@@ -150,6 +151,7 @@ export function Boom3DScrollReveal() {
             </p>
             <a
               href="#boom3d-download"
+              aria-label="Explore Boom 3D features"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#111111] text-white font-bold text-sm hover:bg-black/80 transition-colors"
             >
               {t('boom3d.scroll_reveal.learn_more')}

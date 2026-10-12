@@ -111,6 +111,7 @@ export function Hero() {
 
               <a
                 href="#interactive-showcase"
+                aria-label="Explore Capto interactive showcase"
                 className="w-full sm:w-auto px-6 py-2.5 bg-white hover:bg-gray-50 text-gray-800 border border-gray-200 rounded-xl font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-xs hover:-translate-y-0.5"
               >
                 <Monitor size={16} />

@@ -42,6 +42,7 @@ function AppCardMobile({ app, index }: { app: AppItem, index: number }) {
     >
       <a
         href={app.learnMoreUrl || '#'}
+        aria-label={`Explore ${app.name}`}
         className={`relative block w-full h-[220px] sm:h-[240px] transition-transform duration-700 [transform-style:preserve-3d] cursor-pointer group/link ${isFlipped ? '[transform:rotateY(180deg)]' : 'hover:[transform:rotateY(180deg)]'}`}
       >
         
@@ -97,7 +98,7 @@ function AppCardMobile({ app, index }: { app: AppItem, index: number }) {
               </div>
             ) : null}
             <span className="bg-[#003057] text-white px-4 py-2 rounded-full text-xs font-bold group-hover/link:bg-blue-600 transition-colors block mt-3 shadow-md">
-              {t('home.categories.learn_more')}<span className="sr-only"> about {app.name}</span> →
+              {t('home.categories.learn_more')} →
             </span>
           </div>
         </div>

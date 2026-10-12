@@ -48,7 +48,7 @@ export function AppleWatchIntegration() {
                 {t('cameraplus.apple_watch.subtitle')}
               </p>
 
-              <a href="#" className="inline-flex items-center gap-3 px-8 py-4 bg-[#111827] hover:bg-black text-white font-bold rounded-full transition-all duration-300 shadow-xl shadow-gray-900/20 hover:shadow-gray-900/30 hover:-translate-y-1 group">
+              <a href="/cameraplus" aria-label="Explore Camera Plus features" className="inline-flex items-center gap-3 px-8 py-4 bg-[#111827] hover:bg-black text-white font-bold rounded-full transition-all duration-300 shadow-xl shadow-gray-900/20 hover:shadow-gray-900/30 hover:-translate-y-1 group">
                 {t('cameraplus.apple_watch.learn_more')}
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" strokeWidth={2.5} />
               </a>

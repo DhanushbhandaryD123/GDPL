@@ -265,10 +265,11 @@ export function FeaturedWork() {
                   <div className="mt-auto self-stretch flex flex-col gap-2">
                     <Link
                       to={card.link}
+                      aria-label={`Explore ${card.name}`}
                       className="w-full text-center py-2 bg-white hover:bg-gray-100 text-gray-900 text-[11px] md:text-xs font-bold rounded-full transition-all cursor-pointer pointer-events-auto shadow-[0_4px_10px_rgba(0,0,0,0.15)] hover:scale-105 active:scale-95"
                       onClick={(e) => e.stopPropagation()}
                     >
-                      {t('home.featured_work.learn_more')}<span className="sr-only"> about {card.name}</span>
+                      {t('home.featured_work.learn_more')}
                     </Link>
                     <button
                       onClick={(e) => {
