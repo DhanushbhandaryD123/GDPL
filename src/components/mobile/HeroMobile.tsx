@@ -28,17 +28,7 @@ export function HeroMobile() {
       {/* Primary Semantic H1 for Homepage SEO & Accessibility */}
       <h1 className="sr-only">Global Delight — Award-Winning Audio, Video & Photography Apps</h1>
 
-      {/* Semantic LCP Preload for Mobile Slide 1 */}
-      <img
-        src={heroImages[0]}
-        alt="Global Delight - Boom 3D Audio Enhancement"
-        className="sr-only"
-        width={750}
-        height={500}
-        loading="eager"
-        // @ts-ignore
-        fetchpriority="high"
-      />
+
 
       <div className="w-full relative overflow-hidden text-white shadow-2xl bg-black rounded-2xl sm:rounded-3xl h-[290px] sm:h-[330px] flex flex-col justify-end">
         {/* Background Image Layer */}

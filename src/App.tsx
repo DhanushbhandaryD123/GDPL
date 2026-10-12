@@ -102,6 +102,8 @@ function Home() {
             CANONICAL URL
             ========================================= */}
         <link rel="canonical" href={`${domain}/`} />
+        <link rel="preload" as="image" href="/hero/hero-banner-mobile.webp" media="(max-width: 767px)" fetchPriority="high" />
+        <link rel="preload" as="image" href="/hero/hero-banner.webp" media="(min-width: 768px)" fetchPriority="high" />
 
         {/* Organization JSON-LD lives once, globally, in SEOHead.tsx (mounted
             on every route including this one) — a second copy here would
