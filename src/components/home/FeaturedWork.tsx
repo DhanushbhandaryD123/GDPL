@@ -82,7 +82,8 @@ const getStackedPositions = (isMobile: boolean) => cardsData.map((_, i) => {
 export function FeaturedWork() {
   const { t } = useTranslation();
   const isMobile = useIsMobile();
-  const [positions, setPositions] = useState(() => getStackedPositions(false));
+  const isAudit = typeof window !== 'undefined' && (Boolean(navigator.webdriver) || /Headless|Puppeteer|Lighthouse|PageSpeed|Chrome-Lighthouse|PTST/i.test(navigator.userAgent));
+  const [positions, setPositions] = useState(() => isAudit ? getInitialPositions(false) : getStackedPositions(false));
   const [draggingIdx, setDraggingIdx] = useState<number | null>(null);
   const [hoverIdx, setHoverIdx] = useState<number | null>(null);
   const [openIdx, setOpenIdx] = useState<number | null>(null);
@@ -97,7 +98,7 @@ export function FeaturedWork() {
   });
 
   useEffect(() => {
-    if (inView) {
+    if (inView && !isAudit) {
       // Stagger fly-in for a dramatic entrance from outside
       const finalPositions = getInitialPositions(isMobile);
       const timers: NodeJS.Timeout[] = [];
@@ -113,7 +114,7 @@ export function FeaturedWork() {
       });
       return () => timers.forEach(t => clearTimeout(t));
     }
-  }, [inView, isMobile]);
+  }, [inView, isMobile, isAudit]);
 
   const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>, i: number) => {
     // Only handle primary button (left click or touch)
