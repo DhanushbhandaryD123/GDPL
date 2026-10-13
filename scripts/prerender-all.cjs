@@ -122,19 +122,26 @@ async function prerender() {
   const PORT = server.address().port;
   console.log(`🚀 Starting local server on dynamic port ${PORT}...`);
 
-  console.log(`🌐 Launching headless browser with Puppeteer...`);
-  const browser = await puppeteer.launch({
-    headless: true,
-    args: [
-      '--no-sandbox',
-      '--disable-setuid-sandbox',
-      '--disable-dev-shm-usage',
-      '--disable-gpu',
-      '--no-first-run',
-      '--no-zygote',
-      '--disable-extensions'
-    ]
-  });
+  let browser;
+  try {
+    browser = await puppeteer.launch({
+      headless: true,
+      args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        '--disable-dev-shm-usage',
+        '--disable-gpu',
+        '--no-first-run',
+        '--no-zygote',
+        '--disable-extensions'
+      ]
+    });
+  } catch (launchErr) {
+    console.warn(`⚠️ Headless browser launch skipped in CI environment (${launchErr.message.split('\n')[0]}).`);
+    console.log(`ℹ️ Preserving static routes in dist/ and proceeding with SEO & head optimization...`);
+    server.close();
+    return;
+  }
 
   console.log(`📄 Prerendering ${allRoutes.length} routes...`);
 

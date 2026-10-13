@@ -8,6 +8,7 @@
     "dev": "vite",
     "build": "node scripts/generate-sitemap.js && node scripts/build-seo-data.cjs && tsc -b && vite build && node scripts/generate-spa-fallbacks.cjs && node scripts/prerender-all.cjs && node scripts/patch-per-page-seo.cjs && node scripts/reorder-head-tags.cjs && node scripts/dedupe-head-tags.cjs && node scripts/beautify-html.cjs",
     "postbuild": "echo 'Build pipeline complete.'",
+    "cloudflare-build": "echo 'Skipping remote build to use committed prerendered static distribution.'",
     "vercel-build": "echo 'Skipping Vercel build to use locally generated static files.'",
     "lint": "eslint .",
     "test:api": "node scripts/test-products-api.cjs",
