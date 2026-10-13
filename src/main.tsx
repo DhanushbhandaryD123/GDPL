@@ -24,7 +24,13 @@ const app = (
 );
 
 if (rootElement.hasChildNodes()) {
-  hydrateRoot(rootElement, app);
+  hydrateRoot(rootElement, app, {
+    onRecoverableError(error) {
+      if (import.meta.env.DEV) {
+        console.warn('Recovered hydration mismatch:', error);
+      }
+    },
+  });
 } else {
   createRoot(rootElement).render(app);
 }

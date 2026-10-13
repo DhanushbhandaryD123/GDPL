@@ -393,7 +393,7 @@ function App() {
   return (
     <>
       <SEOHead />
-      <Analytics />
+      {typeof window !== 'undefined' && window.location.hostname.includes('vercel.app') && <Analytics />}
       <ScrollToTop />
       <Suspense fallback={<RouteFallback />}>
         <Routes>
