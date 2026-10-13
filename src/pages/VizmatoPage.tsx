@@ -25,6 +25,7 @@ export function VizmatoPage() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${domain}/vizmato`} />
         <link rel="canonical" href={`${domain}/vizmato`} />
+        <link rel="preload" as="image" href="/vizmato/hero.webp" fetchPriority="high" />
       
         <meta property="og:image" content={`${domain}/apps/Vizmato-ios.jpeg`} />
         <meta name="thumbnail" content={`${domain}/apps/Vizmato-ios.jpeg`} />

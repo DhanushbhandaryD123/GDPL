@@ -32,16 +32,19 @@ export function HeroDesktop() {
 
       <div className="w-full relative overflow-hidden text-white shadow-2xl bg-black rounded-3xl md:rounded-[2.5rem] h-[520px] sm:h-[560px] md:h-[620px] lg:h-[660px] xl:h-[700px] flex items-center">
         {/* Static Base Image Layer for Instant Desktop LCP Discovery */}
-        <img
-          src={heroImages[0]}
-          alt="Global Delight Desktop Hero"
-          fetchPriority="high"
-          loading="eager"
-          decoding="async"
-          width={1920}
-          height={700}
-          className="absolute inset-0 w-full h-full object-cover object-center scale-[1.08] z-0"
-        />
+        <picture>
+          <source media="(min-width: 768px)" srcSet={heroImages[0]} />
+          <img
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E"
+            alt="Global Delight Desktop Hero"
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
+            width={1920}
+            height={700}
+            className="absolute inset-0 w-full h-full object-cover object-center scale-[1.08] z-0"
+          />
+        </picture>
 
         {/* Carousel Transition for subsequent slides */}
         {currentImageIndex > 0 && (

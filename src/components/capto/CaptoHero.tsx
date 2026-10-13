@@ -358,6 +358,8 @@ export function CaptoHero() {
                 width={1672} 
                 height={941} 
                 loading="eager"
+                fetchPriority="high"
+                decoding="async"
               />
             </div>
             

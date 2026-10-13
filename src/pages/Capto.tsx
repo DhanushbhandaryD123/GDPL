@@ -22,6 +22,7 @@ export function Capto() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${domain}/capto`} />
         <link rel="canonical" href={`${domain}/capto`} />
+        <link rel="preload" as="image" href="/capto/c-hero.webp" fetchPriority="high" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",

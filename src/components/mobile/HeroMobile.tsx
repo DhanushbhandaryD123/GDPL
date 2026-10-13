@@ -32,16 +32,19 @@ export function HeroMobile() {
 
       <div className="w-full relative overflow-hidden text-white shadow-2xl bg-black rounded-2xl sm:rounded-3xl h-[290px] sm:h-[330px] flex flex-col justify-end">
         {/* Static Base Image Layer for Instant LCP Discovery & 0ms Render Delay */}
-        <img
-          src={heroImages[0]}
-          alt="Global Delight Hero"
-          fetchPriority="high"
-          loading="eager"
-          decoding="async"
-          width={768}
-          height={330}
-          className="absolute inset-0 w-full h-full object-cover object-[65%_center] z-0"
-        />
+        <picture>
+          <source media="(max-width: 767px)" srcSet={heroImages[0]} />
+          <img
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E"
+            alt="Global Delight Hero"
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
+            width={768}
+            height={330}
+            className="absolute inset-0 w-full h-full object-cover object-[65%_center] z-0"
+          />
+        </picture>
 
         {/* Carousel Transition for subsequent slides */}
         {currentImageIndex > 0 && (

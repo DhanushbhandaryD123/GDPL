@@ -24,6 +24,7 @@ export function BoomForMobilePage() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${domain}/boomformobile`} />
         <link rel="canonical" href={`${domain}/boomformobile`} />
+        <link rel="preload" as="image" href="/images/external/img_98438af44226.jpg" fetchPriority="high" />
     
         <meta property="og:image" content={`${domain}/apps/Boom%20for%20iOS.jpeg`} />
         <meta name="subject" content="Boom for Mobile | Best Bass & Volume Booster" />

@@ -7,10 +7,16 @@ export function Boom3DHero() {
     <div className="w-full max-w-[1920px] mx-auto px-2 md:px-4 pt-1 pb-12 bg-white">
       <div className="w-full relative overflow-hidden text-white pt-12 pb-16 md:pt-20 md:pb-24 shadow-2xl bg-black rounded-3xl md:rounded-[2.5rem]">
         
-        {/* Background Image Layer with scale to crop out borders */}
-        <div
-          className="absolute inset-0 bg-no-repeat bg-cover bg-center scale-[1.08]"
-          style={{ backgroundImage: 'url("/boom3D/boom3d-hero.webp")' }}
+        {/* Static Base Image Layer for Instant Desktop LCP Discovery */}
+        <img
+          src="/boom3D/boom3d-hero.webp"
+          alt="Boom 3D Hero"
+          fetchPriority="high"
+          loading="eager"
+          decoding="async"
+          width={1920}
+          height={700}
+          className="absolute inset-0 w-full h-full object-cover object-center scale-[1.08] z-0 pointer-events-none"
         />
 
         {/* Scrim so the headline stays legible regardless of what's behind it at any breakpoint */}

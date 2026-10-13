@@ -24,6 +24,7 @@ export function AuDimixPage() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${domain}/audimix`} />
         <link rel="canonical" href={`${domain}/audimix`} />
+        <link rel="preload" as="image" href="/images/external/img_13a0865af43b.jpg" fetchPriority="high" />
       
         <meta property="og:image" content={`${domain}/apps/AuDimix-Window.jpeg`} />
         <meta name="thumbnail" content={`${domain}/apps/AuDimix-Window.jpeg`} />
