@@ -1,4 +1,4 @@
-import { useEffect, useState, lazy, Suspense } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Toaster } from 'react-hot-toast';
@@ -24,8 +24,6 @@ function LegacyLangAlias({ lang, bareTo }: { lang: string; bareTo: string }) {
   }, [lang, bareTo]);
   return null;
 }
-
-import { SplashScreen } from './components/layout/SplashScreen';
 
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
@@ -388,31 +386,14 @@ const appRoutes = [
 ];
 
 function App() {
-  const isPrerender =
-    typeof window !== 'undefined' &&
-    (Boolean((window as any).__PRERENDER__) ||
-      navigator.userAgent.includes('ReactSnap') ||
-      navigator.userAgent.includes('Headless') ||
-      navigator.userAgent.includes('Puppeteer') ||
-      navigator.userAgent.includes('Lighthouse') ||
-      navigator.userAgent.includes('PageSpeed') ||
-      navigator.userAgent.includes('Chrome-Lighthouse') ||
-      navigator.userAgent.includes('PTST'));
-
-  const [isAppReady, setIsAppReady] = useState(isPrerender);
+  useEffect(() => {
+    markSplashComplete();
+  }, []);
 
   return (
     <>
       <SEOHead />
       <Analytics />
-      {!isAppReady && (
-        <SplashScreen
-          onComplete={() => {
-            setIsAppReady(true);
-            markSplashComplete();
-          }}
-        />
-      )}
       <ScrollToTop />
       <Suspense fallback={<RouteFallback />}>
         <Routes>

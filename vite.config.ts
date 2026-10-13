@@ -25,7 +25,10 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('scheduler') || id.includes('motion')) {
+            if (id.includes('motion')) {
+              return 'vendor-motion';
+            }
+            if (id.includes('react') || id.includes('scheduler')) {
               return 'vendor-framework';
             }
             if (id.includes('i18next')) {
