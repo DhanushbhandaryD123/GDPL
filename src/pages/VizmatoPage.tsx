@@ -40,12 +40,12 @@ export function VizmatoPage() {
       <main className="overflow-x-clip">
         <HeroWithVideoBackground />
         <Suspense fallback={null}>
-          <FeaturesSection />
-          <CreativeShowcase />
-          <ProcessSteps />
-          <ToolkitShowcase />
-          <MediaTestimonials />
-          <NewsletterSection />
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><FeaturesSection /></div>
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><CreativeShowcase /></div>
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><ProcessSteps /></div>
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><ToolkitShowcase /></div>
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><MediaTestimonials /></div>
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><NewsletterSection /></div>
         </Suspense>
       </main>
 

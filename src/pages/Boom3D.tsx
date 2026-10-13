@@ -76,19 +76,19 @@ export function Boom3D() {
         <Boom3DHero />
         <Boom3DOSSelector />
         <Suspense fallback={null}>
-          <Boom3DScrollReveal />
-          <Boom3DKeyFeatures />
-          <Boom3DSurround />
-          <Boom3DEqualizer />
-          <Boom3DVolumeBooster />
-          <Boom3DAppController />
-          <Boom3DAudioPlayer />
-          <Boom3DRadioStations />
-          <Boom3DAppDownload />
-          <Boom3DTailored />
-          <Boom3DTestimonials />
-          <Boom3DCTA />
-          <Boom3DFAQ />
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom3DScrollReveal /></div>
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom3DKeyFeatures /></div>
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom3DSurround /></div>
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom3DEqualizer /></div>
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom3DVolumeBooster /></div>
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom3DAppController /></div>
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom3DAudioPlayer /></div>
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom3DRadioStations /></div>
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom3DAppDownload /></div>
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom3DTailored /></div>
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom3DTestimonials /></div>
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom3DCTA /></div>
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom3DFAQ /></div>
         </Suspense>
       </main>
 

@@ -48,12 +48,12 @@ export function BoomForMobilePage() {
       <main className="overflow-x-clip">
         <HeroCarousel />
         <Suspense fallback={null}>
-          <BoomStory />
-          <PrimeFeatures />
-          <DiscoverSection />
-          <StatsSection />
-          <MediaTestimonials />
-          <UserTestimonials />
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><BoomStory /></div>
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><PrimeFeatures /></div>
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><DiscoverSection /></div>
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><StatsSection /></div>
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><MediaTestimonials /></div>
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><UserTestimonials /></div>
         </Suspense>
       </main>
 

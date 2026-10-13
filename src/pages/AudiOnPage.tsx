@@ -36,10 +36,10 @@ export function AudiOnPage() {
       <main className="overflow-x-clip">
         <Hero />
         <Suspense fallback={null}>
-          <AdvancedRecording />
-          <AudioEnhancement />
-          <EditingTranscription />
-          <Newsletter />
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><AdvancedRecording /></div>
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><AudioEnhancement /></div>
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><EditingTranscription /></div>
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Newsletter /></div>
         </Suspense>
       </main>
 

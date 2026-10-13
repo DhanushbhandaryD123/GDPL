@@ -38,11 +38,11 @@ export function AuDimixPage() {
       <main className="overflow-x-clip">
         <Hero />
         <Suspense fallback={null}>
-          <FeaturesOverview />
-          <UseCases />
-          <DetailedFeatures />
-          <FormatSupport />
-          <Subscription />
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><FeaturesOverview /></div>
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><UseCases /></div>
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><DetailedFeatures /></div>
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><FormatSupport /></div>
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Subscription /></div>
         </Suspense>
       </main>
 

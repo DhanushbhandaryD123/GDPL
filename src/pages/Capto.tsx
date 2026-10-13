@@ -52,9 +52,9 @@ export function Capto() {
       <main className="relative overflow-x-clip">
         <CaptoHero />
         <Suspense fallback={null}>
-          <CaptoFeatures />
-          <CaptoUseCases />
-          <CaptoFooterCTA />
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><CaptoFeatures /></div>
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><CaptoUseCases /></div>
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><CaptoFooterCTA /></div>
         </Suspense>
       </main>
 
