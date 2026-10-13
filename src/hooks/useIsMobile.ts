@@ -2,24 +2,24 @@ import { useState, useEffect } from 'react';
 
 export function useIsMobile(breakpoint = 768) {
   const [isMobile, setIsMobile] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return window.innerWidth < breakpoint;
+    if (typeof window !== 'undefined' && window.matchMedia) {
+      return window.matchMedia(`(max-width: ${breakpoint - 1}px)`).matches;
     }
     return false;
   });
 
   useEffect(() => {
-    // Initial check
-    const checkIsMobile = () => {
-      setIsMobile(window.innerWidth < breakpoint);
-    };
-    checkIsMobile();
+    if (typeof window === 'undefined' || !window.matchMedia) return;
+    const mql = window.matchMedia(`(max-width: ${breakpoint - 1}px)`);
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
 
-    // Listener for window resize
-    window.addEventListener('resize', checkIsMobile);
-    
-    // Cleanup
-    return () => window.removeEventListener('resize', checkIsMobile);
+    if (mql.addEventListener) {
+      mql.addEventListener('change', handler);
+      return () => mql.removeEventListener('change', handler);
+    } else {
+      mql.addListener(handler);
+      return () => mql.removeListener(handler);
+    }
   }, [breakpoint]);
 
   return isMobile;

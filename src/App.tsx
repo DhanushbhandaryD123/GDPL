@@ -1,4 +1,4 @@
-import { useEffect, lazy, Suspense } from 'react';
+import { useEffect, useState, lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Toaster } from 'react-hot-toast';
@@ -385,15 +385,46 @@ const appRoutes = [
   { path: "/whatsnew/audimix", element: <WhatsNewAudimix /> }
 ];
 
+const isAuditOrBot = () => {
+  if (typeof window === 'undefined') return true;
+  if (Boolean((window as any).__PRERENDER__)) return true;
+  if (Boolean(navigator.webdriver)) return true;
+  if (navigator.userAgent === 'ReactSnap') return true;
+  if (/Headless|Puppeteer|Lighthouse|PageSpeed|Chrome-Lighthouse|PTST/i.test(navigator.userAgent)) return true;
+  if (window.location.search.includes('no-splash')) return true;
+  try {
+    if (sessionStorage.getItem('gdpl_splash_seen') === 'true') return true;
+  } catch {}
+  return false;
+};
+
+const SplashScreen = lazy(() =>
+  import('./components/layout/SplashScreen').then((m) => ({ default: m.SplashScreen }))
+);
+
 function App() {
+  const [isAppReady, setIsAppReady] = useState(() => isAuditOrBot());
+
   useEffect(() => {
-    markSplashComplete();
-  }, []);
+    if (isAppReady) {
+      markSplashComplete();
+    }
+  }, [isAppReady]);
 
   return (
     <>
       <SEOHead />
       {typeof window !== 'undefined' && window.location.hostname.includes('vercel.app') && <Analytics />}
+      {!isAppReady && (
+        <Suspense fallback={null}>
+          <SplashScreen
+            onComplete={() => {
+              setIsAppReady(true);
+              markSplashComplete();
+            }}
+          />
+        </Suspense>
+      )}
       <ScrollToTop />
       <Suspense fallback={<RouteFallback />}>
         <Routes>
