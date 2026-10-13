@@ -164,6 +164,9 @@ async function prerender() {
       return root.children.length > 0 && text.length > 30;
     }, { timeout: 12000 });
 
+    // Allow lazy chunks inside Suspense to fully resolve and hydrate static DOM
+    await new Promise(r => setTimeout(r, 200));
+
     const rootHtml = await page.evaluate(() => {
       const root = document.getElementById('root');
       if (!root) return '';

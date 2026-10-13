@@ -1,13 +1,15 @@
+import { lazy, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../components/layout/Navbar';
 import { HeroCarousel } from '../components/boomformobile/HeroCarousel';
-import { BoomStory } from '../components/boomformobile/BoomStory';
-import { PrimeFeatures } from '../components/boomformobile/PrimeFeatures';
-import { DiscoverSection } from '../components/boomformobile/DiscoverSection';
-import { StatsSection } from '../components/boomformobile/StatsSection';
-import { MediaTestimonials } from '../components/boomformobile/MediaTestimonials';
-import { UserTestimonials } from '../components/boomformobile/UserTestimonials';
 import { Footer } from '../components/layout/Footer';
+
+const BoomStory = lazy(() => import('../components/boomformobile/BoomStory').then(m => ({ default: m.BoomStory })));
+const PrimeFeatures = lazy(() => import('../components/boomformobile/PrimeFeatures').then(m => ({ default: m.PrimeFeatures })));
+const DiscoverSection = lazy(() => import('../components/boomformobile/DiscoverSection').then(m => ({ default: m.DiscoverSection })));
+const StatsSection = lazy(() => import('../components/boomformobile/StatsSection').then(m => ({ default: m.StatsSection })));
+const MediaTestimonials = lazy(() => import('../components/boomformobile/MediaTestimonials').then(m => ({ default: m.MediaTestimonials })));
+const UserTestimonials = lazy(() => import('../components/boomformobile/UserTestimonials').then(m => ({ default: m.UserTestimonials })));
 
 export function BoomForMobilePage() {
   const domain = import.meta.env.VITE_SITE_URL || '';
@@ -22,7 +24,7 @@ export function BoomForMobilePage() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${domain}/boomformobile`} />
         <link rel="canonical" href={`${domain}/boomformobile`} />
-      
+    
         <meta property="og:image" content={`${domain}/apps/Boom%20for%20iOS.jpeg`} />
         <meta name="subject" content="Boom for Mobile | Best Bass & Volume Booster" />
         <meta name="thumbnail" content={`${domain}/apps/Boom%20for%20iOS.jpeg`} />
@@ -44,12 +46,14 @@ export function BoomForMobilePage() {
 
       <main className="overflow-x-clip">
         <HeroCarousel />
-        <BoomStory />
-        <PrimeFeatures />
-        <DiscoverSection />
-        <StatsSection />
-        <MediaTestimonials />
-        <UserTestimonials />
+        <Suspense fallback={null}>
+          <BoomStory />
+          <PrimeFeatures />
+          <DiscoverSection />
+          <StatsSection />
+          <MediaTestimonials />
+          <UserTestimonials />
+        </Suspense>
       </main>
 
       <Footer />

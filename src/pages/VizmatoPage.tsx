@@ -1,13 +1,15 @@
+import { lazy, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../components/layout/Navbar';
 import { HeroWithVideoBackground } from '../components/vizmato/HeroWithVideoBackground';
-import { FeaturesSection } from '../components/vizmato/FeaturesSection';
-import { CreativeShowcase } from '../components/vizmato/CreativeShowcase';
-import { ProcessSteps } from '../components/vizmato/ProcessSteps';
-import { ToolkitShowcase } from '../components/vizmato/ToolkitShowcase';
-import { MediaTestimonials } from '../components/vizmato/MediaTestimonials';
-import { NewsletterSection } from '../components/vizmato/NewsletterSection';
 import { Footer } from '../components/layout/Footer';
+
+const FeaturesSection = lazy(() => import('../components/vizmato/FeaturesSection').then(m => ({ default: m.FeaturesSection })));
+const CreativeShowcase = lazy(() => import('../components/vizmato/CreativeShowcase').then(m => ({ default: m.CreativeShowcase })));
+const ProcessSteps = lazy(() => import('../components/vizmato/ProcessSteps').then(m => ({ default: m.ProcessSteps })));
+const ToolkitShowcase = lazy(() => import('../components/vizmato/ToolkitShowcase').then(m => ({ default: m.ToolkitShowcase })));
+const MediaTestimonials = lazy(() => import('../components/vizmato/MediaTestimonials').then(m => ({ default: m.MediaTestimonials })));
+const NewsletterSection = lazy(() => import('../components/vizmato/NewsletterSection').then(m => ({ default: m.NewsletterSection })));
 
 export function VizmatoPage() {
   const domain = import.meta.env.VITE_SITE_URL || '';
@@ -36,12 +38,14 @@ export function VizmatoPage() {
 
       <main className="overflow-x-clip">
         <HeroWithVideoBackground />
-        <FeaturesSection />
-        <CreativeShowcase />
-        <ProcessSteps />
-        <ToolkitShowcase />
-        <MediaTestimonials />
-        <NewsletterSection />
+        <Suspense fallback={null}>
+          <FeaturesSection />
+          <CreativeShowcase />
+          <ProcessSteps />
+          <ToolkitShowcase />
+          <MediaTestimonials />
+          <NewsletterSection />
+        </Suspense>
       </main>
 
       <Footer />

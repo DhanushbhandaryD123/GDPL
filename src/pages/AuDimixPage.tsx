@@ -1,12 +1,14 @@
+import { lazy, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../components/layout/Navbar';
 import { Hero } from '../components/audimix/Hero';
-import { FeaturesOverview } from '../components/audimix/FeaturesOverview';
-import { UseCases } from '../components/audimix/UseCases';
-import { DetailedFeatures } from '../components/audimix/DetailedFeatures';
-import { FormatSupport } from '../components/audimix/FormatSupport';
-import { Subscription } from '../components/audimix/Subscription';
 import { Footer } from '../components/layout/Footer';
+
+const FeaturesOverview = lazy(() => import('../components/audimix/FeaturesOverview').then(m => ({ default: m.FeaturesOverview })));
+const UseCases = lazy(() => import('../components/audimix/UseCases').then(m => ({ default: m.UseCases })));
+const DetailedFeatures = lazy(() => import('../components/audimix/DetailedFeatures').then(m => ({ default: m.DetailedFeatures })));
+const FormatSupport = lazy(() => import('../components/audimix/FormatSupport').then(m => ({ default: m.FormatSupport })));
+const Subscription = lazy(() => import('../components/audimix/Subscription').then(m => ({ default: m.Subscription })));
 
 export function AuDimixPage() {
   const domain = import.meta.env.VITE_SITE_URL || '';
@@ -34,11 +36,13 @@ export function AuDimixPage() {
 
       <main className="overflow-x-clip">
         <Hero />
-        <FeaturesOverview />
-        <UseCases />
-        <DetailedFeatures />
-        <FormatSupport />
-        <Subscription />
+        <Suspense fallback={null}>
+          <FeaturesOverview />
+          <UseCases />
+          <DetailedFeatures />
+          <FormatSupport />
+          <Subscription />
+        </Suspense>
       </main>
 
       <Footer />

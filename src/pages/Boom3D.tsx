@@ -1,21 +1,23 @@
+import { lazy, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
 import { Boom3DHero } from '../components/boom3d/Boom3DHero';
 import { Boom3DOSSelector } from '../components/boom3d/Boom3DOSSelector';
-import { Boom3DScrollReveal } from '../components/boom3d/Boom3DScrollReveal';
-import { Boom3DKeyFeatures } from '../components/boom3d/Boom3DKeyFeatures';
-import { Boom3DSurround } from '../components/boom3d/Boom3DSurround';
-import { Boom3DEqualizer } from '../components/boom3d/Boom3DEqualizer';
-import { Boom3DVolumeBooster } from '../components/boom3d/Boom3DVolumeBooster';
-import { Boom3DAppController } from '../components/boom3d/Boom3DAppController';
-import { Boom3DAudioPlayer } from '../components/boom3d/Boom3DAudioPlayer';
-import { Boom3DRadioStations } from '../components/boom3d/Boom3DRadioStations';
-import { Boom3DTestimonials } from '../components/boom3d/Boom3DTestimonials';
-import { Boom3DCTA } from '../components/boom3d/Boom3DCTA';
-import { Boom3DAppDownload } from '../components/boom3d/Boom3DAppDownload';
-import { Boom3DTailored } from '../components/boom3d/Boom3DTailored';
-import { Boom3DFAQ } from '../components/boom3d/Boom3DFAQ';
+
+const Boom3DScrollReveal = lazy(() => import('../components/boom3d/Boom3DScrollReveal').then(m => ({ default: m.Boom3DScrollReveal })));
+const Boom3DKeyFeatures = lazy(() => import('../components/boom3d/Boom3DKeyFeatures').then(m => ({ default: m.Boom3DKeyFeatures })));
+const Boom3DSurround = lazy(() => import('../components/boom3d/Boom3DSurround').then(m => ({ default: m.Boom3DSurround })));
+const Boom3DEqualizer = lazy(() => import('../components/boom3d/Boom3DEqualizer').then(m => ({ default: m.Boom3DEqualizer })));
+const Boom3DVolumeBooster = lazy(() => import('../components/boom3d/Boom3DVolumeBooster').then(m => ({ default: m.Boom3DVolumeBooster })));
+const Boom3DAppController = lazy(() => import('../components/boom3d/Boom3DAppController').then(m => ({ default: m.Boom3DAppController })));
+const Boom3DAudioPlayer = lazy(() => import('../components/boom3d/Boom3DAudioPlayer').then(m => ({ default: m.Boom3DAudioPlayer })));
+const Boom3DRadioStations = lazy(() => import('../components/boom3d/Boom3DRadioStations').then(m => ({ default: m.Boom3DRadioStations })));
+const Boom3DTestimonials = lazy(() => import('../components/boom3d/Boom3DTestimonials').then(m => ({ default: m.Boom3DTestimonials })));
+const Boom3DCTA = lazy(() => import('../components/boom3d/Boom3DCTA').then(m => ({ default: m.Boom3DCTA })));
+const Boom3DAppDownload = lazy(() => import('../components/boom3d/Boom3DAppDownload').then(m => ({ default: m.Boom3DAppDownload })));
+const Boom3DTailored = lazy(() => import('../components/boom3d/Boom3DTailored').then(m => ({ default: m.Boom3DTailored })));
+const Boom3DFAQ = lazy(() => import('../components/boom3d/Boom3DFAQ').then(m => ({ default: m.Boom3DFAQ })));
 
 export function Boom3D() {
   const domain = import.meta.env.VITE_SITE_URL || '';
@@ -73,19 +75,21 @@ export function Boom3D() {
       <main className="relative">
         <Boom3DHero />
         <Boom3DOSSelector />
-        <Boom3DScrollReveal />
-        <Boom3DKeyFeatures />
-        <Boom3DSurround />
-        <Boom3DEqualizer />
-        <Boom3DVolumeBooster />
-        <Boom3DAppController />
-        <Boom3DAudioPlayer />
-        <Boom3DRadioStations />
-        <Boom3DAppDownload />
-        <Boom3DTailored />
-        <Boom3DTestimonials />
-        <Boom3DCTA />
-        <Boom3DFAQ />
+        <Suspense fallback={null}>
+          <Boom3DScrollReveal />
+          <Boom3DKeyFeatures />
+          <Boom3DSurround />
+          <Boom3DEqualizer />
+          <Boom3DVolumeBooster />
+          <Boom3DAppController />
+          <Boom3DAudioPlayer />
+          <Boom3DRadioStations />
+          <Boom3DAppDownload />
+          <Boom3DTailored />
+          <Boom3DTestimonials />
+          <Boom3DCTA />
+          <Boom3DFAQ />
+        </Suspense>
       </main>
 
       <div className="relative z-10 border-t border-gray-100 bg-white">

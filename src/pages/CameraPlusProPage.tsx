@@ -1,11 +1,13 @@
+import { lazy, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
 import { ProMainHero } from '../components/camerapluspro/ProMainHero';
-import { ProFeatures } from '../components/camerapluspro/ProFeatures';
-import { ProEditingTools } from '../components/camerapluspro/ProEditingTools';
-import { ProShare } from '../components/camerapluspro/ProShare';
-import { ProCTABanner } from '../components/camerapluspro/ProCTABanner';
+
+const ProFeatures = lazy(() => import('../components/camerapluspro/ProFeatures').then(m => ({ default: m.ProFeatures })));
+const ProEditingTools = lazy(() => import('../components/camerapluspro/ProEditingTools').then(m => ({ default: m.ProEditingTools })));
+const ProShare = lazy(() => import('../components/camerapluspro/ProShare').then(m => ({ default: m.ProShare })));
+const ProCTABanner = lazy(() => import('../components/camerapluspro/ProCTABanner').then(m => ({ default: m.ProCTABanner })));
 
 export function CameraPlusProPage() {
   const domain = import.meta.env.VITE_SITE_URL || '';
@@ -30,10 +32,12 @@ export function CameraPlusProPage() {
 
       <main className="overflow-x-clip">
         <ProMainHero />
-        <ProFeatures />
-        <ProEditingTools />
-        <ProShare />
-        <ProCTABanner />
+        <Suspense fallback={null}>
+          <ProFeatures />
+          <ProEditingTools />
+          <ProShare />
+          <ProCTABanner />
+        </Suspense>
       </main>
 
       <Footer />

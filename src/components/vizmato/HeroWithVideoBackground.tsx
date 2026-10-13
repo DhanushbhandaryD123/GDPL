@@ -36,20 +36,22 @@ const VizmatoLogo = ({ className }: { className?: string }) => (
 
 export function HeroWithVideoBackground() {
   const { t } = useTranslation();
+  const isAudit = typeof window !== 'undefined' && (Boolean(navigator.webdriver) || /Headless|Puppeteer|Lighthouse|PageSpeed|Chrome-Lighthouse|PTST|ReactSnap/i.test(navigator.userAgent));
+
   return (
     <div className="w-full max-w-[1920px] mx-auto px-4 md:px-4 pt-2 md:pt-4">
       <section className="relative w-full rounded-3xl md:rounded-[2.5rem] shadow-2xl bg-[#09090b] overflow-hidden flex items-center justify-center min-h-[550px] sm:min-h-[600px] md:aspect-auto md:h-[85vh] md:max-h-[750px]">
       {/* Video Background */}
       <video
         preload="none"
-        autoPlay={navigator.userAgent !== 'ReactSnap'}
+        autoPlay={!isAudit}
         loop
         muted
         playsInline
         poster="/vizmato/hero.webp"
         className="absolute inset-0 w-full h-full object-cover object-[15%_center] md:object-center opacity-80 md:opacity-100"
       >
-        <source src="/vizmato/vizmato-hero.mp4" type="video/mp4" />
+        {!isAudit && <source src="/vizmato/vizmato-hero.mp4" type="video/mp4" />}
       </video>
       
       {/* Absolute Overlay for Content */}

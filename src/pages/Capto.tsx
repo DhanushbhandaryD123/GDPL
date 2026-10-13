@@ -1,10 +1,12 @@
+import { lazy, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../components/layout/Navbar';
 import { CaptoHero } from '../components/capto/CaptoHero';
-import { CaptoFeatures } from '../components/capto/CaptoFeatures';
-import { CaptoUseCases } from '../components/capto/CaptoUseCases';
-import { CaptoFooterCTA } from '../components/capto/CaptoFooterCTA';
 import { Footer } from '../components/layout/Footer';
+
+const CaptoFeatures = lazy(() => import('../components/capto/CaptoFeatures').then(m => ({ default: m.CaptoFeatures })));
+const CaptoUseCases = lazy(() => import('../components/capto/CaptoUseCases').then(m => ({ default: m.CaptoUseCases })));
+const CaptoFooterCTA = lazy(() => import('../components/capto/CaptoFooterCTA').then(m => ({ default: m.CaptoFooterCTA })));
 
 export function Capto() {
   const domain = import.meta.env.VITE_SITE_URL || '';
@@ -48,9 +50,11 @@ export function Capto() {
 
       <main className="relative overflow-x-clip">
         <CaptoHero />
-        <CaptoFeatures />
-        <CaptoUseCases />
-        <CaptoFooterCTA />
+        <Suspense fallback={null}>
+          <CaptoFeatures />
+          <CaptoUseCases />
+          <CaptoFooterCTA />
+        </Suspense>
       </main>
 
       <Footer />

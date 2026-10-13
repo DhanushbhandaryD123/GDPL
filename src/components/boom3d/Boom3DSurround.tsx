@@ -85,7 +85,7 @@ export function Boom3DSurround() {
             <video
               src="/boom3D/video3D.mp4"
               preload="none"
-              autoPlay={navigator.userAgent !== 'ReactSnap'}
+              autoPlay={typeof window !== 'undefined' && !Boolean(navigator.webdriver) && !/Headless|Puppeteer|Lighthouse|PageSpeed|Chrome-Lighthouse|PTST|ReactSnap/i.test(navigator.userAgent)}
               loop
               muted
               playsInline

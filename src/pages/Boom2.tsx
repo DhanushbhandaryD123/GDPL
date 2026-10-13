@@ -1,21 +1,23 @@
+import { lazy, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../components/layout/Navbar';
 import { Boom2Hero } from '../components/boom2/Boom2Hero';
-import { Boom2PrecisionControl } from '../components/boom2/Boom2PrecisionControl';
-import { Boom2CoreFeatures } from '../components/boom2/Boom2CoreFeatures';
-import { Boom2FeatureGrid } from '../components/boom2/Boom2FeatureGrid';
-import { Boom2EqualizerPresetFlow } from '../components/boom2/Boom2EqualizerPresetFlow';
-import { Boom2AudioEffectsObject } from '../components/boom2/Boom2AudioEffectsObject';
-import { Boom2SystemWideControl } from '../components/boom2/Boom2SystemWideControl';
-import { Boom2BoomRemote } from '../components/boom2/Boom2BoomRemote';
-import { Boom2AudioAmplify } from '../components/boom2/Boom2AudioAmplify';
-import { Boom2OutputCompatibility } from '../components/boom2/Boom2OutputCompatibility';
-import { Boom2EnvironmentSim } from '../components/boom2/Boom2EnvironmentSim';
-import { Boom2Awards } from '../components/boom2/Boom2Awards';
-import { Boom2Testimonials } from '../components/boom2/Boom2Testimonials';
-import { Boom2FAQ } from '../components/boom2/Boom2FAQ';
-import { Boom2FooterCTA } from '../components/boom2/Boom2FooterCTA';
 import { Footer } from '../components/layout/Footer';
+
+const Boom2PrecisionControl = lazy(() => import('../components/boom2/Boom2PrecisionControl').then(m => ({ default: m.Boom2PrecisionControl })));
+const Boom2CoreFeatures = lazy(() => import('../components/boom2/Boom2CoreFeatures').then(m => ({ default: m.Boom2CoreFeatures })));
+const Boom2FeatureGrid = lazy(() => import('../components/boom2/Boom2FeatureGrid').then(m => ({ default: m.Boom2FeatureGrid })));
+const Boom2EqualizerPresetFlow = lazy(() => import('../components/boom2/Boom2EqualizerPresetFlow').then(m => ({ default: m.Boom2EqualizerPresetFlow })));
+const Boom2AudioEffectsObject = lazy(() => import('../components/boom2/Boom2AudioEffectsObject').then(m => ({ default: m.Boom2AudioEffectsObject })));
+const Boom2SystemWideControl = lazy(() => import('../components/boom2/Boom2SystemWideControl').then(m => ({ default: m.Boom2SystemWideControl })));
+const Boom2BoomRemote = lazy(() => import('../components/boom2/Boom2BoomRemote').then(m => ({ default: m.Boom2BoomRemote })));
+const Boom2AudioAmplify = lazy(() => import('../components/boom2/Boom2AudioAmplify').then(m => ({ default: m.Boom2AudioAmplify })));
+const Boom2OutputCompatibility = lazy(() => import('../components/boom2/Boom2OutputCompatibility').then(m => ({ default: m.Boom2OutputCompatibility })));
+const Boom2EnvironmentSim = lazy(() => import('../components/boom2/Boom2EnvironmentSim').then(m => ({ default: m.Boom2EnvironmentSim })));
+const Boom2Awards = lazy(() => import('../components/boom2/Boom2Awards').then(m => ({ default: m.Boom2Awards })));
+const Boom2Testimonials = lazy(() => import('../components/boom2/Boom2Testimonials').then(m => ({ default: m.Boom2Testimonials })));
+const Boom2FAQ = lazy(() => import('../components/boom2/Boom2FAQ').then(m => ({ default: m.Boom2FAQ })));
+const Boom2FooterCTA = lazy(() => import('../components/boom2/Boom2FooterCTA').then(m => ({ default: m.Boom2FooterCTA })));
 
 export function Boom2() {
   const domain = import.meta.env.VITE_SITE_URL || '';
@@ -75,26 +77,28 @@ export function Boom2() {
       <main className="overflow-x-clip">
         <Boom2Hero />
         
-        <div className="bg-[#ffffff] text-gray-900 pb-16 pt-6 relative z-10">
-          <Boom2PrecisionControl />
-          <Boom2CoreFeatures />
-          <Boom2FeatureGrid />
-          <Boom2EqualizerPresetFlow />
-          <Boom2AudioEffectsObject />
-          <Boom2SystemWideControl />
-          <Boom2BoomRemote />
-          <Boom2AudioAmplify />
-          <Boom2OutputCompatibility />
-        </div>
+        <Suspense fallback={null}>
+          <div className="bg-[#ffffff] text-gray-900 pb-16 pt-6 relative z-10">
+            <Boom2PrecisionControl />
+            <Boom2CoreFeatures />
+            <Boom2FeatureGrid />
+            <Boom2EqualizerPresetFlow />
+            <Boom2AudioEffectsObject />
+            <Boom2SystemWideControl />
+            <Boom2BoomRemote />
+            <Boom2AudioAmplify />
+            <Boom2OutputCompatibility />
+          </div>
 
-        <Boom2EnvironmentSim />
-        
-        <Boom2Awards />
-        <Boom2Testimonials />
-        
-        <Boom2FAQ />
-        
-        <Boom2FooterCTA />
+          <Boom2EnvironmentSim />
+          
+          <Boom2Awards />
+          <Boom2Testimonials />
+          
+          <Boom2FAQ />
+          
+          <Boom2FooterCTA />
+        </Suspense>
       </main>
 
       <Footer />

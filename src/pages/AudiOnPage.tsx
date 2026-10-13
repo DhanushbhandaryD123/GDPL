@@ -1,11 +1,13 @@
+import { lazy, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../components/layout/Navbar';
 import { Hero } from '../components/audion/Hero';
-import { AdvancedRecording } from '../components/audion/AdvancedRecording';
-import { AudioEnhancement } from '../components/audion/AudioEnhancement';
-import { EditingTranscription } from '../components/audion/EditingTranscription';
-import { Newsletter } from '../components/audion/Newsletter';
 import { Footer } from '../components/layout/Footer';
+
+const AdvancedRecording = lazy(() => import('../components/audion/AdvancedRecording').then(m => ({ default: m.AdvancedRecording })));
+const AudioEnhancement = lazy(() => import('../components/audion/AudioEnhancement').then(m => ({ default: m.AudioEnhancement })));
+const EditingTranscription = lazy(() => import('../components/audion/EditingTranscription').then(m => ({ default: m.EditingTranscription })));
+const Newsletter = lazy(() => import('../components/audion/Newsletter').then(m => ({ default: m.Newsletter })));
 
 export function AudiOnPage() {
   const domain = import.meta.env.VITE_SITE_URL || '';
@@ -33,10 +35,12 @@ export function AudiOnPage() {
 
       <main className="overflow-x-clip">
         <Hero />
-        <AdvancedRecording />
-        <AudioEnhancement />
-        <EditingTranscription />
-        <Newsletter />
+        <Suspense fallback={null}>
+          <AdvancedRecording />
+          <AudioEnhancement />
+          <EditingTranscription />
+          <Newsletter />
+        </Suspense>
       </main>
 
       <Footer />

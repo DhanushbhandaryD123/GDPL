@@ -1,13 +1,15 @@
+import { lazy, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../components/layout/Navbar';
 import { Hero } from '../components/captowindows/Hero';
-import { MetricsBar } from '../components/captowindows/MetricsBar';
-import { FeaturesGrid } from '../components/captowindows/FeaturesGrid';
-import { Showcase } from '../components/captowindows/Showcase';
-import { VideoTutorials } from '../components/captowindows/VideoTutorials';
-import { MacPromo } from '../components/captowindows/MacPromo';
-import { Newsletter } from '../components/captowindows/Newsletter';
 import { Footer } from '../components/layout/Footer';
+
+const MetricsBar = lazy(() => import('../components/captowindows/MetricsBar').then(m => ({ default: m.MetricsBar })));
+const FeaturesGrid = lazy(() => import('../components/captowindows/FeaturesGrid').then(m => ({ default: m.FeaturesGrid })));
+const Showcase = lazy(() => import('../components/captowindows/Showcase').then(m => ({ default: m.Showcase })));
+const VideoTutorials = lazy(() => import('../components/captowindows/VideoTutorials').then(m => ({ default: m.VideoTutorials })));
+const MacPromo = lazy(() => import('../components/captowindows/MacPromo').then(m => ({ default: m.MacPromo })));
+const Newsletter = lazy(() => import('../components/captowindows/Newsletter').then(m => ({ default: m.Newsletter })));
 
 export function CaptoWindowsPage() {
   const domain = import.meta.env.VITE_SITE_URL || '';
@@ -35,12 +37,14 @@ export function CaptoWindowsPage() {
 
       <main className="overflow-x-clip">
         <Hero />
-        <MetricsBar />
-        <FeaturesGrid />
-        <Showcase />
-        <VideoTutorials />
-        <MacPromo />
-        <Newsletter />
+        <Suspense fallback={null}>
+          <MetricsBar />
+          <FeaturesGrid />
+          <Showcase />
+          <VideoTutorials />
+          <MacPromo />
+          <Newsletter />
+        </Suspense>
       </main>
 
       <Footer />
