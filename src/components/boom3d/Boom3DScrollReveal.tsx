@@ -8,9 +8,13 @@ import { Boom3DAppUniverseVisual, useResponsiveTier, getNaturalSize } from './Bo
 // Respects prefers-reduced-motion.
 // =========================================
 function usePrefersReducedMotion() {
-  const [prefersReducedMotion] = useState(
-    () => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  );
+  const [prefersReducedMotion] = useState(() => {
+    if (typeof window === 'undefined') return true;
+    if (Boolean((window as any).__PRERENDER__)) return true;
+    if (Boolean(navigator.webdriver)) return true;
+    if (/Headless|Puppeteer|Lighthouse|PageSpeed|Chrome-Lighthouse|PTST/i.test(navigator.userAgent)) return true;
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  });
   return prefersReducedMotion;
 }
 

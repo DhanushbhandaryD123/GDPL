@@ -53,7 +53,7 @@ export function Footer({ logoUrl }: FooterProps = {}) {
           
           {/* Column 1 - Products */}
           <div className="border-b border-gray-800 md:border-none">
-            <h4 
+            <h3 
               className="font-bold text-white text-[15px] mb-0 md:mb-6 flex justify-between items-center cursor-pointer md:cursor-default py-4 md:py-0"
               onClick={() => toggleSection('products')}
             >
@@ -61,7 +61,7 @@ export function Footer({ logoUrl }: FooterProps = {}) {
               <span className="md:hidden text-white font-bold">
                 {openSection === 'products' ? <ChevronUp className="w-5 h-5 stroke-[3]" /> : <ChevronDown className="w-5 h-5 stroke-[3]" />}
               </span>
-            </h4>
+            </h3>
             <ul className={`space-y-4 text-[13px] text-gray-400 pb-6 md:pb-0 ${openSection === 'products' ? 'block' : 'hidden md:block'}`}>
               <li><Link to={getVariant(PRODUCTS.boom3d, 'mac').route} className="hover:text-white transition">{t('footer.boom3d_mac')}</Link></li>
               <li><Link to={getVariant(PRODUCTS.boom3d, 'windows').route} className="hover:text-white transition">{t('footer.boom3d_windows')}</Link></li>
@@ -79,7 +79,7 @@ export function Footer({ logoUrl }: FooterProps = {}) {
 
           {/* Column 2 - About */}
           <div className="border-b border-gray-800 md:border-none">
-            <h4 
+            <h3 
               className="font-bold text-white text-[15px] mb-0 md:mb-6 flex justify-between items-center cursor-pointer md:cursor-default py-4 md:py-0"
               onClick={() => toggleSection('about')}
             >
@@ -87,7 +87,7 @@ export function Footer({ logoUrl }: FooterProps = {}) {
               <span className="md:hidden text-white font-bold">
                 {openSection === 'about' ? <ChevronUp className="w-5 h-5 stroke-[3]" /> : <ChevronDown className="w-5 h-5 stroke-[3]" />}
               </span>
-            </h4>
+            </h3>
             <ul className={`space-y-4 text-[13px] text-gray-400 pb-6 md:pb-0 ${openSection === 'about' ? 'block' : 'hidden md:block'}`}>
               <li><Link to="/about" className="hover:text-white transition">{t('footer.about_us')}</Link></li>
               <li><a href="https://blog.globaldelight.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">{t('footer.blog')}</a></li>
@@ -99,7 +99,7 @@ export function Footer({ logoUrl }: FooterProps = {}) {
 
           {/* Column 3 - Store */}
           <div className="border-b border-gray-800 md:border-none">
-            <h4 
+            <h3 
               className="font-bold text-white text-[15px] mb-0 md:mb-6 flex justify-between items-center cursor-pointer md:cursor-default py-4 md:py-0"
               onClick={() => toggleSection('store')}
             >
@@ -107,7 +107,7 @@ export function Footer({ logoUrl }: FooterProps = {}) {
               <span className="md:hidden text-white font-bold">
                 {openSection === 'store' ? <ChevronUp className="w-5 h-5 stroke-[3]" /> : <ChevronDown className="w-5 h-5 stroke-[3]" />}
               </span>
-            </h4>
+            </h3>
             <ul className={`space-y-4 text-[13px] text-gray-400 pb-6 md:pb-0 ${openSection === 'store' ? 'block' : 'hidden md:block'}`}>
               <li><a href="https://www.globaldelight.com/store/?product=boom3d&item=boom3d-mac" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Boom 3D</a></li>
               <li><a href="https://www.globaldelight.com/store/?product=boom2" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Boom 2</a></li>
@@ -134,7 +134,7 @@ export function Footer({ logoUrl }: FooterProps = {}) {
             </div>
 
             <div className="w-full sm:w-1/2 border-b border-gray-800 md:border-none">
-              <h4
+              <h3
                 className="font-bold text-white text-[15px] mb-0 md:mb-6 flex justify-between items-center cursor-pointer md:cursor-default py-4 md:py-0"
                 onClick={() => toggleSection('resources')}
               >
@@ -142,11 +142,11 @@ export function Footer({ logoUrl }: FooterProps = {}) {
                 <span className="md:hidden text-white font-bold">
                   {openSection === 'resources' ? <ChevronUp className="w-5 h-5 stroke-[3]" /> : <ChevronDown className="w-5 h-5 stroke-[3]" />}
                 </span>
-              </h4>
+              </h3>
               <ul className={`space-y-4 text-[13px] text-gray-400 pb-6 md:pb-0 ${openSection === 'resources' ? 'block' : 'hidden md:block'}`}>
                 <li><Link to="/faq" className="hover:text-white transition">{t('footer.faqs')}</Link></li>
                 <li><Link to="/contact" className="hover:text-white transition">{t('footer.contact')}</Link></li>
-                <li><Link to="#" className="hover:text-white transition">{t('footer.whats_new')}</Link></li>
+                <li><Link to="/whatsnew/boom" className="hover:text-white transition">{t('footer.whats_new')}</Link></li>
               </ul>
             </div>
           </div>

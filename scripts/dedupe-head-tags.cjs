@@ -44,7 +44,7 @@ function processFile(filePath) {
   fs.writeFileSync(filePath, dedupedHead + rest, 'utf8');
   return stylesRemoved + preconnectsRemoved;
 }
-
+  
 let totalFiles = 0;
 let totalRemoved = 0;
 function walkAndCount(dir) {

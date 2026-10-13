@@ -306,11 +306,11 @@ export function Boom2CoreFeatures() {
                   </div>
 
                   {/* Text Title only with color change on touch/hover */}
-                  <h4 className={`font-semibold text-[13.5px] md:text-[15px] leading-snug transition-colors duration-200 ${
+                  <h3 className={`font-semibold text-[13.5px] md:text-[15px] leading-snug transition-colors duration-200 ${
                     isActive ? 'text-[#1390FB]' : 'text-gray-900 hover:text-[#1390FB]'
                   }`}>
                     {feature.title}
-                  </h4>
+                  </h3>
                 </div>
               </motion.div>
             );
@@ -357,11 +357,11 @@ export function Boom2CoreFeatures() {
                   </div>
 
                   {/* Text Title only */}
-                  <h4 className={`font-semibold text-[13.5px] md:text-[15px] leading-snug transition-colors duration-200 ${
+                  <h3 className={`font-semibold text-[13.5px] md:text-[15px] leading-snug transition-colors duration-200 ${
                     isActive ? 'text-[#1390FB]' : 'text-gray-900 hover:text-[#1390FB]'
                   }`}>
                     {feature.title}
-                  </h4>
+                  </h3>
                 </div>
               </motion.div>
             );

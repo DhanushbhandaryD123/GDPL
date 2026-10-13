@@ -216,9 +216,9 @@ export function Boom3DAudioPlayer() {
                 </div>
               </div>
               <div>
-                <h4 className="text-sm font-bold text-gray-900 tracking-tight leading-snug">
+                <p className="text-sm font-bold text-gray-900 tracking-tight leading-snug">
                   {currentTrack.title}
-                </h4>
+                </p>
                 <p className="text-xs text-gray-500 font-medium mt-0.5">
                   {currentTrack.artist} • <span className="font-mono text-indigo-600 font-semibold">{currentTrack.format}</span>
                 </p>

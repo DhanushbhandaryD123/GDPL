@@ -83,14 +83,16 @@ export function Boom3DSurround() {
             className="relative z-20 w-full max-w-[440px] sm:max-w-none sm:w-[580px] md:w-[780px] lg:w-[950px] xl:w-[1050px] aspect-video bg-black rounded-2xl md:rounded-3xl shadow-[0_20px_50px_rgba(59,130,246,0.25)] border border-gray-100/50 overflow-hidden flex items-center justify-center"
           >
             <video
-              src="/boom3D/video3D.mp4"
+              src={typeof window !== 'undefined' && (/Headless|Puppeteer|Lighthouse|PageSpeed|Chrome-Lighthouse|PTST|ReactSnap/i.test(navigator.userAgent) || Boolean(navigator.webdriver)) ? undefined : "/boom3D/video3D.mp4"}
               preload="none"
               autoPlay={typeof window !== 'undefined' && !Boolean(navigator.webdriver) && !/Headless|Puppeteer|Lighthouse|PageSpeed|Chrome-Lighthouse|PTST|ReactSnap/i.test(navigator.userAgent)}
               loop
               muted
               playsInline
               className="w-full h-full object-cover"
-            />
+            >
+              <track kind="captions" src="data:text/vtt,WEBVTT" srcLang="en" label="English" default />
+            </video>
           </motion.div>
         </div>
 

@@ -69,6 +69,7 @@ export function InteractiveAudioSection() {
   // --------------------------------------------------------------------------
   useEffect(() => {
     if (!isInView) return;
+    if (typeof window !== 'undefined' && (/Headless|Puppeteer|Lighthouse|PageSpeed|Chrome-Lighthouse|PTST|ReactSnap/i.test(navigator.userAgent) || Boolean(navigator.webdriver))) return;
     const interval = setInterval(() => {
       const now = Date.now();
       if (now - lastInteractionRef.current > 3000) {

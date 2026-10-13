@@ -127,7 +127,7 @@ export function Boom3DEqualizer() {
             <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 mb-5">
               <Sliders size={22} />
             </div>
-            <h4 className="text-lg font-bold text-gray-900 mb-2">31 Discrete Frequency Bands</h4>
+            <h3 className="text-lg font-bold text-gray-900 mb-2">31 Discrete Frequency Bands</h3>
             <p className="text-sm text-gray-600 leading-relaxed">
               Fine-tune every audible octave from 20 Hz deep sub-bass to 20 kHz crystal treble air with surgical 0.1 dB gain precision.
             </p>
@@ -143,7 +143,7 @@ export function Boom3DEqualizer() {
             <div className="w-12 h-12 rounded-2xl bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-600 mb-5">
               <Layers size={22} />
             </div>
-            <h4 className="text-lg font-bold text-gray-900 mb-2">Handcrafted Genre Tunings</h4>
+            <h3 className="text-lg font-bold text-gray-900 mb-2">Handcrafted Genre Tunings</h3>
             <p className="text-sm text-gray-600 leading-relaxed">
               Expertly tuned sound curves designed specifically for Acoustic warmth, Heavy Metal punch, Jazz brass, and Hip-Hop low ends.
             </p>
@@ -159,7 +159,7 @@ export function Boom3DEqualizer() {
             <div className="w-12 h-12 rounded-2xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-600 mb-5">
               <Sparkles size={22} />
             </div>
-            <h4 className="text-lg font-bold text-gray-900 mb-2">Real-Time Parametric Curves</h4>
+            <h3 className="text-lg font-bold text-gray-900 mb-2">Real-Time Parametric Curves</h3>
             <p className="text-sm text-gray-600 leading-relaxed">
               Zero-phase distortion algorithms ensure vocal clarity remains untouched while shaping deep lows and shimmering highs.
             </p>

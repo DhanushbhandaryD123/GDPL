@@ -56,9 +56,9 @@ export function Boom2RemoteControl() {
                   <Icon size={26} strokeWidth={isActive ? 2.5 : 2} />
                 </div>
                 <div>
-                  <h4 className={`text-[19px] font-bold mb-1.5 transition-colors ${isActive ? 'text-[#4F46E5]' : 'text-[#0a0a0f]'}`}>
+                  <h3 className={`text-[19px] font-bold mb-1.5 transition-colors ${isActive ? 'text-[#4F46E5]' : 'text-[#0a0a0f]'}`}>
                     {option.title}
-                  </h4>
+                  </h3>
                   <p className="text-gray-600 text-[15px] leading-relaxed">
                     {option.description}
                   </p>

@@ -344,24 +344,28 @@ export function Boom3DTestimonials() {
               </div>
 
               {/* Dots */}
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1">
                 {mediaItems.map((_, i) => (
                   <button
                     key={i}
                     id={`boom3d-media-dot-${i}`}
                     onClick={() => navigate(i, i > current ? 'right' : 'left')}
                     aria-label={`Go to quote ${i + 1}`}
-                    className={`rounded-full transition-all duration-300 ${
-                      i === current
-                        ? 'w-6 h-2 bg-gradient-to-r from-[#a78bfa] to-[#f472b6]'
-                        : 'w-2 h-2 bg-black/15 hover:bg-black/30'
-                    }`}
-                  />
+                    className="w-10 h-10 flex items-center justify-center focus:outline-none"
+                  >
+                    <span
+                      className={`block rounded-full transition-all duration-300 ${
+                        i === current
+                          ? 'w-6 h-2 bg-gradient-to-r from-[#a78bfa] to-[#f472b6]'
+                          : 'w-2 h-2 bg-black/25 hover:bg-black/40'
+                      }`}
+                    />
+                  </button>
                 ))}
               </div>
 
               {/* Counter */}
-              <span className="text-[#86868b] text-sm font-medium tabular-nums">
+              <span className="text-gray-600 text-sm font-medium tabular-nums">
                 {String(current + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
               </span>
             </div>

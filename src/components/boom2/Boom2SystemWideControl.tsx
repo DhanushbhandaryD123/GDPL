@@ -244,27 +244,27 @@ export function Boom2SystemWideControl() {
         {/* 3 Clean Bottom Feature Highlights (No Boxes, No Borders) */}
         <div className="grid sm:grid-cols-3 gap-8 md:gap-12 mt-12 text-center max-w-4xl mx-auto pt-8 border-t border-slate-100">
           <div>
-            <h4 className="text-base sm:text-lg font-bold text-slate-900 mb-1.5">
+            <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-1.5">
               {t('boom2.system_wide_control.feature_1_title', { defaultValue: 'Universal App Integration' })}
-            </h4>
+            </h3>
             <p className="text-slate-500 text-sm leading-relaxed">
               {t('boom2.system_wide_control.feature_1_desc', { defaultValue: 'Automatically enhances Spotify, YouTube, Netflix, Apple Music, Safari, Zoom, FaceTime, and games without manual setup.' })}
             </p>
           </div>
 
           <div>
-            <h4 className="text-base sm:text-lg font-bold text-slate-900 mb-1.5">
+            <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-1.5">
               {t('boom2.system_wide_control.feature_3_title', { defaultValue: 'Distortion-Free Volume Boost' })}
-            </h4>
+            </h3>
             <p className="text-slate-500 text-sm leading-relaxed">
               {t('boom2.system_wide_control.feature_3_desc', { defaultValue: 'Safely amplifies system audio up to 200% with intelligent peak-limiting algorithms that prevent distortion and protect speakers.' })}
             </p>
           </div>
 
           <div>
-            <h4 className="text-base sm:text-lg font-bold text-slate-900 mb-1.5">
+            <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-1.5">
               {t('boom2.system_wide_control.feature_2_title', { defaultValue: 'Menu Bar & Quick Access' })}
-            </h4>
+            </h3>
             <p className="text-slate-500 text-sm leading-relaxed">
               {t('boom2.system_wide_control.feature_2_desc', { defaultValue: 'Quickly adjust master volume beyond limits, toggle presets, and fine-tune equalizers directly from the macOS menu bar.' })}
             </p>

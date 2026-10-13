@@ -47,6 +47,8 @@ export function Boom3DOSSelector() {
 
           <div
             className="flex items-center bg-gray-100 rounded-[2rem] p-1 border border-gray-200 shadow-inner relative w-[130px] h-[56px] cursor-pointer"
+            role="group"
+            aria-label="Operating system selection"
             onClick={() => setOS(os === 'mac' ? 'windows' : 'mac')}
           >
             <motion.div
@@ -55,13 +57,25 @@ export function Boom3DOSSelector() {
               transition={{ type: "spring", stiffness: 500, damping: 30 }}
             />
 
-            <div className="flex-1 flex items-center justify-center relative z-10 w-[60px]" onClick={(e) => { e.stopPropagation(); setOS('mac'); }}>
-              <AppleIcon className={`w-6 h-6 transition-colors duration-300 ${os === 'mac' ? 'text-black' : 'text-gray-400'}`} />
-            </div>
+            <button
+              type="button"
+              aria-label="Select macOS"
+              aria-pressed={os === 'mac'}
+              className="flex-1 flex items-center justify-center relative z-10 w-[60px] h-full focus:outline-none"
+              onClick={(e) => { e.stopPropagation(); setOS('mac'); }}
+            >
+              <AppleIcon className={`w-6 h-6 transition-colors duration-300 ${os === 'mac' ? 'text-black' : 'text-gray-500'}`} />
+            </button>
 
-            <div className="flex-1 flex items-center justify-center relative z-10 w-[60px]" onClick={(e) => { e.stopPropagation(); setOS('windows'); }}>
-              <WindowsIcon className={`w-[22px] h-[22px] transition-colors duration-300 ${os === 'windows' ? 'text-[#0099ff]' : 'text-gray-400'}`} />
-            </div>
+            <button
+              type="button"
+              aria-label="Select Windows"
+              aria-pressed={os === 'windows'}
+              className="flex-1 flex items-center justify-center relative z-10 w-[60px] h-full focus:outline-none"
+              onClick={(e) => { e.stopPropagation(); setOS('windows'); }}
+            >
+              <WindowsIcon className={`w-[22px] h-[22px] transition-colors duration-300 ${os === 'windows' ? 'text-[#0070e0]' : 'text-gray-500'}`} />
+            </button>
           </div>
 
           <span className={`font-bold transition-opacity duration-300 ${os === 'windows' ? 'text-gray-900' : 'text-transparent hidden md:block'}`}>
@@ -81,14 +95,14 @@ export function Boom3DOSSelector() {
           >
             {/* Download Button Column */}
             <div className="flex-1 flex flex-col items-center max-w-[320px]">
-              <button className="w-full bg-[#0099ff] hover:bg-[#0088ee] text-white font-bold py-5 px-6 rounded-xl flex items-center justify-center gap-3 transition-colors text-lg tracking-wide shadow-[0_4px_14px_rgba(0,153,255,0.3)]">
+              <button className="w-full bg-[#0070e0] hover:bg-[#0060c0] text-white font-bold py-5 px-6 rounded-xl flex items-center justify-center gap-3 transition-colors text-lg tracking-wide shadow-[0_4px_14px_rgba(0,112,224,0.35)]">
                 {os === 'mac' ? <AppleIcon className="w-6 h-6" /> : <WindowsIcon className="w-6 h-6" />}
                 {os === 'mac' ? t('boom3d.os_selector.download_trial_mac') : t('boom3d.os_selector.download_trial_win')}
               </button>
-              <p className="text-gray-500 mt-4 text-[15px] font-medium text-center">{t('boom3d.os_selector.free_trial')}</p>
+              <p className="text-gray-600 mt-4 text-[15px] font-medium text-center">{t('boom3d.os_selector.free_trial')}</p>
 
               {os === 'mac' && (
-                <a href="#" className="text-gray-400 hover:text-gray-700 underline underline-offset-4 mt-6 transition-colors text-sm font-medium text-center">
+                <a href="#" className="text-gray-600 hover:text-gray-900 underline underline-offset-4 mt-6 transition-colors text-sm font-medium text-center">
                   {t('boom3d.os_selector.older_macos')}
                 </a>
               )}
@@ -96,13 +110,13 @@ export function Boom3DOSSelector() {
 
             {/* Buy Button Column */}
             <div className="flex-1 flex flex-col items-center max-w-[320px]">
-              <button className={`w-full font-bold py-5 px-6 rounded-xl flex items-center justify-center gap-3 transition-colors text-lg tracking-wide bg-white border-2 hover:bg-gray-50 ${os === 'mac' ? 'border-[#111111] text-[#111111]' : 'border-[#0099ff] text-[#0099ff]'}`}>
+              <button className={`w-full font-bold py-5 px-6 rounded-xl flex items-center justify-center gap-3 transition-colors text-lg tracking-wide bg-white border-2 hover:bg-gray-50 ${os === 'mac' ? 'border-[#111111] text-[#111111]' : 'border-[#0070e0] text-[#0070e0]'}`}>
                 {os === 'mac' ? <AppleIcon className="w-6 h-6" /> : <WindowsIcon className="w-6 h-6" />}
                 {t('boom3d.os_selector.buy_now')}
               </button>
               <div className="mt-4 flex flex-col items-center">
                 <span className="text-[#111111] text-[15px] font-bold">{formatPrice(boom3d?.pricing, 'discounted')}</span>
-                <span className="text-gray-400 text-sm line-through font-medium">{formatPrice(boom3d?.pricing, 'original')}</span>
+                <span className="text-gray-500 text-sm line-through font-medium">{formatPrice(boom3d?.pricing, 'original')}</span>
               </div>
             </div>
           </motion.div>

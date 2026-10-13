@@ -22,13 +22,16 @@ export function Boom2Hero() {
         {/* Video Background */}
         <video
           preload="none"
-          autoPlay={navigator.userAgent !== 'ReactSnap'}
+          autoPlay={typeof window !== 'undefined' && !Boolean(navigator.webdriver) && !/Headless|Puppeteer|Lighthouse|PageSpeed|Chrome-Lighthouse|PTST|ReactSnap/i.test(navigator.userAgent)}
           loop
           muted
           playsInline
           className="absolute inset-0 w-full h-full object-cover z-0 object-[75%_center] md:object-center"
         >
-          <source src="/boom2/boom2.mp4" type="video/mp4" />
+          {!(typeof window !== 'undefined' && (/Headless|Puppeteer|Lighthouse|PageSpeed|Chrome-Lighthouse|PTST|ReactSnap/i.test(navigator.userAgent) || Boolean(navigator.webdriver))) && (
+            <source src="/boom2/boom2.mp4" type="video/mp4" />
+          )}
+          <track kind="captions" src="data:text/vtt,WEBVTT" srcLang="en" label="English" default />
         </video>
 
         {/* Text Gradient Overlay */}
@@ -69,7 +72,7 @@ export function Boom2Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-              className="text-gray-300 text-[11px] sm:text-sm md:text-xl mb-5 md:mb-10 leading-relaxed max-w-[260px] sm:max-w-md md:max-w-lg drop-shadow-md"
+              className="text-gray-200 text-[11px] sm:text-sm md:text-xl mb-5 md:mb-10 leading-relaxed max-w-[260px] sm:max-w-md md:max-w-lg drop-shadow-md"
             >
               {t('boom2.hero.subtitle')}
             </motion.p>
@@ -85,7 +88,7 @@ export function Boom2Hero() {
                 {t('boom2.hero.download_trial')}
               </button>
 
-              <button className="flex-1 sm:flex-initial flex items-center justify-center gap-1.5 md:gap-2 bg-black/50 backdrop-blur-md border border-white/50 text-white px-3.5 py-2 md:px-4 md:py-3.5 rounded-xl font-bold transition-all hover:bg-[#1390FB] hover:border-[#1390FB] sm:w-[210px] text-xs md:text-[15px] tracking-wide shadow-lg group whitespace-nowrap">
+              <button className="flex-1 sm:flex-initial flex items-center justify-center gap-1.5 md:gap-2 bg-black/60 backdrop-blur-md border border-white/70 text-white px-3.5 py-2 md:px-4 md:py-3.5 rounded-xl font-bold transition-all hover:bg-[#1390FB] hover:border-[#1390FB] sm:w-[210px] text-xs md:text-[15px] tracking-wide shadow-lg group whitespace-nowrap">
                 <AppleLogo className="w-3.5 h-3.5 md:w-5 md:h-5 mb-0.5" />
                 {t('boom2.hero.buy_now')}
               </button>

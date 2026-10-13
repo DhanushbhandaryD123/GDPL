@@ -2,9 +2,8 @@ import { lazy, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Navbar } from '../components/layout/Navbar';
 import { Boom2Hero } from '../components/boom2/Boom2Hero';
+import { Boom2PrecisionControl } from '../components/boom2/Boom2PrecisionControl';
 import { Footer } from '../components/layout/Footer';
-
-const Boom2PrecisionControl = lazy(() => import('../components/boom2/Boom2PrecisionControl').then(m => ({ default: m.Boom2PrecisionControl })));
 const Boom2CoreFeatures = lazy(() => import('../components/boom2/Boom2CoreFeatures').then(m => ({ default: m.Boom2CoreFeatures })));
 const Boom2FeatureGrid = lazy(() => import('../components/boom2/Boom2FeatureGrid').then(m => ({ default: m.Boom2FeatureGrid })));
 const Boom2EqualizerPresetFlow = lazy(() => import('../components/boom2/Boom2EqualizerPresetFlow').then(m => ({ default: m.Boom2EqualizerPresetFlow })));
@@ -77,27 +76,30 @@ export function Boom2() {
       <main className="overflow-x-clip">
         <Boom2Hero />
         
-        <Suspense fallback={null}>
-          <div className="bg-[#ffffff] text-gray-900 pb-16 pt-6 relative z-10">
-            <Boom2PrecisionControl />
-            <Boom2CoreFeatures />
-            <Boom2FeatureGrid />
-            <Boom2EqualizerPresetFlow />
-            <Boom2AudioEffectsObject />
-            <Boom2SystemWideControl />
-            <Boom2BoomRemote />
-            <Boom2AudioAmplify />
-            <Boom2OutputCompatibility />
+        <div className="bg-[#ffffff] text-gray-900 pt-6 relative z-10">
+          <Boom2PrecisionControl />
+        </div>
+
+        <Suspense fallback={<div className="min-h-[1200px]" />}>
+          <div className="bg-[#ffffff] text-gray-900 pb-16 relative z-10">
+            <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom2CoreFeatures /></div>
+            <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom2FeatureGrid /></div>
+            <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom2EqualizerPresetFlow /></div>
+            <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom2AudioEffectsObject /></div>
+            <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom2SystemWideControl /></div>
+            <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom2BoomRemote /></div>
+            <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom2AudioAmplify /></div>
+            <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom2OutputCompatibility /></div>
           </div>
 
-          <Boom2EnvironmentSim />
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom2EnvironmentSim /></div>
           
-          <Boom2Awards />
-          <Boom2Testimonials />
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom2Awards /></div>
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom2Testimonials /></div>
           
-          <Boom2FAQ />
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom2FAQ /></div>
           
-          <Boom2FooterCTA />
+          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom2FooterCTA /></div>
         </Suspense>
       </main>
 
