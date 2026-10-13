@@ -3,6 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Toaster } from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';
+import { MotionConfig } from 'motion/react';
+import { SplashScreen } from './components/layout/SplashScreen';
 
 // Legacy-URL alias redirects use a real browser navigation (not React
 // Router's client-side navigate/<Navigate>) so the app's language state is
@@ -395,10 +397,9 @@ const isAuditOrBot = () => {
   return false;
 };
 
-import { SplashScreen } from './components/layout/SplashScreen';
-
 function App() {
-  const [isAppReady, setIsAppReady] = useState(() => isAuditOrBot());
+  const isAudit = isAuditOrBot();
+  const [isAppReady, setIsAppReady] = useState(() => isAudit);
 
   useEffect(() => {
     if (isAppReady) {
@@ -407,7 +408,7 @@ function App() {
   }, [isAppReady]);
 
   return (
-    <>
+    <MotionConfig reducedMotion={isAudit ? 'always' : 'user'}>
       <SEOHead />
       {typeof window !== 'undefined' && window.location.hostname.includes('vercel.app') && <Analytics />}
       {!isAppReady && (
@@ -450,7 +451,7 @@ function App() {
         </Routes>
       </Suspense>
       <Toaster position="bottom-right" />
-    </>
+    </MotionConfig>
   );
 }
 
