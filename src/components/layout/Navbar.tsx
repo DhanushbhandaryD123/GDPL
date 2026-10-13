@@ -22,7 +22,7 @@ export function Navbar({ logoUrl }: NavbarProps) {
     { name: t('nav.blog'), href: 'https://blog.globaldelight.com/' },
   ];
 
-  const defaultLogo = "/images/external/img_54825efe2640.png";
+  const defaultLogo = "/images/external/img_54825efe2640.webp";
 
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -31,7 +31,7 @@ export function Navbar({ logoUrl }: NavbarProps) {
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const languageRef = useRef<HTMLDivElement>(null);
   const mobileLanguageRef = useRef<HTMLDivElement>(null);
-  
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const location = useLocation();

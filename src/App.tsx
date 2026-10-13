@@ -392,15 +392,10 @@ const isAuditOrBot = () => {
   if (navigator.userAgent === 'ReactSnap') return true;
   if (/Headless|Puppeteer|Lighthouse|PageSpeed|Chrome-Lighthouse|PTST/i.test(navigator.userAgent)) return true;
   if (window.location.search.includes('no-splash')) return true;
-  try {
-    if (sessionStorage.getItem('gdpl_splash_seen') === 'true') return true;
-  } catch {}
   return false;
 };
 
-const SplashScreen = lazy(() =>
-  import('./components/layout/SplashScreen').then((m) => ({ default: m.SplashScreen }))
-);
+import { SplashScreen } from './components/layout/SplashScreen';
 
 function App() {
   const [isAppReady, setIsAppReady] = useState(() => isAuditOrBot());
@@ -416,14 +411,12 @@ function App() {
       <SEOHead />
       {typeof window !== 'undefined' && window.location.hostname.includes('vercel.app') && <Analytics />}
       {!isAppReady && (
-        <Suspense fallback={null}>
-          <SplashScreen
-            onComplete={() => {
-              setIsAppReady(true);
-              markSplashComplete();
-            }}
-          />
-        </Suspense>
+        <SplashScreen
+          onComplete={() => {
+            setIsAppReady(true);
+            markSplashComplete();
+          }}
+        />
       )}
       <ScrollToTop />
       <Suspense fallback={<RouteFallback />}>

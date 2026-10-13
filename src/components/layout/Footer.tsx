@@ -10,7 +10,7 @@ interface FooterProps {
 
 export function Footer({ logoUrl }: FooterProps = {}) {
   const { t } = useTranslation();
-  const defaultLogo = "/images/external/img_54825efe2640.png";
+  const defaultLogo = "/images/external/img_54825efe2640.webp";
   const [openSection, setOpenSection] = useState<string | null>(null);
 
   const toggleSection = (section: string) => {

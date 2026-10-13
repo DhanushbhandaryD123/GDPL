@@ -6,45 +6,24 @@ interface SplashScreenDesktopProps {
 }
 
 export function SplashScreenDesktop({ onComplete }: SplashScreenDesktopProps) {
-  // Starts hidden so the very first render (both the react-snap prerender
-  // snapshot and a real visitor's initial hydration pass) always agrees:
-  // no splash markup. It's then shown from an effect, which runs after
-  // hydration and so can never cause a mismatch. Starting visible used to
-  // let a real client's first render disagree with whatever the static
-  // snapshot happened to capture — react-snap's per-page settle time varies,
-  // so on slower pages the 2800ms dismiss timer had already fired by
-  // snapshot time, baking a splash-less page that a fresh client mount
-  // would then contradict.
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const isBot =
       Boolean(navigator.webdriver) ||
       navigator.userAgent === 'ReactSnap' ||
-      navigator.userAgent.includes('Headless') ||
-      navigator.userAgent.includes('Puppeteer') ||
-      navigator.userAgent.includes('Lighthouse') ||
-      navigator.userAgent.includes('PageSpeed') ||
-      navigator.userAgent.includes('Chrome-Lighthouse') ||
-      navigator.userAgent.includes('PTST') ||
+      /Headless|Puppeteer|Lighthouse|PageSpeed|Chrome-Lighthouse|PTST/i.test(navigator.userAgent) ||
       Boolean((window as any).__PRERENDER__) ||
       window.location.search.includes('no-splash');
 
-    const alreadySeen = typeof window !== 'undefined' && sessionStorage.getItem('gdpl_splash_seen') === 'true';
-
-    if (isBot || alreadySeen) {
+    if (isBot) {
       onComplete();
       return;
     }
 
-    setIsVisible(true);
-    try {
-      sessionStorage.setItem('gdpl_splash_seen', 'true');
-    } catch {}
-
     const timer = setTimeout(() => {
       setIsVisible(false);
-    }, 2400);
+    }, 2200);
 
     return () => clearTimeout(timer);
   }, [onComplete]);
@@ -56,8 +35,10 @@ export function SplashScreenDesktop({ onComplete }: SplashScreenDesktopProps) {
           key="splash-screen-desktop"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, scale: 1.05, filter: "blur(10px)" }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black overflow-hidden"
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          onClick={() => setIsVisible(false)}
+          style={{ zIndex: 99999, backgroundColor: '#000000' }}
+          className="fixed inset-0 flex items-center justify-center bg-black overflow-hidden select-none cursor-pointer"
         >
           {/* Animated Background Gradients */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -95,7 +76,7 @@ export function SplashScreenDesktop({ onComplete }: SplashScreenDesktopProps) {
               initial={{ scale: 0.8, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               transition={{ 
-                duration: 1, 
+                duration: 0.8, 
                 ease: [0.16, 1, 0.3, 1],
               }}
               className="relative z-20 flex items-center justify-center"
@@ -105,7 +86,7 @@ export function SplashScreenDesktop({ onComplete }: SplashScreenDesktopProps) {
                 <motion.div
                   initial={{ clipPath: 'inset(0 100% 0 0)' }}
                   animate={{ clipPath: 'inset(0 0% 0 0)' }}
-                  transition={{ delay: 0.3, duration: 1.5, ease: "easeInOut" }}
+                  transition={{ delay: 0.2, duration: 1.2, ease: "easeInOut" }}
                   className="w-full h-full"
                 >
                   <img 
@@ -116,6 +97,12 @@ export function SplashScreenDesktop({ onComplete }: SplashScreenDesktopProps) {
                 </motion.div>
               </div>
             </motion.div>
+          </div>
+
+          <div className="absolute bottom-6 right-6 z-30">
+            <span className="text-xs text-white/40 hover:text-white/80 transition-colors">
+              Click anywhere to skip
+            </span>
           </div>
         </motion.div>
       )}
