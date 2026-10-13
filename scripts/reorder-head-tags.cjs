@@ -59,14 +59,11 @@ function processFile(filePath) {
     }
   }
 
-  // Ensure stylesheet is high in <head> for fastest CSS discovery
+  // Ensure stylesheet is immediately after <title> for earliest possible CSS discovery
   const cssMatch = html.match(/<link rel="stylesheet"[^>]*href="\/assets\/index-[^"]+\.css"[^>]*\/?>/);
-  if (cssMatch) {
+  if (cssMatch && titleMatch) {
     html = html.replace(cssMatch[0], '');
-    const headEnd = '</head>';
-    if (html.includes(headEnd)) {
-      html = html.replace(headEnd, `  ${cssMatch[0]}\n${headEnd}`);
-    }
+    html = html.replace(titleMatch[0], `${titleMatch[0]}\n  ${cssMatch[0]}`);
   }
 
   fs.writeFileSync(filePath, html, 'utf8');
