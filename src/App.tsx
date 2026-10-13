@@ -30,13 +30,12 @@ function LegacyLangAlias({ lang, bareTo }: { lang: string; bareTo: string }) {
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { Hero } from './components/home/Hero';
-import type { AppItem } from './components/home/AppCategory';
+import { AppCategory, AppItem } from './components/home/AppCategory';
 import { FloatingSocials } from './components/layout/FloatingSocials';
 import { ScrollToTopButton } from './components/layout/ScrollToTopButton';
 import { getVariant, formatPrice } from './data/products';
 import { useProducts } from './hooks/useProducts';
 
-const AppCategory = lazy(() => import('./components/home/AppCategory').then(m => ({ default: m.AppCategory })));
 const HonorsReviews = lazy(() => import('./components/home/HonorsReviews').then(m => ({ default: m.HonorsReviews })));
 const FeaturedWork = lazy(() => import('./components/home/FeaturedWork').then(m => ({ default: m.FeaturedWork })));
 const GetInspired = lazy(() => import('./components/home/GetInspired').then(m => ({ default: m.GetInspired })));
@@ -135,40 +134,40 @@ function Home() {
             flip-card carousel of that platform's apps sourced from
             src/data/products.ts ΓÇö name, icon, price, and route.
             ========================================= */}
-        <Suspense fallback={null}>
-          <div className="pt-0 pb-4 md:py-4">
-            <AppCategory
-              title={t('home.categories.mac_app')}
-              deviceImageAlt="MacBook"
-              deviceImagePath="/devices/macbook.webp"
-              imageClassName="max-w-[350px] md:max-w-[450px]"
-              apps={macApps}
-            />
-            <AppCategory
-              title={t('home.categories.windows_app')}
-              deviceImageAlt="Windows Laptop"
-              deviceImagePath="/devices/windows.webp"
-              imageClassName="max-w-[350px] md:max-w-[450px]"
-              apps={windowsApps}
-              reverse={false}
-            />
-            <AppCategory
-              title={t('home.categories.ios_app')}
-              deviceImageAlt="iPhone"
-              deviceImagePath="/devices/iphone.webp"
-              imageClassName="max-w-[250px] md:max-w-[300px]"
-              apps={iosApps}
-            />
-            <AppCategory
-              title={t('home.categories.android_app')}
-              deviceImageAlt="Android Phone"
-              deviceImagePath="/devices/Android.webp"
-              imageClassName="max-w-[150px] md:max-w-[180px]"
-              apps={androidApps}
-              reverse={false}
-            />
-          </div>
+        <div className="pt-0 pb-4 md:py-4">
+          <AppCategory
+            title={t('home.categories.mac_app')}
+            deviceImageAlt="MacBook"
+            deviceImagePath="/devices/macbook.webp"
+            imageClassName="max-w-[350px] md:max-w-[450px]"
+            apps={macApps}
+          />
+          <AppCategory
+            title={t('home.categories.windows_app')}
+            deviceImageAlt="Windows Laptop"
+            deviceImagePath="/devices/windows.webp"
+            imageClassName="max-w-[350px] md:max-w-[450px]"
+            apps={windowsApps}
+            reverse={false}
+          />
+          <AppCategory
+            title={t('home.categories.ios_app')}
+            deviceImageAlt="iPhone"
+            deviceImagePath="/devices/iphone.webp"
+            imageClassName="max-w-[250px] md:max-w-[300px]"
+            apps={iosApps}
+          />
+          <AppCategory
+            title={t('home.categories.android_app')}
+            deviceImageAlt="Android Phone"
+            deviceImagePath="/devices/Android.webp"
+            imageClassName="max-w-[150px] md:max-w-[180px]"
+            apps={androidApps}
+            reverse={false}
+          />
+        </div>
 
+        <Suspense fallback={<div className="min-h-[300px]" />}>
           {/* =========================================
               GET INSPIRED
               ========================================= */}

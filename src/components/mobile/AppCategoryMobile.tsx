@@ -123,19 +123,20 @@ export function AppCategoryMobile({ title, deviceImageAlt, deviceImagePath, titl
           transition={{ duration: 0.6 }}
           className="w-full flex flex-col items-center justify-center pt-2"
         >
-          <div className="flex flex-col items-center justify-center relative w-full">
+          <div className={`flex flex-col items-center justify-center relative mx-auto ${
+            title.includes('iOS') 
+              ? 'max-w-[160px] h-[220px]' 
+              : title.includes('Android') 
+                ? 'max-w-[130px] h-[170px]' 
+                : 'max-w-[180px] h-[140px]'
+          }`}>
             <img 
               src={deviceImagePath} 
               alt={deviceImageAlt} 
               width={devWidth}
               height={devHeight}
-              className={`w-full object-contain drop-shadow-xl mx-auto transition-transform hover:scale-105 ${
-                title.includes('iOS') 
-                  ? 'max-w-[160px] max-h-[220px]' 
-                  : title.includes('Android') 
-                    ? 'max-w-[130px] max-h-[170px]' 
-                    : 'max-w-[180px] max-h-[140px]'
-              }`}
+              style={{ aspectRatio: `${devWidth}/${devHeight}` }}
+              className="w-full h-full object-contain drop-shadow-xl mx-auto transition-transform hover:scale-105"
               onError={(e) => {
                 (e.target as HTMLImageElement).style.display = 'none';
                 (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden');
