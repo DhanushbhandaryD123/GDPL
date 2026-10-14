@@ -1,3 +1,4 @@
+import { useState, useRef, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 
@@ -13,6 +14,34 @@ const DottedWave = ({ className, color }: { className?: string, color: string })
 
 export function Boom3DSurround() {
   const { t } = useTranslation();
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const isBot = typeof window !== 'undefined' && (/Headless|Puppeteer|Lighthouse|PageSpeed|Chrome-Lighthouse|PTST|ReactSnap/i.test(navigator.userAgent) || Boolean(navigator.webdriver));
+    if (isBot) return;
+
+    if (!('IntersectionObserver' in window)) {
+      setShouldLoadVideo(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          setShouldLoadVideo(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '300px' }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
   return (
     <section id="magical-3d-surround" className="relative py-16 md:py-24 bg-white overflow-hidden scroll-mt-20 md:scroll-mt-24">
       
@@ -76,23 +105,36 @@ export function Boom3DSurround() {
 
           {/* Central Video Player (Replaces the Headphones Icon) */}
           <motion.div 
+            ref={containerRef}
             initial={{ scale: 0.8, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, type: "spring" }}
             className="relative z-20 w-full max-w-[440px] sm:max-w-none sm:w-[580px] md:w-[780px] lg:w-[950px] xl:w-[1050px] aspect-video bg-black rounded-2xl md:rounded-3xl shadow-[0_20px_50px_rgba(59,130,246,0.25)] border border-gray-100/50 overflow-hidden flex items-center justify-center"
           >
-            <video
-              src={typeof window !== 'undefined' && (/Headless|Puppeteer|Lighthouse|PageSpeed|Chrome-Lighthouse|PTST|ReactSnap/i.test(navigator.userAgent) || Boolean(navigator.webdriver)) ? undefined : "/boom3D/video3D.mp4"}
-              preload="none"
-              autoPlay={typeof window !== 'undefined' && !Boolean(navigator.webdriver) && !/Headless|Puppeteer|Lighthouse|PageSpeed|Chrome-Lighthouse|PTST|ReactSnap/i.test(navigator.userAgent)}
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover"
-            >
-              <track kind="captions" src="data:text/vtt,WEBVTT" srcLang="en" label="English" default />
-            </video>
+            {shouldLoadVideo ? (
+              <video
+                src="/boom3D/video3D.mp4"
+                preload="none"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              >
+                <track kind="captions" src="data:text/vtt,WEBVTT" srcLang="en" label="English" default />
+              </video>
+            ) : (
+              <img
+                src="/boom3D/macbook-transparent.webp"
+                alt="Boom 3D Surround Visualizer"
+                loading="lazy"
+                decoding="async"
+                width={780}
+                height={439}
+                className="w-full h-full object-contain p-4 opacity-90"
+              />
+            )}
           </motion.div>
         </div>
 

@@ -1,4 +1,3 @@
-import { motion } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 
 export function Boom3DHero() {
@@ -26,12 +25,8 @@ export function Boom3DHero() {
         <div className="w-full px-6 md:px-12 lg:px-16 flex flex-col lg:flex-row items-center h-full min-h-[400px] relative z-10">
 
           {/* Text Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-full lg:w-[45%] xl:w-[40%] space-y-6 text-center lg:text-left z-10 lg:pl-8 py-12"
-          >
+          {/* Text Content - Instantly visible at 0ms for optimal LCP */}
+          <div className="w-full lg:w-[45%] xl:w-[40%] space-y-6 text-center lg:text-left z-10 lg:pl-8 py-12">
             {/* Boom 3D Logo */}
             <div className="flex justify-center lg:justify-start">
               <img 
@@ -70,7 +65,7 @@ export function Boom3DHero() {
                 <img src="/button/en-us dark.svg" alt="Get it from Microsoft Store" className="h-11 md:h-14 lg:h-16 object-contain drop-shadow-md" width={161} height={44} loading="eager" />
               </a>
             </div>
-          </motion.div>
+          </div>
 
           {/* Spacer for Right side */}
           <div className="hidden lg:block lg:w-[55%] xl:w-[60%]"></div>
