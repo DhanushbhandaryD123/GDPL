@@ -36,7 +36,7 @@ export function Boom3DHero() {
               />
             </div>
 
-            <h1 className="text-5xl md:text-6xl font-normal tracking-tight leading-tight drop-shadow-md text-white">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-normal tracking-tight leading-tight drop-shadow-md text-white">
               {t('boom3d.hero.title_1')} <br className="hidden md:block" /> 
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
                 {t('boom3d.hero.title_2')}
