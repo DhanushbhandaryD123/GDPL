@@ -70,6 +70,14 @@ function processFile(filePath) {
   html = html.replace(/<meta\s+charset=["']?utf-8["']?\s*\/?>/gi, '');
   html = html.replace(/<head[^>]*>/i, (m) => `${m}\n  <meta charset="UTF-8" />`);
 
+  // Inject critical hero image preloads early in <head> for instant mobile LCP discovery
+  const normalizedPath = filePath.replace(/\\/g, '/').toLowerCase();
+  if (normalizedPath.includes('boom3d') && !html.includes('href="/boom3D/boom3d-hero.webp"')) {
+    html = html.replace(/<meta charset="UTF-8" \/>/, '<meta charset="UTF-8" />\n  <link rel="preload" as="image" href="/boom3D/boom3d-hero.webp" type="image/webp" fetchpriority="high" />');
+  } else if (normalizedPath.includes('boom2') && !html.includes('href="/boom2/boom2-hero.webp"')) {
+    html = html.replace(/<meta charset="UTF-8" \/>/, '<meta charset="UTF-8" />\n  <link rel="preload" as="image" href="/boom2/boom2-hero.webp" type="image/webp" fetchpriority="high" />');
+  }
+
   fs.writeFileSync(filePath, html, 'utf8');
 }
 
