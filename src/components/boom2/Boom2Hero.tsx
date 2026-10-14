@@ -19,9 +19,22 @@ export function Boom2Hero() {
       <div className="w-full max-w-[1920px] mx-auto px-3 sm:px-4 md:px-4 pt-1 pb-4 md:pb-12">
         <section className="relative w-full rounded-2xl sm:rounded-3xl md:rounded-[2.5rem] shadow-2xl py-8 md:pt-16 md:pb-32 flex items-center min-h-[350px] sm:min-h-[420px] md:min-h-[620px] lg:min-h-[660px] xl:min-h-[700px] overflow-hidden">
 
+        {/* Static Base Image Layer for Instant LCP Discovery */}
+        <img
+          src="/boom2/boom2-hero.webp"
+          alt="Boom 2 Hero"
+          fetchPriority="high"
+          loading="eager"
+          decoding="async"
+          width={1920}
+          height={768}
+          className="absolute inset-0 w-full h-full object-cover object-[75%_center] md:object-center z-0 pointer-events-none"
+        />
+
         {/* Video Background */}
         <video
           preload="none"
+          poster="/boom2/boom2-hero.webp"
           autoPlay={typeof window !== 'undefined' && !Boolean(navigator.webdriver) && !/Headless|Puppeteer|Lighthouse|PageSpeed|Chrome-Lighthouse|PTST|ReactSnap/i.test(navigator.userAgent)}
           loop
           muted

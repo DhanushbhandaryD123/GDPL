@@ -22,15 +22,50 @@ const app = (
     </I18nextProvider>
   </HelmetProvider>
 );
+let hasHydrated = false;
 
-if (rootElement.hasChildNodes()) {
-  hydrateRoot(rootElement, app, {
-    onRecoverableError(error) {
-      if (import.meta.env.DEV) {
-        console.warn('Recovered hydration mismatch:', error);
-      }
-    },
-  });
+const hydrateApp = () => {
+  if (hasHydrated) return;
+  hasHydrated = true;
+  cleanupListeners();
+
+  if (rootElement.hasChildNodes()) {
+    hydrateRoot(rootElement, app, {
+      onRecoverableError(error) {
+        if (import.meta.env.DEV) {
+          console.warn('Recovered hydration mismatch:', error);
+        }
+      },
+    });
+  } else {
+    createRoot(rootElement).render(app);
+  }
+};
+
+const interactionEvents = ['pointerdown', 'touchstart', 'keydown', 'scroll'];
+const onInteraction = () => hydrateApp();
+const cleanupListeners = () => {
+  if (typeof window !== 'undefined') {
+    interactionEvents.forEach(evt => window.removeEventListener(evt, onInteraction));
+  }
+};
+
+const isPrerenderBuild = typeof window !== 'undefined' && 
+  (/ReactSnap/i.test(navigator.userAgent) || Boolean((window as unknown as { __PRERENDER_INJECTED__?: boolean }).__PRERENDER_INJECTED__));
+
+if (isPrerenderBuild) {
+  // Prerender worker needs immediate sync hydration to capture DOM
+  hydrateApp();
+} else if (typeof window !== 'undefined') {
+  // Add quick listeners so user click/scroll hydrates immediately without lag
+  interactionEvents.forEach(evt => window.addEventListener(evt, onInteraction, { once: true, passive: true }));
+
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(hydrateApp, { timeout: 2000 });
+  } else {
+    setTimeout(hydrateApp, 100);
+  }
 } else {
-  createRoot(rootElement).render(app);
+  hydrateApp();
 }
+
