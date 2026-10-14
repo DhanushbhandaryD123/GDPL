@@ -4,7 +4,6 @@ import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
 import { Boom3DHero } from '../components/boom3d/Boom3DHero';
 import { Boom3DOSSelector } from '../components/boom3d/Boom3DOSSelector';
-import { LazySection } from '../components/common/LazySection';
 
 const Boom3DScrollReveal = lazy(() => import('../components/boom3d/Boom3DScrollReveal').then(m => ({ default: m.Boom3DScrollReveal })));
 const Boom3DKeyFeatures = lazy(() => import('../components/boom3d/Boom3DKeyFeatures').then(m => ({ default: m.Boom3DKeyFeatures })));
@@ -77,19 +76,19 @@ export function Boom3D() {
         <Boom3DHero />
         <Boom3DOSSelector />
         <Suspense fallback={null}>
-          <LazySection minHeight="600px"><Boom3DScrollReveal /></LazySection>
-          <LazySection minHeight="600px"><Boom3DKeyFeatures /></LazySection>
-          <LazySection minHeight="600px"><Boom3DSurround /></LazySection>
-          <LazySection minHeight="600px"><Boom3DEqualizer /></LazySection>
-          <LazySection minHeight="600px"><Boom3DVolumeBooster /></LazySection>
-          <LazySection minHeight="600px"><Boom3DAppController /></LazySection>
-          <LazySection minHeight="600px"><Boom3DAudioPlayer /></LazySection>
-          <LazySection minHeight="600px"><Boom3DRadioStations /></LazySection>
-          <LazySection minHeight="600px"><Boom3DAppDownload /></LazySection>
-          <LazySection minHeight="600px"><Boom3DTailored /></LazySection>
-          <LazySection minHeight="600px"><Boom3DTestimonials /></LazySection>
-          <LazySection minHeight="600px"><Boom3DCTA /></LazySection>
-          <LazySection minHeight="600px"><Boom3DFAQ /></LazySection>
+          <Boom3DScrollReveal />
+          <Boom3DKeyFeatures />
+          <Boom3DSurround />
+          <Boom3DEqualizer />
+          <Boom3DVolumeBooster />
+          <Boom3DAppController />
+          <Boom3DAudioPlayer />
+          <Boom3DRadioStations />
+          <Boom3DAppDownload />
+          <Boom3DTailored />
+          <Boom3DTestimonials />
+          <Boom3DCTA />
+          <Boom3DFAQ />
         </Suspense>
       </main>
 
