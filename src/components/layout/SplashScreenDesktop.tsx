@@ -23,7 +23,7 @@ export function SplashScreenDesktop({ onComplete }: SplashScreenDesktopProps) {
 
     const timer = setTimeout(() => {
       setIsVisible(false);
-    }, 2200);
+    }, 1200);
 
     return () => clearTimeout(timer);
   }, [onComplete]);
@@ -35,40 +35,16 @@ export function SplashScreenDesktop({ onComplete }: SplashScreenDesktopProps) {
           key="splash-screen-desktop"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, scale: 1.05, filter: "blur(10px)" }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
           onClick={() => setIsVisible(false)}
           style={{ zIndex: 99999, backgroundColor: '#000000' }}
           className="fixed inset-0 flex items-center justify-center bg-black overflow-hidden select-none cursor-pointer"
         >
-          {/* Animated Background Gradients */}
+          {/* Static / CSS Accelerated Background Gradients */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <motion.div 
-              animate={{ 
-                scale: [1, 1.2, 1],
-                rotate: [0, 90, 0],
-                opacity: [0.3, 0.5, 0.3]
-              }}
-              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-              className="absolute -top-[20%] -left-[10%] w-[50vw] h-[50vw] rounded-full bg-purple-500/20 blur-[120px]" 
-            />
-            <motion.div 
-              animate={{ 
-                scale: [1, 1.5, 1],
-                rotate: [0, -90, 0],
-                opacity: [0.3, 0.6, 0.3]
-              }}
-              transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-              className="absolute top-[20%] -right-[10%] w-[40vw] h-[40vw] rounded-full bg-blue-500/20 blur-[120px]" 
-            />
-            <motion.div 
-              animate={{ 
-                scale: [1, 1.3, 1],
-                translateY: [0, -50, 0],
-                opacity: [0.2, 0.4, 0.2]
-              }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-[10%] left-[20%] w-[60vw] h-[40vw] rounded-full bg-pink-500/20 blur-[120px]" 
-            />
+            <div className="absolute -top-[20%] -left-[10%] w-[50vw] h-[50vw] rounded-full bg-purple-500/20 blur-[120px] animate-pulse" />
+            <div className="absolute top-[20%] -right-[10%] w-[40vw] h-[40vw] rounded-full bg-blue-500/20 blur-[120px] animate-pulse" />
+            <div className="absolute -bottom-[10%] left-[20%] w-[60vw] h-[40vw] rounded-full bg-pink-500/20 blur-[120px] animate-pulse" />
           </div>
           
           <div className="relative z-10 flex flex-col items-center justify-center h-full w-full">

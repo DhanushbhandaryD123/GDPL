@@ -402,7 +402,8 @@ const isAuditOrBot = () => {
 
 function App() {
   const isAudit = isAuditOrBot();
-  const [isAppReady, setIsAppReady] = useState(() => isAudit);
+  const isHomePage = typeof window !== 'undefined' && (window.location.pathname === '/' || window.location.pathname === '');
+  const [isAppReady, setIsAppReady] = useState(() => isAudit || !isHomePage);
 
   useEffect(() => {
     if (isAppReady) {
@@ -414,7 +415,7 @@ function App() {
     <MotionConfig reducedMotion={isAudit ? 'always' : 'user'}>
       <SEOHead />
       {typeof window !== 'undefined' && window.location.hostname.includes('vercel.app') && <Analytics />}
-      {!isAppReady && (
+      {!isAppReady && isHomePage && (
         <SplashScreen
           onComplete={() => {
             setIsAppReady(true);
