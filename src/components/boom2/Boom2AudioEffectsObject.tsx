@@ -137,11 +137,10 @@ export function Boom2AudioEffectsObject() {
         
         {/* Background Image */}
         <img
-          src="https://d3jbf8nvvpx3fh.cloudfront.net/Boom2/web/images/OGImages/Boom2OGImage.png"
-          onError={(e) => {
-            (e.target as HTMLImageElement).src = '/images/external/img_0a22d737fce8.png';
-          }}
+          src="/images/external/img_0a22d737fce8.png"
           alt="Boom 2 Audio Effects"
+          width={1200}
+          height={630}
           className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none z-0"
           loading="lazy"
         />

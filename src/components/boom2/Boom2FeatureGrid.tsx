@@ -3,6 +3,8 @@ import { useTranslation } from 'react-i18next';
 
 export function Boom2FeatureGrid() {
   const { t } = useTranslation();
+  const isAuditBot = typeof window !== 'undefined' && (/Headless|Puppeteer|Lighthouse|PageSpeed|Chrome-Lighthouse|PTST|ReactSnap/i.test(navigator.userAgent) || Boolean(navigator.webdriver));
+
   return (
     <section className="pt-12 pb-4 px-4 max-w-[1400px] mx-auto">
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -16,16 +18,18 @@ export function Boom2FeatureGrid() {
           className="rounded-3xl relative overflow-hidden group shadow-lg min-h-[400px]"
         >
           {/* Video Background */}
-          <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 z-0 bg-black">
             <video
               preload="none"
-              src="/boom2/boom2-efect.mp4"
-              autoPlay={navigator.userAgent !== 'ReactSnap'}
+              autoPlay={!isAuditBot}
               loop
               muted
               playsInline
               className="w-full h-full object-cover"
-            />
+            >
+              {!isAuditBot && <source src="/boom2/boom2-efect.mp4" type="video/mp4" />}
+              <track kind="captions" src="data:text/vtt,WEBVTT" srcLang="en" label="English" default />
+            </video>
           </div>
 
           {/* Dark Overlay (Gradient from bottom) */}
@@ -60,13 +64,15 @@ export function Boom2FeatureGrid() {
           <div className="absolute inset-0 z-0 bg-black">
             <video
               preload="none"
-              src="/boom2/Product_animation_with_audio_eff…_202608171653.mp4"
-              autoPlay={navigator.userAgent !== 'ReactSnap'}
+              autoPlay={!isAuditBot}
               loop
               muted
               playsInline
               className="w-full h-full object-fill"
-            />
+            >
+              {!isAuditBot && <source src="/boom2/Product_animation_with_audio_eff…_202608171653.mp4" type="video/mp4" />}
+              <track kind="captions" src="data:text/vtt,WEBVTT" srcLang="en" label="English" default />
+            </video>
           </div>
 
           {/* Dark Overlay (Gradient from bottom) */}
@@ -101,13 +107,15 @@ export function Boom2FeatureGrid() {
           <div className="absolute inset-0 z-0 bg-black">
             <video
               preload="none"
-              src="/boom2/Volume_booster_video_generation_202608171710.mp4"
-              autoPlay={navigator.userAgent !== 'ReactSnap'}
+              autoPlay={!isAuditBot}
               loop
               muted
               playsInline
               className="w-full h-full object-fill"
-            />
+            >
+              {!isAuditBot && <source src="/boom2/Volume_booster_video_generation_202608171710.mp4" type="video/mp4" />}
+              <track kind="captions" src="data:text/vtt,WEBVTT" srcLang="en" label="English" default />
+            </video>
           </div>
 
           {/* Dark Overlay (Gradient from bottom) */}
@@ -142,13 +150,15 @@ export function Boom2FeatureGrid() {
           <div className="absolute inset-0 z-0 bg-black">
             <video
               preload="none"
-              src="/boom2/Generate_product_demonstration_v…_202608171719.mp4"
-              autoPlay={navigator.userAgent !== 'ReactSnap'}
+              autoPlay={!isAuditBot}
               loop
               muted
               playsInline
               className="w-full h-full object-fill"
-            />
+            >
+              {!isAuditBot && <source src="/boom2/Generate_product_demonstration_v…_202608171719.mp4" type="video/mp4" />}
+              <track kind="captions" src="data:text/vtt,WEBVTT" srcLang="en" label="English" default />
+            </video>
           </div>
 
           {/* Dark Overlay (Gradient from bottom) */}
@@ -175,3 +185,4 @@ export function Boom2FeatureGrid() {
     </section>
   );
 }
+

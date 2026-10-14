@@ -40,6 +40,8 @@ export function Boom2OutputCompatibility() {
         <img
           src="/boom2/output.webp"
           alt="Boom 2 Output Device Compatibility"
+          width={1536}
+          height={1024}
           className="w-full max-w-4xl h-auto object-contain drop-shadow-2xl pointer-events-none"
           loading="lazy"
         />

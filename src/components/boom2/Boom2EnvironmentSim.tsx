@@ -52,7 +52,7 @@ export function Boom2EnvironmentSim() {
   return (
     <section className="relative py-16 md:py-20 w-full overflow-hidden bg-black">
       {/* Hidden Audio Element */}
-      <audio ref={audioRef} loop>
+      <audio ref={audioRef} loop preload="none">
         <source src={activeEnv.audio} type="audio/mpeg" />
       </audio>
 
@@ -63,6 +63,7 @@ export function Boom2EnvironmentSim() {
             key={activeEnv.id}
             src={activeEnv.image}
             alt={activeEnv.name}
+            loading="lazy"
             initial={{ opacity: 0, scale: 1.05 }}
             animate={{ opacity: 0.8, scale: 1 }}
             exit={{ opacity: 0 }}

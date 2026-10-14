@@ -527,7 +527,7 @@ export function Boom2EqualizerPresetFlow() {
                       <div className="text-xs font-semibold text-slate-800">
                         {t(`boom2.equalizer_flow.preset_${preset.id}`, { defaultValue: preset.name })}
                       </div>
-                      <div className="text-[10px] text-slate-400">
+                      <div className="text-[10px] text-slate-600 font-medium">
                         {t(`boom2.equalizer_flow.genre_${preset.id}`, { defaultValue: preset.genre })}
                       </div>
                     </div>

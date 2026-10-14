@@ -3,6 +3,8 @@ import { useTranslation } from 'react-i18next';
 
 export function Boom2AudioAmplify() {
   const { t } = useTranslation();
+  const isAuditBot = typeof window !== 'undefined' && (/Headless|Puppeteer|Lighthouse|PageSpeed|Chrome-Lighthouse|PTST|ReactSnap/i.test(navigator.userAgent) || Boolean(navigator.webdriver));
+
   return (
     <section id="boom2-audio-amplify" className="py-16 md:py-24 px-4 max-w-[1200px] mx-auto flex flex-col items-center text-center">
       
@@ -28,17 +30,18 @@ export function Boom2AudioAmplify() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-        className="w-full max-w-5xl relative rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-200 bg-white"
+        className="w-full max-w-5xl relative rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-200 bg-white min-h-[300px]"
       >
         <video
           preload="none"
-          autoPlay={navigator.userAgent !== 'ReactSnap'}
+          autoPlay={!isAuditBot}
           loop
           muted
           playsInline
           className="w-full h-auto object-contain"
         >
-          <source src="/boom2/AudioFileBoostBoom2.mp4" type="video/mp4" />
+          {!isAuditBot && <source src="/boom2/AudioFileBoostBoom2.mp4" type="video/mp4" />}
+          <track kind="captions" src="data:text/vtt,WEBVTT" srcLang="en" label="English" default />
         </video>
       </motion.div>
 

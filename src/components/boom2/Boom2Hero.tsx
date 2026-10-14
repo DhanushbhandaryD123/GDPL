@@ -49,6 +49,8 @@ export function Boom2Hero() {
               <motion.img
                 src="/boom2/Boom2-icon.png"
                 alt="Boom 2 Logo"
+                width={80}
+                height={80}
                 className="w-10 md:w-20 h-auto object-contain drop-shadow-lg"
                 animate={{ y: [0, -12, 0] }}
                 transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
@@ -58,24 +60,14 @@ export function Boom2Hero() {
               </span>
             </motion.div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-              className="text-xl sm:text-2xl md:text-6xl lg:text-7xl font-bold mb-2 md:mb-6 leading-tight drop-shadow-lg text-white"
-            >
+            <h1 className="text-xl sm:text-2xl md:text-6xl lg:text-7xl font-bold mb-2 md:mb-6 leading-tight drop-shadow-lg text-white">
               {t('boom2.hero.title_1')} <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">{t('boom2.hero.title_2')}</span>
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-              className="text-gray-200 text-[11px] sm:text-sm md:text-xl mb-5 md:mb-10 leading-relaxed max-w-[260px] sm:max-w-md md:max-w-lg drop-shadow-md"
-            >
+            <p className="text-gray-200 text-[11px] sm:text-sm md:text-xl mb-5 md:mb-10 leading-relaxed max-w-[260px] sm:max-w-md md:max-w-lg drop-shadow-md">
               {t('boom2.hero.subtitle')}
-            </motion.p>
+            </p>
 
             <motion.div
               initial={{ opacity: 0, y: 30 }}

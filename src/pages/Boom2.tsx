@@ -27,6 +27,7 @@ export function Boom2() {
         <meta name="description" content="Boom 2 is an award-winning stereo sound enhancer app for macOS that gives you precision control over your audio, with cutting-edge features for pristine sound." />
         <meta name="keywords" content="Boom 2, Mac volume booster, Mac equalizer, audio enhancer, improve Mac sound, bass booster Mac, sound booster app, system-wide audio control, equalizer presets, Boom app" />
         <link rel="canonical" href={`${domain}/boom2/`} />
+        <link rel="preload" as="image" href="/boom2/Boom2-icon.png" type="image/png" fetchPriority="high" />
         
         {/* OG Tags */}
         <meta property="og:type" content="website" />
@@ -80,7 +81,7 @@ export function Boom2() {
           <Boom2PrecisionControl />
         </div>
 
-        <Suspense fallback={<div className="min-h-[1200px]" />}>
+        <Suspense fallback={null}>
           <div className="bg-[#ffffff] text-gray-900 pb-16 relative z-10">
             <Boom2CoreFeatures />
             <Boom2FeatureGrid />
