@@ -4,6 +4,7 @@ import { Navbar } from '../components/layout/Navbar';
 import { Boom2Hero } from '../components/boom2/Boom2Hero';
 import { Boom2PrecisionControl } from '../components/boom2/Boom2PrecisionControl';
 import { Footer } from '../components/layout/Footer';
+import { LazySection } from '../components/common/LazySection';
 const Boom2CoreFeatures = lazy(() => import('../components/boom2/Boom2CoreFeatures').then(m => ({ default: m.Boom2CoreFeatures })));
 const Boom2FeatureGrid = lazy(() => import('../components/boom2/Boom2FeatureGrid').then(m => ({ default: m.Boom2FeatureGrid })));
 const Boom2EqualizerPresetFlow = lazy(() => import('../components/boom2/Boom2EqualizerPresetFlow').then(m => ({ default: m.Boom2EqualizerPresetFlow })));
@@ -82,24 +83,21 @@ export function Boom2() {
 
         <Suspense fallback={<div className="min-h-[1200px]" />}>
           <div className="bg-[#ffffff] text-gray-900 pb-16 relative z-10">
-            <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom2CoreFeatures /></div>
-            <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom2FeatureGrid /></div>
-            <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom2EqualizerPresetFlow /></div>
-            <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom2AudioEffectsObject /></div>
-            <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom2SystemWideControl /></div>
-            <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom2BoomRemote /></div>
-            <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom2AudioAmplify /></div>
-            <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom2OutputCompatibility /></div>
+            <LazySection minHeight="500px"><Boom2CoreFeatures /></LazySection>
+            <LazySection minHeight="500px"><Boom2FeatureGrid /></LazySection>
+            <LazySection minHeight="500px"><Boom2EqualizerPresetFlow /></LazySection>
+            <LazySection minHeight="500px"><Boom2AudioEffectsObject /></LazySection>
+            <LazySection minHeight="500px"><Boom2SystemWideControl /></LazySection>
+            <LazySection minHeight="500px"><Boom2BoomRemote /></LazySection>
+            <LazySection minHeight="500px"><Boom2AudioAmplify /></LazySection>
+            <LazySection minHeight="500px"><Boom2OutputCompatibility /></LazySection>
           </div>
 
-          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom2EnvironmentSim /></div>
-          
-          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom2Awards /></div>
-          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom2Testimonials /></div>
-          
-          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom2FAQ /></div>
-          
-          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom2FooterCTA /></div>
+          <LazySection minHeight="500px"><Boom2EnvironmentSim /></LazySection>
+          <LazySection minHeight="500px"><Boom2Awards /></LazySection>
+          <LazySection minHeight="500px"><Boom2Testimonials /></LazySection>
+          <LazySection minHeight="500px"><Boom2FAQ /></LazySection>
+          <LazySection minHeight="500px"><Boom2FooterCTA /></LazySection>
         </Suspense>
       </main>
 

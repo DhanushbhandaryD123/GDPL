@@ -4,6 +4,7 @@ import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
 import { Boom3DHero } from '../components/boom3d/Boom3DHero';
 import { Boom3DOSSelector } from '../components/boom3d/Boom3DOSSelector';
+import { LazySection } from '../components/common/LazySection';
 
 const Boom3DScrollReveal = lazy(() => import('../components/boom3d/Boom3DScrollReveal').then(m => ({ default: m.Boom3DScrollReveal })));
 const Boom3DKeyFeatures = lazy(() => import('../components/boom3d/Boom3DKeyFeatures').then(m => ({ default: m.Boom3DKeyFeatures })));
@@ -76,19 +77,19 @@ export function Boom3D() {
         <Boom3DHero />
         <Boom3DOSSelector />
         <Suspense fallback={null}>
-          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom3DScrollReveal /></div>
-          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom3DKeyFeatures /></div>
-          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom3DSurround /></div>
-          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom3DEqualizer /></div>
-          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom3DVolumeBooster /></div>
-          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom3DAppController /></div>
-          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom3DAudioPlayer /></div>
-          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom3DRadioStations /></div>
-          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom3DAppDownload /></div>
-          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom3DTailored /></div>
-          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom3DTestimonials /></div>
-          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom3DCTA /></div>
-          <div className="[content-visibility:auto] [contain-intrinsic-size:1px_600px]"><Boom3DFAQ /></div>
+          <LazySection minHeight="600px"><Boom3DScrollReveal /></LazySection>
+          <LazySection minHeight="600px"><Boom3DKeyFeatures /></LazySection>
+          <LazySection minHeight="600px"><Boom3DSurround /></LazySection>
+          <LazySection minHeight="600px"><Boom3DEqualizer /></LazySection>
+          <LazySection minHeight="600px"><Boom3DVolumeBooster /></LazySection>
+          <LazySection minHeight="600px"><Boom3DAppController /></LazySection>
+          <LazySection minHeight="600px"><Boom3DAudioPlayer /></LazySection>
+          <LazySection minHeight="600px"><Boom3DRadioStations /></LazySection>
+          <LazySection minHeight="600px"><Boom3DAppDownload /></LazySection>
+          <LazySection minHeight="600px"><Boom3DTailored /></LazySection>
+          <LazySection minHeight="600px"><Boom3DTestimonials /></LazySection>
+          <LazySection minHeight="600px"><Boom3DCTA /></LazySection>
+          <LazySection minHeight="600px"><Boom3DFAQ /></LazySection>
         </Suspense>
       </main>
 
