@@ -66,6 +66,10 @@ function processFile(filePath) {
     html = html.replace(titleMatch[0], `${titleMatch[0]}\n  ${cssMatch[0]}`);
   }
 
+  // Ensure <meta charset="UTF-8" /> is strictly the very first element inside <head> (bytes 0-100)
+  html = html.replace(/<meta\s+charset=["']?utf-8["']?\s*\/?>/gi, '');
+  html = html.replace(/<head[^>]*>/i, (m) => `${m}\n  <meta charset="UTF-8" />`);
+
   fs.writeFileSync(filePath, html, 'utf8');
 }
 
