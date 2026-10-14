@@ -333,7 +333,7 @@ export function InteractiveAudioSection() {
                 src={photo.src}
                 alt={`Boom 3D ${photo.name}`}
                 className="w-full h-full object-contain pointer-events-none select-none"
-                loading="eager"
+                loading="lazy"
                 draggable={false}
               />
             </div>
