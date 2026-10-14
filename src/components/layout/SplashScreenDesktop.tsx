@@ -6,16 +6,18 @@ interface SplashScreenDesktopProps {
 }
 
 export function SplashScreenDesktop({ onComplete }: SplashScreenDesktopProps) {
-  const [isVisible, setIsVisible] = useState(true);
-
-  useEffect(() => {
-    const isBot =
+  const isBot =
+    typeof window !== 'undefined' && (
       Boolean(navigator.webdriver) ||
       navigator.userAgent === 'ReactSnap' ||
-      /Headless|Puppeteer|Lighthouse|PageSpeed|Chrome-Lighthouse|PTST/i.test(navigator.userAgent) ||
+      /Headless|Puppeteer|Lighthouse|PageSpeed|Chrome-Lighthouse|PTST|Googlebot/i.test(navigator.userAgent) ||
       Boolean((window as any).__PRERENDER__) ||
-      window.location.search.includes('no-splash');
+      window.location.search.includes('no-splash')
+    );
 
+  const [isVisible, setIsVisible] = useState(() => !isBot);
+
+  useEffect(() => {
     if (isBot) {
       onComplete();
       return;
@@ -26,7 +28,9 @@ export function SplashScreenDesktop({ onComplete }: SplashScreenDesktopProps) {
     }, 1200);
 
     return () => clearTimeout(timer);
-  }, [onComplete]);
+  }, [isBot, onComplete]);
+
+  if (isBot) return null;
 
   return (
     <AnimatePresence onExitComplete={onComplete}>

@@ -35,7 +35,7 @@ export function HeroMobile() {
         <picture>
           <source media="(max-width: 767px)" srcSet={heroImages[0]} />
           <img
-            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E"
+            src={heroImages[0]}
             alt="Global Delight Hero"
             fetchPriority="high"
             loading="eager"

@@ -59,24 +59,38 @@ function processFile(filePath) {
     }
   }
 
-  // Ensure stylesheet is immediately after <title> for earliest possible CSS discovery
-  const cssMatch = html.match(/<link rel="stylesheet"[^>]*href="\/assets\/index-[^"]+\.css"[^>]*\/?>/);
-  if (cssMatch && titleMatch) {
-    html = html.replace(cssMatch[0], '');
-    html = html.replace(titleMatch[0], `${titleMatch[0]}\n  ${cssMatch[0]}`);
+  // Extract CSS link and href
+  const cssMatch = html.match(/<link rel="stylesheet"[^>]*href="(\/assets\/index-[^"]+\.css)"[^>]*\/?>/);
+  let cssBlock = '';
+  if (cssMatch) {
+    const cssTag = cssMatch[0];
+    const cssHref = cssMatch[1];
+    html = html.replace(cssTag, '');
+    cssBlock = `\n  <link rel="preload" as="style" href="${cssHref}" />\n  ${cssTag}`;
   }
 
-  // Ensure <meta charset="UTF-8" /> is strictly the very first element inside <head> (bytes 0-100)
-  html = html.replace(/<meta\s+charset=["']?utf-8["']?\s*\/?>/gi, '');
-  html = html.replace(/<head[^>]*>/i, (m) => `${m}\n  <meta charset="UTF-8" />`);
-
-  // Inject critical hero image preloads early in <head> for instant mobile LCP discovery
+  // Preload critical hero images right after CSS
   const normalizedPath = filePath.replace(/\\/g, '/').toLowerCase();
+  let heroPreload = '';
   if (normalizedPath.includes('boom3d') && !html.includes('href="/boom3D/boom3d-hero.webp"')) {
-    html = html.replace(/<meta charset="UTF-8" \/>/, '<meta charset="UTF-8" />\n  <link rel="preload" as="image" href="/boom3D/boom3d-hero.webp" type="image/webp" fetchpriority="high" />');
+    heroPreload = '\n  <link rel="preload" as="image" href="/boom3D/boom3d-hero.webp" type="image/webp" fetchpriority="high" />';
   } else if (normalizedPath.includes('boom2') && !html.includes('href="/boom2/boom2-hero.webp"')) {
-    html = html.replace(/<meta charset="UTF-8" \/>/, '<meta charset="UTF-8" />\n  <link rel="preload" as="image" href="/boom2/boom2-hero.webp" type="image/webp" fetchpriority="high" />');
+    heroPreload = '\n  <link rel="preload" as="image" href="/boom2/boom2-hero.webp" type="image/webp" fetchpriority="high" />';
+  } else if ((normalizedPath.endsWith('/index.html') || normalizedPath.endsWith('\\index.html') || normalizedPath.endsWith('dist/index.html')) && !html.includes('href="/hero/hero-banner-mobile.webp"')) {
+    heroPreload = '\n  <link rel="preload" as="image" href="/hero/hero-banner-mobile.webp" type="image/webp" media="(max-width: 767px)" fetchpriority="high" />';
   }
+
+  // Ensure <meta charset="UTF-8" /> is strictly the very first element inside <head> (bytes 0-50)
+  // followed immediately by viewport, cssBlock, and heroPreload
+  html = html.replace(/<meta\s+charset=["']?utf-8["']?\s*\/?>/gi, '');
+  const viewportMatch = html.match(/<meta name="viewport"[^>]*\/?>/i);
+  let viewportTag = '';
+  if (viewportMatch) {
+    viewportTag = `\n  ${viewportMatch[0]}`;
+    html = html.replace(viewportMatch[0], '');
+  }
+
+  html = html.replace(/<head[^>]*>/i, (m) => `${m}\n  <meta charset="UTF-8" />${viewportTag}${cssBlock}${heroPreload}`);
 
   fs.writeFileSync(filePath, html, 'utf8');
 }

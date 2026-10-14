@@ -17,10 +17,7 @@ export function Hero() {
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
 
           {/* Text Content */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+          <div
             className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left"
           >
             <div className="flex items-center mb-6 mx-auto lg:mx-0 justify-center lg:justify-start">
@@ -64,13 +61,10 @@ export function Hero() {
                 />
               </a>
             </div>
-          </motion.div>
+          </div>
 
           {/* Hero Image / Phone Mockup */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
+          <div
             className="w-full lg:w-1/2 flex justify-center relative mt-6 lg:mt-0"
           >
             <div className="relative w-[180px] md:w-[220px] lg:w-[240px] aspect-[9/19.5] rounded-[2rem] md:rounded-[2.5rem] border-[8px] md:border-[10px] border-gray-900 bg-gray-900 overflow-hidden shadow-2xl shadow-purple-200/60">
@@ -114,7 +108,7 @@ export function Hero() {
             </div>
 
            
-          </motion.div>
+          </div>
         </div>
       </div>
       </section>

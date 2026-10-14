@@ -1,4 +1,3 @@
-import { motion } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 
 const AppleLogo = ({ className = "" }: { className?: string }) => (
@@ -53,25 +52,20 @@ export function Boom2Hero() {
         <div className="max-w-[1400px] mx-auto px-4 md:px-8 w-full relative z-10">
           <div className="max-w-xl">
 
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+            <div
               className="flex items-center gap-2.5 md:gap-3 mb-3 md:mb-8"
             >
-              <motion.img
+              <img
                 src="/boom2/Boom2-icon.png"
                 alt="Boom 2 Logo"
                 width={80}
                 height={80}
                 className="w-10 md:w-20 h-auto object-contain drop-shadow-lg"
-                animate={{ y: [0, -12, 0] }}
-                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
               />
               <span className="text-white font-semibold text-base md:text-xl tracking-wide drop-shadow-md">
                 Boom 2
               </span>
-            </motion.div>
+            </div>
 
             <h1 className="text-xl sm:text-2xl md:text-6xl lg:text-7xl font-bold mb-2 md:mb-6 leading-tight drop-shadow-lg text-white">
               {t('boom2.hero.title_1')} <br/>
@@ -82,10 +76,7 @@ export function Boom2Hero() {
               {t('boom2.hero.subtitle')}
             </p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.7, ease: "easeOut" }}
+            <div
               className="flex flex-row items-center gap-2 md:gap-4 w-full sm:w-auto max-w-[320px] sm:max-w-none"
             >
               <button className="flex-1 sm:flex-initial flex items-center justify-center gap-1.5 md:gap-2 bg-white text-black px-3.5 py-2 md:px-4 md:py-3.5 rounded-xl font-bold transition-all hover:bg-[#1390FB] hover:text-white hover:scale-[1.02] sm:w-[210px] text-xs md:text-[15px] tracking-wide shadow-lg group whitespace-nowrap">
@@ -97,7 +88,7 @@ export function Boom2Hero() {
                 <AppleLogo className="w-3.5 h-3.5 md:w-5 md:h-5 mb-0.5" />
                 {t('boom2.hero.buy_now')}
               </button>
-            </motion.div>
+            </div>
           </div>
         </div>
         </section>
