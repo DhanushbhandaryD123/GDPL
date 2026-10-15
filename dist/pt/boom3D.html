@@ -6,7 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preload" as="style" href="/assets/index-J6aPyrfh.css" />
   <link rel="stylesheet" crossorigin href="/assets/index-J6aPyrfh.css">
-  <link rel="preload" as="image" href="/boom3D/boom3d-hero.webp" type="image/webp" fetchpriority="high" />
+  <link rel="preload" as="image" href="/boom3D/boom3d-hero-mobile.webp" type="image/webp" media="(max-width: 767px)"
+    fetchpriority="high" />
+  <link rel="preload" as="image" href="/boom3D/boom3d-hero.webp" type="image/webp" media="(min-width: 768px)"
+    fetchpriority="high" />
 
   <!-- Real Global Delight brand mark (cropped from the existing B2B logo) —
          browsers request /favicon.ico by default regardless of <link> tags,
@@ -230,9 +233,12 @@
         <div class="w-full max-w-[1920px] mx-auto px-2 md:px-4 pt-1 pb-12 bg-white">
           <div
             class="w-full relative overflow-hidden text-white pt-12 pb-16 md:pt-20 md:pb-24 shadow-2xl bg-black rounded-3xl md:rounded-[2.5rem]">
-            <img alt="Boom 3D Hero" fetchpriority="high" loading="eager" decoding="async" width="1920" height="700"
-              class="absolute inset-0 w-full h-full object-cover object-center scale-[1.08] z-0 pointer-events-none"
-              src="/boom3D/boom3d-hero.webp">
+            <picture>
+              <source media="(max-width: 767px)" srcset="/boom3D/boom3d-hero-mobile.webp"><img alt="Boom 3D Hero"
+                fetchpriority="high" loading="eager" decoding="async" width="1920" height="700"
+                class="absolute inset-0 w-full h-full object-cover object-center scale-[1.08] z-0 pointer-events-none"
+                src="/boom3D/boom3d-hero.webp">
+            </picture>
             <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/10 lg:to-black/0"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10"></div>
             <div
@@ -253,7 +259,7 @@
                   <a href="https://apps.apple.com/us/app/boom3d-volume-booster-and-eq/id1233048948?mt=12"
                     target="_blank" rel="noopener noreferrer" class="hover:scale-105 transition-transform"><img
                       alt="Download on Mac App Store" class="h-11 md:h-14 lg:h-16 object-contain drop-shadow-md"
-                      width="269" height="69" loading="eager" src="/button/DownloadonMacAppStore.png"></a><a
+                      width="269" height="69" loading="eager" src="/button/DownloadonMacAppStore.webp"></a><a
                     href="https://apps.microsoft.com/detail/9pp81h1nczs1?cid=GD-Homepage-Banner&amp;hl=en-US&amp;gl=IN"
                     target="_blank" rel="noopener noreferrer" class="hover:scale-105 transition-transform"><img
                       alt="Get it from Microsoft Store" class="h-11 md:h-14 lg:h-16 object-contain drop-shadow-md"
@@ -512,7 +518,7 @@
       style="position: fixed; z-index: 9999; top: 16px; left: 16px; right: 16px; bottom: 16px; pointer-events: none;">
     </div>
   </div>
-  <script type="module" crossorigin src="/assets/index-CDSG5OYQ.js"></script>
+  <script type="module" crossorigin src="/assets/index-BW7RErIT.js"></script>
 </body>
 
 </html>

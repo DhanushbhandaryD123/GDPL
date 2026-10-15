@@ -69,13 +69,13 @@ function processFile(filePath) {
     cssBlock = `\n  <link rel="preload" as="style" href="${cssHref}" />\n  ${cssTag}`;
   }
 
-  // Preload critical hero images right after CSS
+  // Preload critical hero images right after CSS (using media queries so mobile only loads 15KB)
   const normalizedPath = filePath.replace(/\\/g, '/').toLowerCase();
   let heroPreload = '';
-  if (normalizedPath.includes('boom3d') && !html.includes('href="/boom3D/boom3d-hero.webp"')) {
-    heroPreload = '\n  <link rel="preload" as="image" href="/boom3D/boom3d-hero.webp" type="image/webp" fetchpriority="high" />';
-  } else if (normalizedPath.includes('boom2') && !html.includes('href="/boom2/boom2-hero.webp"')) {
-    heroPreload = '\n  <link rel="preload" as="image" href="/boom2/boom2-hero.webp" type="image/webp" fetchpriority="high" />';
+  if (normalizedPath.includes('boom3d')) {
+    heroPreload = '\n  <link rel="preload" as="image" href="/boom3D/boom3d-hero-mobile.webp" type="image/webp" media="(max-width: 767px)" fetchpriority="high" />\n  <link rel="preload" as="image" href="/boom3D/boom3d-hero.webp" type="image/webp" media="(min-width: 768px)" fetchpriority="high" />';
+  } else if (normalizedPath.includes('boom2')) {
+    heroPreload = '\n  <link rel="preload" as="image" href="/boom2/boom2-hero-mobile.webp" type="image/webp" media="(max-width: 767px)" fetchpriority="high" />\n  <link rel="preload" as="image" href="/boom2/boom2-hero.webp" type="image/webp" media="(min-width: 768px)" fetchpriority="high" />';
   } else if ((normalizedPath.endsWith('/index.html') || normalizedPath.endsWith('\\index.html') || normalizedPath.endsWith('dist/index.html')) && !html.includes('href="/hero/hero-banner-mobile.webp"')) {
     heroPreload = '\n  <link rel="preload" as="image" href="/hero/hero-banner-mobile.webp" type="image/webp" media="(max-width: 767px)" fetchpriority="high" />';
   }
