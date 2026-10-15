@@ -14,7 +14,7 @@ export function Boom3DHero() {
             alt="Boom 3D Hero"
             fetchPriority="high"
             loading="eager"
-            decoding="async"
+            decoding="sync"
             width={1920}
             height={700}
             className="absolute inset-0 w-full h-full object-cover object-center scale-[1.08] z-0 pointer-events-none"

@@ -26,7 +26,7 @@ export function Boom2Hero() {
             alt="Boom 2 Hero"
             fetchPriority="high"
             loading="eager"
-            decoding="async"
+            decoding="sync"
             width={1920}
             height={768}
             className="absolute inset-0 w-full h-full object-cover object-[75%_center] md:object-center z-0 pointer-events-none"

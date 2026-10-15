@@ -39,7 +39,7 @@ export function HeroMobile() {
             alt="Global Delight Hero"
             fetchPriority="high"
             loading="eager"
-            decoding="async"
+            decoding="sync"
             width={768}
             height={330}
             className="absolute inset-0 w-full h-full object-cover object-[65%_center] z-0"
