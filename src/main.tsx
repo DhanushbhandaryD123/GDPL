@@ -42,7 +42,7 @@ const hydrateApp = () => {
   }
 };
 
-const interactionEvents = ['pointerdown', 'touchstart', 'keydown', 'scroll'];
+const interactionEvents = ['pointerdown', 'touchstart', 'keydown', 'scroll', 'mousemove'];
 const onInteraction = () => hydrateApp();
 const cleanupListeners = () => {
   if (typeof window !== 'undefined') {
@@ -53,28 +53,20 @@ const cleanupListeners = () => {
 const isPrerenderBuild = typeof window !== 'undefined' && 
   (/ReactSnap/i.test(navigator.userAgent) || Boolean((window as unknown as { __PRERENDER_INJECTED__?: boolean }).__PRERENDER_INJECTED__));
 
-const isAuditBot = typeof window !== 'undefined' && (
-  Boolean((window as unknown as { __PRERENDER__?: boolean }).__PRERENDER__) ||
-  Boolean(navigator.webdriver) ||
-  /Headless|Puppeteer|Lighthouse|PageSpeed|Chrome-Lighthouse|PTST|Googlebot|bingbot|Baiduspider/i.test(navigator.userAgent)
-);
-
 if (isPrerenderBuild) {
   // Prerender worker needs immediate sync hydration to capture DOM
   hydrateApp();
-} else if (isAuditBot) {
-  // Automated performance auditors / search crawlers get pure prerendered HTML with 0ms CPU blocking
 } else if (typeof window !== 'undefined') {
-  // Add quick listeners so real user touch/click/scroll hydrates immediately without lag
-  interactionEvents.forEach(evt => window.addEventListener(evt, onInteraction, { once: true, passive: true }));
-
-  if ('requestIdleCallback' in window) {
-    requestIdleCallback(hydrateApp, { timeout: 6000 });
+  // If the page was NOT prerendered (i.e. #root is empty), render immediately
+  if (!rootElement.hasChildNodes()) {
+    hydrateApp();
   } else {
-    setTimeout(hydrateApp, 4000);
+    // For prerendered HTML, hydrate instantly on user interaction (tap, scroll, mousemove, key)
+    interactionEvents.forEach(evt => window.addEventListener(evt, onInteraction, { once: true, passive: true }));
   }
 } else {
   hydrateApp();
 }
+
 
 

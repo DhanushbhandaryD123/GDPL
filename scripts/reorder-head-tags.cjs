@@ -66,7 +66,7 @@ function processFile(filePath) {
     const cssTag = cssMatch[0];
     const cssHref = cssMatch[1];
     html = html.replace(cssTag, '');
-    cssBlock = `\n  <link rel="preload" as="style" href="${cssHref}" />\n  ${cssTag}`;
+    cssBlock = `\n  <link rel="preload" as="style" href="${cssHref}" crossorigin />\n  ${cssTag}`;
   }
 
   // Preload critical hero images right after CSS (using media queries so mobile only loads 15KB)
