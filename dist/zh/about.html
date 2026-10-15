@@ -269,7 +269,7 @@
                         <path d="M3 10h18"></path>
                       </svg></div>
                     <div>
-                      <div class="text-[10px] md:text-xl font-bold text-white leading-tight"><span>1004</span></div>
+                      <div class="text-[10px] md:text-xl font-bold text-white leading-tight"><span>803</span></div>
                       <div class="text-[6px] md:text-[10px] text-gray-400">成立于</div>
                     </div>
                   </div>
@@ -285,7 +285,7 @@
                         <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                       </svg></div>
                     <div>
-                      <div class="text-[10px] md:text-xl font-bold text-white leading-tight"><span>26</span>M+</div>
+                      <div class="text-[10px] md:text-xl font-bold text-white leading-tight"><span>24</span>M+</div>
                       <div class="text-[6px] md:text-[10px] text-gray-400">全球用户</div>
                     </div>
                   </div>
@@ -303,7 +303,7 @@
                         <path d="m7.5 4.27 9 5.15"></path>
                       </svg></div>
                     <div>
-                      <div class="text-[10px] md:text-xl font-bold text-white leading-tight"><span>44</span>+</div>
+                      <div class="text-[10px] md:text-xl font-bold text-white leading-tight"><span>41</span>+</div>
                       <div class="text-[6px] md:text-[10px] text-gray-400">已开发产品</div>
                     </div>
                   </div>
@@ -808,7 +808,38 @@
     </div>
   </div>
 
-  <script type="module" crossorigin src="/assets/index-D1RR2KiF.js"></script>
+  <script>
+    (function() {
+      var l = false;
+
+      function load() {
+        if (l) return;
+        l = true;
+        ['pointerdown', 'touchstart', 'keydown', 'scroll', 'mousemove'].forEach(function(e) {
+          window.removeEventListener(e, load);
+        });
+        var s = document.createElement('script');
+        s.type = 'module';
+        s.crossOrigin = '';
+        s.src = '/assets/index-DKeuIaC1.js';
+        document.body.appendChild(s);
+      }
+      ['pointerdown', 'touchstart', 'keydown', 'scroll', 'mousemove'].forEach(function(e) {
+        window.addEventListener(e, load, {
+          once: true,
+          passive: true
+        });
+      });
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(load, {
+          timeout: 8000
+        });
+      } else {
+        setTimeout(load, 6000);
+      }
+    })();
+
+  </script>
 </body>
 
 </html>

@@ -305,19 +305,19 @@
                   <div class="flex flex-col items-center">
                     <div
                       class="bg-[#f8f8fb] rounded-xl md:rounded-xl px-4 md:px-5 py-3 md:py-3.5 text-[#1c2331] font-extrabold text-xl md:text-2xl lg:text-[1.7rem] shadow-[0_2px_10px_rgba(0,0,0,0.04)] w-[58px] md:w-[68px] lg:w-[72px] border border-gray-200/50 tabular-nums">
-                      09</div>
+                      08</div>
                     <div class="text-[9px] md:text-[10px] text-gray-500 mt-2 font-bold tracking-[0.12em]">HORAS</div>
                   </div><span class="font-bold text-gray-300 mt-3 md:mt-4 text-lg md:text-xl">:</span>
                   <div class="flex flex-col items-center">
                     <div
                       class="bg-[#f8f8fb] rounded-xl md:rounded-xl px-4 md:px-5 py-3 md:py-3.5 text-[#1c2331] font-extrabold text-xl md:text-2xl lg:text-[1.7rem] shadow-[0_2px_10px_rgba(0,0,0,0.04)] w-[58px] md:w-[68px] lg:w-[72px] border border-gray-200/50 tabular-nums">
-                      45</div>
+                      56</div>
                     <div class="text-[9px] md:text-[10px] text-gray-500 mt-2 font-bold tracking-[0.12em]">MINUTOS</div>
                   </div><span class="font-bold text-gray-300 mt-3 md:mt-4 text-lg md:text-xl">:</span>
                   <div class="flex flex-col items-center">
                     <div
                       class="bg-[#f8f8fb] rounded-xl md:rounded-xl px-4 md:px-5 py-3 md:py-3.5 text-[#1c2331] font-extrabold text-xl md:text-2xl lg:text-[1.7rem] shadow-[0_2px_10px_rgba(0,0,0,0.04)] w-[58px] md:w-[68px] lg:w-[72px] border border-gray-200/50 tabular-nums">
-                      48</div>
+                      49</div>
                     <div class="text-[9px] md:text-[10px] text-gray-500 mt-2 font-bold tracking-[0.12em]">SEGUNDOS</div>
                   </div>
                 </div><span
@@ -516,7 +516,38 @@
     </div>
   </div>
 
-  <script type="module" crossorigin src="/assets/index-D1RR2KiF.js"></script>
+  <script>
+    (function() {
+      var l = false;
+
+      function load() {
+        if (l) return;
+        l = true;
+        ['pointerdown', 'touchstart', 'keydown', 'scroll', 'mousemove'].forEach(function(e) {
+          window.removeEventListener(e, load);
+        });
+        var s = document.createElement('script');
+        s.type = 'module';
+        s.crossOrigin = '';
+        s.src = '/assets/index-DKeuIaC1.js';
+        document.body.appendChild(s);
+      }
+      ['pointerdown', 'touchstart', 'keydown', 'scroll', 'mousemove'].forEach(function(e) {
+        window.addEventListener(e, load, {
+          once: true,
+          passive: true
+        });
+      });
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(load, {
+          timeout: 8000
+        });
+      } else {
+        setTimeout(load, 6000);
+      }
+    })();
+
+  </script>
 </body>
 
 </html>

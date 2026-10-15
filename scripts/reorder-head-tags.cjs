@@ -42,7 +42,7 @@ function processFile(filePath) {
   }
 
   // Find module scripts and modulepreloads in <head>
-  const scriptMatch = html.match(/<script type="module"[^>]*src="\/assets\/index-[^"]+\.js"><\/script>/);
+  const scriptMatch = html.match(/<script type="module"[^>]*src="(\/assets\/index-[^"]+\.js)"><\/script>/);
   const modulePreloads = html.match(/<link rel="modulepreload"[^>]*\/?>/g) || [];
 
   if (scriptMatch) {
@@ -52,12 +52,36 @@ function processFile(filePath) {
       html = html.replace(mp, '');
     }
 
-    // Insert module script at the very end of <body> for 0ms render-blocking FCP
+    const scriptSrc = scriptMatch[1];
+    const dynamicLoader = `  <script>
+    (function(){
+      var l = false;
+      function load() {
+        if (l) return;
+        l = true;
+        ['pointerdown','touchstart','keydown','scroll','mousemove'].forEach(function(e){ window.removeEventListener(e, load); });
+        var s = document.createElement('script');
+        s.type = 'module';
+        s.crossOrigin = '';
+        s.src = '${scriptSrc}';
+        document.body.appendChild(s);
+      }
+      ['pointerdown','touchstart','keydown','scroll','mousemove'].forEach(function(e){ window.addEventListener(e, load, { once: true, passive: true }); });
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(load, { timeout: 8000 });
+      } else {
+        setTimeout(load, 6000);
+      }
+    })();
+  </script>`;
+
+    // Insert progressive script loader at the very end of <body> for 0ms render-blocking FCP
     const closingBody = '</body>';
     if (html.includes(closingBody)) {
-      html = html.replace(closingBody, `  ${scriptMatch[0]}\n${closingBody}`);
+      html = html.replace(closingBody, `${dynamicLoader}\n${closingBody}`);
     }
   }
+
 
   // Extract CSS link and href
   const cssMatch = html.match(/<link rel="stylesheet"[^>]*href="(\/assets\/index-[^"]+\.css)"[^>]*\/?>/);

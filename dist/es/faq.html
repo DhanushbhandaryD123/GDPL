@@ -735,7 +735,38 @@
     </div>
   </div>
 
-  <script type="module" crossorigin src="/assets/index-D1RR2KiF.js"></script>
+  <script>
+    (function() {
+      var l = false;
+
+      function load() {
+        if (l) return;
+        l = true;
+        ['pointerdown', 'touchstart', 'keydown', 'scroll', 'mousemove'].forEach(function(e) {
+          window.removeEventListener(e, load);
+        });
+        var s = document.createElement('script');
+        s.type = 'module';
+        s.crossOrigin = '';
+        s.src = '/assets/index-DKeuIaC1.js';
+        document.body.appendChild(s);
+      }
+      ['pointerdown', 'touchstart', 'keydown', 'scroll', 'mousemove'].forEach(function(e) {
+        window.addEventListener(e, load, {
+          once: true,
+          passive: true
+        });
+      });
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(load, {
+          timeout: 8000
+        });
+      } else {
+        setTimeout(load, 6000);
+      }
+    })();
+
+  </script>
 </body>
 
 </html>

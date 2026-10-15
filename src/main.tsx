@@ -50,23 +50,10 @@ const cleanupListeners = () => {
   }
 };
 
-const isPrerenderBuild = typeof window !== 'undefined' && 
-  (/ReactSnap/i.test(navigator.userAgent) || Boolean((window as unknown as { __PRERENDER_INJECTED__?: boolean }).__PRERENDER_INJECTED__));
-
-if (isPrerenderBuild) {
-  // Prerender worker needs immediate sync hydration to capture DOM
-  hydrateApp();
-} else if (typeof window !== 'undefined') {
-  // If the page was NOT prerendered (i.e. #root is empty), render immediately
-  if (!rootElement.hasChildNodes()) {
-    hydrateApp();
-  } else {
-    // For prerendered HTML, hydrate instantly on user interaction (tap, scroll, mousemove, key)
-    interactionEvents.forEach(evt => window.addEventListener(evt, onInteraction, { once: true, passive: true }));
-  }
-} else {
+if (typeof window !== 'undefined') {
   hydrateApp();
 }
+
 
 
 
